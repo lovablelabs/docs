@@ -1,0 +1,43 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    branches: ["*"]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/docs.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: pipx install poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+          cache: "poetry"
+          cache-dependency-path: docs/poetry.lock
+      - name: Install deps
+        run: cd docs; make install
+      - name: Build
+        run: cd docs; make build
+
+      # We deploy from GitHub Actions instead of via Netlify builders,
+      # because Netlify builders don't support Python 3.8+
+      - name: Deploy to Netlify
+        if: github.ref == 'refs/heads/main'
+        uses: jsmrcaga/action-netlify-deploy@v2.1.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          NETLIFY_SITE_ID: ddab54c7-7320-45c9-9103-8509b232bfae
+          NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub Action: ${{ github.event.head_commit.message }}"
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: docs/site
+          install_command: "echo Skipping installing the dependencies"
+          build_command: "echo Skipping building the web files"
