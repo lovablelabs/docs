@@ -41,18 +41,20 @@ theme:
   logo: assets/gpt-engineer-2x-logo.png
   favicon: assets/gpt-engineer-2x-logo.png
   palette:
-    - scheme: slate
-      primary: black
-      accent: red
-      toggle:
-        icon: octicons/sun-16
-        name: Switch to light mode
+    # Light mode as default
     - scheme: default
       primary: black
       accent: red
       toggle:
-        icon: octicons/moon-16
+        icon: material/brightness-7
         name: Switch to dark mode
+    # Dark mode (optional)
+    - scheme: slate
+      primary: black
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - navigation.instant
     - navigation.expand
