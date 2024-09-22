@@ -4,12 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'docs/**'
+      - '**'
       - '.github/workflows/docs.yml'
   pull_request:
     branches: ["*"]
     paths:
-      - 'docs/**'
+      - '**'
       - '.github/workflows/docs.yml'
 
 jobs:
@@ -22,11 +22,11 @@ jobs:
         with:
           python-version: "3.12"
           cache: "poetry"
-          cache-dependency-path: docs/poetry.lock
+          cache-dependency-path: poetry.lock
       - name: Install deps
-        run: cd docs; make install
+        run: make install
       - name: Build
-        run: cd docs; make build
+        run: make build
 
       # We deploy from GitHub Actions instead of via Netlify builders,
       # because Netlify builders don't support Python 3.8+
@@ -38,6 +38,6 @@ jobs:
           NETLIFY_SITE_ID: ddab54c7-7320-45c9-9103-8509b232bfae
           NETLIFY_DEPLOY_MESSAGE: "Deployed from GitHub Action: ${{ github.event.head_commit.message }}"
           NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: docs/site
+          build_directory: site
           install_command: "echo Skipping installing the dependencies"
           build_command: "echo Skipping building the web files"
