@@ -62,7 +62,7 @@ theme:
     - nagivation.tabs
     - toc.follow
     - content.code.copy
-    - edit-on-github  # Ensure this feature is enabled
+    - content.action.edit
 
 markdown_extensions:
   - pymdownx.emoji:
@@ -91,4 +91,4 @@ extra:
 
 # Repository URL
 repo_url: https://github.com/lovablelabs/docs
-edit_uri: edit/main/
+edit_uri: edit/main/src
