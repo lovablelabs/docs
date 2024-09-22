@@ -1,2 +1,5 @@
 site
 .aider*
+
+# Local Netlify folder
+.netlify
