@@ -1,0 +1,140 @@
+# :sparkles: Prompting in GPT Engineer
+
+To help you make the most out of GPT Engineer, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members.
+
+!!! info "What is prompting?"
+    Prompting is the common term used for textual, natural language inputs used to interact with GPT Engineer. You can think of it as text messages containing instructions you are giving to GPT Engineer.
+
+    Since GPT Engineer relies on large language models (LLMs), effective prompting strategies can have an impact on its efficiency.
+
+## Basics
+
+In GPT Engineer, prompts are the main way of interacting with our app. Be it from the start and welcome screen where you can preselect some of the existing prompts, type your own, or in the builder user interface where you are interacting using a chat-based interface, prompts are the backbone of your interactions.
+
+---
+
+## Prompting strategies
+
+These strategies will often work combined, depending on your specific use cases. Feel free to experiment with them and see which ones give the best results. While GPT Engineer on its own can do a lot even from a very basic and generic prompt, using some of these strategies can help you achieve even better results.
+
+### Contextual prompting
+
+Providing context can help GPT Engineer understand the broader scope of your requirements. Before asking for specific tasks, you can set the stage with background information.
+
+!!! example "Setting the context"
+    Example prompt:
+
+    ```
+    We are building a project management tool that helps teams track their tasks.
+    This tool should have features like:
+     - user authentication
+     - project creation
+     - task assignments
+     - reporting
+
+    Now, for the first task, create the UI for project creation.
+    ```
+
+### Incremental prompting
+
+Our experience has shown that making incremental, smaller changes will yield better results than dumping a huge prompt and expecting AI to handle it well.
+
+So, instead of going with a prompt that would ask AI to "build a CRM app that integrates with Supabase, has auth support, integrates with Google Sheets to export records to it, and then enriches CRM records using some third-party service", you should divide that prompt into several smaller ones.
+
+### Using image prompts
+
+Recently we added support where users can upload images with their prompts and ask GPT Engineer to build a solution based on it.
+
+There are two main approaches here. The first one is a simple prompting approach.
+
+!!! example "Simple image upload prompting"
+    Users can upload an image and then add an example prompt like this:
+
+    ```
+    Create and implement a UI that looks as similar as possible to the image attached.
+    ```
+
+Or, you can help AI better understand the content of the image and some additional specifics about it.
+
+!!! example "Image prompting with detailed instructions"
+    Excellent results can be achieved by adding specific instructions to the image uploaded. While the image is worth a thousand words, adding a couple of your own to describe desired functionality can go a long way - especially since interactions cannot always be obvious from a static image.
+
+    ```
+    I want you to create the app as similar as possible to the one shown in this screenshot.
+    It's essentially a kanban clone.
+    It should have the ability to add new cards (tickets) in each column, have the ability to change the order of those tickets within a single column, and even move those cards between columns.
+    Feel free to use the Pangea home dnd npm package for drag-and-drop functionality.
+    ```
+
+### Avoid ambiguity
+
+Ensure your prompts are clear and unambiguous. Avoid vague terms and be as specific as possible about what you need.
+
+!!! failure "Unspecific prompt"
+    Avoid unspecific and broad prompts
+
+    ```
+    Create a form for user input
+    ```
+
+Instead, be more specific.
+
+!!! success "Specific prompt"
+    Make your prompts more specific and concrete
+
+    ```
+    Create a form with fields for name, email, and message, and include a submit button.
+    ```
+
+### Add constraints
+
+Sometimes, adding constraints can help focus the AI on what's important and avoid unnecessary complexity.
+
+!!! example "Adding constraints"
+
+    ```
+    Create a simple to-do app with a maximum of 3 tasks visible at a time.
+    Include the ability to add, edit, and delete tasks.
+    ```
+
+### Be specific when correcting issues
+
+Issues will happen, sometimes builds will fail and the app that was generated will not look exactly as you wanted it. Effective prompting can help you get back on track.
+Again, it's important to be specific.
+
+!!! failure "Generic prompt"
+    Avoid generic and very broad prompts
+
+    ```
+    Nothing works, fix it!
+    ```
+
+Instead, be more specific.
+
+!!! success "More detailed prompt"
+    Make your prompts more detailed and specific
+
+    ```
+    Now the screen has gone blank and previously I was able to make edits.
+    Can you check what happened?
+    ```
+
+### Using Dev console for reporting bugs
+
+If you are more technical and an issue has happened, then pasting an error logged in the browser's Console can be very helpful.
+
+Typically, you'll open the <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools" target="_blank" rel="noopener noreferrer">Dev tools</a> and navigate to Console. If there are any errors or notifications visible, you can copy and paste them as a prompt.
+
+!!! example "Using Dev tools and console logs"
+
+    ```
+    My app is not working anymore and the screen is blank.
+    Here's the copy/paste from Dev tools console, can you fix the issue?
+
+    Error occurred:
+    TypeError: Q9() is undefined  at https://example.gptengineer.run/assets/index-DWQbrtrQQj.js
+    : 435 : 39117 index-DWQbrtrQQj.js:435:35112
+    onerror https://example.gptengineer.run/assets/index-DWQbrtrQQj.js:435
+    ```
+
+</br></br>

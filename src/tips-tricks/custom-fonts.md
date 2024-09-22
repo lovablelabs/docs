@@ -1,0 +1,80 @@
+# :capital_abcd: Using custom (Google) fonts
+
+Currently, GPT Engineer does not support direct uploads of custom fonts. However, there are several easy ways to use web-safe or incorporate custom fonts into your projects. 
+
+Below, we’ll guide you through the available methods for using web-safe and Google fonts.
+
+!!! info "What are web-safe fonts"
+    Web-safe fonts are fonts that are commonly installed on most operating systems (Windows, macOS, Linux, etc.) and are visible on all devices. 
+    
+    These fonts ensure that your text looks consistent across different browsers and platforms without needing to load any external resources. Some of the common web-safe fonts are:
+
+    - Arial/Helvetica
+    - Times New Roman
+    - Georgia
+    - Courier New
+    - Verdana
+    - Tahoma
+    - Trebuchet MS
+    - Lucida Sans Unicode
+
+## Using a web-safe font
+
+If you want to use a web-safe font in your project, you can specify the font directly in your prompt. For example, if you want to use **Courier New** for a heading or title in the hero section, simply reference the font by name in your prompt.
+
+!!! example "Using a web-safe font"
+    Example prompt:
+
+    ```
+    Use Courier New as the heading font in the hero section for the main title.
+    ```
+
+
+
+Web-safe fonts like Courier New ensure that your project will have consistent typography across all platforms without requiring external resources to load the font. However, they can limit your creativity. Lucikly, there are otions like the ability to use Google Fonts.
+
+## Using Google Fonts
+
+If you prefer to use custom fonts, GPT Engineer works nicely with **Google Fonts**. This allows you to easily use a wide range of fonts in your project. You can either reference a Google font by name or by linking directly to the font resource.
+
+### Using by name
+
+In your prompt, you can specify the name of a Google font, and GPT Engineer will include it in your project. For example:
+
+!!! example "Using Google Font by name"
+    Example prompt:
+
+    ```
+    Use Playfair Display as the first subtitle title font in the hero section. 
+
+    Make sure to use the useEffect React hook to apply the font properly.
+    ```
+
+### Using by link
+
+Alternatively, you can provide a direct link to the Google font, and GPT Engineer will use that font in your project. You can get the link from [Google Fonts](https://fonts.google.com) by selecting the desired font and copying the link.
+
+Here’s how to prompt GPT Engineer to use a Google font via a link:
+
+!!! example "Using Google Font by link"
+    Example prompt:
+
+    ```
+    Add this Google font link https://fonts.google.com/specimen/Dancing+Script 
+    and use this font for the third subtitle.
+    
+    Make sure to load the font using the useEffect React hook.
+    ```
+
+By following these methods, you can customize the typography of your GPT Engineer project using either web-safe fonts or Google Fonts.
+
+## Further learning and examples
+
+To see these font integration methods in action, you can explore one of our example projects: [GPT Engineer using fonts example project](https://gptengineer.app/projects/your-project-link-here). 
+
+In this project, you’ll find real prompts demonstrating how we applied different font styles, including web-safe fonts like Courier New and custom fonts from Google Fonts.
+
+![Different fonts used in GPT Engineer project](/assets/using-custom-fonts-example.png)
+
+
+Additionally, for a more technical look at how fonts were integrated, check out this public repository: [GitHub: adding-fonts-example](https://github.com/viborc/adding-fonts-example). It includes the full implementation details, showcasing how various fonts were loaded and applied in the project.
