@@ -1,6 +1,8 @@
 # :rocket: Getting started
 
-This is a simple tutorial to get you started with the basics of gptengineer.app.
+This is a simple tutorial to get you started with the basics of gptengineer.app. 
+
+We hope you're excited to contribute to the docs!
 
 We will guide you through the process of creating a project, making improvements, and deploying your project.
 
