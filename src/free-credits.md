@@ -1,6 +1,6 @@
 # :gift: Earning free credits
 
-To encourage people who know each other to build and remix each other with our tool, you can both get 25 bonus credits.
+Help your friends & followers build faster with GPT Engineer. Invite friends to use GPT Engineer, and when they create a project you’ll both earn 25 credits. If you make 30 referrals, you’ll unlock a bonus 250 credits.
 
 ## How to start earning?
 
