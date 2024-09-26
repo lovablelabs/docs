@@ -31,6 +31,10 @@ We want to keep the documentation as simple as possible.
  - Something to link to when people have questions.
  - Explain status of upcoming/requested features, like backend etc.
 
+## Contributing
+
+We welcome community contributions to improve the documentation. If you would like to contribute, please refer to our [Contributing guide](./CONTRIBUTING.md) for instructions on how to get started.
+
 
 ## Deploy
 
