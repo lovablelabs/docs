@@ -39,7 +39,7 @@ theme:
   name: material
   locale: en
   logo: assets/gpt-engineer-2x-logo.png
-  favicon: assets/gpt-engineer-2x-logo.png
+  favicon: assets/favicon-32x32.png
   palette:
     # Light mode as default
     - scheme: default
