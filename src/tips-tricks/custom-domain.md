@@ -1,13 +1,15 @@
 # :earth_africa: Setting up a custom domain
 
-When you create a project, GPT Engineer makes it easy to [publish it](../features/deploy.md) by simply clicking on a button. However, we don't support custom domains (yet). 
+When you create a project, GPT Engineer makes it easy to [publish it](../features/deploy.md) with the click of a button.
 
-However, if having a custom domain is important to you, then there are a few ways you can achieve this.
+If having a custom domain is important to you, then there are a few ways you can achieve this.
 
-## Using Netlify (Recommended)
+## Using Netlify (<1 minute)
 
-You can host on Netlify for free with a custom domain, but you need to purchase the domain separately, and advanced features may require a paid plan.
+You can host on Netlify for free with a custom domain, you do need to purchase the domain yourself.
 
-To use Netlify you will need to follow these steps (it takes less than a minute!):
-- Deploy your project using Netlify - instructions [here](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/)
-- Configure a custom domain for your Netlify site - instructions [here](https://docs.netlify.com/domains-https/custom-domains/#assign-a-domain-to-a-production-site)
+The steps are.
+
+1. Click GitHub then "create repository" if you haven't already done so in gptengineer.app
+2. Go to: https://app.netlify.com/start/deploy?repository=PASTE_YOUR_GITHUB_PROJECTS_URL_HERE and follow instructions
+3. Configure a custom domain for your Netlify site, instructions [here](https://docs.netlify.com/domains-https/custom-domains/#assign-a-domain-to-a-production-site)
