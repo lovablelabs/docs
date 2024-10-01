@@ -122,6 +122,8 @@ To start making some of your pages available only to logged in users, you will n
     Create a protected page for /events
     ```
 
+To test, you will need to create an account to log in with under supabase -> left sidebar -> authentication -> add user.
+
 ## More advanced use cases
 
 ### I want users to only see their own data
