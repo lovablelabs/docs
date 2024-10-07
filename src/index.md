@@ -84,7 +84,7 @@ If Discord is your thing, then this channel is dedicated to collecting general f
 
 ## Support
 
-We primarily use **Discord** as our main support channel for GPT Engineer users. 
+We use **Discord** and **hi@lovable.dev** as our support channels for GPT Engineer users. 
 
 ### Support channel
 [:simple-discord: Support channel on Discord](https://discord.com/channels/1119885301872070706/1280461670979993613)
