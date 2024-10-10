@@ -7,7 +7,7 @@ GPT Engineer manages project edits and updates using a credit system. Depending 
 
 
 ## Free Plan
-- **Daily limit** - 10 free edits per day
+- **Daily limit** - 5 free edits per day
 
 Designed to give users a chance to explore and experience GPT Engineer's features at no cost.
 
