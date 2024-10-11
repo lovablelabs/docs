@@ -1,6 +1,11 @@
 # :frame_photo: Using images
 
-Currently, we do not support direct image uploads within GPT Engineer. However, there are a few easy workarounds that allow you to integrate images into your projects. Below, we’ll walk you through the available methods for including images.
+To upload images you can do one of two things:
+1. Upload it to the github repository
+2. Share an external image URL in the chat. **Note: This will not work if the server hosting the URL has chosen to block external websites from using it with "CORS"**
+
+
+Below, we’ll walk you through the two methods.
 
 !!! info "Image placeholders"
     By default, if GPT Engineer recognizes the need to use images in your projects, it will use placeholder images - gray, neutral images to improve user experience and orientation.
