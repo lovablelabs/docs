@@ -2,7 +2,8 @@
 
 To upload images you can do one of two things:
 1. Upload it to the github repository manually, outside of the GPT Engineer UI
-2. Share an external image URL in the chat. **Note: This will not work if the server hosting the URL has chosen to block external websites from using it with "CORS"**
+2. Share an external image URL in the chat.
+    **Note**: This will not work if the server hosting the URL has chosen to block external websites from using it with "CORS"
 
 
 Below, we’ll walk you through the two methods.
