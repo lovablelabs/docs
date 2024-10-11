@@ -1,7 +1,7 @@
 # :frame_photo: Using images
 
 To upload images you can do one of two things:
-1. Upload it to the github repository
+1. Upload it to the github repository manually, outside the GPT Engineer UI
 2. Share an external image URL in the chat. **Note: This will not work if the server hosting the URL has chosen to block external websites from using it with "CORS"**
 
 
