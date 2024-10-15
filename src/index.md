@@ -73,7 +73,7 @@ Join our community on <a href="https://discord.gg/rPw2rSFE2K" target="_blank" re
 We also value your feedback and we use both email and Discord for getting your feedback! 
 
 ### Email
-If you want to share it with us, feel free to email us at <a href="mailto:feedback@gptengineer.app">feedback@gptengineer.app</a>.
+If you want to share it with us, feel free to email us at <a href="mailto:feedback@lovable.dev">feedback@lovable.dev</a>.
 
 ### User-feedback channel
 [:simple-discord: User-feedback channel on Discord](https://discord.com/channels/1119885301872070706/1192445544375799920)
@@ -84,12 +84,12 @@ If Discord is your thing, then this channel is dedicated to collecting general f
 
 ## Support
 
-We use **Discord** and **hi@lovable.dev** as our support channels for GPT Engineer users. 
+We use **Discord** and <a href="mailto:support@lovable.dev">**support@lovable.dev**</a> as our support channels for GPT Engineer users. 
 
-### Support channel
+### Support channel - Community support only
 [:simple-discord: Support channel on Discord](https://discord.com/channels/1119885301872070706/1280461670979993613)
 
-This is the primary support channel for GPT Engineer app users. It uses a forum-style structure where each issue or bug is addressed in its own thread, making it easier to manage and track.
+This is the community support channel for GPT Engineer app users. It uses a forum-style structure where each issue or bug is addressed in its own thread, making it easier to manage and track. Support is provided by community members and our Community Champions.
 
 When submitting a support request, please follow these guidelines:
 
@@ -103,19 +103,19 @@ When submitting a support request, please follow these guidelines:
 
 - **Public posts** - Keep in mind that all posts in this channel are public. Be mindful of any sensitive information in your videos or screenshots.
 
+We ask that free users primarily use the **Support channel** for any technical issues, bugs, or troubleshooting to ensure that community members can provide them with help. 
 
-### General GPT Engineer app channel
-[:simple-discord: General GPT Engineer app channel on Discord](https://discord.com/channels/1119885301872070706/1186613291745824868)
-
-This is an open space for users to discuss anything related to GPT Engineer. Whether it's a feature you love or just a general chat about the app, this is the place to engage with the community.
-
----
-
-We ask that users primarily use the **Support channel** for any technical issues, bugs, or troubleshooting to ensure that we can provide the best possible assistance in a timely manner.
+Our Pro users are welcome to use <a href="mailto:support@lovable.dev">**support@lovable.dev**</a>. Please ensure that you are using the same email address you used to sign up for GPT Engineer so we can assist you effeciently.
 
 Please note that our team is located in the EU. While we do our best to reply during our regular business hours — and sometimes outside of them — do keep in mind that over weekends or outside of EU hours, responses may take longer. 
 
 We appreciate your understanding. 🫶
 
+---
+
+### General GPT Engineer app channel
+[:simple-discord: General GPT Engineer app channel on Discord](https://discord.com/channels/1119885301872070706/1186613291745824868)
+
+This is an open space for users to discuss anything related to GPT Engineer. Whether it's a feature you love or just a general chat about the app, this is the place to engage with the community.
 
 </br></br>
