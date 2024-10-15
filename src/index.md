@@ -103,9 +103,10 @@ When submitting a support request, please follow these guidelines:
 
 - **Public posts** - Keep in mind that all posts in this channel are public. Be mindful of any sensitive information in your videos or screenshots.
 
-We ask that free users primarily use the **Support channel** for any technical issues, bugs, or troubleshooting to ensure that community members can provide them with help. 
 
-Our Pro users are welcome to use <a href="mailto:support@lovable.dev">**support@lovable.dev**</a>. Please ensure that you are using the same email address you used to sign up for GPT Engineer so we can assist you effeciently.
+Community support channel is usually the fastest way to get guidance about issues with GPT Engineer.
+
+Pro users get priority support from our support team through <a href="mailto:support@lovable.dev">**support@lovable.dev**</a>. Please ensure that you are using the same email address you used to sign up for GPT Engineer so we can assist you effeciently.
 
 Please note that our team is located in the EU. While we do our best to reply during our regular business hours — and sometimes outside of them — do keep in mind that over weekends or outside of EU hours, responses may take longer. 
 
