@@ -106,9 +106,9 @@ When submitting a support request, please follow these guidelines:
 
 Community support channel is usually the fastest way to get guidance about issues with GPT Engineer.
 
-Pro users get priority support from our support team through <a href="mailto:support@lovable.dev">**support@lovable.dev**</a>. Please ensure that you are using the same email address you used to sign up for GPT Engineer so we can assist you effeciently.
+Pro users get priority support from our support team through dedicated channel and <a href="mailto:support@lovable.dev">**support@lovable.dev**</a>. Please ensure that you are using the same email address you used to sign up for GPT Engineer so we can assist you effeciently.
 
-Please note that our team is located in the EU. While we do our best to reply during our regular business hours — and sometimes outside of them — do keep in mind that over weekends or outside of EU hours, responses may take longer. 
+Please note that our team is located in the Europe. While we do our best to reply during our regular business hours — and sometimes outside of them — do keep in mind that over weekends or outside of EU hours, responses may take longer. 
 
 We appreciate your understanding. 🫶
 
