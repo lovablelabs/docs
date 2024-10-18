@@ -23,6 +23,7 @@ nav:
     #- features/import-project.md
 
   - "Integrations":
+      - "Integrations overview": integrations/index.md
       - "GitHub integration": features/git-integration.md
       - "Supabase integration": integrations/supabase.md
 
