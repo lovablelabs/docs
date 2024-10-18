@@ -18,12 +18,12 @@ nav:
   - "Features":
       - "Features overview": features/index.md
       - "Deployment and sharing": features/deploy.md
-      - "GitHub integration": features/git-integration.md
       - "Using npm packages": features/npm-packages.md
       - "Tech stacks": features/techstacks.md
     #- features/import-project.md
 
   - "Integrations":
+      - "GitHub integration": features/git-integration.md
       - "Supabase integration": integrations/supabase.md
 
   - "Tips and tricks":
