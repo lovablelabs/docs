@@ -27,13 +27,13 @@ Click on + New Project, complete the necessary fields, and allow a few minutes f
 
 ### Step 3: Connect Supabase to GPT Engineer
 
-Link your GPT Engineer app with the necessary keys.
+1. In your GPT Engineer Editor, locate the Supabase button in the navbar. Click on it and select "Connect Supabase". 
 
-In your Supabase project, go to Supabase > Connect Supabase. You will be redirected to a page where you will be able to select the relevant organisation.
+2. You will be redirected to a page where you will be able to select the relevant organisation.
 
-Then, you will be able to select the relevant project within that organisation.
+3. You will be then redirected back to GPT Engineer, where you will need to select the relevant project within that organisation.
 
-With the completion of these steps, your Supabase setup is ready! You can now proceed to integrate Supabase Authentication and Database functionalities into your app.
+After completing these steps, you will have to wait some seconds for your Supabase integration to finish. Look at the chat for this confirmation.
 
 ## Adding Authentication with Supabase
 
