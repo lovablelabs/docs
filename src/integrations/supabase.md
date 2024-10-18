@@ -83,5 +83,5 @@ When troublehsooting, you  can visit the the logs for your Edge Function in Supa
 ## Best Practices
 
 !!! warning "Enable RLS policies before going to production"
-    Important Note: Before you deploy your app to production or use any real data, you will need to review and set up the appropriate RLS policies. I can help with that.
+    Important Note: Before you deploy your app to production or use any real data, you will need to review and set up the appropriate RLS policies. GPT Engineer can help with that.
 
