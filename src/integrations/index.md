@@ -19,7 +19,7 @@ Explore the sections below to get started quickly and learn more about GitHub an
     [:octicons-arrow-right-24: Git integration](../features/git-integration.md)
 
 
--   :simple-supabase:{ .lg .middle } **Supabase integration**
+-   :simple-supabase:{ .lg .middle .supabase} **Supabase integration**
 
     ---
 

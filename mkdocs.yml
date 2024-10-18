@@ -92,6 +92,9 @@ extra:
   # removes "Made with Material for MkDocs", we should sponsor the project instead (as they suggest in their docs)
   generator: false
 
+extra_css:
+  - assets/css/styles.css
+
 # Repository URL
 repo_url: https://github.com/lovablelabs/docs
 edit_uri: edit/main/src

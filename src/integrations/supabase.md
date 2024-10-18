@@ -1,4 +1,4 @@
-# :simple-supabase: Supabase Integration
+# :simple-supabase:{ .supabase} Supabase Integration
 
 !!! warning "Supabase integration is in early beta"
     We have made the new Supabase integration available to select users. It's still in early beta. If you are interested in joining the beta, please contact us.
