@@ -18,15 +18,6 @@ Explore the sections below to get started quickly and learn more about some of t
     [:octicons-arrow-right-24: Deploy](deploy.md)
 
 
--   :simple-github:{ .lg .middle } **GitHub integration**
-
-    ---
-
-    Understand how to integrate GPT Engineer with GitHub for seamless version control and collaboration.
-
-    [:octicons-arrow-right-24: Git integration](git-integration.md)
-
-
 -   :simple-npm:{ .lg .middle } **Using npm packages**
 
     ---
