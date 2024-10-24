@@ -90,7 +90,7 @@ When troublehsooting, you  can visit the the logs for your Edge Function in Supa
 Here is an onboarding video that walks you through the process of using GPT Engineer together with Supabase to build a full stack app:
 
 <div class="video-wrapper">
-  <iframe width="1280" height="420" src="https://www.youtube.com/embed/QK_fGs9y6LA" frameborder="0" allowfullscreen></iframe>
+  <iframe width="1280" height="420" src="https://www.youtube.com/embed/67Q-_CejNhE" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
