@@ -85,3 +85,12 @@ When troublehsooting, you  can visit the the logs for your Edge Function in Supa
 !!! warning "Enable RLS policies before going to production"
     Important Note: Before you deploy your app to production or use any real data, you will need to review and set up the appropriate RLS policies. I can help with that.
 
+## Onboarding video
+
+Here is an onboarding video that walks you through the process of using GPT Engineer together with Supabase to build a full stack app:
+
+<div class="video-wrapper">
+  <iframe width="1280" height="420" src="https://www.youtube.com/embed/QK_fGs9y6LA" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
