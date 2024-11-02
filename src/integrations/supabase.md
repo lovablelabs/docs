@@ -54,6 +54,7 @@ To add a basic login page to your project, simply run a prompt similar to the on
 You can then create a user by either: 
 
 - Creating a user directly via the Supabase Dashboard by navigating Supabase -> Authentication -> Users -> Add user.
+
 - Signing up via the login page you've added
 
 We recommend that you disable the email verification step for now, which you can do in Supabase -> Authentication -> Providers -> Email -> Disable "Confirm email".
@@ -71,9 +72,13 @@ In order to start building UI that uses your data stored in Supabase simply:
 ## Edge Functions
 
 You can now also use Edge Functions to add powerful backend features like:
+
 - Using AI to enhance your app's capabilities
+
 - Sending emails to your users
+
 - Processing payments
+
 - Running scheduled tasks
 
 GPT Engineer will write and deploy Edge Functions to your Supabase project when implementing backend functionality. 
