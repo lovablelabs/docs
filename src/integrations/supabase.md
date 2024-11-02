@@ -1,7 +1,7 @@
 # :simple-supabase:{ .supabase} Supabase Integration
 
-!!! warning "Supabase integration is in early beta"
-    We have made the new Supabase integration available to select users. It's still in early beta. If you are interested in joining the beta, please contact us.
+!!! warning "Supabase integration is in beta"
+    Contact us if you run into any issues. Known issues: Requests to Supabase sporadically result in 502 – we have contacted Supabase about it.
 
 ## Overview
 
