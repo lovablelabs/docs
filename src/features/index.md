@@ -30,7 +30,7 @@ Explore the sections below to get started quickly and learn more about some of t
 
     ---
 
-    Discover the various tech stacks you can use with GPT Engineer to build robust applications.
+    You can configure the tech stack GPT Engineer starts from.
 
     [:octicons-arrow-right-24: Tech stacks](techstacks.md)
 
