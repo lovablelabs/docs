@@ -1,6 +1,6 @@
-# :gift: Earning free credits
+# :gift: Get free edits
 
-Help your friends & followers build faster with GPT Engineer. Invite friends to use GPT Engineer, and when they create a project you’ll both earn 25 credits. If you make 30 referrals, you’ll unlock a bonus 250 credits.
+Help your friends & followers build faster with GPT Engineer. Invite friends to use GPT Engineer, and when they create a project you’ll both earn 25 edits. If you make 30 referrals, you’ll unlock a bonus 250 edits.
 
 ## How to start earning?
 
@@ -10,7 +10,7 @@ Help your friends & followers build faster with GPT Engineer. Invite friends to 
 
 ## How it works
 
-1. You’ll receive 25 credits when a new user signs up using your referral link and creates a project.
-2. The referred user will also receive 25 credits upon creating their first project.
-3. After 30 successful referrals, you will earn an additional 250 bonus credits.
-4. A maximum of 1000 credits can be earned through this referral program.
+1. You’ll receive 25 edits when a new user signs up using your referral link and creates a project.
+2. The referred user will also receive 25 edits upon creating their first project.
+3. After 30 successful referrals, you will earn an additional 250 bonus edits.
+4. A maximum of 1000 edits can be earned through this referral program.

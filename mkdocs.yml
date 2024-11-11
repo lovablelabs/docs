@@ -12,7 +12,7 @@ nav:
   - "Introduction": index.md
   - "User guides":
       - "Getting started": getting-started.md
-      - "Credits": credits.md
+      - "Messaging limits": credits.md
       - "Free credits": free-credits.md
 
   - "Features":
