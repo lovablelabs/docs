@@ -11,8 +11,8 @@ GPT Engineer is an AI web builder app that lets you build real web apps fast, us
 | **Capability**     | **Description**                                                              | **Maturity Level** |
 |--------------------|------------------------------------------------------------------------------|--------------------|
 | Frontend / UI      | Build user interfaces & frontend                                           | 🟢 Mature           |
-| Persistence        | Store and retrieve data (read more [here](integrations/supabase.md#adding-data))         | 🟡 Alpha             |
-| Authentication     | Handle user login and accounts (read more [here](integrations/supabase.md#supabase-authentication))  | 🟡 Alpha             |
+| Persistence        | Store and retrieve data (read more [here](integrations/supabase.md#adding-data))         | 🟡 Requires some patience             |
+| Authentication     | Handle user login and accounts (read more [here](integrations/supabase.md#supabase-authentication))  | 🟡 Requires some patience             |
 
 ## Overview
 Explore the sections below to get started quickly and learn more about the features and integrations offered by GPT Engineer.
