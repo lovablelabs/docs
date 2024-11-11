@@ -12,7 +12,7 @@ LLMs are expensive, because of this GPT Engineer limits the daily and/or monthly
 Designed to give users a chance to explore and experience GPT Engineer's features at no cost.
 
 !!! info "What happens if my edit fails?"
-    If an edit generation fails due to an error on our side, the credit for that edit will **not** be deducted from your daily total.
+    If an edit generation fails due to an error on our side, the credit for that edit will **not** be deducted from your daily/monthly total.
 
 ## Legacy plans
 Some early access users have are "grandfathered" on their existing plans, but can choose to move to the new plans before the old ("pro") plan is officially deprecated.
