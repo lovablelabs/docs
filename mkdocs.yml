@@ -13,7 +13,7 @@ nav:
   - "User guides":
       - "Getting started": getting-started.md
       - "Messaging limits": credits.md
-      - "Free credits": free-credits.md
+      - "Free edits": free-credits.md
 
   - "Features":
       - "Features overview": features/index.md
