@@ -1,8 +1,6 @@
-# :wave: Welcome to GPT Engineer Docs
+# What to expect
 
 GPT Engineer is an AI web builder app that lets you build real web apps fast, using just natural language. We prepared this documentation to make it even easier for you to go from an idea to an app and to understand how GPT Engineer works.
-
-![GPT Engineer Welcome screen](assets/gpt-engineer-welcome-screen.png)
 
 ## Product Capabilities
 
