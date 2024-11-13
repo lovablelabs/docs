@@ -1,25 +1,25 @@
-# :sparkles: Prompting in GPT Engineer
+# :sparkles: Prompting in Lovable
 
-To help you make the most out of GPT Engineer, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members.
+To help you make the most out of Lovable, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members.
 
 !!! info "What is prompting?"
-    Prompting is the common term used for textual, natural language inputs used to interact with GPT Engineer. You can think of it as text messages containing instructions you are giving to GPT Engineer.
+    Prompting is the common term used for textual, natural language inputs used to interact with Lovable. You can think of it as text messages containing instructions you are giving to Lovable.
 
-    Since GPT Engineer relies on large language models (LLMs), effective prompting strategies can have an impact on its efficiency.
+    Since Lovable relies on large language models (LLMs), effective prompting strategies can have an impact on its efficiency.
 
 ## Basics
 
-In GPT Engineer, prompts are the main way of interacting with our app. Be it from the start and welcome screen where you can preselect some of the existing prompts, type your own, or in the builder user interface where you are interacting using a chat-based interface, prompts are the backbone of your interactions.
+In Lovable, prompts are the main way of interacting with our app. Be it from the start and welcome screen where you can preselect some of the existing prompts, type your own, or in the builder user interface where you are interacting using a chat-based interface, prompts are the backbone of your interactions.
 
 ---
 
 ## Prompting strategies
 
-These strategies will often work combined, depending on your specific use cases. Feel free to experiment with them and see which ones give the best results. While GPT Engineer on its own can do a lot even from a very basic and generic prompt, using some of these strategies can help you achieve even better results.
+These strategies will often work combined, depending on your specific use cases. Feel free to experiment with them and see which ones give the best results. While Lovable on its own can do a lot even from a very basic and generic prompt, using some of these strategies can help you achieve even better results.
 
 ### Contextual prompting
 
-Providing context can help GPT Engineer understand the broader scope of your requirements. Before asking for specific tasks, you can set the stage with background information.
+Providing context can help Lovable understand the broader scope of your requirements. Before asking for specific tasks, you can set the stage with background information.
 
 !!! example "Setting the context"
     Example prompt:
@@ -43,7 +43,7 @@ So, instead of going with a prompt that would ask AI to "build a CRM app that in
 
 ### Using image prompts
 
-Recently we added support where users can upload images with their prompts and ask GPT Engineer to build a solution based on it.
+Recently we added support where users can upload images with their prompts and ask Lovable to build a solution based on it.
 
 There are two main approaches here. The first one is a simple prompting approach.
 

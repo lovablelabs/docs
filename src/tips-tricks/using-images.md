@@ -2,7 +2,7 @@
 
 To add images you can do one of two things:
 
-1. Upload it to the github repository manually, outside of the GPT Engineer UI
+1. Upload it to the github repository manually, outside of the Lovable UI
 2. Share an external image URL in the chat.
     a. **Note**: This will not work if the server hosting the URL has chosen to block external websites from using it with "CORS"
 
@@ -10,7 +10,7 @@ To add images you can do one of two things:
 Below, we’ll walk you through the two methods.
 
 !!! info "Image placeholders"
-    By default, if GPT Engineer recognizes the need to use images in your projects, it will use placeholder images - gray, neutral images to improve user experience and orientation.
+    By default, if Lovable recognizes the need to use images in your projects, it will use placeholder images - gray, neutral images to improve user experience and orientation.
 
     Using the techniques described below, you can replace those placeholder images with more relevant, and centextually meaningful images.
 
@@ -18,10 +18,10 @@ Below, we’ll walk you through the two methods.
 
 One way to add images to your project is by referencing an image from an external URL. This method allows you to use images hosted on external platforms like Unsplash, Imgur, or any other image-hosting service. Be mindful of use copyrights!
 
-Here’s how to prompt GPT Engineer to use an external image:
+Here’s how to prompt Lovable to use an external image:
 
 - First, find the image you want to use. For example, you can visit a site like Unsplash, select an image, and copy its URL.
-- In your project prompt, simply tell GPT Engineer to use that image by specifying the URL. For example:
+- In your project prompt, simply tell Lovable to use that image by specifying the URL. For example:
 
 !!! example "Using externally hosted images"
     Example prompt:
@@ -39,7 +39,7 @@ Here’s how to prompt GPT Engineer to use an external image:
 
 ## Using images from your GitHub `public` directory
 
-Another method to add images to your GPT Engineer project is by using images uploaded to the `public` directory of your connected GitHub repository. Here’s how you can do it:
+Another method to add images to your Lovable project is by using images uploaded to the `public` directory of your connected GitHub repository. Here’s how you can do it:
 
 **Connect your GitHub repository** - Ensure your project is connected to your GitHub repo. [Here's how to connect your repo](/features/git-integration).
 
@@ -62,11 +62,11 @@ Click on **Add file** and then from a dropdown, select **Upload files** option.
 **Commit the changes** - After selecting your image, write a simple commit message (e.g., "Adding image files to be used in the app") and click **"Commit changes"** to save the file to your repo.
 
 
-**Get the image path** - Once the file is uploaded, select it and then click on the copy icon  :octicons-copy-16:  next to the file name to copy the image’s path. This path will be used in your GPT Engineer prompt.
+**Get the image path** - Once the file is uploaded, select it and then click on the copy icon  :octicons-copy-16:  next to the file name to copy the image’s path. This path will be used in your Lovable prompt.
 
 ![Selecting files for upload](/assets/using-images-github-selecting.png)
 
-**Use the image in GPT Engineer** - You can now reference this image in your project by using a prompt like the following:
+**Use the image in Lovable** - You can now reference this image in your project by using a prompt like the following:
 
 !!! example "Using image from `public` folder"
     Example prompt:
@@ -80,7 +80,7 @@ Click on **Add file** and then from a dropdown, select **Upload files** option.
 
 
 !!! info "Be mindful of image file sizes"
-    Uploading large images to your GitHub repo can cause it to grow in size, which can affect GPT Engineer performance (longer repo cloning times, slower startup of previews/sandbox).
+    Uploading large images to your GitHub repo can cause it to grow in size, which can affect Lovable performance (longer repo cloning times, slower startup of previews/sandbox).
 
     Try to optimize your images before uploading them to your `public` folder by compressing them and using dimensions that are relevant to your use case. For example, don't use a full HD-sized image if it will only be displayed as a small icon.
 
@@ -94,9 +94,9 @@ Click on **Add file** and then from a dropdown, select **Upload files** option.
 
 The third method to add images is by using **Base64 encoding**. While this is an option, we don't recommend it, as it converts the image into a long textual string that can consume a significant portion of your project's context. However, if you wish to use Base64 encoding, follow these steps:
 
-1. Upload your image to a [GPT Engineer-built project by one of our community members](https://base64-image-magic.gptengineer.run/). Thanks, ntindle! 
+1. Upload your image to a [Lovable-built project by one of our community members](https://base64-image-magic.gptengineer.run/). Thanks, ntindle! 
 2. Once the image is uploaded, the app will generate a Base64-encoded string for your image.
-3. Copy the Base64 string and use it in GPT Engineer by using a prompt like this:
+3. Copy the Base64 string and use it in Lovable by using a prompt like this:
 
 !!! example "Using Base64 encoded images"
     Example prompt:
@@ -113,7 +113,7 @@ The third method to add images is by using **Base64 encoding**. While this is an
 Keep in mind that this is a real Base64 encoding, so you can use it as an example prompt.
 
 ## Explore more and learn from examples
-To help you better understand how to integrate images using the methods outlined above, we have a project you can explore: [GPT Engineer Project Example](https://gptengineer.app/projects/e823fedf-238d-4313-86a8-1fd4bfc2a9ba). In this project, you can see the actual prompts and how each method works in practice.
+To help you better understand how to integrate images using the methods outlined above, we have a project you can explore: [Lovable Project Example](https://gptengineer.app/projects/e823fedf-238d-4313-86a8-1fd4bfc2a9ba). In this project, you can see the actual prompts and how each method works in practice.
 
 Additionally, here's a public GitHub repository that includes the commits, uploaded images, and full implementation details. You can view the repository here: [GitHub: Adding Images Example](https://github.com/viborc/adding-images-example). 
 

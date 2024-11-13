@@ -1,11 +1,11 @@
 # :clapper: Using videos
 
-GPT Engineer offers two methods for embedding videos into your projects: by linking to an external video (such as YouTube) or by using videos uploaded to the public folder in your GitHub repository. Below, we’ll cover both options step by step.
+Lovable offers two methods for embedding videos into your projects: by linking to an external video (such as YouTube) or by using videos uploaded to the public folder in your GitHub repository. Below, we’ll cover both options step by step.
 
 
 ## Linking to an external video
 
-The simplest and the recommended way to incorporate a video is by linking to one hosted externally, like on YouTube. To instruct GPT Engineer to use an external video, follow these steps:
+The simplest and the recommended way to incorporate a video is by linking to one hosted externally, like on YouTube. To instruct Lovable to use an external video, follow these steps:
 
 - Locate the video you want to embed (e.g., on YouTube) and copy its URL.
 - In your project prompt, specify where you want the video and include the URL. Here’s how to do it.
@@ -26,7 +26,7 @@ The simplest and the recommended way to incorporate a video is by linking to one
 ## Using a video from your GitHub public folder
 
 !!! warning "Large videos should not be hosted in your `public` folder"
-    Uploading large videos to your GitHub repo can cause it to grow in size, which can affect GPT Engineer performance (longer repo cloning times, slower startup of previews/sandbox).
+    Uploading large videos to your GitHub repo can cause it to grow in size, which can affect Lovable performance (longer repo cloning times, slower startup of previews/sandbox).
     
     A better option is to use hosted services (like YouTube) or file storage options like S3, essentially giving you a URL that you can reference, as described in the previous steps.
 
@@ -49,7 +49,7 @@ You can upload videos to your project’s GitHub repository and reference them d
 
 ![Copy video file path](/assets/using-videos-github-selecting.png)
 
-**Reference the video in GPT Engineer** - Now, you can embed the video by specifying the file path in your prompt. For example, you can use a prompt like this one:
+**Reference the video in Lovable** - Now, you can embed the video by specifying the file path in your prompt. For example, you can use a prompt like this one:
 
 !!! example "Using a video from public folder"
     Example prompt:
@@ -68,7 +68,7 @@ Ensure you use the exact file path you copied earlier.
 
 ## Further learning and examples
 
-To see these methods in action, explore one of the example projects: [GPT Engineer using videos example project](https://gptengineer.app/projects/380835ab-c8d7-4f45-9b0d-51ec04294457). You’ll find real prompts demonstrating how videos are integrated using both methods.
+To see these methods in action, explore one of the example projects: [Lovable using videos example project](https://gptengineer.app/projects/380835ab-c8d7-4f45-9b0d-51ec04294457). You’ll find real prompts demonstrating how videos are integrated using both methods.
 
 Additionally, for a more technical look at the video adding process, check out this public repository: [GitHub: Video Upload Example](https://github.com/viborc/adding-videos-example). It includes the video upload and the implementation details used in the project.
 
