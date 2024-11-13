@@ -1,12 +1,12 @@
 # :rocket: Getting started
 
-This is a simple tutorial to get you started with the basics of gptengineer.app.
+This is a simple tutorial to get you started with the basics of Lovable.
 
 We will guide you through the process of creating a project, making improvements, and deploying your project.
 
 ## Creating a project
 
-To create a new project, login to `gptengineer.app` and then write what you want to build in the textbox.
+To create a new project, login to `lovable.dev` and then write what you want to build in the textbox.
 
 Once you have written what you want to build, click on the `Create` button.
 

@@ -1,10 +1,10 @@
 # Wecome to Lovable Academy
 
-GPT Engineer is an AI web builder app that lets you build real web apps fast, using just natural language. We prepared this documentation to make it even easier for you to go from an idea to an app and to understand how GPT Engineer works.
+Lovable is an AI web builder app that lets you build real web apps fast, using just natural language. We prepared this documentation to make it even easier for you to go from an idea to an app and to understand how Lovable works.
 
 ## Product Capabilities
 
-**GPT Engineer** currrently excels at building front-end applications. However, pairing GPT Engineer with other tools will allow you to build full-stack web apps.
+**Lovable** currrently excels at building front-end applications. However, pairing Lovable with other tools will allow you to build full-stack web apps.
 
 | **Capability**     | **Description**                                                              | **Maturity Level** |
 |--------------------|------------------------------------------------------------------------------|--------------------|
@@ -13,7 +13,7 @@ GPT Engineer is an AI web builder app that lets you build real web apps fast, us
 | Authentication     | Handle user login and accounts (read more [here](integrations/supabase.md#supabase-authentication))  | 🟡 Requires some patience             |
 
 ## Overview
-Explore the sections below to get started quickly and learn more about the features and integrations offered by GPT Engineer.
+Explore the sections below to get started quickly and learn more about the features and integrations offered by Lovable.
 
 <div class="grid cards" markdown>
 
@@ -29,7 +29,7 @@ Explore the sections below to get started quickly and learn more about the featu
 
     ---
 
-    From a general overview to our GitHub integration, this section covers the nuts and bolts of GPT Engineer.
+    From a general overview to our GitHub integration, this section covers the nuts and bolts of Lovable.
 
     [:octicons-arrow-right-24: Features](features/index.md)
 
@@ -45,7 +45,7 @@ Explore the sections below to get started quickly and learn more about the featu
 
     ---
 
-    Learn effective prompting strategies and get the most out of GPT Engineer with our tips and tricks collection.
+    Learn effective prompting strategies and get the most out of Lovable with our tips and tricks collection.
 
     [:octicons-arrow-right-24: Tips and tricks](tips-tricks/prompting.md)
 
@@ -54,9 +54,9 @@ Explore the sections below to get started quickly and learn more about the featu
 ---
 
 ## Learn more
-You can learn more about GPT Engineer on our <a href="https://gptengineer.app" target="_blank" rel="noopener noreferrer">website</a>.
+You can learn more about Lovable on our <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer">website</a>.
 </br></br>
-Discover the team behind GPT Engineer and our mission to make web development accessible to everyone. Learn more about the creators at <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer">:heart: Lovable</a>.
+Discover the team behind Lovable and our mission to make web development accessible to everyone. Learn more about the creators at <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer">:heart: Lovable</a>.
 
 ---
 
@@ -82,12 +82,12 @@ If Discord is your thing, then this channel is dedicated to collecting general f
 
 ## Support
 
-We use **Discord** and <a href="mailto:support@lovable.dev">**support@lovable.dev**</a> as our support channels for GPT Engineer users. 
+We use **Discord** and <a href="mailto:support@lovable.dev">**support@lovable.dev**</a> as our support channels for Lovable users. 
 
 ### Support channel - Community support only
 [:simple-discord: Support channel on Discord](https://discord.com/channels/1119885301872070706/1280461670979993613)
 
-This is the community support channel for GPT Engineer app users. It uses a forum-style structure where each issue or bug is addressed in its own thread, making it easier to manage and track. Support is provided by community members and our Community Champions.
+This is the community support channel for Lovable app users. It uses a forum-style structure where each issue or bug is addressed in its own thread, making it easier to manage and track. Support is provided by community members and our Community Champions.
 
 When submitting a support request, please follow these guidelines:
 
@@ -102,9 +102,9 @@ When submitting a support request, please follow these guidelines:
 - **Public posts** - Keep in mind that all posts in this channel are public. Be mindful of any sensitive information in your videos or screenshots.
 
 
-Community support channel is usually the fastest way to get guidance about issues with GPT Engineer.
+Community support channel is usually the fastest way to get guidance about issues with Lovable.
 
-Pro users get priority support from our support team through dedicated channel and <a href="mailto:support@lovable.dev">**support@lovable.dev**</a>. Please ensure that you are using the same email address you used to sign up for GPT Engineer so we can assist you effeciently.
+Pro users get priority support from our support team through dedicated channel and <a href="mailto:support@lovable.dev">**support@lovable.dev**</a>. Please ensure that you are using the same email address you used to sign up for Lovable so we can assist you effeciently.
 
 Please note that our team is located in the Europe. While we do our best to reply during our regular business hours — and sometimes outside of them — do keep in mind that over weekends or outside of EU hours, responses may take longer. 
 
@@ -112,9 +112,9 @@ We appreciate your understanding. 🫶
 
 ---
 
-### General GPT Engineer app channel
-[:simple-discord: General GPT Engineer app channel on Discord](https://discord.com/channels/1119885301872070706/1186613291745824868)
+### General Lovable app channel
+[:simple-discord: General Lovable app channel on Discord](https://discord.com/channels/1119885301872070706/1186613291745824868)
 
-This is an open space for users to discuss anything related to GPT Engineer. Whether it's a feature you love or just a general chat about the app, this is the place to engage with the community.
+This is an open space for users to discuss anything related to Lovable. Whether it's a feature you love or just a general chat about the app, this is the place to engage with the community.
 
 </br></br>

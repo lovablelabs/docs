@@ -1,9 +1,9 @@
 # Project information
-site_name: GPT Engineer Docs
+site_name: Lovable Docs
 site_url: https://docs.gptengineer.app/
 # SEO notice: https://docs.gptengineer.app/sitemap.xml
 docs_dir: src
-site_description: GPT Engineer app project documentation. Learn more about GPT Engineer, its features and get up to speed.
+site_description: Lovable.dev project documentation. Learn more about Lovable.dev, its features and get up to speed.
 
 # Copyright
 copyright: "&copy; 2023 - 2024 ❤️ Lovable"
@@ -39,7 +39,7 @@ nav:
 theme:
   name: material
   locale: en
-  logo: assets/gpt-engineer-2x-logo.png
+  logo: assets/lovable-2x-logo.png
   favicon: assets/favicon-32x32.png
   palette:
     # Light mode as default
@@ -82,7 +82,7 @@ extra:
     - icon: fontawesome/solid/heart
       link: https://lovable.dev
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/Lovable_dev
+      link: https://twitter.com/lovable_dev
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/@lovable-labs
     - icon: fontawesome/brands/discord

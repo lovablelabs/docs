@@ -1,6 +1,6 @@
 # :capital_abcd: Using custom (Google) fonts
 
-Currently, GPT Engineer does not support direct uploads of custom fonts. However, there are several easy ways to use web-safe or incorporate custom fonts into your projects. 
+Currently, Lovable does not support direct uploads of custom fonts. However, there are several easy ways to use web-safe or incorporate custom fonts into your projects. 
 
 Below, we’ll guide you through the available methods for using web-safe and Google fonts.
 
@@ -35,11 +35,11 @@ Web-safe fonts like Courier New ensure that your project will have consistent ty
 
 ## Using Google Fonts
 
-If you prefer to use custom fonts, GPT Engineer works nicely with **Google Fonts**. This allows you to easily use a wide range of fonts in your project. You can either reference a Google font by name or by linking directly to the font resource.
+If you prefer to use custom fonts, Lovable works nicely with **Google Fonts**. This allows you to easily use a wide range of fonts in your project. You can either reference a Google font by name or by linking directly to the font resource.
 
 ### Using by name
 
-In your prompt, you can specify the name of a Google font, and GPT Engineer will include it in your project. For example:
+In your prompt, you can specify the name of a Google font, and Lovable will include it in your project. For example:
 
 !!! example "Using Google Font by name"
     Example prompt:
@@ -52,9 +52,9 @@ In your prompt, you can specify the name of a Google font, and GPT Engineer will
 
 ### Using by link
 
-Alternatively, you can provide a direct link to the Google font, and GPT Engineer will use that font in your project. You can get the link from [Google Fonts](https://fonts.google.com) by selecting the desired font and copying the link.
+Alternatively, you can provide a direct link to the Google font, and Lovable will use that font in your project. You can get the link from [Google Fonts](https://fonts.google.com) by selecting the desired font and copying the link.
 
-Here’s how to prompt GPT Engineer to use a Google font via a link:
+Here’s how to prompt Lovable to use a Google font via a link:
 
 !!! example "Using Google Font by link"
     Example prompt:
@@ -66,15 +66,15 @@ Here’s how to prompt GPT Engineer to use a Google font via a link:
     Make sure to load the font using the useEffect React hook.
     ```
 
-By following these methods, you can customize the typography of your GPT Engineer project using either web-safe fonts or Google Fonts.
+By following these methods, you can customize the typography of your Lovable project using either web-safe fonts or Google Fonts.
 
 ## Further learning and examples
 
-To see these font integration methods in action, you can explore one of our example projects: [GPT Engineer using fonts example project](https://gptengineer.app/projects/your-project-link-here). 
+To see these font integration methods in action, you can explore one of our example projects: [Lovable using fonts example project](https://gptengineer.app/projects/your-project-link-here). 
 
 In this project, you’ll find real prompts demonstrating how we applied different font styles, including web-safe fonts like Courier New and custom fonts from Google Fonts.
 
-![Different fonts used in GPT Engineer project](/assets/using-custom-fonts-example.png)
+![Different fonts used in Lovable project](/assets/using-custom-fonts-example.png)
 
 
 Additionally, for a more technical look at how fonts were integrated, check out this public repository: [GitHub: adding-fonts-example](https://github.com/viborc/adding-fonts-example). It includes the full implementation details, showcasing how various fonts were loaded and applied in the project.

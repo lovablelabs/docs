@@ -1,6 +1,6 @@
 # :medal: Messaging limits
 
-LLMs are expensive, because of this GPT Engineer limits the daily and/or monthly messages that result in successful edits you can send.
+LLMs are expensive, because of this Lovable limits the daily and/or monthly messages that result in successful edits you can send.
 
 !!! info "Edits expiration"
     Daily edits renew at midnight UTC.
@@ -9,7 +9,7 @@ LLMs are expensive, because of this GPT Engineer limits the daily and/or monthly
 ## All plans
 - **Daily limit** - 5 free messages per day
 
-Designed to give users a chance to explore and experience GPT Engineer's features at no cost.
+Designed to give users a chance to explore and experience Lovable's features at no cost.
 
 !!! info "What happens if my edit fails?"
     If an edit generation completely fails (build error) due to an error on our side, the credit for that edit will **not** be deducted from your daily/monthly total.

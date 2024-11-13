@@ -1,6 +1,6 @@
 # :globe_with_meridians: Deploy and share
 
-Once your web app is ready, you can deploy it or share it with the world. You can also share your work-in-progress version to gather feedback. GPT Engineer makes it simple to publish and share your apps with just a few clicks.
+Once your web app is ready, you can deploy it or share it with the world. You can also share your work-in-progress version to gather feedback. Lovable makes it simple to publish and share your apps with just a few clicks.
 
 ---
 
@@ -8,13 +8,13 @@ Once your web app is ready, you can deploy it or share it with the world. You ca
 
 To publish your web app, in the top right corner of the editor view, click on the **Share** button. This button looks like a globe icon.
 <div align="center">
-  <img src="/assets/share-icon.png" alt="Share icon in GPT Engineer">
+  <img src="/assets/share-icon.png" alt="Share icon in Lovable">
 </div>
 
 After clicking the **Share** button, a dialog will appear with options to publish your application. Click the green **Publish** button to start the deployment process. During this time, the button will display **Publishing**.
 
 <div align="center">
-    <video autoplay loop src="/assets/videos/video-publish-republish.mp4" title="Publishing and republishing GPT Engineer apps"></video>
+    <video autoplay loop src="/assets/videos/video-publish-republish.mp4" title="Publishing and republishing Lovable apps"></video>
 </div>
 
 Once the deployment is complete, the dialog will show the published address with a **Republish** button for future updates.
