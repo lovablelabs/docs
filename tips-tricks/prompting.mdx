@@ -1,11 +1,19 @@
-# :sparkles: Prompting in Lovable
+---
+title: 'Prompting in Lovable'
+description: 'Learn effective prompting strategies to make the most out of Lovable'
+---
+
+# Prompting in Lovable
 
 To help you make the most out of Lovable, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members.
 
-!!! info "What is prompting?"
-    Prompting is the common term used for textual, natural language inputs used to interact with Lovable. You can think of it as text messages containing instructions you are giving to Lovable.
+<Info>
+  **What is prompting?**
+  
+  Prompting is the common term used for textual, natural language inputs used to interact with Lovable. You can think of it as text messages containing instructions you are giving to Lovable.
 
-    Since Lovable relies on large language models (LLMs), effective prompting strategies can have an impact on its efficiency.
+  Since Lovable relies on large language models (LLMs), effective prompting strategies can have an impact on its efficiency.
+</Info>
 
 ## Basics
 
@@ -21,19 +29,21 @@ These strategies will often work combined, depending on your specific use cases.
 
 Providing context can help Lovable understand the broader scope of your requirements. Before asking for specific tasks, you can set the stage with background information.
 
-!!! example "Setting the context"
-    Example prompt:
+<Note>
+  **Setting the context**
+  
+  Example prompt:
+  ```
+  We are building a project management tool that helps teams track their tasks.
+  This tool should have features like:
+   - user authentication
+   - project creation
+   - task assignments
+   - reporting
 
-    ```
-    We are building a project management tool that helps teams track their tasks.
-    This tool should have features like:
-     - user authentication
-     - project creation
-     - task assignments
-     - reporting
-
-    Now, for the first task, create the UI for project creation.
-    ```
+  Now, for the first task, create the UI for project creation.
+  ```
+</Note>
 
 ### Incremental prompting
 
@@ -70,21 +80,23 @@ Or, you can help AI better understand the content of the image and some addition
 
 Ensure your prompts are clear and unambiguous. Avoid vague terms and be as specific as possible about what you need.
 
-!!! failure "Unspecific prompt"
-    Avoid unspecific and broad prompts
+<Warning>
+  **Unspecific prompt**
+  
+  Avoid unspecific and broad prompts
+  ```
+  Create a form for user input
+  ```
+</Warning>
 
-    ```
-    Create a form for user input
-    ```
-
-Instead, be more specific.
-
-!!! success "Specific prompt"
-    Make your prompts more specific and concrete
-
-    ```
-    Create a form with fields for name, email, and message, and include a submit button.
-    ```
+<Success>
+  **Specific prompt**
+  
+  Make your prompts more specific and concrete
+  ```
+  Create a form with fields for name, email, and message, and include a submit button.
+  ```
+</Success>
 
 ### Add constraints
 
@@ -137,4 +149,4 @@ Typically, you'll open the <a href="https://developer.mozilla.org/en-US/docs/Lea
     onerror https://example.gptengineer.run/assets/index-DWQbrtrQQj.js:435
     ```
 
-</br></br>
+<br />
