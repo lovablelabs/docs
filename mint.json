@@ -60,17 +60,16 @@
     {
       "group": "Features",
       "pages": [
-        "features/index",
+        "features/introduction",
         "features/deploy",
-        "features/npm-packages",
-        "features/techstacks"
+        "features/npm-packages"
       ]
     },
     {
       "group": "Integrations",
       "pages": [
-        "integrations/index",
-        "features/git-integration",
+        "integrations/introduction",
+        "integrations/git-integration",
         "integrations/supabase"
       ]
     },
