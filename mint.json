@@ -5,14 +5,14 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon-32x32.png",
+  "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#0095FF",
+    "light": "#1AA3FF",
+    "dark": "#0084E6",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#0095FF",
+      "to": "#1AA3FF"
     }
   },
   "topbarLinks": [
