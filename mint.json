@@ -1,0 +1,93 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Lovable Documentation",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0095FF",
+    "light": "#1AA3FF",
+    "dark": "#0084E6",
+    "anchors": {
+      "from": "#0095FF",
+      "to": "#1AA3FF"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@lovable.dev"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "App",
+    "url": "https://lovable.dev"
+  },
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.com/channels/1119885301872070706/1280461670979993613"
+    },
+    {
+      "name": "Changelog",
+      "icon": "newspaper",
+      "url": "https://lovable.dev/changelog"
+    },
+    {
+      "name": "News",
+      "icon": "newspaper",
+      "url": "https://lovable.dev/news"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Introduction",
+      "pages": [
+        "introduction"
+      ]
+    },
+    {
+      "group": "User Guides",
+      "pages": [
+        "user-guides/getting-started",
+        "user-guides/credits",
+        "user-guides/free-credits"
+      ]
+    },
+    {
+      "group": "Features",
+      "pages": [
+        "features/introduction",
+        "features/deploy",
+        "features/npm-packages"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "integrations/introduction",
+        "integrations/git-integration",
+        "integrations/supabase"
+      ]
+    },
+    {
+      "group": "Tips and Tricks",
+      "pages": [
+        "tips-tricks/using-images",
+        "tips-tricks/using-videos",
+        "tips-tricks/custom-fonts",
+        "tips-tricks/multiple-users",
+        "tips-tricks/custom-domain",
+        "tips-tricks/prompting"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/lovable_dev",
+    "github": "https://github.com/lovablelabs",
+    "linkedin": "https://linkedin.com/company/lovable-dev"
+  }
+}

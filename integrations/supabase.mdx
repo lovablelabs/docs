@@ -1,13 +1,20 @@
-# :simple-supabase:{ .supabase} Supabase Integration
+---
+title: 'Supabase Integration'
+description: 'Learn how to integrate Supabase with your Lovable application'
+icon: 'database'
+---
 
-!!! warning "Supabase integration is in beta"
-    Contact us if you run into any issues. Known issues: Requests to Supabase sporadically result in 502 – we have contacted Supabase about it.
+<Warning>
+  Supabase integration is in beta. Contact us if you run into any issues. Known issues: Requests to Supabase sporadically result in 502 – we have contacted Supabase about it.
+</Warning>
 
 ## Overview
 
 [Supabase](https://supabase.com/) is an open-source alternative to Firebase, offering real-time databases, authentication services, and file storage. It is built atop [PostgreSQL](https://www.postgresql.org/), providing robust SQL querying capabilities and seamless integration with existing tools and frameworks. Supabase also features an intuitive web interface for effortless management of users and data.
 
-![Supabase](../assets/supabase.png)
+<Frame>
+  <img src="../assets/supabase.png" alt="Supabase" />
+</Frame>
 
 Discover more about Supabase [here](https://supabase.com/docs).
 
@@ -85,16 +92,14 @@ Lovable will write and deploy Edge Functions to your Supabase project when imple
 
 When troublehsooting, you  can visit the the logs for your Edge Function in Supabase -> Functions -> Logs. 
 
-## Best Practices
+<Warning>
+  Important Note: Before you deploy your app to production or use any real data, you will need to review and set up the appropriate RLS policies. Lovable can help with that.
+</Warning>
 
-!!! warning "Enable RLS policies before going to production"
-    Important Note: Before you deploy your app to production or use any real data, you will need to review and set up the appropriate RLS policies. Lovable can help with that.
-
-## Onboarding video
-
-Here is an onboarding video that walks you through the process of using Lovable together with Supabase to build a full stack app:
-
-<div class="video-wrapper">
-  <iframe width="1280" height="420" src="https://www.youtube.com/embed/S8fQMGK41D0" frameborder="0" allowfullscreen></iframe>
-</div>
-
+<iframe
+  width="1280"
+  height="420"
+  src="https://www.youtube.com/embed/S8fQMGK41D0"
+  frameborder="0"
+  allowfullscreen
+/>
