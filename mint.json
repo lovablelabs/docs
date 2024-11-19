@@ -45,16 +45,11 @@
   "navigation": [
     {
       "group": "Introduction",
-      "pages": [
-        "introduction"
-      ]
+      "pages": ["introduction"]
     },
     {
       "group": "User Guides",
-      "pages": [
-        "user-guides/getting-started",
-        "user-guides/credits"
-      ]
+      "pages": ["user-guides/getting-started", "user-guides/messaging-limits"]
     },
     {
       "group": "Features",
@@ -88,5 +83,11 @@
     "x": "https://x.com/lovable_dev",
     "github": "https://github.com/lovablelabs",
     "linkedin": "https://linkedin.com/company/lovable-dev"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/user-guides/credits",
+      "destination": "/user-guides/messaging-limits"
+    }
+  ]
 }
