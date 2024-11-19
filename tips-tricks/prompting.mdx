@@ -1,15 +1,11 @@
 ---
-title: 'Prompting in Lovable'
-description: 'Learn effective prompting strategies to make the most out of Lovable'
+title: "Prompting in Lovable"
+description: "Effective prompting strategies to get the most out of Lovable"
 ---
-
-# Prompting in Lovable
-
-To help you make the most out of Lovable, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members.
 
 <Info>
   **What is prompting?**
-  
+
   Prompting is the common term used for textual, natural language inputs used to interact with Lovable. You can think of it as text messages containing instructions you are giving to Lovable.
 
   Since Lovable relies on large language models (LLMs), effective prompting strategies can have an impact on its efficiency.
@@ -19,11 +15,113 @@ To help you make the most out of Lovable, we compiled a list of prompting strate
 
 In Lovable, prompts are the main way of interacting with our app. Be it from the start and welcome screen where you can preselect some of the existing prompts, type your own, or in the builder user interface where you are interacting using a chat-based interface, prompts are the backbone of your interactions.
 
----
+## Prompting examples -- Coming soon!
+
+***
 
 ## Prompting strategies
 
-These strategies will often work combined, depending on your specific use cases. Feel free to experiment with them and see which ones give the best results. While Lovable on its own can do a lot even from a very basic and generic prompt, using some of these strategies can help you achieve even better results.
+Crafting effective prompts is key to getting the best results from Lovable. Use these tips to maximize precision, speed, and quality in your projects.
+
+### **1. Be Clear and Specific**
+
+Provide as many details as possible to guide Lovable accurately.
+
+* **Example**:
+
+  * **Vague**: “Build a dashboard.”
+
+  * **Specific**: “Create a dashboard with user login, monthly sales as a line chart, and customer demographics in a pie chart.”
+
+Specifics help Lovable deliver precise results.
+
+### **2. Break It Down**
+
+For complex projects, divide tasks into smaller, manageable steps.
+
+* **Example**:
+
+  * **Step 1**: “Create a login page with email/password fields.”
+
+  * **Step 2**: “Add a contact form with name, email, and phone fields.”
+
+  * **Step 3**: “Integrate with Google Sheets for exporting contact records.”
+
+Working in steps keeps the project organized and easier to refine.
+
+### **3. Provide Context**
+
+Setting the scene helps Lovable align with your project’s goals.
+
+* **Example**:
+
+  * “Building a task management app for teams with features like user auth, project creation, and task assignments.”
+
+  * **Next Prompt**: “Now create the UI for project creation.”
+
+Context allows Lovable to tailor outputs based on your project’s purpose.
+
+### **4. Iterate and Refine**
+
+Prompts are like code—they often need adjustments. Start with a draft, review, and refine.
+
+* **Example**:
+
+  * **Initial Prompt**: “Create a homepage with a header and sign-up button.”
+
+  * **Follow-Up**: “Make the header narrower and add a call-to-action button below the main text.”
+
+Each iteration brings you closer to the ideal result.
+
+### **5. Add Visuals to Guide the AI**
+
+Images or screenshots, paired with instructions, can clarify design-related prompts.
+
+* **Simple Visual Prompt**: “Create a UI similar to this screenshot.”
+
+* **Detailed Visual Prompt**: “Build a kanban board like this image, with drag-and-drop tasks. Use the Pangea home dnd npm package for drag-and-drop.”
+
+Adding visuals along with instructions captures both style and functionality.
+
+### **6. Avoid Ambiguity**
+
+Avoid vague terms; be specific to get accurate results.
+
+* **Unspecific**: “Create a form for user input.”
+
+* **Specific**: “Create a form with fields for name, email, and message, plus a submit button.”
+
+Clear prompts minimize misunderstandings.
+
+### **7. Add Constraints**
+
+Setting boundaries keeps Lovable focused on essential features.
+
+* **Example**:
+
+  * “Create a to-do app with a max of 3 tasks visible at a time, with add/edit/delete capabilities.”
+
+Constraints prevent Lovable from adding unnecessary complexity.
+
+### **8. Be Specific When Correcting Issues**
+
+Clear error descriptions lead to faster troubleshooting.
+
+* **Generic**: “Nothing works, fix it!”
+
+* **Detailed**: “Screen goes blank after adding a new item. Previously, I could see updates without issues.”
+
+Specific error prompts result in quicker solutions.
+
+### **9. Use Dev Console for Debugging**
+
+For advanced users, sharing console errors helps pinpoint issues.
+
+* **Example with Console Logs**:
+
+  * “App isn’t loading; screen is blank. Console error: `TypeError: Q9() is undefined at /assets/index.js:435:35112`.”
+
+Providing logs assists Lovable in delivering a targeted fix.
 
 ### Contextual prompting
 
@@ -31,8 +129,9 @@ Providing context can help Lovable understand the broader scope of your requirem
 
 <Note>
   **Setting the context**
-  
+
   Example prompt:
+
   ```
   We are building a project management tool that helps teams track their tasks.
   This tool should have features like:
@@ -58,23 +157,23 @@ Recently we added support where users can upload images with their prompts and a
 There are two main approaches here. The first one is a simple prompting approach.
 
 !!! example "Simple image upload prompting"
-    Users can upload an image and then add an example prompt like this:
+Users can upload an image and then add an example prompt like this:
 
-    ```
-    Create and implement a UI that looks as similar as possible to the image attached.
-    ```
+```
+Create and implement a UI that looks as similar as possible to the image attached.
+```
 
 Or, you can help AI better understand the content of the image and some additional specifics about it.
 
 !!! example "Image prompting with detailed instructions"
-    Excellent results can be achieved by adding specific instructions to the image uploaded. While the image is worth a thousand words, adding a couple of your own to describe desired functionality can go a long way - especially since interactions cannot always be obvious from a static image.
+Excellent results can be achieved by adding specific instructions to the image uploaded. While the image is worth a thousand words, adding a couple of your own to describe desired functionality can go a long way - especially since interactions cannot always be obvious from a static image.
 
-    ```
-    I want you to create the app as similar as possible to the one shown in this screenshot.
-    It's essentially a kanban clone.
-    It should have the ability to add new cards (tickets) in each column, have the ability to change the order of those tickets within a single column, and even move those cards between columns.
-    Feel free to use the Pangea home dnd npm package for drag-and-drop functionality.
-    ```
+```
+I want you to create the app as similar as possible to the one shown in this screenshot.
+It's essentially a kanban clone.
+It should have the ability to add new cards (tickets) in each column, have the ability to change the order of those tickets within a single column, and even move those cards between columns.
+Feel free to use the Pangea home dnd npm package for drag-and-drop functionality.
+```
 
 ### Avoid ambiguity
 
@@ -82,8 +181,9 @@ Ensure your prompts are clear and unambiguous. Avoid vague terms and be as speci
 
 <Warning>
   **Unspecific prompt**
-  
+
   Avoid unspecific and broad prompts
+
   ```
   Create a form for user input
   ```
@@ -91,8 +191,9 @@ Ensure your prompts are clear and unambiguous. Avoid vague terms and be as speci
 
 <Success>
   **Specific prompt**
-  
+
   Make your prompts more specific and concrete
+
   ```
   Create a form with fields for name, email, and message, and include a submit button.
   ```
@@ -104,10 +205,10 @@ Sometimes, adding constraints can help focus the AI on what's important and avoi
 
 !!! example "Adding constraints"
 
-    ```
-    Create a simple to-do app with a maximum of 3 tasks visible at a time.
-    Include the ability to add, edit, and delete tasks.
-    ```
+```
+Create a simple to-do app with a maximum of 3 tasks visible at a time.
+Include the ability to add, edit, and delete tasks.
+```
 
 ### Be specific when correcting issues
 
@@ -115,21 +216,21 @@ Issues will happen, sometimes builds will fail and the app that was generated wi
 Again, it's important to be specific.
 
 !!! failure "Generic prompt"
-    Avoid generic and very broad prompts
+Avoid generic and very broad prompts
 
-    ```
-    Nothing works, fix it!
-    ```
+```
+Nothing works, fix it!
+```
 
 Instead, be more specific.
 
 !!! success "More detailed prompt"
-    Make your prompts more detailed and specific
+Make your prompts more detailed and specific
 
-    ```
-    Now the screen has gone blank and previously I was able to make edits.
-    Can you check what happened?
-    ```
+```
+Now the screen has gone blank and previously I was able to make edits.
+Can you check what happened?
+```
 
 ### Using Dev console for reporting bugs
 
@@ -139,14 +240,14 @@ Typically, you'll open the <a href="https://developer.mozilla.org/en-US/docs/Lea
 
 !!! example "Using Dev tools and console logs"
 
-    ```
-    My app is not working anymore and the screen is blank.
-    Here's the copy/paste from Dev tools console, can you fix the issue?
+```
+My app is not working anymore and the screen is blank.
+Here's the copy/paste from Dev tools console, can you fix the issue?
 
-    Error occurred:
-    TypeError: Q9() is undefined  at https://example.gptengineer.run/assets/index-DWQbrtrQQj.js
-    : 435 : 39117 index-DWQbrtrQQj.js:435:35112
-    onerror https://example.gptengineer.run/assets/index-DWQbrtrQQj.js:435
-    ```
+Error occurred:
+TypeError: Q9() is undefined  at https://example.gptengineer.run/assets/index-DWQbrtrQQj.js
+: 435 : 39117 index-DWQbrtrQQj.js:435:35112
+onerror https://example.gptengineer.run/assets/index-DWQbrtrQQj.js:435
+```
 
 <br />
