@@ -47,21 +47,16 @@
       "group": "Introduction",
       "pages": [
       "introduction",
-      "user-guides/messaging-limits"]
+      "user-guides/messaging-limits"
+      ]
     },
     {
       "group": "User Guides",
       "pages": [
       "user-guides/getting-started", 
       "user-guides/quickstart",
-      "tips-tricks/prompting"]
-    },
-    {
-      "group": "Features",
-      "pages": [
-        "features/introduction",
-        "features/deploy",
-        "features/npm-packages"
+      "tips-tricks/prompting"
+      "features/deploy"
       ]
     },
     {
@@ -78,6 +73,7 @@
         "tips-tricks/using-images",
         "tips-tricks/using-videos",
         "tips-tricks/custom-fonts",
+        "features/npm-packages",
         "tips-tricks/multiple-users",
         "tips-tricks/custom-domain"
       ]
