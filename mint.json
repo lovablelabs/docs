@@ -49,7 +49,7 @@
     },
     {
       "group": "User Guides",
-      "pages": ["user-guides/getting-started", "user-guides/messaging-limits"]
+      "pages": ["user-guides/getting-started", "user-guides/quickstart", "user-guides/messaging-limits"]
     },
     {
       "group": "Features",
