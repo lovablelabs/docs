@@ -45,8 +45,9 @@
   "navigation": [
     {
       "group": "Introduction",
-      "pages": ["introduction",
-            "user-guides/messaging-limits"]
+      "pages": [
+      "introduction",
+      "user-guides/messaging-limits"]
     },
     {
       "group": "User Guides",
