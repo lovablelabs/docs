@@ -50,9 +50,10 @@
     },
     {
       "group": "User Guides",
-      "pages": ["user-guides/getting-started", 
+      "pages": [
+      "user-guides/getting-started", 
       "user-guides/quickstart",
-              "tips-tricks/prompting"]
+      "tips-tricks/prompting"]
     },
     {
       "group": "Features",
