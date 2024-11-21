@@ -2,15 +2,10 @@ name: Docs
 
 on:
   push:
-    branches: [main]
+    branches: [netlify-legacy-for-redirect]
     paths:
-      - '**'
-      - '.github/workflows/docs.yml'
-  pull_request:
-    branches: ["*"]
-    paths:
-      - '**'
-      - '.github/workflows/docs.yml'
+      - "**"
+      - ".github/workflows/docs.yml"
   workflow_dispatch: # Add this line to enable manual triggering
 
 jobs:
@@ -32,7 +27,7 @@ jobs:
       # We deploy from GitHub Actions instead of via Netlify builders,
       # because Netlify builders don't support Python 3.8+
       - name: Deploy to Netlify
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/netlify-legacy-for-redirect'
         uses: jsmrcaga/action-netlify-deploy@v2.1.0
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}

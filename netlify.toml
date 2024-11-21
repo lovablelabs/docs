@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://docs.gptengineer.app/*"
+  to = "https://docs.lovable.dev/:splat"
+  status = 301
+  force = true
