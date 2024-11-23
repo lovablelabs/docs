@@ -26,8 +26,7 @@
     "url": "https://lovable.dev"
   },
   "modeToggle": {
-    "default": "dark",
-    "isHidden": true
+    "default": "dark"
   },
   "anchors": [
     {
