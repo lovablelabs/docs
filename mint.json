@@ -25,9 +25,6 @@
     "name": "App",
     "url": "https://lovable.dev"
   },
-  "modeToggle": {
-    "default": "dark"
-  },
   "anchors": [
     {
       "name": "Community",
