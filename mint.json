@@ -46,17 +46,18 @@
     {
       "group": "Introduction",
       "pages": [
-      "introduction",
-      "user-guides/messaging-limits"
+        "introduction",
+        "user-guides/messaging-limits",
+        "faq"
       ]
     },
     {
       "group": "User Guides",
       "pages": [
-      "user-guides/getting-started", 
-      "user-guides/quickstart",
-      "tips-tricks/prompting",
-      "features/deploy"
+        "user-guides/getting-started",
+        "user-guides/quickstart",
+        "tips-tricks/prompting",
+        "features/deploy"
       ]
     },
     {
