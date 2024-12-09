@@ -75,6 +75,14 @@ In order to start building UI that uses your data stored in Supabase simply:
 
 3. Once you confirm that you have run the SQL snippet, then Lovable will update the UI to allow you to interact with the data stored in Supabase.
 
+## Storing secrets with Supabase
+
+If you are connected to Supabase, secret keys can be added to Lovable and will be stored safely in Supabase's edge function secret manager.
+
+These keys will be used when running Edge Functions and will let them connect to services as OpenAI, Stripe, Anthropic and more.
+
+
+
 ## Edge Functions
 
 You can now also use Edge Functions to add powerful backend features like:
