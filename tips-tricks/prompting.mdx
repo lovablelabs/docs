@@ -1,7 +1,4 @@
----
-title: 'Prompting in Lovable'
-description: 'Learn effective prompting strategies to make the most out of Lovable'
----
+##
 
 # Prompting in Lovable
 
@@ -9,7 +6,7 @@ To help you make the most out of Lovable, we compiled a list of prompting strate
 
 <Info>
   **What is prompting?**
-  
+
   Prompting is the common term used for textual, natural language inputs used to interact with Lovable. You can think of it as text messages containing instructions you are giving to Lovable.
 
   Since Lovable relies on large language models (LLMs), effective prompting strategies can have an impact on its efficiency.
@@ -19,7 +16,7 @@ To help you make the most out of Lovable, we compiled a list of prompting strate
 
 In Lovable, prompts are the main way of interacting with our app. Be it from the start and welcome screen where you can preselect some of the existing prompts, type your own, or in the builder user interface where you are interacting using a chat-based interface, prompts are the backbone of your interactions.
 
----
+***
 
 ## Prompting strategies
 
@@ -31,8 +28,9 @@ Providing context can help Lovable understand the broader scope of your requirem
 
 <Note>
   **Setting the context**
-  
+
   Example prompt:
+
   ```
   We are building a project management tool that helps teams track their tasks.
   This tool should have features like:
@@ -58,23 +56,23 @@ Recently we added support where users can upload images with their prompts and a
 There are two main approaches here. The first one is a simple prompting approach.
 
 !!! example "Simple image upload prompting"
-    Users can upload an image and then add an example prompt like this:
+Users can upload an image and then add an example prompt like this:
 
-    ```
-    Create and implement a UI that looks as similar as possible to the image attached.
-    ```
+```
+Create and implement a UI that looks as similar as possible to the image attached.
+```
 
 Or, you can help AI better understand the content of the image and some additional specifics about it.
 
 !!! example "Image prompting with detailed instructions"
-    Excellent results can be achieved by adding specific instructions to the image uploaded. While the image is worth a thousand words, adding a couple of your own to describe desired functionality can go a long way - especially since interactions cannot always be obvious from a static image.
+Excellent results can be achieved by adding specific instructions to the image uploaded. While the image is worth a thousand words, adding a couple of your own to describe desired functionality can go a long way - especially since interactions cannot always be obvious from a static image.
 
-    ```
-    I want you to create the app as similar as possible to the one shown in this screenshot.
-    It's essentially a kanban clone.
-    It should have the ability to add new cards (tickets) in each column, have the ability to change the order of those tickets within a single column, and even move those cards between columns.
-    Feel free to use the Pangea home dnd npm package for drag-and-drop functionality.
-    ```
+```
+I want you to create the app as similar as possible to the one shown in this screenshot.
+It's essentially a kanban clone.
+It should have the ability to add new cards (tickets) in each column, have the ability to change the order of those tickets within a single column, and even move those cards between columns.
+Feel free to use the Pangea home dnd npm package for drag-and-drop functionality.
+```
 
 ### Avoid ambiguity
 
@@ -82,8 +80,9 @@ Ensure your prompts are clear and unambiguous. Avoid vague terms and be as speci
 
 <Warning>
   **Unspecific prompt**
-  
+
   Avoid unspecific and broad prompts
+
   ```
   Create a form for user input
   ```
@@ -91,8 +90,9 @@ Ensure your prompts are clear and unambiguous. Avoid vague terms and be as speci
 
 <Success>
   **Specific prompt**
-  
+
   Make your prompts more specific and concrete
+
   ```
   Create a form with fields for name, email, and message, and include a submit button.
   ```
@@ -104,10 +104,12 @@ Sometimes, adding constraints can help focus the AI on what's important and avoi
 
 !!! example "Adding constraints"
 
-    ```
-    Create a simple to-do app with a maximum of 3 tasks visible at a time.
-    Include the ability to add, edit, and delete tasks.
-    ```
+```
+Create a simple to-do app with a maximum of 3 tasks visible at a time.
+Include the ability to add, edit, and delete tasks.
+```
+
+## Debugging and Issue Reporting
 
 ### Be specific when correcting issues
 
@@ -115,21 +117,21 @@ Issues will happen, sometimes builds will fail and the app that was generated wi
 Again, it's important to be specific.
 
 !!! failure "Generic prompt"
-    Avoid generic and very broad prompts
+Avoid generic and very broad prompts
 
-    ```
-    Nothing works, fix it!
-    ```
+```
+Nothing works, fix it!
+```
 
 Instead, be more specific.
 
 !!! success "More detailed prompt"
-    Make your prompts more detailed and specific
+Make your prompts more detailed and specific
 
-    ```
-    Now the screen has gone blank and previously I was able to make edits.
-    Can you check what happened?
-    ```
+```
+Now the screen has gone blank and previously I was able to make edits.
+Can you check what happened?
+```
 
 ### Using Dev console for reporting bugs
 
@@ -139,14 +141,55 @@ Typically, you'll open the <a href="https://developer.mozilla.org/en-US/docs/Lea
 
 !!! example "Using Dev tools and console logs"
 
-    ```
-    My app is not working anymore and the screen is blank.
-    Here's the copy/paste from Dev tools console, can you fix the issue?
+```
+My app is not working anymore and the screen is blank.
+Here's the copy/paste from Dev tools console, can you fix the issue?
 
-    Error occurred:
-    TypeError: Q9() is undefined  at https://example.lovable.app/assets/index-DWQbrtrQQj.js
-    : 435 : 39117 index-DWQbrtrQQj.js:435:35112
-    onerror https://example.lovable.app/assets/index-DWQbrtrQQj.js:435
-    ```
+Error occurred:
+TypeError: Q9() is undefined  at https://example.lovable.app/assets/index-DWQbrtrQQj.js
+: 435 : 39117 index-DWQbrtrQQj.js:435:35112
+onerror https://example.lovable.app/assets/index-DWQbrtrQQj.js:435
+```
 
 <br />
+
+## Lovable Prompts
+
+To enhance your productivity, we’ve added specific Lovable Prompts for common scenarios:
+
+### **Error Debugging**
+
+* **Minor Errors:**
+  "The same error persists. Do not make any code changes yet—investigate thoroughly to find the exact root cause. Analyze logs, flow, and dependencies deeply, and propose solutions only once you fully understand the issue."
+
+* **Persistent Errors:**
+  "The error is still unresolved. Stop and identify the exact root cause with 100% certainty—no guesses or assumptions. Analyze every aspect of the flow and dependencies in detail, and ensure full understanding before making any changes."
+
+* **Major Errors:**
+  "This is the final attempt to fix this issue. Stop all changes and methodically re-examine the entire flow—auth, Supabase, Stripe, state management, and redirects—from the ground up. Map out what’s breaking and why, test everything in isolation, and do not proceed without absolute certainty."
+
+* **Clean up Console Logs:**
+  "Carefully remove unnecessary console.log statements without affecting functionality or design. Review each log to ensure it’s non-critical, and document any that need alternative handling. Proceed methodically, testing thoroughly to confirm the app remains intact."
+
+### **Refactoring**
+
+* **Refactoring After Request Made by Lovable:**
+  "Refactor this file without changing the UI or functionality—everything must behave and look exactly the same. Focus on improving code structure and maintainability only. Document the current functionality, ensure testing is in place, and proceed incrementally with no risks or regressions."
+
+### **Design**
+
+* **UI Changes:**
+  "Make only visual updates—do not impact functionality or logic in any way. Fully understand how the current UI integrates with the app, ensuring logic, state management, and APIs remain untouched. Test thoroughly to confirm the app behaves exactly as before."
+
+* **Optimize for Mobile:**
+  "Optimize the app for mobile without changing its design or functionality. Analyze the layout and responsiveness to identify necessary adjustments for smaller screens and touch interactions. Outline a detailed plan before editing any code, and test thoroughly across devices to ensure the app behaves exactly as it does now."
+
+### **Editing Existing Features**
+
+* **Modifying an Existing Feature:**
+  "Make changes to the feature without impacting core functionality, other features, or flows. Analyze its behavior and dependencies to understand risks, and communicate any concerns before proceeding. Test thoroughly to confirm no regressions or unintended effects."
+
+* **Fragile Update:**
+  "This update is highly sensitive and demands extreme precision. Thoroughly analyze all dependencies and impacts before making changes, and test methodically to ensure nothing breaks. Avoid shortcuts or assumptions—pause and seek clarification if uncertain."
+
+By leveraging these strategies and **Lovable Prompts**, you can maximize efficiency and accuracy in building and refining your projects in Lovable.
