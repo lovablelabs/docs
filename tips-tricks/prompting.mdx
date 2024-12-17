@@ -1,4 +1,7 @@
-# Prompting in Lovable
+---
+title: Prompting with Lovable
+description: "List of prompting strategies and approaches."
+---
 
 To help you make the most out of Lovable, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members.
 
@@ -282,64 +285,72 @@ Review this GitHub project structure. Evaluate the flow, dependencies, and sugge
 
 <Note>
   Major Errors:
-```
-"This is the final attempt to fix this issue. Stop all changes and methodically re-examine the entire flow—auth, Supabase, Stripe, state management, and redirects—from the ground up. Map out what’s breaking and why, test everything in isolation, and do not proceed without absolute certainty."
-```
+
+  ```
+  "This is the final attempt to fix this issue. Stop all changes and methodically re-examine the entire flow—auth, Supabase, Stripe, state management, and redirects—from the ground up. Map out what’s breaking and why, test everything in isolation, and do not proceed without absolute certainty."
+  ```
 </Note>
 
 <Note>
   Clean up Console Logs:
-```
-"Carefully remove unnecessary console.log statements without affecting functionality or design. Review each log to ensure it’s non-critical, and document any that need alternative handling. Proceed methodically, testing thoroughly to confirm the app remains intact."
-```
+
+  ```
+  "Carefully remove unnecessary console.log statements without affecting functionality or design. Review each log to ensure it’s non-critical, and document any that need alternative handling. Proceed methodically, testing thoroughly to confirm the app remains intact."
+  ```
 </Note>
 
 ### **Refactoring**
 
 <Note>
   Refactoring After Request Made by Lovable:
-```
-"Refactor this file without changing the UI or functionality—everything must behave and look exactly the same. Focus on improving code structure and maintainability only. Document the current functionality, ensure testing is in place, and proceed incrementally with no risks or regressions."
-```
+
+  ```
+  "Refactor this file without changing the UI or functionality—everything must behave and look exactly the same. Focus on improving code structure and maintainability only. Document the current functionality, ensure testing is in place, and proceed incrementally with no risks or regressions."
+  ```
 </Note>
 
 ### **Design**
 
 <Note>
   UI Changes:
-```
-"Make only visual updates—do not impact functionality or logic in any way. Fully understand how the current UI integrates with the app, ensuring logic, state management, and APIs remain untouched. Test thoroughly to confirm the app behaves exactly as before."
-```
+
+  ```
+  "Make only visual updates—do not impact functionality or logic in any way. Fully understand how the current UI integrates with the app, ensuring logic, state management, and APIs remain untouched. Test thoroughly to confirm the app behaves exactly as before."
+  ```
 </Note>
 
 <Note>
   Optimize for Mobile:
-```
-"Optimize the app for mobile without changing its design or functionality. Analyze the layout and responsiveness to identify necessary adjustments for smaller screens and touch interactions. Outline a detailed plan before editing any code, and test thoroughly across devices to ensure the app behaves exactly as it does now."
-```
+
+  ```
+  "Optimize the app for mobile without changing its design or functionality. Analyze the layout and responsiveness to identify necessary adjustments for smaller screens and touch interactions. Outline a detailed plan before editing any code, and test thoroughly across devices to ensure the app behaves exactly as it does now."
+  ```
 </Note>
 
 <Note>
   Modifying an Existing Feature:
-```
-"Make changes to the feature without impacting core functionality, other features, or flows. Analyze its behavior and dependencies to understand risks, and communicate any concerns before proceeding. Test thoroughly to confirm no regressions or unintended effects."
-```
+
+  ```
+  "Make changes to the feature without impacting core functionality, other features, or flows. Analyze its behavior and dependencies to understand risks, and communicate any concerns before proceeding. Test thoroughly to confirm no regressions or unintended effects."
+  ```
 </Note>
 
 <Note>
   Fragile Update:
-```
-"This update is highly sensitive and demands extreme precision. Thoroughly analyze all dependencies and impacts before making changes, and test methodically to ensure nothing breaks. Avoid shortcuts or assumptions—pause and seek clarification if uncertain."
-```
+
+  ```
+  "This update is highly sensitive and demands extreme precision. Thoroughly analyze all dependencies and impacts before making changes, and test methodically to ensure nothing breaks. Avoid shortcuts or assumptions—pause and seek clarification if uncertain."
+  ```
 </Note>
 
 ### **Pre-Implementation Prompts**
 
 <Note>
   Before implementing significant changes:
-```
-Plan out the API flow for this feature. Include endpoints, parameters, and how it connects with the database.
-```
+
+  ```
+  Plan out the API flow for this feature. Include endpoints, parameters, and how it connects with the database.
+  ```
 </Note>
 
 ### **"Chat-Only Mode" Trick**
@@ -347,11 +358,11 @@ Plan out the API flow for this feature. Include endpoints, parameters, and how i
 When brainstorming without making code changes:
 
 <Note>
-```
-"I’m not sure about this feature. Should I refactor it?"
-Wrap comments in quotes like:
-"Refactor this? What’s the best approach?"
-```
+  ```
+  "I’m not sure about this feature. Should I refactor it?"
+  Wrap comments in quotes like:
+  "Refactor this? What’s the best approach?"
+  ```
 </Note>
 
 This prevents accidental code execution, allowing for ideation.
