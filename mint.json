@@ -29,7 +29,7 @@
     {
       "name": "Community",
       "icon": "discord",
-      "url": "https://discord.com/channels/1119885301872070706/1280461670979993613"
+      "url": "https://discord.gg/cdJWaqPBgg"
     },
     {
       "name": "Changelog",
@@ -45,11 +45,7 @@
   "navigation": [
     {
       "group": "Introduction",
-      "pages": [
-        "introduction",
-        "user-guides/messaging-limits",
-        "faq"
-      ]
+      "pages": ["introduction", "user-guides/messaging-limits", "faq"]
     },
     {
       "group": "User Guides",
