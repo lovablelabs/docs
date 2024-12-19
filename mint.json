@@ -36,11 +36,6 @@
       "icon": "newspaper",
       "url": "https://feedback.lovable.dev/changelog"
     },
-    {
-      "name": "News",
-      "icon": "newspaper",
-      "url": "https://lovable.dev/news"
-    }
   ],
   "navigation": [
     {
