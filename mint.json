@@ -35,6 +35,11 @@
       "name": "Changelog",
       "icon": "newspaper",
       "url": "https://feedback.lovable.dev/changelog"
+    },
+    {
+      "name": "Request Feature",
+      "icon": "rocket",
+      "url": "https://feedback.lovable.dev/"
     }
   ],
   "navigation": [
