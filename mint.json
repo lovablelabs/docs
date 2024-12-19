@@ -35,7 +35,7 @@
       "name": "Changelog",
       "icon": "newspaper",
       "url": "https://feedback.lovable.dev/changelog"
-    },
+    }
   ],
   "navigation": [
     {
@@ -48,7 +48,7 @@
         "user-guides/getting-started",
         "user-guides/quickstart",
         "tips-tricks/prompting",
-        "features/deploy"
+        "features/deploy",
         "user-guides/support-policy"
       ]
     },
