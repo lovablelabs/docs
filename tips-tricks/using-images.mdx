@@ -1,15 +1,17 @@
 ---
 title: 'Using images in Lovable'
 description: 'Learn how to add images to your Lovable projects'
+icon: 'frame'
 ---
 
 To add images you can do one of two things:
 
 1. Upload the image to the chat: Lovable will automatically use it in the project if relevant.
-1. Upload it to the github repository manually, outside of the Lovable UI
-2. Share an external image URL in the chat.
-    a. **Note**: This will not work if the server hosting the URL has chosen to block external websites from using it with "CORS"
 
+2. Upload it to the github repository manually, outside of the Lovable UI
+
+3. Share an external image URL in the chat.
+   a. **Note**: This will not work if the server hosting the URL has chosen to block external websites from using it with "CORS"
 
 Below, we’ll walk you through the last two methods.
 
@@ -19,9 +21,9 @@ One way to add images to your project is by referencing an image from an externa
 
 Here’s how to prompt Lovable to use an external image:
 
-- First, find the image you want to use. For example, you can visit a site like Unsplash, select an image, and copy its URL.
-- In your project prompt, simply tell Lovable to use that image by specifying the URL. For example:
+* First, find the image you want to use. For example, you can visit a site like Unsplash, select an image, and copy its URL.
 
+* In your project prompt, simply tell Lovable to use that image by specifying the URL. For example:
 
 ```
 Use the image from this URL 
@@ -30,7 +32,7 @@ for the hero section image.
 
 ```
 
----
+***
 
 ## Using images from your GitHub `public` directory
 
@@ -38,24 +40,20 @@ Another method to add images to your Lovable project is by using images uploaded
 
 **Connect your GitHub repository** - Ensure your project is connected to your GitHub repo. [Here's how to connect your repo](/features/git-integration).
 
-
 **Locate the public folder** - Inside your GitHub repository, navigate to the `public` directory. This folder is typically used for hosting assets like images that can be referenced in your project.
 Click on **Add file** and then from a dropdown, select **Upload files** option.
 
-
 ![Selecting files for upload](/assets/using-images-github-upload.png)
-
 
 **Upload an image** - The next step is to transfer your image to your repo
 
-- Drag and drop the image into the public folder, or 
+* Drag and drop the image into the public folder, or
 
-- Click on the **"choose your files"** link to browse and select the image file.
+* Click on the **"choose your files"** link to browse and select the image file.
 
 ![Selecting files for upload](/assets/using-images-github-commiting.png)
 
 **Commit the changes** - After selecting your image, write a simple commit message (e.g., "Adding image files to be used in the app") and click **"Commit changes"** to save the file to your repo.
-
 
 **Get the image path** - Once the file is uploaded, select it and then click on the copy icon next to the file name to copy the image’s path. This path will be used in your Lovable prompt.
 
@@ -68,18 +66,19 @@ Add an additional image to the hero section.
 This time, use this one from my local repo: public/c-64-close-up.jpg.jpeg
 
 ```
-    Be sure to use your image name and path you copied in the previous step.
 
+Be sure to use your image name and path you copied in the previous step.
 
 <Warning>
-Uploading large images to your GitHub repo can cause it to grow in size, which can affect Lovable performance (longer repo cloning times, slower startup of previews/sandbox).
+  Uploading large images to your GitHub repo can cause it to grow in size, which can affect Lovable performance (longer repo cloning times, slower startup of previews/sandbox).
 
-Try to optimize your images before uploading them to your `public` folder by compressing them and using dimensions that are relevant to your use case. For example, don't use a full HD-sized image if it will only be displayed as a small icon.
+  Try to optimize your images before uploading them to your `public` folder by compressing them and using dimensions that are relevant to your use case. For example, don't use a full HD-sized image if it will only be displayed as a small icon.
 </Warning>
 
 ## Explore more and learn from examples
+
 To help you better understand how to integrate images using the methods outlined above, we have a project you can explore: [Lovable Project Example](https://gptengineer.app/projects/e823fedf-238d-4313-86a8-1fd4bfc2a9ba). In this project, you can see the actual prompts and how each method works in practice.
 
-Additionally, here's a public GitHub repository that includes the commits, uploaded images, and full implementation details. You can view the repository here: [GitHub: Adding Images Example](https://github.com/viborc/adding-images-example). 
+Additionally, here's a public GitHub repository that includes the commits, uploaded images, and full implementation details. You can view the repository here: [GitHub: Adding Images Example](https://github.com/viborc/adding-images-example).
 
 Feel free to explore the project and repository to deepen your understanding and improve your implementation skills.
