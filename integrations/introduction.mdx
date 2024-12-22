@@ -47,4 +47,66 @@ All other callable APIs can still be integrated but will often require more cont
 
 You can request new integrations [here](https://lovable.featurebase.app/?b=675883fb92175ba92d835f92).
 
+## Common Issues and Troubleshooting
+
+### Connection and Authentication Issues
+
+If you encounter difficulties connecting or authenticating with integrations, try the following:
+
+1. Double-check API credentials for accuracy.
+
+2. Ensure the required scopes or permissions are enabled.
+
+3. Verify network connectivity, as firewalls or proxies may block connections.
+
+Refer to [GitHub Integration](https://docs.lovable.dev/integrations/git-integration) or [Supabase Integration](https://docs.lovable.dev/integrations/supabase) for detailed setup instructions.
+
+### API Credential Management
+
+Lovable enables secure storage of API keys within your project settings (accessible from the **Settings** sidebar). To maintain security:
+
+* Store your keys in this designated secure location.
+
+* Avoid sharing them with others or using them in prompts unless absolutely necessary.
+
+This ensures your credentials are protected and reduces the risk of misuse.
+
+### Challenges for Non-Developers
+
+If you’re not a developer, integrating APIs might feel overwhelming. Lovable simplifies this with its in-chat configuration. For unsupported APIs, join the [Lovable community on Discord](https://discord.gg/jstGvUnFnm) for help or request new integrations [here](https://feedback.lovable.dev/).
+
+### Edge Function and Configuration Errors
+
+Errors in edge functions can disrupt workflows. To resolve these issues:
+
+1. Review edge function logs to identify and fix errors.
+
+2. Ensure all required dependencies are installed.
+
+3. Confirm that environment variables are correctly configured.
+
+For more information, refer to [Supabase’s edge function examples](https://supabase.com/docs/guides/functions) for best practices.
+
+### Session and Data Management
+
+Managing sessions and data effectively is critical for smooth app performance. Follow these tips:
+
+* Use [Supabase](https://docs.lovable.dev/integrations/supabase)’s real-time features (or similar services) for seamless data syncing.
+
+* Ask Lovable to implement strong authentication and token refresh mechanisms for session management.
+
+* Regularly verify that your database schema is up-to-date to prevent potential data integrity issues.
+
+### Repository and Account Management
+
+For smooth repository management and account syncing:
+
+* Verify that [GitHub](https://docs.lovable.dev/integrations/git-integration) repository access permissions are correctly configured.
+
+* Use Lovable’s **built-in rollback feature** for undoing accidental changes, as your projects are automatically backed up.
+
+This ensures safe and reliable version control for your projects.
+
+
+
 [](https://lovable.dev/integrations/supabase)
