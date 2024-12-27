@@ -50,6 +50,10 @@ Providing context can help Lovable understand the broader scope of your requirem
   ```
   I need a CRM app with Supabase integration and a secure auth flow. Start by setting up the backend.
   ```
+  **Another example:**
+  ```
+  We are developing an e-commerce platform focusing on eco-friendly products. Generate a product listing page with filters for category and price.
+  ```
 </Note>
 
 ### Incremental prompting
@@ -72,6 +76,11 @@ Our experience has shown that making incremental, smaller changes will yield bet
   2. Add a secure auth flow with user roles.
 
   3. Integrate Google Sheets to export records.
+  ```
+  **Another example:**
+  ```
+  1. Set up a database schema for user information.
+  2. Develop an API endpoint to retrieve user data.
   ```
 </Note>
 
@@ -109,6 +118,16 @@ Or, you can help AI better understand the content of the image and some addition
   ```
 </Note>
 
+### Feedback integration
+
+Review the AI’s output and provide specific feedback for refinements.
+
+<Note> 
+  ```
+  The login form looks good, but please add validation for the email field to ensure it contains a valid email address.
+  ```
+</Note>
+
 ### Avoid ambiguity
 
 Ensure your prompts are clear and unambiguous. Avoid vague terms and be as specific as possible about what you need.
@@ -124,6 +143,10 @@ Ensure your prompts are clear and unambiguous. Avoid vague terms and be as speci
 
   ```
   Refactor the app to clean up unused components and improve performance, without changing UI or functionality.
+  ```
+  **Another example:**
+  ```
+  Create a user registration form with fields for username, email, and password.
   ```
 </Note>
 
@@ -164,6 +187,62 @@ Sometimes, adding constraints can help focus the AI on what's important and avoi
   ```
 </Note>
 
+## Advanced Prompting Strategies
+
+### Emphasizing Accessibility
+
+Encourage the generation of code that adheres to accessibility standards and modern best practices. This ensures that the output is not only functional but also user-friendly and compliant with accessibility guidelines.
+
+<Note> 
+  ```
+  Generate a React component for a login form that follows accessibility best practices, including appropriate ARIA labels and keyboard navigation support.
+  ```
+</Note>
+
+### Predefined Components and Libraries
+
+Specify the use of certain UI libraries or components to maintain consistency and efficiency in your project.  This directs the AI to utilize specific tools, ensuring compatibility and a uniform design language across your application.
+
+<Note> 
+  ```
+  Create a responsive navigation bar using the shadcn/ui library with Tailwind CSS for styling.
+  ```
+</Note>
+
+### Implementing Chain of Thought (CoT) Prompts
+
+For complex tasks, encourage the AI to process the problem step by step before providing a solution. This methodical approach helps in breaking down intricate tasks, leading to more accurate and comprehensive solutions.
+
+<Note> 
+  ```
+  Let's think through the process of setting up a secure authentication system:
+  1. What are the necessary components?
+  2. How should they interact?
+  3. Provide the implementation code.
+  ```
+</Note>
+
+### Multilingual Prompting
+
+When working in a multilingual environment, specify the desired language for both code comments and documentation. This ensures that the generated content is accessible to team members who speak different languages, enhancing collaboration.
+
+<Note> 
+  ```
+  Generate a Python script that calculates the Fibonacci sequence. Provide comments and documentation in French.
+  ```
+</Note>
+
+### Defining Project Structure and File Management
+
+Clearly outline the project structure, including file names and paths, to ensure organized and maintainable code generation. This provides clarity on where new components should reside within the project, maintaining a coherent file organization.
+
+<Note> 
+  ```
+Create a new React component named 'UserProfile' and save it as 'components/user-profile.tsx'. Ensure it includes a profile picture, username, and bio section.
+```
+</Note>
+
+
 ## Debugging and Issue Reporting
 
 ### Debugging Instructions
@@ -176,15 +255,11 @@ Follow these steps for systematic debugging:
 
 * **Reporting**: Confirm each completed task with clear, verifiable results.
 
-* **DOM Validation**: Ensure changes render in the DOM.
-
-  * Provide DOM tags or feedback for verification.
+* **DOM Validation**: Ensure changes render in the DOM. Provide DOM tags or feedback for verification.
 
 * **Qualifying Questions**: Clarify any uncertainties before proceeding.
 
-* **Error Handling and Logging**: Use robust error handling and verbose `console.log`.
-
-  * *Note*: Never remove logs until production.
+* **Error Handling and Logging**: Use robust error handling and verbose `console.log`. Never remove logs until production.
 
 * **Debug Tools Management**: Implement a global switch to disable tools in production.
 
@@ -316,7 +391,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   Minor Errors:
 
   ```
-  "The same error persists. Do not make any code changes yet—investigate thoroughly to find the exact root cause. Analyze logs, flow, and dependencies deeply, and propose solutions only once you fully understand the issue."
+  The same error persists. Do not make any code changes yet—investigate thoroughly to find the exact root cause. Analyze logs, flow, and dependencies deeply, and propose solutions only once you fully understand the issue.
   ```
 </Note>
 
@@ -324,7 +399,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   Persistent Errors:
 
   ```
-  "The error is still unresolved. Stop and identify the exact root cause with 100% certainty—no guesses or assumptions. Analyze every aspect of the flow and dependencies in detail, and ensure full understanding before making any changes."
+  The error is still unresolved. Stop and identify the exact root cause with 100% certainty—no guesses or assumptions. Analyze every aspect of the flow and dependencies in detail, and ensure full understanding before making any changes.
   ```
 </Note>
 
@@ -332,7 +407,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   Major Errors:
 
   ```
-  "This is the final attempt to fix this issue. Stop all changes and methodically re-examine the entire flow—auth, Supabase, Stripe, state management, and redirects—from the ground up. Map out what’s breaking and why, test everything in isolation, and do not proceed without absolute certainty."
+  This is the final attempt to fix this issue. Stop all changes and methodically re-examine the entire flow—auth, Supabase, Stripe, state management, and redirects—from the ground up. Map out what’s breaking and why, test everything in isolation, and do not proceed without absolute certainty.
   ```
 </Note>
 
@@ -340,7 +415,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   Clean up Console Logs:
 
   ```
-  "Carefully remove unnecessary console.log statements without affecting functionality or design. Review each log to ensure it’s non-critical, and document any that need alternative handling. Proceed methodically, testing thoroughly to confirm the app remains intact."
+  Carefully remove unnecessary console.log statements without affecting functionality or design. Review each log to ensure it’s non-critical, and document any that need alternative handling. Proceed methodically, testing thoroughly to confirm the app remains intact.
   ```
 </Note>
 
@@ -350,7 +425,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   Refactoring After Request Made by Lovable:
 
   ```
-  "Refactor this file without changing the UI or functionality—everything must behave and look exactly the same. Focus on improving code structure and maintainability only. Document the current functionality, ensure testing is in place, and proceed incrementally with no risks or regressions."
+  Refactor this file without changing the UI or functionality—everything must behave and look exactly the same. Focus on improving code structure and maintainability only. Document the current functionality, ensure testing is in place, and proceed incrementally with no risks or regressions.
   ```
 </Note>
 
@@ -360,7 +435,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   UI Changes:
 
   ```
-  "Make only visual updates—do not impact functionality or logic in any way. Fully understand how the current UI integrates with the app, ensuring logic, state management, and APIs remain untouched. Test thoroughly to confirm the app behaves exactly as before."
+  Make only visual updates—do not impact functionality or logic in any way. Fully understand how the current UI integrates with the app, ensuring logic, state management, and APIs remain untouched. Test thoroughly to confirm the app behaves exactly as before.
   ```
 </Note>
 
@@ -368,7 +443,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   Optimize for Mobile:
 
   ```
-  "Optimize the app for mobile without changing its design or functionality. Analyze the layout and responsiveness to identify necessary adjustments for smaller screens and touch interactions. Outline a detailed plan before editing any code, and test thoroughly across devices to ensure the app behaves exactly as it does now."
+  Optimize the app for mobile without changing its design or functionality. Analyze the layout and responsiveness to identify necessary adjustments for smaller screens and touch interactions. Outline a detailed plan before editing any code, and test thoroughly across devices to ensure the app behaves exactly as it does now.
   ```
 </Note>
 
@@ -376,7 +451,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   Modifying an Existing Feature:
 
   ```
-  "Make changes to the feature without impacting core functionality, other features, or flows. Analyze its behavior and dependencies to understand risks, and communicate any concerns before proceeding. Test thoroughly to confirm no regressions or unintended effects."
+  Make changes to the feature without impacting core functionality, other features, or flows. Analyze its behavior and dependencies to understand risks, and communicate any concerns before proceeding. Test thoroughly to confirm no regressions or unintended effects.
   ```
 </Note>
 
@@ -384,7 +459,7 @@ To enhance your productivity, we’ve added specific Lovable Prompts for common 
   Fragile Update:
 
   ```
-  "This update is highly sensitive and demands extreme precision. Thoroughly analyze all dependencies and impacts before making changes, and test methodically to ensure nothing breaks. Avoid shortcuts or assumptions—pause and seek clarification if uncertain."
+  This update is highly sensitive and demands extreme precision. Thoroughly analyze all dependencies and impacts before making changes, and test methodically to ensure nothing breaks. Avoid shortcuts or assumptions—pause and seek clarification if uncertain.
   ```
 </Note>
 
