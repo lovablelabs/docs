@@ -18,7 +18,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:support@lovable.dev"
+      "url": "https://lovable.dev/support"
     }
   ],
   "topbarCtaButton": {
