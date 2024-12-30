@@ -1,32 +1,42 @@
 ---
-title: 'Welcome to Lovable Academy'
-description: 'Build real web apps fast using natural language with Lovable'
+title: "Welcome to Lovable Academy"
+description: "Build real web apps fast using natural language with Lovable"
 ---
 
-import { discordInviteLink, DiscordLink } from '/snippets/discord.mdx'
+import { discordInviteLink, DiscordLink } from "/snippets/discord.mdx";
 
+export const SupabaseLogo = () => (
+  <img
+    title="Requires Supabase"
+    height="16"
+    width="16"
+    style={{ display: "inline-block", margin: "0 4px" }}
+    noZoom
+    src="../assets/supabase-logo-icon.png"
+  />
+);
 
 ## Product Capabilities
 
 **Lovable** currently excels at building front-end applications. However, pairing Lovable with other tools will allow you to build full-stack web apps.
 
-| Capability     | Description                      | Maturity Level            |
-| -------------- | -------------------------------- | ------------------------- |
-| Frontend / UI  | Build user interfaces & frontend | 🟢 Mature                 |
-| Persistence    | Store and retrieve data          | 🟡 Requires some patience |
-| Authentication | Handle user login and accounts   | 🟡 Requires some patience |
+| Capability                      | Description                                 | Maturity Level       |
+| ------------------------------- | ------------------------------------------- | -------------------- |
+| Frontend / UI                   | Build user interfaces & frontend            | 🟢 Mature            |
+| Backend / API <SupabaseLogo />  | Write backend logic                         | 🟡 Requires patience |
+| Database <SupabaseLogo />       | Store and retrieve persisted data using SQL | 🟡 Requires patience |
+| Authentication <SupabaseLogo /> | Handle user login and accounts              | 🟡 Requires patience |
 
 ## Quick Start
 
 <CardGroup cols={1}>
   <Card title="Getting Started" icon="book" href="/user-guides/quickstart">
-    Check out our Getting Started guide for a simple introduction to key features and concepts
+    Check out our Getting Started guide for a simple introduction to key
+    features and concepts
   </Card>
-
   <Card title="Integrations" icon="link" href="/integrations">
     Go beyond default features by integrating with third parties like Supabase
   </Card>
-
   <Card title="Tips and Tricks" icon="lightbulb" href="/tips-tricks">
     Learn effective prompting strategies and get the most out of Lovable
   </Card>
