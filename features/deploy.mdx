@@ -60,3 +60,31 @@ The preview link is generated instantly and can be shared with team members for 
 <Frame>
   <img src="/assets/share-preview.png" alt="Sharing your work-in-progress" />
 </Frame>
+
+## Replace the image that appears when you share your project
+
+To replace the image that appears when you share your project there are two approaches. The first one involves simply prompting the AI to do this, whilst attaching the desired image to the message. 
+
+<Note>
+  **Example prompt**
+
+  You can upload the image directly into the prompt, by for example copy and pasting it. This ensures the system recognizes the correct image without needing an external link.
+
+  ```
+  Can you change the image that appears when the site is shared on social media platforms to the one above?
+  ```
+</Note>
+
+The second one requires that you connect your project to Github and then update the corresponding file. 
+
+1. Click on **Edit code** in your project(top right)
+
+2. Connect your project to GitHub if you haven’t already. You can follow our [guide to connect your project](/integrations/git-integration.mdx). 
+
+3. Open the repository for your project, navigate to the `public` folder, and locate the file `og-image.png`.
+
+4. Delete the `og-image.png` file and upload your desired image in its place.
+
+5. Rename your new image to `og-image.png`.
+
+6. Redeploy your project to apply the changes.
