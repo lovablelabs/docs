@@ -13,10 +13,16 @@ You can host on Netlify for free with a custom domain.
 
 The steps are:
 
-1. **Create a Github repository**: Open your project in Lovable and click GitHub then "create repository" if you haven't already done so.
-2. Grab the URL of your Github repository
-3. Go to: https://app.netlify.com/start/deploy?repository=REPLACE_WITH_GITHUB_REPOSITORY_URL and follow instructions
-4. Configure a custom domain for your Netlify site, instructions [here](https://docs.netlify.com/domains-https/custom-domains/#assign-a-domain-to-a-production-site)
+1. Ensure that your project is successfully transferred to GitHub. In the Lovable editor, click on "Transfer to GitHub" located in the top right corner.
+
+2. Head over to Netlify and log in using your GitHub credentials.
+
+3. In Netlify, you'll need to follow these simple steps: Click on "Import from Git" > Authorize Netlify to access your GitHub repositories > Select your Lovable repository from the provided list > Click "Deploy"
+
+4. Let's proceed to configure your custom domain directly within Netlify: Go to "Domain Management" > Click "Add a domain" > Enter your domain name > Click "Verify" > Follow the DNS configuration prompts
+
+5. Your Lovable app will automatically redeploy to Netlify whenever you make changes in Lovable.
+
 
 <Note>You will need to bring an existing domain or purchase one.</Note>
 
