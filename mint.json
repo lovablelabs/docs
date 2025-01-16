@@ -18,7 +18,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "https://lovable.dev/support"
+      "url": "mailto:support@lovable.dev"
     }
   ],
   "topbarCtaButton": {
@@ -29,7 +29,7 @@
     {
       "name": "Community",
       "icon": "discord",
-      "url": "https://discord.gg/cdJWaqPBgg"
+      "url": "https://discord.gg/rPw2rSFE2K"
     },
     {
       "name": "Changelog",
@@ -40,6 +40,11 @@
       "name": "Request Feature",
       "icon": "rocket",
       "url": "https://feedback.lovable.dev/"
+    },
+    {
+      "name": "Tutorials",
+      "icon": "film",
+      "url": "https://www.youtube.com/@lovable-labs/"
     }
   ],
   "navigation": [
@@ -72,7 +77,6 @@
         "tips-tricks/custom-fonts",
         "features/npm-packages",
         "tips-tricks/multiple-users",
-        "tips-tricks/troubleshooting",
         "tips-tricks/custom-domain"
       ]
     }
