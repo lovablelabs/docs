@@ -1,68 +1,205 @@
 ---
 title: "Troubleshooting Guide"
 description: "Actionable steps to resolve issues in your development lifecycle."
-icon: 'toolbox'
+icon: "toolbox"
 ---
 
-When using Lovable, you may occasionally encounter technical issues. Below are some common problems, along with recommended actions to troubleshoot and resolve them.
+When using Lovable, you may occasionally encounter technical issues. Below are common problems and recommended actions to troubleshoot and resolve them.
 
 ## Persistent "Fix Error" Loops
 
-You may experience repeated failures where errors seem to persist despite multiple attempts to fix them.
+**Problem:** Repeated failures where errors persist despite multiple attempts to fix them.
 
-- **Approach with Creativity:** Adjust your input and prompts to help the AI understand the changes you’re trying to make.
-- **Use Chat Mode:** Engage the AI in chat mode for step-by-step guidance and tailored suggestions to break the loop.
+**Solution:**
+
+* Approach with creativity: Adjust your input and prompts to help the AI understand the changes you’re trying to make.
+
+* Use Chat Mode: Engage the AI in chat mode for step-by-step guidance and tailored suggestions to break the loop.
 
 ## Setting Environment Variables
 
-Issues may arise when configuring environment variables, particularly when working with Supabase Edge Functions and Secrets.
+**Problem:** Issues may arise when configuring environment variables, particularly when working with Supabase Edge Functions and Secrets.
 
-- Double-check the environment variable syntax and names.
-- Refer to the [Supabase](https://supabase.com/docs) / [Edge Functions](https://supabase.com/dashboard/project/sdkziisptnetvtxvlysg/functions) / [Secrets](https://supabase.com/docs/guides/functions/secrets) documentation for detailed instructions.
+**Solution:**
+
+* Double-check the environment variable syntax and names.
+
+* Refer to the [Supabase](https://supabase.com/docs) / [Edge Functions](https://supabase.com/dashboard/project/sdkziisptnetvtxvlysg/functions) / [Secrets](https://supabase.com/docs/guides/functions/secrets) documentation for detailed instructions.
 
 ## HTTP Fetch Failures
 
-Errors during HTTP fetch requests can disrupt authentication or degrade app performance.
+**Problem:** Errors during HTTP fetch requests can disrupt authentication or degrade app performance.
 
-- Copy and paste the exact error message into the chat to get context-specific advice from the AI.
+**Solution:** Copy and paste the exact error message into the chat to get context-specific advice from the AI.
 
 ## Freezing or Loading Failures
 
-Settings or editor pages may freeze, fail to load, or not reflect the latest updates.
+**Problem:** Settings or editor pages freeze, fail to load, or do not reflect the latest updates.
 
-- **Action:** Report this as a bug by creating a ticket [via our feedback portal](https://lovable.dev/support).
+**Solution:** Report this as a bug by creating a ticket [via our feedback portal](https://lovable.dev/support).
 
 ## Rollback Feature Fails
 
-You are unable to revert to a previous state of their project.
+**Problem:** Unable to revert to a previous state of the project.
 
-- **Action:** Submit a bug report [via our feedback portal](https://lovable.dev/support).
+**Solution:** Submit a bug report [via our feedback portal](https://lovable.dev/support).
 
 ## Cloud Deployment Issues
 
-Apps fail to redeploy or get stuck in a spinning loop during deployment.
+**Problem:** Apps fail to redeploy or get stuck in a spinning loop during deployment.
 
-- **Action:** File a bug report [via our feedback portal](https://lovable.dev/support).
+**Solution:** File a bug report [via our feedback portal](https://lovable.dev/support).
+
+## AI-Related Errors
+
+**Problem:** The AI is not resolving, hallucinating, or breaking things.
+**Solution:**
+
+* Revert to a stable version of your application.
+
+* For better results in future prompts:
+
+  * Be specific and clear. Refer to our [Prompting Handbook]() for guidance.
+
+  * Use the select tool to precisely edit content.
+
+  * Provide context by adding relevant documentation or a knowledge base.
+
+## Refactor Broke Everything in My Code
+
+**Problem:** Code refactor caused major issues.
+
+**Solution:**
+
+* Revert to a stable version of your application.
+
+* Make smaller, incremental changes and refine your prompts for clarity.
+
+* Check your codebase history (e.g., GitHub), copy the error message, and use debugging tools like ChatGPT.
+
+## AI Is Not Responding
+
+**Problem:** The AI is unresponsive to your changes.
+
+**Solution:** Disconnect and reconnect Supabase, as this is likely related to connection issues.
+
+## AI Not Making Changes
+
+**Problem:** The AI is not implementing expected edits.
+
+**Solution:**
+
+* Ensure your prompts are specific (use the select tool if needed).
+
+* If the issue persists, manually edit the code in GitHub or VSCode.
+
+## Preview Shows a Blank Screen
+
+**Problem:** Preview displays a white or blank screen.
+
+**Solution:** Revert to a stable version and check the console logs for relevant error messages.
 
 ## Taking Your Projects Offline
 
 You may encounter problems when attempting to unpublish or deactivate your projects.
 
-- **Not Supported:** This feature is not currently available.
-- **Action:** Upvote this feature on our [Feature Request Board](https://lovable.featurebase.app/).
+* **Not Supported:** This feature is not currently available.
+
+* **Action:** Upvote this feature on our [Feature Request Board](https://lovable.featurebase.app/).
+
+## Being Kicked Out of a Project
+
+**Problem:** Unexpected logout or access loss.
+
+**Solution:** Contact our support engineers directly for assistance.
+
+## Loading Errors
+
+**Problem:** Loading issues or downtime.
+
+**Solution:** Contact our support engineers, as this is likely a temporary issue.
+
+## Error: Stream Interrupted
+
+**Problem:** Stream interrupted due to invalid Supabase credentials.
+
+**Solution:** Check and update your Supabase credentials in the settings.
+
+## Edits in Lovable Not Getting Removed
+
+**Problem:** Unable to remove edits in Lovable.
+
+**Solution:**
+
+* **Free users:** This is a limitation of the free plan.
+
+* **Paid customers:** Update your project settings to resolve this.
+
+## Edge Function Errors
+
+**Problem:** Edge function errors occur.
+
+**Solution:** Supabase logs integration is coming soon. Meanwhile, check the edge function logs and paste the error into Lovable's AI code editor for debugging.
+
+## Stripe Errors
+
+**Problem:** Issues with payment processing.
+
+**Solution:** Try a different bank or card. If the issue persists, contact support.
+
+## Unable to Push to GitHub
+
+**Problem:** Errors when pushing to GitHub.
+
+**Solution:**
+
+* This may result from repository issues or a deleted GitHub connection.
+
+* Restore your GitHub repository by following these instructions.
 
 ## "Sandbox Mode" for Testing
 
 Some of you wish to test their apps in a safe, non-production environment.
 
-- **Not Supported:** This feature is not currently available.
-- **Action:** Upvote this feature on our [Feature Request Board](https://lovable.featurebase.app/).
+* **Not Supported:** This feature is not currently available.
+
+* **Action:** Upvote this feature on our [Feature Request Board](https://lovable.featurebase.app/).
+
+## Supabase Connection Lost
+
+**Problem:** Lost connection to Supabase.
+
+**Solution:** Disconnect and reconnect Supabase to restore the connection.
+
+## Project Not Found
+
+**Problem:** Unable to find your project.
+
+**Solution:** Disconnect and reconnect Supabase to resolve the issue.
+
+## Unable to Switch to Main Branch
+
+**Problem:** Errors when switching to the main branch.
+
+**Solution:** Disconnect and reconnect Supabase to resolve the issue.
+
+## Remix Does Not Work Without Supabase
+
+**Problem:** Remixing fails for non-Supabase-connected projects.
+
+**Solution:** This is a bug. Report it to our support team for resolution.
+
+## Remix Does Not Work with Supabase
+
+**Problem:** Remixing is blocked when connected to Supabase.
+
+**Solution:** Remixing is disabled for projects connected to Supabase due to sensitive credentials.
 
 ## Challenges with Large Projects
 
-Projects with thousands of edits or unnecessary files may encounter recurring loops or difficulties implementing advanced functions.
+**Problem:** Projects with thousands of edits or unnecessary files may encounter recurring loops or difficulties implementing advanced functions.
 
-These issues are common across all AI-powered editors and are a priority for us to address. We’re actively and constantly working to optimize performance for large projects.
+**Solution:** These issues are common across all AI-powered editors. We’re actively optimizing performance for large projects.
 
 ## Need More Help?
 
