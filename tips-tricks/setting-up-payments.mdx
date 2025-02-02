@@ -64,13 +64,13 @@ If you for example are providing a subscription-based model where paying for a s
 
 **Steps to set up webhooks:**
 
-1. Get the endpoint URL
+**1. Get the endpoint URL**
 
    * Retrieve the **endpoint URL** from the Edge Function that you have set up.
 
    * This can be found under the specific Edge Function details in your Supabase dashboard.
 
-2. Add the endpoint URL in Stripe
+**2. Add the endpoint URL in Stripe**
 
    * Navigate to **Developers → Webhooks → Create an event destination** in your Stripe dashboard.
 
@@ -78,11 +78,11 @@ If you for example are providing a subscription-based model where paying for a s
 
    * Add the endpoint URL that you retrieved from the Edge Function.
 
-3. Get the webhook secret
+**3. Get the webhook secret**
 
    * Once the webhook is created, copy the webhook secret provided by Stripe.
 
-4. Store the webhook secret securely
+**4. Store the webhook secret securely**
 
    * Add the webhook secret to Supabase as a secret value **(Supabase → Edge Functions → Manage secrets → Add new secret)**. Ask the AI in chat mode what the secret should be called to work properly with the Edge function.
 
