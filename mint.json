@@ -72,6 +72,7 @@
     {
       "group": "Tips and Tricks",
       "pages": [
+        "tips-tricks/setting-up-payments",
         "tips-tricks/using-images",
         "tips-tricks/using-videos",
         "tips-tricks/custom-fonts",
