@@ -16,9 +16,13 @@ Since Lovable relies on large language models (LLMs), effective prompting strate
 
 Prompts are the primary way to interact with Lovable app:
 
-1. **Welcome Screen**: Start with prebuilt prompts or create your own.
+1. **Welcome Screen**
 
-2. **Builder UI**: Use the chat-based interface to iterate quickly.
+   : Start with prebuilt prompts or create your own.
+
+2. **Builder UI**
+
+   : Use the chat-based interface to iterate quickly.
 
 Prompts serve as the backbone of all interactions.
 
@@ -45,12 +49,15 @@ Providing context can help Lovable understand the broader scope of your requirem
 
   Now, for the first task, create the UI for project creation.
   ```
+
   **Another example:**
 
   ```
   I need a CRM app with Supabase integration and a secure auth flow. Start by setting up the backend.
   ```
+
   **Another example:**
+
   ```
   We are developing an e-commerce platform focusing on eco-friendly products. Generate a product listing page with filters for category and price.
   ```
@@ -60,33 +67,43 @@ Providing context can help Lovable understand the broader scope of your requirem
 
 Our experience has shown that making incremental, smaller changes will yield better results than dumping a huge prompt and expecting AI to handle it well.
 
-<Note>
-  **DON'T**:&#x20;
+<Warning>
+  **DON'T**:
 
   ```
   Build a CRM app with Supabase, auth, Google Sheets export, and data enrichment.
   ```
+</Warning>
 
+<Check>
   **DO**:
 
   ```
-
-  1. Set up a Supabase-connected CRM backend.
-
-  2. Add a secure auth flow with user roles.
-
-  3. Integrate Google Sheets to export records.
+  Set up a Supabase-connected CRM backend.
   ```
+
+  ```
+  Great! Could you please add a secure authentication flow with user roles?
+  ```
+
+  ```
+  Thank you! The next step is to integrate Google Sheets to export records.
+  ```
+
   **Another example:**
+
   ```
-  1. Set up a database schema for user information.
-  2. Develop an API endpoint to retrieve user data.
+  Set up a database schema for user information.
   ```
-</Note>
+
+  ```
+  Develop an API endpoint to retrieve user data please
+  ```
+</Check>
 
 ### Using image prompts
 
-Recently we added support where users can upload images with their prompts and ask Lovable to build a solution based on it.
+You as a user can upload images with your prompt and ask Lovable to build a solution based on it.
 
 There are two main approaches here. The first one is a simple prompting approach.
 
@@ -104,11 +121,10 @@ There are two main approaches here. The first one is a simple prompting approach
   ```
 </Note>
 
-Or, you can help AI better understand the content of the image and some additional specifics about it.
+Or, you can help AI better understand the content of the image and some additional specifics about it. Excellent results can be achieved by adding specific instructions to the image uploaded. While the image is worth a thousand words, adding a couple of your own to describe desired functionality can go a long way - especially since interactions cannot always be obvious from a static image.
 
 <Note>
   **Image prompting with detailed instructions**
-  Excellent results can be achieved by adding specific instructions to the image uploaded. While the image is worth a thousand words, adding a couple of your own to describe desired functionality can go a long way - especially since interactions cannot always be obvious from a static image.
 
   ```
   I want you to create the app as similar as possible to the one shown in this screenshot.
@@ -122,7 +138,7 @@ Or, you can help AI better understand the content of the image and some addition
 
 Review the AI’s output and provide specific feedback for refinements.
 
-<Note> 
+<Note>
   ```
   The login form looks good, but please add validation for the email field to ensure it contains a valid email address.
   ```
@@ -132,43 +148,33 @@ Review the AI’s output and provide specific feedback for refinements.
 
 Ensure your prompts are clear and unambiguous. Avoid vague terms and be as specific as possible about what you need.
 
-<Note>
+<Warning>
   **DON'T**:&#x20;
 
   ```
   Make this app better.
   ```
 
-  **DO**:&#x20;
-
-  ```
-  Refactor the app to clean up unused components and improve performance, without changing UI or functionality.
-  ```
   **Another example:**
-  ```
-  Create a user registration form with fields for username, email, and password.
-  ```
-</Note>
-
-<Warning>
-  **Unspecific prompt**
-
-  Avoid unspecific and broad prompts
 
   ```
   Create a form for user input
   ```
 </Warning>
 
-<Success>
-  **Specific prompt**
-
-  Make your prompts more specific and concrete
+<Check>
+  **DO**:&#x20;
 
   ```
-  Create a form with fields for name, email, and message, and include a submit button.
+  Refactor the app to clean up unused components and improve performance, without changing UI or functionality.
   ```
-</Success>
+
+  **Another example:**
+
+  ```
+  Create a user registration form with fields for username, email, and password and include a submit button.
+  ```
+</Check>
 
 ### Add constraints
 
@@ -187,13 +193,17 @@ Sometimes, adding constraints can help focus the AI on what's important and avoi
   ```
 </Note>
 
+### Be nice!
+
+Even though it may sound surprising, recent studies have shown that polite prompts with basic professional courtesy yield better results. This is because respectful prompts often include a few extra words, which provide more context for the AI. Please keep this in mind for your next prompt.
+
 ## Advanced Prompting Strategies
 
 ### Emphasizing Accessibility
 
 Encourage the generation of code that adheres to accessibility standards and modern best practices. This ensures that the output is not only functional but also user-friendly and compliant with accessibility guidelines.
 
-<Note> 
+<Note>
   ```
   Generate a React component for a login form that follows accessibility best practices, including appropriate ARIA labels and keyboard navigation support.
   ```
@@ -203,7 +213,7 @@ Encourage the generation of code that adheres to accessibility standards and mod
 
 Specify the use of certain UI libraries or components to maintain consistency and efficiency in your project.  This directs the AI to utilize specific tools, ensuring compatibility and a uniform design language across your application.
 
-<Note> 
+<Note>
   ```
   Create a responsive navigation bar using the shadcn/ui library with Tailwind CSS for styling.
   ```
@@ -213,7 +223,7 @@ Specify the use of certain UI libraries or components to maintain consistency an
 
 For complex tasks, encourage the AI to process the problem step by step before providing a solution. This methodical approach helps in breaking down intricate tasks, leading to more accurate and comprehensive solutions.
 
-<Note> 
+<Note>
   ```
   Let's think through the process of setting up a secure authentication system:
   1. What are the necessary components?
@@ -226,7 +236,7 @@ For complex tasks, encourage the AI to process the problem step by step before p
 
 When working in a multilingual environment, specify the desired language for both code comments and documentation. This ensures that the generated content is accessible to team members who speak different languages, enhancing collaboration.
 
-<Note> 
+<Note>
   ```
   Generate a Python script that calculates the Fibonacci sequence. Provide comments and documentation in French.
   ```
@@ -236,12 +246,11 @@ When working in a multilingual environment, specify the desired language for bot
 
 Clearly outline the project structure, including file names and paths, to ensure organized and maintainable code generation. This provides clarity on where new components should reside within the project, maintaining a coherent file organization.
 
-<Note> 
+<Note>
   ```
-Create a new React component named 'UserProfile' and save it as 'components/user-profile.tsx'. Ensure it includes a profile picture, username, and bio section.
-```
+  Create a new React component named 'UserProfile' and save it as 'components/user-profile.tsx'. Ensure it includes a profile picture, username, and bio section.
+  ```
 </Note>
-
 
 ## Debugging and Issue Reporting
 
@@ -249,27 +258,53 @@ Create a new React component named 'UserProfile' and save it as 'components/user
 
 Follow these steps for systematic debugging:
 
-* **Task Identification**: List and prioritize all tasks.
+* **Task Identification**
 
-* **Internal Review**: Verify your solution internally before submission.
+  : List and prioritize all tasks.
 
-* **Reporting**: Confirm each completed task with clear, verifiable results.
+* **Internal Review**
 
-* **DOM Validation**: Ensure changes render in the DOM. Provide DOM tags or feedback for verification.
+  : Verify your solution internally before submission.
 
-* **Qualifying Questions**: Clarify any uncertainties before proceeding.
+* **Reporting**
 
-* **Error Handling and Logging**: Use robust error handling and verbose `console.log`. Never remove logs until production.
+  : Confirm each completed task with clear, verifiable results.
 
-* **Debug Tools Management**: Implement a global switch to disable tools in production.
+* **DOM Validation**
 
-* **Breakpoint Implementation**: Add breakpoints for isolating GPT-related bugs.
+  : Ensure changes render in the DOM. Provide DOM tags or feedback for verification.
 
-* **Third-Party Packages**: Check for reusable libraries before writing new code.
+* **Qualifying Questions**
 
-* **Leveraging Existing Systems**: Build on pre-existing features to ensure consistency.
+  : Clarify any uncertainties before proceeding.
 
-* **Code Audit**: Perform a detailed analysis, document issues, and plan a solution before making changes.
+* **Error Handling and Logging**
+
+  : Use robust error handling and verbose
+
+  `console.log`
+
+  . Never remove logs until production.
+
+* **Debug Tools Management**
+
+  : Implement a global switch to disable tools in production.
+
+* **Breakpoint Implementation**
+
+  : Add breakpoints for isolating GPT-related bugs.
+
+* **Third-Party Packages**
+
+  : Check for reusable libraries before writing new code.
+
+* **Leveraging Existing Systems**
+
+  : Build on pre-existing features to ensure consistency.
+
+* **Code Audit**
+
+  : Perform a detailed analysis, document issues, and plan a solution before making changes.
 
 ### Debugging Flow
 
@@ -308,24 +343,24 @@ When reporting bugs or requesting changes:
 Issues will happen, sometimes builds will fail and the app that was generated will not look exactly as you wanted it. Effective prompting can help you get back on track.
 Again, it's important to be specific.
 
-<Note>
-  Avoid generic and very broad prompts
+<Warning>
+  Avoid generic and broad prompts
 
   ```
   Nothing works, fix it!
   ```
-</Note>
+</Warning>
 
 Instead, be more specific.
 
-<Note>
+<Check>
   Make your prompts more detailed and specific
 
   ```
-  Now the screen has gone blank and previously I was able to make edits.
+  Now the screen has gone blank and I am no longer able to make edits.
   Can you check what happened?
   ```
-</Note>
+</Check>
 
 ### Using Dev console for reporting bugs
 
