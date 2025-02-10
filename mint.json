@@ -50,12 +50,16 @@
   "navigation": [
     {
       "group": "Introduction",
-      "pages": ["introduction", "user-guides/messaging-limits", "faq", "user-guides/support-policy"]
+      "pages": [
+        "introduction", 
+        "user-guides/messaging-limits",
+        "faq", 
+        "user-guides/support-policy"
+      ]
     },
     {
       "group": "User Guides",
       "pages": [
-        "user-guides/getting-started",
         "user-guides/quickstart",
         "tips-tricks/prompting",
         "features/deploy"
