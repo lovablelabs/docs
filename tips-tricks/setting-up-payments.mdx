@@ -1,10 +1,10 @@
 ---
-title: 'Setting up payments'
-description: 'How to set up payments in your app using our Stripe integration'
-icon: 'credit-card'
+title: "Setting up payments"
+description: "How to set up payments in your app using our Stripe integration"
+icon: "credit-card"
 ---
 
-Setting up payments in your app can be done using our **Stripe integration**. Before implementing Stripe, we recommend ensuring that all necessary frontend and backend infrastructure is in place.
+Setting up payments in your app can be done using our [**Stripe integration**](https://lovable.dev/blog/how-to-connect-stripe-lovable). Before implementing Stripe, we recommend ensuring that all necessary frontend and backend infrastructure is in place.
 
 <Note>
   For example, if you are selling individual products, make sure they are properly implemented, that you have a working shopping cart function and checkout page.
@@ -12,9 +12,15 @@ Setting up payments in your app can be done using our **Stripe integration**. Be
   If you are offering subscriptions, ensure that all login functionalities and different subscription tiers are set up and working correctly.
 </Note>
 
-**Requirements**
+## **Requirements**
 
-* The project **must** be connected to Supabase. [Learn more about Supabase](https://docs.lovable.dev/integrations/supabase)
+* The project 
+
+  **must**
+
+   be connected to Supabase. 
+
+  [Learn more about Supabase](https://docs.lovable.dev/integrations/supabase)
 
 * You will also need a Stripe account with the corresponding products set up correctly.
 
@@ -62,29 +68,41 @@ If you for example are providing a subscription-based model where paying for a s
   The Edge Function that handles the necessary changes to the user account should be set up automatically by the AI.
 </Note>
 
-**Steps to set up webhooks:**
+## **Steps to set up webhooks:**
 
-**1. Get the endpoint URL**
+### **1. Get the endpoint URL**
 
-   * Retrieve the **endpoint URL** from the Edge Function that you have set up.
+* Retrieve the 
 
-   * This can be found under the specific Edge Function details in your Supabase dashboard.
+  **endpoint URL**
 
-**2. Add the endpoint URL in Stripe**
+   from the Edge Function that you have set up.
 
-   * Navigate to **Developers → Webhooks → Create an event destination** in your Stripe dashboard.
+* This can be found under the specific Edge Function details in your Supabase dashboard.
 
-   * Select events. If unsure which to select, please ask the AI in chat mode for guidance on which event(s) to choose based on your use case.
+### **2. Add the endpoint URL in Stripe**
 
-   * Add the endpoint URL that you retrieved from the Edge Function.
+* Navigate to 
 
-**3. Get the webhook secret**
+  **Developers → Webhooks → Create an event destination**
 
-   * Once the webhook is created, copy the webhook secret provided by Stripe.
+   in your Stripe dashboard.
 
-**4. Store the webhook secret securely**
+* Select events. If unsure which to select, please ask the AI in chat mode for guidance on which event(s) to choose based on your use case.
 
-   * Add the webhook secret to Supabase as a secret value **(Supabase → Edge Functions → Manage secrets → Add new secret)**. Ask the AI in chat mode what the secret should be called to work properly with the Edge function.
+* Add the endpoint URL that you retrieved from the Edge Function.
+
+### **3. Get the webhook secret**
+
+* Once the webhook is created, copy the webhook secret provided by Stripe.
+
+### **4. Store the webhook secret securely**
+
+* Add the webhook secret to Supabase as a secret value 
+
+  **(Supabase → Edge Functions → Manage secrets → Add new secret)**
+
+  . Ask the AI in chat mode what the secret should be called to work properly with the Edge function.
 
 By following these steps, your Edge Function and corresponding webhook will be properly set up to handle subscription-based upgrades securely and efficiently.
 
