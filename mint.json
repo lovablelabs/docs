@@ -62,6 +62,7 @@
       "pages": [
         "user-guides/quickstart",
         "tips-tricks/prompting",
+        "features/precision-edit",
         "features/deploy"
       ]
     },
