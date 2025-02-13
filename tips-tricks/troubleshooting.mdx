@@ -6,187 +6,147 @@ icon: "toolbox"
 
 When using Lovable, you may occasionally encounter technical issues. Below are common problems and recommended actions to troubleshoot and resolve them.
 
-## Persistent "Fix Error" Loops
+<AccordionGroup>
+  <Accordion title="Persistent 'Fix Error' Loops">
+    <b>Problem:</b> Repeated failures where errors persist despite multiple attempts to fix them.
+    <b>Solution:</b>
 
-**Problem:** Repeated failures where errors persist despite multiple attempts to fix them.
+    * Approach with creativity: Adjust your input and prompts to help the AI understand the changes you’re trying to make.
 
-**Solution:**
+    * Use Chat Mode: Engage the AI in chat mode for step-by-step guidance and tailored suggestions to break the loop.
+  </Accordion>
 
-* Approach with creativity: Adjust your input and prompts to help the AI understand the changes you’re trying to make.
+  <Accordion title="Setting Environment Variables">
+    <b>Problem:</b> Issues may arise when configuring environment variables, particularly with Supabase Edge Functions and Secrets.
+    <b>Solution:</b>
 
-* Use Chat Mode: Engage the AI in chat mode for step-by-step guidance and tailored suggestions to break the loop.
+    * Double-check the environment variable syntax and names.
 
-## Setting Environment Variables
+    * Refer to the [Supabase Docs](https://supabase.com/docs) for guidance.
+  </Accordion>
 
-**Problem:** Issues may arise when configuring environment variables, particularly when working with Supabase Edge Functions and Secrets.
+  <Accordion title="HTTP Fetch Failures">
+    <b>Problem:</b> Errors during HTTP fetch requests can disrupt authentication or degrade app performance.
+    <b>Solution:</b> Copy and paste the exact error message into the chat to get context-specific advice from the AI.
+  </Accordion>
 
-**Solution:**
+  <Accordion title="Freezing or Loading Failures">
+    <b>Problem:</b> Editor pages freeze, fail to load, or do not reflect the latest updates.
+    <b>Solution:</b> Report this as a bug via our [feedback portal](https://lovable.dev/support).
+  </Accordion>
 
-* Double-check the environment variable syntax and names.
-
-* Refer to the [Supabase](https://supabase.com/docs) / [Edge Functions](https://supabase.com/dashboard/project/sdkziisptnetvtxvlysg/functions) / [Secrets](https://supabase.com/docs/guides/functions/secrets) documentation for detailed instructions.
-
-## HTTP Fetch Failures
-
-**Problem:** Errors during HTTP fetch requests can disrupt authentication or degrade app performance.
-
-**Solution:** Copy and paste the exact error message into the chat to get context-specific advice from the AI.
-
-## Freezing or Loading Failures
-
-**Problem:** Settings or editor pages freeze, fail to load, or do not reflect the latest updates.
-
-**Solution:** Report this as a bug by creating a ticket [via our feedback portal](https://lovable.dev/support).
-
-## Rollback Feature Fails
-
-**Problem:** Unable to revert to a previous state of the project.
-
-**Solution:** Submit a bug report [via our feedback portal](https://lovable.dev/support).
-
-## Cloud Deployment Issues
-
-**Problem:** Apps fail to redeploy or get stuck in a spinning loop during deployment.
-
-**Solution:** File a bug report [via our feedback portal](https://lovable.dev/support).
-
-## AI-Related Errors
-
-**Problem:** The AI is not resolving, hallucinating, or breaking things.
-**Solution:**
-
-* Revert to a stable version of your application.
-
-* For better results in future prompts:
-
-  * Be specific and clear. Refer to our [Prompting Handbook]() for guidance.
-
-  * Use the select tool to precisely edit content.
-
-  * Provide context by adding relevant documentation or a knowledge base.
-
-## Refactor Broke Everything in My Code
-
-**Problem:** Code refactor caused major issues.
-
-**Solution:**
-
-* Revert to a stable version of your application.
-
-* Make smaller, incremental changes and refine your prompts for clarity.
-
-* Check your codebase history (e.g., GitHub), copy the error message, and use debugging tools like ChatGPT.
-
-## AI Is Not Responding
-
-**Problem:** The AI is not responding to your messages and the chat is stuck.
-
-**Solution:** Disconnect and reconnect Supabase, as this is likely related to connection issues. If this doesn't work, please try restoring to an earlier stable version. 
-
-## AI Not Making Changes
-
-**Problem:** The AI is not implementing expected edits.
-
-**Solution:**
-
-* Ensure your prompts are specific (use the select tool if needed).
-
-* If the issue persists, manually edit the code in GitHub or VSCode.
-
-## Preview Shows a Blank Screen
-
-**Problem:** Preview displays a white or blank screen.
-
-**Solution:** Revert to a stable version and check the console logs for relevant error messages.
-
-## Taking Your Projects Offline
-
-You may encounter problems when attempting to unpublish or deactivate your projects.
-
-* **Not Supported:** This feature is not currently available.
-
-* **Action:** Upvote this feature on our [Feature Request Board](https://lovable.featurebase.app/).
-
-## Being Kicked Out of a Project
-
-**Problem:** Unexpected logout or access loss.
-
-**Solution:** Contact our support engineers directly for assistance.
-
-## Loading Errors
-
-**Problem:** Loading issues or downtime.
-
-**Solution:** Contact our support engineers, as this is likely a temporary issue.
-
-## Error: Stream Interrupted
-
-**Problem:** Stream interrupted due to invalid Supabase credentials.
-
-**Solution:** Check and update your Supabase credentials in the settings.
-
-## "Edit with Lovable"-badge Not Being Removed
-
-**Problem:** Unable to remove "Edit with Lovable"-badge
-
-This feature is exclusive to our **paying customers**. Please upgrade your plan.
-
-## Edge Function Errors
-
-**Problem:** Edge function errors occur.
-
-**Solution:** Supabase logs integration is coming soon. Meanwhile, check the edge function logs and paste the error into Lovable's AI code editor for debugging.
-
-## Stripe Errors
-
-**Problem:** Issues with payment processing.
-
-**Solution:** Try a different bank or card. If the issue persists, contact support.
-
-## GitHub Issues
-
-* If you've recently changed your username on GitHub or the name of your repository you may experience connection issues with GitHub. Please try reverting to the old names. 
-
-* Deleting GitHub repository will also lead to issues with connection. Please follow [this guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository) to restore it!
-
-## "Sandbox Mode" for Testing
-
-Some of you wish to test their apps in a safe, non-production environment.
-
-* **Not Supported:** This feature is not currently available.
-
-* **Action:** Upvote this feature on our [Feature Request Board](https://lovable.featurebase.app/).
-
-## Supabase Connection Lost
-
-**Problem:** Lost connection to Supabase.
-
-**Solution:** Disconnect and reconnect Supabase to restore the connection.
-
-## Project Not Found
-
-**Problem:** Unable to find your project.
-
-**Solution:** Disconnect and reconnect Supabase to resolve the issue.
-
-## Unable to Switch to Main Branch
-
-**Problem:** Errors when switching to the main branch.
-
-**Solution:** Disconnect and reconnect Supabase to resolve the issue.
-
-## Remix-feature Does Not Work 
-
-**Problem:** Remixing your project does not work. 
-
-**Please note** that projects connected to Supabase **can't** be remixed due to security reasons. If your project isn't connected to Supabase but still can't be remixed, reach out to support!
-
-## Challenges with Large Projects
-
-**Problem:** Projects with thousands of edits or unnecessary files may encounter recurring loops or difficulties implementing advanced functions.
-
-**Solution:** These issues are common across all AI-powered editors. We’re actively optimizing performance for large projects.
-
-## Need More Help?
-
-If you encounter any other issues not covered here, please don’t hesitate to reach out on our [feedback portal](https://lovable.dev/support) or explore our [prompting guide](/tips-tricks/prompting#debugging-and-issue-reporting) further.
+  <Accordion title="Rollback Feature Fails">
+    <b>Problem:</b> Unable to revert to a previous state of the project.
+    <b>Solution:</b> Submit a bug report via our [feedback portal](https://lovable.dev/support).
+  </Accordion>
+
+  <Accordion title="Cloud Deployment Issues">
+    <b>Problem:</b> Apps fail to redeploy or get stuck during deployment.
+    <b>Solution:</b> File a bug report via our [feedback portal](https://lovable.dev/support).
+  </Accordion>
+
+  <Accordion title="AI-Related Errors">
+    <b>Problem:</b> The AI is hallucinating or not resolving issues correctly.
+    <b>Solution:</b>
+
+    * Revert to a stable version of your application.
+
+    * Improve future prompts:
+
+      * Be specific and clear. Refer to our [Prompting Handbook]().
+
+      * Use the select tool for precise edits.
+
+      * Provide context by adding relevant documentation.
+  </Accordion>
+
+  <Accordion title="Refactor Broke Everything in My Code">
+    <b>Problem:</b> Code refactor caused major issues.
+    <b>Solution:</b>
+
+    * Revert to a stable version of your application.
+
+    * Make smaller, incremental changes.
+
+    * Check your codebase history and debug using tools like ChatGPT.
+  </Accordion>
+
+  <Accordion title="AI Is Not Responding">
+    <b>Problem:</b> The AI chat is stuck.
+    <b>Solution:</b> Disconnect and reconnect Supabase or restore an earlier stable version.
+  </Accordion>
+
+  <Accordion title="Preview Shows a Blank Screen">
+    <b>Problem:</b> The preview displays a white or blank screen.
+    <b>Solution:</b> Revert to a stable version and check the console logs for relevant errors.
+  </Accordion>
+
+  <Accordion title="Taking Your Projects Offline">
+    <b>Problem:</b> Unable to unpublish or deactivate projects.
+    <b>Solution:</b> Upvote this feature on our [Feature Request Board](https://lovable.featurebase.app/).
+  </Accordion>
+
+  <Accordion title="Being Kicked Out of a Project">
+    <b>Problem:</b> Unexpected logout or access loss.
+    <b>Solution:</b> Contact our support engineers directly.
+  </Accordion>
+
+  <Accordion title="Loading Errors">
+    <b>Problem:</b> Loading issues or downtime.
+    <b>Solution:</b> Contact our support engineers.
+  </Accordion>
+
+  <Accordion title="Error: Stream Interrupted">
+    <b>Problem:</b> Stream interrupted due to invalid Supabase credentials.
+    <b>Solution:</b> Check and update your Supabase credentials in the settings.
+  </Accordion>
+
+  <Accordion title="Edge Function Errors">
+    <b>Problem:</b> Edge function errors.
+    <b>Solution:</b> Supabase logs integration is coming soon. Meanwhile, check the logs and paste errors into Lovable's AI code editor.
+  </Accordion>
+
+  <Accordion title="Stripe Errors">
+    <b>Problem:</b> Issues with payment processing.
+    <b>Solution:</b> Try a different bank or card. If the issue persists, contact support.
+  </Accordion>
+
+  <Accordion title="GitHub Issues">
+    <b>Problem:</b> Connection issues after changing your GitHub username or repository name.
+    <b>Solution:</b> Revert to the old names. If the repo was deleted, restore it using [this guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+  </Accordion>
+
+  <Accordion title="Sandbox Mode for Testing">
+    <b>Problem:</b> Users want a safe, non-production environment.
+    <b>Solution:</b> This feature is not currently available. Upvote it on our [Feature Request Board](https://lovable.featurebase.app/).
+  </Accordion>
+
+  <Accordion title="Supabase Connection Lost">
+    <b>Problem:</b> Lost connection to Supabase.
+    <b>Solution:</b> Disconnect and reconnect Supabase.
+  </Accordion>
+
+  <Accordion title="Project Not Found">
+    <b>Problem:</b> Unable to find your project.
+    <b>Solution:</b> Disconnect and reconnect Supabase.
+  </Accordion>
+
+  <Accordion title="Unable to Switch to Main Branch">
+    <b>Problem:</b> Errors when switching to the main branch.
+    <b>Solution:</b> Disconnect and reconnect Supabase.
+  </Accordion>
+
+  <Accordion title="Remix Feature Does Not Work">
+    <b>Problem:</b> Remixing your project does not work.
+    <b>Solution:</b> Note that projects connected to Supabase **cannot** be remixed for security reasons. If this is not the case, contact support.
+  </Accordion>
+
+  <Accordion title="Challenges with Large Projects">
+    <b>Problem:</b> Large projects encounter performance issues.
+    <b>Solution:</b> We’re optimizing AI performance for large projects. Stay tuned for updates.
+  </Accordion>
+
+  <Accordion title="Need More Help?">
+    If you encounter any other issues, reach out via our [feedback portal](https://lovable.dev/support) or explore our [prompting guide](/tips-tricks/prompting#debugging-and-issue-reporting).
+  </Accordion>
+</AccordionGroup>
