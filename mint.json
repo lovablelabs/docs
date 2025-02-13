@@ -65,6 +65,7 @@
         "features/labs",
         "features/precision-edit",
         "features/deploy",
+        "tips-tricks/troubleshooting",
         "user-guides/support-policy"
       ]
     },
@@ -86,7 +87,6 @@
         "tips-tricks/custom-fonts",
         "features/npm-packages",
         "tips-tricks/multiple-users",
-        "tips-tricks/troubleshooting",
         "tips-tricks/custom-domain"
       ]
     }
