@@ -42,7 +42,7 @@
       "url": "https://feedback.lovable.dev/"
     },
     {
-      "name": "Tutorials",
+      "name": "Youtube",
       "icon": "film",
       "url": "https://www.youtube.com/@lovable-labs/"
     }
@@ -52,9 +52,9 @@
       "group": "Introduction",
       "pages": [
         "introduction", 
+        "user-guides/video-tutorials",
         "user-guides/messaging-limits",
-        "faq", 
-        "user-guides/support-policy"
+        "faq"
       ]
     },
     {
@@ -63,8 +63,8 @@
         "user-guides/quickstart",
         "tips-tricks/prompting",
         "features/precision-edit",
-        "user-guides/video-tutorials",
-        "features/deploy"
+        "features/deploy",
+        "user-guides/support-policy"
       ]
     },
     {
