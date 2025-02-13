@@ -72,8 +72,8 @@
       "pages": [
         "integrations/introduction",
         "integrations/git-integration",
-        "integrations/chrome-extensions",
-        "integrations/supabase"
+        "integrations/supabase",
+        "integrations/chrome-extensions"
       ]
     },
     {
