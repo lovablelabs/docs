@@ -51,16 +51,16 @@ You can commit changes directly in GitHub Codespaces or clone the repo to use yo
   </video>
 </Frame>
 
-
-
 ## FAQ
 
-### **Why are my recent commits not showing up in my Lovable project?**
+<AccordionGroup>
+  <Accordion title="Why are my recent commits not showing up in my Lovable project?">
+    If you notice that your recent commits are missing from your Lovable project, it could be because the commits were made to a different branch on GitHub. Lovable currently only tracks commits made to the default branch (usually <code>main</code> or <code>master</code>). If you’ve been working on a new branch and haven’t merged it into the default branch, those commits won’t be picked up by Lovable.
 
-If you notice that your recent commits are missing from your Lovable project, it could be because the commits were made to a different branch on GitHub. Lovable currently only tracks commits made to the default branch (usually `main` or `master`). If you’ve been working on a new branch and haven’t merged it into the default branch, those commits won’t be picked up by Lovable.
+    <b>To ensure your commits are tracked:</b>
 
-To ensure your commits are tracked:
+    1. Merge your changes into the default branch.
 
-1. Merge your changes into the default branch.
-
-2. If you’re working on a new branch, consider switching back to the default branch for commits you want to appear in Lovable.
+    2. If you’re working on a new branch, consider switching back to the default branch for commits you want to appear in Lovable.
+  </Accordion>
+</AccordionGroup>
