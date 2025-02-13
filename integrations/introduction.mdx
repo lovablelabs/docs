@@ -102,62 +102,59 @@ You can request new integrations [here](https://lovable.featurebase.app/?b=67588
 
 ## Common Issues and Troubleshooting
 
-### Connection and Authentication Issues
+<AccordionGroup>
+  <Accordion title="Connection and Authentication Issues">
+    If you encounter difficulties connecting or authenticating with integrations, try the following:
+    <ol>
+      <li>Double-check API credentials for accuracy.</li>
+      <li>Ensure the required scopes or permissions are enabled.</li>
+      <li>Verify network connectivity, as firewalls or proxies may block connections.</li>
+    </ol>
+    Refer to <a href="https://docs.lovable.dev/integrations/git-integration">GitHub Integration</a> or 
+    <a href="https://docs.lovable.dev/integrations/supabase">Supabase Integration</a> for detailed setup instructions.
+  </Accordion>
 
-If you encounter difficulties connecting or authenticating with integrations, try the following:
+  <Accordion title="API Credential Management">
+    Lovable enables secure storage of API keys within your project settings (accessible from the <b>Settings</b> sidebar). To maintain security:
+    <ul>
+      <li>Store your keys in this designated secure location.</li>
+      <li>Avoid sharing them with others or using them in prompts unless absolutely necessary.</li>
+    </ul>
+    This ensures your credentials are protected and reduces the risk of misuse.
+  </Accordion>
 
-1. Double-check API credentials for accuracy.
+  <Accordion title="Challenges for Non-Developers">
+    If you’re not a developer, integrating APIs might feel overwhelming. Lovable simplifies this with its in-chat configuration. 
+    For unsupported APIs, join the <a href="https://discord.gg/jstGvUnFnm">Lovable community on Discord</a> for help or request new integrations 
+    <a href="https://feedback.lovable.dev/">here</a>.
+  </Accordion>
 
-2. Ensure the required scopes or permissions are enabled.
+  <Accordion title="Edge Function and Configuration Errors">
+    Errors in edge functions can disrupt workflows. To resolve these issues:
+    <ol>
+      <li>Review edge function logs to identify and fix errors.</li>
+      <li>Ensure all required dependencies are installed.</li>
+      <li>Confirm that environment variables are correctly configured.</li>
+    </ol>
+    For more information, refer to 
+    <a href="https://supabase.com/docs/guides/functions">Supabase’s edge function examples</a> for best practices.
+  </Accordion>
 
-3. Verify network connectivity, as firewalls or proxies may block connections.
+  <Accordion title="Session and Data Management">
+    Managing sessions and data effectively is critical for smooth app performance. Follow these tips:
+    <ul>
+      <li>Use <a href="https://docs.lovable.dev/integrations/supabase">Supabase</a>’s real-time features (or similar services) for seamless data syncing.</li>
+      <li>Ask Lovable to implement strong authentication and token refresh mechanisms for session management.</li>
+      <li>Regularly verify that your database schema is up-to-date to prevent potential data integrity issues.</li>
+    </ul>
+  </Accordion>
 
-Refer to [GitHub Integration](https://docs.lovable.dev/integrations/git-integration) or [Supabase Integration](https://docs.lovable.dev/integrations/supabase) for detailed setup instructions.
-
-### API Credential Management
-
-Lovable enables secure storage of API keys within your project settings (accessible from the **Settings** sidebar). To maintain security:
-
-* Store your keys in this designated secure location.
-
-* Avoid sharing them with others or using them in prompts unless absolutely necessary.
-
-This ensures your credentials are protected and reduces the risk of misuse.
-
-### Challenges for Non-Developers
-
-If you’re not a developer, integrating APIs might feel overwhelming. Lovable simplifies this with its in-chat configuration. For unsupported APIs, join the [Lovable community on Discord](https://discord.gg/jstGvUnFnm) for help or request new integrations [here](https://feedback.lovable.dev/).
-
-### Edge Function and Configuration Errors
-
-Errors in edge functions can disrupt workflows. To resolve these issues:
-
-1. Review edge function logs to identify and fix errors.
-
-2. Ensure all required dependencies are installed.
-
-3. Confirm that environment variables are correctly configured.
-
-For more information, refer to [Supabase’s edge function examples](https://supabase.com/docs/guides/functions) for best practices.
-
-### Session and Data Management
-
-Managing sessions and data effectively is critical for smooth app performance. Follow these tips:
-
-* Use [Supabase](https://docs.lovable.dev/integrations/supabase)’s real-time features (or similar services) for seamless data syncing.
-
-* Ask Lovable to implement strong authentication and token refresh mechanisms for session management.
-
-* Regularly verify that your database schema is up-to-date to prevent potential data integrity issues.
-
-### Repository and Account Management
-
-For smooth repository management and account syncing:
-
-* Verify that [GitHub](https://docs.lovable.dev/integrations/git-integration) repository access permissions are correctly configured.
-
-* Use Lovable’s **built-in rollback feature** for undoing accidental changes, as your projects are automatically backed up.
-
-This ensures safe and reliable version control for your projects.
-
-[](https://lovable.dev/integrations/supabase)
+  <Accordion title="Repository and Account Management">
+    For smooth repository management and account syncing:
+    <ul>
+      <li>Verify that <a href="https://docs.lovable.dev/integrations/git-integration">GitHub repository access permissions</a> are correctly configured.</li>
+      <li>Use Lovable’s <b>built-in rollback feature</b> for undoing accidental changes, as your projects are automatically backed up.</li>
+    </ul>
+    This ensures safe and reliable version control for your projects.
+  </Accordion>
+</AccordionGroup>
