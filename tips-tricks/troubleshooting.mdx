@@ -20,7 +20,7 @@ Building with Lovable makes coding faster and more intuitive, but even the best 
 
 * **Ask Lovable for debugging help** – request an analysis of what went wrong and alternative solutions.
 
-## Technical Issues
+## General Troubleshooting
 
 When using Lovable, you may occasionally encounter technical issues. Below are common problems and recommended actions to troubleshoot and resolve them.
 
@@ -166,5 +166,78 @@ When using Lovable, you may occasionally encounter technical issues. Below are c
 
   <Accordion title="Need More Help?">
     If you encounter any other issues, reach out via our [feedback portal](https://lovable.dev/support) or explore our [prompting guide](/tips-tricks/prompting#debugging-and-issue-reporting).
+  </Accordion>
+</AccordionGroup>
+
+## GitHub Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Why are my recent commits not showing up in my Lovable project?">
+    If you notice that your recent commits are missing from your Lovable project, it could be because the commits were made to a different branch on GitHub. Lovable currently only tracks commits made to the default branch (usually <code>main</code> or <code>master</code>). If you’ve been working on a new branch and haven’t merged it into the default branch, those commits won’t be picked up by Lovable.
+
+    <b>To ensure your commits are tracked:</b>
+
+    1. Merge your changes into the default branch.
+
+    2. If you’re working on a new branch, consider switching back to the default branch for commits you want to appear in Lovable.
+  </Accordion>
+</AccordionGroup>
+
+## API Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connection and Authentication Issues">
+    If you encounter difficulties connecting or authenticating with integrations, try the following:
+    <ol>
+      <li>Double-check API credentials for accuracy.</li>
+      <li>Ensure the required scopes or permissions are enabled.</li>
+      <li>Verify network connectivity, as firewalls or proxies may block connections.</li>
+    </ol>
+    Refer to <a href="https://docs.lovable.dev/integrations/git-integration">GitHub Integration</a> or 
+    <a href="https://docs.lovable.dev/integrations/supabase">Supabase Integration</a> for detailed setup instructions.
+  </Accordion>
+
+  <Accordion title="API Credential Management">
+    Lovable enables secure storage of API keys within your project settings (accessible from the <b>Settings</b> sidebar). To maintain security:
+    <ul>
+      <li>Store your keys in this designated secure location.</li>
+      <li>Avoid sharing them with others or using them in prompts unless absolutely necessary.</li>
+    </ul>
+    This ensures your credentials are protected and reduces the risk of misuse.
+  </Accordion>
+
+  <Accordion title="Challenges for Non-Developers">
+    If you’re not a developer, integrating APIs might feel overwhelming. Lovable simplifies this with its in-chat configuration. 
+    For unsupported APIs, join the <a href="https://discord.gg/jstGvUnFnm">Lovable community on Discord</a> for help or request new integrations 
+    <a href="https://feedback.lovable.dev/">here</a>.
+  </Accordion>
+
+  <Accordion title="Edge Function and Configuration Errors">
+    Errors in edge functions can disrupt workflows. To resolve these issues:
+    <ol>
+      <li>Review edge function logs to identify and fix errors.</li>
+      <li>Ensure all required dependencies are installed.</li>
+      <li>Confirm that environment variables are correctly configured.</li>
+    </ol>
+    For more information, refer to 
+    <a href="https://supabase.com/docs/guides/functions">Supabase’s edge function examples</a> for best practices.
+  </Accordion>
+
+  <Accordion title="Session and Data Management">
+    Managing sessions and data effectively is critical for smooth app performance. Follow these tips:
+    <ul>
+      <li>Use <a href="https://docs.lovable.dev/integrations/supabase">Supabase</a>’s real-time features (or similar services) for seamless data syncing.</li>
+      <li>Ask Lovable to implement strong authentication and token refresh mechanisms for session management.</li>
+      <li>Regularly verify that your database schema is up-to-date to prevent potential data integrity issues.</li>
+    </ul>
+  </Accordion>
+
+  <Accordion title="Repository and Account Management">
+    For smooth repository management and account syncing:
+    <ul>
+      <li>Verify that <a href="https://docs.lovable.dev/integrations/git-integration">GitHub repository access permissions</a> are correctly configured.</li>
+      <li>Use Lovable’s <b>built-in rollback feature</b> for undoing accidental changes, as your projects are automatically backed up.</li>
+    </ul>
+    This ensures safe and reliable version control for your projects.
   </Accordion>
 </AccordionGroup>
