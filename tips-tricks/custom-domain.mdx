@@ -1,6 +1,6 @@
 ---
 title: "Custom domain"
-description: 'Setting up a custom domain with Netlify and Vercel'
+description: "Setting up a custom domain with Netlify and Vercel"
 icon: "earth-europe"
 ---
 
@@ -24,7 +24,6 @@ The steps are:
 
 5. Your Lovable app will automatically redeploy to Netlify whenever you make changes in Lovable.
 
-
 <Note>You will need to bring an existing domain or purchase one.</Note>
 
 ## Using Vercel
@@ -41,14 +40,17 @@ The steps are:
 
 ![image](https://github.com/user-attachments/assets/08f6cd18-5d12-44da-a2cf-c07687eeab44)
 
-6. **Make changes in Development**: Work on your app in the Lovable. Any changes will go to the `dev` branch now and wont automatically be deployed via Vercel.
+1. **Make changes in Development**: Work on your app in the Lovable. Any changes will go to the `dev` branch now and wont automatically be deployed via Vercel.
 
-7. **Deploy new changes**: When you're ready to push new changes to your domain, go to GitHub and perform a pull request from `dev` to `main`. Once you complete and merge the pull request, Vercel will automatically deploy the updates in about one minute.
+2. **Deploy new changes**: When you're ready to push new changes to your domain, go to GitHub and perform a pull request from `dev` to `main`. Once you complete and merge the pull request, Vercel will automatically deploy the updates in about one minute.
 
 ![image](https://github.com/user-attachments/assets/77244d5d-f9e1-4e5b-b372-5e1ea4003d63)
 
 ### Notes:
 
-- If you hit the 100/day deployment limit in Vercel (it builds your `dev` branch but doesn't deploy it). You can ask Lovable chat to build you vercel.json file which will force Vercel to not build development builds at all.
+* If you hit the 100/day deployment limit in Vercel (it builds your `dev` branch but doesn't deploy it). You can ask Lovable chat to build you vercel.json file which will force Vercel to not build development builds at all.
+
+
   ![image](https://github.com/user-attachments/assets/1b29581f-0942-432b-af30-71be43a921db)
-- **Supabase Consideration**: Currently, you can only utilize one Supabase instance. So, if you make extensive SQL changes, it could potentially break production. Unfortunately, we can't yet provide specific guidelines for this scenario as it's complex. Frequently test your production environment if you make changes related to Supabase.
+
+* **Supabase Consideration**: Currently, you can only utilize one Supabase instance. So, if you make extensive SQL changes, it could potentially break production. Unfortunately, we can't yet provide specific guidelines for this scenario as it's complex. Frequently test your production environment if you make changes related to Supabase.
