@@ -75,19 +75,19 @@
         "integrations/introduction",
         "integrations/git-integration",
         "integrations/supabase",
+        "tips-tricks/setting-up-payments",
+        "tips-tricks/custom-domain",
         "integrations/chrome-extensions"
       ]
     },
     {
       "group": "Tips and Tricks",
       "pages": [
-        "tips-tricks/setting-up-payments",
         "tips-tricks/using-images",
         "tips-tricks/using-videos",
         "tips-tricks/custom-fonts",
         "features/npm-packages",
-        "tips-tricks/multiple-users",
-        "tips-tricks/custom-domain"
+        "tips-tricks/multiple-users"
       ]
     }
   ],
