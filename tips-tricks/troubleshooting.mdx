@@ -45,12 +45,54 @@ When using Lovable, you may occasionally encounter technical issues. Below are c
 
   <Accordion title="HTTP Fetch Failures">
     <b>Problem:</b> Errors during HTTP fetch requests can disrupt authentication or degrade app performance.
-    <b>Solution:</b> Copy and paste the exact error message into the chat to get context-specific advice from the AI.
+    <b>Solution:</b> If you're encountering an **HTTP server error** when working with APIs, it typically means the server you're trying to communicate with is not responding as expected. Here are a few steps to troubleshoot:
+
+    * **Check the API Status:** The issue might be on the server side. Verify if the API provider has reported downtime or maintenance.
+
+    * **Review Your API Request:** Ensure your request is correctly formatted, including headers, authentication tokens, and payload structure.
+
+    * **Test with a Different Tool:** Use tools like Postman or cURL to see if the issue persists outside of Lovable AI.
+
+    * **Inspect Error Codes:** HTTP errors like `500` (internal server error) indicate server-side issues, while `400` series errors often mean there’s something wrong with the request.
+
+    * **Retry After Some Time:** Temporary issues can be resolved by waiting and trying again later.
+
+    * **Check Rate Limits:** Some APIs restrict the number of requests within a time frame—exceeding limits may result in errors.
+
+    If the issue persists and is related to Lovable AI’s platform, please reach out to our support team with error details for further assistance.
+  </Accordion>
+
+  <Accordion title="Can't use Mermaid AI">
+    Lovable AI supports Mermaid.js for creating diagrams and flowcharts directly within your AI-generated content. To use Mermaid AI with Lovable AI, follow these steps:
+
+    * **Embed Mermaid syntax** in your prompt or generated code blocks. Lovable AI recognizes standard Mermaid.js syntax for flowcharts, sequence diagrams, Gantt charts, and more.
+
+    * **Use triple backticks (` ``` `) with "mermaid"** as the language identifier to ensure proper rendering. Example: graph TD; A\[Start] --> B\{Decision}; B -->|Yes| C\[Continue]; B -->|No| D\[End];
+
+    * **Verify output** to ensure the diagram is correctly interpreted. If you encounter formatting issues, check for syntax errors in your Mermaid.js code.
+
+    * **Optimize complexity** by keeping diagrams concise, as very large or intricate diagrams may require manual adjustments.
+
+    If Mermaid AI isn't rendering as expected within Lovable AI, feel free to reach out to our support team for assistance.
   </Accordion>
 
   <Accordion title="Freezing or Loading Failures">
     <b>Problem:</b> Editor pages freeze, fail to load, or do not reflect the latest updates.
     <b>Solution:</b> Report this as a bug via our [feedback portal](https://lovable.dev/support).
+  </Accordion>
+
+  <Accordion title="Setup wizard-style flows">
+    Lovable is designed to support various workflow structures, including setup wizards and assessment-style questionnaires. However, some users have encountered issues with looping errors in complex multi-step flows that generate reports at the end. If you're experiencing this, we recommend:
+
+    1. Breaking down the flow: Ensure that each step is clearly defined and that dependencies between steps are properly structured.
+
+    2. Validating inputs at each stage: Sometimes, incorrect or unexpected inputs can cause loops—double-check validation rules.
+
+    3. Using conditional logic carefully: If your flow depends on previous responses, review the conditions to prevent unintended loops.
+
+    4. Testing with different user scenarios: Simulating various paths can help identify edge cases that may be causing issues.
+
+    5. If the problem persists, please reach out to our support team with details of your setup, and we'll be happy to assist in troubleshooting.
   </Accordion>
 
   <Accordion title="Rollback Feature Fails">
@@ -162,6 +204,14 @@ When using Lovable, you may occasionally encounter technical issues. Below are c
   <Accordion title="Challenges with Large Projects">
     <b>Problem:</b> Large projects encounter performance issues.
     <b>Solution:</b> We’re optimizing AI performance for large projects. Stay tuned for updates.
+
+    * **Session Memory Load:** Repeated edits accumulate processing history, which can slow down response time. Try refreshing your session or breaking large editing tasks into smaller segments.
+
+    * **Complexity of Edits:** If your document or codebase is large and complex, each subsequent edit may require more computational resources. Consider refactoring your codebase by structuring edits more efficiently.
+
+    * **Browser Performance:** Running Lovable AI for an extended period with intensive edits may strain browser memory. Restarting your browser or using a different one can help.
+
+    If performance degradation continues despite these optimizations, please reach out to our support team with details about your use case for further assistance.
   </Accordion>
 
   <Accordion title="Need More Help?">
@@ -188,43 +238,50 @@ When using Lovable, you may occasionally encounter technical issues. Below are c
 <AccordionGroup>
   <Accordion title="Connection and Authentication Issues">
     If you encounter difficulties connecting or authenticating with integrations, try the following:
+
     <ol>
       <li>Double-check API credentials for accuracy.</li>
       <li>Ensure the required scopes or permissions are enabled.</li>
       <li>Verify network connectivity, as firewalls or proxies may block connections.</li>
     </ol>
-    Refer to <a href="https://docs.lovable.dev/integrations/git-integration">GitHub Integration</a> or 
+
+    Refer to <a href="https://docs.lovable.dev/integrations/git-integration">GitHub Integration</a> or
     <a href="https://docs.lovable.dev/integrations/supabase">Supabase Integration</a> for detailed setup instructions.
   </Accordion>
 
   <Accordion title="API Credential Management">
     Lovable enables secure storage of API keys within your project settings (accessible from the <b>Settings</b> sidebar). To maintain security:
+
     <ul>
       <li>Store your keys in this designated secure location.</li>
       <li>Avoid sharing them with others or using them in prompts unless absolutely necessary.</li>
     </ul>
+
     This ensures your credentials are protected and reduces the risk of misuse.
   </Accordion>
 
   <Accordion title="Challenges for Non-Developers">
-    If you’re not a developer, integrating APIs might feel overwhelming. Lovable simplifies this with its in-chat configuration. 
-    For unsupported APIs, join the <a href="https://discord.gg/jstGvUnFnm">Lovable community on Discord</a> for help or request new integrations 
+    If you’re not a developer, integrating APIs might feel overwhelming. Lovable simplifies this with its in-chat configuration.
+    For unsupported APIs, join the <a href="https://discord.gg/jstGvUnFnm">Lovable community on Discord</a> for help or request new integrations
     <a href="https://feedback.lovable.dev/">here</a>.
   </Accordion>
 
   <Accordion title="Edge Function and Configuration Errors">
     Errors in edge functions can disrupt workflows. To resolve these issues:
+
     <ol>
       <li>Review edge function logs to identify and fix errors.</li>
       <li>Ensure all required dependencies are installed.</li>
       <li>Confirm that environment variables are correctly configured.</li>
     </ol>
-    For more information, refer to 
+
+    For more information, refer to
     <a href="https://supabase.com/docs/guides/functions">Supabase’s edge function examples</a> for best practices.
   </Accordion>
 
   <Accordion title="Session and Data Management">
     Managing sessions and data effectively is critical for smooth app performance. Follow these tips:
+
     <ul>
       <li>Use <a href="https://docs.lovable.dev/integrations/supabase">Supabase</a>’s real-time features (or similar services) for seamless data syncing.</li>
       <li>Ask Lovable to implement strong authentication and token refresh mechanisms for session management.</li>
@@ -234,10 +291,12 @@ When using Lovable, you may occasionally encounter technical issues. Below are c
 
   <Accordion title="Repository and Account Management">
     For smooth repository management and account syncing:
+
     <ul>
       <li>Verify that <a href="https://docs.lovable.dev/integrations/git-integration">GitHub repository access permissions</a> are correctly configured.</li>
       <li>Use Lovable’s <b>built-in rollback feature</b> for undoing accidental changes, as your projects are automatically backed up.</li>
     </ul>
+
     This ensures safe and reliable version control for your projects.
   </Accordion>
 </AccordionGroup>
