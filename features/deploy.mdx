@@ -1,31 +1,33 @@
 ---
 title: "Deploy and share"
-description: "Learn how to deploy and share your web applications with Lovable"
-icon: 'octopus-deploy'
+description: "Learn how to deploy, share, and get traffic to your web applications with Lovable."
+icon: "octopus-deploy"
 ---
 
-Once your web app is ready, you can deploy it or share it with the world. You can also share your work-in-progress version to gather feedback. Lovable makes it simple to publish and share your apps with just a few clicks.&#x20;
+Once your web app is ready, you can **deploy it** and share it with the world. You also have the option to **share a work-in-progress version** to gather feedback before going live. Lovable makes it simple to publish, iterate, and distribute your applications with just a few clicks.
 
 <Tip>
   Your published app will be accessible to anyone with the link. Make sure
   you're ready to share before publishing!
 </Tip>
 
-***
-
 ## Publishing your app
 
-When your project is ready, publish it to generate a shareable URL. This makes it easy to showcase your application or share it with collaborators and stakeholders.
+When your project is ready, **publish it to generate a shareable URL.** This makes it easy to showcase your application or share it with collaborators and stakeholders.
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/GFtWVXkZDTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 
-To publish your web app, in the top right corner of the editor view, click on the **Share** button. This button looks like a globe icon.
+### How to Publish Your App
+
+1. In the top right corner of the **editor view**, click the **Share** button (globe icon).
 
 <Frame>
   <img src="/assets/share-icon.png" alt="Share icon in Lovable" />
 </Frame>
 
-After clicking the **Share** button, a dialog will appear with options to publish your application. Click the green **Publish** button to start the deployment process. During this time, the button will display **Publishing**.
+1. A dialog box will appear with options to **publish your app**.
+
+2. Click the **Publish** button to start the deployment process. During this time, the button will display **Publishing**.
 
 <Frame>
   <video autoPlay controls loop muted>
@@ -33,9 +35,9 @@ After clicking the **Share** button, a dialog will appear with options to publis
   </video>
 </Frame>
 
-Once the deployment is complete, the dialog will show the published address with a **Republish** button for future updates.
+1. Once deployment is complete, you’ll see a **Republish** button for future updates.
 
-Your application is now live, and you can access it at the provided link.
+Your application is now live, and you can access it via the provided link.
 
 <Note>
   1. The publishing process typically takes less than a minute. You'll receive a
@@ -44,11 +46,9 @@ Your application is now live, and you can access it at the provided link.
   2. We've added an option in the project settings to show or hide the Lovable badge on your deployed app. You can customize this setting before publishing.
 </Note>
 
-***
+## Previewing Your App
 
-## Previewing your app
-
-Previewing your app allows you to preview and share your work-in-progress updates without fully deploying them.
+Previewing allows you to **see your latest changes** without affecting the live, published version.
 
 <Info>
   **Use previewing for iterative development**
@@ -58,7 +58,13 @@ Previewing your app allows you to preview and share your work-in-progress update
   We've noticed users using it for iterative development and getting real-time feedback, as well as for collaborative reviews and testing before final deployment.
 </Info>
 
-Within the same **Share** dialog described earlier, you'll see a **Preview** section with a link to view or share your work-in-progress updates.
+To preview:
+
+1. Open the **Share** dialog.
+
+2. Locate the **Preview** section.
+
+3. Click the generated **preview link** to view or share your work-in-progress updates.
 
 The preview link is generated instantly and can be shared with team members for feedback.
 
@@ -66,30 +72,78 @@ The preview link is generated instantly and can be shared with team members for 
   <img src="/assets/share-preview.png" alt="Sharing your work-in-progress" />
 </Frame>
 
-## Replace the image that appears when you share your project
+## SEO: Customizing Your Shared Image
 
-To replace the image that appears when you share your project there are two approaches. The first one involves simply prompting the AI to do this, whilst attaching the desired image to the message.
+When sharing your project on social media, you can customize the preview image in two ways:
+
+### **Option 1: Let AI Handle It**
+
+Upload an image and use a simple prompt like:
 
 <Note>
   **Example prompt**
-
-  You can upload the image directly into the prompt, by for example copy and pasting it. This ensures the system recognizes the correct image without needing an external link.
 
   ```
   Can you change the image that appears when the site is shared on social media platforms to the one above?
   ```
 </Note>
 
-The second one requires that you connect your project to Github and then update the corresponding file.
+### **Option 2: Manually Update via GitHub**
 
-1. Click on **Edit code** in your project(top right)
+1. Click **Edit code** (top right of your project).
 
-2. Connect your project to GitHub if you haven’t already. You can follow our [guide to connect your project](https://docs.lovable.dev/integrations/git-integration).
+2. Connect your project to GitHub if you haven’t already. Follow our [GitHub integration guide](https://docs.lovable.dev/integrations/git-integration).
 
-3. Open the repository for your project, navigate to the `public` folder, and locate the file `og-image.png`.
+3. Open your project repository and navigate to the `public` folder.
 
-4. Delete the `og-image.png` file and upload your desired image in its place.
+4. Replace the existing `og-image.png` with your new image.
 
 5. Rename your new image to `og-image.png`.
 
-6. Redeploy your project to apply the changes.
+6. **Redeploy your project** to apply the changes.
+
+
+
+## Launch & Get Traffic
+
+We’ve created [**Lovable Launched**](https://launched.lovable.app/), a platform like Product Hunt, where you can **publish your app to gain visibility**.
+
+![](/images/launched.png)
+
+### **Why publish here?**
+
+* Your app gets **discovered by thousands of people.**
+
+* Users can **vote** for your app, increasing its ranking.
+
+* **Top-voted projects get shoutouts** on X (Twitter) every week/month.
+
+### Drive Engagement & Upvotes
+
+To maximize exposure:
+
+* **Post on social media** (X, LinkedIn, etc.). If you tag **@lovable\_dev** on X, we’ll **repost your launch** for extra reach.
+
+* **Encourage your network** to upvote your project on **Lovable Launched.**
+
+* **Include a direct link** to your Lovable Launched page in your posts.
+
+### **Launch on Product Hunt**
+
+If you're publishing on **Lovable Launched**, consider also launching on **Product Hunt** for additional traffic.
+
+* The **same strategy applies**: post on social media, engage your network, and drive upvotes.
+
+* A **top-of-the-day ranking on Product Hunt** can bring massive traffic.
+
+### **Additional Growth Strategies**
+
+While launching on Lovable Launched and Product Hunt is **highly recommended**, you can also explore:
+
+* **Email marketing** – Reach out to potential users via email.
+
+* **Paid ads** – Run targeted campaigns on Google, Facebook, or Twitter.
+
+* **Influencer partnerships** – Collaborate with creators in your niche.
+
+* **SEO optimization** – Improve your landing page to attract organic users.
