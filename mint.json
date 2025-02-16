@@ -78,6 +78,7 @@
         "integrations/supabase",
         "tips-tricks/setting-up-payments",
         "tips-tricks/custom-domain",
+        "integrations/prompt-integrations",
         "integrations/chrome-extensions"
       ]
     },
