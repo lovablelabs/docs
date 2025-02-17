@@ -14,14 +14,10 @@ LLMs are expensive, which is why Lovable limits the daily and/or monthly message
 
 Designed to give users a chance to explore and experience Lovable's features at no cost.
 
-<Note>
-  Messages triggered by "Ask the AI to fix" don't count toward your usage limits.&#x20;
-  All other messages count regardless of their outcome.
-</Note>
-
 ## Free Plan
 
-* 5 free messages per day
+* 5 free messages per day (chat or edit mode)
+
 * Maximum of 30 messages per month
 
 ## Available Paid Plans
@@ -160,11 +156,23 @@ For detailed information about subscription options, visit our [subscription pag
     If you experience message overages or require a refund, reach out to our support team. We handle these on a case-by-case basis to ensure a fair resolution.
   </Accordion>
 
-  <Accordion title="Chat Mode credits consumption">
-    We launched **Chat Mode** as a **Labs feature** (accessible: Account > Settings > Labs)\*\* a couple of weeks ago and have gotten very good feedback from early testers. We have now started to extend its capabilities, and it's starting to feel like talking to a seasoned CTO who knows your projects and goals inside and out.
+  <Accordion title="'Chat Mode' credits consumption">
+    We launched **Chat Mode** as a [**Labs feature**](/features/labs) (accessible: **Account > Settings > Labs**) a couple of weeks ago and have gotten very good feedback from early testers. We have now started to extend its capabilities, and it's starting to feel like talking to a seasoned CTO who knows your projects and goals inside and out.
+
+
+
+    Because these capabilities come with additional costs, messages in Chat Mode will now start counting towards your message limit.&#x20;
+
+
+
+    So, 1 chat mode message = 1 edit mode message = 1 message&#x20;
+  </Accordion>
+
+  <Accordion title="'Try to Fix' button counting as messages" defaultOpen={false}>
+    Messages triggered by "Ask the AI to fix" don't count toward your usage limits only if pressed on the button. If you are trying to [fix errors](/tips-tricks/troubleshooting) with an additional prompt, that counts as message credit.&#x20;
 
     <Note>
-      Because these capabilities come with additional costs, messages in Chat Mode will now start counting towards your message limit.
+      &#x20;All other messages count regardless of their outcome.
     </Note>
   </Accordion>
 </AccordionGroup>
