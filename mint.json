@@ -32,9 +32,9 @@
       "url": "https://discord.gg/rPw2rSFE2K"
     },
     {
-      "name": "Changelog",
+      "name": "Press Releases",
       "icon": "newspaper",
-      "url": "https://feedback.lovable.dev/changelog"
+      "url": "https://lovable.dev/blog?category=changelog"
     },
     {
       "name": "Request Feature",
@@ -52,6 +52,7 @@
       "group": "Introduction",
       "pages": [
         "introduction", 
+        "changelog",
         "user-guides/controls",
         "user-guides/video-tutorials",
         "user-guides/messaging-limits",
