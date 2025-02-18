@@ -16,6 +16,20 @@ icon: 'circle-question'
   <Accordion title="Can I import existing code from GitHub?">
     No, this isn't something we support at the moment.
   </Accordion>
+
+  <Accordion title="How can I build a privileges system for a SaaS app?">
+    * Use **Supabase authentication** to create user roles (Admin, User, Guest).
+
+    * Implement **Row-Level Security (RLS)** for data access control.
+
+    * Use **Edge Functions** for API-level permissions.
+
+    * Test your setup to prevent security leaks.
+  </Accordion>
+
+  <Accordion title="Will Lovable improve my prompts without using my credits?">
+    Improving prompts may count toward your **usage limit**, but Lovable optimizes responses to minimize unnecessary interactions.
+  </Accordion>
 </AccordionGroup>
 
 ## Code and Development
@@ -33,16 +47,56 @@ icon: 'circle-question'
     No, Lovable can only generate applications based on Vite and React at the moment.
   </Accordion>
 
-  <Accordion title="How does Lovable handles duplicated code?" defaultOpen={false}>
+  <Accordion title="How does Lovable handles duplicated code?">
     Previously, when adding functionality, the AI sometimes created duplicate files, causing confusion and errors where changes were applied to a hidden duplicate instead of the visible file.&#x20;
-
-
 
     This update ensures the system now detects and excludes duplicate files, significantly reducing "could not be applied" errors.&#x20;
 
-
-
     As a result, users—especially those building larger applications—will experience more reliable AI behavior, with changes correctly applied and fewer inconsistencies. This fix is automatically applied to all projects, requiring no action from users, and is part of our ongoing effort to enhance AI accuracy and scalability.
+  </Accordion>
+
+  <Accordion title="What is a webhook, and how does it work?">
+    A **webhook** is a way for two applications to communicate automatically. It acts as a “listener” that waits for specific events and triggers an action in response.
+
+    For example, in Lovable:
+
+    1. A user submits a form.
+
+    2. The form data is sent to a webhook URL (like an API endpoint).
+
+    3. The webhook processes the data and triggers another action, such as storing the information in a database or sending an email notification.
+
+    **Key uses of webhooks:**
+
+    * **Real-time automation** – instantly process incoming data.
+
+    * **Integrations with external tools** – connect Lovable with services like Slack, Stripe, or Supabase.
+
+    * **Handling API responses** – send data between systems without manual intervention.
+
+    When using webhooks, always:
+
+    * **Ensure the webhook URL is correct and secure** to prevent data leaks.
+
+    * **Handle responses properly** – Lovable should expect a return confirmation to ensure successful execution.
+  </Accordion>
+
+  <Accordion title="What is refactoring, and why is it important?">
+    **Refactoring** is the process of improving the structure, readability, and efficiency of existing code without changing its functionality. It’s like editing a long essay to make it more concise while keeping the same message.
+
+    In AI-generated development, refactoring can help:
+
+    * **Optimize performance** by reducing redundant code.
+
+    * **Improve maintainability** for easier debugging and future updates.
+
+    * **Prevent conflicts** by organizing logic more clearly.
+
+    However, unnecessary refactoring can introduce bugs. Before refactoring, always:
+
+    * **Ask AI what it plans to change** (e.g., in Lovable’s Chat Mode).
+
+    * **Ensure all dependencies remain functional** to avoid breaking other parts of your application.
   </Accordion>
 </AccordionGroup>
 
@@ -64,6 +118,20 @@ icon: 'circle-question'
   <Accordion title="Can I integrate payments in my application?">
     Yes, you can integrate Stripe within your application. There are many ways to connect Stripe to Lovable, but the most straight-forward way is to utilize Stripe’s built-in payment links. [This is a great workflow](https://docs.lovable.dev/tips-tricks/setting-up-payments) that will get you going.
   </Accordion>
+
+  <Accordion title="What’s the best way to prevent unexpected regressions when validating code?">
+    * **Use chat mode** to verify changes before applying them.
+
+    * **Lock critical files** to prevent unintentional edits.
+
+    * **Implement version control** (GitHub) to track changes.
+
+    * **Write detailed prompts** so the AI understands dependencies.
+  </Accordion>
+
+  <Accordion title="Can I automate workflows in Lovable without using Make.com?">
+    Yes! While **Make.com and n8n** help with automation, Lovable is working on **native workflow integrations**.
+  </Accordion>
 </AccordionGroup>
 
 ## AI and Automation
@@ -76,6 +144,14 @@ icon: 'circle-question'
   <Accordion title="Can Lovable AI be used to build a complex B2B workflow-based SaaS app?">
     Yes, Lovable AI can help generate and structure complex B2B SaaS applications, including **workflow-driven systems** with multiple approval stages, role-based field visibility, document generation (with signatures and images), and customer-specific workflows.
   </Accordion>
+
+  <Accordion title="Why did Lovable switch from Python to Go?">
+    Lovable migrated from Python to Go to improve performance, scalability, and developer experience. Go enables faster processing, lower latency, and better efficiency, especially for handling large-scale AI-driven tasks.
+  </Accordion>
+
+  <Accordion title="Should user authentication (sign-up, profile update) be more “out-of-the-box”?">
+    Lovable provides basic authentication, but deeper customization (role-based security, social login, etc.) may require **custom logic or Supabase functions**.
+  </Accordion>
 </AccordionGroup>
 
 ## Pricing and Subscription
@@ -87,6 +163,10 @@ icon: 'circle-question'
 
   <Accordion title="Can I top-up my monthly limit?">
     No, you can't at the moment. We recommend you upgrade to a higher plan and then downgrade once you've used up your messages.
+  </Accordion>
+
+  <Accordion title="How can I see how many messages I have left for the day?">
+    You can check your usage in **account settings** under **credits/messages left**.
   </Accordion>
 </AccordionGroup>
 
