@@ -1,0 +1,173 @@
+---
+title: "Lovable Crash Course"
+description: "Learn how to leverage AI to build and launch successful products."
+icon: 'chalkboard-user'
+---
+
+## Module 1: Getting started with Lovable 101
+
+By the end, you’ll have a simple application up and running with authentication and CRUD (Create, Read, Update, Delete) functionality for managing notes.
+
+<AccordionGroup>
+  <Accordion title="Setting Up Supabase">
+    Supabase is an open-source database service built on PostgreSQL. It provides authentication, data storage, and file storage—perfect for our Lovable integration.
+
+    1. **Create an Organization & Project**
+
+       * Log into [Supabase](https://supabase.com/).
+
+       * Create an **organization** (name it based on your startup or project).
+
+       * Create a **new project** within that organization.
+
+       * Note your **Supabase URL** and **API key** (you’ll need them later).
+
+    2. **Configure Authentication**
+
+       * Navigate to **Authentication > Sign In/Sign Up**.
+
+       * Enable **Email authentication**.
+
+       * Turn off **Confirm Email** (since we don’t have an email provider set up yet).
+  </Accordion>
+
+  <Accordion title="Creating a Lovable Project">
+    Now, let’s set up a project in Lovable.
+
+    1. **Start with a Fresh Blank Project**
+
+       * Open Lovable and create a **new project**.
+
+       * Keep your first prompt simple: *"Create a blank project"*.
+
+       * Lovable will generate the basic structure for your app.
+
+    2. **Connect Supabase to Lovable**
+
+       * In Lovable, navigate to the **database settings**.
+
+       * Enter your **Supabase project URL and API key**.
+
+       * Click **Connect** to link your Lovable project to Supabase.
+  </Accordion>
+
+  <Accordion title="Adding a Login System">
+    1. **Create a Navigation Bar with a Login Button**
+
+       * Add a **nav bar** at the top of your project.
+
+       * Include a **Login** button that redirects users to a login page.
+
+    2. **Apply SQL Changes for Authentication**
+
+       * Lovable will generate SQL for Supabase to handle authentication.
+
+       * Click **Apply Changes** to execute the SQL commands.
+  </Accordion>
+
+  <Accordion title="Using the Visual Edit Tool">
+    1. **Customize the UI**
+
+       * Open the **Edit Tool** in Lovable.
+
+       * Click on UI elements (e.g., buttons) to modify styles.
+
+       * Ensure all text is visible (e.g., black text on white backgrounds).
+  </Accordion>
+
+  <Accordion title="Testing the Login System" defaultOpen={false}>
+    1. **Create a Test Account**
+
+       * Use the **Sign Up** form to create a new user.
+
+       * Verify that login and logout workflows function correctly.
+
+    2. **Redirect Users to a Dashboard After Login**
+
+       * Modify the authentication flow to send users to a **dashboard** after login.
+  </Accordion>
+
+  <Accordion title=" Adding Notes (CRUD Functionality)">
+    1. **Set Up a Notes Table in Supabase**
+
+       * Use Lovable to generate SQL for a **Notes** table.
+
+       * Ensure it has **user ID** and **content** fields.
+
+       * Click **Apply Changes** to create the table.
+
+    2. **Build the Notes UI**
+
+       * Add a **table to display notes** on the dashboard.
+
+       * Include an **input field** and **buttons** for CRUD operations.
+
+             <Info>
+               CRUD create, read, update and delete
+             </Info>
+
+    3. **Test CRUD Operations**
+
+       * Add a new note.
+
+       * Edit an existing note.
+
+       * Delete a note.
+
+       * Verify notes persist in Supabase.
+  </Accordion>
+
+  <Accordion title="Debugging with Chat Mode">
+    <Info>
+      To enable [Chat Mode](https://docs.lovable.dev/features/labs), go to **Settings > Accounts Settings** tab.
+    </Info>
+
+    1. **Identify Errors**
+
+       * If an issue arises, enable **Chat Mode**.
+
+       * Lovable will analyze **Supabase logs** and **TypeScript errors**.
+
+    2. **Apply Fixes**
+
+       * Review Lovable’s debugging suggestions.
+
+       * Apply fixes as needed.
+  </Accordion>
+
+  <Accordion title="Congratulations 🎉">
+    You’ve:
+
+    * Set up **Supabase** and **Lovable**.
+
+    * Implemented **authentication**.
+
+    * Built a **dashboard** with **CRUD functionality** for notes.
+
+    * Learned how to debug issues effectively.
+  </Accordion>
+</AccordionGroup>
+
+## Module 2: Building Interactive UIs
+
+Coming soon
+
+## Module 3: Advanced User Roles & RLS
+
+Coming soon
+
+## Module 4: Connecting to APIs & AI
+
+Coming soon
+
+## Module 5: Setting Up Stripe Payments
+
+Coming soon
+
+## Module 6: Advanced Features
+
+Coming soon
+
+## Module 7: Launch on Product Hunt
+
+Coming soon
