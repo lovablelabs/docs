@@ -150,24 +150,146 @@ By the end, you’ll have a simple application up and running with authenticatio
 
 ## Module 2: Building Interactive UIs
 
-Coming soon
+In this module, we’ll cover components, reusable UI elements, design improvements, and debugging best practices.
 
-## Module 3: Advanced User Roles & RLS
+<AccordionGroup>
+  <Accordion title="Understanding Components">
+    Components in Lovable help organize UI elements into modular and reusable parts. Instead of having all UI elements in a single page (e.g., a 400-line dashboard), we break them into components such as:
 
-Coming soon
+    * **Sidebar**
 
-## Module 4: Connecting to APIs & AI
+    * **Welcome Card**
 
-Coming soon
+    * **Quote Card**
 
-## Module 5: Setting Up Stripe Payments
+    * **Notes Section**
 
-Coming soon
+    This structure improves efficiency when making edits since changes apply only to specific components rather than the entire page.
 
-## Module 6: Advanced Features
+    ### Creating and Using Components
 
-Coming soon
+    1. **Identify Large UI Sections** – Look for UI parts that repeat or are too large.
 
-## Module 7: Launch on Product Hunt
+    2. **Refactor Into Components** – Use Lovable’s chat mode to scan the code and suggest an optimized structure.
 
-Coming soon
+    3. **Reuse Components** – Copy and paste components across pages for consistency.
+  </Accordion>
+
+  <Accordion title="Editing UI Efficiently">
+    1. **Modify Individual Components**
+
+       * Instead of modifying the full dashboard, edit smaller components like the **Welcome Card**.
+
+       * Run a prompt: *“Update the copy in the Welcome Card to make it more engaging.”*
+
+    2. **Use Chat Mode for Refactoring**
+
+       * Ask Lovable to refactor large UI sections into smaller components.
+
+       * Example: *“Refactor the dashboard into smaller, cleaner components.”*
+  </Accordion>
+
+  <Accordion title="Enhancing UI with Pre-Built Components">
+    If you’re not a designer, leveraging pre-built styles can improve your app’s appearance.
+
+    1. **Using 21st.dev for UI Inspiration**
+
+       * Visit [21st.dev](https://21st.dev/?tab=components\&sort=recommended) to explore pre-built UI components.
+
+       * Choose a design, copy its prompt for Lovable, and integrate it into your project.
+
+    2. **Creating Global Styles**
+
+       * Example: Making a **Rainbow Button** a global component.
+
+       * Run a prompt: *“Set the Rainbow Button as the global button style.”*
+
+       * Modify project settings to ensure all new buttons follow this style.
+  </Accordion>
+
+  <Accordion title="Redesigning the Dashboard">
+    To update the dashboard layout:
+
+    1. Find a **design you like** (e.g., on [Dribbble](https://dribbble.com/)).
+
+    2. **Screenshot the relevant section** and upload it to Lovable.
+
+    3. **Provide clear instructions**, such as:
+
+       * *“Refactor the dashboard layout based on this design.”*
+
+       * *“Place notes in a left-hand sidebar, and open them in a side-by-side editable view.”*
+  </Accordion>
+
+  <Accordion title="Implementing Real-Time Updates">
+    1. **Enable Real-Time Sync for Notes**
+
+       * Run a prompt: *“Enable real-time updates for notes so that changes reflect instantly.”*
+
+       * Ensure data updates in both the **sidebar** and **editing panel**.
+
+    2. **Debugging UI Issues**
+
+       * Use chat mode to scan the implementation and fix missing updates.
+
+       * Example: *“When editing the title in the side-by-side view, it doesn’t save. Fix this issue.”*
+  </Accordion>
+
+  <Accordion title="Refining the Note Editing Experience">
+    1. **Use** [**Mobbin**](https://mobbin.com/) **for Real-World UI Examples**
+
+       * Search for “note-taking UI” to see how popular apps design their interfaces.
+
+       * Example: A clean, minimalistic note editor with large titles and a dropdown for tags.
+
+    2. **Applying UI Improvements**
+
+       * Ensure the title is **large and prominent**.
+
+       * Add **tags via a dropdown**, similar to the reference UI.
+
+       * Example prompt: *“Redesign the note editor to match this screenshot. Use a large title, white space for content, and dropdown-based tags.”*
+  </Accordion>
+
+  <Accordion title="Debugging and Final Touches">
+    1. **Fix UI Bugs**
+
+       * Run a prompt: *“Fix the issue where note tags don’t save after editing.”*
+
+       * Ensure all UI elements update correctly when modified.
+
+    2. **Optimize Button Styling**
+
+       * Adjust button and input styling to match the intended design.
+
+       * Example: *“Ensure all buttons use the global Rainbow Button style.”*
+  </Accordion>
+
+  <Accordion title="Congratulations 🎉">
+    By the end of this module, you should have:
+
+    * Refactored large UI sections into reusable components.
+
+    * Implemented a polished note-taking dashboard.
+
+    * Used real-time updates for better user experience.
+
+    * Refined the design using external inspirations and best practices.
+  </Accordion>
+</AccordionGroup>
+
+## What's next?&#x20;
+
+![](/images/harry-crash-course.png)If you enjoyed the first two modules, continue your crash course with Harry [here](https://aclasswithharry.com/dashboard)! In the next lessons, you'll explore:
+
+* **Bonus**: P5.js effects & Admin Roles
+
+* Advanced User Roles & RLS
+
+* Connecting to APIs & AI
+
+* Setting Up Stripe Payments
+
+* Advanced Features
+
+* Launch on Product Hunt
