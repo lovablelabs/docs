@@ -12,11 +12,81 @@ icon: 'database'
 
 [Supabase](https://supabase.com/) is an open-source alternative to Firebase, offering real-time databases, authentication services, and file storage. It is built atop [PostgreSQL](https://www.postgresql.org/), providing robust SQL querying capabilities and seamless integration with existing tools and frameworks. Supabase also features an intuitive web interface for effortless management of users and data.
 
-<Frame>
-  ![Supabase](../assets/supabase.png)
-</Frame>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/-sSOyO0FiPE?si=WljVA-E0YU4LObMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
-Discover more about Supabase [here](https://supabase.com/docs).
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What is Supabase and how does it help Lovable users?">
+    Supabase is an open-source backend-as-a-service that provides authentication, databases (PostgreSQL), storage, and real-time capabilities. It helps Lovable users by handling data storage, authentication, and other backend functionalities without requiring manual setup.
+  </Accordion>
+
+  <Accordion title="Do I need a separate subscription for Lovable and Supabase?">
+    Both Lovable and Supabase offer free tiers. However, if you need additional features, scalability, or more extensive use, you may need to subscribe to their paid plans separately.
+  </Accordion>
+
+  <Accordion title="How do I connect Lovable with Supabase?">
+    1. In the Lovable editor, go to the **Integrations** section.
+
+    2. Click **Connect to Supabase** and follow the authentication steps.
+
+    3. If needed, create a new Supabase project within Lovable.
+
+    4. Lovable will automatically generate the necessary database schema and connect it to your project.
+  </Accordion>
+
+  <Accordion title="Can I connect Lovable with automation tools like Make.com or Zapier?">
+    Yes, Lovable supports integration with external automation tools like Make.com and Zapier. These integrations can be set up through API endpoints.
+  </Accordion>
+
+  <Accordion title=" How does Supabase handle scalability?">
+    Supabase uses **PostgreSQL**, one of the world’s most scalable databases. It supports millions of rows and can handle high-traffic applications efficiently. Users on the **Pro Plan** or higher can access additional scaling features.
+  </Accordion>
+
+  <Accordion title="How do I add real-time features like chat or live comments?">
+    Supabase provides **real-time capabilities** that Lovable can integrate with. You can:
+
+    * Add real-time listeners for comments or updates.
+
+    * Use **Supabase Storage** for image and file uploads.
+
+    * Enable live chat features in your app.
+  </Accordion>
+
+  <Accordion title="Is there a limit to file uploads on Supabase?">
+    Supabase allows file uploads (images, videos, PDFs) with a **50MB limit on the free plan**. The **Pro Plan** supports resumable uploads for larger files.
+  </Accordion>
+
+  <Accordion title="How do I configure authentication in Supabase?">
+    Lovable automatically sets up authentication, but you may need to:
+
+    * Go to **Supabase Dashboard > Authentication**.
+
+    * Enable **Email Sign-in/Sign-up**.
+
+    * Disable email confirmation for easier local testing.
+  </Accordion>
+
+  <Accordion title="Can I have multiple Lovable projects connected to one Supabase database?">
+    Yes, multiple Lovable projects can share the same Supabase backend, making it possible to create various front-end interfaces for a single database.
+  </Accordion>
+
+  <Accordion title="How do I prevent database changes from affecting my live app?">
+    Currently, Lovable doesn’t have separate staging and production environments, but **Supabase Branching** allows you to create test environments before pushing changes to production.
+  </Accordion>
+
+  <Accordion title="Can I use Supabase AI Assistant to generate SQL queries?">
+    Yes! Supabase AI Assistant helps generate complex SQL queries, making it easier to interact with your database without deep SQL knowledge.
+  </Accordion>
+
+  <Accordion title="How do I handle payments in Lovable?">
+    You can integrate Stripe or other payment services using Supabase **Edge Functions** to handle transactions securely.
+  </Accordion>
+</AccordionGroup>
+
+
+
+## Introduction to Supabase
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/V_2aZCjrTJo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 
@@ -127,6 +197,4 @@ When troublehsooting, you  can visit the the logs for your Edge Function in Supa
   Important Note: Before you deploy your app to production or use any real data, you will need to review and set up the appropriate RLS policies. Lovable can help with that.
 </Warning>
 
-## How to debug Supabase&#x20;
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/-sSOyO0FiPE?si=WljVA-E0YU4LObMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+##
