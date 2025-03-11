@@ -64,7 +64,7 @@
       "group": "User Guides",
       "pages": [
         "user-guides/quickstart",
-        "gloassary",
+        "glossary",
         "user-guides/crash-course",
         "tips-tricks/prompting",
         "features/labs",
