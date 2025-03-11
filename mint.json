@@ -53,25 +53,25 @@
       "pages": [
         "introduction", 
         "changelog",
-        "user-guides/controls",
-        "user-guides/video-tutorials",
+        "glossary",
         "user-guides/messaging-limits",
+        "faq",
         "tips-tricks/community",
-        "faq"
+        "user-guides/support-policy"
       ]
     },
     {
       "group": "User Guides",
       "pages": [
+        "user-guides/controls",
         "user-guides/quickstart",
-        "glossary",
+        "user-guides/video-tutorials",
         "user-guides/crash-course",
         "tips-tricks/prompting",
         "features/labs",
         "features/precision-edit",
         "features/deploy",
-        "tips-tricks/troubleshooting",
-        "user-guides/support-policy"
+        "tips-tricks/troubleshooting"
       ]
     },
     {
