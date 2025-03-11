@@ -6,7 +6,105 @@ icon: "earth-europe"
 
 When you create a project, Lovable makes it easy to [publish it](../features/deploy) with the click of a button.
 
+By default, your Lovable app is accessible via a Lovable staging subdomain (e.g., `yoursite.lovable.app`). However, you can connect your site to a custom domain (e.g., `yourdomain.com`) or a subdomain (e.g., `subdomain.yourdomain.com`) that you own.
+
+Using a custom domain enhances your brand, improves [SEO](https://docs.lovable.dev/tips-tricks/seo) discoverability, and makes your site easier to find and remember.
+
 If you want to have a custom domain, see below.
+
+## How to Connect a Custom Domain
+
+To connect a custom domain, navigate to **Project > Settings > Domains** in Lovable.
+
+### Requirements
+
+* A **paid Lovable plan** is required to connect a custom domain.
+
+* You **must own** a domain before proceeding. If you don’t have one, you can purchase it from a domain provider such as:
+
+  * [Namecheap](https://www.namecheap.com)
+
+  * [GoDaddy](https://www.godaddy.com)
+
+  * [View full list of domain providers](https://developers.entri.com/provider-list)
+
+Lovable uses [**Entri**](https://www.entri.com/) to facilitate quick and seamless domain connections.
+
+### Step-by-Step Guide to Connecting Your Domain
+
+<Steps>
+  <Step title="Step 1">
+    Navigate to **Project > Settings > Domains** and click **Connect Domain**.
+
+    ![](/images/project-setting.png)
+  </Step>
+
+  <Step title="Step 2">
+    Click **Continue**.
+  </Step>
+
+  <Step title="Step 3">
+    Enter the domain you want to connect (e.g., `yourdomain.com`).
+
+    ![](/images/connect-entri.png)
+  </Step>
+
+  <Step title="Step 4">
+    Click **Continue**.
+  </Step>
+
+  <Step title="Step 5">
+    Search for and select your **DNS provider** (the service where you purchased your domain).
+
+    ![](/images/dns-provider.png)
+  </Step>
+
+  <Step title="Step 6">
+    Follow the on-screen instructions to **sign in to your DNS provider** and authorize the connection to [Entri](https://www.entri.com/).
+  </Step>
+
+  <Step title="Step 7">
+    Click **Close Window** to complete the connection and return to **Site Settings**.
+  </Step>
+
+  <Step title="Step 8">
+    Click **Done**.
+
+    <Warning>
+      DNS changes may take up to **48 hours** to propagate globally, though most updates occur within a few hours.
+    </Warning>
+
+
+  </Step>
+</Steps>
+
+<AccordionGroup>
+  <Accordion title="My custom domain is connected, but my site isn’t live. What should I do?">
+    DNS propagation can take up to **48 hours** due to factors such as TTL (Time to Live) and internet service provider delays. If your site isn’t live yet:
+
+    * Wait a bit longer for DNS changes to fully update.
+
+    * Use a tool like [whatsmydns](https://www.whatsmydns.net/) to check the status of your DNS records.
+
+    * Clear your browser cache to ensure you’re viewing the latest version of your site.
+  </Accordion>
+
+  <Accordion title="My site isn’t appearing after 48 hours. What now?">
+    * Double-check that your **DNS records** are correctly set in your domain provider’s settings.
+
+    * If issues persist, contact your **domain provider’s support team**.
+
+    * If your DNS settings are correct but the site still doesn’t load, reach out to **Lovable’s customer support** for assistance.
+  </Accordion>
+
+  <Accordion title="Can I buy a domain through Lovable?">
+    For this launch, Lovable will **not** support buying domains. We may launch domain purchasing later if these issues are resolved.
+  </Accordion>
+
+  <Accordion title="How does connecting a custom domain impact my site's SEO?">
+    Using a custom domain improves your site's SEO by enhancing brand credibility, allowing for better indexing by search engines, and enabling features like custom meta tags and structured data. For more SEO tips, visit [Lovable SEO Guide](https://docs.lovable.dev/tips-tricks/seo).
+  </Accordion>
+</AccordionGroup>
 
 ## Using Netlify
 
@@ -49,7 +147,6 @@ The steps are:
 ### Notes:
 
 * If you hit the 100/day deployment limit in Vercel (it builds your `dev` branch but doesn't deploy it). You can ask Lovable chat to build you vercel.json file which will force Vercel to not build development builds at all.
-
 
   ![image](https://github.com/user-attachments/assets/1b29581f-0942-432b-af30-71be43a921db)
 
