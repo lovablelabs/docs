@@ -10,17 +10,103 @@ Building with Lovable makes coding faster and more intuitive, but even the best 
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/0W8bsbHh2p8?si=UEwMmMxl6Ch3yxdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
-[Here is a guide](https://lovable.dev/blog/never-get-stuck) to guide you through the *stuck* experience:
+Here is a guide to guide you through the *stuck* experience:
 
-* **Use the 'Try to Fix' button first** – it automatically detects and resolves errors.
+<Steps>
+  <Step title="The 'Try to Fix' Button: First Line of Defense">
+    When you hit an error, your first move should be the **Try to Fix** button. This triggers Lovable to analyze logs, detect errors, and attempt a correction automatically. It’s quick and usually effective. However, for complex features, the AI might not always get it right on the first try. If the fix doesn’t work, move on to a more detailed debugging approach.
+  </Step>
 
-* **Plan ahead with a structured prompt** – describe your project in detail, step by step.
+  <Step title="Understanding 'Unexpected Behavior'">
+    Sometimes, your code runs without errors, but your app isn’t functioning the way you expected. This is **Unexpected Behavior**, and it’s one of the hardest things to debug. The best approach?
 
-* **Leverage images** – visuals help Lovable understand UI-based errors.
+    * **Retrace your steps** – review what you asked Lovable to do.
 
-* **Use the 'Revert' button if needed** – go back to a stable version and rebuild logically.
+    * **Break it down** – check if a particular section of your implementation is misaligned.
 
-* **Ask Lovable for debugging help** – request an analysis of what went wrong and alternative solutions.
+    * **Use images** – show Lovable the UI result versus what you expected.
+  </Step>
+
+  <Step title="Writing Better Prompts: Start with a Strong Foundation">
+    Many issues can be avoided with a well-structured prompt. Instead of jumping straight into features, follow this **best practice** format:
+
+    1. **Project Overview** – Describe what you’re building.
+
+    2. **Page Structure** – List the key pages and components.
+
+    3. **Navigation Logic** – Explain how users will move through the app.
+
+    4. **Screenshots/Wireframes** – Upload visuals if available.
+
+    5. **Implementation Order** – Specify logical steps, e.g., “Start by creating pages and layout before adding Supabase.”
+  </Step>
+
+  <Step title="Follow the Right Implementation Order">
+    If you structure your project build logically, it reduces the risk of errors down the line. Stick to this recommended workflow:
+
+    1. **Create pages and layout**
+
+    2. **Integrate Supabase for backend/database functionality**
+
+    3. **Implement authentication (Auth) and user roles**
+
+    4. **Plan out and sequence features**
+
+    5. **Start prompting for feature implementation**
+  </Step>
+
+  <Step title="Using the Chat-Only Mode for Debugging">
+    When you're unsure about how to structure your prompts or debug an issue, switch to **Chat-Only Mode**:
+
+    * Ask Lovable to **review** what you’re trying to do.
+
+    * Request Lovable to **list the solutions it has already attempted**.
+
+    * Get Lovable to **suggest a different approach** if you’re stuck in an error loop.
+  </Step>
+
+  <Step title="Advanced Troubleshooting: What If You’re Still Stuck?">
+    If the **Try to Fix** button isn't solving your problem, and you're not making progress, try these:
+
+    * **Be more specific** – Describe exactly what’s wrong, including what you expected versus what happened.
+
+    * **Use images** – Screenshots clarify UI-based issues.
+
+    * **Ask Lovable for debugging help** – Example: *“What solutions have we tried so far? What else can we do?”*
+
+    * **Revert to a previous working state** – If things spiral out of control, go back and implement methodically.
+  </Step>
+
+  <Step title="Debugging Specific Issues">
+    <AccordionGroup>
+      <Accordion title="For UI-related problems:">
+        * Use screenshots to show the AI how things render incorrectly.
+
+        * Ask Lovable: *“Explain why this UI behaves this way. What’s the best fix?”*
+
+        * If Try to Fix doesn’t work, try tweaking component structures.
+      </Accordion>
+
+      <Accordion title="For API integration issues:">
+        * Double-check that you’re using the latest API schema.
+
+        * Ensure Supabase (or any backend) is correctly connected before calling data.
+
+        * Ask Lovable: *“What API methods are being used? Are they correctly formatted?”*
+      </Accordion>
+
+      <Accordion title="When completely stuck:">
+        * Prompt: *“Take a step back. Analyze the error and suggest a different approach.”*
+
+        * Break the task into smaller parts instead of solving everything at once.
+
+        * Use the revert button if errors persist.
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+</Steps>
+
+
 
 ## Debugging Prompts 101
 
@@ -472,18 +558,8 @@ When using Lovable, you may occasionally encounter technical issues. Below are c
 
 2. **Upload** it to your project’s GitHub repository.
 
-3. **Prompt Lovable** with the following message:
+3. **Prompt Lovable** with the following message:*"Read this document - `Comprehensive_Debugging_Manual.md`. Let me know if it helps you. Then, create a prompt that I should use to troubleshoot this issue: \{paste the issue}."*
 
-
-
-
-   *"Read this document - `Comprehensive_Debugging_Manual.md`. Let me know if it helps you. Then, create a prompt that I should use to troubleshoot this issue: \{paste the issue}."*
-
-4. When Lovable provides a prompt or suggested fix, paste it into the chat and append the following:
-
-
-
-
-   *“Before you proceed, explain in great detail: Why do you think this will work? Wait for my approval.”*
+4. When Lovable provides a prompt or suggested fix, paste it into the chat and append the following:*“Before you proceed, explain in great detail: Why do you think this will work? Wait for my approval.”*
 
 This ensures a thorough debugging process and deeper understanding before implementing any solution.
