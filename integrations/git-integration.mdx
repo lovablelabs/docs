@@ -4,27 +4,35 @@ description: "Learn how to connect and sync your projects with GitHub repositori
 icon: "github"
 ---
 
-To make it easier for developers to work together with the AI on projects, Lovable backs all projects with a git repository and lets you push commits directly to the repository.
+![](/images/github-lovable.webp)
 
-In order to push commits to [GitHub](https://lovable.dev/blog/what-is-github), your project and Lovable will automatically pull them in and update the project. This allows you to make changes yourself, without asking the AI.
+## **Why GitHub Matters in Your Dev Lifecycle**
 
-## Connecting a project to your GitHub account
+Version control and repository hosting are essential for modern software development. GitHub, one of the most widely adopted platforms, simplifies collaboration, code management, and version tracking.
 
-Before pushing your first commit, you will need to connect your GitHub account to the project. You can do this by navigating to **GitHub → Connect to GitHub**. You will then be redirected to GitHub to authorize the connection.
+**TL;DR:**
 
-You can choose to either grant access to:
+* **Git** is a version control system that tracks changes in your code.
 
-1. All repositories
+* **GitHub** hosts your Git repositories, making teamwork effortless.
 
-2. Specific repositories
+* **Lovable integrates with GitHub** to back up and sync your project’s source code in real time.
 
-Both options will let Lovable create repositories in your GitHub account or organization.
+* **Connecting your project to GitHub** ensures transparency, better collaboration, and simplified rollbacks.
 
-<Note>
-  You can only connect one GitHub login to your Lovable account, but you can
-  create repositories in any of the organizations you choose to install the
-  Lovable app in.
-</Note>
+## **Lovable’s Built-In GitHub Integration**
+
+Lovable backs every project with a Git repository, making it easy for developers to push commits directly to GitHub. This means:
+
+* **Full Control:** Update your project anytime, without asking the AI.
+
+* **Real-Time Sync:** Every change you push to GitHub is automatically pulled into Lovable, keeping your project up to date.
+
+* **Seamless Collaboration:** Work with your team using GitHub’s built-in features while leveraging Lovable’s AI-powered assistance.
+
+## Getting Started: Connecting Your Project to GitHub
+
+Before pushing your first commit, you need to connect your GitHub account to your Lovable project:
 
 <Frame>
   <video autoPlay controls loop muted className="w-full">
@@ -32,21 +40,78 @@ Both options will let Lovable create repositories in your GitHub account or orga
   </video>
 </Frame>
 
-<Warning>
-  You will need admin access if you are trying to create a repository in an
-  organization.
-</Warning>
+<Steps>
+  <Step title="Step 1">
+    Navigate to **GitHub → Connect to GitHub** within Lovable.
+  </Step>
 
-## Making changes to a project through commits
+  <Step title="Step 2">
+    You will be redirected to GitHub to authorize the connection.
+  </Step>
 
-Once you have connected your GitHub account to your project, you can view the source code by navigating to **GitHub → View on GitHub**.
+  <Step title="Step 3">
+    Choose one of the following access options:
 
-Any change you make and push to the repository will be automatically reflected in Lovable.
+    1. **All repositories** (Lovable can create and manage all repos)
 
-You can commit changes directly in GitHub Codespaces or clone the repo to use your preferred IDE.
+    2. **Specific repositories** (Lovable only accesses selected repos)
+
+    Both options will let Lovable create repositories in your GitHub account or organization.
+
+    <Note>
+      You can only connect one GitHub login to your Lovable account, but you can
+      create repositories in any of the organizations you choose to install the
+      Lovable app in.
+    </Note>
+
+    <Warning>
+      If you’re connecting a project within an **organization**, you’ll need admin access to create a repository.
+    </Warning>
+  </Step>
+</Steps>
+
+## How Code Changes Work with Lovable and GitHub
+
+Once connected, managing your project becomes effortless:
 
 <Frame>
   <video autoPlay controls loop muted className="w-full">
     <source src="/assets/sync-commits.mp4" type="video/mp4" />
   </video>
 </Frame>
+
+<Steps>
+  <Step title="Making Changes & Viewing Code">
+    * Navigate to **GitHub → View on GitHub** to see your repository.
+
+    * Edit directly in **GitHub Codespaces** or clone the repo to your local IDE.
+
+    * Any commit you push will be automatically reflected in Lovable—no manual updates needed.
+  </Step>
+
+  <Step title="Managing Code with GitHub Features">
+    * **Branches & Pull Requests** – Work on new features separately and merge changes seamlessly.
+
+    * **Issues & Project Boards** – Track progress, bugs, and tasks.
+
+    * **Forking & Contributions** – Experiment safely with a copy of the repo before merging.
+  </Step>
+
+  <Step title="Automating Workflows">
+    * Connect GitHub to CI/CD pipelines for **automated builds & tests**.
+
+    * Link GitHub Issues to commits for a **better development workflow**.
+
+    * Use **GitHub Actions** to trigger deployments when code changes are merged.
+  </Step>
+</Steps>
+
+### **Real-World Scenarios: Why This Integration Matters**
+
+* **Collaboration Made Simple** – Teams working on a web app can create branches for new features, open pull requests for reviews, and ensure code quality before merging.
+
+* **Bug Fixes in Real-Time** – Track issues in GitHub, push fixes, and see them reflected in Lovable instantly.
+
+* **Scaling with Automation** – Sync changes with CI/CD tools to automate testing and deployment, reducing manual effort.
+
+With Lovable and GitHub working hand in hand, your development process becomes **smarter, faster, and more efficient**.
