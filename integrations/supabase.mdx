@@ -4,10 +4,6 @@ description: 'Learn how to integrate Supabase with your Lovable application'
 icon: 'database'
 ---
 
-<Note>
-  **For a complete end-to-end tutorial of Supabase visit our [step-by-step tutorial](https://docs.lovable.dev/user-guides/quickstart)**
-</Note>
-
 ## Overview
 
 [Supabase](https://supabase.com/) is an open-source alternative to Firebase, offering real-time databases, authentication services, and file storage. It is built atop [PostgreSQL](https://www.postgresql.org/), providing robust SQL querying capabilities and seamless integration with existing tools and frameworks. Supabase also features an intuitive web interface for effortless management of users and data.
@@ -94,27 +90,29 @@ To incorporate Supabase into your Lovable application, start with these steps:
 
 Connecting your Lovable app to Supabase is straightforward. Simply follow the steps following steps:
 
-### Step 1: Create a Supabase account
+<Steps>
+  <Step title="Create a Supabase account">
+    Register a new Supabase account [here](https://app.supabase.com/sign-up) or [sign in](https://app.supabase.com/sign-in) if you already have one.
 
-Register a new Supabase account [here](https://app.supabase.com/sign-up) or [sign in](https://app.supabase.com/sign-in) if you already have one.
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/g8CvOq3b-sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+  </Step>
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/g8CvOq3b-sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+  <Step title="Create a new project in Supabase.">
+    Click on + New Project, complete the necessary fields, and allow a few minutes for setup.
 
-### Step 2: Create a new project in Supabase.
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/z6eDOn1613U?si=OhuL1AdNObVYFkbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+  </Step>
 
-Click on + New Project, complete the necessary fields, and allow a few minutes for setup.
+  <Step title="Connect Supabase to Lovable">
+    1. In your Lovable Editor, locate the Supabase button in the navbar. Click on it and select "Connect Supabase".
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/z6eDOn1613U?si=OhuL1AdNObVYFkbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+    2. You will be redirected to a page where you will be able to select the relevant organisation.
 
-### Step 3: Connect Supabase to Lovable
+    3. You will be then redirected back to Lovable, where you will need to select the relevant project within that organisation.
 
-1. In your Lovable Editor, locate the Supabase button in the navbar. Click on it and select "Connect Supabase".
-
-2. You will be redirected to a page where you will be able to select the relevant organisation.
-
-3. You will be then redirected back to Lovable, where you will need to select the relevant project within that organisation.
-
-After completing these steps, you will have to wait some seconds for your Supabase integration to finish. Look at the chat for this confirmation.
+    After completing these steps, you will have to wait some seconds for your Supabase integration to finish. Look at the chat for this confirmation.
+  </Step>
+</Steps>
 
 ## Adding Authentication with Supabase
 
@@ -144,7 +142,7 @@ You can then create a user by either:
 
 We recommend that you disable the email verification step for now, which you can do in Supabase -> Authentication -> Providers -> Email -> Disable "Confirm email".
 
-## Adding Google Authentication
+### Adding Google Authentication
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/W6-_0-Eekio?si=8WkxiJn0oe4wfSbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
@@ -173,11 +171,11 @@ If you are connected to Supabase, secret keys can be added to Lovable in two way
 These keys will be stored safely in Supabase's edge function secret manager.
 These keys will be used when running Edge Functions and will let them connect to services as OpenAI, Stripe, Anthropic and more.
 
-## Edge Functions
+## Edge Functions with Supabase
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/p_hKIDlxXp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 
-You can now also use Edge Functions to add powerful backend features like:
+You can also use Edge Functions to add powerful backend features like:
 
 * Using AI to enhance your app's capabilities
 
