@@ -8,7 +8,7 @@ icon: "stairs"
 
 Welcome to this step-by-step guide on how to create a full-stack application using Lovable:
 
-### Get Familiar with Lovable Platform
+### The Lovable Platform Overview
 
 <AccordionGroup>
   <Accordion title="Create your First Project">
@@ -34,8 +34,6 @@ Welcome to this step-by-step guide on how to create a full-stack application usi
   <Accordion title="Lovable Dashboard">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/O0dVaqTt29A?si=VmhNCHXS1tctWbNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
-
-
     At Lovable, simplicity is key:
 
     * [**Here**](https://lovable.dev/) **you kickstart your project** with a single prompt.
@@ -55,8 +53,6 @@ Welcome to this step-by-step guide on how to create a full-stack application usi
 
   <Accordion title="Project Overview">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/j-qhowI2tQY?si=ckB-K5Gn01Y6tPBd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
-
-
 
     At Lovable, every project follows a structured workflow:
 
@@ -118,7 +114,7 @@ Welcome to this step-by-step guide on how to create a full-stack application usi
   </Accordion>
 </AccordionGroup>
 
-### Get Started&#x20;
+### Start your Project
 
 There are several ways to get started with Lovable, depending on your preferences and resources:
 
@@ -299,7 +295,7 @@ There are several ways to get started with Lovable, depending on your preference
   </Accordion>
 </AccordionGroup>
 
-### Add Fullstack Capabilities
+### Add Fullstack Capabilities to your Project
 
 <AccordionGroup>
   <Accordion title="Connect a Backend">
@@ -399,7 +395,7 @@ There are several ways to get started with Lovable, depending on your preference
   </Accordion>
 </AccordionGroup>
 
-### Deploy & Publish
+### Deploy & Publish your Project
 
 <AccordionGroup>
   <Accordion title="Set up SEO">
@@ -433,492 +429,494 @@ There are several ways to get started with Lovable, depending on your preference
 
 ## Lovable Crash Course
 
-### Module 1: Getting started with Lovable 101
+<Steps>
+  <Step title="Getting started with Lovable 101">
+    By the end, you’ll have a simple application up and running with authentication and CRUD (Create, Read, Update, Delete) functionality for managing notes.
 
-By the end, you’ll have a simple application up and running with authentication and CRUD (Create, Read, Update, Delete) functionality for managing notes.
+    <AccordionGroup>
+      <Accordion title="Setting Up Supabase">
+        Supabase is an open-source database service built on PostgreSQL. It provides authentication, data storage, and file storage—perfect for our Lovable integration.
 
-<AccordionGroup>
-  <Accordion title="Setting Up Supabase">
-    Supabase is an open-source database service built on PostgreSQL. It provides authentication, data storage, and file storage—perfect for our Lovable integration.
+        <Steps>
+          <Step title="Create an Organization & Project">
+            <Steps>
+              <Step title="Step 1">
+                Log into [Supabase](https://supabase.com/).
+              </Step>
 
-    <Steps>
-      <Step title="Create an Organization & Project">
+              <Step title="Step 2">
+                Create an **organization** (name it based on your startup or project).
+              </Step>
+
+              <Step title="Step 3">
+                Create a **new project** within that organization.
+
+                <Note>
+                  Note your **Supabase URL** and **API key** (you’ll need them later).
+                </Note>
+              </Step>
+            </Steps>
+          </Step>
+
+          <Step title="Configure Authentication">
+            <Steps>
+              <Step title="Step 1">
+                Navigate to **Authentication > Sign In/Sign Up**.
+              </Step>
+
+              <Step title="Step 2">
+                Enable **Email authentication**.
+              </Step>
+
+              <Step title="Step 3">
+                Turn off **Confirm Email** (since we don’t have an email provider set up yet).
+              </Step>
+            </Steps>
+          </Step>
+        </Steps>
+      </Accordion>
+
+      <Accordion title="Creating a Lovable Project">
+        Now, let’s set up a project in Lovable.
+
+        <Steps>
+          <Step title="Start with a Fresh Blank Project">
+            <Steps>
+              <Step title="Step 1">
+                Open Lovable and create a **new project**.
+              </Step>
+
+              <Step title="Step 2">
+                Keep your first prompt simple: *"Create a blank project"*.
+              </Step>
+
+              <Step title="Step 3">
+                Lovable will generate the basic structure for your app.
+              </Step>
+            </Steps>
+          </Step>
+
+          <Step title="Connect Supabase to Lovable">
+            <Steps>
+              <Step title="Step 1">
+                In Lovable, navigate to the **database settings**.
+              </Step>
+
+              <Step title="Step 2">
+                Enter your **Supabase project URL and API key**.
+              </Step>
+
+              <Step title="Step 3">
+                Click **Connect** to link your Lovable project to Supabase.
+              </Step>
+            </Steps>
+          </Step>
+        </Steps>
+      </Accordion>
+
+      <Accordion title="Adding a Login System">
+        <Steps>
+          <Step title="Create a Navigation Bar with a Login Button">
+            <Steps>
+              <Step title="Step 1">
+                Add a **nav bar** at the top of your project.
+              </Step>
+
+              <Step title="Step 2">
+                Include a **Login** button that redirects users to a login page.
+              </Step>
+            </Steps>
+          </Step>
+
+          <Step title="Apply SQL Changes for Authentication">
+            <Steps>
+              <Step title="Step 1">
+                Lovable will generate SQL for Supabase to handle authentication.
+              </Step>
+
+              <Step title="Step 2">
+                Click **Apply Changes** to execute the SQL commands.
+              </Step>
+            </Steps>
+          </Step>
+        </Steps>
+      </Accordion>
+
+      <Accordion title="Using the Visual Edit Tool">
+        Customize the UI:&#x20;
+
         <Steps>
           <Step title="Step 1">
-            Log into [Supabase](https://supabase.com/).
+            Open the **Edit Tool** in Lovable.
           </Step>
 
           <Step title="Step 2">
-            Create an **organization** (name it based on your startup or project).
+            Click on UI elements (e.g., buttons) to modify styles.
           </Step>
 
           <Step title="Step 3">
-            Create a **new project** within that organization.
-
-            <Note>
-              Note your **Supabase URL** and **API key** (you’ll need them later).
-            </Note>
+            Ensure all text is visible (e.g., black text on white backgrounds).
           </Step>
         </Steps>
-      </Step>
+      </Accordion>
 
-      <Step title="Configure Authentication">
+      <Accordion title="Testing the Login System" defaultOpen={false}>
         <Steps>
-          <Step title="Step 1">
-            Navigate to **Authentication > Sign In/Sign Up**.
+          <Step title="Create a Test Account">
+            <Steps>
+              <Step title="Step 1">
+                Use the **Sign Up** form to create a new user.
+              </Step>
+
+              <Step title="Step 2">
+                Verify that login and logout workflows function correctly.
+              </Step>
+            </Steps>
           </Step>
 
-          <Step title="Step 2">
-            Enable **Email authentication**.
-          </Step>
-
-          <Step title="Step 3">
-            Turn off **Confirm Email** (since we don’t have an email provider set up yet).
+          <Step title="Redirect Users to a Dashboard After Login">
+            Modify the authentication flow to send users to a **dashboard** after login.
           </Step>
         </Steps>
-      </Step>
-    </Steps>
-  </Accordion>
+      </Accordion>
 
-  <Accordion title="Creating a Lovable Project">
-    Now, let’s set up a project in Lovable.
-
-    <Steps>
-      <Step title="Start with a Fresh Blank Project">
+      <Accordion title=" Adding Notes (CRUD Functionality)">
         <Steps>
-          <Step title="Step 1">
-            Open Lovable and create a **new project**.
+          <Step title="Set Up a Notes Table in Supabase">
+            <Steps>
+              <Step title="Step 1">
+                Use Lovable to generate SQL for a **Notes** table.
+              </Step>
+
+              <Step title="Step 2">
+                Ensure it has **user ID** and **content** fields.
+              </Step>
+
+              <Step title="Step 3">
+                Click **Apply Changes** to create the table.
+              </Step>
+            </Steps>
           </Step>
 
-          <Step title="Step 2">
-            Keep your first prompt simple: *"Create a blank project"*.
+          <Step title="Build the Notes UI">
+            <Steps>
+              <Step title="Step 1">
+                Add a **table to display notes** on the dashboard.
+              </Step>
+
+              <Step title="Step 2">
+                Include an **input field** and **buttons** for CRUD operations.
+
+                <Info>
+                  CRUD create, read, update and delete
+                </Info>
+              </Step>
+            </Steps>
           </Step>
 
-          <Step title="Step 3">
-            Lovable will generate the basic structure for your app.
-          </Step>
-        </Steps>
-      </Step>
+          <Step title="Test CRUD Operations">
+            <Steps>
+              <Step title="Step 1">
+                Add a new note.
+              </Step>
 
-      <Step title="Connect Supabase to Lovable">
-        <Steps>
-          <Step title="Step 1">
-            In Lovable, navigate to the **database settings**.
-          </Step>
+              <Step title="Step 2">
+                Edit an existing note.
+              </Step>
 
-          <Step title="Step 2">
-            Enter your **Supabase project URL and API key**.
-          </Step>
+              <Step title="Step 3">
+                Delete a note.
+              </Step>
 
-          <Step title="Step 3">
-            Click **Connect** to link your Lovable project to Supabase.
-          </Step>
-        </Steps>
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Adding a Login System">
-    <Steps>
-      <Step title="Create a Navigation Bar with a Login Button">
-        <Steps>
-          <Step title="Step 1">
-            Add a **nav bar** at the top of your project.
-          </Step>
-
-          <Step title="Step 2">
-            Include a **Login** button that redirects users to a login page.
-          </Step>
-        </Steps>
-      </Step>
-
-      <Step title="Apply SQL Changes for Authentication">
-        <Steps>
-          <Step title="Step 1">
-            Lovable will generate SQL for Supabase to handle authentication.
-          </Step>
-
-          <Step title="Step 2">
-            Click **Apply Changes** to execute the SQL commands.
+              <Step title="Step 4">
+                Verify notes persist in Supabase.
+              </Step>
+            </Steps>
           </Step>
         </Steps>
-      </Step>
-    </Steps>
-  </Accordion>
+      </Accordion>
 
-  <Accordion title="Using the Visual Edit Tool">
-    Customize the UI:&#x20;
-
-    <Steps>
-      <Step title="Step 1">
-        Open the **Edit Tool** in Lovable.
-      </Step>
-
-      <Step title="Step 2">
-        Click on UI elements (e.g., buttons) to modify styles.
-      </Step>
-
-      <Step title="Step 3">
-        Ensure all text is visible (e.g., black text on white backgrounds).
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Testing the Login System" defaultOpen={false}>
-    <Steps>
-      <Step title="Create a Test Account">
-        <Steps>
-          <Step title="Step 1">
-            Use the **Sign Up** form to create a new user.
-          </Step>
-
-          <Step title="Step 2">
-            Verify that login and logout workflows function correctly.
-          </Step>
-        </Steps>
-      </Step>
-
-      <Step title="Redirect Users to a Dashboard After Login">
-        Modify the authentication flow to send users to a **dashboard** after login.
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title=" Adding Notes (CRUD Functionality)">
-    <Steps>
-      <Step title="Set Up a Notes Table in Supabase">
-        <Steps>
-          <Step title="Step 1">
-            Use Lovable to generate SQL for a **Notes** table.
-          </Step>
-
-          <Step title="Step 2">
-            Ensure it has **user ID** and **content** fields.
-          </Step>
-
-          <Step title="Step 3">
-            Click **Apply Changes** to create the table.
-          </Step>
-        </Steps>
-      </Step>
-
-      <Step title="Build the Notes UI">
-        <Steps>
-          <Step title="Step 1">
-            Add a **table to display notes** on the dashboard.
-          </Step>
-
-          <Step title="Step 2">
-            Include an **input field** and **buttons** for CRUD operations.
-
-            <Info>
-              CRUD create, read, update and delete
-            </Info>
-          </Step>
-        </Steps>
-      </Step>
-
-      <Step title="Test CRUD Operations">
-        <Steps>
-          <Step title="Step 1">
-            Add a new note.
-          </Step>
-
-          <Step title="Step 2">
-            Edit an existing note.
-          </Step>
-
-          <Step title="Step 3">
-            Delete a note.
-          </Step>
-
-          <Step title="Step 4">
-            Verify notes persist in Supabase.
-          </Step>
-        </Steps>
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Debugging with Chat Mode">
-    <Info>
-      To enable [Chat Mode](https://docs.lovable.dev/features/labs), go to **Settings > Accounts Settings** tab.
-    </Info>
-
-    <Steps>
-      <Step title="Identify Errors">
-        * If an issue arises, enable **Chat Mode**.
-
-        * Lovable will analyze **Supabase logs** and **TypeScript errors**.
-      </Step>
-
-      <Step title="Apply Fixes">
-        <Steps>
-          <Step title="Step 1">
-            Review Lovable’s debugging suggestions.
-          </Step>
-
-          <Step title="Step 2">
-            Apply fixes as needed.
-          </Step>
-        </Steps>
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Congratulations 🎉">
-    You’ve:
-
-    * Set up **Supabase** and **Lovable**.
-
-    * Implemented **authentication**.
-
-    * Built a **dashboard** with **CRUD functionality** for notes.
-
-    * Learned how to debug issues effectively.
-  </Accordion>
-</AccordionGroup>
-
-### Module 2: Building Interactive UIs
-
-In this module, we’ll cover components, reusable UI elements, design improvements, and debugging best practices.
-
-<AccordionGroup>
-  <Accordion title="Understanding Components">
-    Components in Lovable help organize UI elements into modular and reusable parts. Instead of having all UI elements in a single page (e.g., a 400-line dashboard), we break them into components such as:
-
-    * **Sidebar**
-
-    * **Welcome Card**
-
-    * **Quote Card**
-
-    * **Notes Section**
-
-    This structure improves efficiency when making edits since changes apply only to specific components rather than the entire page.
-
-    ### Creating and Using Components:
-
-    <Steps>
-      <Step title="Identify Large UI Sections">
-        Look for UI parts that repeat or are too large.
-      </Step>
-
-      <Step title="Refactor Into Components">
-        Use Lovable’s chat mode to scan the code and suggest an optimized structure.
-      </Step>
-
-      <Step title="Reuse Components">
-        Copy and paste components across pages for consistency.
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Editing UI Efficiently">
-    <Steps>
-      <Step title="Modify Individual Components">
-        Instead of modifying the full dashboard, edit smaller components like the **Welcome Card**.
-
+      <Accordion title="Debugging with Chat Mode">
         <Info>
-          Run a prompt:&#x20;
-
-          *“Update the copy in the Welcome Card to make it more engaging.”*
-        </Info>
-      </Step>
-
-      <Step title="Use Chat Mode for Refactoring">
-        Ask Lovable to refactor large UI sections into smaller components.
-
-        <Info>
-          Example:&#x20;
-
-          *“Refactor the dashboard into smaller, cleaner components.”*
+          To enable [Chat Mode](https://docs.lovable.dev/features/labs), go to **Settings > Accounts Settings** tab.
         </Info>
 
-        * Example: *“Refactor the dashboard into smaller, cleaner components.”*
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Enhancing UI with Pre-Built Components">
-    If you’re not a designer, leveraging pre-built styles can improve your app’s appearance.
-
-    <Steps>
-      <Step title="Using 21st.dev for UI Inspiration">
         <Steps>
-          <Step title="Step 1">
-            Visit [21st.dev](https://21st.dev/?tab=components\&sort=recommended) to explore pre-built UI components.
+          <Step title="Identify Errors">
+            * If an issue arises, enable **Chat Mode**.
+
+            * Lovable will analyze **Supabase logs** and **TypeScript errors**.
           </Step>
 
-          <Step title="Step 2">
-            Choose a design, copy its prompt for Lovable, and integrate it into your project.
+          <Step title="Apply Fixes">
+            <Steps>
+              <Step title="Step 1">
+                Review Lovable’s debugging suggestions.
+              </Step>
+
+              <Step title="Step 2">
+                Apply fixes as needed.
+              </Step>
+            </Steps>
           </Step>
         </Steps>
-      </Step>
+      </Accordion>
 
-      <Step title="Creating Global Styles">
+      <Accordion title="Congratulations 🎉">
+        You’ve:
+
+        * Set up **Supabase** and **Lovable**.
+
+        * Implemented **authentication**.
+
+        * Built a **dashboard** with **CRUD functionality** for notes.
+
+        * Learned how to debug issues effectively.
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+
+  <Step title="Building Interactive UIs">
+    In this module, we’ll cover components, reusable UI elements, design improvements, and debugging best practices.
+
+    <AccordionGroup>
+      <Accordion title="Understanding Components">
+        Components in Lovable help organize UI elements into modular and reusable parts. Instead of having all UI elements in a single page (e.g., a 400-line dashboard), we break them into components such as:
+
+        * **Sidebar**
+
+        * **Welcome Card**
+
+        * **Quote Card**
+
+        * **Notes Section**
+
+        This structure improves efficiency when making edits since changes apply only to specific components rather than the entire page.
+
+        ### Creating and Using Components:
+
         <Steps>
-          <Step title="Step 1">
-            Modify an element on the project
+          <Step title="Identify Large UI Sections">
+            Look for UI parts that repeat or are too large.
+          </Step>
+
+          <Step title="Refactor Into Components">
+            Use Lovable’s chat mode to scan the code and suggest an optimized structure.
+          </Step>
+
+          <Step title="Reuse Components">
+            Copy and paste components across pages for consistency.
+          </Step>
+        </Steps>
+      </Accordion>
+
+      <Accordion title="Editing UI Efficiently">
+        <Steps>
+          <Step title="Modify Individual Components">
+            Instead of modifying the full dashboard, edit smaller components like the **Welcome Card**.
 
             <Info>
-              for eg: *“Set a button as Rainbow Button".*
+              Run a prompt:&#x20;
+
+              *“Update the copy in the Welcome Card to make it more engaging.”*
             </Info>
           </Step>
 
-          <Step title="Step 2">
-            Add this system prompt in the project settings' knowledge to ensure all new buttons follow this style:
+          <Step title="Use Chat Mode for Refactoring">
+            Ask Lovable to refactor large UI sections into smaller components.
 
             <Info>
-              "When creating components, make sure to always use our global rainbow button".
+              Example:&#x20;
+
+              *“Refactor the dashboard into smaller, cleaner components.”*
             </Info>
+
+            * Example: *“Refactor the dashboard into smaller, cleaner components.”*
+          </Step>
+        </Steps>
+      </Accordion>
+
+      <Accordion title="Enhancing UI with Pre-Built Components">
+        If you’re not a designer, leveraging pre-built styles can improve your app’s appearance.
+
+        <Steps>
+          <Step title="Using 21st.dev for UI Inspiration">
+            <Steps>
+              <Step title="Step 1">
+                Visit [21st.dev](https://21st.dev/?tab=components\&sort=recommended) to explore pre-built UI components.
+              </Step>
+
+              <Step title="Step 2">
+                Choose a design, copy its prompt for Lovable, and integrate it into your project.
+              </Step>
+            </Steps>
+          </Step>
+
+          <Step title="Creating Global Styles">
+            <Steps>
+              <Step title="Step 1">
+                Modify an element on the project
+
+                <Info>
+                  for eg: *“Set a button as Rainbow Button".*
+                </Info>
+              </Step>
+
+              <Step title="Step 2">
+                Add this system prompt in the project settings' knowledge to ensure all new buttons follow this style:
+
+                <Info>
+                  "When creating components, make sure to always use our global rainbow button".
+                </Info>
+              </Step>
+
+              <Step title="Step 3">
+                Everytime you add a button, this pre-set style will be respected.
+              </Step>
+            </Steps>
+          </Step>
+        </Steps>
+      </Accordion>
+
+      <Accordion title="Redesigning the Dashboard">
+        To update the dashboard layout:
+
+        <Steps>
+          <Step title="Step 1">
+            Find a **design you like** (e.g., on [Dribbble](https://dribbble.com/)).
+          </Step>
+
+          <Step title="Step 2">
+            **Screenshot the relevant section** and upload it to Lovable.
           </Step>
 
           <Step title="Step 3">
-            Everytime you add a button, this pre-set style will be respected.
-          </Step>
-        </Steps>
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Redesigning the Dashboard">
-    To update the dashboard layout:
-
-    <Steps>
-      <Step title="Step 1">
-        Find a **design you like** (e.g., on [Dribbble](https://dribbble.com/)).
-      </Step>
-
-      <Step title="Step 2">
-        **Screenshot the relevant section** and upload it to Lovable.
-      </Step>
-
-      <Step title="Step 3">
-        **Provide clear instructions**, such as:
-
-        <Info>
-          *“Refactor the dashboard layout based on this design.”*
-        </Info>
-
-        <Info>
-          "*Place notes in a left-hand sidebar, and open them in a side-by-side editable view.”*
-        </Info>
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Implementing Real-Time Updates">
-    <Steps>
-      <Step title="Enable Real-Time Sync for Notes">
-        <Steps>
-          <Step title="Step 1">
-            Run a prompt
+            **Provide clear instructions**, such as:
 
             <Info>
-              *“Enable real-time updates for notes so that changes reflect instantly.”*
+              *“Refactor the dashboard layout based on this design.”*
             </Info>
-          </Step>
-
-          <Step title="Step 2">
-            Ensure data updates in both the **sidebar** and **editing panel**.
-          </Step>
-        </Steps>
-      </Step>
-
-      <Step title="Debugging UI Issues">
-        Use chat mode to scan the implementation and fix missing updates.
-
-        <Info>
-          Example:&#x20;
-
-          *"When editing the title in the side-by-side view, it doesn’t save. Fix this issue.”*
-        </Info>
-      </Step>
-    </Steps>
-  </Accordion>
-
-  <Accordion title="Refining the Note Editing Experience">
-    <Steps>
-      <Step title="Use Mobbin for Real-World UI Examples">
-        Search for “note-taking UI” to see how popular apps design their interfaces.
-
-        <Info>
-          Example:&#x20;
-
-          A clean, minimalistic note editor with large titles and a dropdown for tags.
-        </Info>
-      </Step>
-
-      <Step title="Applying UI Improvements">
-        <Steps>
-          <Step title="Step 1">
-            Ensure the title is **large and prominent**.
-          </Step>
-
-          <Step title="Step 2">
-            Add **tags via a dropdown**, similar to the reference UI.
 
             <Info>
-              Example prompt:&#x20;
-
-              *“Redesign the note editor to match this screenshot. Use a large title, white space for content, and dropdown-based tags.”*
+              "*Place notes in a left-hand sidebar, and open them in a side-by-side editable view.”*
             </Info>
           </Step>
         </Steps>
-      </Step>
-    </Steps>
-  </Accordion>
+      </Accordion>
 
-  <Accordion title="Debugging and Final Touches">
-    <Steps>
-      <Step title="Fix UI Bugs">
-        Ensure all UI elements update correctly when modified.
+      <Accordion title="Implementing Real-Time Updates">
+        <Steps>
+          <Step title="Enable Real-Time Sync for Notes">
+            <Steps>
+              <Step title="Step 1">
+                Run a prompt
 
-        <Info>
-          Run a prompt:&#x20;
+                <Info>
+                  *“Enable real-time updates for notes so that changes reflect instantly.”*
+                </Info>
+              </Step>
 
-          *“Fix the issue where note tags don’t save after editing.”*
-        </Info>
-      </Step>
+              <Step title="Step 2">
+                Ensure data updates in both the **sidebar** and **editing panel**.
+              </Step>
+            </Steps>
+          </Step>
 
-      <Step title="Optimize Button Styling">
-        Adjust button and input styling to match the intended design.
+          <Step title="Debugging UI Issues">
+            Use chat mode to scan the implementation and fix missing updates.
 
-        <Info>
-          Example:&#x20;
+            <Info>
+              Example:&#x20;
 
-          *“Ensure all buttons use the global Rainbow Button style.”*
-        </Info>
-      </Step>
-    </Steps>
-  </Accordion>
+              *"When editing the title in the side-by-side view, it doesn’t save. Fix this issue.”*
+            </Info>
+          </Step>
+        </Steps>
+      </Accordion>
 
-  <Accordion title="Congratulations 🎉">
-    By the end of this module, you should have:
+      <Accordion title="Refining the Note Editing Experience">
+        <Steps>
+          <Step title="Use Mobbin for Real-World UI Examples">
+            Search for “note-taking UI” to see how popular apps design their interfaces.
 
-    * Refactored large UI sections into reusable components.
+            <Info>
+              Example:&#x20;
 
-    * Implemented a polished note-taking dashboard.
+              A clean, minimalistic note editor with large titles and a dropdown for tags.
+            </Info>
+          </Step>
 
-    * Used real-time updates for better user experience.
+          <Step title="Applying UI Improvements">
+            <Steps>
+              <Step title="Step 1">
+                Ensure the title is **large and prominent**.
+              </Step>
 
-    * Refined the design using external inspirations and best practices.
-  </Accordion>
-</AccordionGroup>
+              <Step title="Step 2">
+                Add **tags via a dropdown**, similar to the reference UI.
 
-### What's next?&#x20;
+                <Info>
+                  Example prompt:&#x20;
 
-If you enjoyed the first two modules, continue your crash course with Harry [here](https://aclasswithharry.com/dashboard)! In the next lessons, you'll explore:
+                  *“Redesign the note editor to match this screenshot. Use a large title, white space for content, and dropdown-based tags.”*
+                </Info>
+              </Step>
+            </Steps>
+          </Step>
+        </Steps>
+      </Accordion>
 
-* **Bonus**: P5.js effects & Admin Roles
+      <Accordion title="Debugging and Final Touches">
+        <Steps>
+          <Step title="Fix UI Bugs">
+            Ensure all UI elements update correctly when modified.
 
-* Advanced User Roles & RLS
+            <Info>
+              Run a prompt:&#x20;
 
-* Connecting to APIs & AI
+              *“Fix the issue where note tags don’t save after editing.”*
+            </Info>
+          </Step>
 
-* Setting Up Stripe Payments
+          <Step title="Optimize Button Styling">
+            Adjust button and input styling to match the intended design.
 
-* Advanced Features
+            <Info>
+              Example:&#x20;
 
-* Launch on Product Hunt
+              *“Ensure all buttons use the global Rainbow Button style.”*
+            </Info>
+          </Step>
+        </Steps>
+      </Accordion>
+
+      <Accordion title="Congratulations 🎉">
+        By the end of this module, you should have:
+
+        * Refactored large UI sections into reusable components.
+
+        * Implemented a polished note-taking dashboard.
+
+        * Used real-time updates for better user experience.
+
+        * Refined the design using external inspirations and best practices.
+      </Accordion>
+    </AccordionGroup>
+  </Step>
+
+  <Step title="What's next? ">
+    If you enjoyed the first two modules, continue your crash course with Harry [here](https://aclasswithharry.com/dashboard)! In the next lessons, you'll explore:
+
+    * **Bonus**: P5.js effects & Admin Roles
+
+    * Advanced User Roles & RLS
+
+    * Connecting to APIs & AI
+
+    * Setting Up Stripe Payments
+
+    * Advanced Features
+
+    * Launch on Product Hunt
+  </Step>
+</Steps>
