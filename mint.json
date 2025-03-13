@@ -63,10 +63,8 @@
     {
       "group": "User Guides",
       "pages": [
-        "user-guides/controls",
         "user-guides/quickstart",
         "user-guides/video-tutorials",
-        "user-guides/crash-course",
         "tips-tricks/prompting",
         "features/labs",
         "features/precision-edit",
