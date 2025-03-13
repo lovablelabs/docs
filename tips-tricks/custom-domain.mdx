@@ -12,6 +12,114 @@ Using a custom domain enhances your brand, improves [SEO](https://docs.lovable.d
 
 If you want to have a custom domain, see below.
 
+## Using Entri
+
+To connect a custom domain, navigate to **Project > Settings > Domains** in Lovable.
+
+### Requirements
+
+* A **paid Lovable plan** is required to connect a custom domain.
+
+* You **must own** a domain before proceeding. If you don’t have one, you can purchase it from a domain provider such as:
+
+  * [Namecheap](https://www.namecheap.com)
+
+  * [GoDaddy](https://www.godaddy.com)
+
+  * [View full list of domain providers](https://developers.entri.com/provider-list)
+
+Lovable uses [**Entri**](https://www.entri.com/) to facilitate quick and seamless domain connections.
+
+### Step-by-Step Guide
+
+<Steps>
+  <Step title="Step 1">
+    Navigate to **Project > Settings > Domains** and click **Connect Domain**.
+
+    ![](/images/project-setting.png)
+  </Step>
+
+  <Step title="Step 2">
+    Click **Continue**.
+  </Step>
+
+  <Step title="Step 3">
+    Enter the domain you want to connect (e.g., `yourdomain.com`).
+
+    ![](/images/connect-entri.png)
+  </Step>
+
+  <Step title="Step 4">
+    Click **Continue**.
+  </Step>
+
+  <Step title="Step 5">
+    Search for and select your **DNS provider** (the service where you purchased your domain).
+
+    ![](/images/dns-provider.png)
+
+    <Warning>
+      Domain providers are amongst many: *123-Reg, Amazon Route 53, arsys, Aruba IT, Bluehost, Cloudflare, Crazy Domains, DigitalOcean, DNSimple, Domain.com, DreamHost, Dynadot, EasyDNS, Enom, Gandi, Hetzner, Home PI, HostGator, Hostinger, Hover, Inmotion Hosting, IONIS, iwantmyname, Localweb, Name.com, NameBright, Namecheap, NameSilo, Netlify, Network Solutions, One.com, OpenSrs, OVH Global, Porkbun, Register.com, Register.it, Registro, Shopify, SiteGround, Spaceship, Strato, TransIP, United Domains DE, Web.com, WordPress and Xneelo.*
+    </Warning>
+  </Step>
+
+  <Step title="Step 6">
+    Follow the on-screen instructions to **sign in to your DNS provider** and authorize the connection to [Entri](https://www.entri.com/).
+  </Step>
+
+  <Step title="Step 7">
+    Click **Close Window** to complete the connection and return to **Site Settings**.
+  </Step>
+
+  <Step title="Step 8">
+    Click **Done**.
+
+    <Warning>
+      DNS changes may take up to **48 hours** to propagate globally, though most updates occur within a few hours.
+    </Warning>
+  </Step>
+
+  <Step title="You're All Set! 🎉 ">
+    Your Lovable app is now available on your custom domain.
+  </Step>
+</Steps>
+
+<AccordionGroup>
+  <Accordion title="My custom domain is connected, but my site isn’t live. What should I do?">
+    DNS propagation can take up to **48 hours** due to factors such as TTL (Time to Live) and internet service provider delays. If your site isn’t live yet:
+
+    * Wait a bit longer for DNS changes to fully update.
+
+    * Use a tool like [whatsmydns](https://www.whatsmydns.net/) to check the status of your DNS records.
+
+    * Clear your browser cache to ensure you’re viewing the latest version of your site.
+  </Accordion>
+
+  <Accordion title="My site isn’t appearing after 48 hours. What now?">
+    * Double-check that your **DNS records** are correctly set in your domain provider’s settings.
+
+    * If issues persist, contact your **domain provider’s support team**.
+
+    * If your DNS settings are correct but the site still doesn’t load, reach out to **Lovable’s customer support** for assistance.
+  </Accordion>
+
+  <Accordion title="Can I buy a domain through Lovable?">
+    For this launch, Lovable will **not** support buying domains. We may launch domain purchasing later if these issues are resolved.
+  </Accordion>
+
+  <Accordion title="How does connecting a custom domain impact my site's SEO?">
+    Using a custom domain improves your site's SEO by enhancing brand credibility, allowing for better indexing by search engines, and enabling features like custom meta tags and structured data. For more SEO tips, visit [Lovable SEO Guide](https://docs.lovable.dev/tips-tricks/seo).
+  </Accordion>
+
+  <Accordion title="How to remove a custom domain?">
+    1. Access the **Project > Settings > Domains.**
+
+    2. Click "Remove domain" next to your custom domain.
+
+    3. Remove the DNS records fro your domain provider.
+  </Accordion>
+</AccordionGroup>
+
 ## Using Netlify
 
 You can host on Netlify for free with a custom domain.
