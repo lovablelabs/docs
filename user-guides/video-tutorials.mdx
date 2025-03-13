@@ -62,9 +62,9 @@ icon: "video"
 
         * A `meals` table linked to users for tracking daily entries.
 
-        <Info>
+        <Note>
           Use row-level security (RLS) rules in Supabase to ensure user privacy. Lovable can handle this for you automatically.
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Integrating OpenAI for Meal Analysis">
@@ -82,13 +82,13 @@ icon: "video"
 
         * **Image recognition**: Upload a meal photo, and GPT-4 will extract a description and nutritional data.
 
-        <Info>
+        <Note>
           *Pro Tips for OpenAI Integration:*
 
           * Use **function calling** for structured responses, ensuring data is formatted correctly for database insertion.
 
           * Test the functionality by asking the app to analyze simple meal entries like “2 eggs.”
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Implementing Payments with Stripe">
@@ -100,13 +100,13 @@ icon: "video"
 
         3. Redirect non-paying users to the landing page. Only paying users can access the main app.
 
-        <Info>
+        <Note>
           *Additional Tips:*
 
           * Enable Stripe’s **customer portal** to let users manage subscriptions (e.g., cancel or update payment methods).
 
           * Test payments in Stripe’s test mode using the provided test credit card details.
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Testing and Debugging">
@@ -118,9 +118,9 @@ icon: "video"
 
         * If deploying to [Netlify](), review deployment logs for any build issues. Share logs with Lovable to get tailored fixes.
 
-        <Info>
+        <Note>
           &#x20;If you get stuck, revert to a previous version using Lovable’s "Revert" feature. This saves credits and time.
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Deploying Your App">
@@ -134,9 +134,9 @@ icon: "video"
 
         * Purchase a domain and configure [DNS settings]() to link it to Netlify.
 
-        <Info>
+        <Note>
           Update your app’s metadata (favicon, meta tags, OG image) for better branding and SEO.
-        </Info>
+        </Note>
       </Step>
     </Steps>
   </Accordion>
@@ -378,9 +378,9 @@ icon: "video"
 
         * Hover over elements to make quick adjustments.
 
-        <Info>
+        <Note>
           Users can now select text, change colors, or swap icons effortlessly without needing AI intervention—allowing for a smoother design iteration process.
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Advanced Debugging and API Error Handling">
@@ -392,9 +392,9 @@ icon: "video"
 
         * Enables AI-driven error detection for automatic fixes.
 
-        <Info>
+        <Note>
           Instead of overwhelming users with generic popups, Lovable now feeds error context directly into its AI, which can decide when an issue needs to be addressed and how to fix it.
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Creating Dynamic Backgrounds and Animations">
@@ -416,9 +416,9 @@ icon: "video"
 
         * **Define the desired animation:**
 
-        <Info>
+        <Note>
           Make the background interactive with floating elements that move away when hovered over.
-        </Info>
+        </Note>
 
         * **Use p5.js to generate effects:**
 
@@ -430,9 +430,9 @@ icon: "video"
 
           * Make elements move dynamically based on user actions.
 
-        <Info>
+        <Note>
           If an animation isn’t working, use Lovable’s chat mode to debug and refine the effect with step-by-step AI guidance.
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Importing Custom Elements from External Libraries">
@@ -446,9 +446,235 @@ icon: "video"
 
         This approach accelerates design workflows and allows for more polished, visually cohesive interfaces.
 
-        <Info>
+        <Note>
           This same method works for importing animation presets from **motion.dev**, making it easier to add high-quality motion effects without custom coding.
-        </Info>
+        </Note>
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="Clerk Authentication, Custom Domains & Waitlists">
+
+
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/tyAsNwu_xCI?si=VHCGf2IlFRQzVLeD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+
+
+
+    Here is a step-by-step guide:
+
+    <Steps>
+      <Step title="Introduction to Clerk">
+        **Clerk** is a developer tool for authentication, user management, and team roles.
+
+        * Provides authentication out-of-the-box
+
+        * Supports OAuth, social logins, and multi-factor authentication
+
+        * Easily integrates with Superbase
+      </Step>
+
+      <Step title="Setting Up Clerk Authentication">
+        <Steps>
+          <Step title="Step 1">
+            **Create a Clerk Account** → [Clerk.com](https://clerk.com)
+          </Step>
+
+          <Step title="Step 2">
+            **Set Up a New Application**
+
+            <Steps>
+              <Step title="Step 1">
+                Sign in to Clerk & create a new app
+              </Step>
+
+              <Step title="Step 2">
+                Enable authentication methods (Google, GitHub, LinkedIn, etc.)
+              </Step>
+
+              <Step title="Step 3">
+                Copy your **public API key**
+              </Step>
+            </Steps>
+          </Step>
+
+          <Step title="Step 3">
+            **Integrate Clerk with Lovable**
+
+            <Steps>
+              <Step title="Step 1">
+                In **Lovable**, add Clerk as your authentication provider
+              </Step>
+
+              <Step title="Step 2">
+                Paste the **public API key**
+              </Step>
+
+              <Step title="Step 3">
+                Deploy & test authentication
+              </Step>
+            </Steps>
+          </Step>
+        </Steps>
+      </Step>
+
+      <Step title="Enabling Clerk’s Waitlist Component">
+        <Note>
+          **Why use a waitlist?** – Gather early users before launching your app!
+        </Note>
+
+        <Steps>
+          <Step title="Step 1">
+            Go to **Clerk Dashboard → Configure → Restrictions**
+          </Step>
+
+          <Step title="Step 2">
+            Set mode to **Waitlist**
+          </Step>
+
+          <Step title="Step 3">
+            * Users who sign up will now be **pending approval**
+
+            * Admins can approve users from the Clerk dashboard
+          </Step>
+        </Steps>
+
+        <Note>
+          **Bonus:**&#x20;
+
+          Customize the waitlist email in Clerk!
+        </Note>
+      </Step>
+
+      <Step title="Managing Users & Teams in Clerk">
+        **Create Organizations & User Roles**
+
+        <Steps>
+          <Step title="Step 1">
+            Enable **Organization Support** in Clerk
+          </Step>
+
+          <Step title="Step 2">
+            Set default roles (Admin, Editor, Viewer, etc.)
+          </Step>
+
+          <Step title="Step 3">
+            Invite users via email
+          </Step>
+
+          <Step title="Step 4">
+            Assign permissions & access levels
+          </Step>
+        </Steps>
+
+        <Note>
+          **Using Clerk’s User Profile Component**
+
+          * Provides a prebuilt user management dashboard
+
+          * Supports social logins & password authentication
+
+          * Users can manage their own accounts & 2FA
+        </Note>
+      </Step>
+
+      <Step title="Clerk + Supabase Integration">
+        <Note>
+          **Why integrate with Supabase?**
+
+          * Store user data in a database
+
+          * Secure authentication with JWT tokens
+
+          * Connect authentication to app features
+        </Note>
+
+        **How to integrate:**
+
+        <Steps>
+          <Step title="Step 1">
+            In **Supabase**, generate a JWT secret
+          </Step>
+
+          <Step title="Step 2">
+            In **Clerk Dashboard → JWT Templates**, add the secret
+          </Step>
+
+          <Step title="Step 3">
+            Enable **Clerk as an authentication provider**
+          </Step>
+
+          <Step title="Step 4">
+            Update your app to use **Supabase authentication**
+          </Step>
+        </Steps>
+      </Step>
+
+      <Step title="Deploying a Custom Domain with Lovable">
+        <Note>
+          **Why use a custom domain?**
+
+          Boosts brand recognition & trust
+
+          [More information here](https://docs.lovable.dev/tips-tricks/custom-domain).
+        </Note>
+
+        <Steps>
+          <Step title="Step 1">
+            In **Lovable**, navigate to **Custom Domain Settings**
+          </Step>
+
+          <Step title="Step 2">
+            Enter your purchased domain
+          </Step>
+
+          <Step title="Step 3">
+            Lovable will **automatically configure** DNS settings
+          </Step>
+
+          <Step title="Step 4">
+            Deploy & test your app with the new domain
+          </Step>
+        </Steps>
+      </Step>
+
+      <Step title="Bonus – Debugging with Clerk’s Impersonation Feature">
+        <Note>
+          **What is Impersonation Mode?**
+
+          Admins can log in as any user to troubleshoot issues
+        </Note>
+
+        <Steps>
+          <Step title="Step 1">
+            In **Clerk Dashboard**, select a user
+          </Step>
+
+          <Step title="Step 2">
+            Click **Impersonate User**
+          </Step>
+
+          <Step title="Step 3">
+            View the app as the selected user
+          </Step>
+
+          <Step title="Step 4">
+            Ensure security restrictions prevent impersonators from making account changes
+          </Step>
+        </Steps>
+      </Step>
+
+      <Step title="Final Thoughts & Next Steps">
+        **Your app now has:**
+
+        * Secure authentication with Clerk
+
+        * A waitlist to collect early users
+
+        * User & team management features
+
+        * Supabase database integration
+
+        * A professional custom domain
       </Step>
     </Steps>
   </Accordion>
@@ -626,8 +852,8 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
   </Accordion>
 
   <Accordion title="Build an SEO Landing Page" defaultOpen={false}>
-     <iframe width="100%" height="315" src="https://www.youtube.com/embed/3rVsp8SQ_Jc?si=KP7XftODi6apMX4m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
-   </Accordion>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/3rVsp8SQ_Jc?si=KP7XftODi6apMX4m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+  </Accordion>
 
   <Accordion title="Build a Marketing Landing Page" defaultOpen={false}>
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/tR4d8Mz5Bgk?si=Sofq45DrmrqCG1ja" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
@@ -652,8 +878,8 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
   </Accordion>
 
   <Accordion title="Lovable + Cursor">
-     <iframe width="100%" height="315" src="https://www.youtube.com/embed/YyeUSujTvXc?si=TB7A9-J5j4RF3k5N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
-   </Accordion>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/YyeUSujTvXc?si=TB7A9-J5j4RF3k5N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+  </Accordion>
 
   <Accordion title="Build Text-to-Web App Platform" defaultOpen={false}>
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/cwdPcbWwb2s?si=OY_JIaSdQjDCpUar" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
@@ -686,9 +912,9 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
 
         * Used this breakdown as the **foundation for building in Lovable**
 
-        <Info>
+        <Note>
           *Describe this landing page in detail, including layout, sections, colors, and typography.*
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Build the Core with Lovable">
@@ -718,9 +944,9 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
 
         * **Connected APIs** without writing redundant boilerplate code.
 
-        <Info>
+        <Note>
           *Add Supabase authentication to the app, allowing users to sign up and log in using their email.*
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Email Automation with Resend">
@@ -730,9 +956,9 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
 
         * **Action-triggered notifications** within the app.
 
-        <Info>
+        <Note>
           *Set up an email workflow using Resend that sends a welcome email to users upon signup and a notification when they complete an action.*
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Chat with Your Codebase">
@@ -746,9 +972,9 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
 
         * Get a high-level project overview instantly.
 
-        <Info>
+        <Note>
           *Based on the PRD and task breakdown, list all completed features and highlight pending tasks.*
-        </Info>
+        </Note>
 
         This feature **saves hours** by keeping teams aligned on progress.
       </Step>
@@ -760,9 +986,9 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
 
         * AI functionality was up and running in **minutes**.
 
-        <Info>
+        <Note>
           *Integrate OpenAI APIs to summarize user data input and display the results on the dashboard.*
-        </Info>
+        </Note>
       </Step>
 
       <Step title="AI Image Generation with Replicate">
@@ -772,9 +998,9 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
 
         * Required minimal configuration.
 
-        <Info>
+        <Note>
           *Add Replicate integration to generate AI-powered images based on user inputs.*
-        </Info>
+        </Note>
       </Step>
 
       <Step title="Payments with Stripe">
@@ -786,9 +1012,9 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
 
         * **Synced Stripe dashboards** for client visibility.
 
-        <Info>
+        <Note>
           *Integrate Stripe into the app to allow subscription payments, including a dashboard for users to manage their plans*.
-        </Info>
+        </Note>
       </Step>
 
       <Step title="From Lovable to Cursor for Finalization">
@@ -875,6 +1101,8 @@ Learning Spanish has never been this interactive! Imagine an app that not only t
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/180e-dK6ipo?si=pkeR_9H2M8CZEM3S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
   </Accordion>
 </AccordionGroup>
+
+More videos available [here](https://www.youtube.com/playlist?list=PLbVHz4urQBZkJ6WMXlIGc3NGsufrleogY).
 
 ## Comparison to other tools
 
