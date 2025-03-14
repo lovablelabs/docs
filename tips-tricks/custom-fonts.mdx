@@ -1,65 +1,57 @@
 ---
-title: 'Using Custom (Google) Fonts'
-description: 'Learn how to use web-safe fonts and Google Fonts in your Lovable projects'
-icon: 'font'
+title: "Using Custom (Google) Fonts"
+description: "Learn how to use web-safe fonts and Google Fonts in your Lovable projects"
+icon: "font"
 ---
 
-Currently, Lovable does not support direct uploads of custom fonts. However, there are several easy ways to use web-safe or incorporate custom fonts into your projects. 
+Currently, Lovable does not support direct uploads of custom fonts. 
 
-Below, we’ll guide you through the available methods for using web-safe and Google fonts.
+However, there are several easy ways to use web-safe or incorporate custom fonts into your projects. Below, we’ll guide you through the available methods for **using web-safe** and **Google fonts**:
 
-<Info>
-  **What are web-safe fonts?**
+<AccordionGroup>
+  <Accordion title="Using a web-safe font">
+    <Info>
+      **What are web-safe fonts?**
 
-  Web-safe fonts are fonts that are commonly installed on most operating systems (Windows, macOS, Linux, etc.) and are visible on all devices. 
-    
-  These fonts ensure that your text looks consistent across different browsers and platforms without needing to load any external resources. Some of the common web-safe fonts are:
+      Web-safe fonts are fonts that are commonly installed on most operating systems (Windows, macOS, Linux, etc.) and are visible on all devices.
 
-  - Arial/Helvetica
-  - Times New Roman
-  - Georgia
-  - Courier New
-  - Verdana
-  - Tahoma
-  - Trebuchet MS
-  - Lucida Sans Unicode
-</Info>
+      These fonts ensure that your text looks consistent across different browsers and platforms without needing to load any external resources. Some of the common web-safe fonts are:
 
-## Using a web-safe font
-
-If you want to use a web-safe font in your project, you can specify the font directly in your prompt. For example, if you want to use **Courier New** for a heading or title in the hero section, simply reference the font by name in your prompt.
-
-
+      - Arial/Helvetica
+      - Times New Roman
+      - Georgia
+      - Courier New
+      - Verdana
+      - Tahoma
+      - Trebuchet MS
+      - Lucida Sans Unicode
+    </Info>
+    If you want to use a web-safe font in your project, you can specify the font directly in your prompt. For example, if you want to use **Courier New** for a heading or title in the hero section, simply reference the font by name in your prompt.
 
     ```text
     Use Courier New as the heading font in the hero section for the main title.
     ```
 
+    Web-safe fonts like Courier New ensure that your project will have consistent typography across all platforms without requiring external resources to load the font. However, they can limit your creativity. Lucikly, there are otions like the ability to use Google Fonts.
+  </Accordion>
+  <Accordion title="Using Google Fonts">
+    If you prefer to use custom fonts, Lovable works nicely with **Google Fonts**. This allows you to easily use a wide range of fonts in your project. You can either reference a Google font by name or by linking directly to the font resource.
 
+    ### Using by name
 
-Web-safe fonts like Courier New ensure that your project will have consistent typography across all platforms without requiring external resources to load the font. However, they can limit your creativity. Lucikly, there are otions like the ability to use Google Fonts.
-
-## Using Google Fonts
-
-If you prefer to use custom fonts, Lovable works nicely with **Google Fonts**. This allows you to easily use a wide range of fonts in your project. You can either reference a Google font by name or by linking directly to the font resource.
-
-### Using by name
-
-In your prompt, you can specify the name of a Google font, and Lovable will include it in your project. For example:
-
+    In your prompt, you can specify the name of a Google font, and Lovable will include it in your project. For example:
 
     ```text
     Use Playfair Display as the first subtitle title font in the hero section. 
-
+    
     Make sure to use the useEffect React hook to apply the font properly.
     ```
 
-### Using by link
+    ### Using by link
 
-Alternatively, you can provide a direct link to the Google font, and Lovable will use that font in your project. You can get the link from [Google Fonts](https://fonts.google.com) by selecting the desired font and copying the link.
+    Alternatively, you can provide a direct link to the Google font, and Lovable will use that font in your project. You can get the link from [Google Fonts](https://fonts.google.com) by selecting the desired font and copying the link.
 
-Here’s how to prompt Lovable to use a Google font via a link:
-
+    Here’s how to prompt Lovable to use a Google font via a link:
 
     ```text
     Add this Google font link https://fonts.google.com/specimen/Dancing+Script 
@@ -68,16 +60,17 @@ Here’s how to prompt Lovable to use a Google font via a link:
     Make sure to load the font using the useEffect React hook.
     ```
 
-By following these methods, you can customize the typography of your Lovable project using either web-safe fonts or Google Fonts.
+    By following these methods, you can customize the typography of your Lovable project using either web-safe fonts or Google Fonts.
 
-## Further learning and examples
+    ## Further learning and examples
 
-To see these font integration methods in action, you can explore one of our example projects: [Lovable using fonts example project](https://lovable.dev/projects/3a826f38-d9cb-4d60-b4da-30a9b00149c8). 
+    To see these font integration methods in action, you can explore one of our example projects: [Lovable using fonts example project](https://lovable.dev/projects/3a826f38-d9cb-4d60-b4da-30a9b00149c8).
 
-In this project, you’ll find real prompts demonstrating how we applied different font styles, including web-safe fonts like Courier New and custom fonts from Google Fonts.
+    In this project, you’ll find real prompts demonstrating how we applied different font styles, including web-safe fonts like Courier New and custom fonts from Google Fonts.
 
-<Frame>
-  <img src="/assets/using-custom-fonts-example.png" alt="Different fonts used in Lovable project" />
-</Frame>
-
-Additionally, for a more technical look at how fonts were integrated, check out this public repository: [GitHub: adding-fonts-example](https://github.com/viborc/adding-fonts-example). It includes the full implementation details, showcasing how various fonts were loaded and applied in the project.
+    <Frame>
+      ![Different fonts used in Lovable project](/assets/using-custom-fonts-example.png)
+    </Frame>
+    Additionally, for a more technical look at how fonts were integrated, check out this public repository: [GitHub: adding-fonts-example](https://github.com/viborc/adding-fonts-example). It includes the full implementation details, showcasing how various fonts were loaded and applied in the project.
+  </Accordion>
+</AccordionGroup>
