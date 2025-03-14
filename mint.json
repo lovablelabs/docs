@@ -53,11 +53,8 @@
       "pages": [
         "introduction", 
         "changelog",
-        "glossary",
         "user-guides/messaging-limits",
         "faq",
-        "tips-tricks/community",
-        "user-guides/support-policy"
       ]
     },
     {
@@ -68,8 +65,7 @@
         "tips-tricks/prompting",
         "features/labs",
         "features/precision-edit",
-        "features/deploy",
-        "tips-tricks/troubleshooting"
+        "features/deploy"
       ]
     },
     {
@@ -88,11 +84,15 @@
       "group": "Tips and Tricks",
       "pages": [
         "tips-tricks/using-images",
+        "tips-tricks/troubleshooting"
         "tips-tricks/using-videos",
         "tips-tricks/custom-fonts",
         "features/npm-packages",
         "tips-tricks/seo",
-        "tips-tricks/multiple-users"
+        "tips-tricks/community",
+        "tips-tricks/multiple-users",
+        "user-guides/support-policy"
+        "glossary"
       ]
     }
   ],
