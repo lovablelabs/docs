@@ -84,7 +84,7 @@
       "group": "Tips and Tricks",
       "pages": [
         "tips-tricks/using-images",
-        "tips-tricks/troubleshooting"
+        "tips-tricks/troubleshooting",
         "tips-tricks/using-videos",
         "tips-tricks/custom-fonts",
         "features/npm-packages",
