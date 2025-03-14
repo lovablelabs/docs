@@ -1,92 +1,107 @@
 ---
-title: 'Using images in Lovable'
-description: 'Learn how to add images to your Lovable projects'
-icon: 'frame'
+title: "Using images in Lovable"
+description: "Learn how to add images to your Lovable projects"
+icon: "frame"
 ---
 
-To add images you can do one of two things:
+To add images you can do one of four things:
 
-1. Upload the image to the chat: Lovable will automatically use it in the project if relevant.
+<AccordionGroup>
+  <Accordion title="Upload the image to the prompt chat">
+    Simply upload them in the chat and explain to Lovable’s AI where and how you’d like them to appear in your project.
 
-2. Upload it to the github repository manually, outside of the Lovable UI
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/fABvCZP4QlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+  </Accordion>
+  <Accordion title="Replace it on the visual editor">
+    You can replace an existing image directly using the [visual editor](https://docs.lovable.dev/features/precision-edit#visual-edits) functionality: 
 
-3. Share an external image URL in the chat.
-<Note>
-This will not work if the server hosting the URL has chosen to block external websites from using it with "CORS"
-</Note>
+    <Steps>
+      <Step title="Step 1">
+        Click on "Edit" tool.
+      </Step>
+      <Step title="Step 2">
+        Select the image holder you would like to change.
 
-Below, we’ll walk you through the last two methods.
+        ![images/visual-edit-replace.png](/images/visual-edit-replace.png)
+      </Step>
+      <Step title="Step 3">
+        Change the image.
 
-## Using the prompt
+        ![images/visual-edit-image.png](/images/visual-edit-image.png)
+      </Step>
+    </Steps>
+  </Accordion>
+  <Accordion title="Using an external image URL">
+    One way to add images to your project is by referencing an image from an external URL. This method allows you to use images hosted on external platforms like Unsplash, Imgur, or any other image-hosting service. Be mindful of use copyrights\!
 
-Want to add images directly to your application? Simply upload them in the chat and explain to Lovable’s AI where and how you’d like them to appear in your project.
+    Here’s how to prompt Lovable to use an external image:
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/fABvCZP4QlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+    <Steps>
+      <Step title="Step 1">
+        Find the image you want to use.
 
-## Using an external image URL
+        For example, you can visit a site like Unsplash, select an image, and copy its URL.
+      </Step>
+      <Step title="Step 2">
+        In your project prompt, simply tell Lovable to use that image by specifying the URL. For example:
 
-One way to add images to your project is by referencing an image from an external URL. This method allows you to use images hosted on external platforms like Unsplash, Imgur, or any other image-hosting service. Be mindful of use copyrights!
+        ```
+        Use the image from this URL 
+        https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Pale_Blue_Dot.png/442px-Pale_Blue_Dot.png 
+        for the hero section image.
+        ```
+      </Step>
+    </Steps>
+  </Accordion>
+  <Accordion title="Using images from your GitHub public directory">
+    Another method to add images to your Lovable project is by using images uploaded to the `public` directory of your connected GitHub repository. Here’s how you can do it:
 
-Here’s how to prompt Lovable to use an external image:
+    <Steps>
+      <Step title="Connect your GitHub repository">
+        Ensure your project is connected to your GitHub repo. [Here's how to connect your repo](https://docs.lovable.dev/integrations/git-integration).
+      </Step>
+      <Step title="Locate the public folder">
+        Inside your GitHub repository, navigate to the `public` directory. This folder is typically used for hosting assets like images that can be referenced in your project.
+      </Step>
+      <Step title="Add file">
+        Click on **Add file** and then from a dropdown, select **Upload files** option.
+        ![Selecting files for upload](/assets/using-images-github-upload.png)
+      </Step>
+      <Step title="Upload an image">
+        The next step is to transfer your image to your repo:
 
-* First, find the image you want to use. For example, you can visit a site like Unsplash, select an image, and copy its URL.
+        - Drag and drop the image into the public folder, or
+        - Click on the **"choose your files"** link to browse and select the image file.
+          ![Selecting files for upload](/assets/using-images-github-commiting.png)
+      </Step>
+      <Step title="Commit the changes">
+        After selecting your image, write a simple commit message (e.g., "Adding image files to be used in the app") and click **"Commit changes"** to save the file to your repo.
+      </Step>
+      <Step title="Get the image path">
+        Once the file is uploaded, select it and then click on the copy icon next to the file name to copy the image’s path. This path will be used in your Lovable prompt.
+        ![Selecting files for upload](/assets/using-images-github-selecting.png)
+      </Step>
+      <Step title="Use the image in Lovable">
+        You can now reference this image in your project by using a prompt like the following:
 
-* In your project prompt, simply tell Lovable to use that image by specifying the URL. For example:
+        ```
+        Add an additional image to the hero section. 
+        This time, use this one from my local repo: public/c-64-close-up.jpg.jpeg
+        ```
 
-```
-Use the image from this URL 
-https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Pale_Blue_Dot.png/442px-Pale_Blue_Dot.png 
-for the hero section image.
+        Be sure to use your image name and path you copied in the previous step.
 
-```
+        <Warning>
+          Uploading large images to your GitHub repo can cause it to grow in size, which can affect Lovable performance (longer repo cloning times, slower startup of previews/sandbox).
 
-***
+          Try to optimize your images before uploading them to your `public` folder by compressing them and using dimensions that are relevant to your use case. For example, don't use a full HD-sized image if it will only be displayed as a small icon.
+        </Warning>
+      </Step>
+    </Steps>
+    To help you better understand how to integrate images using the methods outlined above, we have a project you can explore: [Lovable Project Example](https://lovable.dev/projects/e823fedf-238d-4313-86a8-1fd4bfc2a9ba). In this project, you can see the actual prompts and how each method works in practice.
 
-## Using images from your GitHub `public` directory
+    Additionally, here's a public GitHub repository that includes the commits, uploaded images, and full implementation details. You can view the repository here: [GitHub: Adding Images Example](https://github.com/viborc/adding-images-example).
 
-Another method to add images to your Lovable project is by using images uploaded to the `public` directory of your connected GitHub repository. Here’s how you can do it:
-
-**Connect your GitHub repository** - Ensure your project is connected to your GitHub repo. [Here's how to connect your repo](https://docs.lovable.dev/integrations/git-integration).
-
-**Locate the public folder** - Inside your GitHub repository, navigate to the `public` directory. This folder is typically used for hosting assets like images that can be referenced in your project.
-Click on **Add file** and then from a dropdown, select **Upload files** option.
-
-![Selecting files for upload](/assets/using-images-github-upload.png)
-
-**Upload an image** - The next step is to transfer your image to your repo
-
-* Drag and drop the image into the public folder, or
-
-* Click on the **"choose your files"** link to browse and select the image file.
-
-![Selecting files for upload](/assets/using-images-github-commiting.png)
-
-**Commit the changes** - After selecting your image, write a simple commit message (e.g., "Adding image files to be used in the app") and click **"Commit changes"** to save the file to your repo.
-
-**Get the image path** - Once the file is uploaded, select it and then click on the copy icon next to the file name to copy the image’s path. This path will be used in your Lovable prompt.
-
-![Selecting files for upload](/assets/using-images-github-selecting.png)
-
-**Use the image in Lovable** - You can now reference this image in your project by using a prompt like the following:
-
-```
-Add an additional image to the hero section. 
-This time, use this one from my local repo: public/c-64-close-up.jpg.jpeg
-
-```
-
-Be sure to use your image name and path you copied in the previous step.
-
-<Warning>
-  Uploading large images to your GitHub repo can cause it to grow in size, which can affect Lovable performance (longer repo cloning times, slower startup of previews/sandbox).
-
-  Try to optimize your images before uploading them to your `public` folder by compressing them and using dimensions that are relevant to your use case. For example, don't use a full HD-sized image if it will only be displayed as a small icon.
-</Warning>
-
-## Explore more and learn from examples
-
-To help you better understand how to integrate images using the methods outlined above, we have a project you can explore: [Lovable Project Example](https://lovable.dev/projects/e823fedf-238d-4313-86a8-1fd4bfc2a9ba). In this project, you can see the actual prompts and how each method works in practice.
-
-Additionally, here's a public GitHub repository that includes the commits, uploaded images, and full implementation details. You can view the repository here: [GitHub: Adding Images Example](https://github.com/viborc/adding-images-example).
-
-Feel free to explore the project and repository to deepen your understanding and improve your implementation skills.
+    Feel free to explore the project and repository to deepen your understanding and improve your implementation skills.
+  </Accordion>
+</AccordionGroup>
