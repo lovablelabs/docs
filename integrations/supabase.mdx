@@ -1,7 +1,7 @@
 ---
-title: 'Supabase Integration'
-description: 'Learn how to integrate Supabase with your Lovable application'
-icon: 'database'
+title: "Supabase Integration"
+description: "Learn how to integrate Supabase with your Lovable application"
+icon: "database"
 ---
 
 ## Overview
@@ -10,71 +10,53 @@ icon: 'database'
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/-sSOyO0FiPE?si=WljVA-E0YU4LObMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
-### FAQ&#x20;
+### FAQ 
 
 <AccordionGroup>
   <Accordion title="What is Supabase and how does it help Lovable users?">
     Supabase is an open-source backend-as-a-service that provides authentication, databases (PostgreSQL), storage, and real-time capabilities. It helps Lovable users by handling data storage, authentication, and other backend functionalities without requiring manual setup.
   </Accordion>
-
   <Accordion title="Do I need a separate subscription for Lovable and Supabase?">
     Both Lovable and Supabase offer free tiers. However, if you need additional features, scalability, or more extensive use, you may need to subscribe to their paid plans separately.
   </Accordion>
-
   <Accordion title="How do I connect Lovable with Supabase?">
     1. In the Lovable editor, go to the **Integrations** section.
-
     2. Click **Connect to Supabase** and follow the authentication steps.
-
     3. If needed, create a new Supabase project within Lovable.
-
     4. Lovable will automatically generate the necessary database schema and connect it to your project.
   </Accordion>
-
   <Accordion title="Can I connect Lovable with automation tools like Make.com or Zapier?">
     Yes, Lovable supports integration with external automation tools like Make.com and Zapier. These integrations can be set up through API endpoints.
   </Accordion>
-
   <Accordion title=" How does Supabase handle scalability?">
     Supabase uses **PostgreSQL**, one of the world’s most scalable databases. It supports millions of rows and can handle high-traffic applications efficiently. Users on the **Pro Plan** or higher can access additional scaling features.
   </Accordion>
-
   <Accordion title="How do I add real-time features like chat or live comments?">
     Supabase provides **real-time capabilities** that Lovable can integrate with. You can:
 
-    * Add real-time listeners for comments or updates.
-
-    * Use **Supabase Storage** for image and file uploads.
-
-    * Enable live chat features in your app.
+    - Add real-time listeners for comments or updates.
+    - Use **Supabase Storage** for image and file uploads.
+    - Enable live chat features in your app.
   </Accordion>
-
   <Accordion title="Is there a limit to file uploads on Supabase?">
     Supabase allows file uploads (images, videos, PDFs) with a **50MB limit on the free plan**. The **Pro Plan** supports resumable uploads for larger files.
   </Accordion>
-
   <Accordion title="How do I configure authentication in Supabase?">
     Lovable automatically sets up authentication, but you may need to:
 
-    * Go to **Supabase Dashboard > Authentication**.
-
-    * Enable **Email Sign-in/Sign-up**.
-
-    * Disable email confirmation for easier local testing.
+    - Go to **Supabase Dashboard > Authentication**.
+    - Enable **Email Sign-in/Sign-up**.
+    - Disable email confirmation for easier local testing.
   </Accordion>
-
   <Accordion title="Can I have multiple Lovable projects connected to one Supabase database?">
     Yes, multiple Lovable projects can share the same Supabase backend, making it possible to create various front-end interfaces for a single database.
   </Accordion>
-
   <Accordion title="How do I prevent database changes from affecting my live app?">
     Currently, Lovable doesn’t have separate staging and production environments, but **Supabase Branching** allows you to create test environments before pushing changes to production.
   </Accordion>
-
   <Accordion title="Can I use Supabase AI Assistant to generate SQL queries?">
-    Yes! Supabase AI Assistant helps generate complex SQL queries, making it easier to interact with your database without deep SQL knowledge.
+    Yes\! Supabase AI Assistant helps generate complex SQL queries, making it easier to interact with your database without deep SQL knowledge.
   </Accordion>
-
   <Accordion title="How do I handle payments in Lovable?">
     You can integrate Stripe or other payment services using Supabase **Edge Functions** to handle transactions securely.
   </Accordion>
@@ -96,18 +78,14 @@ Connecting your Lovable app to Supabase is straightforward. Simply follow the st
 
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/g8CvOq3b-sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
   </Step>
-
   <Step title="Create a new project in Supabase.">
     Click on + New Project, complete the necessary fields, and allow a few minutes for setup.
 
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/z6eDOn1613U?si=OhuL1AdNObVYFkbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
   </Step>
-
   <Step title="Connect Supabase to Lovable">
     1. In your Lovable Editor, locate the Supabase button in the navbar. Click on it and select "Connect Supabase".
-
     2. You will be redirected to a page where you will be able to select the relevant organisation.
-
     3. You will be then redirected back to Lovable, where you will need to select the relevant project within that organisation.
 
     After completing these steps, you will have to wait some seconds for your Supabase integration to finish. Look at the chat for this confirmation.
@@ -136,9 +114,8 @@ To add a basic login page to your project, simply run a prompt similar to the on
 
 You can then create a user by either:
 
-* Creating a user directly via the Supabase Dashboard by navigating Supabase -> Authentication -> Users -> Add user.
-
-* Signing up via the login page you've added
+- Creating a user directly via the Supabase Dashboard by navigating Supabase -> Authentication -> Users -> Add user.
+- Signing up via the login page you've added
 
 We recommend that you disable the email verification step for now, which you can do in Supabase -> Authentication -> Providers -> Email -> Disable "Confirm email".
 
@@ -154,18 +131,23 @@ Supabase offers a comprehensive Postgres database solution. Supabase enhances th
 
 In order to start building UI that uses your data stored in Supabase simply:
 
-1. Ask Lovable to create a new feature and that you expect the data to be stored in Supabase.
-
-2. Lovable will then provide you with a SQL snippet that you can run in the SQL editor in Supabase to create the table(s).
-
-3. Once you confirm that you have run the SQL snippet, then Lovable will update the UI to allow you to interact with the data stored in Supabase.
+<Steps>
+  <Step title="Step 1">
+    Ask Lovable to create a new feature and that you expect the data to be stored in Supabase.
+  </Step>
+  <Step title="Step 2">
+    Lovable will then provide you with a SQL snippet that you can run in the SQL editor in Supabase to create the table(s).
+  </Step>
+  <Step title="Step 3">
+    Once you confirm that you have run the SQL snippet, then Lovable will update the UI to allow you to interact with the data stored in Supabase.
+  </Step>
+</Steps>
 
 ## Storing secrets with Supabase
 
 If you are connected to Supabase, secret keys can be added to Lovable in two ways:
 
 1. In the project settings.
-
 2. In the chat if you ask it to show the secrets form.
 
 These keys will be stored safely in Supabase's edge function secret manager.
@@ -177,13 +159,10 @@ These keys will be used when running Edge Functions and will let them connect to
 
 You can also use Edge Functions to add powerful backend features like:
 
-* Using AI to enhance your app's capabilities
-
-* Sending emails to your users
-
-* Processing payments
-
-* Running scheduled tasks
+- Using AI to enhance your app's capabilities
+- Sending emails to your users
+- Processing payments
+- Running scheduled tasks
 
 Lovable will write and deploy Edge Functions to your Supabase project when implementing backend functionality.
 
@@ -192,5 +171,3 @@ When troublehsooting, you  can visit the the logs for your Edge Function in Supa
 <Warning>
   Important Note: Before you deploy your app to production or use any real data, you will need to review and set up the appropriate RLS policies. Lovable can help with that.
 </Warning>
-
-##
