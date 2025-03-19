@@ -4,11 +4,98 @@ description: "Frequently asked questions about Lovable"
 icon: "circle-question"
 ---
 
+## User Interface
+
+<AccordionGroup>
+  <Accordion title="What is the Lovable dashboard?">
+    The dashboard is where you manage your projects, view your credits, control project visibility, and access settings.
+  </Accordion>
+  <Accordion title="How should I structure my prompts for the best results?">
+    - Be **clear and specific** (e.g., _"Create a signup page with email and password using Supabase."_).
+    - Avoid vague instructions.
+    - Describe expected outcomes to guide the AI.
+
+    More information [here](https://docs.lovable.dev/tips-tricks/prompting).
+  </Accordion>
+  <Accordion title="How do I change my project’s visibility?">
+    In your project settings, you can toggle your project between public and private mode.
+  </Accordion>
+  <Accordion title="What does the chat feature do?">
+    The chat feature allows you to interact with Lovable's AI without modifying your code. You can ask questions, get explanations, and debug issues.
+  </Accordion>
+  <Accordion title="Can I see the code that Lovable generates?">
+    Yes, you can toggle the code viewer to inspect the AI-generated code.
+  </Accordion>
+  <Accordion title="Can I edit the generated code?">
+    Yes, but full code editing is available only on certain paid plans. However, you can use Lovable’s edit mode to make changes visually.
+  </Accordion>
+  <Accordion title="How do I create a landing page?">
+    Simply type a prompt like:
+
+    <Info>
+      _"I want to build a landing page for an AI platform targeting psychologists."_
+    </Info>
+    Lovable will generate a page based on your input.
+  </Accordion>
+  <Accordion title="Can I import designs from Figma?">
+    Yes, you can import Figma files to Lovable and use them as a starting point for your project.
+  </Accordion>
+  <Accordion title="How do I add animations to my project?">
+    Use a prompt like:
+
+    <Info>
+      _"Add cool animations to the hero section."_
+    </Info>
+    Lovable supports frameworks like P5.js for animations.
+  </Accordion>
+  <Accordion title="How do I connect my project to a database?">
+    You can use **Supabase**, a backend-as-a-service solution that integrates seamlessly with Lovable.
+  </Accordion>
+  <Accordion title="Can I add authentication to my project?">
+    Yes, you can integrate authentication using Supabase, Clerk, or Magic.link by prompting Lovable to create login and signup pages.
+  </Accordion>
+  <Accordion title="How do I track changes in my project?">
+    Lovable provides a **history feature** where you can view and restore previous versions of your project.
+  </Accordion>
+  <Accordion title="What is a remix?">
+    Remixing a project creates a duplicate that you can modify separately, allowing you to explore different versions of your project.
+  </Accordion>
+  <Accordion title="Can I copy and edit someone else’s project?">
+    If a project is public and remixing is enabled, you can create your own copy and customize it.
+  </Accordion>
+  <Accordion title="Can I export my project and host it elsewhere?">
+    Yes! By linking your project to **GitHub**, you can export your code and host it on your preferred server.
+  </Accordion>
+  <Accordion title="Can I integrate payment systems?">
+    Yes, Lovable supports **Stripe, PayPal, and other payment providers**. Just prompt Lovable to set up the payment system you prefer.
+
+    Follow [this guide](https://docs.lovable.dev/tips-tricks/setting-up-payments) to set it up.
+  </Accordion>
+  <Accordion title="Can I invite others to collaborate on my project?">
+    Yes, you can share your project’s preview link. However, full collaboration features depend on your Lovable plan.
+  </Accordion>
+  <Accordion title="Can I showcase my projects?">
+    Yes! You can share your project in the [**Lovable Launch**](https://launched.lovable.app/) section and on social media.
+  </Accordion>
+  <Accordion title="Does Lovable support mobile app development?">
+    No, Lovable is focused on **web applications**, but you can design mobile-friendly web apps.
+  </Accordion>
+</AccordionGroup>
+
 ## Getting Started
 
 <AccordionGroup>
+  <Accordion title="What is Lovable?">
+    Lovable is an AI-powered platform that enables users of any skill level to create full-stack web applications without requiring coding expertise by simply describing what they want in plain English. Instead of hiring developers, users can generate web apps or websites instantly.
+  </Accordion>
+  <Accordion title="How do I sign up and get started?">
+    Simply create an account on Lovable, explore the interface, and start building by typing prompts that describe what you want to create.
+  </Accordion>
+  <Accordion title="What can I build with Lovable?">
+    You can build landing pages, web applications, AI-powered tools, authentication systems, and more.
+  </Accordion>
   <Accordion title="Can I start from templates?">
-    Yes\! Lovable offers pre-built templates to help you get started quickly. Browse them [here](https://lovable.dev/templates).
+    Yes! Lovable offers pre-built templates to help you get started quickly. Browse them [here](https://lovable.dev/templates).
 
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/xAkQitFGn-0?si=kIJSP_DKZEyE74bq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
   </Accordion>
@@ -26,10 +113,12 @@ icon: "circle-question"
     Yes, prompt optimization may use tokens, but Lovable is designed to minimize unnecessary interactions and maximize efficiency.
   </Accordion>
   <Accordion title="Do I need coding experience to build an app?">
-    No\! Lovable allows non-technical users to create apps through a structured workflow: **plan, prompt, scaffold, debug, and deploy.** You can generate project documentation, break the process into steps, and let AI guide you.
+    No! Lovable is designed for all levels of experience. Whether you're a developer or a non-technical user, you can easily create projects using AI assistance.
+
+    Lovable allows non-technical users to create apps through a structured workflow: **plan, prompt, scaffold, debug, and deploy.** You can generate project documentation, break the process into steps, and let AI guide you.
   </Accordion>
   <Accordion title="Can I learn coding with Lovable?">
-    Yes\! The best way to learn is by doing. Lovable helps you understand coding by:
+    Yes! The best way to learn is by doing. Lovable helps you understand coding by:
 
     - Generating and explaining code.
     - Encouraging pattern recognition in AI-generated responses.
@@ -53,7 +142,7 @@ icon: "circle-question"
     4. **Refine & launch** – Optimize responsiveness and ensure smooth interactions.
   </Accordion>
   <Accordion title="Do I need a Chief Technical Officer (CTO) for my MVP?">
-    No\! If your project is straightforward, Lovable’s AI can help you build and refine it. However, if you plan to scale rapidly or need advanced features, having technical support may be beneficial.
+    No! If your project is straightforward, Lovable’s AI can help you build and refine it. However, if you plan to scale rapidly or need advanced features, having technical support may be beneficial.
   </Accordion>
   <Accordion title="What should I do if I encounter an issue with Lovable?">
     Lovable provides an AI-driven debugging tool that analyzes errors in real time. If an error occurs:
@@ -69,14 +158,14 @@ icon: "circle-question"
   </Accordion>
 </AccordionGroup>
 
-## Development & Features 
+## Development & Features
 
 <AccordionGroup>
   <Accordion title="Can I download the code Lovable generates?">
-    Yes\! You can access and manage your generated code via our [GitHub integration](/integrations/git-integration).
+    Yes! You can access and manage your generated code via our [GitHub integration](/integrations/git-integration).
   </Accordion>
   <Accordion title="Does Lovable support custom backends?">
-    Yes\! Lovable-generated code can connect to any backend, including [Supabase](https://docs.lovable.dev/integrations/supabase) for database management and authentication.
+    Yes! Lovable-generated code can connect to any backend, including [Supabase](https://docs.lovable.dev/integrations/supabase) for database management and authentication.
   </Accordion>
   <Accordion title="What frameworks does Lovable support?">
     Currently, Lovable supports **Vite and React**. NextJS and React Native are not yet available.
@@ -95,7 +184,7 @@ icon: "circle-question"
     - Prevent conflicts by structuring logic more clearly.
   </Accordion>
   <Accordion title="Can I use Lovable for frontend development?">
-    Yes\! Lovable is perfect for frontend development, offering:
+    Yes! Lovable is perfect for frontend development, offering:
 
     - **Component-Based Development** – Build with React and Vite.
     - **AI-Assisted Code Generation** – Generate layouts and UI components easily.
@@ -109,9 +198,6 @@ icon: "circle-question"
     - **Add new features** with clear, detailed instructions.
     - **Edit UI elements directly** using select-to-edit.
     - **Track and revert changes** via version history.
-  </Accordion>
-  <Accordion title="Can I integrate payments into my app?">
-    Yes\! Lovable supports **Stripe** integration. Follow [this guide](https://docs.lovable.dev/tips-tricks/setting-up-payments) to set it up.
   </Accordion>
   <Accordion title="What’s the best way to prevent unexpected regressions when validating code?">
     - **Use chat mode** to verify changes before applying them.
@@ -135,23 +221,51 @@ icon: "circle-question"
     Yes, you can set up [custom domains](https://docs.lovable.dev/tips-tricks/custom-domain) using **Entri, Vercel, Netlify, or other hosting services**.
   </Accordion>
   <Accordion title="How do I deploy a Lovable app?">
-    1. Click the  button in Lovable.
+    1. Click the **Publish** button, and Lovable will deploy your project to a live URL.
     2. Lovable will generate a shareable URL.
     3. You can also connect for [custom domain](https://docs.lovable.dev/tips-tricks/custom-domain) hosting.
   </Accordion>
   <Accordion title="Can I edit Lovable-generated code?">
-    Yes\! Lovable provides a **Code Viewer** that allows paid users to view and make minor edits to the underlying project files. You can enable this feature in **Account Settings > **
+    Yes! Lovable provides a **Code Viewer** that allows paid users to view and make minor edits to the underlying project files. You can enable this feature in **Account Settings > **
+  </Accordion>
+  <Accordion title="What is an Edge Function?">
+    An **Edge Function** is a small serverless function in [Supabase](https://docs.lovable.dev/integrations/supabase) that runs logic on the backend, such as sending emails or processing API calls.
+  </Accordion>
+</AccordionGroup>
+
+## Debugging & Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="What should I do if I get an error message?">
+    Click the **Try to Fix** button. If the error persists, use the **Chat Mode** to ask the AI for help or check Lovable's documentation.
+  </Accordion>
+  <Accordion title="How do I stop the AI from repeating failed fixes?">
+    Describe the issue in detail via **Chat Mode** and specify how you want the AI to fix it.
+  </Accordion>
+  <Accordion title="Where can I get help if I'm stuck?">
+    - Use [**Chat Mode**](https://docs.lovable.dev/features/labs#chat-mode) for AI assistance.
+    - Check [**documentation**](https://docs.lovable.dev/) for guidance.
+    - Join the [**Discord community**](https://discord.gg/lovable-dev) for real-time help.
+  </Accordion>
+  <Accordion title="Can I contact support?">
+    Yes, Lovable provides a [**support system**](https://lovable.dev/support) for platform-related issues. If you need help with your project, the [**Discord community**](https://discord.gg/lovable-dev) is a great place to ask.
   </Accordion>
 </AccordionGroup>
 
 ## AI and Automation
 
 <AccordionGroup>
+  <Accordion title="Can I add third-party APIs to my project?">
+    Yes, you can integrate APIs like OpenAI, Stripe, and more by specifying them in your prompt.
+  </Accordion>
+  <Accordion title="Can I store sensitive API keys in Lovable?">
+    No! Never enter your API keys directly in Lovable. Use environment variables to keep them secure.
+  </Accordion>
   <Accordion title="How does Lovable AI remember context?">
     Lovable processes recent messages to maintain context. For the best results, include relevant details in each prompt to ensure clarity and accuracy.
   </Accordion>
   <Accordion title="Can Lovable build complex B2B SaaS apps?">
-    Yes\! Lovable supports:
+    Yes! Lovable supports:
 
     - **Workflow automation** for business processes.
     - **Role-based access controls** for different user levels.
@@ -164,11 +278,23 @@ icon: "circle-question"
   <Accordion title="What is the character limit for prompts?">
     Due to AI constraints, prompts are limited to **approximately 180K tokens (≈720K characters).**
   </Accordion>
+  <Accordion title="Can I run my AI model on Lovable without an API?">
+    Probably not. Most AI models require an API for proper integration.
+  </Accordion>
 </AccordionGroup>
 
 ## Pricing & Account Settings
 
 <AccordionGroup>
+  <Accordion title="What are credits in Lovable?">
+    Credits are used for AI-powered actions like generating code or making edits. Each message you send to the AI costs one credit.
+  </Accordion>
+  <Accordion title="Do long and short prompts cost the same?">
+    Yes, each message sent counts as one credit, regardless of length.
+  </Accordion>
+  <Accordion title="How do I get more credits?">
+    You can upgrade your plan or purchase additional credits in Account Settings. More information [here](https://docs.lovable.dev/user-guides/messaging-limits#upgrading-and-downgrading-plans).
+  </Accordion>
   <Accordion title="When does my token count reset?">
     Monthly, on the same date you subscribed.
   </Accordion>
@@ -185,7 +311,7 @@ icon: "circle-question"
     Currently, it is not possible to change your email linked to the account.
   </Accordion>
   <Accordion title="Can I delete a project?">
-    Yes\! Navigate to **Project Settings → Danger Zone → Delete Project.**
+    Yes! Navigate to **Project Settings → Danger Zone → Delete Project.**
   </Accordion>
   <Accordion title="How does Lovable ensure data security?">
     Lovable follows [industry-standard security practices](https://lovable.dev/privacy), including encryption, secure API connections, and regular security audits to protect user data.
@@ -195,17 +321,14 @@ icon: "circle-question"
 ## About Lovable
 
 <AccordionGroup>
-  <Accordion title="What is Lovable and how does it work?">
-    Lovable is an AI-powered platform that allows users to build software applications by simply describing what they want in plain English. Instead of hiring developers, users can generate web apps or websites instantly.
-  </Accordion>
   <Accordion title="Does Lovable have a partner program?">
-    Yes\! Join our [Affiliate Program](https://friends.lovable.dev/) and earn 20% commission for customer referrals.
+    Yes! Join our [Affiliate Program](https://friends.lovable.dev/) and earn 20% commission for customer referrals.
   </Accordion>
   <Accordion title="Where is Lovable based?">
     Lovable is **100% made in Europe**, with headquarters in **Stockholm, Sweden.**
   </Accordion>
   <Accordion title="Is Lovable hiring?">
-    Yes\! Check out our open positions [here](https://lovable.dev/careers). 🚀
+    Yes! Check out our open positions [here](https://lovable.dev/careers). 🚀
   </Accordion>
   <Accordion title="How can I contact support?">
     You can reach Lovable’s support team via the in-app chat, email, or by submitting a request on the [support page](https://lovable.dev/support).
