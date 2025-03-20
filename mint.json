@@ -75,7 +75,11 @@
         "integrations/git-integration",
         "integrations/supabase",
         "tips-tricks/setting-up-payments",
-        "tips-tricks/custom-domain",
+        "integrations/git-integration",
+        "integrations/resend",
+        "integrations/clerk",
+        "integrations/make",
+        "tips-tricks/replicate",
         "integrations/prompt-integrations",
         "integrations/chrome-extensions"
       ]

@@ -4,7 +4,7 @@ description: "Learn how to integrate Supabase with your Lovable application"
 icon: "database"
 ---
 
-## Overview 
+## Overview
 
 [Supabase](https://supabase.com/) is an open-source alternative to Firebase, offering real-time databases, authentication services, and file storage. It is built atop [PostgreSQL](https://www.postgresql.org/), providing robust SQL querying capabilities and seamless integration with existing tools and frameworks. Supabase also features an intuitive web interface for effortless management of users and data.
 
@@ -44,7 +44,7 @@ icon: "database"
   <Accordion title="How do I configure authentication in Supabase?">
     Lovable automatically sets up authentication, but you may need to:
 
-    - Go to **Supabase Dashboard > Authentication**.
+    - Go to **Supabase Dashboard \> Authentication**.
     - Enable **Email Sign-in/Sign-up**.
     - Disable email confirmation for easier local testing.
   </Accordion>
@@ -55,7 +55,7 @@ icon: "database"
     Currently, Lovable doesn’t have separate staging and production environments, but **Supabase Branching** allows you to create test environments before pushing changes to production.
   </Accordion>
   <Accordion title="Can I use Supabase AI Assistant to generate SQL queries?">
-    Yes\! Supabase AI Assistant helps generate complex SQL queries, making it easier to interact with your database without deep SQL knowledge.
+    Yes\\\\\\! Supabase AI Assistant helps generate complex SQL queries, making it easier to interact with your database without deep SQL knowledge.
   </Accordion>
   <Accordion title="How do I handle payments in Lovable?">
     You can integrate Stripe or other payment services using Supabase **Edge Functions** to handle transactions securely.
@@ -79,7 +79,7 @@ Connecting your Lovable app to Supabase is straightforward. Simply follow the st
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/g8CvOq3b-sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
   </Step>
   <Step title="Create a new project in Supabase.">
-    Click on + New Project, complete the necessary fields, and allow a few minutes for setup.
+    Click on \+ New Project, complete the necessary fields, and allow a few minutes for setup.
 
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/z6eDOn1613U?si=OhuL1AdNObVYFkbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
   </Step>
@@ -114,10 +114,10 @@ To add a basic login page to your project, simply run a prompt similar to the on
 
 You can then create a user by either:
 
-- Creating a user directly via the Supabase Dashboard by navigating Supabase -> Authentication -> Users -> Add user.
+- Creating a user directly via the Supabase Dashboard by navigating Supabase -\> Authentication -\> Users -\> Add user.
 - Signing up via the login page you've added
 
-We recommend that you disable the email verification step for now, which you can do in Supabase -> Authentication -> Providers -> Email -> Disable "Confirm email".
+We recommend that you disable the email verification step for now, which you can do in Supabase -\> Authentication -\> Providers -\> Email -\> Disable "Confirm email".
 
 ### Adding Google Authentication
 
@@ -166,7 +166,7 @@ You can also use Edge Functions to add powerful backend features like:
 
 Lovable will write and deploy Edge Functions to your Supabase project when implementing backend functionality.
 
-When troublehsooting, you  can visit the the logs for your Edge Function in Supabase -> Functions -> Logs.
+When troublehsooting, you  can visit the the logs for your Edge Function in Supabase -\> Functions -\> Logs.
 
 <Warning>
   Important Note: Before you deploy your app to production or use any real data, you will need to review and set up the appropriate RLS policies. Lovable can help with that.

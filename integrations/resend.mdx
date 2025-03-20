@@ -1,0 +1,91 @@
+---
+title: "Resend Integration"
+description: "Learn how to integrate Resend with your Lovable application"
+icon: "envelope"
+---
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/5ZL744_Wxjo?si=qrKlOL_1fAnz7rgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+
+In this tutorial, we'll walk through creating a simple yet powerful CRM using Lovable for development, Supabase for data storage, and Resend for email automation. By the end, you'll have a system that collects leads, stores them securely, and allows you to send follow-up emails—all built in less than an hour.
+
+<Steps>
+  <Step title="Setting Up the Contact Form in Lovable">
+    The first step is to create a landing page with a contact form where users can submit their details.
+
+    ### Instructions:
+
+    1. Open Lovable and create a new project.
+    2. Use the AI assistant to generate a simple landing page by prompting: _"Create a SaaS landing page with a contact form collecting name, email, and message."_
+    3. Add form validation to ensure proper data entry.
+
+    At this stage, your landing page should include a form that users can fill out. However, we need to store this data somewhere, which leads us to Supabase.
+  </Step>
+  <Step title="Connecting Supabase for Data Storage">
+    Supabase is an open-source alternative to Firebase, offering a secure and scalable database for your CRM.
+
+    ### Instructions:
+
+    1. Create a **Supabase** account and start a new project.
+    2. In Lovable, connect your Supabase project by adding the **API key**.
+    3. Create a database table named `contacts` with columns:
+       - `id` (UUID, primary key)
+       - `name` (text)
+       - `email` (text)
+       - `message` (text)
+       - `created_at` (timestamp)
+    4. Modify the contact form to send form data to Supabase upon submission.
+
+    With this setup, user submissions will be stored securely in Supabase, and we can move on to automating email notifications.
+  </Step>
+  <Step title="Automating Emails with Resend">
+    [Resend]() ensures that every new contact receives a confirmation email while allowing us to send follow-up messages later.
+
+    ### Instructions:
+
+    1. Create a **Resend** account.
+    2. Verify your domain to improve email deliverability.
+    3. Generate an **API key** and integrate it into Lovable.
+    4. Modify the submission function to trigger an email confirmation using Resend.
+  </Step>
+  <Step title="Creating an Admin Dashboard">
+    To manage leads efficiently, we need an admin dashboard where authenticated users can view and respond to contacts.
+
+    ### Instructions:
+
+    1. Create an **admin route** in Lovable.
+    2. Implement **authentication** with Supabase (email/password login).
+    3. Display stored contacts in a **table format** with the following:
+       - Contact Name
+       - Email
+       - Message Preview
+       - Date Submitted
+    4. Add a **detailed view** panel where clicking on a contact reveals full details.
+
+    Now, only logged-in users can view and manage CRM data.
+  </Step>
+  <Step title="Sending Personalized Emails from the Admin Dashboard">
+    To streamline communication, we'll add the ability to send custom follow-up emails directly from the admin dashboard.
+
+    ### Instructions:
+
+    1. Add a **text field** and predefined templates (e.g., "Thank you for signing up\\\\\\\\\\\\\\!" or "Follow-up on your request").
+    2. Implement a **send button** that triggers an email using Resend.
+    3. Log sent emails in Supabase for future reference.
+
+    Once implemented, you can send quick, personalized emails without leaving the CRM.
+  </Step>
+  <Step title="Adding a Newsletter Subscription Feature">
+    A great way to nurture leads is by sending updates via a newsletter. We'll add a subscription form to capture emails.
+
+    ### Instructions:
+
+    1. Add a **newsletter signup form** to the landing page.
+    2. Connect the form to **Resend Audiences** to store subscribers.
+    3. Set up a simple **broadcast email campaign** to engage subscribers.
+
+    Now, you can send newsletters to all subscribers directly from Resend.
+  </Step>
+  <Step title="Congratulations 🎉 ">
+    You’ve successfully built a simple CRM that collects leads, sends confirmation emails, allows for admin management, and enables direct email outreach—all in under an hour.
+  </Step>
+</Steps>

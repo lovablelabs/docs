@@ -1,0 +1,181 @@
+---
+title: "Clerk Integration"
+description: "Learn how to integrate Clerk with your Lovable application"
+icon: "people-arrows"
+---
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/tyAsNwu_xCI?si=VHCGf2IlFRQzVLeD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+
+Here is a step-by-step guide:
+
+<Steps>
+  <Step title="Introduction to Clerk">
+    **Clerk** is a developer tool for authentication, user management, and team roles.
+
+    - Provides authentication out-of-the-box
+    - Supports OAuth, social logins, and multi-factor authentication
+    - Easily integrates with Superbase
+  </Step>
+  <Step title="Setting Up Clerk Authentication">
+    <Steps>
+      <Step title="Step 1">
+        **Create a Clerk Account** → [Clerk.com](https://clerk.com)
+      </Step>
+      <Step title="Step 2">
+        **Set Up a New Application**
+
+        <Steps>
+          <Step title="Step 1">
+            Sign in to Clerk & create a new app
+          </Step>
+          <Step title="Step 2">
+            Enable authentication methods (Google, GitHub, LinkedIn, etc.)
+          </Step>
+          <Step title="Step 3">
+            Copy your **public API key**
+          </Step>
+        </Steps>
+      </Step>
+      <Step title="Step 3">
+        **Integrate Clerk with Lovable**
+
+        <Steps>
+          <Step title="Step 1">
+            In **Lovable**, add Clerk as your authentication provider
+          </Step>
+          <Step title="Step 2">
+            Paste the **public API key**
+          </Step>
+          <Step title="Step 3">
+            Deploy & test authentication
+          </Step>
+        </Steps>
+      </Step>
+    </Steps>
+  </Step>
+  <Step title="Enabling Clerk’s Waitlist Component">
+    <Note>
+      **Why use a waitlist?** – Gather early users before launching your app\\\\\\\\\\\\\\!
+    </Note>
+    <Steps>
+      <Step title="Step 1">
+        Go to **Clerk Dashboard → Configure → Restrictions**
+      </Step>
+      <Step title="Step 2">
+        Set mode to **Waitlist**
+      </Step>
+      <Step title="Step 3">
+        - Users who sign up will now be **pending approval**
+        - Admins can approve users from the Clerk dashboard
+      </Step>
+    </Steps>
+    <Note>
+      **Bonus:**
+
+      Customize the waitlist email in Clerk\\\\\\\\\\\\\\!
+    </Note>
+  </Step>
+  <Step title="Managing Users & Teams in Clerk">
+    **Create Organizations & User Roles**
+
+    <Steps>
+      <Step title="Step 1">
+        Enable **Organization Support** in Clerk
+      </Step>
+      <Step title="Step 2">
+        Set default roles (Admin, Editor, Viewer, etc.)
+      </Step>
+      <Step title="Step 3">
+        Invite users via email
+      </Step>
+      <Step title="Step 4">
+        Assign permissions & access levels
+      </Step>
+    </Steps>
+    <Note>
+      **Using Clerk’s User Profile Component**
+
+      - Provides a prebuilt user management dashboard
+      - Supports social logins & password authentication
+      - Users can manage their own accounts & 2FA
+    </Note>
+  </Step>
+  <Step title="Clerk + Supabase Integration">
+    <Note>
+      **Why integrate with Supabase?**
+
+      - Store user data in a database
+      - Secure authentication with JWT tokens
+      - Connect authentication to app features
+    </Note>
+    **How to integrate:**
+
+    <Steps>
+      <Step title="Step 1">
+        In **Supabase**, generate a JWT secret
+      </Step>
+      <Step title="Step 2">
+        In **Clerk Dashboard → JWT Templates**, add the secret
+      </Step>
+      <Step title="Step 3">
+        Enable **Clerk as an authentication provider**
+      </Step>
+      <Step title="Step 4">
+        Update your app to use **Supabase authentication**
+      </Step>
+    </Steps>
+  </Step>
+  <Step title="Deploying a Custom Domain with Lovable">
+    <Note>
+      **Why use a custom domain?**
+
+      Boosts brand recognition & trust
+
+      [More information here](https://docs.lovable.dev/tips-tricks/custom-domain).
+    </Note>
+    <Steps>
+      <Step title="Step 1">
+        In **Lovable**, navigate to **Custom Domain Settings**
+      </Step>
+      <Step title="Step 2">
+        Enter your purchased domain
+      </Step>
+      <Step title="Step 3">
+        Lovable will **automatically configure** DNS settings
+      </Step>
+      <Step title="Step 4">
+        Deploy & test your app with the new domain
+      </Step>
+    </Steps>
+  </Step>
+  <Step title="Bonus – Debugging with Clerk’s Impersonation Feature">
+    <Note>
+      **What is Impersonation Mode?**
+
+      Admins can log in as any user to troubleshoot issues
+    </Note>
+    <Steps>
+      <Step title="Step 1">
+        In **Clerk Dashboard**, select a user
+      </Step>
+      <Step title="Step 2">
+        Click **Impersonate User**
+      </Step>
+      <Step title="Step 3">
+        View the app as the selected user
+      </Step>
+      <Step title="Step 4">
+        Ensure security restrictions prevent impersonators from making account changes
+      </Step>
+    </Steps>
+  </Step>
+  <Step title="Final Thoughts & Next Steps">
+    **Your app now has:**
+
+    - Secure authentication with Clerk
+    - A waitlist to collect early users
+    - User & team management features
+    - Supabase database integration
+    - A professional custom domain
+  </Step>
+</Steps>
