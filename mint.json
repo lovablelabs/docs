@@ -54,6 +54,7 @@
         "introduction", 
         "changelog",
         "user-guides/messaging-limits",
+        "user-guides/video-tutorials",
         "faq"
       ]
     },
@@ -61,7 +62,6 @@
       "group": "User Guides",
       "pages": [
         "user-guides/quickstart",
-        "user-guides/video-tutorials",
         "tips-tricks/prompting",
         "features/labs",
         "features/precision-edit",
@@ -75,13 +75,11 @@
         "integrations/git-integration",
         "integrations/supabase",
         "tips-tricks/setting-up-payments",
-        "integrations/git-integration",
         "integrations/resend",
         "integrations/clerk",
         "integrations/make",
         "integrations/replicate",
-        "integrations/prompt-integrations",
-        "integrations/chrome-extensions"
+        "integrations/prompt-integrations"
       ]
     },
     {
@@ -90,6 +88,7 @@
         "tips-tricks/using-images",
         "tips-tricks/troubleshooting",
         "tips-tricks/using-videos",
+        "integrations/chrome-extensions",
         "tips-tricks/custom-fonts",
         "features/npm-packages",
         "tips-tricks/seo",
