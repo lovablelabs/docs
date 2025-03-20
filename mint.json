@@ -77,9 +77,9 @@
         "tips-tricks/setting-up-payments",
         "integrations/git-integration",
         "integrations/resend",
-        "integrations/clerk",
+        "integrations/Clerk",
         "integrations/make",
-        "tips-tricks/replicate",
+        "tips-tricks/Replicate",
         "integrations/prompt-integrations",
         "integrations/chrome-extensions"
       ]
