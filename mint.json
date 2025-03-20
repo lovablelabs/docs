@@ -79,7 +79,7 @@
         "integrations/resend",
         "integrations/clerk",
         "integrations/make",
-        "tips-tricks/replicate",
+        "integrations/replicate",
         "integrations/prompt-integrations",
         "integrations/chrome-extensions"
       ]
