@@ -62,9 +62,10 @@
         "user-guides/quickstart",
         "features/figma-to-lovable",
         "features/visual-edit",
-        "features/knowledge-files",
+        "features/knowledge",
         "features/labs",
-        "features/deploy"
+        "features/deploy",
+        "features/launched"
       ]
     },
     {
