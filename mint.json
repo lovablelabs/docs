@@ -32,9 +32,9 @@
       "url": "https://discord.gg/lovable-dev"
     },
     {
-      "name": "Press Releases",
+      "name": "Product Announcement",
       "icon": "newspaper",
-      "url": "https://lovable.dev/blog"
+      "url": "https://lovable.dev/blog?category=announcements"
     },
     {
       "name": "Request Feature",
@@ -54,7 +54,6 @@
         "introduction", 
         "changelog",
         "user-guides/messaging-limits",
-        "user-guides/video-tutorials",
         "faq"
       ]
     },
@@ -62,10 +61,17 @@
       "group": "User Guides",
       "pages": [
         "user-guides/quickstart",
-        "tips-tricks/prompting",
         "features/labs",
         "features/precision-edit",
         "features/deploy"
+      ]
+    },
+    {
+      "group": "Prompting",
+      "pages": [
+        "tips-tricks/prompting",
+        "integrations/prompt-integrations",
+        "tips-tricks/troubleshooting"
       ]
     },
     {
@@ -78,15 +84,14 @@
         "integrations/resend",
         "integrations/clerk",
         "integrations/make",
-        "integrations/replicate",
-        "integrations/prompt-integrations"
+        "integrations/replicate"
       ]
     },
     {
       "group": "Tips and Tricks",
       "pages": [
+        "user-guides/video-tutorials",
         "tips-tricks/using-images",
-        "tips-tricks/troubleshooting",
         "tips-tricks/using-videos",
         "integrations/chrome-extensions",
         "tips-tricks/custom-fonts",
