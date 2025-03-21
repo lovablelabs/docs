@@ -65,6 +65,7 @@
         "features/knowledge",
         "features/labs",
         "features/deploy",
+        "tips-tricks/custom-domain",
         "features/launched"
       ]
     },
