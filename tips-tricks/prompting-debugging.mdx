@@ -1,0 +1,356 @@
+---
+title: "Debugging Prompts"
+description: "Debug workflows, with strategies, sample prompts, troubleshooting flows, and deep debugging mindset examples."
+---
+
+Building with AI is fast and fun – until something goes wrong. Errors, unexpected behaviors, or “the AI did something weird” moments are part of the process. This guide will help you navigate **AI-based debugging workflows in Lovable**. We’ll cover how to quickly fix simple issues, strategies for tougher bugs, using Lovable’s chat for debugging, and even prompt recipes to systematically squash bugs. Debugging with an AI assistant is a new skill, but with structure and the right prompts, you can resolve problems efficiently and even turn them into learning opportunities.
+
+## Advanced Debugging Prompts
+
+Sometimes you need a heavy-duty prompt to dig into a problem or review your project’s health. Here are some structured prompt examples for deep debugging or optimization scenarios. These can be used in Chat mode to get a thorough analysis without immediately changing code.
+
+### Full System Review (Codebase Audit)
+
+If your project has grown large or you suspect there are structural issues, a full codebase audit prompt can be useful. This asks the AI to analyze the entire project for cleanliness, correct architecture, and any misplaced code. It’s like asking “Is everything organized the way it should be?”
+
+**Example Prompt – Codebase Audit:**
+
+```
+Perform a comprehensive **audit of the entire codebase** to check if the architecture is clean, modular, and optimized:
+
+- Identify any files, components, or logic that are in the wrong place or could be better organized. Are there any instances of code that don’t belong in their current file (misplaced logic)?
+- Evaluate if we have a clear separation of concerns (e.g., data handling vs UI vs state management). Point out any overly coupled sections of code.
+- Highlight any areas of the code that are overly complex or not following best practices.
+- Provide a report with specific recommendations to improve structure and maintainability, **without making any code changes yet**. 
+
+Break down the suggestions into an ordered list of steps we could take, from most critical to optional enhancements.
+
+*(This is a read-only analysis; do not modify the code during this audit.)*
+```
+
+This prompt is long, but it directs the AI to act like a code reviewer or architect. We’ve asked it to find mislocated code, check modularity, and even prioritize the fixes​. The AI might respond with something like:
+
+- \_“1. **__Separate API calls from components:__** The \_`ProjectList`_component is directly fetching data. Suggestion: move data fetching to a dedicated hook or context to keep components pure UI.​_
+
+1. **Reduce coupling in Task logic:** The task completion toggle is updating both state and directly writing to localStorage. This should be refactored to have a single source of truth.​
+2. **Organize utility functions:** There are utility functions in `App.tsx` that would be better placed in a `utils` folder (e.g., date formatting functions).
+3. ...”\*
+
+Each point might come with explanation and maybe references to specific files. Such a report helps you see the forest for the trees. It’s especially useful if you’ve been focusing on one feature at a time and haven’t looked at the overall structure in a while.
+
+<Warning>
+  Avoid generic and broad prompts
+
+  ```
+  Nothing works, fix it!
+  ```
+</Warning>
+
+<Check>
+  Make your prompts more detailed and specific
+
+  ```
+  Now the screen has gone blank and I am no longer able to make edits.
+  Can you check what happened?
+  ```
+</Check>
+
+After getting this output, you can decide which refactoring tasks to tackle (maybe even prompt the AI to implement some of those recommendations one by one).
+
+### Safe Approach for Fragile Updates
+
+When you know the area you’re changing is delicate (maybe a complex authentication flow or a core algorithm), it’s wise to prepend a _cautionary guideline_ in your prompt. This doesn’t find bugs per se, but it helps prevent them by telling the AI to be extra careful. We saw an example in the Prompt Library section for locking files. Here’s a similar pattern focusing on not breaking things.
+
+**Example Prompt – Fragile Update Guidance:**
+
+```
+The next change is in a **critical part of the app**, so proceed with **utmost caution**. 
+
+- Carefully examine all related code and dependencies *before* making changes.
+- **Avoid any modifications** to unrelated components or files.
+- If there’s any uncertainty, pause and explain your thought process before continuing.
+- Ensure thorough testing after the change to confirm nothing else is affected.
+
+**Task:** Update the user authentication logic to support OAuth login via Google, on top of existing email/password without breaking either flow.
+
+*(Be extremely careful and double-check each step during implementation.)*
+```
+
+By including the italicized guidelines and bold warnings, you’re basically setting the AI’s “mindset” to be cautious​. The AI might then take a more measured approach, e.g., first explaining what it will do, or implementing the OAuth addition while explicitly noting that it left the email/password intact. This prompt doesn’t output a solution immediately; rather, it influences _how_ the AI will perform the task to minimize introducing new bugs.
+
+This strategy is useful for **fragile sections**: authentication, payment processing, data migration – anything where a small mistake can break a lot. It’s a preemptive debugging measure.
+
+### Performance Optimization Check
+
+If your app works correctly but is **slow** or resource-heavy, you can use a prompt to have the AI analyze performance. This might involve reviewing data fetching patterns, looking at rendering inefficiencies, or suggesting optimizations (caching, memoization, etc.). It’s like asking, “How can we make this faster and smoother?”
+
+**Example Prompt – Performance Audit:**
+
+```
+Our app is functional but seems **sluggish**. Please **analyze the project for performance bottlenecks** and suggest optimizations:
+
+- Check for any unnecessary database or network calls (e.g., duplicate fetches or N+1 query patterns).
+- Identify components that might be re-rendering too often or doing heavy work on the main thread.
+- Look at our use of assets (images, scripts): are there any large bundles or unoptimized assets affecting load time?
+- Suggest improvements like caching frequently used data, using React memo or lazy loading where appropriate, and any other ways to speed up the app.
+
+Provide the analysis and recommendations in a list. Do not make code changes yet – just tell us what to improve for better performance.
+```
+
+Running this in Chat mode will give you a diagnostic report. The AI might say for example:
+
+- _“Data fetching:_ The `ProjectList` component fetches data on every render. This could be improved by caching or moving the fetch to a higher context so it doesn’t repeat unnecessarily​. Consider using a state or context to store projects once fetched.
+- _Re-renders:_ The `TaskItem` component is not memoized and re-renders every time any parent state changes. If we have many tasks, this can slow down interactions. Suggestion: use `React.memo` for `TaskItem` to prevent needless re-renders​.
+- _Assets:_ Noticed an image (logo) that is 2MB. That’s quite large; compress or use a smaller resolution for faster loading.
+- _Bundle size:_ All pages are in one bundle. Consider code-splitting (dynamic `import()` for large modules) so initial load is faster.
+- ...”\*
+
+Each suggestion comes from common performance best practices​. You can then decide which ones to implement. Maybe you prompt Lovable to apply one of them: _“Implement caching for project data using context as suggested.”_ By addressing these, you improve user experience and possibly reduce costs (fewer calls, less computation).
+
+### Handling Persistent Errors
+
+What about errors that just won’t go away or keep coming back in slight variations? This can happen if the root cause isn’t addressed. For example, you fix one thing, but the underlying problem surfaces as a new error elsewhere. Here’s a strategy for that:
+
+- **Ask the AI what it has tried already.** Sometimes after a few “Try to Fix” attempts or manual prompts, it’s unclear what’s been changed. Use: \_“What solutions have we tried so far for this error?”\_​. The AI can list the attempts, which helps you avoid repeating the same fixes.
+- **Have the AI explain the error in simple terms.** _“Explain in simple terms why this error occurs.”_ This can reveal if the AI (and you) truly understand it. You might catch a misconception here.
+- **Consider an alternate approach.** Ask: \_“Given this error keeps happening, can we try a different approach to achieve the goal?”\_​. The AI might suggest a different implementation strategy that bypasses the problematic area.
+- **Revert and replay.** In worst-case scenarios, you might roll back a few steps (Lovable lets you restore older versions). Then proceed with smaller changes. You can even tell the AI: _“We’re going to undo the last changes and try a more incremental approach.”_ This resets the context a bit and often avoids the rut you were in.
+
+Finally, if a specific component is “dead” (not working at all, no matter what), isolate it. Create a fresh minimal version of that component via prompt to see if it works, then slowly integrate it back into your project. This is akin to turning things off and on again, but with code – sometimes starting fresh on a piece is easier than trying to patch an overly broken one.
+
+Throughout all this, maintain a dialogue with the AI. Treat it like a collaborator: _“We fixed X but now Y is acting up. What’s the relationship between X and Y? Could the fix have caused Y’s issue?”_ The AI might make connections you didn’t see.
+
+## Sample Debugging Flows
+
+To cement these ideas, let’s walk through two common debugging scenarios with example flows:
+
+### The “stuck in error loop."
+
+You prompted something complex, and now the app won’t build, and Try to Fix failed twice.
+
+_Flow:_ 
+
+<Steps>
+  <Step title="You switch to Chat mode.">
+    
+  </Step>
+  <Step title="You ask, “What is the root cause of this build error?”">
+    
+  </Step>
+  <Step title="The AI explains it’s a type mismatch in the API call.">
+    
+  </Step>
+  <Step title="You then say, “Show me the relevant code and the expected types.”">
+    
+  </Step>
+  <Step title="AI shows that the function expected an ID number but got an object.">
+    
+  </Step>
+  <Step title="Now that you see it, you prompt, “Adjust the code to pass just the numeric ID to the function, not the whole object.” ">
+    
+  </Step>
+  <Step title="Switch to Default, run that prompt, build succeeds.">
+    
+  </Step>
+  <Step title="If it didn’t, you’d go back, maybe ask “What else could cause this?” etc.">
+    
+  </Step>
+</Steps>
+
+Throughout, you specifically described the error and had the AI confirm its understanding, rather than just blindly hitting fix repeatedly.
+
+### The “feature not working right.”
+
+You added a notification feature, but emails aren’t sending.
+
+_Flow:_ 
+
+<Steps>
+  <Step title="No error shows, so you ask in Chat, “The email notification isn’t working – I expected an email when a task is overdue, but got nothing. How can we debug this?”">
+    
+  </Step>
+  <Step title="AI suggests checking if the server function triggered and if the email service response had an error.">
+    
+  </Step>
+  <Step title="You grab the server log (perhaps from Supabase) and see a permission error.">
+    
+  </Step>
+  <Step title="You show this to the AI: “The log says ‘permission denied when trying to send email.’”">
+    
+  </Step>
+  <Step title="AI figures out maybe the API key for the email service wasn’t set or the service blocked it.">
+    
+  </Step>
+  <Step title="You then fix the API key in settings (outside of Lovable) or prompt to adjust the function to use a different method.">
+    
+  </Step>
+</Steps>
+
+Essentially, by describing what you expect (an email) and what happened (nothing, with a log snippet), the AI was able to guide the investigation.
+
+### The “UI element disappeared.”
+
+You refactored something and now a whole section of the UI is just gone (a “dead component”).
+
+_Flow:_
+
+<Steps>
+  <Step title="You tell the AI, “The project list section is no longer showing up at all. It was working before the last edit.” ">
+    
+  </Step>
+  <Step title="The AI might check if the component is still being rendered or if a return statement is missing. ">
+    Perhaps it realizes the refactor removed the `ProjectList` from the parent’s JSX. It suggests to re-import and include it. Or maybe state changes in a parent mean the list is now filtered out unintentionally. 
+  </Step>
+  <Step title="The AI could walk through possibilities: “Is the data still being fetched? Is the component getting the data? Let’s add a console.log in the render to see if it’s receiving props.” ">
+    
+  </Step>
+  <Step title="You do that (or the AI does via prompt), and see nothing logs – meaning the component isn’t mounted. ">
+    Aha\\\\! So you prompt, \_“Restore the \_`<ProjectList>`_in the Dashboard page JSX (it was accidentally removed).”_  Problem solved.
+  </Step>
+</Steps>
+
+In this flow, the key was to notice the component was completely gone and communicate that. The AI helped pinpoint _why_ (not rendered vs rendered but empty, etc.).
+
+<Note>
+  Using Dev tools and console logs
+
+  ```
+  My app is not working anymore and the screen is blank.
+  Here's the copy/paste from Dev tools console, can you fix the issue?
+  
+  Error occurred:
+  TypeError: Q9() is undefined  at https://example.lovable.app/assets/index-DWQbrtrQQj.js
+  : 435 : 39117 index-DWQbrtrQQj.js:435:35112
+  onerror https://example.lovable.app/assets/index-DWQbrtrQQj.js:435
+  ```
+</Note>
+
+In all these cases, _communication and incremental steps_ are your friends. Use the AI’s strength in recalling details (like what it did before) and analyzing logs or errors. And use your strength in steering the process – you understand the high-level goal and can decide when to try a different angle.
+
+## Root Cause Analysis, Rollback, and Progressive Enhancement
+
+A few final pieces of advice:
+
+### Root Cause vs. Symptom
+
+Always ask “why did this happen?” not just “what to do now?”. The AI can help find the root cause so that when you fix something, it stays fixed. For example, an AI quick fix might silence an error but not address the underlying logic bug. If you suspect that, dig deeper:
+
+<Info>
+  _I see you fixed the null pointer error by adding a check, but why was it null in the first place? Can we address that cause?_
+</Info>
+
+This leads to more robust solutions.
+
+### **Rollback wisely:**
+
+Lovable allows you to roll back to previous versions. Don’t hesitate to use that if the code has become too tangled by a series of bad fixes. It’s often faster to rewind and try a different approach. If you do rollback, let the AI know what you’re doing (so it doesn’t get confused by code that suddenly looks different). For instance:
+
+<Info>
+  _I reverted the project to before the notifications feature. Let’s implement it again, but more carefully this time._
+</Info>
+
+This way, the AI has context that we undid some changes and are taking another shot.
+
+### **Progressive enhancement:**
+
+When adding new features (especially complex ones), build them in small, testable increments. This isn’t just a prompting tip – it’s a development philosophy that pairs well with AI. If something breaks, you know exactly which small step caused it. Prompt by prompt, you enhance the app, which also means prompt by prompt you can debug in isolation. If you ever find yourself writing a paragraph-long prompt with multiple feature changes at once, consider splitting it into multiple prompts. You’ll thank yourself later when troubleshooting is needed.
+
+<Note>
+  1. Add failing test cases.
+  2. Isolate the problem and analyze dependencies.
+  3. Document findings before applying fixes.
+
+  ```
+  Here's the failing console log. Analyze the test case, investigate the error in auth flow, and suggest a solution after understanding the dependencies.
+  ```
+</Note>
+
+### **Document as you go:**
+
+It’s helpful to keep notes (or even ask the AI to summarize what was done after a session). This is similar to the reverse meta prompting – it creates a history of fixes. E.g., after resolving a tough bug, you might prompt:
+
+<Info>
+  _Summarize what the issue was and how we fixed it._
+</Info>
+
+The AI’s summary can be saved in a `README` or log. This is great for future you, or anyone else on the project, to understand what happened.
+
+### **Know when to ask for human help:**
+
+Sometimes, despite all efforts, you might hit a wall (maybe a true bug in the Lovable platform or something outside your/AI control). The Lovable community and support are there for you. There’s no shame in reaching out on their Discord or forums with a question. Often, others have faced a similar issue. Use the AI to gather as much info as possible first (so you can provide details), and then ask the community if needed.
+
+## Community Debugging Guidebook
+
+This guidebook was shared in our community Discord—it might be useful for debugging your project:
+
+<AccordionGroup>
+  <Accordion title="Error Fixing">
+    When fixing errors, focus exclusively on the relevant code sections without modifying unrelated functioning parts. Analyze the error message and trace it to its source. Implement targeted fixes that address the specific issue while maintaining compatibility with the existing codebase. Before confirming any solution, validate that it resolves the original problem without introducing new bugs. Always preserve working functionality and avoid rewriting code that isn't directly related to the error.
+  </Accordion>
+  <Accordion title="Code Modification Approach">
+    When modifying existing code, use a surgical approach that changes only what's necessary to implement the requested feature or fix. Preserve variable names, coding patterns, and architectural decisions present in the codebase. Before suggesting changes, analyze dependencies to ensure modifications won't break existing functionality. Present changes as minimal diffs rather than complete rewrites. When improvements beyond the immediate task are identified, suggest them separately without implementing them automatically.
+  </Accordion>
+  <Accordion title="Database Integration">
+    Before suggesting new database structures, thoroughly examine the existing schema to identify tables, relationships, and fields already present. Leverage existing tables whenever possible rather than duplicating data models. When modifications to the database are necessary, ensure they're compatible with existing queries and data access patterns. Consider migration strategies for schema changes that preserve existing data. Always verify foreign key relationships and data integrity constraints before proposing changes.
+  </Accordion>
+  <Accordion title="Thorough Issue Analysis">
+    Approach every issue with a comprehensive diagnostic process. Begin by gathering all relevant information through careful examination of error messages, logs, and system behavior. Form multiple hypotheses about potential causes rather than jumping to conclusions. Test each hypothesis methodically until the root cause is identified. Document your analysis process and findings before proposing solutions. Consider potential edge cases and how they might affect the system.
+  </Accordion>
+  <Accordion title="Solution Verification">
+    Before confirming any solution, implement a rigorous verification process. Test the solution against the original issue to confirm it resolves the problem. Check for unintended side effects in related functionality. Ensure performance isn't negatively impacted. Verify compatibility with different environments and configurations. Run through edge cases to ensure robustness. Only after completing this verification should you present the solution as confirmed.
+  </Accordion>
+  <Accordion title="Code Consistency">
+    Maintain consistency with the existing codebase in terms of style, patterns, and approaches. Analyze the code to identify naming conventions, formatting preferences, and architectural patterns. Follow these established patterns when implementing new features or fixes. Use the same error handling strategies, logging approaches, and testing methodologies present in the project. This preserves readability and maintainability while reducing the cognitive load for developers.
+  </Accordion>
+  <Accordion title="Progressive Enhancement">
+    When adding new features, build upon the existing architecture rather than introducing completely new paradigms. Identify extension points in the current design and leverage them for new functionality. Implement changes that align with the established patterns and principles of the codebase. Focus on backward compatibility to ensure existing features continue to work as expected. Document how new additions integrate with and extend the existing system.
+  </Accordion>
+  <Accordion title="Documentation and Explanation">
+    Provide clear, concise explanations for all changes and recommendations. Explain not just what changes are being made, but why they're necessary and how they work. Document any assumptions or dependencies involved in the solution. Include comments in code when introducing complex logic or non-obvious solutions. When suggesting architectural changes, provide diagrams or high-level explanations that help visualize the impact.
+  </Accordion>
+  <Accordion title="Technical Debt Awareness">
+    Recognize when solutions might introduce technical debt and be transparent about these trade-offs. When time constraints necessitate less-than-ideal solutions, clearly identify what aspects would benefit from future refactoring. Distinguish between quick fixes and proper solutions, recommending the appropriate approach based on context. When technical debt is unavoidable, document it clearly to facilitate future improvements.
+  </Accordion>
+  <Accordion title="Learning and Adaptation">
+    Continuously adapt to the project's specific patterns and preferences. Pay attention to feedback on previous suggestions and incorporate these learnings into future recommendations. Build a mental model of the application architecture that becomes increasingly accurate over time. Remember past issues and solutions to avoid repeating mistakes. Actively seek to understand the underlying business requirements driving technical decisions.
+  </Accordion>
+  <Accordion title="Preventing Duplicate Components">
+    Before creating new pages, components, or flows, conduct a thorough inventory of existing elements in the codebase. Search for similar functionality using relevant keywords and file patterns. Identify opportunities to reuse or extend existing components rather than creating duplicates. When similar features exist, analyze them to understand if they can be parameterized or adapted instead of duplicated. Maintain a mental model of the application's structure to recognize when proposed solutions might create redundant elements. When similar pages or flows are needed, consider creating abstracted components that can be reused with different data or configurations, promoting DRY (Don't Repeat Yourself) principles.
+  </Accordion>
+  <Accordion title="Dead Code Elimination">
+    Actively identify and remove unused code rather than letting it accumulate. When replacing functionality, cleanly remove the old implementation instead of simply commenting it out or leaving it alongside new code. Before deleting code, verify its usage throughout the application by checking for imports and references. Use tools like dependency analysis when available to confirm code is truly unused. When refactoring, track deprecated methods and ensure they're properly removed once no longer referenced. Regularly scan for orphaned components, unused imports, commented-out blocks, and unreachable conditions. When suggesting code removal, provide clear reasoning for why it's considered dead code and confirm there are no subtle dependencies before deletion. Maintain cleanliness in the codebase by prioritizing elimination of code paths that are no longer executed.
+  </Accordion>
+  <Accordion title="Preserving Working Features">
+    Treat working features as locked systems that require explicit permission to modify. Before suggesting changes to any functioning component, clearly identify its boundaries and dependencies. Never remove or substantially alter features that are currently operational without explicit direction. When errors occur in one area, avoid making "just in case" changes to unrelated working components. Maintain a clear understanding of which parts of the application are stable and which are under development. Use a feature-focused approach where changes are isolated to specific feature sets without bleeding into others. When modifying shared components used by multiple features, ensure all dependent features continue functioning as expected. Create safeguards by thoroughly documenting cross-feature dependencies before making modifications that might affect them. Always explicitly confirm intent before suggesting changes to established, functional parts of the application.
+  </Accordion>
+  <Accordion title="Deep Problem-Solving Approach">
+    When encountering complex errors, resist the temptation to apply immediate fixes without deeper understanding. Take a deliberate step back to examine the problem from multiple perspectives before proposing solutions. Consider fundamentally different approaches rather than minor variations of the same strategy. Document at least three potential solutions with their pros and cons before recommending a specific approach. Question initial assumptions about the cause of errors, especially when standard fixes don't work. Consider unconventional sources of issues such as environment configurations, external dependencies, or race conditions that might not be immediately obvious. Try reversing your thinking: instead of asking "why isn't this working?", ask "under what conditions would this behavior actually make sense?". Break complex problems into smaller components that can be verified independently. Implement targeted debugging strategies such as logging, breakpoints, or state tracing to gather more information when the source of an error remains unclear. Be willing to propose experimental fixes as learning opportunities rather than definitive solutions when dealing with particularly obscure issues.
+  </Accordion>
+  <Accordion title="Database Query Verification">
+    Before suggesting any database query or schema modification, always verify the current state of the database first. Examine existing tables, fields, and relationships to ensure you're not recommending the creation of elements that already exist. When suggesting queries, first check if similar queries exist in the codebase that can be adapted. Review existing data models, migration files, and schema definitions to build an accurate understanding of the database structure. For any proposed table creation, explicitly confirm that the table doesn't already exist and explain why a new table is necessary rather than modifying an existing one. When suggesting field additions, verify that similar fields don't already serve the same purpose under different names. Consider database performance implications of suggested queries and provide optimized alternatives when appropriate. Always contextualize query suggestions within the existing database architecture rather than treating them as isolated operations.
+  </Accordion>
+  <Accordion title="UI Consistency and Theming">
+    Maintain strict adherence to the established design system and color palette throughout the application. Before creating new UI components, study existing ones to understand the visual language, spacing patterns, interaction models, and theming approach. When implementing new interfaces, reuse existing component patterns rather than creating visual variations. Extract color values, typography, spacing, and other design tokens from the existing codebase rather than introducing new values. Ensure consistent handling of states (hover, active, disabled, error, etc.) across all components. Respect the established responsive behavior patterns when implementing new layouts. When suggesting UI improvements, ensure they enhance rather than disrupt the visual cohesion of the application. Maintain accessibility standards consistently across all components, including color contrast ratios, keyboard navigation, and screen reader support. Document any component variations and their appropriate usage contexts to facilitate consistent application. When introducing new visual elements, explicitly demonstrate how they integrate with and complement the existing design system rather than standing apart from it.
+  </Accordion>
+  <Accordion title="Systematic Debugging Approach">
+    When encountering errors, adopt a scientific debugging methodology rather than making random changes. Start by reproducing the exact issue in a controlled environment. Gather comprehensive data including console logs, network requests, component state, and error messages. Form multiple hypotheses about potential causes and test each systematically. Isolate the problem by narrowing down affected components and identifying trigger conditions. Document your debugging process and findings for future reference. Use appropriate debugging tools including browser developer tools, React DevTools, and code-level debugging techniques. Always verify that your solution completely resolves the issue without introducing new problems or regressions elsewhere in the application.
+  </Accordion>
+  <Accordion title="Type Safety and Data Validation">
+    Before implementing any functionality, thoroughly analyze type definitions from both database schema and TypeScript interfaces. Maintain strict type checking throughout the codebase, avoiding 'any' type as an escape hatch. When working with data transformations, verify type safety at each step of the pipeline. Pay special attention to common type mismatches like database numbers coming in as strings, date parsing requirements, and handling of nullable fields. Implement consistent naming conventions between database columns and TypeScript interfaces. Document complex type relationships and special handling requirements. Test with real data shapes and verify edge cases, particularly null/undefined handling. When errors occur, trace the data transformation pipeline to identify exactly where types diverge and suggest fixes that maintain type safety.
+  </Accordion>
+  <Accordion title="Data Flow Management">
+    Conceptualize data flow as a complete pipeline from database through API and state to UI. When implementing features, carefully track how data is transformed at each stage. Implement proper query invalidation patterns to ensure UI remains synchronized with database state. Add strategic console logs at critical points to monitor data transitions. Create clear mental models of when and how data should update in response to actions. Pay careful attention to caching strategies and potential stale data issues. When debugging flow problems, methodically follow the data journey from source to destination. Check timing issues, race conditions, and transformation errors. Verify that the final data shape reaching components matches what they expect. Implement robust error boundaries and loading state management to maintain UI stability during data flow disruptions.
+  </Accordion>
+  <Accordion title="Performance Optimization">
+    Monitor application performance proactively rather than waiting for issues to become severe. Review query caching strategies to minimize unnecessary database calls. Check for and eliminate unnecessary component re-renders through proper memoization and dependency management. Analyze data fetching patterns for potential N\+1 query problems, excessive waterfalls, or redundant requests. Implement virtualization for long lists and paginate large data sets. Optimize bundle size through code splitting and lazy loading. Compress and optimize assets including images. Use appropriate performance measurement tools to identify bottlenecks including React DevTools, Performance tab, Network panel, and Memory profiler. Focus optimization efforts on metrics that directly impact user experience such as load times, time to interactive, and UI responsiveness. Implement targeted performance improvements rather than premature optimization.
+  </Accordion>
+  <Accordion title="Error Management and Resilience">
+    Implement a comprehensive error handling strategy that maintains application stability while providing meaningful feedback. Use try/catch blocks strategically around potentially problematic code sections. Create a hierarchy of error boundaries to contain failures within specific components rather than crashing the entire application. Design graceful degradation patterns where components can continue functioning with limited data. Provide clear, user-friendly error messages that explain the problem without technical jargon. Implement recovery mechanisms including retry logic, fallbacks, and state resets. Maintain robust error logging that captures sufficient context for debugging while respecting privacy. Test error scenarios thoroughly to ensure recovery mechanisms work as expected. When suggesting solutions, ensure they address the root cause rather than merely suppressing symptoms, and verify they work across all relevant environments and edge cases.
+  </Accordion>
+  <Accordion title="Component Architecture">
+    Approach component design with a clear understanding of component hierarchy and responsibilities. Visualize components as a family tree with proper parent-child relationships. Minimize prop drilling by strategically using context or state management where appropriate. Implement clear boundaries between container (smart) and presentational (dumb) components. Establish consistent patterns for component communication including parent-child and sibling interactions. When debugging component issues, analyze the complete component tree, prop flow, state location, and event handler connections. Design components with single responsibility and clear interfaces. Document component relationships and dependencies to facilitate future maintenance. Implement performance optimizations including memoization, lazy loading, and code splitting where beneficial. Maintain a balance between component reusability and specialization to avoid both duplication and over-abstraction.
+  </Accordion>
+  <Accordion title="API Integration and Network Management">
+    Approach API integration with a comprehensive strategy for requests, responses, and error handling. Verify authentication headers, parameters, and body format for each request. Implement proper error handling for all network operations with specific catches for different error types. Ensure consistent typing between request payloads, expected responses, and application state. Configure proper CORS settings and verify they work across all environments. Implement intelligent retry mechanisms for transient failures with exponential backoff. Consider rate limiting implications and implement appropriate throttling. Add strategic request caching to improve performance and reduce server load. Monitor network performance including request timing and payload sizes. Test API integrations against both happy paths and various failure scenarios. Maintain clear documentation of all API endpoints, their purposes, expected parameters, and response formats to facilitate future development and debugging.
+  </Accordion>
+</AccordionGroup>

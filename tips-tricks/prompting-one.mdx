@@ -1,0 +1,426 @@
+---
+title: "Prompting 1.1"
+description: "Prompt structure, levels of prompting, meta/reverse meta prompting, and foundational tactics with examples."
+---
+
+## Heads up\\!
+
+To help you make the most out of Lovable, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members. Since Lovable relies on large language models (LLMs), effective prompting strategies can significantly improve its efficiency and accuracy.
+
+## What is Prompting?
+
+Prompting refers to the textual instructions you give an AI system to perform a task​. In Lovable (an AI-powered app builder), prompts are how you “tell” the AI what to do – from creating a UI to writing backend logic. Effective prompting is critical because Lovable uses large language models (LLMs), so clear, well-crafted prompts can greatly improve the AI’s efficiency and accuracy in building your app​. In short, better prompts lead to better results.
+
+## Structuring Effective Prompts
+
+For consistent outcomes, it helps to structure your prompt into clear sections. A recommended format (like _“training wheels”_ for prompting) uses labeled sections for **Context**, **Task**, **Guidelines**, and **Constraints**​:
+
+- **Context:** Give background or the bigger picture. _Example:_ “We’re building a project management tool for tracking tasks and deadlines.” This sets the stage for the AI.
+- **Task:** State exactly what you want done **now**. _Example:_ “Create the UI for the project creation page.”
+- **Guidelines:** Specify how to approach the task or any preferences. _Example:_ “Use a clean design, following Material UI principles, and ensure it’s mobile-responsive.”
+- **Constraints:** Declare any hard limits or must-nots. _Example:_ “Do not use any paid libraries, and do not alter the login page code.”
+
+By structuring your prompt, you reduce ambiguity and help the AI focus. Remember to put the most important details up front – AI models tend to pay extra attention to the beginning and end of your prompt. And if you need a specific tech or approach, **state it explicitly** (for instance, if you require Supabase for auth, say so)​.
+
+## The Four Levels of Prompting
+
+Prompting is a skill you can develop. Think of it as progressing through levels, from very guided prompts to more advanced techniques​
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/IqWfKj4mUIo?si=aHVQNRgD8xF7EW06" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+
+### Training Wheels Prompting
+
+This is a highly structured approach, great for beginners. You clearly label sections (as above) to ensure nothing is missed​. It might feel verbose, but it leaves little room for misunderstanding.
+
+_Example (Training Wheels prompt):_
+
+<Info>
+  **Context**
+
+  We are developing an e-commerce platform for eco-friendly products.
+
+  **Task**
+
+  Create a product listing page with filters for category and price.
+
+  **Guidelines**
+
+  Make the UI clean and modern, using Tailwind CSS for styling. Include sample product data for testing.
+
+  **Constraints**
+
+  Use Supabase for the database. Do not include any payment functionality yet.
+</Info>
+
+This prompt gives the AI context about the project, the specific task, guidance on style/tech, and constraints on scope. It’s explicit and easy for the AI to follow.
+
+### No Training Wheels
+
+Once you’re comfortable, you can drop the section labels and write in a more conversational tone – but still remain clear and organized​. Essentially, you’ll include the same information (context, task, etc.) but in paragraph form. This feels more natural while still guiding the AI.
+
+_Example (No Training Wheels prompt):_
+
+<Info>
+  I’m building an e-commerce web app with a Supabase backend. Right now, I need you to create a **product listing page** for eco-friendly products. It should have a clean, modern UI (using Tailwind CSS) with filters for category and price. Please make sure to use dummy data for now, and **don’t add any payment features yet**.
+</Info>
+
+This reads more like how you’d explain the task to a colleague, but it’s still specific about the requirements and limitations (notice we still mentioned the tech stack and the “no payments” constraint, just without formal headings).
+
+### Meta Prompting
+
+Meta prompting means asking the **AI to help improve your prompts**. You use AI on itself. For example, you might provide a draft prompt and then ask, _“Can you rewrite this prompt to be more concise and detailed?”_. This leverages the AI’s strength in language to refine your instructions before execution. It’s like getting a second pair of eyes on your prompt.
+
+Use meta prompting when you feel your instruction could be better but you’re not sure how to improve it. The AI might respond with a cleaned-up, more precise version of your request. You can then use that improved prompt to get the actual work done.​
+
+Example (Meta prompt request):
+
+<Info>
+  **User:** Rewrite this prompt to be more clear and specific – \_“Create a secure login page in React using Supabase.”\_​
+
+  \
+  **AI (improved prompt):** ********_“Implement a secure login page in React using Supabase authentication. Include fields for email and password, handle error messages for failed logins, and ensure you properly store JWTs for session management.”_********
+</Info>
+
+Here the AI elaborated the prompt, adding details (like error handling) that make the instruction more robust. Meta prompting is a powerful way to polish your commands.
+
+### Reverse Meta Prompting
+
+Reverse meta prompting flips the script: now you ask the AI to **summarize what it did and turn it into a prompt for future use**​. This is especially handy for debugging or recurring tasks. After the AI solves a problem, you can have it generate a prompt that would reproduce that solution or avoid the issue next time. Essentially, the AI documents the process for you.
+
+Example (Reverse Meta prompt):
+
+<Info>
+  After fixing an authentication bug, you might say: \_“Summarize the errors we encountered setting up JWT auth and how we resolved them. Based on that, create a prompt I can use next time to set up authentication correctly.”\_​. The AI could output a concise recap of the bug and a step-by-step prompt for avoiding it in the future. This turns lessons learned into reusable prompts.
+</Info>
+
+Reverse meta prompting is great for building your own library of “recipes” – the AI helps you formalize solutions so you can apply them again.
+
+## Additional Prmpting tips
+
+### Be specific, avoid vagueness
+
+Vague prompts lead to vague results. Always clarify _what_ you want and _how_.
+
+<Warning>
+  **DON'T**:
+
+  ```
+  Make this app better.
+  ```
+
+  **Another example:**
+
+  ```
+  Create a form for user input
+  ```
+</Warning>
+
+<Check>
+  **DO**:
+
+  The latter gives clear direction on scope and expected outcome.
+
+  ```
+  Refactor the app to clean up unused components and improve performance, without changing UI or functionality.
+  ```
+
+  **Another example:**
+
+  ```
+  Create a user registration form with fields for username, email, and password and include a submit button.
+  ```
+</Check>
+
+### Incremental prompting
+
+It’s usually best to tackle complex projects in pieces rather than one giant prompt. Lovable responds well to an iterative approach.
+
+<Warning>
+  **DON'T**:
+
+  ```
+  Build a CRM app with Supabase, auth, Google Sheets export, and data enrichment.
+  ```
+</Warning>
+
+<Check>
+  **DO**:
+
+  This step-by-step progression​​ helps the AI stay focused and accurate, and you can catch issues early:
+
+  ```
+  Set up a Supabase-connected CRM backend.
+  ```
+
+  ```
+  Great! Could you please add a secure authentication flow with user roles?
+  ```
+
+  ```
+  Thank you! The next step is to integrate Google Sheets to export records.
+  ```
+
+  **Another example:**
+
+  ```
+  Set up a database schema for user information.
+  ```
+
+  ```
+  Develop an API endpoint to retrieve user data please
+  ```
+</Check>
+
+### Include Constraints and Requirements
+
+Don’t shy away from spelling out constraints. If something _must_ or _must not_ be done, say so.
+
+<Note>
+  **Adding constraints**
+
+  ```
+  Create a simple to-do app with a maximum of 3 tasks visible at a time.
+  Include the ability to add, edit, and delete tasks.
+  ```
+
+  ```
+  Optimize this code, but ensure the UI and core functionality remain unchanged. Document each change you make.
+  ```
+
+  ```
+  Use at most 3 API calls for this, and ensure no external library is required.
+  ```
+
+  ```
+  The page should display a maximum of 3 tasks at a time.
+  ```
+
+  Such limits keep the AI from over-engineering. Adding a constraint like a max number of items or a performance target can focus the AI on what’s important​.
+</Note>
+
+### Avoid ambiguity in wording
+
+If a term could be interpreted in different ways, clarify it. The clearer you are, the less the AI has to guess.
+
+<Warning>
+  **DON'T**:
+
+  ```
+  Add a profile feature
+  ```
+
+  ```
+  Support notifications
+  ```
+</Warning>
+
+<Check>
+  **DO**:
+
+  The latter gives clear direction on scope and expected outcome.
+
+  ```
+  Add a user profile page with fields X, Y, Z.
+  ```
+
+  ```
+  Send an email notification on form submission.
+  ```
+</Check>
+
+### Mind your tone and courtesy
+
+While it doesn’t change functionality, a polite tone can sometimes yield better results​. Phrases like “please” or a respectful ask can add context and make the prompt a bit more descriptive, which can help the AI. For example,
+
+<Info>
+  _Please refrain from modifying the homepage, focus only on the dashboard component._
+</Info>
+
+This reads as polite, and it explicitly tells the AI what not to do. It’s not about the AI’s feelings – it’s about packing in detail. (Plus, it never hurts to be nice​\\\\!)
+
+### Use formatting to your advantage
+
+Structure lists or steps when appropriate. If you want the AI to output a list or follow a sequence, enumerate them in the prompt. By numbering steps, you hint the AI to respond in kind.
+
+<Note>
+  ```
+  Let's think through the process of setting up a secure authentication system:
+  1. What are the necessary components?
+  2. How should they interact?
+  3. Provide the implementation code.
+  ```
+
+  <Info>
+    _First, explain the approach. Second, show the code. Third, give a test example._
+  </Info>
+</Note>
+
+### Leverage examples or references
+
+If you have a target design or code style, mention it or provide an example. Providing an example (image or code snippet) gives the AI a concrete reference to emulate.
+
+<Note>
+  **Setting the context**
+
+  ```
+  We are building a project management tool that helps teams track their tasks.
+  This tool should have features like:
+   - user authentication
+   - project creation
+   - task assignments
+   - reporting
+  
+  Now, for the first task, create the UI for project creation.
+  ```
+
+  **Another example:**
+
+  ```
+  I need a CRM app with Supabase integration and a secure auth flow. Start by setting up the backend.
+  ```
+
+  **Another example:**
+
+  ```
+  We are developing an e-commerce platform focusing on eco-friendly products. Generate a product listing page with filters for category and price.
+  ```
+</Note>
+
+### Using image prompts
+
+Lovable even allows image uploads with your prompt, so you can show a design and say “match this style”.
+
+There are two main approaches here. The first one is a simple prompting approach.
+
+<Note>
+  **Simple image upload prompting**
+
+  You can upload an image and then add an example prompt like this:
+
+  ```
+  Create and implement a UI that looks as similar as possible to the image attached.
+  ```
+
+  ```
+  This screenshot shows a layout issue on mobile. Adjust margins and padding to make it responsive while keeping the same design structure.
+  ```
+</Note>
+
+Or, you can help AI better understand the content of the image and some additional specifics about it. Excellent results can be achieved by adding specific instructions to the image uploaded. While the image is worth a thousand words, adding a couple of your own to describe desired functionality can go a long way - especially since interactions cannot always be obvious from a static image.
+
+<Note>
+  **Image prompting with detailed instructions**
+
+  ```
+  I want you to create the app as similar as possible to the one shown in this screenshot.
+  It's essentially a kanban clone.
+  It should have the ability to add new cards (tickets) in each column, have the ability to change the order of those tickets within a single column, and even move those cards between columns.
+  Feel free to use the Pangea home dnd npm package for drag-and-drop functionality.
+  ```
+</Note>
+
+### Feedback integration
+
+Review the AI’s output and provide specific feedback for refinements.
+
+<Note>
+  ```
+  The login form looks good, but please add validation for the email field to ensure it contains a valid email address.
+  ```
+</Note>
+
+### Emphasizing Accessibility
+
+Encourage the generation of code that adheres to accessibility standards and modern best practices. This ensures that the output is not only functional but also user-friendly and compliant with accessibility guidelines.
+
+<Note>
+  ```
+  Generate a React component for a login form that follows accessibility best practices, including appropriate ARIA labels and keyboard navigation support.
+  ```
+</Note>
+
+### Predefined Components and Libraries
+
+Specify the use of certain UI libraries or components to maintain consistency and efficiency in your project.  This directs the AI to utilize specific tools, ensuring compatibility and a uniform design language across your application.
+
+<Note>
+  ```
+  Create a responsive navigation bar using the shadcn/ui library with Tailwind CSS for styling.
+  ```
+
+  ### 
+</Note>
+
+### Multilingual Prompting
+
+When working in a multilingual environment, specify the desired language for both code comments and documentation. This ensures that the generated content is accessible to team members who speak different languages, enhancing collaboration.
+
+<Note>
+  ```
+  Generate a Python script that calculates the Fibonacci sequence. Provide comments and documentation in French.
+  ```
+</Note>
+
+### Defining Project Structure and File Management
+
+Clearly outline the project structure, including file names and paths, to ensure organized and maintainable code generation. This provides clarity on where new components should reside within the project, maintaining a coherent file organization.
+
+<Note>
+  ```
+  Create a new React component named 'UserProfile' and save it as 'components/user-profile.tsx'. Ensure it includes a profile picture, username, and bio section.
+  ```
+</Note>
+
+## Applying These Strategies in Different Tools
+
+The prompting principles above apply not just in Lovable’s chat, but anywhere you interact with AI or automation tools:
+
+### In Lovable's Builder
+
+You’ll primarily use these prompts in the Lovable chat interface to build and refine your app.
+
+1. Start with a broad project prompt, then iterate feature by feature.
+2. Use Chat-Only mode when you need to discuss or debug without changing code.
+
+### W[******ith make.com or n8n (workflow automation)******](http://make.com)
+
+You might not prompt these platforms in natural language the same way, but designing an automation **still benefits from clear AI instructions**.
+
+For instance, you can have Lovable generate integration logic:
+
+<Info>
+  [___When a form is submitted, send the data to a Make.com webhook for Slack notification.___](http://Make.com)
+</Info>
+
+In fact, Lovable can help set up automation by integrating with webhooks. If your app needs to hand off tasks (like sending emails, updating a CRM), you can prompt Lovable to use Make or n8n.
+
+<Info>
+  [___After a user signs up in the app, trigger a Make.com workflow that creates a record in Salesforce.___](http://Make.com)
+</Info>
+
+Lovable will write the code to call that webhook or API. Keeping the prompt structured ensures the AI knows exactly how to connect Lovable with those external services.
+
+### **Edge cases and external integrations**
+
+Lovable integrates with many services (Stripe, GitHub, Supabase, etc.). When prompting for these, treat the integration details as part of your **Context/Constraints**. For example,
+
+<Info>
+  _Connect the form to Stripe (test mode) for payments. On success, redirect to /thank-you._
+</Info>
+
+Be clear about what external services should do. The same goes for using n8n (self-hosted automation) – you might write,
+
+<Info>
+  _Send a POST request to the n8n webhook URL after form submission, and wait for its response to show a confirmation message._
+</Info>
+
+Clarity here is key so the AI produces the correct calls.
+
+## Summary
+
+- Strong prompting is about **clarity, structure, and context**. Whether you’re telling Lovable to build a feature, or orchestrating a [Make.com](http://Make.com) scenario, the goal is to paint a picture of what you want.
+- Start with structured prompts if you’re unsure, and evolve to more conversational style as you gain confidence.
+- Use meta techniques to improve and learn from each interaction.
+- With practice, you’ll guide the AI like an extension of your dev team – and it will feel natural to get exactly the output you need.
+
+Happy prompting\\\\!

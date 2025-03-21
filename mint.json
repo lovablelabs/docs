@@ -71,9 +71,10 @@
     {
       "group": "Prompting",
       "pages": [
-        "tips-tricks/prompting",
-        "integrations/prompt-integrations",
-        "tips-tricks/troubleshooting"
+        "tips-tricks/prompting-one",
+        "tips-tricks/prompting-library",
+        "tips-tricks/prompting-debugging",
+        "integrations/prompt-integrations"
       ]
     },
     {
@@ -92,6 +93,7 @@
     {
       "group": "Tips and Tricks",
       "pages": [
+        "tips-tricks/troubleshooting",
         "tips-tricks/using-images",
         "tips-tricks/using-videos",
         "integrations/chrome-extensions",
