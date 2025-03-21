@@ -61,8 +61,10 @@
       "group": "User Guides",
       "pages": [
         "user-guides/quickstart",
+        "features/figma-to-lovable",
+        "features/visual-edit",
+        "features/knowledge-files",
         "features/labs",
-        "features/precision-edit",
         "features/deploy"
       ]
     },
