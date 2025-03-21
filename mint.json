@@ -52,7 +52,6 @@
       "group": "Introduction",
       "pages": [
         "introduction", 
-        "changelog",
         "user-guides/messaging-limits",
         "faq"
       ]
@@ -92,15 +91,20 @@
     {
       "group": "Tips and Tricks",
       "pages": [
-        "user-guides/video-tutorials",
         "tips-tricks/using-images",
         "tips-tricks/using-videos",
         "integrations/chrome-extensions",
         "tips-tricks/custom-fonts",
         "features/npm-packages",
-        "tips-tricks/seo",
+        "tips-tricks/seo"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "changelog",
+        "user-guides/video-tutorials",
         "tips-tricks/community",
-        "tips-tricks/multiple-users",
         "user-guides/support-policy",
         "glossary"
       ]
