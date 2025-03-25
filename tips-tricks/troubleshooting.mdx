@@ -63,13 +63,9 @@ Here’s a step-by-step guide to help you navigate issues and get back on track:
 Troubleshooting generally falls into these categories:
 
 1. **UI or Layout Glitches**
-
 2. **API or Backend Issues**
-
 3. **Prompt Misinterpretations**
-
 4. **AI Unresponsiveness or Misbehavior**
-
 5. **Platform or Integration Errors**
 
 Use the accordions below to identify specific issues and actions:
@@ -78,68 +74,68 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Need a fast diagnosis?">
-    Jump into Chat-Only Mode and type: _"Something’s off. Can you walk me through what's happening and what you've tried?"_
+    Jump into Chat-Only Mode and type: *"Something’s off. Can you walk me through what's happening and what you've tried?"*
   </Accordion>
   <Accordion title="UI or Layout Problems">
-    - Check component hierarchy and styles.
-- Use screenshots to explain visual bugs.
-- Prompt Lovable with: *"Why is this element misaligned? Fix it."*
+    - Check component hierarchy and styles.  
+    - Use screenshots to explain visual bugs.  
+    - Prompt Lovable with: *"Why is this element misaligned? Fix it."*
   </Accordion>
   <Accordion title="API & Backend Issues">
-  - Ensure your API schema is current.
-    - Validate environment variables and credentials.
+    - Ensure your API schema is current.  
+    - Validate environment variables and credentials.  
     - Ask Lovable: *"What methods are being used in this call?"*
   </Accordion>
   <Accordion title="When completely stuck">
-    - Prompt: "Take a step back. Analyze the error and suggest a different approach."
-    - Break the task into smaller parts instead of solving everything at once.
+    - Prompt: *"Take a step back. Analyze the error and suggest a different approach."*  
+    - Break the task into smaller parts.  
     - Use the revert button if errors persist.
   </Accordion>
   <Accordion title="Loading errors">
-    This should not happen at all. Please report to the support team.
+    This should not happen. Please report it to the support team.
   </Accordion>
   <Accordion title="Code sandbox error">
-    This should not happen at all. Please report to the support team.
+    This should not happen. Please report it to the support team.
   </Accordion>
   <Accordion title="Not found preview or spinning up sandbox">
-    This should not happen at all. Try a hard refresh. If unresolved, contact support.
+    Try a hard refresh. If unresolved, contact support.
   </Accordion>
 </AccordionGroup>
 
 ### AI Reliability
 
-- Refine prompts with clear structure.
-- Use Chat-Only Mode to test ideas safely.
+- Refine prompts with clear structure.  
+- Use Chat-Only Mode to test ideas safely.  
 - Ask Lovable to explain why it chose a particular implementation.
 
 <AccordionGroup>
   <Accordion title="Avoiding AI mistakes in prompt engineering">
-    - Keep prompts clear and structured.
-    - Use reverse meta prompting to refine results.
-    - Test in chat mode before applying major changes.
+    - Keep prompts clear and structured.  
+    - Use reverse meta prompting.  
+    - Test in Chat-Only Mode before applying big changes.
   </Accordion>
   <Accordion title="AI not responding">
-    This should not happen at all. Please report to the support team in case the Lovable AI is not responding.
+    This shouldn't happen. Please report it to the support team.
   </Accordion>
   <Accordion title="Persistent Fix error loops">
-    Adjust your input and prompts to help the AI understand the changes you’re trying to make or engage the AI in chat mode for step-by-step guidance and tailored suggestions to break the loop.
+    Adjust your prompt to help the AI understand your goal or ask for step-by-step debugging help.
   </Accordion>
   <Accordion title="Refactor broke everything">
-    Making smaller, incremental changes can help bypass this issue. If the problem persists, go to the history of your codebase to restore a stable version or use chat mode to debug and search for advice.
+    Make small, incremental changes. If the issue persists, roll back to a stable version or debug in chat.
   </Accordion>
-  <Accordion title="Error loops, AI not resolving, AI hallucinations or breaking things">
-    No worries, that happens. Please revert to a stable version and for the next prompt, be more specific, use the visual editing tool and add a knowledge file to give more context.
+  <Accordion title="Error loops, hallucinations, or broken logic">
+    Revert to a stable version and provide more context in your next prompt. Use visual editor or attach a knowledge file.
   </Accordion>
   <Accordion title="AI not doing changes">
-    It's likely a symptom of the AI editing files it wasn’t supposed to or getting confused. Be super specific for your next prompt, and if it doesn't work, go into the code to edit it manually.
+    The AI might be editing the wrong files or misinterpreting. Be very specific or edit manually.
   </Accordion>
   <Accordion title="Chat mode not responding or incomplete">
-    This error was fixed by our engineering team and should not happen. Please report if it happens again.
+    This was fixed by engineering. Please report if it happens again.
   </Accordion>
   <Accordion title="Unexpected Crashes, Errors, or Loops">
-    - Don’t keep retrying the same prompt. Rephrase or simplify.
-- Ask Lovable: *"List all the fixes we’ve tried so far."*
-- If broken, rollback and rebuild one step at a time.
+    - Don’t retry the same prompt. Simplify or rephrase.  
+    - Ask: *"What fixes have we already tried?"*  
+    - Rebuild from a previous working state.
   </Accordion>
 </AccordionGroup>
 
@@ -147,36 +143,35 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Preview is white">
-    - A blank preview often signals a runtime error. Check console logs.
-- Use chat to walk through potential fixes.
-- Try a hard refresh or revert to a known working state.
+    - Likely a runtime error. Check browser console logs.  
+    - Use chat to troubleshoot.  
+    - Try a hard refresh or revert.
   </Accordion>
   <Accordion title="Rollback fails">
-    If you are unable to revert to a previous state of your project, submit a bug report to our support engineering team.
+    Report to the support team if you can’t revert your project.
   </Accordion>
   <Accordion title="Unpublish or deactivate projects">
-    It's not currently possible to unpublish your project.
+    This action isn’t currently supported.
   </Accordion>
-  <Accordion title="Kicking me out of my project">
-    This error was fixed by our engineering team and should not happen. Please report if it happens again.
+  <Accordion title="Kicked out of project">
+    This issue has been resolved. Report it if it recurs.
   </Accordion>
-  <Accordion title="Remix does not work, no Supabase connection">
-    That should not happen. Please report to the support team if it happens.
+  <Accordion title="Remix doesn’t work (no Supabase connection)">
+    Shouldn’t happen. Contact support.
   </Accordion>
   <Accordion title="Loading profile error">
-    That should not happen. Please report to the support team if it happens.
+    Shouldn’t happen. Report to the support team.
   </Accordion>
-  <Accordion title="Email unsubscribe button not working">
-    This should never happen and you are absolutely right to be angry. This is likely an issue with our CRM or email provider. Please reach out to support to fix this immediately.
+  <Accordion title="Email unsubscribe not working">
+    This is a serious issue likely related to our email provider. Contact support immediately.
   </Accordion>
   <Accordion title="Unexpected logout or access loss">
-    Contact our support engineers directly.
+    Reach out to support directly.
   </Accordion>
   <Accordion title="Challenges with larger projects">
-    - Repeated edits accumulate processing history and slow down response time. Try refreshing your session or breaking tasks into smaller segments.
-    - Large and complex codebases need more resources. Consider refactoring.
-    - Extended Lovable AI use may strain browser memory. Restart your browser or switch browsers.\
-      If performance continues to degrade, contact support with your use case.
+    - Break up large changes into smaller steps.  
+    - Restart your browser if it slows down.  
+    - If it persists, report your use case to support.
   </Accordion>
 </AccordionGroup>
 
@@ -184,32 +179,32 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Error with Edge Functions">
-    Tell Lovable AI what’s happening and it will fix the error or suggest changes.
+    Tell Lovable what’s happening. It can suggest a fix or implement changes.
   </Accordion>
   <Accordion title="Setting Environment Variables">
-    Double-check syntax and variable names. Refer to the [Supabase docs](https://supabase.com/docs) for help.
+    Double-check syntax and variable names. See the [Supabase docs](https://supabase.com/docs).
   </Accordion>
   <Accordion title="Supabase connection is lost">
-    Disconnect and reconnect Supabase. This could be due to an integration update.
+    Disconnect and reconnect. Might be caused by an integration update.
   </Accordion>
   <Accordion title="Remix does not work with Supabase">
-    For security reasons, remixing projects connected to Supabase is disabled to prevent vulnerabilities.
+    Remixing is blocked for Supabase-connected projects for security reasons.
   </Accordion>
   <Accordion title="Project not found">
-    That should not happen. Please report to the support team.
+    Please report to support.
   </Accordion>
   <Accordion title="HTTP Fetch failures">
-    This means the server is not responding. Use chat mode—Lovable has access to Supabase logs to debug this.
+    Usually means a backend server isn’t responding. Use chat mode to debug.
   </Accordion>
   <Accordion title="Stream interrupted">
-    Likely due to invalid credentials or Supabase config issues. Should be fixed by engineering.
+    Likely due to invalid credentials. Engineering is working on a fix.
   </Accordion>
   <Accordion title="Role-Based Security (RLS) in Supabase">
     If RLS is enabled:
 
-    - Define clear read/write policies.
-    - Test queries in Supabase SQL editor.
-    - Ensure users are authenticated before making requests.
+    - Define clear access policies.  
+    - Test via Supabase SQL editor.  
+    - Ensure users are authenticated.
   </Accordion>
 </AccordionGroup>
 
@@ -217,13 +212,13 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Stripe error">
-    Try a different card or bank. If the issue persists, contact support.
+    Try a different card or payment method. Contact support if unresolved.
   </Accordion>
-  <Accordion title="You accidentally have two active subscriptions">
-    No worries. Report it to support—it’s a simple fix.
+  <Accordion title="Two active subscriptions">
+    Don’t worry—support can easily fix this.
   </Accordion>
   <Accordion title="Cancel your subscription">
-    You can do it yourself from the Settings page through your Stripe account.
+    Go to your settings and cancel via Stripe account.
   </Accordion>
 </AccordionGroup>
 
@@ -231,17 +226,17 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Can’t push to GitHub">
-    You may have deleted the GitHub repo. [Restore it here](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+    You may have deleted your repo. [Restore it here](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
   </Accordion>
   <Accordion title="Branches are broken">
-    You’re currently unable to switch branches. This is a labs feature and may be unstable; use cautiously.
+    Branch switching is experimental. Use at your own risk.
   </Accordion>
-  <Accordion title="Repository management and account syncing">
-    - Ensure [GitHub access permissions](https://docs.lovable.dev/integrations/git-integration) are set correctly.
-    - Use rollback for undoing accidental changes. Your projects are backed up.
+  <Accordion title="Repository sync issues">
+    - Check your [GitHub permissions](https://docs.lovable.dev/integrations/git-integration).  
+    - Use rollback to undo unwanted changes.
   </Accordion>
-  <Accordion title="You deleted your repository and now nothing works">
-    [Restore your repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+  <Accordion title="Deleted repository, now nothing works">
+    [Restore your GitHub repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
   </Accordion>
 </AccordionGroup>
 
@@ -249,41 +244,42 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Setup wizard-style flows">
-    Lovable supports setup wizards and assessments, but complex multi-step flows can loop or break. Try:
+    Complex multi-step flows can break. Try:
 
-    - Breaking down steps clearly
-    - Validating inputs
-    - Reviewing conditional logic
-    - Testing user scenarios
+    - Breaking steps down  
+    - Validating inputs  
+    - Reviewing logic  
+    - Simulating different user paths
 
-    If the problem persists, contact support with setup details.
+    Still stuck? Contact support.
   </Accordion>
   <Accordion title="Branches are broken">
-    You’re currently unable to switch branches. This is a labs feature and may be unstable.
+    This is an experimental feature. Expect occasional instability.
   </Accordion>
-  <Accordion title="You deleted your repository and now nothing works">
-    [Restore your repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+  <Accordion title="Deleted your repository">
+    [Restore your GitHub repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
   </Accordion>
 </AccordionGroup>
 
-
 ### Need more help?
 
-Still facing problems? Here’s what to do:
+Still stuck? Try this:
 
-- Use [Chat-Only Mode](https://lovable.dev/chat) to get real-time suggestions.
-- Report bugs via [Feedback Portal](https://feedback.lovable.dev/).
-- Paid users can contact [Support](https://lovable.dev/support).
+- Use [Chat-Only Mode](https://lovable.dev/chat) for step-by-step help.  
+- Submit a bug through our [Feedback Portal](https://feedback.lovable.dev/).  
+- If you're a paid customer, contact [Support](https://lovable.dev/support).
 
 ## Comprehensive Debugging Manual
 
-[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) was created by a Discord community member who has mastered the AI space.
+[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) was written by a Lovable power user in our Discord community.
 
-### Instructions
+### How to use it
 
-1. **Download** the file as Markdown and name it: `Comprehensive_Debugging_Manual.md`.
-2. **Upload** it to your project's GitHub repository.
-3. **Prompt Lovable**:\
-   `"Read this document. Let me know if it helps. Then, create a prompt that I should use to troubleshoot this issue: {paste the issue}."`
-4. When Lovable suggests a fix, respond:\
-   `"Before you proceed, explain in great detail: Why do you think this will work? Wait for my approval."`
+1. **Download** it as `Comprehensive_Debugging_Manual.md`.  
+2. **Upload** it to your GitHub project.
+3. Prompt Lovable:
+   > "Read this document. Let me know if it helps. Then create a prompt I should use to troubleshoot this issue: {paste your issue}."
+4. After Lovable responds, say:
+   > "Before you proceed, explain in detail why you think this will work. Wait for my approval."
+
+This ensures deeper understanding before implementing any fix.
