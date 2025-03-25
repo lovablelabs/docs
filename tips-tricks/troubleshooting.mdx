@@ -6,461 +6,284 @@ icon: "toolbox"
 
 ## "Try to Fix" error loops
 
-Building with Lovable makes coding faster and more intuitive, but even the best AI-powered development tools can run into issues. Sometimes, your code won’t execute as expected, or you might experience “unexpected behavior” where the AI doesn't implement what you had in mind. 
+Building with Lovable makes coding faster and more intuitive—but even the best AI development tools can occasionally hit a snag. Sometimes your code won’t run as expected, or you might notice unexpected behavior where the AI interprets your intent incorrectly.
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/0W8bsbHh2p8?si=UEwMmMxl6Ch3yxdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/0W8bsbHh2p8?si=UEwMmMxl6Ch3yxdA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
 
-Here is a guide to guide you through the *stuck* experience:
+Here’s a step-by-step guide to help you navigate issues and get back on track:
 
 <Steps>
-  <Step title="The 'Try to Fix' Button: First Line of Defense">
-    When you hit an error, your first move should be the **Try to Fix** button. This triggers Lovable to analyze logs, detect errors, and attempt a correction automatically. It’s quick and usually effective. However, for complex features, the AI might not always get it right on the first try. If the fix doesn’t work, move on to a more detailed debugging approach.
+  <Step title="Use the 'Try to Fix' Button First">
+    Click the **Try to Fix** button when an error shows up. Lovable will scan your logs, detect the issue, and attempt a quick fix. It's your fastest first move. If that doesn't work, it's time to dig deeper.
   </Step>
+  <Step title="Diagnose Unexpected Behavior">
+    Your code may run without errors but not behave as intended. That’s **unexpected behavior**—harder to spot and harder to fix. Try this:
 
-  <Step title="Understanding 'Unexpected Behavior'">
-    Sometimes, your code runs without errors, but your app isn’t functioning the way you expected. This is **Unexpected Behavior**, and it’s one of the hardest things to debug. The best approach?
-
-    * **Retrace your steps** – review what you asked Lovable to do.
-
-    * **Break it down** – check if a particular section of your implementation is misaligned.
-
-    * **Use images** – show Lovable the UI result versus what you expected.
+    - **Review your original prompt** to confirm your instructions.
+    - **Break it down**: Check individual components and logic.
+    - **Add visuals**: Use screenshots to clarify what went wrong.
   </Step>
+  <Step title="Write More Effective Prompts">
+    Clear, structured prompts lead to better results. Use this format:
 
-  <Step title="Writing Better Prompts: Start with a Strong Foundation">
-    Many issues can be avoided with a well-structured prompt. Instead of jumping straight into features, follow this **best practice** format:
-
-    1. **Project Overview** – Describe what you’re building.
-
-    2. **Page Structure** – List the key pages and components.
-
-    3. **Navigation Logic** – Explain how users will move through the app.
-
-    4. **Screenshots/Wireframes** – Upload visuals if available.
-
-    5. **Implementation Order** – Specify logical steps, e.g., “Start by creating pages and layout before adding Supabase.”
+    1. **Project Overview** – What are you building?
+    2. **Page Structure** – List key pages/components.
+    3. **Navigation Logic** – Describe user flow.
+    4. **Visual Aids** – Upload wireframes or screenshots.
+    5. **Implementation Steps** – Lay out the build order.
   </Step>
+  <Step title="Build in Logical Order">
+    Structure matters. Follow this recommended flow:
 
-  <Step title="Follow the Right Implementation Order">
-    If you structure your project build logically, it reduces the risk of errors down the line. Stick to this recommended workflow:
-
-    1. **Create pages and layout**
-
-    2. **Integrate Supabase for backend/database functionality**
-
-    3. **Implement authentication (Auth) and user roles**
-
-    4. **Plan out and sequence features**
-
-    5. **Start prompting for feature implementation**
+    1. Create layout and pages.
+    2. Connect Supabase or your backend.
+    3. Set up authentication and user roles.
+    4. Plan and organize feature logic.
+    5. Prompt Lovable to implement features.
   </Step>
+  <Step title="Use Chat-Only Mode for Clarity">
+    When unsure, switch to **Chat-Only Mode**:
 
-  <Step title="Using the Chat-Only Mode for Debugging">
-    When you're unsure about how to structure your prompts or debug an issue, switch to **Chat-Only Mode**:
-
-    * Ask Lovable to **review** what you’re trying to do.
-
-    * Request Lovable to **list the solutions it has already attempted**.
-
-    * Get Lovable to **suggest a different approach** if you’re stuck in an error loop.
+    - Ask Lovable to **analyze your project state**.
+    - Request a **recap of attempted solutions**.
+    - Prompt for **new directions** to solve persistent problems.
   </Step>
+  <Step title="If You're Still Stuck: Advanced Tactics">
+    Still no luck? Try this:
 
-  <Step title="Advanced Troubleshooting: What If You’re Still Stuck?">
-    If the **Try to Fix** button isn't solving your problem, and you're not making progress, try these:
-
-    * **Be more specific** – Describe exactly what’s wrong, including what you expected versus what happened.
-
-    * **Use images** – Screenshots clarify UI-based issues.
-
-    * **Ask Lovable for debugging help** – Example: *“What solutions have we tried so far? What else can we do?”*
-
-    * **Revert to a previous working state** – If things spiral out of control, go back and implement methodically.
-  </Step>
-
-  <Step title="Debugging Specific Issues">
-    <AccordionGroup>
-      <Accordion title="For UI-related problems:">
-        * Use screenshots to show the AI how things render incorrectly.
-
-        * Ask Lovable: *“Explain why this UI behaves this way. What’s the best fix?”*
-
-        * If Try to Fix doesn’t work, try tweaking component structures.
-      </Accordion>
-
-      <Accordion title="For API integration issues:">
-        * Double-check that you’re using the latest API schema.
-
-        * Ensure Supabase (or any backend) is correctly connected before calling data.
-
-        * Ask Lovable: *“What API methods are being used? Are they correctly formatted?”*
-      </Accordion>
-
-      <Accordion title="When completely stuck:">
-        * Prompt: *“Take a step back. Analyze the error and suggest a different approach.”*
-
-        * Break the task into smaller parts instead of solving everything at once.
-
-        * Use the revert button if errors persist.
-      </Accordion>
-    </AccordionGroup>
+    - **Be exact** – Describe the bug and your expectations clearly.
+    - **Use images** – Screenshots or videos help illustrate problems.
+    - **Ask directly** – _"What else can we try?"_
+    - **Rollback** – Restore to a working version and rebuild incrementally.
   </Step>
 </Steps>
 
+## What’s Going Wrong? Common Troubleshooting Areas
 
-## Tips & Tricks
+Troubleshooting generally falls into these categories:
 
-### General Troubleshooting
+1. **UI or Layout Glitches**
 
-When using Lovable, you may occasionally encounter technical issues. Below are common problems and recommended actions to troubleshoot and resolve them.
+2. **API or Backend Issues**
+
+3. **Prompt Misinterpretations**
+
+4. **AI Unresponsiveness or Misbehavior**
+
+5. **Platform or Integration Errors**
+
+Use the accordions below to identify specific issues and actions:
+
+### General issues
 
 <AccordionGroup>
-  <Accordion title="Persistent 'Fix Error' Loops">
-    <b>Problem:</b> Repeated failures where errors persist despite multiple attempts to fix them.
-
-    <b>Solution:</b>
-
-    * Approach with creativity: Adjust your input and prompts to help the AI understand the changes you’re trying to make.
-
-    * Use Chat Mode: Engage the AI in chat mode for step-by-step guidance and tailored suggestions to break the loop.
+  <Accordion title="Need a fast diagnosis?">
+    Jump into Chat-Only Mode and type: _"Something’s off. Can you walk me through what's happening and what you've tried?"_
   </Accordion>
-
-  <Accordion title="Setting Environment Variables">
-    <b>Problem:</b> Issues may arise when configuring environment variables, particularly with Supabase Edge Functions and Secrets.
-
-    <b>Solution:</b>
-
-    * Double-check the environment variable syntax and names.
-
-    * Refer to the [Supabase Docs](https://supabase.com/docs) for guidance.
+  <Accordion title="UI or Layout Problems">
+    - Check component hierarchy and styles.
+- Use screenshots to explain visual bugs.
+- Prompt Lovable with: *"Why is this element misaligned? Fix it."*
   </Accordion>
-
-  <Accordion title="HTTP Fetch Failures">
-    <b>Problem:</b> Errors during HTTP fetch requests can disrupt authentication or degrade app performance.
-
-    <b>Solution:</b> If you're encountering an **HTTP server error** when working with APIs, it typically means the server you're trying to communicate with is not responding as expected. Here are a few steps to troubleshoot:
-
-    * **Check the API Status:** The issue might be on the server side. Verify if the API provider has reported downtime or maintenance.
-
-    * **Review Your API Request:** Ensure your request is correctly formatted, including headers, authentication tokens, and payload structure.
-
-    * **Test with a Different Tool:** Use tools like Postman or cURL to see if the issue persists outside of Lovable AI.
-
-    * **Inspect Error Codes:** HTTP errors like `500` (internal server error) indicate server-side issues, while `400` series errors often mean there’s something wrong with the request.
-
-    * **Retry After Some Time:** Temporary issues can be resolved by waiting and trying again later.
-
-    * **Check Rate Limits:** Some APIs restrict the number of requests within a time frame—exceeding limits may result in errors.
-
-    If the issue persists and is related to Lovable AI’s platform, please reach out to our support team with error details for further assistance.
+  <Accordion title="API & Backend Issues">
+  - Ensure your API schema is current.
+    - Validate environment variables and credentials.
+    - Ask Lovable: *"What methods are being used in this call?"*
   </Accordion>
-
-  <Accordion title="Can't use Mermaid AI">
-    Lovable AI supports Mermaid.js for creating diagrams and flowcharts directly within your AI-generated content. To use Mermaid AI with Lovable AI, follow these steps:
-
-    * **Embed Mermaid syntax** in your prompt or generated code blocks. Lovable AI recognizes standard Mermaid.js syntax for flowcharts, sequence diagrams, Gantt charts, and more.
-
-    * **Use triple backticks (` ``` `) with "mermaid"** as the language identifier to ensure proper rendering. Example: graph TD; A\[Start] --> B\{Decision}; B -->|Yes| C\[Continue]; B -->|No| D\[End];
-
-    * **Verify output** to ensure the diagram is correctly interpreted. If you encounter formatting issues, check for syntax errors in your Mermaid.js code.
-
-    * **Optimize complexity** by keeping diagrams concise, as very large or intricate diagrams may require manual adjustments.
-
-    If Mermaid AI isn't rendering as expected within Lovable AI, feel free to reach out to our support team for assistance.
+  <Accordion title="When completely stuck">
+    - Prompt: "Take a step back. Analyze the error and suggest a different approach."
+    - Break the task into smaller parts instead of solving everything at once.
+    - Use the revert button if errors persist.
   </Accordion>
-
-  <Accordion title="Freezing or Loading Failures">
-    <b>Problem:</b> Editor pages freeze, fail to load, or do not reflect the latest updates.
-
-    <b>Solution:</b> Report this as a bug via our [feedback portal](https://lovable.dev/support).
+  <Accordion title="Loading errors">
+    This should not happen at all. Please report to the support team.
   </Accordion>
-
-  <Accordion title="Setup wizard-style flows">
-    Lovable is designed to support various workflow structures, including setup wizards and assessment-style questionnaires. However, some users have encountered issues with looping errors in complex multi-step flows that generate reports at the end. If you're experiencing this, we recommend:
-
-    1. Breaking down the flow: Ensure that each step is clearly defined and that dependencies between steps are properly structured.
-
-    2. Validating inputs at each stage: Sometimes, incorrect or unexpected inputs can cause loops—double-check validation rules.
-
-    3. Using conditional logic carefully: If your flow depends on previous responses, review the conditions to prevent unintended loops.
-
-    4. Testing with different user scenarios: Simulating various paths can help identify edge cases that may be causing issues.
-
-    5. If the problem persists, please reach out to our support team with details of your setup, and we'll be happy to assist in troubleshooting.
+  <Accordion title="Code sandbox error">
+    This should not happen at all. Please report to the support team.
   </Accordion>
+  <Accordion title="Not found preview or spinning up sandbox">
+    This should not happen at all. Try a hard refresh. If unresolved, contact support.
+  </Accordion>
+</AccordionGroup>
 
+### AI Reliability
+
+- Refine prompts with clear structure.
+- Use Chat-Only Mode to test ideas safely.
+- Ask Lovable to explain why it chose a particular implementation.
+
+<AccordionGroup>
   <Accordion title="Avoiding AI mistakes in prompt engineering">
-    * Keep prompts **clear and structured**.
-
-    * Use **reverse meta prompting** to refine results.
-
-    * Test **in chat mode** before applying major changes.
+    - Keep prompts clear and structured.
+    - Use reverse meta prompting to refine results.
+    - Test in chat mode before applying major changes.
   </Accordion>
-
-  <Accordion title="Rollback Feature Fails">
-    <b>Problem:</b> Unable to revert to a previous state of the project.
-
-    <b>Solution:</b> Submit a bug report via our [feedback portal](https://lovable.dev/support).
+  <Accordion title="AI not responding">
+    This should not happen at all. Please report to the support team in case the Lovable AI is not responding.
   </Accordion>
-
-  <Accordion title="Cloud Deployment Issues">
-    <b>Problem:</b> Apps fail to redeploy or get stuck during deployment.
-
-    <b>Solution:</b> File a bug report via our [feedback portal](https://lovable.dev/support).
+  <Accordion title="Persistent Fix error loops">
+    Adjust your input and prompts to help the AI understand the changes you’re trying to make or engage the AI in chat mode for step-by-step guidance and tailored suggestions to break the loop.
   </Accordion>
-
-  <Accordion title="AI-Related Errors">
-    <b>Problem:</b> The AI is hallucinating or not resolving issues correctly.
-
-    <b>Solution:</b>
-
-    * Revert to a stable version of your application.
-
-    * Improve future prompts:
-
-      * Be specific and clear. Refer to our [Prompting Handbook]().
-
-      * Use the select tool for precise edits.
-
-      * Provide context by adding relevant documentation.
+  <Accordion title="Refactor broke everything">
+    Making smaller, incremental changes can help bypass this issue. If the problem persists, go to the history of your codebase to restore a stable version or use chat mode to debug and search for advice.
   </Accordion>
-
-  <Accordion title="Refactor Broke Everything in My Code">
-    <b>Problem:</b> Code refactor caused major issues.
-
-    <b>Solution:</b>
-
-    * Revert to a stable version of your application.
-
-    * Make smaller, incremental changes.
-
-    * Check your codebase history and debug using tools like ChatGPT.
+  <Accordion title="Error loops, AI not resolving, AI hallucinations or breaking things">
+    No worries, that happens. Please revert to a stable version and for the next prompt, be more specific, use the visual editing tool and add a knowledge file to give more context.
   </Accordion>
-
-  <Accordion title="AI Is Not Responding">
-    <b>Problem:</b> The AI chat is stuck.
-
-    <b>Solution:</b> Disconnect and reconnect Supabase or restore an earlier stable version.
+  <Accordion title="AI not doing changes">
+    It's likely a symptom of the AI editing files it wasn’t supposed to or getting confused. Be super specific for your next prompt, and if it doesn't work, go into the code to edit it manually.
   </Accordion>
-
-  <Accordion title="Preview Shows a Blank Screen">
-    <b>Problem:</b> The preview displays a white or blank screen.
-
-    <b>Solution:</b> Revert to a stable version and check the console logs for relevant errors.
+  <Accordion title="Chat mode not responding or incomplete">
+    This error was fixed by our engineering team and should not happen. Please report if it happens again.
   </Accordion>
-
-  <Accordion title="Taking Your Projects Offline">
-    <b>Problem:</b> Unable to unpublish or deactivate projects.
-
-    <b>Solution:</b> Upvote this feature on our [Feature Request Board](https://lovable.featurebase.app/).
-  </Accordion>
-
-  <Accordion title="Being Kicked Out of a Project">
-    <b>Problem:</b> Unexpected logout or access loss.
-
-    <b>Solution:</b> Contact our support engineers directly.
-  </Accordion>
-
-  <Accordion title="Loading Errors">
-    <b>Problem:</b> Loading issues or downtime.
-
-    <b>Solution:</b> Contact our support engineers.
-  </Accordion>
-
-  <Accordion title="Error: Stream Interrupted">
-    <b>Problem:</b> Stream interrupted due to invalid Supabase credentials.
-
-    <b>Solution:</b> Check and update your Supabase credentials in the settings.
-  </Accordion>
-
-  <Accordion title="Edge Function Errors">
-    <b>Problem:</b> Edge function errors.
-
-    <b>Solution:</b> Supabase logs integration is coming soon. Meanwhile, check the logs and paste errors into Lovable's AI code editor.
-  </Accordion>
-
-  <Accordion title="Stripe Errors">
-    <b>Problem:</b> Issues with payment processing.
-
-    <b>Solution:</b> Try a different bank or card. If the issue persists, contact support.
-  </Accordion>
-
-  <Accordion title="GitHub Issues">
-    <b>Problem:</b> Connection issues after changing your GitHub username or repository name.
-
-    <b>Solution:</b> Revert to the old names. If the repo was deleted, restore it using [this guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
-  </Accordion>
-
-  <Accordion title="Sandbox Mode for Testing">
-    <b>Problem:</b> Users want a safe, non-production environment.
-
-    <b>Solution:</b> This feature is not currently available. Upvote it on our [Feature Request Board](https://lovable.featurebase.app/).
-  </Accordion>
-
-  <Accordion title="Supabase Connection Lost">
-    <b>Problem:</b> Lost connection to Supabase.
-
-    <b>Solution:</b> Disconnect and reconnect Supabase.
-  </Accordion>
-
-  <Accordion title="Project Not Found">
-    <b>Problem:</b> Unable to find your project.
-
-    <b>Solution:</b> Disconnect and reconnect Supabase.
-  </Accordion>
-
-  <Accordion title="Unable to Switch to Main Branch">
-    <b>Problem:</b> Errors when switching to the main branch.
-
-    <b>Solution:</b> Disconnect and reconnect Supabase.
-  </Accordion>
-
-  <Accordion title="Remix Feature Does Not Work">
-    <b>Problem:</b> Remixing your project does not work.
-
-    <b>Solution:</b> Note that projects connected to Supabase **cannot** be remixed for security reasons. If this is not the case, contact support.
-  </Accordion>
-
-  <Accordion title="Challenges with Large Projects">
-    <b>Problem:</b> Large projects encounter performance issues.
-
-    <b>Solution:</b> We’re optimizing AI performance for large projects. Stay tuned for updates.
-
-    * **Session Memory Load:** Repeated edits accumulate processing history, which can slow down response time. Try refreshing your session or breaking large editing tasks into smaller segments.
-
-    * **Complexity of Edits:** If your document or codebase is large and complex, each subsequent edit may require more computational resources. Consider refactoring your codebase by structuring edits more efficiently.
-
-    * **Browser Performance:** Running Lovable AI for an extended period with intensive edits may strain browser memory. Restarting your browser or using a different one can help.
-
-    If performance degradation continues despite these optimizations, please reach out to our support team with details about your use case for further assistance.
-  </Accordion>
-
-  <Accordion title="Need More Help?">
-    If you encounter any other issues, reach out via our [feedback portal](https://lovable.dev/support) or explore our [prompting guide](/tips-tricks/prompting#debugging-and-issue-reporting).
+  <Accordion title="Unexpected Crashes, Errors, or Loops">
+    - Don’t keep retrying the same prompt. Rephrase or simplify.
+- Ask Lovable: *"List all the fixes we’ve tried so far."*
+- If broken, rollback and rebuild one step at a time.
   </Accordion>
 </AccordionGroup>
 
-### GitHub Troubleshooting
+### Core functionalities
 
 <AccordionGroup>
-  <Accordion title="Why are my recent commits not showing up in my Lovable project?">
-    If you notice that your recent commits are missing from your Lovable project, it could be because the commits were made to a different branch on GitHub. Lovable currently only tracks commits made to the default branch (usually <code>main</code> or <code>master</code>). If you’ve been working on a new branch and haven’t merged it into the default branch, those commits won’t be picked up by Lovable.
-
-    <b>To ensure your commits are tracked:</b>
-
-    1. Merge your changes into the default branch.
-
-    2. If you’re working on a new branch, consider switching back to the default branch for commits you want to appear in Lovable.
+  <Accordion title="Preview is white">
+    - A blank preview often signals a runtime error. Check console logs.
+- Use chat to walk through potential fixes.
+- Try a hard refresh or revert to a known working state.
+  </Accordion>
+  <Accordion title="Rollback fails">
+    If you are unable to revert to a previous state of your project, submit a bug report to our support engineering team.
+  </Accordion>
+  <Accordion title="Unpublish or deactivate projects">
+    It's not currently possible to unpublish your project.
+  </Accordion>
+  <Accordion title="Kicking me out of my project">
+    This error was fixed by our engineering team and should not happen. Please report if it happens again.
+  </Accordion>
+  <Accordion title="Remix does not work, no Supabase connection">
+    That should not happen. Please report to the support team if it happens.
+  </Accordion>
+  <Accordion title="Loading profile error">
+    That should not happen. Please report to the support team if it happens.
+  </Accordion>
+  <Accordion title="Email unsubscribe button not working">
+    This should never happen and you are absolutely right to be angry. This is likely an issue with our CRM or email provider. Please reach out to support to fix this immediately.
+  </Accordion>
+  <Accordion title="Unexpected logout or access loss">
+    Contact our support engineers directly.
+  </Accordion>
+  <Accordion title="Challenges with larger projects">
+    - Repeated edits accumulate processing history and slow down response time. Try refreshing your session or breaking tasks into smaller segments.
+    - Large and complex codebases need more resources. Consider refactoring.
+    - Extended Lovable AI use may strain browser memory. Restart your browser or switch browsers.\
+      If performance continues to degrade, contact support with your use case.
   </Accordion>
 </AccordionGroup>
 
-### API Troubleshooting
+### Supabase issues
 
 <AccordionGroup>
-  <Accordion title="Connection and Authentication Issues">
-    If you encounter difficulties connecting or authenticating with integrations, try the following:
-
-    <ol>
-      <li>Double-check API credentials for accuracy.</li>
-      <li>Ensure the required scopes or permissions are enabled.</li>
-      <li>Verify network connectivity, as firewalls or proxies may block connections.</li>
-    </ol>
-
-    Refer to <a href="https://docs.lovable.dev/integrations/git-integration">GitHub Integration</a> or
-    <a href="https://docs.lovable.dev/integrations/supabase">Supabase Integration</a> for detailed setup instructions.
+  <Accordion title="Error with Edge Functions">
+    Tell Lovable AI what’s happening and it will fix the error or suggest changes.
   </Accordion>
-
-  <Accordion title="API Credential Management">
-    Lovable enables secure storage of API keys within your project settings (accessible from the <b>Settings</b> sidebar). To maintain security:
-
-    <ul>
-      <li>Store your keys in this designated secure location.</li>
-      <li>Avoid sharing them with others or using them in prompts unless absolutely necessary.</li>
-    </ul>
-
-    This ensures your credentials are protected and reduces the risk of misuse.
+  <Accordion title="Setting Environment Variables">
+    Double-check syntax and variable names. Refer to the [Supabase docs](https://supabase.com/docs) for help.
   </Accordion>
-
-  <Accordion title="Challenges for Non-Developers">
-    If you’re not a developer, integrating APIs might feel overwhelming. Lovable simplifies this with its in-chat configuration.
-    For unsupported APIs, join the <a href="https://discord.gg/jstGvUnFnm">Lovable community on Discord</a> for help or request new integrations
-    <a href="https://feedback.lovable.dev/">here</a>.
+  <Accordion title="Supabase connection is lost">
+    Disconnect and reconnect Supabase. This could be due to an integration update.
   </Accordion>
-
-  <Accordion title="Edge Function and Configuration Errors">
-    Errors in edge functions can disrupt workflows. To resolve these issues:
-
-    <ol>
-      <li>Review edge function logs to identify and fix errors.</li>
-      <li>Ensure all required dependencies are installed.</li>
-      <li>Confirm that environment variables are correctly configured.</li>
-    </ol>
-
-    For more information, refer to
-    <a href="https://supabase.com/docs/guides/functions">Supabase’s edge function examples</a> for best practices.
+  <Accordion title="Remix does not work with Supabase">
+    For security reasons, remixing projects connected to Supabase is disabled to prevent vulnerabilities.
   </Accordion>
-
-  <Accordion title="Session and Data Management">
-    Managing sessions and data effectively is critical for smooth app performance. Follow these tips:
-
-    <ul>
-      <li>Use <a href="https://docs.lovable.dev/integrations/supabase">Supabase</a>’s real-time features (or similar services) for seamless data syncing.</li>
-      <li>Ask Lovable to implement strong authentication and token refresh mechanisms for session management.</li>
-      <li>Regularly verify that your database schema is up-to-date to prevent potential data integrity issues.</li>
-    </ul>
+  <Accordion title="Project not found">
+    That should not happen. Please report to the support team.
   </Accordion>
-
-  <Accordion title="Repository and Account Management">
-    For smooth repository management and account syncing:
-
-    <ul>
-      <li>Verify that <a href="https://docs.lovable.dev/integrations/git-integration">GitHub repository access permissions</a> are correctly configured.</li>
-      <li>Use Lovable’s <b>built-in rollback feature</b> for undoing accidental changes, as your projects are automatically backed up.</li>
-    </ul>
-
-    This ensures safe and reliable version control for your projects.
+  <Accordion title="HTTP Fetch failures">
+    This means the server is not responding. Use chat mode—Lovable has access to Supabase logs to debug this.
   </Accordion>
-
-  <Accordion title="Debug CORS (Cross-Origin Resource Sharing) related errors">
-    * **Ensure the correct headers** (`Access-Control-Allow-Origin`).
-
-    * **Check the API server** for CORS policy settings.
-
-    * **Use a proxy** or adjust the front-end request mode.
+  <Accordion title="Stream interrupted">
+    Likely due to invalid credentials or Supabase config issues. Should be fixed by engineering.
   </Accordion>
-
-  <Accordion title="Common ARIA (Accessible Rich Internet Applications) issues">
-    ARIA errors usually occur when accessibility attributes are missing or incorrectly implemented. To avoid these:
-
-    * Use **semantic HTML** (e.g., `<button>` instead of `<div>` for clickable items).
-
-    * Follow **ARIA best practices** when defining elements.
-
-    * Test with **accessibility tools** (e.g., Chrome DevTools).
-  </Accordion>
-
   <Accordion title="Role-Based Security (RLS) in Supabase">
     If RLS is enabled:
 
-    * Define **clear policies** for who can read/write data.
-
-    * Test queries using **Supabase SQL editor**.
-
-    * Ensure users are properly authenticated before making requests.
+    - Define clear read/write policies.
+    - Test queries in Supabase SQL editor.
+    - Ensure users are authenticated before making requests.
   </Accordion>
 </AccordionGroup>
 
+### Stripe issues
+
+<AccordionGroup>
+  <Accordion title="Stripe error">
+    Try a different card or bank. If the issue persists, contact support.
+  </Accordion>
+  <Accordion title="You accidentally have two active subscriptions">
+    No worries. Report it to support—it’s a simple fix.
+  </Accordion>
+  <Accordion title="Cancel your subscription">
+    You can do it yourself from the Settings page through your Stripe account.
+  </Accordion>
+</AccordionGroup>
+
+### GitHub issues
+
+<AccordionGroup>
+  <Accordion title="Can’t push to GitHub">
+    You may have deleted the GitHub repo. [Restore it here](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+  </Accordion>
+  <Accordion title="Branches are broken">
+    You’re currently unable to switch branches. This is a labs feature and may be unstable; use cautiously.
+  </Accordion>
+  <Accordion title="Repository management and account syncing">
+    - Ensure [GitHub access permissions](https://docs.lovable.dev/integrations/git-integration) are set correctly.
+    - Use rollback for undoing accidental changes. Your projects are backed up.
+  </Accordion>
+  <Accordion title="You deleted your repository and now nothing works">
+    [Restore your repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+  </Accordion>
+</AccordionGroup>
+
+### In-project issues
+
+<AccordionGroup>
+  <Accordion title="Setup wizard-style flows">
+    Lovable supports setup wizards and assessments, but complex multi-step flows can loop or break. Try:
+
+    - Breaking down steps clearly
+    - Validating inputs
+    - Reviewing conditional logic
+    - Testing user scenarios
+
+    If the problem persists, contact support with setup details.
+  </Accordion>
+  <Accordion title="Branches are broken">
+    You’re currently unable to switch branches. This is a labs feature and may be unstable.
+  </Accordion>
+  <Accordion title="You deleted your repository and now nothing works">
+    [Restore your repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+  </Accordion>
+</AccordionGroup>
+
+
+### Need more help?
+
+Still facing problems? Here’s what to do:
+
+- Use [Chat-Only Mode](https://lovable.dev/chat) to get real-time suggestions.
+- Report bugs via [Feedback Portal](https://feedback.lovable.dev/).
+- Paid users can contact [Support](https://lovable.dev/support).
+
 ## Comprehensive Debugging Manual
 
-[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) was created by a Discord community member who has mastered the AI space, ensuring minimal edits are needed.
+[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) was created by a Discord community member who has mastered the AI space.
 
 ### Instructions
 
 1. **Download** the file as Markdown and name it: `Comprehensive_Debugging_Manual.md`.
-
-2. **Upload** it to your project’s GitHub repository.
-
-3. **Prompt Lovable** with the following message:*"Read this document - `Comprehensive_Debugging_Manual.md`. Let me know if it helps you. Then, create a prompt that I should use to troubleshoot this issue: \{paste the issue}."*
-
-4. When Lovable provides a prompt or suggested fix, paste it into the chat and append the following:*“Before you proceed, explain in great detail: Why do you think this will work? Wait for my approval.”*
-
-This ensures a thorough debugging process and deeper understanding before implementing any solution.
+2. **Upload** it to your project's GitHub repository.
+3. **Prompt Lovable**:\
+   `"Read this document. Let me know if it helps. Then, create a prompt that I should use to troubleshoot this issue: {paste the issue}."`
+4. When Lovable suggests a fix, respond:\
+   `"Before you proceed, explain in great detail: Why do you think this will work? Wait for my approval."`
