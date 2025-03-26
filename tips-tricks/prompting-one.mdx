@@ -4,7 +4,7 @@ description: "Prompt structure, levels of prompting, meta/reverse meta prompting
 icon: "graduation-cap"
 ---
 
-## Heads up\!
+## Heads up\! 
 
 To help you make the most out of Lovable, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members. Since Lovable relies on large language models (LLMs), effective prompting strategies can significantly improve its efficiency and accuracy.
 
@@ -22,7 +22,7 @@ Most people think prompting is just typing a request into an AI and hoping for t
 
 And the best part? You don’t need to be an expert programmer. With the right prompting techniques, you can unlock AI’s full potential in Lovable without wasted trial-and-error. This playbook will take you from foundational concepts to advanced prompt strategies so you can communicate with AI effectively and build faster.
 
-## Understanding How AI Thinks 
+## Understanding How AI Thinks
 
 Unlike traditional coding, working with AI is about _communicating_ your intentions clearly. Large Language Models (LLMs) like the ones powering Lovable don’t “understand” in a human sense – they predict outputs based on patterns in their training data. This has important implications for how you should prompt:
 
@@ -134,7 +134,7 @@ Once you’ve got the basics, it’s time to leverage more advanced strategies t
 By giving two examples of input-output, the AI is primed to continue with a similar pattern for the third. Few-shot prompting is useful in Lovable when you need a specific style of response (e.g., code comments in a certain format, or commit message examples). It does consume more prompt tokens (because you’re including those examples), but often yields more consistent results.
 
 <Info>
-  **When to use which:** 
+  **When to use which:**
 
   Try zero-shot first for simple tasks or when you trust the model’s built-in ability. If the results aren’t in the format or depth you want, switch to few-shot by adding an example. For instance, if you ask for a function and the output isn’t following your preferred style, show an example function with the style you like and prompt again. Few-shots shine for complex output (like writing tests cases – provide one sample test, then ask it to write more). In summary, **zero-shot for quick direct answers, few-shot for controlled style or complex instructions.**
 </Info>
@@ -321,13 +321,13 @@ This reads as polite, and it explicitly tells the AI what not to do. It’s not 
 
 ### Use Lovable’s Modes Intentionally
 
-As mentioned, utilize **Chat Mode** for planning and **Default Mode** for building. For example, when starting a new feature, you might enter Chat Mode and brainstorm the component breakdown: 
+As mentioned, utilize **Chat Mode** for planning and **Default Mode** for building. For example, when starting a new feature, you might enter Chat Mode and brainstorm the component breakdown:
 
 <Info>
   I want to add a blog section to my app. Let’s discuss how to structure the data and pages.
 </Info>
 
-The AI might respond with an outline. Once you’re satisfied, you can switch to Default Mode and say: 
+The AI might respond with an outline. Once you’re satisfied, you can switch to Default Mode and say:
 
 <Info>
   Create a `BlogPost` page and a supabase table or schema for blog posts based on the above plan.
@@ -474,26 +474,26 @@ Clearly outline the project structure, including file names and paths, to ensure
 
 ### Provide Precise Edit Instructions (Focus the AI)
 
-By default, when you ask Lovable AI to change something, it might rewrite an entire file or multiple files. To avoid unintended changes, be very specific about _where_ and _what_ to change. You can use Lovable’s “Select” feature to highlight a component or file, then prompt about that selection only. Or explicitly name the file/component in your prompt. For example: 
+By default, when you ask Lovable AI to change something, it might rewrite an entire file or multiple files. To avoid unintended changes, be very specific about _where_ and _what_ to change. You can use Lovable’s “Select” feature to highlight a component or file, then prompt about that selection only. Or explicitly name the file/component in your prompt. For example:
 
 <Info>
-  _In the _`Header`_component, change the signup button’s text to ‘Get Started’ and move it to the left side of the nav bar._ 
+  \_In the \_`Header`_component, change the signup button’s text to ‘Get Started’ and move it to the left side of the nav bar._
 </Info>
 
- This way, the AI knows to focus on `Header` component and just adjust that part. Another trick: **tell the AI what not to touch**. You might add, “Do not modify any other components or logic unrelated to the header.” This prevents the AI from wandering off and potentially breaking something else. This practice (sometimes called the “Diff & Select” approach) ensures minimal, targeted changes – resulting in faster responses and fewer regression bugs.
+This way, the AI knows to focus on `Header` component and just adjust that part. Another trick: **tell the AI what not to touch**. You might add, “Do not modify any other components or logic unrelated to the header.” This prevents the AI from wandering off and potentially breaking something else. This practice (sometimes called the “Diff & Select” approach) ensures minimal, targeted changes – resulting in faster responses and fewer regression bugs.
 
 ### Locking Files (Workaround)
 
-Currently, Lovable might not have an explicit file-lock feature, but you can simulate it through your prompt wording. If there are critical files that the AI should never alter (maybe a complex component that is working fine), you can repeat an instruction in every prompt like: 
+Currently, Lovable might not have an explicit file-lock feature, but you can simulate it through your prompt wording. If there are critical files that the AI should never alter (maybe a complex component that is working fine), you can repeat an instruction in every prompt like:
 
 <Info>
   _Do not change the authentication.js file._
 </Info>
 
-By consistently telling the AI to refrain, you reduce the chance of unwanted edits. Similarly, if you only want the AI to work within one part of the project, explicitly constrain it: 
+By consistently telling the AI to refrain, you reduce the chance of unwanted edits. Similarly, if you only want the AI to work within one part of the project, explicitly constrain it:
 
 <Info>
-  _Focus changes solely on the _`ProfilePage`_component; assume all other parts of the app remain as is._ 
+  \_Focus changes solely on the \_`ProfilePage`_component; assume all other parts of the app remain as is._
 </Info>
 
 Being upfront about this in the prompt helps keep the AI within bounds.
@@ -502,7 +502,7 @@ Being upfront about this in the prompt helps keep the AI within bounds.
 
 When prompting for UI changes in Lovable, clarity is crucial so you don’t break functionality:
 
-- If you want **purely visual changes**, say so. _“Make the login button blue and 20% larger, but _**_do not alter any of its functionality or onClick logic_**_.”_ This ensures the AI doesn’t accidentally rename IDs or change logic while restyling.
+- If you want **purely visual changes**, say so. **___“Make the login button blue and 20% larger, but do not alter any of its functionality or onClick logic.”___** This ensures the AI doesn’t accidentally rename IDs or change logic while restyling.
 - For **responsiveness** (making a design mobile-friendly), guide the AI through a plan. For example: _“Optimize the landing page for mobile: use a mobile-first approach. Start by outlining how each section should rearrange on smaller screens, then implement those CSS changes. Use standard Tailwind breakpoints (sm, md, lg) and avoid custom breakpoints. Ensure nothing in functionality changes, just layout.”_ By providing this kind of detailed instruction, you get a thorough adaptation to mobile without breaking the desktop layout.
 - If you have a design change in mind, describing the desired outcome and any constraints (like “keep the same HTML structure, just update CSS”) will help the AI focus on the right solution. Always test the app after AI design changes to confirm everything still works as expected.
 
@@ -510,8 +510,8 @@ When prompting for UI changes in Lovable, clarity is crucial so you don’t brea
 
 As your project evolves, Lovable’s AI might suggest refactoring to improve performance or maintainability. Prompting for refactoring is an advanced but valuable use-case:
 
-- Emphasize **no change in behavior**: _“Refactor the _`CartContext`_code for clarity and efficiency, but _ **_the app’s functionality and outputs must remain identical._**_”_ This tells the AI the refactor should not introduce bugs or feature changes.
-- You can ask for a **refactor plan first**: _“Scan the _`utils/`_folder and suggest improvements in code structure or duplication. List changes but do not apply them yet.”_  The AI might give you a report of what to improve. Then you can decide which changes to prompt for implementation.
+- Emphasize **no change in behavior**: \_“Refactor the **___code for clarity and efficiency, but \_ the app’s functionality and outputs must remain identical.”___** This tells the AI the refactor should not introduce bugs or feature changes.
+- You can ask for a **refactor plan first**: \_“Scan the \_`utils/`_folder and suggest improvements in code structure or duplication. List changes but do not apply them yet.”_  The AI might give you a report of what to improve. Then you can decide which changes to prompt for implementation.
 - For large-scale refactoring, do it in stages. Prompt one module at a time, test, then move on. This pairs with the step-by-step principle. For example: first refactor the state management logic, later refactor API calls, rather than everything in one go.
 - After refactoring, it’s wise to prompt a quick **post-check**: _“Now that the code is refactored, run through a quick checklist: does the UI look the same and do all tests or key flows still pass?”_ The AI can self-verify or list things to manually check.
 
@@ -601,6 +601,6 @@ Master-level prompting is a game changer: it turns AI from a gimmick into a reli
 
 Finally, always keep learning from each interaction (that Reflective habit). Every prompt/response is feedback for you to refine your technique further. As you continue to build in Lovable, you’ll develop an intuition for what the AI needs to hear to produce great results. Combine that with your own ingenuity, and there’s little you can’t achieve.
 
-**Focus on your big ideas** – let Lovable’s AI handle the execution details once you clearly tell it what to do. 
+**Focus on your big ideas** – let Lovable’s AI handle the execution details once you clearly tell it what to do.
 
 Happy prompting, and happy building\!
