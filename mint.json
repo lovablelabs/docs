@@ -53,7 +53,6 @@
       "pages": [
         "introduction", 
         "user-guides/messaging-limits",
-        "tips-tricks/troubleshooting",
         "faq"
       ]
     },
@@ -65,6 +64,7 @@
         "features/visual-edit",
         "features/knowledge",
         "features/labs",
+        "tips-tricks/troubleshooting",
         "features/deploy",
         "tips-tricks/custom-domain",
         "features/launched"
