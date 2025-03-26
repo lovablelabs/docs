@@ -4,7 +4,7 @@ description: "List of prompting strategies and approaches."
 icon: "book"
 ---
 
-_Welcome to the prompt library\\!_ Here we’ve collected a set of reusable prompt patterns and examples for common scenarios when building with AI. Think of these as templates or inspiration that you can tailor to your own project. Each section covers a particular use case – from kicking off a new project to integrating payments – with guidance on when to use it and an example prompt. 
+_Welcome to the prompt library\\\!_ Here we’ve collected a set of reusable prompt patterns and examples for common scenarios when building with AI. Think of these as templates or inspiration that you can tailor to your own project. Each section covers a particular use case – from kicking off a new project to integrating payments – with guidance on when to use it and an example prompt.
 
 Feel free to copy these, modify the details, and use them in Lovable or any AI builder. The tone is official yet casual – just like talking to a colleague – and each prompt provides enough context so the AI knows exactly what to do.
 
@@ -33,6 +33,14 @@ Start by building the **main dashboard page**, containing:
 Provide dummy data for now, and ensure the design is clean and responsive.
 ```
 
+```
+Create a new component called [ComponentName] with these features: [list features]. Make it responsive and accessible with proper keyboard navigation. Include proper TypeScript typings for props, and use Tailwind for styling.
+```
+
+```
+Explain how this function works in simple terms, highlighting its inputs, outputs, and any side effects: [paste function]. What edge cases does it handle or miss? How could it be improved?
+```
+
 This prompt follows a proven structure for new projects​. It first states the app type and tech stack, then lists core features, and finally tells the AI where to begin (the main dashboard page, with specifics). By doing this, you give Lovable a clear roadmap to initiate the project. _(Pro tip: It’s often wise to start with an empty project and build up gradually, so the AI doesn’t get overwhelmed​.)_
 
 ## UI/UX Design
@@ -59,6 +67,34 @@ The app UI should be improved, **without changing any functionality**.
 *Goal:* purely cosmetic improvements for a more polished look, with the app behaving exactly as before.
 ```
 
+```
+Enhance the visual appeal of this component: [paste component]. Add animations, improve spacing, create a polished look while maintaining accessibility standards and responsive behavior.
+```
+
+```
+Create a comprehensive design system for my application with a color palette, typography scale, spacing system, and component variants. Include dark mode support and ensure all components are accessible (WCAG AA compliant).
+```
+
+```
+Design a responsive dashboard layout with [describe key metrics/widgets]. It should work well on mobile, tablet, and desktop with appropriate layout shifts. Include a sidebar navigation that collapses on mobile.
+```
+
+```
+Transform this desktop-only component into a mobile-first design with responsive breakpoints: [paste component]. Prioritize content and interactions for small screens first, then enhance for larger screens.
+```
+
+```
+Add subtle, performant animations to this component to enhance user experience: [paste component]. Include enter/exit animations, hover states, and micro-interactions that provide feedback without being distracting.
+```
+
+```
+Analyze and optimize the user flow for [describe task/goal]. Map out each step of the journey, identify friction points, and suggest UI improvements to create a more intuitive experience with fewer steps.
+```
+
+```
+Review these components for accessibility issues and suggest improvements: [paste components]. Check for proper keyboard navigation, screen reader support, sufficient color contrast, and appropriate ARIA attributes.
+```
+
 In this prompt, we explicitly say to make solely visual enhancements and not affect how the app works​. This is crucial – it tells the AI “don’t touch the logic.” We list specifics (card design, color contrast, spacing) so the AI knows what aspects of the UI to tweak. This kind of prompt is perfect after you’ve built features and want to beautify the interface.
 
 ## Responsiveness
@@ -71,7 +107,7 @@ In this prompt, we explicitly say to make solely visual enhancements and not aff
   **How to use:** Emphasize a **mobile-first approach** and ask the AI to ensure the design is responsive at all standard breakpoints​. If using a CSS framework like Tailwind, mention to use its grid/flex and built-in breakpoints. You can also instruct the AI to avoid any fixed widths or anything that would prevent fluid resizing. Providing an example of what breaks on small screens (if you have one) can help, or simply say “make everything adapt to smaller screens gracefully.”
 </Info>
 
-**Example Prompt – Mobile Responsiveness:**​
+**Example Prompt – Mobile Responsiveness:**
 
 ```
 Our app needs to be **fully responsive** across mobile, tablet, and desktop.
@@ -100,7 +136,7 @@ In this prompt, we explicitly instruct the AI to make all designs responsive at 
   **How to use:** Identify the scope: is it a single file, a specific feature, or the whole codebase? For a single file or component, you can prompt something like “Refactor this file for clarity and efficiency, but **do not alter its functionality or output**.” Emphasize that everything should behave the same after refactoring​. If you want, specify what to focus on (e.g., reduce duplication, improve variable names, simplify logic). For larger-scale refactoring, it’s wise to ask the AI to **plan the refactor in steps** (see the next section on Planning) or audit the code structure first.
 </Info>
 
-**Example Prompt – Safe File Refactor:**​
+**Example Prompt – Safe File Refactor:**
 
 ```
 Refactor the **ProjectList component file**, but **keep its behavior and UI exactly the same**. 
@@ -113,9 +149,97 @@ Goals:
 Do **not** introduce any new features or change how the component works for the user – this is purely a code cleanup for maintainability. If any part of the code is unclear, add a brief comment for clarification.
 ```
 
+```
+Review this code and suggest improvements for readability, performance, and maintainability: [paste code]. Focus on TypeScript best practices, proper error handling, and adherence to React patterns.
+```
+
+```
+Suggest a folder structure for a [type] application with these features: [list features]. Include guidelines for organizing components, hooks, utilities, and types with proper separation of concerns.
+```
+
+```
+I'm getting this error: [paste error]. Here's the relevant code: [paste code]. Can you help me understand what's causing it and how to fix it? Please explain why the solution works.
+```
+
 This prompt clearly states the component to refactor and the constraints (no functional changes allowed). It prioritizes structure and maintainability​. The AI will go through the file, maybe reordering functions, renaming things for clarity, commenting tricky parts, etc., but the output of the app should remain identical. This helps prevent the dreaded scenario of a “refactor” accidentally breaking something.
 
 For bigger refactoring efforts (like many files or an entire project), consider having the AI **analyze the codebase first**. You can use a prompt to get a report on what could be improved and where (see the Debugging section’s _Full System Review_ prompt for an idea). Then, apply changes incrementally. Refactor in small pieces and test as you go, rather than one massive overhaul.
+
+## App Types
+
+```
+Create a starter e-commerce store with product listing, search, filtering, cart functionality, and checkout process. Include user accounts, order history, and basic product management. Focus on a clean, conversion-oriented UI.
+```
+
+```
+Build a basic CMS for managing blog posts or articles with an admin dashboard. Include features for creating, editing, and publishing content with rich text formatting, image uploads, and basic SEO management.
+```
+
+```
+Create a project management app with task boards, lists, and cards. Include features for task assignment, due dates, labels, comments, and progress tracking. Implement drag-and-drop functionality and user collaboration.
+```
+
+```
+Build a social media feed component with posts, comments, likes, and sharing functionality. Include user profiles, follow/unfollow mechanics, and a notification system. Ensure the design is responsive and supports infinite scrolling.
+```
+
+```
+Create an analytics dashboard with multiple chart types (bar, line, pie), data filtering options, date range selection, and exportable reports. Include responsive design and skeleton loading states for data fetching.
+```
+
+```
+Build a SaaS application starter with user authentication, subscription management, a settings page, and a basic dashboard. Include role-based access control, account management, and a well-structured architecture for future expansion.
+```
+
+```
+Create a chat interface with an AI assistant that helps users with [describe task/purpose]. Include conversation history, typing indicators, message threading, and the ability to provide feedback on AI responses.
+```
+
+```
+Build a tool that uses AI to generate [describe content type] based on user inputs and parameters. Include options to refine the generated content, save favorites, and export in different formats.
+```
+
+```
+Implement a recommendation component for [describe items] based on user behavior and preferences. Include the ability to provide feedback on recommendations, see why items were recommended, and discover new options.
+```
+
+```
+Enhance the search experience for [describe content] with AI-powered features like natural language understanding, semantic search, and intelligent ranking of results. Include search suggestions and auto-complete.
+```
+
+```
+Create a dashboard that uses AI to analyze [describe data] and present insights in an accessible way. Include visualizations, plain-language explanations of trends, and the ability to ask questions about the data.
+```
+
+```
+Implement a system for personalizing the user experience based on behavior and preferences. Include customizable UI elements, content recommendations, and settings that allow users to control their personalization.
+```
+
+## React Development
+
+```
+Create a custom React hook called use[Name] that handles [functionality]. It should handle proper state initialization, cleanup, memoization of values, and TypeScript typing. Include example usage and error handling.
+```
+
+```
+Refactor this component to use React Context instead of prop drilling: [paste component]. Create a proper context provider with typed state and actions, and separate the business logic from UI rendering.
+```
+
+```
+Optimize this React component to prevent unnecessary re-renders: [paste component]. Use memo, useMemo, and useCallback where appropriate. Add explanatory comments about why each optimization is needed.
+```
+
+```
+Create a form with validation for [describe form fields and validation rules]. Use react-hook-form with zod schema validation, proper error handling, and submission handling that includes loading states.
+```
+
+```
+Implement a data fetching pattern for [describe the data] using React Query. Include proper loading states, error handling, optimistic updates, and data synchronization strategies.
+```
+
+```
+Create a smooth transition animation for [describe the element] when it [describe the action]. Use CSS transitions or Framer Motion, ensuring the animation works well across devices and doesn't harm performance.
+```
 
 ## Locking Files / Limiting Scope
 
@@ -140,9 +264,9 @@ Task: Add a new section to the Dashboard that shows “Tasks due this week”. M
 *(Again, no changes to login or auth files – those are off-limits.)*
 ```
 
-Here we included a very direct constraint: _“refrain from altering pages X or Y and focus changes solely on page Z.”_​. By repeating this in the prompt, we guide the AI’s attention. The task itself (adding a dashboard section) is given, but we wrapped it with instructions about scope. This greatly reduces the chance of Lovable tinkering with your login system while trying to add a dashboard feature.
+Here we included a very direct constraint: \_“refrain from altering pages X or Y and focus changes solely on page Z.”\_​. By repeating this in the prompt, we guide the AI’s attention. The task itself (adding a dashboard section) is given, but we wrapped it with instructions about scope. This greatly reduces the chance of Lovable tinkering with your login system while trying to add a dashboard feature.
 
-Another scenario is when updating a very delicate feature. In such cases, you can combine scope limitation with a cautionary tone. For example: _“This update is sensitive; proceed _**_very carefully_**_ and _**_avoid touching_**_ anything unrelated”_. This was demonstrated in a prompt like: _“This update is quite delicate... Steer clear of shortcuts or assumptions — take a moment to seek clarification if unsure. Precision is crucial.”_​. Including a line like that sets the AI’s “mindset” to be extra cautious.
+Another scenario is when updating a very delicate feature. In such cases, you can combine scope limitation with a cautionary tone. For example: ****_____“This update is sensitive; proceed very carefully and avoid touching anything unrelated”_____****. This was demonstrated in a prompt like: \_“This update is quite delicate... Steer clear of shortcuts or assumptions — take a moment to seek clarification if unsure. Precision is crucial.”\_​. Including a line like that sets the AI’s “mindset” to be extra cautious.
 
 ## Planning
 
@@ -187,7 +311,7 @@ By reviewing such a plan, you can catch any issues (maybe we realize we need a n
   **How to use:** Provide the details Stripe needs: mode (test or live), product or pricing info, and redirect URLs after payment. Also, instruct how the UI should behave (e.g., a checkout form/modal). It’s **crucial** to mention that sensitive keys will be provided securely (not hard-coded in the prompt)​ – you typically store those in environment variables or Lovable’s secret storage. So you can say “assume I have set the API keys in the environment.” This way, the AI will know to call the keys, not include them literally. Additionally, specify _not_ to alter unrelated code while setting up Stripe (to avoid accidental changes).
 </Info>
 
-**Example Prompt – Integrating Stripe Payments:**​
+**Example Prompt – Integrating Stripe Payments:**
 
 ```
 I want to **add Stripe payments** to the app.
@@ -206,9 +330,85 @@ Once done, provide any webhook endpoint setup instructions I need (e.g., URL to 
 
 This prompt gives all the key details for Stripe: test mode, product IDs, what happens on success/cancel, and where to put the checkout button. It explicitly says not to touch anything else. The AI (and Lovable’s Stripe integration helper) will use this to scaffold the Stripe integration. Under the hood, Lovable might create a serverless function (if using Supabase) to handle webhooks, etc., but you don’t have to prompt that separately – the instruction here is usually enough for a basic setup​.
 
-_Note:_ We included a line about API keys being secure because we never want secret keys in the prompt. The docs remind us: _“Use your Stripe Secret Key in the Supabase Edge Function secrets, and avoid including them in the prompt”_​. So by telling the AI “assume it’s configured,” you ensure the code will reference an environment variable or config, not a plaintext key.
+_Note:_ We included a line about API keys being secure because we never want secret keys in the prompt. The docs remind us: \_“Use your Stripe Secret Key in the Supabase Edge Function secrets, and avoid including them in the prompt”\_​. So by telling the AI “assume it’s configured,” you ensure the code will reference an environment variable or config, not a plaintext key.
 
 After running this prompt, test the payment flow with Stripe’s test card numbers. If something isn’t working (e.g., the webhook), Lovable might show errors which you can then debug or refine with another prompt.
+
+## Supabase & Backend
+
+```
+Enhance the visual appeal of this component: [paste component]. Add animations, improve spacing, create a polished look while maintaining accessibility standards and responsive behavior.
+```
+
+```
+Design a database schema for [describe your application] with these entity relationships: [describe relationships]. Include foreign key constraints, indexes for performance, and proper data types with considerations for scalability.
+```
+
+```
+Create a service to fetch data from [API name] and implement caching, error retry logic, and request throttling. Set up proper TypeScript interfaces for the response data and handle API versioning gracefully.
+```
+
+```
+Create Row Level Security policies for a multi-tenant application with these tables: [list tables]. Implement proper user isolation, role-based access, and handle hierarchical data access with considerations for performance.
+```
+
+```
+Create a Supabase Edge Function to handle [describe functionality] with proper error handling, input validation, and security checks. Include rate limiting and proper environment variable usage.
+```
+
+```
+Implement real-time data synchronization for [describe feature] using Supabase subscriptions. Handle connection management, graceful degradation when offline, and conflict resolution.
+```
+
+```
+Implement a robust search feature for [describe content type] with filtering, sorting, and highlighting of matched terms. Include typeahead suggestions, recent searches, and proper handling of no-results scenarios.
+```
+
+```
+Create a data table/grid for [describe data] with sorting, filtering, pagination, column resizing, and row selection. Include features for exporting data and customizing visible columns.
+```
+
+```
+Build a system for importing and exporting [describe data] in various formats (CSV, JSON, etc.). Include validation, progress indicators, error handling, and the ability to map fields during import.
+```
+
+```
+Create a set of interactive charts for [describe data/metrics] using Recharts. Include different visualization types (bar, line, pie), time period selection, drill-down capabilities, and responsive behavior.
+```
+
+```
+Implement a strategy for synchronizing offline data changes with a backend when connectivity is restored. Handle conflict resolution, optimistic UI updates, and provide visual indicators for sync status.
+```
+
+```
+Create a multi-step form wizard for collecting [describe data] with validation, progress tracking, the ability to save drafts, and a summary review before submission. Handle conditional form fields based on previous answers.
+```
+
+## Workflow
+
+```
+Connect this Lovable project to GitHub and set up a good workflow for contributions. Include branch protection rules, PR templates, and CI/CD workflow configuration with automatic preview deployments.
+```
+
+```
+Refactor this large component into smaller, more manageable components: [paste component]. Extract reusable parts, implement proper prop passing, maintain state management, and ensure the refactoring doesn't break existing functionality.
+```
+
+```
+Suggest a testing strategy for [component/feature] including what to test and how. Include unit tests for business logic, integration tests for data flow, and UI tests for critical user flows with best practices for mocking dependencies.
+```
+
+```
+Implement comprehensive error handling for this async function: [paste function]. Include retry logic, fallback mechanisms, proper error reporting, user-friendly error messages, and logging for debugging purposes.
+```
+
+```
+Set up a deployment pipeline for this application that includes staging and production environments, automatic database migrations, environment-specific configurations, and rollback capabilities.
+```
+
+```
+Analyze and optimize this user flow: [describe flow]. Suggest improvements for user experience, reduce friction points, implement progressive enhancement, and ensure accessibility throughout.
+```
 
 ## Using Chat Mode vs Default Mode
 
@@ -217,21 +417,21 @@ After running this prompt, test the payment flow with Stripe’s test card numbe
 </Info>
 
 <Info>
-  **How to use:** 
+  **How to use:**
 
-  - **Default Mode** is great for when you have a well-defined feature to build or change to make. You give the instruction, and Lovable will do it in one go if possible. 
+  - **Default Mode** is great for when you have a well-defined feature to build or change to make. You give the instruction, and Lovable will do it in one go if possible.
   - **Chat Mode**, on the other hand, is useful if you want to have a back-and-forth or analyze something (like asking _“Why is this not working?”_ or _“What’s the best way to do X?”_) without immediately changing the codebase​. In Chat Mode, the AI will respond with analysis or a plan, and you usually have to explicitly say “go ahead and implement” when ready.
 </Info>
 
 **Example use case – Default vs Chat:**
 
-Suppose you suspect there is outdated code in your project that needs cleaning up. In Default mode, you might directly prompt: 
+Suppose you suspect there is outdated code in your project that needs cleaning up. In Default mode, you might directly prompt:
 
 <Info>
   _Review the app and tell me where there is outdated code._
 </Info>
 
-Lovable could try to both identify and possibly start refactoring it in one go​. But maybe you actually want to be careful and just get advice. In that case, you’d switch to Chat mode and ask something like: 
+Lovable could try to both identify and possibly start refactoring it in one go​. But maybe you actually want to be careful and just get advice. In that case, you’d switch to Chat mode and ask something like:
 
 <Info>
   _I’m seeing some deprecated library warnings. What parts of the code might be outdated, and how should we update them?_
@@ -239,7 +439,7 @@ Lovable could try to both identify and possibly start refactoring it in one go�
 
 Now the AI will _discuss_ this with you, rather than immediately rewriting files.
 
-Similarly, if you have an error and you want the AI to analyze it, Chat mode is safer. You can copy an error message and ask: 
+Similarly, if you have an error and you want the AI to analyze it, Chat mode is safer. You can copy an error message and ask:
 
 <Info>
   _What does this error mean, and how can we fix it?_
@@ -247,7 +447,7 @@ Similarly, if you have an error and you want the AI to analyze it, Chat mode is 
 
 The AI will explain and propose a solution. Once you agree, you might switch to Default mode or explicitly instruct to apply the fix.
 
-In summary, **use Default Mode for straightforward building** (“do X for me”), and **use Chat Mode for troubleshooting or design discussions** (“why or how should we do X?”). One concrete workflow is: _Brainstorm in Chat (get a plan or identify issues), then execute in Default._ This approach is even recommended: for example, _use Chat Mode to have the AI analyze errors before making changes_​. It’s like using ChatGPT for advice and then applying the changes once you’re confident.
+In summary, **use Default Mode for straightforward building** (“do X for me”), and **use Chat Mode for troubleshooting or design discussions** (“why or how should we do X?”). One concrete workflow is: _Brainstorm in Chat (get a plan or identify issues), then execute in Default._ This approach is even recommended: for example, \_use Chat Mode to have the AI analyze errors before making changes\_​. It’s like using ChatGPT for advice and then applying the changes once you’re confident.
 
 _(Make sure Chat-Only Mode is enabled in your settings under Labs if you don’t see it​. This mode ensures the AI won’t write code to your project until you say so, which is perfect for safe experimentation.)_
 
@@ -270,7 +470,7 @@ _(Make sure Chat-Only Mode is enabled in your settings under Labs if you don’t
 
 This might sound like a lot, but writing it down pays off. **The AI will use this info on every prompt to stay aligned with your project’s needs​.** It’s like giving the AI long-term memory about your app. You typically set this up once (and update as needed).
 
-After populating the knowledge base, you can literally tell the AI to use it. For example, your very first prompt to Lovable might be: _“Before writing any code, please _**_review the Knowledge Base_**_ and confirm you understand the project.”_​ This lets the AI summarize or acknowledge the context, and you can catch if it missed something.
+After populating the knowledge base, you can literally tell the AI to use it. For example, your very first prompt to Lovable might be: \_“Before writing any code, please **__review the Knowledge Base__** and confirm you understand the project.”\_​ This lets the AI summarize or acknowledge the context, and you can catch if it missed something.
 
 **Example Prompt – Using the Knowledge Base:**
 
