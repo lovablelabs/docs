@@ -4,22 +4,13 @@ description: "Actionable steps to resolve issues in your development lifecycle."
 icon: "toolbox"
 ---
 
-## "Try to Fix" error loops 
+## "Try to Fix" error loops
 
 Building with Lovable makes coding faster and more intuitive—but even the best AI development tools can occasionally hit a snag. Sometimes your code won't run as expected, or you might notice unexpected behavior where the AI interprets your intent incorrectly.
 
 Here's a step-by-step guide to help you navigate issues and get back on track:
 
-<iframe
-  width="100%"
-  height="315"
-  src="https://www.youtube.com/embed/0W8bsbHh2p8?si=p4kWhkdu0PEbgGXm"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen
-/>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/0W8bsbHh2p8?si=p4kWhkdu0PEbgGXm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
 <Steps>
   <Step title="Use the Try to Fix Button First">
@@ -86,22 +77,45 @@ Use the accordions below to identify specific issues and actions:
     Jump into Chat-Only Mode and type: "Something's off. Can you walk me through what's happening and what you've tried?"
   </Accordion>
   <Accordion title="UI or Layout Problems">
-    - Check component hierarchy and styles.  
-    - Use screenshots to explain visual bugs.  
+    - Check component hierarchy and styles.
+    - Use screenshots to explain visual bugs.
     - Prompt Lovable with: "Why is this element misaligned? Fix it."
   </Accordion>
   <Accordion title="API & Backend Issues">
-    - Ensure your API schema is current.  
-    - Validate environment variables and credentials.  
+    - Ensure your API schema is current.
+    - Validate environment variables and credentials.
     - Ask Lovable: "What methods are being used in this call?"
   </Accordion>
   <Accordion title="When completely stuck">
-    - Prompt: "Take a step back. Analyze the error and suggest a different approach."  
-    - Break the task into smaller parts.  
+    - Prompt: "Take a step back. Analyze the error and suggest a different approach."
+    - Break the task into smaller parts.
     - Use the revert button if errors persist.
   </Accordion>
   <Accordion title="Loading errors">
-    This should not happen. Please report it to the support team.
+    This should not happen. 
+
+    #### **Common Loading Issues**
+
+    - **Infinite loading:** The project gets stuck in a loading state
+    - **Preview not updating:** Changes don't appear in the preview window
+    - **Error screen:** Red error messages appear instead of your app
+    - **Blank screen:** The preview window shows nothing
+
+    #### **Troubleshooting Steps**
+
+    1. Refresh the browser window and try again
+    2. Check for console errors (use Dev Mode)
+    3. Look for syntax errors in your code
+    4. Check if your app has an infinite loop
+    5. Ensure your index file exports a valid React component
+    6. Make sure your app has a proper routing configuration
+
+    **Quick fix for blank screens:**
+
+    <Info>
+      Often, a blank screen is caused by an error in your root component or routing configuration. Check for errors in your console and fix any syntax or import issues.
+    </Info>
+    Please report it to the support team.
   </Accordion>
   <Accordion title="Code sandbox error">
     This should not happen. Please report it to the support team.
@@ -109,14 +123,160 @@ Use the accordions below to identify specific issues and actions:
   <Accordion title="Not found preview or spinning up sandbox">
     Try a hard refresh. If unresolved, contact support.
   </Accordion>
+  <Accordion title="Message count exceeded">
+    #### **About Message Count Limits**
+
+    Lovable's free tier has a message limit. When you exceed this limit, you'll need to upgrade or wait for the next cycle.
+
+    #### **Solutions**
+
+    - Upgrade to a paid plan for increased message allowance
+    - Wait until your message count resets for the next period
+    - Optimize your prompts to be more efficient (fewer but more specific requests)
+    - Use the "Continue working on this" button instead of starting new messages
+
+    **Pro tip: Build errors don't count toward your message limit\!**
+
+    When Lovable encounters a build error in your project, that message won't be counted against your limits.
+  </Accordion>
+  <Accordion title="Build Failures">
+    #### **Common Build Errors**
+
+    - **Module not found:** Missing imports or incorrect file paths
+    - **Syntax errors:** Invalid JavaScript or TypeScript code
+    - **Type errors:** Type mismatches in TypeScript
+    - **Dependency conflicts:** Incompatible package versions
+    - **Memory issues:** Build process exceeds available memory
+
+    #### **How to Fix Build Failures**
+
+    1. Read the error message carefully to identify the root cause
+    2. Check file paths and import statements for typos
+    3. Verify that all required dependencies are installed
+    4. Ensure TypeScript types are correct
+    5. Look for missing closing tags in JSX
+    6. Check for circular dependencies
+    7. Simplify complex components that might cause memory issues
+
+    **Build debugging tip:**
+
+    <Tip>
+      When you encounter a build error, try to isolate the problem by commenting out sections of code and gradually adding them back until you identify the problematic part.
+    </Tip>
+  </Accordion>
+  <Accordion title="Typescript Errors">
+    #### **Common TypeScript Errors**
+
+    - **Type 'X' is not assignable to type 'Y'**
+    - **Property 'X' does not exist on type 'Y'**
+    - **Cannot find name 'X'**
+    - **No overload matches this call**
+    - **Type 'X' is missing the following properties from type 'Y'**
+
+    #### **Fixing TypeScript Errors**
+
+    1. Understand the expected type from the error message
+    2. Check your variable types against interface or type definitions
+    3. Use proper type assertions when needed (but avoid `any`)
+    4. Create or update interface definitions for your data structures
+    5. Use TypeScript's utility types like `Partial<T>` or `Pick<T, K>`
+    6. Ensure imported types are accessible and correctly referenced
+
+    #### **TypeScript Tips**
+
+    - Use explicit return types for functions to catch errors early
+    - Prefer interfaces for object types that can be extended
+    - Use type aliases for complex types or unions
+    - Avoid using `any` as it defeats the purpose of TypeScript
+    - Consider using `unknown` instead of `any` for better type safety
+  </Accordion>
+  <Accordion title="React & JSX Errors">
+    #### **Common React & JSX Errors**
+
+    - **Adjacent JSX elements must be wrapped in an enclosing tag**
+    - **React Hook "X" is called conditionally**
+    - **Invalid hook call**
+    - **Each child in a list should have a unique "key" prop**
+    - **Cannot update a component while rendering a different component**
+    - **Too many re-renders**
+
+    #### **How to Fix React & JSX Errors**
+
+    1. Wrap adjacent JSX elements in a fragment (`<></>`)
+    2. Don't call hooks inside conditions, loops, or nested functions
+    3. Ensure hooks are only called in React function components or custom hooks
+    4. Add unique keys to elements in lists (not just index when possible)
+    5. Move state updates out of render functions and into event handlers or effects
+    6. Use callback functions in setState to avoid infinite render loops
+    7. Check for missing closing tags in JSX elements
+
+    **React debugging tip:**
+
+    <Tip>
+      When you see "Too many re-renders", look for event handlers that might be triggering state updates during render. Also check dependencies in useEffect hooks for potential infinite loops.
+    </Tip>
+  </Accordion>
+  <Accordion title="Dependency Issues">
+    #### **Common Dependency Problems**
+
+    - **Module not found:** Package not installed or import path incorrect
+    - **Version conflicts:** Incompatible versions of related packages
+    - **Peer dependency warnings:** Missing or incompatible peer dependencies
+    - **Duplicate packages:** Multiple versions of the same package
+    - **Build errors:** Package doesn't support your environment
+
+    #### **Solutions for Dependency Issues**
+
+    1. Install missing packages using the `<lov-add-dependency>` command
+    2. Check for typos in import statements
+    3. Verify the package name and version in package.json
+    4. Install peer dependencies when prompted
+    5. Check for compatibility with your React and TypeScript versions
+    6. Look for alternative packages if one doesn't work well
+
+    #### **Working with shadcn/ui**
+
+    Lovable comes with shadcn/ui pre-installed. Remember that:
+
+    - shadcn/ui components are imported from `@/components/ui/`
+    - You can use all components in the shadcn/ui documentation
+    - Don't modify the shadcn/ui component files directly
+    - Create wrapper components if you need custom behavior
+  </Accordion>
+  <Accordion title="Page Navigation">
+    #### **Common Navigation Problems**
+
+    - **Page not found:** Routes not properly configured
+    - **Navigation fails:** Links not working correctly
+    - **Full page reloads:** Using `<a>` instead of React Router's `<Link>`
+    - **Parameters not accessible:** Route params not being extracted
+    - **Nested routes issues:** Problems with nested route definitions
+
+    #### **How to Fix Navigation Issues**
+
+    1. Verify that all routes are correctly defined in your router configuration
+    2. Use `<Link>` from react-router-dom instead of `<a>` tags
+    3. Check path spellings in your route definitions
+    4. For dynamic routes, ensure parameters are correctly defined with `:paramName`
+    5. Use `useParams()` to access route parameters
+    6. For programmatic navigation, use `useNavigate()` hook
+
+    #### **Navigation Best Practices**
+
+    - Organize routes logically based on your application structure
+    - Consider using lazy loading for routes to improve performance
+    - Add proper error handling for invalid routes (404 pages)
+    - Use `useLocation()` to read query parameters
+    - Implement route guards for protected routes if needed
+  </Accordion>
 </AccordionGroup>
 
 ### AI Reliability
 
 <AccordionGroup>
   <Accordion title="Avoiding AI mistakes in prompt engineering">
-    - Keep prompts clear and structured.  
-    - Use reverse meta prompting.  
+    - Keep prompts clear and structured.
+    - Use reverse meta prompting.
     - Test in Chat-Only Mode before applying big changes.
   </Accordion>
   <Accordion title="AI not responding">
@@ -138,8 +298,8 @@ Use the accordions below to identify specific issues and actions:
     This was fixed by engineering. Please report if it happens again.
   </Accordion>
   <Accordion title="Unexpected Crashes, Errors, or Loops">
-    - Don't retry the same prompt. Simplify or rephrase.  
-    - Ask: "What fixes have we already tried?"  
+    - Don't retry the same prompt. Simplify or rephrase.
+    - Ask: "What fixes have we already tried?"
     - Rebuild from a previous working state.
   </Accordion>
 </AccordionGroup>
@@ -148,8 +308,8 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Preview is white">
-    - Likely a runtime error. Check browser console logs.  
-    - Use chat to troubleshoot.  
+    - Likely a runtime error. Check browser console logs.
+    - Use chat to troubleshoot.
     - Try a hard refresh or revert.
   </Accordion>
   <Accordion title="Rollback fails">
@@ -174,9 +334,748 @@ Use the accordions below to identify specific issues and actions:
     Reach out to support directly.
   </Accordion>
   <Accordion title="Challenges with larger projects">
-    - Break up large changes into smaller steps.  
-    - Restart your browser if it slows down.  
+    - Break up large changes into smaller steps.
+    - Restart your browser if it slows down.
     - If it persists, report your use case to support.
+  </Accordion>
+  <Accordion title="Console Access">
+    #### **Using the Console for Debugging**
+
+    - **Accessing the console:** Right-click → Inspect → Console tab
+    - **Viewing errors:** Red error messages in the console
+    - **Adding console logs:** Use `console.log()`, `console.error()`, etc.
+    - **Filtering messages:** Use the dropdown filters in the console panel
+
+    #### **Effective Console Debugging**
+
+    1. Log variable values at different points in your code
+    2. Use `console.table()` for displaying arrays or objects
+    3. Group related logs with `console.group()` and `console.groupEnd()`
+    4. Use `console.trace()` to show the call stack
+    5. Set breakpoints by clicking line numbers in the Sources tab
+    6. Watch expressions by adding them in the Watch panel
+
+    #### **Console Tips for React**
+
+    - Install React Developer Tools for component inspection
+    - Log component props and state to debug rendering issues
+    - Use conditional breakpoints for specific scenarios
+    - Check for React-specific warnings and errors
+    - Monitor network requests in the Network tab
+
+    **Debugging Tip:**
+
+    Use `console.log({variableName})` instead of `console.log(variableName)` to see both the variable name and value in the console.
+  </Accordion>
+  <Accordion title="Memory Issues">
+    #### **Common Memory Problems**
+
+    - **Memory leaks:** Resources not being properly released
+    - **High CPU usage:** Excessive processing or infinite loops
+    - **Slow performance:** Inefficient code or large data structures
+    - **Page crashes:** Out of memory errors
+    - **Growing memory usage:** Memory increasing over time
+
+    #### **Identifying Memory Issues**
+
+    1. Use Chrome DevTools Memory tab to create heap snapshots
+    2. Monitor memory usage in Performance tab
+    3. Look for components that don't unmount properly
+    4. Check for event listeners that aren't removed
+    5. Identify large data structures that could be optimized
+
+    #### **Fixing Memory Leaks**
+
+    - Clean up event listeners in `useEffect` return functions
+    - Cancel fetch requests when components unmount
+    - Unsubscribe from subscriptions (observables, WebSockets)
+    - Clear intervals and timeouts when no longer needed
+    - Avoid creating functions inside render that create closures over large data
+    - Use `useMemo` and `useCallback` to prevent unnecessary recreations
+
+    **Memory optimization tip:**
+
+    <Tip>
+      For large lists, consider implementing virtualization (using libraries like react-window or react-virtualized) to render only visible items instead of the entire list at once.
+    </Tip>
+  </Accordion>
+  <Accordion title="Browser Compatibility">
+    #### **Common Browser Compatibility Issues**
+
+    - **Different rendering:** CSS behaves differently across browsers
+    - **Missing features:** Modern JavaScript features not supported in older browsers
+    - **Browser-specific bugs:** Issues unique to certain browsers
+    - **Mobile quirks:** Problems specific to mobile browsers
+    - **Input handling differences:** Form elements behave differently
+
+    #### **Ensuring Cross-Browser Compatibility**
+
+    1. Use Babel to transpile modern JavaScript for older browsers
+    2. Include polyfills for missing browser features
+    3. Leverage CSS prefixes or use a tool like Autoprefixer
+    4. Test on multiple browsers (Chrome, Firefox, Safari, Edge)
+    5. Use feature detection instead of browser detection
+    6. Follow web standards and avoid browser-specific hacks
+
+    #### **Tools for Browser Compatibility**
+
+    - [**caniuse.com**](http://caniuse.com)**:** Check feature support across browsers
+    - **BrowserStack:** Test on multiple browsers and devices
+    - **Autoprefixer:** Automatically add vendor prefixes to CSS
+    - **@babel/preset-env:** Target specific browser versions
+    - **core-js:** Polyfills for modern JavaScript features
+
+    <Tip>
+      Instead of supporting very old browsers, consider implementing a browser detection system that shows a friendly message to users on unsupported browsers, directing them to upgrade.
+    </Tip>
+  </Accordion>
+  <Accordion title="Infinite Re-render Loops">
+    #### **Common Causes of Infinite Loops**
+
+    - **Missing dependency array:** `useEffect` without dependencies
+    - **State updates in render:** Calling setState during render phase
+    - **State updates in useEffect:** Without proper dependency control
+    - **Mutable references:** Modifying objects or arrays directly
+    - **Props changing in parent:** Child component updates causing parent re-renders
+
+    #### **How to Fix Infinite Loops**
+
+    1. Ensure `useEffect` has a proper dependency array
+    2. Use `useCallback` for functions passed as props
+    3. Add conditional checks before setting state
+    4. Use functional updates for state based on previous values
+    5. Check for object/array stability with `useMemo`
+    6. Use `React.memo` to prevent unnecessary re-renders
+
+    #### **Debugging Infinite Loops**
+
+    - Add console logs to track component renders
+    - Use React DevTools to profile renders
+    - Check for "Maximum update depth exceeded" error messages
+    - Set breakpoints in Chrome DevTools
+    - Look for rapidly increasing memory usage
+
+    **Common infinite loop pattern:**
+
+    `useEffect(() => { setData(newData); // This will cause a re-render }, [someValue]); // If someValue changes on every render, you get an infinite loop`
+  </Accordion>
+  <Accordion title="Responsive Design Problems">
+    #### **Common Responsive Design Challenges**
+
+    - **Layout breaks on mobile:** Elements overlap or overflow
+    - **Text scaling issues:** Font sizes too large or small on different screens
+    - **Image sizing problems:** Images not properly scaling
+    - **Touch targets too small:** Buttons or links difficult to tap on mobile
+    - **Content overflow:** Content extending beyond viewport
+    - **Media query issues:** Breakpoints not working as expected
+
+    #### **Responsive Design Best Practices**
+
+    1. Use mobile-first approach (design for mobile, then expand)
+    2. Implement fluid layouts with flexbox and grid
+    3. Use relative units (%, em, rem) instead of fixed pixels
+    4. Set appropriate viewport meta tag
+    5. Test designs across multiple screen sizes
+    6. Use responsive images with proper sizing
+    7. Ensure touch targets are at least 44x44px for mobile
+
+    #### **Tailwind CSS for Responsive Design**
+
+    Tailwind makes responsive design easier with its breakpoint prefixes:
+
+    - `sm:` - small screens (640px and up)
+    - `md:` - medium screens (768px and up)
+    - `lg:` - large screens (1024px and up)
+    - `xl:` - extra large screens (1280px and up)
+    - `2xl:` - 2x extra large screens (1536px and up)
+
+    Example of responsive layout with Tailwind:
+
+    ```
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="p-4 bg-white rounded shadow">Item 1</div>
+      <div className="p-4 bg-white rounded shadow">Item 2</div>
+      <div className="p-4 bg-white rounded shadow">Item 3</div>
+    </div>
+    ```
+
+    <Tip>
+      Use Chrome DevTools Device Mode (toggle device toolbar) to quickly test your design on different device sizes and orientations.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Domain Issues
+
+<AccordionGroup>
+  <Accordion title="Custom Domain Setup">
+    To connect your custom domain to your Lovable app:
+
+    1. Navigate to Project → Settings → Domains in Lovable
+    2. Click "Add Domain" and enter your domain name
+    3. Update your DNS settings as instructed
+    4. Wait for DNS propagation (can take up to 48 hours)
+
+    <Info>
+      Custom domain functionality requires a paid Lovable plan.
+    </Info>
+  </Accordion>
+  <Accordion title="DNS Configuration">
+    Example DNS settings for your domain registrar:
+
+    ```
+    # For apex domain (example.com):
+    Type: A
+    Name: @
+    Value: 76.76.21.21
+    
+    # For www subdomain:
+    Type: CNAME
+    Name: www
+    Value: yourapp.lovable.app
+    ```
+
+    #### **DNS Settings Explanation:**
+
+    - **A Record:** Points your root domain to Lovable's IP address
+    - **CNAME Record:** Creates an alias from www to your Lovable app
+    - **TTL (Time-to-Live):** Set to 3600 (1 hour) or lower for faster propagation
+
+    #### **DNS Verification:**
+
+    To verify your DNS settings are correct, you can use:
+
+    - [**<u>DNSChecker.org</u>**](https://dnschecker.org/)
+    - [**<u>MXToolbox</u>**](https://mxtoolbox.com/)
+    - Command line: `dig example.com` or `nslookup example.com`
+  </Accordion>
+  <Accordion title="Common Domain Issues">
+    If your custom domain isn't working:
+
+    - Verify DNS settings are configured exactly as specified
+    - Check if your domain has DNSSEC enabled (might cause issues)
+    - Use a DNS lookup tool to verify your records have propagated
+    - Clear your browser cache or try in incognito mode
+    - Wait at least 24-48 hours for DNS changes to fully propagate
+    - Ensure your domain is properly verified in the Lovable dashboard
+    - Check if your domain registrar has extra security features blocking the transfer
+
+    #### **Troubleshooting Steps:**
+
+    1. Verify your domain is active and not expired
+    2. Check for conflicting DNS records
+    3. Temporarily disable DNSSEC if you're having issues
+    4. Ensure no domain forwarding is enabled at your registrar
+    5. Try accessing your site from a different network
+  </Accordion>
+  <Accordion title="SSL Certificate Issues">
+    Lovable automatically provisions SSL certificates for custom domains. If you're experiencing SSL issues:
+
+    - Ensure your DNS is properly configured
+    - Check if your domain has CAA records that might restrict certificate issuance
+    - Wait up to 24 hours for the certificate to be issued
+    - Verify your browser isn't caching an old certificate
+    - Check for certificate transparency logs to see if a certificate was issued
+    - Contact Lovable support if issues persist
+
+    #### **Common SSL Errors:**
+
+    - **ERR_CERT_COMMON_NAME_INVALID:** Domain doesn't match certificate
+    - **ERR_CERT_AUTHORITY_INVALID:** Certificate not trusted by browser
+    - **SEC_ERROR_UNKNOWN_ISSUER:** Certificate issuer unknown
+    - **SSL_ERROR_BAD_CERT_DOMAIN:** Domain doesn't match certificate
+
+    <Info>
+      \*\*SSL Security Note: \*\*Lovable uses Let's Encrypt to provision SSL certificates. These certificates are valid for 90 days and are automatically renewed.
+    </Info>
+  </Accordion>
+  <Accordion title="Working with Subdomains">
+    To set up subdomains for your Lovable app:
+
+    #### **Option 1: Direct Subdomain Configuration**
+
+    1. Navigate to Project → Settings → Domains
+    2. Click "Add Domain" and enter your subdomain (e.g., [app.example.com](http://app.example.com))
+    3. Add a CNAME record at your DNS provider:
+
+    ```
+    Type: CNAME
+    Name: app
+    Value: yourapp.lovable.app
+    ```
+
+    #### **Option 2: Wildcard Subdomain**
+
+    To support multiple subdomains with one configuration:
+
+    ```
+    Type: CNAME
+    Name: *
+    Value: yourapp.lovable.app
+    ```
+
+    Note: Wildcard CNAME records might not be supported by all DNS providers.
+
+    #### **Subdomain Best Practices:**
+
+    - Use consistent naming conventions ([app.example.com](http://app.example.com), [api.example.com](http://api.example.com))
+    - Consider using subdomains for different environments ([staging.example.com](http://staging.example.com))
+    - Remember each subdomain needs its own SSL certificate, which Lovable handles automatically
+  </Accordion>
+  <Accordion title="Deployment Process">
+    To deploy your Lovable app:
+
+    1. Click the "Publish" button in the top-right corner
+    2. Wait for the build process to complete
+    3. Your app will be available at [yourapp.lovable.app](http://yourapp.lovable.app)
+    4. Review deployment logs for any issues
+
+    #### **Deployment Strategies:**
+
+    - **Preview Deployments:** Test your app before publishing to production
+    - **Automatic Deployments:** Configure your project to deploy automatically on Git changes
+    - **Rollbacks:** Revert to previous versions if needed
+  </Accordion>
+  <Accordion title="Deployment Failed">
+    If your deployment fails:
+
+    1. Check the deployment logs for specific errors
+    2. Fix any code issues identified in the logs
+    3. Ensure all environment variables are properly set
+    4. Verify all required API keys are valid
+    5. Check for missing dependencies
+    6. Try deploying an earlier working version
+    7. Resolve any build-time errors before deploying again
+
+    #### **Common Deployment Errors:**
+
+    - **Module not found:** Missing dependency or import
+    - **Build timeout:** Build process taking too long
+    - **Memory limit exceeded:** Build requires more resources than available
+    - **Environment variable issues:** Missing or incorrectly formatted variables
+  </Accordion>
+  <Accordion title="Removing Lovable Badge">
+    To remove the Lovable badge from your deployed app:
+
+    1. Go to Project Settings
+    2. Find "Show Lovable Badge" option
+    3. Toggle it off (requires paid plan)
+    4. Redeploy your application
+
+    <Info>
+      The badge removal option is available on all paid plans. If you don't see this option, make sure your billing is up to date.
+    </Info>
+  </Accordion>
+  <Accordion title="Deployment Limits">
+    Be aware of these deployment limitations:
+
+    - Free plan: Limited to 3 projects with public visibility
+    - Paid plans: Access to private deployments and more projects
+    - Bandwidth limits apply based on your plan
+    - Custom domains only available on paid plans
+    - Build time limits may apply to complex projects
+
+    #### **Resource Limitations:**
+
+    - **Build Time:** Maximum build duration is 15 minutes
+    - **Memory:** Builds are limited to 4GB of RAM
+    - **Bundle Size:** Maximum bundle size depends on your plan
+    - **API Rate Limits:** Rate limits apply to API calls
+  </Accordion>
+  <Accordion title="Custom Configuration Options">
+    #### **Environment Variables**
+
+    Configure different variables for development and production:
+
+    - Development variables: Used in the Lovable editor
+    - Production variables: Used in deployed applications
+    - Secret variables: Encrypted and only accessible server-side
+
+    #### **Custom Headers**
+
+    Add custom HTTP headers to your deployed application:
+
+    ```json
+    // Example headers configuration
+    {
+      "headers": [
+        {
+          "source": "/(.*)",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self'; script-src 'self' 'unsafe-inline'"
+            }
+          ]
+        }
+      ]
+    }
+    ```
+
+    #### **Caching Strategies**
+
+    Configure caching for optimal performance:
+
+    - Static assets: Cached for extended periods
+    - API responses: Configure cache-control headers
+    - HTML pages: Typically shorter cache times
+  </Accordion>
+  <Accordion title="Performance Optimization">
+    Improve your Lovable app's performance:
+
+    - Optimize image sizes and use next-gen formats (WebP)
+    - Implement lazy loading for images and components
+    - Minimize JavaScript bundle size with code splitting
+    - Enable text compression
+    - Reduce third-party script usage
+    - Use efficient CSS (avoid large frameworks)
+
+    #### **Code Optimization:**
+
+    ```
+    // Before: Importing entire library
+    import lodash from 'lodash';
+    
+    // After: Import only what you need
+    import debounce from 'lodash/debounce';
+    
+    // Before: Loading everything eagerly
+    import HeavyComponent from './HeavyComponent';
+    
+    // After: Using lazy loading
+    import { lazy, Suspense } from 'react';
+    const HeavyComponent = lazy(() => import('./HeavyComponent'));
+    
+    // Usage with suspense
+    <Suspense fallback={<Spinner />}>
+      <HeavyComponent />
+    </Suspense>
+    ```
+  </Accordion>
+  <Accordion title="SEO Best Practices">
+    Optimize your Lovable app for search engines:
+
+    - Use semantic HTML elements (h1, nav, main, etc.)
+    - Add proper page titles and meta descriptions
+    - Implement Open Graph tags for social sharing
+    - Create a sitemap.xml file
+    - Ensure mobile responsiveness
+    - Optimize for Core Web Vitals (loading, interactivity, visual stability)
+
+    #### **Implementing Meta Tags:**
+
+    ```
+    <!-- Basic SEO tags -->
+    <title>Your Page Title | Lovable App</title>
+    <meta name="description" content="A detailed description of your page">
+    <meta name="keywords" content="lovable, app, your keywords">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Your Page Title">
+    <meta property="og:description" content="Description for social sharing">
+    <meta property="og:image" content="https://yourapp.lovable.app/og-image.jpg">
+    <meta property="og:url" content="https://yourapp.lovable.app/page">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Page Title">
+    <meta name="twitter:description" content="Description for Twitter">
+    <meta name="twitter:image" content="https://yourapp.lovable.app/twitter-image.jpg">
+    ```
+  </Accordion>
+  <Accordion title="Adding Analytics">
+    Integrate analytics tools with your Lovable app:
+
+    #### **Google Analytics Integration**
+
+    ```
+    // 1. Add the script to your index.html
+    // 2. Create a custom hook for tracking events
+    
+    import { useEffect } from 'react';
+    import { useLocation } from 'react-router-dom';
+    
+    export function useAnalytics() {
+      const location = useLocation();
+      
+      // Track page views
+      useEffect(() => {
+        if (typeof window.gtag !== 'undefined') {
+          window.gtag('config', 'G-XXXXXXXXXX', {
+            page_path: location.pathname + location.search
+          });
+        }
+      }, [location]);
+      
+      // Function to track custom events
+      const trackEvent = (category, action, label, value) => {
+        if (typeof window.gtag !== 'undefined') {
+          window.gtag('event', action, {
+            event_category: category,
+            event_label: label,
+            value: value
+          });
+        }
+      };
+      
+      return { trackEvent };
+    }
+    ```
+
+    #### **Other Analytics Options:**
+
+    - **Plausible Analytics:** Privacy-friendly alternative
+    - **Hotjar:** Heatmaps and user recordings
+    - **Amplitude:** Product analytics
+    - **Mixpanel:** Event-based user analytics
+
+    <Warning>
+      Ensure your analytics implementation complies with privacy regulations like GDPR and CCPA. Consider implementing a cookie consent banner if required.
+    </Warning>
+  </Accordion>
+  <Accordion title="Asset Serving Strategy">
+    Optimizing how your app serves static assets:
+
+    - Use correct mime types for all assets
+    - Implement proper cache control headers
+    - Consider using a CDN for global distribution
+    - Use compressed formats (WebP, AVIF) for images
+
+    #### **Example Cache Control Strategy:**
+
+    ```
+    // Cache strategy by file type
+    const cacheRules = {
+      // Long-lived cache for hashed assets (1 year)
+      'static/js/*.js': 'public, max-age=31536000, immutable',
+      'static/css/*.css': 'public, max-age=31536000, immutable',
+      'static/media/*': 'public, max-age=31536000, immutable',
+      
+      // Medium-term cache for images (1 week)
+      'images/*': 'public, max-age=604800',
+      
+      // Short-term cache for frequently updated content (1 hour)
+      'api/content/*': 'public, max-age=3600',
+      
+      // No cache for API responses
+      'api/*': 'no-store, no-cache, must-revalidate'
+    }
+    ```
+
+    #### **Best Practice**
+
+    <Note>
+      Use content hashing in your filenames (e.g., script.a1b2c3.js) to enable safe long-term caching. Hashed filenames change when content changes, ensuring users get the latest version.
+    </Note>
+  </Accordion>
+  <Accordion title="URL Redirects and Rewrites">
+    Implementing URL redirects and rewrites:
+
+    #### **Common Redirect Use Cases:**
+
+    - Redirecting old URLs to new ones
+    - Enforcing HTTPS
+    - Redirecting www to non-www (or vice versa)
+    - Redirecting to a localized version of a page
+    - Handling moved content
+
+    ```
+    // Example redirects configuration
+    {
+      "redirects": [
+        { 
+          "source": "/old-page", 
+          "destination": "/new-page", 
+          "permanent": true 
+        },
+        { 
+          "source": "/blog/:slug", 
+          "destination": "/articles/:slug", 
+          "permanent": true 
+        },
+        { 
+          "source": "/docs/:path*", 
+          "destination": "https://docs.example.com/:path*", 
+          "permanent": false 
+        }
+      ]
+    }
+    ```
+
+    #### **URL Rewrites:**
+
+    URL rewrites change the URL internally without redirecting the browser:
+
+    ```
+    // Example rewrites configuration
+    {
+      "rewrites": [
+        { 
+          "source": "/api/:path*", 
+          "destination": "https://api.example.com/:path*" 
+        },
+        { 
+          "source": "/shop/:category", 
+          "destination": "/products?category=:category" 
+        }
+      ]
+    }
+    ```
+
+    <Note>
+      For SEO purposes, use 301 (permanent) redirects when content has moved permanently. This transfers link equity to the new URL.
+    </Note>
+  </Accordion>
+  <Accordion title="Multi-tenant Setup">
+    Implementing multi-tenant applications with custom domains:
+
+    #### **Architecture Options:**
+
+    1. **Subdomain-based:** Each tenant gets a subdomain ([tenant1.app.com](http://tenant1.app.com), [tenant2.app.com](http://tenant2.app.com))
+    2. **Path-based:** Each tenant accessed via a path (app.com/tenant1, app.com/tenant2)
+    3. **Domain-based:** Each tenant has their own domain ([tenant1.com](http://tenant1.com), [tenant2.com](http://tenant2.com))
+
+    #### **Implementation Approach:**
+
+    ```
+    // Example tenant detection middleware
+    // For a subdomain-based approach
+    function getTenantFromRequest(req) {
+      // Extract the subdomain from the hostname
+      const hostname = req.headers.host;
+      const subdomain = hostname.split('.')[0];
+      
+      // Skip extraction for www or non-tenant subdomains
+      if (['www', 'app', 'api'].includes(subdomain)) {
+        return null;
+      }
+      
+      return subdomain;
+    }
+    
+    // In your application logic
+    const tenant = getTenantFromRequest(request);
+    if (tenant) {
+      // Load tenant-specific configuration
+      const tenantConfig = await loadTenantConfig(tenant);
+      
+      // Apply tenant-specific theme, data, etc.
+      applyTenantConfiguration(tenantConfig);
+    }
+    ```
+
+    #### **DNS Configuration for Multi-tenancy:**
+
+    ```
+    # For subdomain-based multi-tenancy:
+    # 1. Set up a wildcard DNS record
+    Type: CNAME
+    Name: *
+    Value: yourapp.lovable.app
+    
+    # 2. Specific tenant subdomains (optional, if you need to override)
+    Type: CNAME
+    Name: tenant1
+    Value: yourapp.lovable.app
+    ```
+
+    <Note>
+      Store tenant configurations in a database with caching for performance. Include tenant-specific theme settings, feature flags, and custom domain mappings.
+    </Note>
+  </Accordion>
+  <Accordion title="Deploying to Netlify & Vercel">
+    #### **Common Deployment Problems**
+
+    - **Build failures:** Check your build command and Node.js version
+    - **404 errors:** Configure redirects for Single Page Applications
+    - **Environment variables:** Set them in the hosting platform's dashboard
+    - **API routes not working:** Verify serverless function configuration
+    - **CORS issues:** Configure proper headers for API requests
+
+    #### **Netlify Configuration**
+
+    1. Create a `netlify.toml` file in your project root
+    2. Configure build settings: `npm run build` or `yarn build`
+    3. Set the publish directory to `dist` for Vite projects
+    4. Add redirects for SPA routing
+    5. Configure environment variables in the Netlify dashboard
+
+    #### **Vercel Configuration**
+
+    1. Create a `vercel.json` file if needed (often automatic)
+    2. Use the Vercel dashboard to configure build settings
+    3. Set environment variables in the Vercel dashboard
+    4. Optionally configure serverless functions
+    5. Domain settings can be managed in the project settings
+
+    #### **Troubleshooting Deployment**
+
+    - Check deployment logs for specific error messages
+    - Verify that your project builds locally before deploying
+    - Test with `NODE_ENV=production` locally
+    - Check for case sensitivity issues in imports (critical for Linux servers)
+    - Ensure all dependencies are properly specified in package.json
+    - Consider using the hosting provider's CLI for better debugging
+
+    #### **SPA Routing Configuration**
+
+    For Netlify (`netlify.toml`):
+
+    ```
+    [[redirects]]
+      from = "/*"
+      to = "/index.html"
+      status = 200
+    ```
+
+    For Vercel (`vercel.json`):
+
+    ```
+    {
+      "rewrites": [
+        { "source": "/(.*)", "destination": "/index.html" }
+      ]
+    }
+    ```
+  </Accordion>
+  <Accordion title="Build issues during deployment">
+    #### **Common Deployment Build Errors**
+
+    - **Environment differences:** Code works locally but fails in deployment
+    - **Memory limits:** Build process exceeds hosting platform limits
+    - **Missing dependencies:** Dependencies not installed during build
+    - **Node version mismatch:** Different Node.js version in deployment
+    - **Case sensitivity:** File paths that work on Windows fail on Linux
+
+    #### **How to Fix Deployment Build Issues**
+
+    1. Check deployment logs for specific error messages
+    2. Specify Node.js version in `.nvmrc` or hosting configuration
+    3. Verify all dependencies are in package.json, not just devDependencies
+    4. Be consistent with file naming and capitalization
+    5. Reduce build complexity for memory-intensive processes
+    6. Set appropriate build timeout values if supported
+
+    #### **Environment-Specific Configuration**
+
+    - Use environment variables for configuration that differs between environments
+    - Consider using `.env.production` for production-specific values
+    - Check if your APIs require different URLs in production
+    - Use relative paths when possible to avoid path issues
+    - Test your build in a CI environment before deployment
+
+    **Pro tip for deployment testing:**
+
+    Run `npm run build && npm run preview` locally to simulate a production environment before deploying.
   </Accordion>
 </AccordionGroup>
 
@@ -184,7 +1083,9 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Error with Edge Functions">
-    Tell Lovable what's happening. It can suggest a fix or implement changes.
+    - **l Scope:** Use the principle of least privilege for all credentials
+
+    When using Lovable with Supabase, always store sensitive API keys as Supabase Edge Function secrets rather than environment variables or in source code.
   </Accordion>
   <Accordion title="Setting Environment Variables">
     Double-check syntax and variable names. See the [Supabase docs](https://supabase.com/docs).
@@ -205,11 +1106,1165 @@ Use the accordions below to identify specific issues and actions:
     Likely due to invalid credentials. Engineering is working on a fix.
   </Accordion>
   <Accordion title="Role-Based Security (RLS) in Supabase">
+    ### **RLS Basics**
+
+    Row Level Security (RLS) allows you to control which rows users can access in your Supabase tables. Without proper RLS policies:
+
+    - Your data may be unprotected and accessible to anyone
+    - Or users might be unable to access data they should see
+
     If RLS is enabled:
 
-    - Define clear access policies.  
-    - Test via Supabase SQL editor.  
+    - Define clear access policies.
+    - Test via Supabase SQL editor.
     - Ensure users are authenticated.
+
+    ### **Enabling RLS on Tables**
+
+    How to enable RLS on your Supabase tables:
+
+    1. Go to the Supabase dashboard and select your project
+    2. Navigate to **Table Editor** in the left sidebar
+    3. Select the table you want to secure
+    4. Click on **Authentication** tab
+    5. Toggle **Enable RLS** to ON
+    6. Create policies to define access rules (without policies, no access is granted)
+
+    It's recommended to enable RLS on all tables from the beginning of your project development.
+
+    ### **Common RLS Issues**
+
+    ### 
+
+    If you're experiencing data access problems:
+
+    - **No Data Returned:** RLS might be too restrictive
+    - **Security Concerns:** RLS might be too permissive
+    - **Errors When Inserting:** Check your INSERT policies
+    - **Auth Issues:** Ensure the user is properly authenticated
+    - **Unexpected Access:** Anonymous users might have unintended access
+
+    ### **Troubleshooting auth.uid() Issues**
+
+    If your RLS policies using auth.uid() aren't working as expected:
+
+    - **User Not Authenticated:** Verify that the user is properly signed in
+    - **JWT Token Issues:** Check if the JWT token is being correctly passed to Supabase
+    - **Column Type Mismatch:** Ensure your user_id column type matches the auth.uid() type (typically UUID)
+    - **Case Sensitivity:** UUID comparisons should be case-sensitive
+    - **Incorrect Column Name:** Double-check that the column name in your policy matches the database
+
+    A common issue is comparing auth.uid() to a user_id stored as text when auth.uid() returns a UUID. Ensure type consistency.
+
+    ### **Example RLS Policies**
+
+    Here are common RLS policy patterns:
+
+    ```
+    -- Allow users to read only their own data
+    CREATE POLICY "Users can view their own data" ON "profiles"
+      FOR SELECT
+      USING (auth.uid() = user_id);
+    
+    -- Allow authenticated users to insert their own data
+    CREATE POLICY "Users can insert their own data" ON "profiles"
+      FOR INSERT
+      WITH CHECK (auth.uid() = user_id);
+    
+    -- Allow public access to certain data
+    CREATE POLICY "Public access to published posts" ON "posts"
+      FOR SELECT
+      USING (is_published = true);
+    ```
+
+    ### **Testing RLS Policies**
+
+    How to verify your RLS policies are working correctly:
+
+    1. Use the Supabase dashboard to test policies with different roles
+    2. Create test users and verify access patterns
+    3. Log SQL errors from your Lovable app for debugging
+    4. Test both authenticated and anonymous access
+
+    #### **Best Practice**
+
+    Always enable RLS on all tables and explicitly create policies for access patterns. Start with restrictive policies and gradually open them up as needed.
+
+    ### **Advanced RLS Techniques**
+
+    Advanced RLS patterns for Lovable projects
+
+    ### **Role-Based Access**
+
+    Implementing role-based permissions with RLS:
+
+    ```
+    -- Create a view to get user roles
+    CREATE OR REPLACE FUNCTION get_user_role()
+    RETURNS TEXT AS $$
+      SELECT role FROM user_roles WHERE user_id = auth.uid()
+    $$ LANGUAGE SQL;
+    
+    -- Policy that checks user role
+    CREATE POLICY "Admins can do anything" ON "documents"
+      USING (get_user_role() = 'admin');
+    ```
+
+    ### **Team/Organization Access**
+
+    Allowing users to access team resources:
+
+    ```
+    -- Allow access to team members
+    CREATE POLICY "Team members can view" ON "team_documents"
+      FOR SELECT
+      USING (
+        auth.uid() IN (
+          SELECT user_id FROM team_members 
+          WHERE team_id = team_documents.team_id
+        )
+      );
+    ```
+
+    ### **RLS Performance Considerations**
+
+    Be aware of these performance aspects when using RLS:
+
+    - Complex policies can slow down queries
+    - Joins in policies can be particularly expensive
+    - Consider indexing columns used in RLS conditions
+    - For large tables, consider materialized views or other optimizations
+
+    ### **Working with Complex Policy Requirements**
+
+    Solutions for advanced access control scenarios:
+
+    - **Multiple Conditions:** Combine conditions with AND/OR operators
+    - **Hierarchical Access:** Use recursive queries or path enumeration patterns
+    - **Temporary Access:** Implement time-based conditions (e.g., expiry dates)
+    - **Delegated Permissions:** Create sharing mechanisms with junction tables
+    - **Row-Level Ownership Transfer:** Consider triggers to maintain ownership history
+
+    For very complex access patterns, consider using database functions to encapsulate the logic and make your policies more readable.
+
+    ### **Multi-Tenant RLS Strategies**
+
+    Implementing secure multi-tenant data access:
+
+    - **Tenant Isolation:** Include tenant_id in all tables requiring isolation
+    - **Shared Tables:** Define which tables should be shared vs. tenant-specific
+    - **Cross-Tenant Access:** Implement explicit sharing mechanisms when needed
+    - **Tenant Hierarchy:** Consider parent-child relationships between organizations
+    - **User-Tenant Association:** Track which tenants each user belongs to
+
+    ```
+    -- Basic multi-tenant RLS policy
+    CREATE POLICY "Tenant isolation" ON "tenant_data"
+      USING (
+        tenant_id IN (
+          SELECT tenant_id FROM tenant_members
+          WHERE user_id = auth.uid()
+        )
+      );
+    ```
+
+    Consider using database schemas for complete tenant isolation if your application requires strict separation.
+
+    ### **Debugging RLS Issues**
+
+    Tips for troubleshooting complex RLS problems:
+
+    1. Temporarily disable RLS to verify it's the source of the issue
+    2. Add logging to track SQL queries and auth states
+    3. Test simpler policies first, then add complexity
+    4. Verify that auth.uid() is returning the expected values
+    5. Use the Supabase dashboard's policy tester to validate policies
+
+    #### **Common Pitfall**
+
+    A frequent issue is enabling RLS on a table but forgetting to create any policies. This results in no access to the table's data, as the default behavior is to deny all access when RLS is enabled.
+
+    ### **JWT Claims and Authentication**
+
+    Using JWT claims for enhanced security
+
+    ### **Understanding JWT Claims**
+
+    JWTs (JSON Web Tokens) contain claims that can be used in RLS policies:
+
+    - Standard claims like subject (sub), issuer (iss), expiration (exp)
+    - Custom claims for roles, permissions, or user attributes
+    - Claims are verified by Supabase before being used in RLS
+
+    ### **Accessing JWT Data in RLS**
+
+    Examples of accessing JWT claim data in RLS policies:
+
+    ```
+    -- Access the user's ID (UUID)
+    auth.uid()
+    
+    -- Check if the user has a specific role
+    auth.jwt() ->> 'role' = 'admin'
+    
+    -- Access custom claims
+    auth.jwt() ->> 'custom_claim' = 'value'
+    
+    -- Check if user is authenticated at all
+    auth.role() = 'authenticated'
+    ```
+
+    ### **Working with Custom Claims**
+
+    Setting and using custom claims in Supabase:
+
+    1. Create or update claims during authentication or user actions
+    2. Use claims to store frequently needed user data
+    3. Keep claims small to avoid large JWT tokens
+    4. Update claims when relevant user data changes
+
+    ```
+    // Example: Setting custom claims during sign-in
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+      options: {
+        data: {
+          role: 'admin',
+          org_id: '123',
+          permissions: ['read', 'write']
+        }
+      }
+    });
+    
+    // Accessing those claims in RLS
+    CREATE POLICY "Admin access" ON "documents"
+      USING (auth.jwt() ->> 'role' = 'admin');
+    ```
+
+    Custom claims are useful for frequently accessed user attributes but should not replace proper database lookups for complex permissions.
+
+    <AccordionGroup>
+      <Accordion title="Common RLS Issues">
+        If you're experiencing data access problems:
+
+        - **No Data Returned:** RLS might be too restrictive
+        - **Security Concerns:** RLS might be too permissive
+        - **Errors When Inserting:** Check your INSERT policies
+        - **Auth Issues:** Ensure the user is properly authenticated
+        - **Unexpected Access:** Anonymous users might have unintended access
+      </Accordion>
+    </AccordionGroup>
+  </Accordion>
+  <Accordion title="Connecting Supabase">
+    To connect your Lovable project to Supabase:
+
+    1. Click the Supabase menu in the top right of the editor
+    2. Select "Connect to Supabase"
+    3. Follow the prompts to connect to your Supabase project
+    4. Once connected, Lovable can see your tables, RLS policies, and functions
+  </Accordion>
+  <Accordion title="Troubleshooting Connection Issues">
+    If you're having trouble connecting to Supabase:
+
+    - **Project Not Found:** Verify you're selecting the correct Supabase project
+    - **Authentication Errors:** Ensure you're logged into the correct Supabase account
+    - **Permission Errors:** Check that you have admin/owner access to the Supabase project
+    - **API Keys:** Verify your API keys are valid and have not expired
+    - **Connection Timeouts:** Try again later or check your network connection
+
+    Note: You need to be an owner or administrator of the Supabase project to connect it to Lovable.
+  </Accordion>
+  <Accordion title="Authentication Setup">
+    Implementing Supabase authentication in Lovable:
+
+    ```
+    // Initialize the Supabase client
+    import { createClient } from '@supabase/supabase-js'
+    
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+    const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+    const supabase = createClient(supabaseUrl, supabaseKey)
+    
+    // Example authentication function
+    async function signInWithEmail(email, password) {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
+      
+      if (error) {
+        console.error('Error signing in:', error.message)
+        return null
+      }
+      
+      return data.user
+    }
+    ```
+
+    ### **Common Supabase Issues**
+
+    Troubleshooting frequent Supabase integration problems:
+
+    - **Connection Errors:** Verify your Supabase URL and API key are correct
+    - **Auth Issues:** Check your auth configuration in the Supabase dashboard
+    - **CORS Problems:** Ensure your site URL is added to Supabase allowed origins
+    - **Data Access Denied:** Check your RLS policies (see RLS tab)
+    - **Rate Limiting:** Consider optimizing your API calls or upgrading your Supabase plan
+
+    <Warning>
+      Never expose your Supabase service role key in client-side code. Only use the anon/public key for browser environments.
+    </Warning>
+  </Accordion>
+  <Accordion title="Managing API Keys Securely">
+    Best practices for handling Supabase API keys in Lovable:
+
+    - **Environment Variables:** Store keys in Lovable's Project Settings → Environment Variables
+    - **Client-Side Keys:** Only use the anon/public key in browser code (prefixed with VITE\_)
+    - **Service Role Key:** Never expose in client code; use Supabase Edge Functions for sensitive operations
+    - **Key Rotation:** Regularly rotate keys for better security
+    - **Key Scope:** Use the most restrictive key possible for each operation
+
+    When connecting third-party services that require your Supabase URL or keys, use Lovable's secret management feature rather than hardcoding values.
+  </Accordion>
+  <Accordion title="User Management">
+    ### **Auth Providers**
+
+    Supabase offers multiple authentication providers you can use in Lovable:
+
+    - Email/Password
+    - Magic Link (passwordless)
+    - OAuth (Google, GitHub, Facebook, etc.)
+    - Phone authentication
+
+    ### **OAuth Configuration**
+
+    To set up OAuth providers:
+
+    1. Configure the provider in your Supabase dashboard
+    2. Add redirect URLs for your Lovable app domains
+    3. Implement the authentication flow in your app
+
+    ```
+    // Example OAuth sign-in with Google
+    async function signInWithGoogle() {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin,
+        },
+      })
+      
+      if (error) {
+        console.error('Error signing in with Google:', error.message)
+        return false
+      }
+      
+      return true
+    }
+    ```
+
+    ### **User Session Management**
+
+    Best practices for handling user sessions:
+
+    - Use Auth Context to share authentication state across components
+    - Implement auth state change listeners
+    - Add protected routes for authenticated content
+    - Handle session refreshing automatically
+
+    ```
+    // Add an auth state change listener
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN') {
+        // Update app state, redirect user, etc.
+        console.log('User signed in:', session?.user?.email)
+      } else if (event === 'SIGNED_OUT') {
+        // Clear local state, redirect to login, etc.
+        console.log('User signed out')
+      }
+    })
+    ```
+  </Accordion>
+  <Accordion title="Common Authentication Issues">
+    Solutions for frequent authentication problems:
+
+    - **Redirect URL Issues:** Ensure all possible domains (including [localhost](http://localhost) for development) are added to your Supabase project's allowed redirect URLs
+    - **Session Not Persisting:** Check that you're properly handling the Supabase session storage
+    - **OAuth Provider Errors:** Verify provider credentials and callback URLs in Supabase dashboard
+    - **Email Confirmation Not Working:** Check spam folders and verify email templates
+    - **JWT Expiration:** Implement proper token refresh handling
+
+    When deploying your app with a custom domain, remember to add that domain to your Supabase redirect URLs, or authentication flows will fail.
+  </Accordion>
+  <Accordion title="Multi-Tenant User Management">
+    Implementing multi-tenant architecture with Supabase:
+
+    - **Organization/Team Model:** Create tables for organizations and team memberships
+    - **User Assignment:** Associate users with organizations through junction tables
+    - **Role-Based Access:** Define roles within organizations (admin, member, viewer)
+    - **Data Isolation:** Use RLS policies to ensure data separation between tenants
+    - **Shared Resources:** Define which data should be shared across tenants
+
+    For multi-tenant applications, consider using Supabase's built-in organization features or implement custom organization tables with proper RLS policies.
+  </Accordion>
+  <Accordion title="File Uploads & Storage">
+    Managing file uploads with Supabase Storage:
+
+    #### **Setting Up Supabase Storage:**
+
+    1. Go to Supabase Dashboard → Storage
+    2. Create a new bucket (e.g., "avatars", "documents")
+    3. Configure access permissions (public or private)
+    4. Set up Row Level Security if needed
+
+    #### **Implementing File Uploads:**
+
+    ```
+    import { useState } from 'react';
+    import { supabase } from './supabaseClient';
+    
+    function FileUploader() {
+      const [uploading, setUploading] = useState(false);
+      const [filePath, setFilePath] = useState('');
+      const [error, setError] = useState('');
+    
+      async function uploadFile(event) {
+        try {
+          setUploading(true);
+          setError('');
+          
+          const file = event.target.files[0];
+          if (!file) return;
+          
+          // Create a unique file name
+          const fileExt = file.name.split('.').pop();
+          const fileName = `${Date.now()}.${fileExt}`;
+          const filePath = `uploads/${fileName}`;
+          
+          // Upload the file
+          const { data, error } = await supabase.storage
+            .from('documents')
+            .upload(filePath, file, {
+              cacheControl: '3600',
+              upsert: false
+            });
+          
+          if (error) throw error;
+          
+          // Get a public URL for the file
+          const { data: urlData } = supabase.storage
+            .from('documents')
+            .getPublicUrl(filePath);
+          
+          setFilePath(urlData.publicUrl);
+        } catch (error) {
+          setError(error.message);
+        } finally {
+          setUploading(false);
+        }
+      }
+    
+      return (
+        <div className="space-y-4">
+          {error && <div className="text-red-500">{error}</div>}
+          
+          <label className="block">
+            <span className="sr-only">Choose file</span>
+            <input
+              type="file"
+              className="block w-full text-sm text-gray-500 
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+                file:bg-primary file:text-white
+                hover:file:bg-primary/80"
+              onChange={uploadFile}
+              disabled={uploading}
+            />
+          </label>
+          
+          {uploading && <div>Uploading...</div>}
+          
+          {filePath && (
+            <div>
+              <p>File uploaded successfully!</p>
+              <a 
+                href={filePath} 
+                target="_blank" 
+                rel="noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                View uploaded file
+              </a>
+            </div>
+          )}
+        </div>
+      );
+    }
+    ```
+
+    #### **Image Uploads with Preview:**
+
+    ```
+    function ImageUploader() {
+      const [uploading, setUploading] = useState(false);
+      const [imageUrl, setImageUrl] = useState('');
+      const [preview, setPreview] = useState('');
+      
+      // Create a preview when a file is selected
+      function handleFileChange(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        // Create a preview URL
+        const objectUrl = URL.createObjectURL(file);
+        setPreview(objectUrl);
+        
+        // Start upload
+        uploadImage(file);
+      }
+      
+      async function uploadImage(file) {
+        try {
+          setUploading(true);
+          
+          // Create a unique file name
+          const fileExt = file.name.split('.').pop();
+          const fileName = `${Date.now()}.${fileExt}`;
+          const filePath = `avatars/${fileName}`;
+          
+          // Upload the file
+          const { data, error } = await supabase.storage
+            .from('avatars')
+            .upload(filePath, file, {
+              cacheControl: '3600',
+              upsert: false
+            });
+          
+          if (error) throw error;
+          
+          // Get a public URL for the file
+          const { data: urlData } = supabase.storage
+            .from('avatars')
+            .getPublicUrl(filePath);
+          
+          setImageUrl(urlData.publicUrl);
+        } catch (error) {
+          console.error('Error uploading image:', error);
+        } finally {
+          setUploading(false);
+        }
+      }
+      
+      return (
+        <div className="space-y-4">
+          <label className="block">
+            <span>Upload profile image</span>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              disabled={uploading}
+              className="mt-1 block"
+            />
+          </label>
+          
+          {uploading && <div>Uploading...</div>}
+          
+          {preview && (
+            <div className="mt-2">
+              <h4 className="font-medium text-base">Preview:</h4>
+              <img 
+                src={preview} 
+                alt="Preview" 
+                className="mt-2 h-32 w-32 object-cover rounded-full"
+              />
+            </div>
+          )}
+          
+          {imageUrl && (
+            <div className="mt-2">
+              <h4 className="font-medium text-base">Uploaded Image:</h4>
+              <img 
+                src={imageUrl} 
+                alt="Uploaded" 
+                className="mt-2 h-32 w-32 object-cover rounded-full"
+              />
+            </div>
+          )}
+        </div>
+      );
+    }
+    ```
+  </Accordion>
+  <Accordion title="Site Management">
+    #### **Common State Management Issues**
+
+    - **Prop drilling:** Passing props through many component layers
+    - **State inconsistency:** Different parts of the app see different state
+    - **Over-complicated state:** Using complex state when simple would work
+    - **Stale state:** Using outdated state values in async operations
+    - **Too many re-renders:** Excessive updates due to state changes
+
+    #### **Choosing the Right State Management Approach**
+
+    1. **Component state:** Use `useState` for local component state
+    2. **Context API:** For state shared across multiple components
+    3. **React Query:** For server state (data fetching and caching)
+    4. **Zustand/Jotai:** For global state with minimal boilerplate
+    5. **Redux:** For complex applications with many state interactions
+
+    #### **State Management Best Practices**
+
+    - Keep state as local as possible
+    - Use context for shared state, but don't overuse it
+    - Split complex state into smaller, focused pieces
+    - Consider using state machines for complex state logic
+    - Separate UI state from business logic
+    - Use immutable updates to prevent unintended side effects
+
+    <Tip>
+      When using Context for state, create multiple small contexts instead of one giant context to prevent unnecessary re-renders.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+### API issues
+
+<AccordionGroup>
+  <Accordion title="Implementing API Calls">
+    Best practices for API integration in Lovable:
+
+    ```
+    // Using React Query for API calls
+    import { useQuery } from '@tanstack/react-query';
+    
+    // API fetch function
+    const fetchData = async () => {
+      const response = await fetch('https://api.example.com/data');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    };
+    
+    // In your component
+    function DataComponent() {
+      const { data, isLoading, error } = useQuery({
+        queryKey: ['data'],
+        queryFn: fetchData,
+      });
+    
+      if (isLoading) return <div>Loading...</div>;
+      if (error) return <div>Error: {error.message}</div>;
+    
+      return (
+        <div>
+          {/* Render your data */}
+        </div>
+      );
+    }
+    ```
+
+    #### **Using Mutations for POST/PUT/DELETE:**
+
+    ```
+    // Example of a mutation to create a new item
+    import { useMutation, useQueryClient } from '@tanstack/react-query';
+    
+    // API function to create a new item
+    const createItem = async (newItem) => {
+      const response = await fetch('https://api.example.com/items', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newItem),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to create item');
+      }
+      
+      return response.json();
+    };
+    
+    // In your component
+    function CreateItemForm() {
+      const queryClient = useQueryClient();
+      const [itemName, setItemName] = useState('');
+      
+      const mutation = useMutation({
+        mutationFn: createItem,
+        onSuccess: () => {
+          // Invalidate and refetch
+          queryClient.invalidateQueries({ queryKey: ['items'] });
+          setItemName(''); // Reset form
+        },
+      });
+      
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        mutation.mutate({ name: itemName });
+      };
+      
+      return (
+        <form onSubmit={handleSubmit}>
+          <input
+            value={itemName}
+            onChange={(e) => setItemName(e.target.value)}
+            disabled={mutation.isPending}
+          />
+          <button type="submit" disabled={mutation.isPending}>
+            {mutation.isPending ? 'Adding...' : 'Add Item'}
+          </button>
+        </form>
+      );
+    }
+    ```
+  </Accordion>
+  <Accordion title="CORS Issues">
+    Handling Cross-Origin Resource Sharing problems:
+
+    - Use APIs that support CORS or provide CORS headers
+    - Consider using Supabase Edge Functions as a proxy
+    - For development only, you can use CORS proxies
+
+    #### **Understanding CORS Errors:**
+
+    ```
+    // Common CORS error in browser console
+    Access to fetch at 'https://api.example.com/data' from origin 'https://yourapp.lovable.app' 
+    has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+    ```
+
+    #### **Using Supabase Edge Function as a CORS Proxy:**
+
+    ```
+    // supabase/functions/proxy-api/index.ts
+    import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
+    
+    serve(async (req) => {
+      const url = new URL(req.url)
+      const targetUrl = url.searchParams.get('url')
+      
+      if (!targetUrl) {
+        return new Response('Missing URL parameter', { status: 400 })
+      }
+      
+      try {
+        const response = await fetch(targetUrl, {
+          headers: {
+            'Authorization': Deno.env.get('API_KEY') || '',
+            'Content-Type': 'application/json',
+          },
+        })
+        
+        const data = await response.json()
+        
+        return new Response(JSON.stringify(data), {
+          headers: { 
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+          },
+        })
+      } catch (error) {
+        return new Response(error.message, { status: 500 })
+      }
+    })
+    ```
+
+    #### **Using the Proxy in Your App:**
+
+    ```
+    // Client-side code to use the proxy
+    import { supabase } from './supabaseClient';
+    
+    const fetchDataViaProxy = async (apiUrl) => {
+      const { data, error } = await supabase.functions.invoke('proxy-api', {
+        body: { url: apiUrl },
+      });
+      
+      if (error) throw error;
+      return data;
+    };
+    
+    // Usage
+    const data = await fetchDataViaProxy('https://api.example.com/data');
+    ```
+  </Accordion>
+  <Accordion title="API Key Security">
+    Securely handling API keys in Lovable:
+
+    - **Never** store sensitive API keys in client-side code
+    - Use Supabase Edge Functions to make authenticated API calls
+    - Store sensitive keys as environment variables in Supabase
+    - For non-sensitive public APIs, use Vite environment variables
+
+    #### **Setting Up Environment Variables:**
+
+    ```
+    # .env file for local development
+    VITE_PUBLIC_API_URL=https://api.example.com
+    VITE_MAPBOX_PUBLIC_KEY=pk_123456
+    
+    # These should NOT be in client-side code
+    # Instead, use Supabase Edge Functions for protected API calls
+    SECRET_API_KEY=sk_987654321
+    ```
+
+    #### **Using Environment Variables in Lovable:**
+
+    1. Navigate to Project Settings → Environment Variables
+    2. Add your variables (prefix with VITE\_ for client-side access)
+    3. Access in code with `import.meta.env.VITE_VARIABLE_NAME`
+
+    <Note>
+      Remember that any environment variable prefixed with VITE\_ will be publicly visible in your built JavaScript. Never use VITE\_ prefix for sensitive keys.
+    </Note>
+  </Accordion>
+  <Accordion title="Handling API Rate Limits">
+    Strategies for working with API rate limits:
+
+    - Implement caching using React Query's built-in cache
+    - Add request throttling or debouncing
+    - Use batch requests when possible
+    - Implement retry logic with exponential backoff
+    - Monitor usage to avoid hitting limits
+
+    #### **Caching with React Query:**
+
+    ```
+    // Configure default caching time
+    import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+    
+    const queryClient = new QueryClient({
+      defaultOptions: {
+        queries: {
+          staleTime: 5 * 60 * 1000, // 5 minutes
+          cacheTime: 30 * 60 * 1000, // 30 minutes
+        },
+      },
+    });
+    
+    // Implement retry with backoff
+    const fetchWithRetry = async (url, retries = 3, backoff = 300) => {
+      try {
+        const response = await fetch(url);
+        
+        if (response.status === 429) { // Too Many Requests
+          if (retries <= 0) throw new Error('Rate limit exceeded');
+          
+          // Wait with exponential backoff
+          await new Promise(resolve => setTimeout(resolve, backoff));
+          
+          // Retry with increased backoff
+          return fetchWithRetry(url, retries - 1, backoff * 2);
+        }
+        
+        if (!response.ok) throw new Error('Request failed');
+        
+        return response.json();
+      } catch (error) {
+        if (retries <= 0) throw error;
+        
+        await new Promise(resolve => setTimeout(resolve, backoff));
+        return fetchWithRetry(url, retries - 1, backoff * 2);
+      }
+    };
+    ```
+
+    #### **Detecting Rate Limits:**
+
+    Common rate limit response headers to check:
+
+    - `X-RateLimit-Limit`: Total requests allowed
+    - `X-RateLimit-Remaining`: Requests remaining
+    - `X-RateLimit-Reset`: Time until limit resets
+    - `Retry-After`: Seconds to wait before retrying
+  </Accordion>
+  <Accordion title="Map Integration">
+    Implementing maps in your Lovable app:
+
+    #### **Using Mapbox:**
+
+    ```
+    // <lov-add-dependency>mapbox-gl@latest</lov-add-dependency>
+    // <lov-add-dependency>react-map-gl@latest</lov-add-dependency>
+    
+    import { useState } from 'react';
+    import Map, { Marker, NavigationControl, GeolocateControl } from 'react-map-gl';
+    import 'mapbox-gl/dist/mapbox-gl.css';
+    
+    function MapComponent() {
+      const [viewState, setViewState] = useState({
+        latitude: 37.7749,
+        longitude: -122.4194,
+        zoom: 12
+      });
+    
+      return (
+        <div className="h-[400px] w-full">
+          <Map
+            {...viewState}
+            onMove={evt => setViewState(evt.viewState)}
+            mapStyle="mapbox://styles/mapbox/streets-v11"
+            mapboxAccessToken={import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
+          >
+            <Marker 
+              longitude={-122.4194} 
+              latitude={37.7749} 
+              color="red" 
+            />
+            
+            <NavigationControl position="top-right" />
+            <GeolocateControl
+              position="top-right"
+              trackUserLocation
+            />
+          </Map>
+        </div>
+      );
+    }
+    ```
+
+    #### **Using Google Maps:**
+
+    ```
+    // <lov-add-dependency>@react-google-maps/api@latest</lov-add-dependency>
+    
+    import { useState, useCallback } from 'react';
+    import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+    
+    const containerStyle = {
+      width: '100%',
+      height: '400px'
+    };
+    
+    const center = {
+      lat: 37.7749,
+      lng: -122.4194
+    };
+    
+    function GoogleMapsComponent() {
+      const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+      });
+    
+      const [map, setMap] = useState(null);
+    
+      const onLoad = useCallback(function callback(map) {
+        map.setZoom(12);
+        setMap(map);
+      }, []);
+    
+      const onUnmount = useCallback(function callback(map) {
+        setMap(null);
+      }, []);
+    
+      return isLoaded ? (
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={12}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
+        >
+          <Marker position={center} />
+        </GoogleMap>
+      ) : <div>Loading...</div>;
+    }
+    ```
+  </Accordion>
+  <Accordion title="SMS and Email Integration">
+    Implementing SMS and email services in your Lovable app:
+
+    #### **Using Email with Supabase:**
+
+    Supabase provides built-in email functionality for authentication:
+
+    - Email verification on signup
+    - Password reset emails
+    - Email magic links for passwordless auth
+
+    ```
+    // Magic link authentication
+    async function sendMagicLink(email) {
+      const { data, error } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          emailRedirectTo: 'https://yourapp.lovable.app/auth/callback',
+        },
+      });
+      
+      if (error) {
+        console.error('Error sending magic link:', error);
+        return { success: false, error };
+      }
+      
+      return { success: true };
+    }
+    
+    // Password reset
+    async function resetPassword(email) {
+      const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: 'https://yourapp.lovable.app/auth/reset-password',
+      });
+      
+      if (error) {
+        console.error('Error sending reset email:', error);
+        return { success: false, error };
+      }
+      
+      return { success: true };
+    }
+    ```
+
+    #### **Custom Email Service with Edge Functions:**
+
+    For custom emails, you can use a third-party service like SendGrid:
+
+    ```
+    // supabase/functions/send-email/index.ts
+    import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
+    
+    // Function to send email via SendGrid
+    async function sendEmail(to, subject, body, fromEmail, fromName) {
+      const SENDGRID_API_KEY = Deno.env.get('SENDGRID_API_KEY');
+      
+      const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${SENDGRID_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          personalizations: [
+            {
+              to: [{ email: to }],
+              subject: subject,
+            },
+          ],
+          content: [
+            {
+              type: 'text/html',
+              value: body,
+            },
+          ],
+          from: {
+            email: fromEmail,
+            name: fromName,
+          },
+        }),
+      });
+      
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Failed to send email: ${error}`);
+      }
+      
+      return { success: true };
+    }
+    
+    serve(async (req) => {
+      if (req.method === 'OPTIONS') {
+        return new Response(null, {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Headers': 'Content-Type',
+          },
+        });
+      }
+      
+      try {
+        const { to, subject, body, fromEmail, fromName } = await req.json();
+        
+        if (!to || !subject || !body || !fromEmail) {
+          return new Response(
+            JSON.stringify({ error: 'Missing required fields' }), 
+            { status: 400, headers: { 'Content-Type': 'application/json' } }
+          );
+        }
+        
+        const result = await sendEmail(to, subject, body, fromEmail, fromName || '');
+        
+        return new Response(
+          JSON.stringify(result),
+          { status: 200, headers: { 'Content-Type': 'application/json' } }
+        );
+      } catch (error) {
+        return new Response(
+          JSON.stringify({ error: error.message }),
+          { status: 500, headers: { 'Content-Type': 'application/json' } }
+        );
+      }
+    });
+    ```
+
+    #### **SMS Integration with Twilio:**
+
+    ```
+    // supabase/functions/send-sms/index.ts
+    import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
+    
+    serve(async (req) => {
+      try {
+        const { phoneNumber, message } = await req.json();
+        
+        if (!phoneNumber || !message) {
+          return new Response(
+            JSON.stringify({ error: 'Phone number and message are required' }),
+            { status: 400, headers: { 'Content-Type': 'application/json' } }
+          );
+        }
+        
+        const accountSid = Deno.env.get('TWILIO_ACCOUNT_SID');
+        const authToken = Deno.env.get('TWILIO_AUTH_TOKEN');
+        const fromNumber = Deno.env.get('TWILIO_PHONE_NUMBER');
+        
+        const response = await fetch(
+          `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`,
+          {
+            method: 'POST',
+            headers: {
+              'Authorization': `Basic ${btoa(`${accountSid}:${authToken}`)}`,
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+              To: phoneNumber,
+              From: fromNumber,
+              Body: message,
+            }).toString(),
+          }
+        );
+        
+        const result = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(result.message || 'Failed to send SMS');
+        }
+        
+        return new Response(
+          JSON.stringify({ success: true, sid: result.sid }),
+          { status: 200, headers: { 'Content-Type': 'application/json' } }
+        );
+      } catch (error) {
+        return new Response(
+          JSON.stringify({ error: error.message }),
+          { status: 500, headers: { 'Content-Type': 'application/json' } }
+        );
+      }
+    });
+    ```
+
+    <Warning>
+      When implementing email and SMS services, always implement proper rate limiting and validation to prevent abuse. Never expose API keys in client-side code.
+    </Warning>
   </Accordion>
 </AccordionGroup>
 
@@ -225,6 +2280,357 @@ Use the accordions below to identify specific issues and actions:
   <Accordion title="Cancel your subscription">
     Go to your settings and cancel via Stripe account.
   </Accordion>
+  <Accordion title="Stripe Integration">
+    Setting up Stripe payments in your Lovable app:
+
+    1. Install the Stripe.js library
+    2. Create a Supabase Edge Function to handle payment intents
+    3. Implement the client-side payment flow with Elements or Checkout
+    4. Use webhooks to handle payment events
+
+    #### **Client-Side Implementation:**
+
+    ```
+    // Install the Stripe library
+    // <lov-add-dependency>@stripe/stripe-js@latest</lov-add-dependency>
+    
+    // Client-side implementation
+    import { loadStripe } from '@stripe/stripe-js';
+    
+    const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+    
+    async function handlePayment() {
+      const stripe = await stripePromise;
+      
+      // Call your Supabase Edge Function to create a payment intent
+      const { data } = await supabase.functions.invoke('create-payment', {
+        body: { amount: 1000, currency: 'usd' },
+      });
+      
+      // Redirect to Checkout
+      await stripe.redirectToCheckout({
+        sessionId: data.id,
+      });
+    }
+    ```
+
+    #### **Supabase Edge Function for Payment Intent:**
+
+    ```
+    // supabase/functions/create-payment/index.ts
+    import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
+    import Stripe from 'https://esm.sh/stripe@12.0.0';
+    
+    serve(async (req) => {
+      try {
+        const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY') || '', {
+          apiVersion: '2023-10-16',
+        });
+        
+        const { amount, currency } = await req.json();
+        
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ['card'],
+          line_items: [
+            {
+              price_data: {
+                currency: currency || 'usd',
+                product_data: {
+                  name: 'Your Product',
+                },
+                unit_amount: amount,
+              },
+              quantity: 1,
+            },
+          ],
+          mode: 'payment',
+          success_url: 'https://yourapp.lovable.app/success',
+          cancel_url: 'https://yourapp.lovable.app/cancel',
+        });
+        
+        return new Response(JSON.stringify({ id: session.id }), {
+          headers: { 'Content-Type': 'application/json' },
+          status: 200,
+        });
+      } catch (error) {
+        return new Response(JSON.stringify({ error: error.message }), {
+          headers: { 'Content-Type': 'application/json' },
+          status: 400,
+        });
+      }
+    });
+    ```
+  </Accordion>
+  <Accordion title="Payment Webhooks">
+    Setting up webhooks to receive payment events:
+
+    #### **1. Create a Webhook Handler**
+
+    ```
+    // supabase/functions/stripe-webhook/index.ts
+    import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
+    import Stripe from 'https://esm.sh/stripe@12.0.0';
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.38.4';
+    
+    serve(async (req) => {
+      try {
+        const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY') || '', {
+          apiVersion: '2023-10-16',
+        });
+        
+        // Get the signature from the header
+        const signature = req.headers.get('stripe-signature');
+        
+        if (!signature) {
+          throw new Error('No signature provided');
+        }
+        
+        // Get the raw body as text
+        const body = await req.text();
+        
+        // Verify the event
+        const event = stripe.webhooks.constructEvent(
+          body,
+          signature,
+          Deno.env.get('STRIPE_WEBHOOK_SECRET') || ''
+        );
+        
+        // Handle the event type
+        switch (event.type) {
+          case 'payment_intent.succeeded':
+            await handleSuccessfulPayment(event.data.object);
+            break;
+          case 'payment_intent.payment_failed':
+            await handleFailedPayment(event.data.object);
+            break;
+          // Add more event types as needed
+        }
+        
+        return new Response(JSON.stringify({ received: true }), {
+          headers: { 'Content-Type': 'application/json' },
+          status: 200,
+        });
+      } catch (error) {
+        return new Response(JSON.stringify({ error: error.message }), {
+          headers: { 'Content-Type': 'application/json' },
+          status: 400,
+        });
+      }
+    });
+    
+    // Function to handle successful payments
+    async function handleSuccessfulPayment(paymentIntent) {
+      // Connect to Supabase
+      const supabase = createClient(
+        Deno.env.get('SUPABASE_URL') || '',
+        Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || ''
+      );
+      
+      // Update database with payment info
+      await supabase.from('orders').update({
+        payment_status: 'paid',
+        stripe_payment_id: paymentIntent.id,
+      }).eq('stripe_payment_intent', paymentIntent.id);
+    }
+    
+    // Function to handle failed payments
+    async function handleFailedPayment(paymentIntent) {
+      // Implementation details...
+    }
+    ```
+
+    #### **2. Configure Stripe Webhook Settings**
+
+    1. Go to Stripe Dashboard → Developers → Webhooks
+    2. Add Endpoint: `https://[your-project-ref].supabase.co/functions/v1/stripe-webhook`
+    3. Select events to listen for (payment_intent.succeeded, etc.)
+    4. Get the webhook signing secret
+    5. Add the secret to your Supabase environment variables
+  </Accordion>
+  <Accordion title="Common Payment Issues">
+    Troubleshooting payment processing problems:
+
+    - **3D Secure Failures:** Ensure your Stripe account is properly configured
+    - **Webhook Errors:** Verify webhook endpoints and signatures
+    - **Test vs. Production:** Use the correct API keys for each environment
+    - **Payment Confirmation:** Implement proper success/failure handling
+    - **Currency Issues:** Ensure currencies match between frontend and backend
+    - **Incorrect Amounts:** Remember to use cents for currencies like USD (e.g., $10.00 = 1000)
+
+    #### **Debugging Stripe Issues:**
+
+    1. Use Stripe Dashboard's event logs for tracing payments
+    2. Enable Stripe's test mode for development
+    3. Use Stripe's test card numbers for different scenarios
+    4. Check webhook delivery attempts in the dashboard
+
+    #### **Important**
+
+    Always implement proper testing of payment flows using Stripe's test mode before going live. Never process real payments in development environments.
+
+    #### **Test Card Numbers:**
+
+    | **Card Number**     | **Scenario**       |
+    | :------------------ | :----------------- |
+    | 4242 4242 4242 4242 | Successful payment |
+    | 4000 0000 0000 0002 | Card declined      |
+    | 4000 0000 0000 3220 | 3D Secure required |
+  </Accordion>
+  <Accordion title="Alternative Payment Methods">
+    Beyond credit cards, Stripe supports many payment methods:
+
+    - Apple Pay and Google Pay
+    - ACH Direct Debit
+    - SEPA Direct Debit
+    - Alipay, WeChat Pay
+    - Klarna, Afterpay/Clearpay (buy now, pay later)
+    - iDEAL, Bancontact, EPS (European bank transfers)
+
+    #### **Implementing Apple Pay:**
+
+    ```
+    // Install Stripe.js with elements
+    // <lov-add-dependency>@stripe/react-stripe-js@latest</lov-add-dependency>
+    
+    import { loadStripe } from '@stripe/stripe-js';
+    import { PaymentRequestButtonElement, Elements } from '@stripe/react-stripe-js';
+    import { useState, useEffect } from 'react';
+    
+    const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+    
+    function ApplePayButton({ amount, onPaymentComplete }) {
+      const [paymentRequest, setPaymentRequest] = useState(null);
+    
+      useEffect(() => {
+        if (stripePromise) {
+          stripePromise.then(stripe => {
+            const pr = stripe.paymentRequest({
+              country: 'US',
+              currency: 'usd',
+              total: {
+                label: 'Order Total',
+                amount: amount,
+              },
+              requestPayerName: true,
+              requestPayerEmail: true,
+            });
+    
+            // Check if the Payment Request is available
+            pr.canMakePayment().then(result => {
+              if (result) {
+                setPaymentRequest(pr);
+              }
+            });
+    
+            pr.on('paymentmethod', async (e) => {
+              // Call your backend to create the payment intent
+              const { data } = await supabase.functions.invoke('create-payment-intent', {
+                body: { amount, payment_method_id: e.paymentMethod.id },
+              });
+    
+              // Confirm the payment intent
+              const { error, paymentIntent } = await stripe.confirmCardPayment(
+                data.client_secret
+              );
+    
+              if (error) {
+                e.complete('fail');
+              } else {
+                e.complete('success');
+                onPaymentComplete(paymentIntent);
+              }
+            });
+          });
+        }
+      }, [amount, onPaymentComplete]);
+    
+      if (!paymentRequest) {
+        return null; // Not available on this device/browser
+      }
+    
+      return (
+        <PaymentRequestButtonElement
+          options={{ paymentRequest }}
+          className="w-full"
+        />
+      );
+    }
+    
+    // Usage
+    function CheckoutPage() {
+      return (
+        <Elements stripe={stripePromise}>
+          <ApplePayButton 
+            amount={2000} 
+            onPaymentComplete={(pi) => console.log('Payment complete:', pi)}
+          />
+        </Elements>
+      );
+    }
+    ```
+  </Accordion>
+  <Accordion title="Authentication Providers">
+    Integrating third-party authentication with Supabase:
+
+    #### **OAuth Provider Setup:**
+
+    1. Go to Supabase Dashboard → Authentication → Providers
+    2. Enable the providers you want (Google, GitHub, etc.)
+    3. Configure redirect URLs
+    4. Add client IDs and secrets
+
+    #### **Client-Side Implementation:**
+
+    ```
+    // Social login with Supabase
+    import { supabase } from './supabaseClient';
+    
+    // Google login
+    async function signInWithGoogle() {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: 'https://yourapp.lovable.app/auth/callback',
+        },
+      });
+      
+      if (error) {
+        console.error('Error signing in with Google', error);
+      }
+    }
+    
+    // GitHub login
+    async function signInWithGitHub() {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'github',
+        options: {
+          redirectTo: 'https://yourapp.lovable.app/auth/callback',
+        },
+      });
+      
+      if (error) {
+        console.error('Error signing in with GitHub', error);
+      }
+    }
+    
+    // Auth callback handling
+    // This should be on your callback page
+    useEffect(() => {
+      const { data: authListener } = supabase.auth.onAuthStateChange(
+        (event, session) => {
+          if (event === 'SIGNED_IN' && session) {
+            // User has signed in, redirect to dashboard
+            navigate('/dashboard');
+          }
+        }
+      );
+    
+      return () => {
+        authListener.subscription.unsubscribe();
+      };
+    }, []);
+    ```
+  </Accordion>
 </AccordionGroup>
 
 ### GitHub issues
@@ -235,13 +2641,233 @@ Use the accordions below to identify specific issues and actions:
   </Accordion>
   <Accordion title="Branches are broken">
     Branch switching is experimental. Use at your own risk.
+
+    Once connected to GitHub, you can work with different branches:
+
+    #### **Branch Switching Steps**
+
+    ```
+    # To switch from main to dev:
+    1. In Dev Mode, open the Git panel
+    2. Select the branch dropdown
+    3. Choose "dev" or click "Create new branch" if it doesn't exist
+    4. Your workspace will update to reflect the selected branch
+    ```
+
+    <Note>
+      Switching branches will change all files in your workspace to match that branch.
+    </Note>
+    #### **Branch Management:**
+
+    - **Create a new branch:** Click "Create new branch" in the Git panel
+    - **Delete a branch:** Use the GitHub interface (not available directly in Lovable)
+    - **Default branch:** Set in GitHub repository settings
+
+    If you can't switch branches:
+
+    - Commit or stash any uncommitted changes
+    - Check if you have untracked files that would be overwritten
+    - Try refreshing the Lovable editor
   </Accordion>
   <Accordion title="Repository sync issues">
-    - Check your [GitHub permissions](https://docs.lovable.dev/integrations/git-integration).  
+    - Check your [GitHub permissions](https://docs.lovable.dev/integrations/git-integration).
     - Use rollback to undo unwanted changes.
   </Accordion>
   <Accordion title="Deleted repository, now nothing works">
     [Restore your GitHub repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+  </Accordion>
+  <Accordion title="Connecting GitHub">
+    To connect your Lovable project to GitHub:
+
+    1. Click the GitHub button in the top right of the editor
+    2. Authorize Lovable to access your GitHub account
+    3. Choose whether to create a new repository or use an existing one
+    4. Follow the prompts to complete the connection
+
+    #### **Repository Access Levels:**
+
+    When connecting Lovable to GitHub, you can choose different access levels:
+
+    - **All repositories:** Access to all your GitHub repositories
+    - **Only select repositories:** Choose specific repositories to connect
+
+    <Info>
+      Lovable uses GitHub's OAuth flow for secure authentication. You can revoke access anytime from your GitHub account settings.
+    </Info>
+  </Accordion>
+  <Accordion title="Committing Changes">
+    Learn how to commit your changes and follow best practices for Git workflow.
+
+    #### **Committing to GitHub**
+
+    1. In Dev Mode, open the Git panel
+    2. Review the changes in the "Changes" tab
+    3. Enter a commit message describing your changes
+    4. Click "Commit" to save your changes
+    5. Click "Push" to send your commits to GitHub
+
+    Commit best practices:
+
+    - Use clear, descriptive commit messages
+    - Follow a consistent format (e.g., "feature: add login page")
+    - Reference issue numbers when applicable (e.g., "fix #123: correct button alignment")
+    - Make small, focused commits rather than large, multi-feature changes
+
+    ```
+    # Good commit messages:
+    "feat: add user authentication system"
+    "fix: resolve login error on mobile devices"
+    "docs: update README with API instructions"
+    "refactor: simplify payment processing logic"
+    "chore: update dependencies to latest versions"
+    ```
+  </Accordion>
+  <Accordion title="Merge Conflicts">
+    When Git can't automatically merge changes:
+
+    1. Identify the conflicting files (marked in the Git panel)
+    2. Open each file and look for conflict markers (`<<<<<<<`, `=======`, and `>>>>>>>`)
+    3. Edit the files to resolve conflicts (keep the code you want)
+    4. Remove the conflict markers
+    5. Commit the resolved files
+  </Accordion>
+  <Accordion title="Authentication Issues">
+    If you're having trouble with GitHub authentication:
+
+    - Reconnect your GitHub account in Lovable
+    - Check if your GitHub access token has expired
+    - Verify you have the necessary permissions for the repository
+    - Ensure two-factor authentication isn't blocking access
+  </Accordion>
+  <Accordion title="Failed Pushes">
+    If your push is rejected:
+
+    1. Pull the latest changes from the remote repository
+    2. Resolve any conflicts
+    3. Try pushing again
+    4. If still failing, check if the branch is protected
+  </Accordion>
+  <Accordion title="Git Workflow Best Practices">
+    When working with Git in Lovable:
+
+    - Use feature branches for new features
+    - Make small, focused commits with clear messages
+    - Pull changes frequently to avoid conflicts
+    - Use pull requests for code reviews before merging to main
+    - Consider protecting your main branch in GitHub settings
+    - Follow a consistent branching strategy (e.g., Git Flow, GitHub Flow)
+    - Use descriptive branch names (e.g., `feature/user-authentication`)
+
+    #### **GitHub Flow:**
+
+    A simple, lightweight workflow suitable for most Lovable projects:
+
+    1. Create a new branch from main for each feature or bug fix
+    2. Make commits to your branch as you work
+    3. Open a pull request when ready for review
+    4. Discuss and review the code in the pull request
+    5. Merge to main once approved and tests pass
+    6. Delete the feature branch after merging
+  </Accordion>
+  <Accordion title="Troubleshooting Git Issues">
+    #### **Authentication Problems**
+
+    - **Issue:** "Authentication failed" error when trying to push changes
+    - **Solution:** Reconnect GitHub in the settings, check that your GitHub token hasn't expired
+
+    #### **Permission Issues**
+
+    - **Issue:** "Permission denied" errors when pushing to a repository
+    - **Solution:** Check that you have write access to the repository, or that the repository isn't archived
+
+    #### **Common Pitfall**
+
+    If you're getting "remote: Permission to [repository] denied" errors, you might be trying to push to a repository you don't have write access to. Fork the repository first or request write access from the repository owner.
+
+    #### **Git Branch Issues**
+
+    - **Issue:** Unable to switch branches
+    - **Solution:** Commit or discard uncommitted changes before switching branches
+    - **Issue:** "Branch not found" errors
+    - **Solution:** Pull the latest changes from the remote repository first
+
+    #### **Commit History Problems**
+
+    - **Issue:** Need to undo the last commit
+    - **Solution:** Use `git reset HEAD~1` locally, then force push (with caution)
+    - **Issue:** Accidentally committed sensitive information
+    - **Solution:** Use `git filter-branch` to remove the information from history
+
+    <Note>
+      Always create a `.gitignore` file to exclude sensitive files like `.env`, credentials, and large binary files before making your first commit.
+    </Note>
+    #### **Merge Conflict Resolution**
+
+    When you encounter merge conflicts:
+
+    1. Identify conflicting files (marked with "CONFLICT" in git status)
+    2. Open each file and look for conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`)
+    3. Edit files to resolve conflicts by choosing which changes to keep
+    4. Remove conflict markers completely
+    5. Stage resolved files with `git add`
+    6. Complete the merge with `git commit`
+
+    <Tip>
+      For complex merge conflicts, consider using a visual diff tool. Many code editors have built-in merge conflict resolution tools that make the process much easier.
+    </Tip>
+  </Accordion>
+  <Accordion title="Reverting to Previous Versions">
+    To revert your Lovable project to a previous state:
+
+    1. Find the edit in chat history and click the "Restore" button
+    2. Or go to the Edit History tab (top of chat) and select the version
+    3. Confirm the restoration when prompted
+
+    #### **Using Git for Reverting:**
+
+    If your project is connected to GitHub, you can also revert using Git:
+
+    ```
+    # To revert to a specific commit:
+    1. In Dev Mode, open the Git panel
+    2. Click on the "History" tab
+    3. Find the commit you want to revert to
+    4. Click the "..." menu and select "Revert"
+    5. Push your changes to update the repository
+    ```
+
+    <Tip>
+      Use descriptive conversation with Lovable before making significant changes. These conversations serve as documentation in your edit history and make it easier to find specific versions later.
+    </Tip>
+  </Accordion>
+  <Accordion title="Project Backups">
+    Best practices for backing up your Lovable projects:
+
+    - Connect to GitHub for automatic version control
+    - Periodically export your project to a local backup
+    - Create project remixes as backup points for major versions
+    - Document significant changes in your [README.md](http://README.md) file
+    - Use tags in Git to mark important versions
+
+    #### **Creating Git Tags:**
+
+    Tags provide a way to mark specific points in your Git history:
+
+    ```
+    # To create a tag (done through GitHub interface or git CLI):
+    git tag -a v1.0.0 -m "First stable release"
+    git push origin v1.0.0
+    
+    # To view tags:
+    git tag
+    
+    # To check out a specific tag:
+    git checkout tags/v1.0.0
+    ```
+
+    <Note>
+      When using GitHub with Lovable, you may need to create tags through the GitHub interface or using git on your local machine.
+    </Note>
   </Accordion>
 </AccordionGroup>
 
@@ -251,9 +2877,9 @@ Use the accordions below to identify specific issues and actions:
   <Accordion title="Setup wizard-style flows">
     Complex multi-step flows can break. Try:
 
-    - Breaking steps down  
-    - Validating inputs  
-    - Reviewing logic  
+    - Breaking steps down
+    - Validating inputs
+    - Reviewing logic
     - Simulating different user paths
 
     Still stuck? Contact support.
@@ -266,22 +2892,21 @@ Use the accordions below to identify specific issues and actions:
   </Accordion>
 </AccordionGroup>
 
-
 ### Need more help?
 
 Still stuck? Try this:
 
-1. Use [Chat-Only Mode](https://lovable.dev/chat) for step-by-step help.  
-2. Submit a bug through our [Feedback Portal](https://feedback.lovable.dev/).  
+1. Use [Chat-Only Mode](https://lovable.dev/chat) for step-by-step help.
+2. Submit a bug through our [Feedback Portal](https://feedback.lovable.dev/).
 3. If you're a paid customer, contact [Support](https://lovable.dev/support).
 
 ## Comprehensive Debugging Manual
 
-[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) was written by a Lovable power user in our Discord community.
+[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) or [this website](https://kb-lovable.netlify.app/?tab=errors#errors) were written by a Lovable power user in our Discord community.
 
 ### How to use it
 
-1. **Download** it as `Comprehensive_Debugging_Manual.md`.  
+1. **Download** it as `Comprehensive_Debugging_Manual.md`.
 2. **Upload** it to your GitHub project.
 3. Prompt Lovable: "Read this document. Let me know if it helps. Then create a prompt I should use to troubleshoot this issue."
 4. After Lovable responds, say: "Before you proceed, explain in detail why you think this will work. Wait for my approval."

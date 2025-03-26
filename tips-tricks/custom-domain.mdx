@@ -14,19 +14,15 @@ If you want to have a custom domain, see below.
 
 ## Using Entri
 
-To connect a custom domain, navigate to **Project > Settings > Domains** in Lovable.
+To connect a custom domain, navigate to **Project \> Settings \> Domains** in Lovable.
 
 ### Requirements
 
-* A **paid Lovable plan** is required to connect a custom domain.
-
-* You **must own** a domain before proceeding. If you don’t have one, you can purchase it from a domain provider such as:
-
-  * [Namecheap](https://www.namecheap.com)
-
-  * [GoDaddy](https://www.godaddy.com)
-
-  * [View full list of domain providers](https://developers.entri.com/provider-list)
+- A **paid Lovable plan** is required to connect a custom domain.
+- You **must own** a domain before proceeding. If you don’t have one, you can purchase it from a domain provider such as:
+  - [Namecheap](https://www.namecheap.com)
+  - [GoDaddy](https://www.godaddy.com)
+  - [View full list of domain providers](https://developers.entri.com/provider-list)
 
 Lovable uses [**Entri**](https://www.entri.com/) to facilitate quick and seamless domain connections.
 
@@ -34,43 +30,36 @@ Lovable uses [**Entri**](https://www.entri.com/) to facilitate quick and seamles
 
 <Steps>
   <Step title="Step 1">
-    Navigate to **Project > Settings > Domains** and click **Connect Domain**.
+    Navigate to **Project \> Settings \> Domains** and click **Connect Domain**.
 
     ![](/images/project-setting.png)
   </Step>
-
   <Step title="Step 2">
     Click **Continue**.
   </Step>
-
   <Step title="Step 3">
     Enter the domain you want to connect (e.g., `yourdomain.com`).
 
     ![](/images/connect-entri.png)
   </Step>
-
   <Step title="Step 4">
     Click **Continue**.
   </Step>
-
   <Step title="Step 5">
     Search for and select your **DNS provider** (the service where you purchased your domain).
 
     ![](/images/dns-provider.png)
 
     <Warning>
-      Domain providers are amongst many: *123-Reg, Amazon Route 53, arsys, Aruba IT, Bluehost, Cloudflare, Crazy Domains, DigitalOcean, DNSimple, Domain.com, DreamHost, Dynadot, EasyDNS, Enom, Gandi, Hetzner, Home PI, HostGator, Hostinger, Hover, Inmotion Hosting, IONIS, iwantmyname, Localweb, Name.com, NameBright, Namecheap, NameSilo, Netlify, Network Solutions, One.com, OpenSrs, OVH Global, Porkbun, Register.com, Register.it, Registro, Shopify, SiteGround, Spaceship, Strato, TransIP, United Domains DE, Web.com, WordPress and Xneelo.*
+      Domain providers are amongst many: _123-Reg, Amazon Route 53, arsys, Aruba IT, Bluehost, Cloudflare, Crazy Domains, DigitalOcean, DNSimple, Domain.com, DreamHost, Dynadot, EasyDNS, Enom, Gandi, Hetzner, Home PI, HostGator, Hostinger, Hover, Inmotion Hosting, IONIS, iwantmyname, Localweb, Name.com, NameBright, Namecheap, NameSilo, Netlify, Network Solutions, One.com, OpenSrs, OVH Global, Porkbun, Register.com, Register.it, Registro, Shopify, SiteGround, Spaceship, Strato, TransIP, United Domains DE, Web.com, WordPress and Xneelo._
     </Warning>
   </Step>
-
   <Step title="Step 6">
     Follow the on-screen instructions to **sign in to your DNS provider** and authorize the connection to [Entri](https://www.entri.com/).
   </Step>
-
   <Step title="Step 7">
     Click **Close Window** to complete the connection and return to **Site Settings**.
   </Step>
-
   <Step title="Step 8">
     Click **Done**.
 
@@ -78,7 +67,6 @@ Lovable uses [**Entri**](https://www.entri.com/) to facilitate quick and seamles
       DNS changes may take up to **48 hours** to propagate globally, though most updates occur within a few hours.
     </Warning>
   </Step>
-
   <Step title="You're All Set! 🎉 ">
     Your Lovable app is now available on your custom domain.
   </Step>
@@ -88,34 +76,24 @@ Lovable uses [**Entri**](https://www.entri.com/) to facilitate quick and seamles
   <Accordion title="My custom domain is connected, but my site isn’t live. What should I do?">
     DNS propagation can take up to **48 hours** due to factors such as TTL (Time to Live) and internet service provider delays. If your site isn’t live yet:
 
-    * Wait a bit longer for DNS changes to fully update.
-
-    * Use a tool like [whatsmydns](https://www.whatsmydns.net/) to check the status of your DNS records.
-
-    * Clear your browser cache to ensure you’re viewing the latest version of your site.
+    - Wait a bit longer for DNS changes to fully update.
+    - Use a tool like [whatsmydns](https://www.whatsmydns.net/) to check the status of your DNS records.
+    - Clear your browser cache to ensure you’re viewing the latest version of your site.
   </Accordion>
-
   <Accordion title="My site isn’t appearing after 48 hours. What now?">
-    * Double-check that your **DNS records** are correctly set in your domain provider’s settings.
-
-    * If issues persist, contact your **domain provider’s support team**.
-
-    * If your DNS settings are correct but the site still doesn’t load, reach out to **Lovable’s customer support** for assistance.
+    - Double-check that your **DNS records** are correctly set in your domain provider’s settings.
+    - If issues persist, contact your **domain provider’s support team**.
+    - If your DNS settings are correct but the site still doesn’t load, reach out to **Lovable’s customer support** for assistance.
   </Accordion>
-
   <Accordion title="Can I buy a domain through Lovable?">
     For this launch, Lovable will **not** support buying domains. We may launch domain purchasing later if these issues are resolved.
   </Accordion>
-
   <Accordion title="How does connecting a custom domain impact my site's SEO?">
     Using a custom domain improves your site's SEO by enhancing brand credibility, allowing for better indexing by search engines, and enabling features like custom meta tags and structured data. For more SEO tips, visit [Lovable SEO Guide](https://docs.lovable.dev/tips-tricks/seo).
   </Accordion>
-
   <Accordion title="How to remove a custom domain?">
-    1. Access the **Project > Settings > Domains.**
-
+    1. Access the **Project \> Settings \> Domains.**
     2. Click "Remove domain" next to your custom domain.
-
     3. Remove the DNS records fro your domain provider.
   </Accordion>
 </AccordionGroup>
@@ -130,25 +108,23 @@ You can host on Netlify for free with a custom domain.
   <Step title="Step 1">
     Ensure that your project is successfully transferred to GitHub. In the Lovable editor, click on "Transfer to GitHub" located in the top right corner.
   </Step>
-
   <Step title="Step 2">
     Head over to Netlify and log in using your GitHub credentials.
   </Step>
-
   <Step title="Step 3">
-    In Netlify, you'll need to follow these simple steps: Click on "Import from Git" > Authorize Netlify to access your GitHub repositories > Select your Lovable repository from the provided list > Click "Deploy"
+    In Netlify, you'll need to follow these simple steps: Click on "Import from Git" \> Authorize Netlify to access your GitHub repositories \> Select your Lovable repository from the provided list \> Click "Deploy"
   </Step>
-
   <Step title="Step 4">
-    Let's proceed to configure your custom domain directly within Netlify: Go to "Domain Management" > Click "Add a domain" > Enter your domain name > Click "Verify" > Follow the DNS configuration prompts
+    Let's proceed to configure your custom domain directly within Netlify: Go to "Domain Management" \> Click "Add a domain" \> Enter your domain name \> Click "Verify" \> Follow the DNS configuration prompts
   </Step>
-
   <Step title="Step 5">
     Your Lovable app will automatically redeploy to Netlify whenever you make changes in Lovable.
   </Step>
 </Steps>
 
-<Note>You will need to bring an existing domain or purchase one.</Note>
+<Note>
+  You will need to bring an existing domain or purchase one.
+</Note>
 
 ## Using Vercel
 
@@ -158,29 +134,23 @@ You can host on Netlify for free with a custom domain.
   <Step title="Create a Github repository">
     Open your project in Lovable and click GitHub then "create repository" if you haven't already done so. This will commit your code to the `main` branch and create a repository. Once you do this, all changes made to code in your app will automatically be commited to your Github repository on each change.
   </Step>
-
   <Step title="Set up Vercel">
     Go to the [Vercel website](https://vercel.com/) and create an account. Configure your domain and set the necessary GitHub permissions (make sure to handle DNS settings properly).
   </Step>
-
   <Step title="Automatic deployments">
     Vercel will automatically deploy the latest changes from the `main` branch each time it is updated. You can make one or two small changes to your app on Lovable and then visit Vercel deployments to ensure updates are being redeployed from `main`. Once confirmed, do the next step:
   </Step>
-
   <Step title="Create a Development branch">
     In your GitHub repository settings in Lovable, commit all new changes to a second branch called `dev` (or whatever you want).
   </Step>
-
   <Step title="Configure Vercel Builds">
     Go back to Vercel and adjust your settings to ensure it only builds production deployments from the `main` branch.
   </Step>
-
   <Step title="Make changes in Development">
     Work on your app in the Lovable. Any changes will go to the `dev` branch now and wont automatically be deployed via Vercel.
 
     ![image](https://github.com/user-attachments/assets/08f6cd18-5d12-44da-a2cf-c07687eeab44)
   </Step>
-
   <Step title="Deploy new changes">
     When you're ready to push new changes to your domain, go to GitHub and perform a pull request from `dev` to `main`. Once you complete and merge the pull request, Vercel will automatically deploy the updates in about one minute.
 
@@ -190,11 +160,10 @@ You can host on Netlify for free with a custom domain.
 
 ### Notes
 
-* If you hit the 100/day deployment limit in Vercel (it builds your `dev` branch but doesn't deploy it). You can ask Lovable chat to build you vercel.json file which will force Vercel to not build development builds at all.
+- If you hit the 100/day deployment limit in Vercel (it builds your `dev` branch but doesn't deploy it). You can ask Lovable chat to build you vercel.json file which will force Vercel to not build development builds at all.
 
   ![image](https://github.com/user-attachments/assets/1b29581f-0942-432b-af30-71be43a921db)
-
-* **Supabase Consideration**: Currently, you can only utilize one Supabase instance. So, if you make extensive SQL changes, it could potentially break production. Unfortunately, we can't yet provide specific guidelines for this scenario as it's complex. Frequently test your production environment if you make changes related to Supabase.
+- **Supabase Consideration**: Currently, you can only utilize one Supabase instance. So, if you make extensive SQL changes, it could potentially break production. Unfortunately, we can't yet provide specific guidelines for this scenario as it's complex. Frequently test your production environment if you make changes related to Supabase.
 
 ## Using Namecheap
 
@@ -210,54 +179,50 @@ You can host on Netlify for free with a custom domain.
       This step is required before proceeding with the custom domain setup.
     </Info>
   </Step>
-
   <Step title="Purchase a Domain from Namecheap">
     Start by acquiring your domain (e.g., mysimpledomain.com) from [Namecheap](https://www.namecheap.com/).
   </Step>
-
   <Step title="Access Advanced DNS Settings">
     Navigate to the [Advanced DNS](https://ap.www.namecheap.com/Domains/DomainControlPanel/mysimpledomain.com/advancedns) settings for your domain.
   </Step>
-
   <Step title="Configure DNS Records">
     Add the following DNS records to your domain configuration:
 
     ![DNS record](/images/dns-record.png)
   </Step>
-
   <Step title="Set Up GitHub Workflow">
     Create a GitHub workflow file for deployment:
 
     ```
     name: Deploy to GitHub Pages
-
+    
     on:
       workflow_dispatch:
-
+    
     jobs:
       deploy:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v3
-
+    
           - uses: actions/setup-node@v3
             with:
               node-version: '18'
-
+    
           - run: npm install
-
+    
           - run: npm run build
-
+    
           - name: Copy index.html to 404.html
             run: cp dist/index.html dist/404.html
-
+    
           - name: Debug build output
             run: |
               echo "Listing contents of the root directory..."
               ls -la
               echo "Listing contents of the dist directory..."
               ls -R dist
-
+    
           - name: Deploy to GitHub Pages
             uses: peaceiris/actions-gh-pages@v3
             with:
@@ -267,39 +232,29 @@ You can host on Netlify for free with a custom domain.
               force_orphan: true
     ```
   </Step>
-
   <Step title="Generate GitHub Access Token">
     Create a classic token at [GitHub](https://github.com/settings/tokens):
 
     Keep the token page open—you'll need it for the next step.
   </Step>
-
   <Step title="Add Repository Secret">
     Add your token as a repository secret named `GH_PAT`.
   </Step>
-
   <Step title="Configure GitHub Pages">
     Navigate to your repository's GitHub Pages settings and:
 
-    * Select Build from a branch
-
-    * Choose the gh-pages branch
-
-    * Save the settings
+    - Select Build from a branch
+    - Choose the gh-pages branch
+    - Save the settings
   </Step>
-
   <Step title="Run the GitHub Workflow">
     Your website will be updated each time you run the GitHub workflow:
 
     1. Go to your repository's Actions page
-
     2. Select the Deploy to GitHub Pages workflow
-
     3. Click Run workflow button
-
     4. This will publish the latest version of your GitHub repository to your custom domain
   </Step>
-
   <Step title="You're All Set! 🎉 ">
     Your Lovable app is now available on your custom domain.
   </Step>
