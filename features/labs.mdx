@@ -10,9 +10,9 @@ These experimental features may change or be removed at any time.
 
 You can access Labs from your Account Setting tab in the Lovable Editor.
 
-![lovable labs](/images/lovable-labs.png)
+## ![lovable labs](/lovable-labs-2.png)
 
-## Dev Mode
+Dev Mode
 
 Previously, viewing your code required connecting your Lovable project to GitHub.
 
@@ -22,7 +22,7 @@ With Dev Mode you can now view the full code repository backing your Lovable pro
 
 [More on this here](https://x.com/lovable_dev/status/1895500151889768596).
 
-For those who want even more control, **you can now enable code editing** as well in [Account > Settings > Labs](https://lovable.dev/settings/account#labs). This experimental feature will allow you to edit code files directly in Lovable—no need to switch between multiple tools.
+For those who want even more control, **you can now enable code editing** as well in [Account \> Settings \> Labs](https://lovable.dev/settings/account#labs). This experimental feature will allow you to edit code files directly in Lovable—no need to switch between multiple tools.
 
 <Info>
   Code editing in Dev Mode is available exclusively to paid users.
@@ -59,3 +59,27 @@ Chat Mode is your AI-powered development partner—offering insights, debugging 
 15. **Real-time coding feedback**, offering suggestions to improve readability, efficiency, and adherence to standards.
 
 Chat Mode transforms the no-code/low-code experience, bridging ideas and fully functional products. It bridges the gap between great ideas and fully functional products, making complex software **accessible** to founders who previously relied on engineers.
+
+## **GitHub Branch Switching**
+
+Select the branch to make edits to in your GitHub repository. To switch branches in GitHub through the Lovable editor:
+
+1. In Dev Mode, open the Git panel
+2. Select the branch dropdown
+3. Choose the branch you want to switch to (e.g., "dev")
+4. If the branch doesn't exist, click "Create new branch"
+5. Your workspace will update to reflect the selected branch
+
+<Warning>
+  ### **Important Notes:**
+
+  - Commit or stash any uncommitted changes before switching branches
+  - If you encounter "Branch not found" errors, pull the latest changes from the remote repository first
+  - If you can't switch branches, check if you have untracked files that would be overwritten
+  - Branch switching will change all files in your workspace to match that branch
+  - Lovable primarily syncs with your repository's default branch (usually main)
+</Warning>
+
+<Note>
+  If you need to work with a different branch as your primary branch, you can change the default branch in your GitHub repository settings.
+</Note>
