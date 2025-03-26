@@ -53,6 +53,7 @@
       "pages": [
         "introduction", 
         "user-guides/messaging-limits",
+        "tips-tricks/troubleshooting",
         "faq"
       ]
     },
@@ -94,7 +95,6 @@
     {
       "group": "Tips and Tricks",
       "pages": [
-        "tips-tricks/troubleshooting",
         "tips-tricks/using-images",
         "tips-tricks/using-videos",
         "integrations/chrome-extensions",
