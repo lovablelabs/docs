@@ -32,6 +32,11 @@
       "url": "https://discord.gg/lovable-dev"
     },
     {
+      "name": "Status",
+      "icon": "signal",
+      "url": "https://status.lovable.dev/"
+    },
+    {
       "name": "Product Announcement",
       "icon": "newspaper",
       "url": "https://lovable.dev/blog?category=announcements"
