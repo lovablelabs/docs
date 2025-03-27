@@ -89,7 +89,8 @@
         "integrations/resend",
         "integrations/clerk",
         "integrations/make",
-        "integrations/replicate"
+        "integrations/replicate",
+        "integrations/21stdev-integration"
       ]
     },
     {
