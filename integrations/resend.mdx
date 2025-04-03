@@ -4,88 +4,301 @@ description: "Learn how to integrate Resend with your Lovable application"
 icon: "envelope"
 ---
 
+## What is Resend
+
+[Resend](https://resend.com/emails) is an email API built for developers. It focuses on high deliverability, ease of integration, and a clean developer experience for sending transactional and marketing emails.
+
+## Step-by-step tutorial
+
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/5ZL744_Wxjo?si=qrKlOL_1fAnz7rgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
-In this tutorial, we'll walk through creating a simple yet powerful CRM using Lovable for development, Supabase for data storage, and Resend for email automation. By the end, you'll have a system that collects leads, stores them securely, and allows you to send follow-up emails—all built in less than an hour.
+This tutorial walks you through building a fully functional CRM in under an hour—complete with lead collection, email confirmation, newsletter subscription, and an internal admin dashboard. You'll use:
+
+- **Lovable**: to generate the front end and backend logic.
+- **Supabase**: for secure data storage and authentication.
+- **Resend**: to automate and track transactional \+ marketing emails.
+
+Let’s get started.
 
 <Steps>
-  <Step title="Setting Up the Contact Form in Lovable">
-    The first step is to create a landing page with a contact form where users can submit their details.
+  <Step title="Create a Landing Page with a Contact Form">
+    Use Lovable's AI to quickly generate a landing page for your product or service.
 
-    ### Instructions:
+    **Instructions:**
 
-    1. Open Lovable and create a new project.
-    2. Use the AI assistant to generate a simple landing page by prompting: _"Create a SaaS landing page with a contact form collecting name, email, and message."_
-    3. Add form validation to ensure proper data entry.
+    <Steps>
+      <Step title="New Lovable Project">
+        Create a new Lovable project.
+      </Step>
+      <Step title="Prompt:">
+        <Info>
+          Create a SaaS landing page with a contact form collecting name, email, and message.
+        </Info>
+        ![Landing Page Lovable Project Pn](/images/landing-page-lovable-project.png)
+      </Step>
+      <Step title="Inspect the generated code">
+        Inspect the generated code or use the select tool to tweak elements.
+      </Step>
+      <Step title="Add input validation">
+        Add input validation and a `message` field for better user experience.
 
-    At this stage, your landing page should include a form that users can fill out. However, we need to store this data somewhere, which leads us to Supabase.
+        ![Email Resend Form Pn](/images/email-resend-form.png)
+      </Step>
+    </Steps>
   </Step>
-  <Step title="Connecting Supabase for Data Storage">
-    Supabase is an open-source alternative to Firebase, offering a secure and scalable database for your CRM.
+  <Step title="Store Form Submissions in Supabase">
+    Supabase acts as your secure backend database.
 
-    ### Instructions:
+    <Steps>
+      <Step title="Supabase account">
+        Create a free Supabase account and a new project.
+      </Step>
+      <Step title="API Key">
+        In Lovable, connect your Supabase project using the API key.
 
-    1. Create a **Supabase** account and start a new project.
-    2. In Lovable, connect your Supabase project by adding the **API key**.
-    3. Create a database table named `contacts` with columns:
-       - `id` (UUID, primary key)
-       - `name` (text)
-       - `email` (text)
-       - `message` (text)
-       - `created_at` (timestamp)
-    4. Modify the contact form to send form data to Supabase upon submission.
-
-    With this setup, user submissions will be stored securely in Supabase, and we can move on to automating email notifications.
+        ![Supabase Resend Email Pn](/images/supabase-resend-email.png)
+      </Step>
+      <Step title="Create a `contacts` table with:">
+        - `id`: UUID, primary key
+        - `name`: text
+        - `email`: text
+        - `message`: text
+        - `created_at`: timestamp
+      </Step>
+      <Step title="Submission logic">
+        Modify the form submission logic to insert data into Supabase.
+      </Step>
+      <Step title="RLS">
+        Apply Supabase Row-Level Security (RLS) to restrict access to only authenticated users.
+      </Step>
+    </Steps>
   </Step>
-  <Step title="Automating Emails with Resend">
-    [Resend]() ensures that every new contact receives a confirmation email while allowing us to send follow-up messages later.
+  <Step title="Send Confirmation Emails via Resend">
+    Set up [Resend]() to send automated confirmation emails every time a lead submits the form.
 
-    ### Instructions:
+    <Steps>
+      <Step title="Sign up at Resend">
+        Sign up at [Resend](https://resend.com) and verify your custom domain.
 
-    1. Create a **Resend** account.
-    2. Verify your domain to improve email deliverability.
-    3. Generate an **API key** and integrate it into Lovable.
-    4. Modify the submission function to trigger an email confirmation using Resend.
+        - You’ll be asked to update your DNS records (TXT, MX).
+        - Use subdomains like `updates.domain.com` to manage email reputation better.
+      </Step>
+      <Step title="API Key">
+        Integrate the API key in Lovable via environment settings or backend function.
+      </Step>
+      <Step title="SDK">
+        Use Resend’s SDK to send a confirmation email on form submission.
+
+        ![Confirmation Email Submission Resend Pn](/images/confirmation-email-submission-resend.png)
+      </Step>
+      <Step title="Optional: React Email">
+        Use [React Email](https://react.email) (also by Resend) to customize the look and feel of your emails with reusable components.
+
+        ![Customize Email Resend Pn](/images/customize-email-resend.png)
+      </Step>
+    </Steps>
   </Step>
-  <Step title="Creating an Admin Dashboard">
-    To manage leads efficiently, we need an admin dashboard where authenticated users can view and respond to contacts.
+  <Step title="Build a Secure Admin Dashboard">
+    Allow only authenticated users to view and manage leads.
 
-    ### Instructions:
+    <Steps>
+      <Step title="Admin route">
+        Create an `/admin` route in Lovable.
+      </Step>
+      <Step title="Supabase Authentication">
+        Enable Supabase authentication with email/password login.
+      </Step>
+      <Step title="Contacts">
+        Display the `contacts` table with columns:
 
-    1. Create an **admin route** in Lovable.
-    2. Implement **authentication** with Supabase (email/password login).
-    3. Display stored contacts in a **table format** with the following:
-       - Contact Name
-       - Email
-       - Message Preview
-       - Date Submitted
-    4. Add a **detailed view** panel where clicking on a contact reveals full details.
+        - Name
+        - Email
+        - Message preview
+        - Submission date
+      </Step>
+      <Step title="Full contact detail">
+        Add a detail pane (e.g., a sliding panel) showing full contact details when a row is clicked.
 
-    Now, only logged-in users can view and manage CRM data.
+        ![Crm Resend Email Pn](/images/crm-resend-email.png)
+      </Step>
+      <Step title="Redirect logic">
+        Add redirect logic so unauthenticated users are routed to `/login`.
+      </Step>
+    </Steps>
   </Step>
-  <Step title="Sending Personalized Emails from the Admin Dashboard">
-    To streamline communication, we'll add the ability to send custom follow-up emails directly from the admin dashboard.
+  <Step title="Enable Custom Email Replies from Admin">
+    Allow your team to send personalized follow-ups.
 
-    ### Instructions:
+    <Steps>
+      <Step title="Contact detail pane">
+        In the contact detail pane, add a **text field** and **predefined templates** (e.g., "Thanks for signing up\!").
 
-    1. Add a **text field** and predefined templates (e.g., "Thank you for signing up\\\\\\\\\\\\\\\!" or "Follow-up on your request").
-    2. Implement a **send button** that triggers an email using Resend.
-    3. Log sent emails in Supabase for future reference.
+      </Step>
+      <Step title="Add send button">
+        Add a **send button** wired to Resend.
+      </Step>
+      <Step title="Store sent messages">
+        Store each sent message in a `sent_emails` table in Supabase:
 
-    Once implemented, you can send quick, personalized emails without leaving the CRM.
+        - `contact_id`
+        - `subject`
+        - `body`
+        - `sent_at`
+
+        This gives you a searchable log of all follow-ups.
+      </Step>
+    </Steps>
   </Step>
-  <Step title="Adding a Newsletter Subscription Feature">
-    A great way to nurture leads is by sending updates via a newsletter. We'll add a subscription form to capture emails.
+  <Step title="Add a Newsletter Subscription Form">
+    Use Resend’s **Audiences** to manage subscribers and send broadcast emails.
 
-    ### Instructions:
+    ![Subscription Newsletter Resend Pn](/images/subscription-newsletter-resend.png)
 
-    1. Add a **newsletter signup form** to the landing page.
-    2. Connect the form to **Resend Audiences** to store subscribers.
-    3. Set up a simple **broadcast email campaign** to engage subscribers.
+    <Steps>
+      <Step title="Add new form">
+        Add a new form on your landing page for newsletter signup.
+      </Step>
+      <Step title="Resend contact">
+        When submitted:
 
-    Now, you can send newsletters to all subscribers directly from Resend.
+        - Create a Resend contact via the API
+        - (Optional) Store the contact locally in Supabase as well
+
+      </Step>
+      <Step title="Design">
+        Use Resend’s broadcast email UI to design and send newsletters.
+
+        - Built-in unsubscribe logic
+        - Performance insights (open rates, delivery status)
+      </Step>
+      <Step title="Compliance check!">
+        For compliance (e.g. GDPR), consider implementing a **double opt-in** flow.
+      </Step>
+    </Steps>
   </Step>
-  <Step title="Congratulations 🎉 ">
-    You’ve successfully built a simple CRM that collects leads, sends confirmation emails, allows for admin management, and enables direct email outreach—all in under an hour.
+  <Step title="BONUS: Connecting Resend to Supabase Auth">
+    ![Send Batch Emails Gdpr Resend Pn](/images/send-batch-emails-gdpr-resend.png)
+    Want to improve Supabase's default email auth (which limits you to 4 emails/hour)?
+
+    <Steps>
+      <Step title="Resend supabase">
+        Go to [Resend’s Supabase integration](https://resend.com/integrations/supabase).
+      </Step>
+      <Step title="Authentication">
+        Authenticate with your Supabase project.
+      </Step>
+      <Step title="Domain setup">
+        Choose your domain and sender name/email.
+      </Step>
+      <Step title="SMTP">
+        Resend automatically sets up SMTP and replaces Supabase’s default email system.
+      </Step>
+      <Step title="Customization">
+        You can now customize auth email templates from the Supabase dashboard.
+        
+      </Step>
+    </Steps>
+  </Step>
+  <Step title="Final Touches & Best Practices">
+    ![Audience Resend Pn](/images/audience-resend.png)
+    - **Error Handling**: Lovable might show build errors that are false positives. Always test your functionality live.
+    - **Reverting with Supabase**: If reverting code in Lovable, remember to manually delete associated Supabase policies or migrations—they're not rolled back automatically.
+    - **Deliverability Tips**:
+      - Use subdomains to isolate reputation.
+      - Always include a plain text version of your email.
+      - Monitor email performance with Resend's insights dashboard.
+  </Step>
+  <Step title="You're Done! 🎉">
+    In less than an hour, you’ve built a modern CRM with:
+
+    - A landing page and contact form
+    - Database-powered lead storage
+    - Automated email confirmations
+    - Admin dashboard for lead management
+    - Custom email replies
+    - Newsletter broadcasts
+    - Auth and email verification
   </Step>
 </Steps>
+
+## Want to go further?
+
+- Add support for **scheduled emails** via Supabase cron jobs
+- Build **automation flows** to trigger emails based on lead stages
+- Style your UI for better brand trust and conversion
+
+## Resend Integration FAQ
+
+<AccordionGroup>
+  <Accordion title="What is Resend?">
+    Resend is an email API built for developers. It focuses on high deliverability, ease of integration, and a clean developer experience for sending transactional and marketing emails.
+  </Accordion>
+  <Accordion title="Do I need a paid Resend plan to follow this tutorial?">
+    No. You can complete the entire CRM setup using **Resend’s free tier**, which supports sending emails from a verified domain and up to 3,000 contacts for marketing emails.
+  </Accordion>
+  <Accordion title="How do I verify a domain in Resend?">
+    Go to Resend → **Domains** → Add your domain. You’ll be given DNS records (TXT, MX) to add via your DNS provider (e.g., Cloudflare, Namecheap). Once added, click **Verify**.
+
+    <Tip>
+      Use a subdomain like `updates.yourdomain.com` to isolate your email reputation.
+    </Tip>
+  </Accordion>
+  <Accordion title="Why are my Resend emails going to spam?">
+    There are a few common reasons:
+
+    - You haven’t verified your domain
+    - Your email lacks a plain-text version
+    - You’re sending from a generic sender like `onboarding@resend.dev`
+    - You’re not following best practices (e.g., missing unsubscribe links in marketing emails)
+
+    Use Resend’s **Deliverability Insights** panel to get actionable tips.
+  </Accordion>
+  <Accordion title="Can I customize the design of the emails I send?">
+    Yes. Use [React Email](https://react.email/)—an open-source library by the Resend team—to design styled, responsive emails with React components.
+  </Accordion>
+  <Accordion title="Does Resend support marketing emails or only transactional?">
+    Resend supports **both**:
+
+    - **Transactional emails** (confirmation, reset, notifications) using the API or SDK.
+    - **Marketing emails** via the **Broadcast** feature and **Audiences**.
+
+    You can create, preview, and track campaigns from the dashboard.
+  </Accordion>
+  <Accordion title="How do I manage newsletter subscribers in Resend?">
+    Use **Audiences**:
+
+    - Add contacts manually, via CSV, or programmatically using the API.
+    - Each Audience has a unique ID you can use to associate subscriptions.
+    - Users can unsubscribe automatically via Resend’s built-in unsubscribe link.
+  </Accordion>
+  <Accordion title="Can I set up double opt-in for newsletters?">
+    Not by default, but you can implement it manually:
+
+    1. On form submission, send an initial confirmation email.
+    2. Ask users to click a link.
+    3. On click, confirm their subscription and add them to your Resend audience.
+  </Accordion>
+  <Accordion title="Can I schedule or automate email flows in Resend?">
+    Not yet. Resend doesn’t currently support drip campaigns or automated sequences.
+
+    <Tip>
+      Workaround:
+
+      Use **Supabase Cron Jobs** to schedule tasks that trigger Resend emails at set intervals.
+    </Tip>
+  </Accordion>
+  <Accordion title="How do I connect Resend to Supabase Auth?">
+    Use the official Supabase Integration by Resend:
+
+    1. Authenticate with your Supabase project.
+    2. Provide a domain and sender name.
+    3. Resend automatically configures your Supabase auth emails to use your Resend account.
+  </Accordion>
+  <Accordion title="How does Resend handle unsubscribes?">
+    Resend automatically processes unsubscribes:
+
+    - You must include an unsubscribe link in broadcast emails.
+    - When a user unsubscribes, they are removed from the selected audience.
+    - This is required for email compliance (e.g., CAN-SPAM, GDPR).
+  </Accordion>
+</AccordionGroup>

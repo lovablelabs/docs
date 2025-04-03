@@ -1078,7 +1078,7 @@ Use the accordions below to identify specific issues and actions:
     Run `npm run build && npm run preview` locally to simulate a production environment before deploying.
   </Accordion>
   <Accordion title="Published version not showing latest version">
-    Current workaround is user having to add both the domain as well as www. domain counterpart to get the updates to sync.
+    Current workaround is user having to add both the domain as well as [www](http://www). domain counterpart to get the updates to sync.
   </Accordion>
 </AccordionGroup>
 
@@ -1733,7 +1733,7 @@ Use the accordions below to identify specific issues and actions:
   </Accordion>
 </AccordionGroup>
 
-### API issues
+### API issues 
 
 <AccordionGroup>
   <Accordion title="Implementing API Calls">
@@ -1898,36 +1898,6 @@ Use the accordions below to identify specific issues and actions:
     // Usage
     const data = await fetchDataViaProxy('https://api.example.com/data');
     ```
-  </Accordion>
-  <Accordion title="API Key Security">
-    Securely handling API keys in Lovable:
-
-    - **Never** store sensitive API keys in client-side code
-    - Use Supabase Edge Functions to make authenticated API calls
-    - Store sensitive keys as environment variables in Supabase
-    - For non-sensitive public APIs, use Vite environment variables
-
-    #### **Setting Up Environment Variables:**
-
-    ```
-    # .env file for local development
-    VITE_PUBLIC_API_URL=https://api.example.com
-    VITE_MAPBOX_PUBLIC_KEY=pk_123456
-    
-    # These should NOT be in client-side code
-    # Instead, use Supabase Edge Functions for protected API calls
-    SECRET_API_KEY=sk_987654321
-    ```
-
-    #### **Using Environment Variables in Lovable:**
-
-    1. Navigate to Project Settings → Environment Variables
-    2. Add your variables (prefix with VITE\_ for client-side access)
-    3. Access in code with `import.meta.env.VITE_VARIABLE_NAME`
-
-    <Note>
-      Remember that any environment variable prefixed with VITE\_ will be publicly visible in your built JavaScript. Never use VITE\_ prefix for sensitive keys.
-    </Note>
   </Accordion>
   <Accordion title="Handling API Rate Limits">
     Strategies for working with API rate limits:

@@ -4,159 +4,320 @@ description: "Learn how to integrate Make with your Lovable application"
 icon: "wand-sparkles"
 ---
 
+## What is Make
+
+![Make website](/images/make-hero.png)
+
+[Make](https://www.make.com) is a powerful no-code automation platform that lets you visually build workflows across apps, APIs, and data sources.
+
+Instead of writing backend logic, you drag, drop, and connect modules in a flowchart-style canvas. It’s ideal for:
+
+- **Non-developers** who want automation without writing code
+- **Developers** who want fast prototyping or extendability via APIs
+- **Teams** looking to connect tools like Slack, Airtable, Notion, Calendly, Supabase, and more
+
+With Make, you can:
+
+- **Trigger actions** from your Lovable app (e.g., when a button is clicked)
+- **Send and receive data** via webhooks and APIs
+- **Connect with 1,500\+ tools** or custom APIs
+- **Automate** tasks like emailing, AI calling, enrichment, and reminders
+
+## Why Use Make with Lovable?
+
+In this below tutorial, Make acts as your **AI-enabled backend**, while Lovable powers the frontend. The result: a custom CRM, built in minutes, fully automated.
+
+This setup is ideal for:
+
+- Non-developers needing advanced logic
+- Sales teams with evolving workflows
+- Fast iteration without backend overhead
+- API-powered automations with real-time UI responses
+
+## Step-by-Step tutorial
+
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/zv4vcR7VCAk?si=BgJHeEuti27cbgYt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
-In this tutorial, we'll walk through building a **custom CRM** (Customer Relationship Management system) using **Lovable** and **Make**. The goal is to create a functional CRM with:
+### What we'll Build
 
-- **Deal tracking** (drag-and-drop functionality)
-- **Contact management** (modal views for editing)
-- **AI-powered calling** (using Vapi and Make)
-- **Company data enrichment** (using [Apollo.io](http://Apollo.io))
+You're going to create a CRM with three core data models:
 
-By the end, you’ll have a **customized CRM** that automates workflows without needing to code from scratch.
+- **Deals** (with stage-based tracking)
+- **Contacts** (with inline editing)
+- **Companies** (with enrichable data)
+
+Each entity interacts with automations via Make. By the end, you’ll be able to:
+
+- Move a deal and trigger an email
+- Click a contact and start an AI sales call
+- Click a company and fetch real-time data
+- Secure everything via Supabase Edge Functions
+
+### How are we going to build it
+
+Building your own CRM can take months. With **Lovable** and **Make**, you can ship one in under an hour — and automate the entire sales workflow without writing backend code. In this step-by-step guide, you’ll learn how to build a **fully functional, AI-powered CRM**, complete with:
+
+- Visual deal pipelines (drag-and-drop)
+- Editable contact and company modals
+- AI call agents using [Vapi](https://vapi.ai/)
+- Company data enrichment via [Apollo.io](http://Apollo.io)
+- Email workflows and security with Supabase
+- Real-time automations using [Make](https://www.make.com)
 
 <Steps>
   <Step title="Setting Up Your CRM in Lovable">
-    - Go to [Lovable](https://lovable.dev/) and create a new project.
-    - Set the project type as **CRM**.
-    - Define key entities:
-      - **Deals** (for tracking sales progress)
-      - **Contacts** (representing potential clients)
-      - **Companies** (the organizations you're interacting with)
-    - Select **Light Theme** (optional).
-    - Click **Generate**.
-  </Step>
-  <Step title="Adding Deal Stages">
-    1. Open the **Deals** section in Lovable.
-    2. Click **Edit** and introduce five stages:
-       - **Lead**
-       - **Qualification**
-       - **Proposal Sent**
-       - **Negotiation**
-       - **Closed - Won/Lost**
-    3. Enable **Drag-and-Drop** functionality for deals to move across stages.
+    <Info>
+      You need to build a crm system and you need to have: deals, contacts and companies. Make it a light theme.
+    </Info>
+    <Steps>
+      <Step title="Step 1">
+        Create a new Lovable project. Choose project type: **CRM**.
+      </Step>
+      <Step title="Step 2">
+        Define 3 entities: **Deals**, **Contacts**, and **Companies**.
+      </Step>
+      <Step title="Step 3">
+        Choose **Light Theme** if preferred, and click **Generate**.
 
+        ![CRM with make](/images/crm-make.png)
+      </Step>
+    </Steps>
+  </Step>
+  <Step title="Add Deal Stages (Kanban View)">
+    ![Crm Kanban Make ](/images/crm-kanban-make.png)
+
+    <Steps>
+      <Step title="Step 1">
+        Open the **Deals** section in Lovable.
+      </Step>
+      <Step title="Step 2">
+        Click **Edit** and introduce five stages:
+
+        - **Lead**
+        - **Qualification**
+        - **Proposal Sent**
+        - **Negotiation**
+        - **Closed - Won/Lost**
+      </Step>
+      <Step title="Step 3">
+        Enable **Drag-and-Drop** functionality for deals to move across stages.
+
+        <Info>
+          Drag-and-drop lets you automate actions based on deal stage.
+        </Info>
+      </Step>
+    </Steps>
     <Info>
       **Why?** This allows users to track deals in a visual workflow.
     </Info>
   </Step>
   <Step title="Implementing a Contact Management System">
-    - Click on the **Contacts** section.
-    - Modify the UI to include a **clickable modal view** when selecting a contact.
-    - Ensure that:
-      - The modal displays **contact details**.
-      - Fields are **editable** for easy updates.
+    ![Contact Form Crm Make](/images/contact-form-crm-make.png)
 
+    <Steps>
+      <Step title="Step 1">
+        In **Contacts**, enable a **clickable modal view**.
+      </Step>
+      <Step title="Step 2">
+        Make all fields **editable inline** inside the modal.
+
+        - The modal displays **contact details**.
+        - Fields are **editable** for easy updates.
+
+        <Info>
+          This avoids the need to switch views—faster than traditional CRMs.
+        </Info>
+      </Step>
+    </Steps>
     <Info>
       **Why?** Traditional CRMs redirect users to a new page, slowing down workflow. A modal keeps everything in place.
     </Info>
   </Step>
-  <Step title="Adding an AI-Powered Call Feature">
+  <Step title="Connect AI-Powered Calls with Make + Vapi">
     <Steps>
-      <Step title="Connect Lovable to Make">
+      <Step title="Create a Webhook in Make">
+        ![Webhook Lovable Make](/images/webhook-lovable-make.png)
+
         - Open [Make](https://www.make.com/) and create a **new scenario**.
-        - Add a **Webhook** module:
-          - Click **Webhooks \> Custom Webhook**.
-          - Name it **Call Contact**.
-          - Copy the webhook URL.
+        - Click **Webhooks \> Custom Webhook** & name it **Call Contact**.
+        - Copy the webhook URL.
       </Step>
-      <Step title="Configure Lovable to Send Call Data">
-        - In Lovable, go to **Call Contact**.
+      <Step title="Trigger Call from Lovable">
+        ![Ai Assistant Make](/images/ai-assistant-make.png)
+
+        - In the **Contacts** modal, add a **Call Contact** button.
         - Modify the button’s action to **send JSON data** (name, phone number, company, and call goal) to the Make webhook.
         - Test the connection by clicking **Call Contact**.
       </Step>
       <Step title="Use Vapi for AI-Powered Calling">
+        ![Vapi Make](/images/vapi-make.png)
+
+        ![Vapi Make Automation Pn](/images/vapi-make-automation.png)
+
         - In Make, add an **API Call module**.
-        - Configure it to send the call request to [Vapi](https://vapi.ai/).
-        - Set up a **Vapi AI agent** to:
-          - Call the contact.
-          - Read a custom script based on the deal stage.
-          - Log call results in Lovable.
+        - Send a request to [Vapi](https://vapi.ai/) with the call details.
+        - Your custom Vapi agent will:
+          - Place the call
+          - Follow a dynamic prompt based on the deal
+          - Log results back into Lovable
 
         <Info>
-          Now, when clicking **Call Contact**, an AI agent will make the call on your behalf.
+          This creates an automated outbound AI call, instantly triggered from your CRM UI.
         </Info>
+        ![Call Customer Make Pn](/images/call-customer-make.png)
       </Step>
     </Steps>
   </Step>
-  <Step title="Adding Company Enrichment with Apollo.io">
+  <Step title="Add Company Data Enrichment with Apollo">
     <Steps>
-      <Step title="Setup Make Webhook for Enrichment">
-        - In Make, create another **Webhook** named **Enrich Company**.
+      <Step title="Create an Enrich Webhook in Make">
+        - Add a second **Custom Webhook** in Make named `Enrich Company`.
         - Copy the webhook URL.
+
+        ![Make Enrich Pn](/images/make-enrich.png)
       </Step>
-      <Step title="Modify Lovable to Send Enrichment Requests">
-        - Add an **Enrich Company** button in the **Companies** section.
-        - Modify its action to **send the domain name** as a JSON request to Make.
-      </Step>
-      <Step title="Configure Apollo API in Make">
-        - Add an **API Call module** in Make.
-        - Use the [**Apollo.io**](http://Apollo.io)\*\* Organization Enrichment API\*\*.
-        - Pass the **company domain** to get:
-          - Industry
-          - Number of employees
-          - Company address
-          - Funding details
+      <Step title="Send Request from Lovable">
+        - In **Companies**, add an **Enrich Company** button.
+        - When clicked, send the company’s domain as a JSON payload.
 
         <Info>
-          Now, clicking **Enrich Company** fetches real-time company data.
+          When I click the enrich button, do following things:
+
+          1. Remove the modal that opens NOT needed anymore
+          2. Real new step \> send the domain as JSON to following webhook: [Link]
+          3. You will receive a webhook response as JSOn and you need to dynamically parse this into the modal view so create dynamic fields.
+        </Info>
+      </Step>
+      <Step title="Call Apollo.io API">
+        ![Apollo Make Lovable Pn](/images/apollo-make-lovable.png)
+
+        - Use Apollo’s [Organization Enrichment API.](https://apollo.io/docs)
+        - Fetch:
+          - Industry
+          - Employee count
+          - Address
+          - Website
+          - Funding
+        - Return the enriched data to Lovable.
+      </Step>
+      <Step title="Parse Response into Modal View">
+        ![Webhook Apollo Webhook Make Pn](/images/webhook-apollo-webhook-make.png)
+
+        - Dynamically generate fields in the Lovable modal from the JSON.
+        - Present data in a readable UI (not raw JSON).
+
+        <Info>
+          Apollo enrichment adds key insights to help qualify companies faster.
         </Info>
       </Step>
     </Steps>
   </Step>
-  <Step title="Making the Data More Readable">
-    To structure the API response:
+  <Step title="Hide API Calls with Supabase Edge Functions">
+    ![Make Supabase Automation Pn](/images/make-supabase-automation.png)
 
-    - Modify Lovable to dynamically parse the JSON response.
-    - Display results in a structured **modal view**.
+    To secure webhooks:
 
-    <Info>
-      **Why?** Raw JSON isn’t user-friendly. This ensures clean, readable data.
-    </Info>
-  </Step>
-  <Step title="Securing API Calls with Supabase">
-    To hide API calls using Supabase Edge Functions:
-
-    - In Lovable, enable **Supabase integration**.
-    - Create an **Edge Function** to proxy requests to Make.
-    - Modify Lovable to call the **Edge Function** instead of Make’s webhook.
+    - Enable **Supabase Integration** in project settings.
+    - Create an **Edge Function** that proxies requests to Make.
+    - Update Lovable to call your Supabase function instead of the direct Webhook.
 
     <Info>
-      **Why?** This prevents unauthorized access to your webhook.
+      This hides your Webhook URL from the browser — essential for public apps.
+    </Info>
+    <Info>
+      Please when clicking the enrich button, use a Supabase edge function to hide the API call to the webhook address. YOU need to change therefore the functionality and actual hiding the API call. 
     </Info>
   </Step>
-  <Step title="Automating Follow-Ups and Workflows">
+  <Step title="Automating Follow-Ups and Workflows" stepNumber="7">
     To automate Email campaigns based on Deal stages:
 
-    - In Make, add an **Email module**.
-    - Trigger email automation when:
-      - A deal moves to the **Proposal Sent** stage.
-      - A contact **opens an email**.
+    - In Make, add logic to trigger events:
+      - Send an email when a deal moves to **Proposal Sent**
+      - Notify team via Slack when a deal reaches **Negotiation**
+      - Add contacts to a newsletter or campaign flow
 
     <Info>
-      This keeps sales reps informed and automates customer engagement.
+      This keeps your sales motion running even when you're not online.
     </Info>
   </Step>
-  <Step title="Final Testing and Deployment">
+  <Step title="Final Test & Deploy" stepNumber="8">
     <Steps>
-      <Step title="Test Your CRM">
-        - Add a **test deal** and move it through the pipeline.
-        - Add a **contact** and trigger a call.
-        - Enrich a **company’s details** and verify data.
+      <Step title="Run End-to-End Tests">
+        - Create test deals and contacts.
+        - Trigger the AI call flow.
+        - Enrich company data and verify results.
       </Step>
-      <Step title="Deploy and Share">
-        - Use **Lovable’s Custom Domain feature** to personalize your CRM.
-        - Share the app with your team.
+      <Step title="Deploy, Share & Go Live">
+        - Use **Custom Domain** to personalize your CRM.
+        - Share your app with your team.
       </Step>
     </Steps>
   </Step>
-  <Step title="🎉 Congratulations! ">
-    You've built a fully functional, AI-powered CRM with Lovable and Make\\\\\\\\\!
+  <Step title="🎉 You Did It!" stepNumber="9">
+    You've built a full-featured, AI-powered CRM — no backend required.
 
     **Next Steps**
 
-    - Experiment with **new integrations** (Slack, Notion, HubSpot).
-    - Automate **lead scoring** and **AI-generated follow-ups**.
-    - Join [Make Academy](https://academy.make.com/) to explore advanced automation.
+    - Add integrations: Slack, Notion, HubSpot, Calendly
+    - Secure everything with Supabase, add audit trails
   </Step>
 </Steps>
+
+## Pro Tips from the Live Session
+
+- Use **select \+ prompt** inside Lovable for precision edits
+- Use **Make’s Visual Canvas** to map out flows before connecting them
+- Dynamically parse unknown JSON fields into modals for UX win
+- Combine Vapi \+ Apollo \+ Make for real-time AI workflows
+- Use Supabase Edge Functions to mask all public API/webhook calls
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What is Make?">
+    Make is a visual automation platform that lets you connect tools and build workflows using drag-and-drop modules. Think of it as Zapier but more flexible and developer-friendly.
+  </Accordion>
+  <Accordion title="Why use Make with Lovable?">
+    - No need to write backend code
+    - Trigger workflows from your UI (buttons, forms, modals)
+    - Build automations visually (call agents, enrichment, email flows)
+    - Connect to 1,500\+ apps (Slack, Notion, Calendly, Airtable, and more)
+  </Accordion>
+  <Accordion title="How does Make communicate with Lovable?">
+    Lovable sends data (usually as JSON) via **HTTP webhooks** to Make scenarios. Make receives that data, processes it (e.g., calls an API), and can respond back to Lovable.
+  </Accordion>
+  <Accordion title="What are Scenarios in Make?">
+    Scenarios are automation workflows. You define:
+
+    - Triggers (e.g., Webhook)
+    - Actions (e.g., API call, email send)
+    - Logic (routers, filters, iterations)
+  </Accordion>
+  <Accordion title="Can I secure my Make Webhooks?">
+    Yes. Use:
+
+    - **IP restrictions** (limit who can call the webhook)
+    - **Supabase Edge Functions** to proxy and hide sensitive URLs
+    - **API Key authentication** in headers
+  </Accordion>
+  <Accordion title="What’s the difference between Make and Supabase Edge Functions?">
+    - **Make** is a visual automation tool (great for workflows, API integrations, AI triggers).
+    - **Supabase Edge Functions** are serverless backend code (great for logic, auth, and security).
+
+    Use them **together** for best results.
+  </Accordion>
+  <Accordion title="What happens if I exceed my Make plan's operations?">
+    Your scenario will pause. Make sends alerts, and you can upgrade or optimize your flows. For this guide, the **free pro plan** from the webinar includes **20,000 operations** — more than enough to prototype.
+  </Accordion>
+  <Accordion title="Can I test my Make Scenarios without Lovable?">
+    Yes\! Use **manual data input** in the Webhook or trigger the scenario via Postman or curl. This is great for debugging before connecting to Lovable.
+  </Accordion>
+</AccordionGroup>
+
+## Resources
+
+- [Make](https://www.make.com)
+- [Vapi AI](https://vapi.ai/)
+- [Apollo.io Enrichment API](https://apollo.io/docs)
+- [Supabase Edge Functions](https://supabase.com/docs/guides/functions)
+- Explore **Make Academy**: [academy.make.com](https://academy.make.com)
