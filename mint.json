@@ -78,7 +78,8 @@
     {
       "group": "Use Cases",
       "pages": [
-        "use-case/landing-page"
+        "use-case/landing-page",
+        "use-case/prototype"
       ]
     },
     {
