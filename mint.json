@@ -58,7 +58,8 @@
       "pages": [
         "introduction", 
         "user-guides/messaging-limits",
-        "faq"
+        "faq",
+        "changelog"
       ]
     },
     {
@@ -80,9 +81,7 @@
       "pages": [
         "use-case/landing-page",
         "use-case/prototype",
-        "use-case/saas",
-        "user-guides/video-tutorials",
-        "tips-tricks/inspiration"
+        "use-case/saas"
       ]
     },
     {
@@ -123,7 +122,8 @@
     {
       "group": "Resources",
       "pages": [
-        "changelog",
+        "user-guides/video-tutorials",
+        "tips-tricks/inspiration",
         "tips-tricks/community",
         "user-guides/support-policy",
         "glossary"
