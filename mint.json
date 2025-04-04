@@ -69,6 +69,7 @@
         "features/figma-to-lovable",
         "features/visual-edit",
         "features/knowledge",
+        "features/dev-mode",
         "features/labs",
         "tips-tricks/troubleshooting",
         "features/deploy",
