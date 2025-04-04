@@ -79,7 +79,10 @@
       "group": "Use Cases",
       "pages": [
         "use-case/landing-page",
-        "use-case/prototype"
+        "use-case/prototype",
+        "use-case/saas",
+        "user-guides/video-tutorials",
+        "tips-tricks/inspiration"
       ]
     },
     {
@@ -121,8 +124,6 @@
       "group": "Resources",
       "pages": [
         "changelog",
-        "user-guides/video-tutorials",
-        "tips-tricks/inspiration",
         "tips-tricks/community",
         "user-guides/support-policy",
         "glossary"
