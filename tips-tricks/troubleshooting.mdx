@@ -1419,17 +1419,6 @@ Use the accordions below to identify specific issues and actions:
       Never expose your Supabase service role key in client-side code. Only use the anon/public key for browser environments.
     </Warning>
   </Accordion>
-  <Accordion title="Managing API Keys Securely">
-    Best practices for handling Supabase API keys in Lovable:
-
-    - **Environment Variables:** Store keys in Lovable's Project Settings → Environment Variables
-    - **Client-Side Keys:** Only use the anon/public key in browser code (prefixed with VITE\_)
-    - **Service Role Key:** Never expose in client code; use Supabase Edge Functions for sensitive operations
-    - **Key Rotation:** Regularly rotate keys for better security
-    - **Key Scope:** Use the most restrictive key possible for each operation
-
-    When connecting third-party services that require your Supabase URL or keys, use Lovable's secret management feature rather than hardcoding values.
-  </Accordion>
   <Accordion title="User Management">
     ### **Auth Providers**
 
@@ -1733,7 +1722,7 @@ Use the accordions below to identify specific issues and actions:
   </Accordion>
 </AccordionGroup>
 
-### API issues 
+### API issues
 
 <AccordionGroup>
   <Accordion title="Implementing API Calls">
