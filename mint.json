@@ -105,7 +105,7 @@
         "integrations/clerk",
         "integrations/make",
         "integrations/replicate",
-        "integration/ai-integration",
+        "integrations/ai-integration",
         "integrations/21stdev-integration"
       ]
     },
