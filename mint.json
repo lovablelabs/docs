@@ -67,6 +67,7 @@
       "group": "Features",
       "pages": [
         "changelog",
+        "user-guides/quickstart",
         "user-guides/messaging-limits",
         "features/figma-to-lovable",
         "features/visual-edit",
@@ -97,7 +98,6 @@
       "group": "Tips & tricks",
       "pages": [
         "user-guides/from-idea-to-app",
-        "user-guides/quickstart",
         "user-guides/best-practice",
         "tips-tricks/troubleshooting",
         "tips-tricks/mobile-store",
