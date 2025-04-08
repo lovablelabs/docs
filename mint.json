@@ -66,6 +66,7 @@
       "group": "User Guides",
       "pages": [
         "user-guides/quickstart",
+        "user-guides/best-practice",
         "features/figma-to-lovable",
         "features/visual-edit",
         "features/knowledge",
