@@ -74,7 +74,23 @@
         "features/dev-mode",
         "features/labs",
         "features/deploy",
-        "tips-tricks/custom-domain"
+        "tips-tricks/custom-domain",
+        "features/launched"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "integrations/introduction",
+        "integrations/git-integration",
+        "integrations/supabase",
+        "tips-tricks/setting-up-payments",
+        "integrations/resend",
+        "integrations/clerk",
+        "integrations/make",
+        "integrations/replicate",
+        "integrations/ai-integration",
+        "integrations/21stdev-integration"
       ]
     },
     {
@@ -94,16 +110,6 @@
       ]
     },
     {
-      "group": "Use Cases",
-      "pages": [
-        "tips-tricks/inspiration",
-        "user-guides/video-tutorials",
-        "use-case/landing-page",
-        "use-case/prototype",
-        "use-case/saas"
-      ]
-    },
-    {
       "group": "Prompt Engineering",
       "pages": [
         "tips-tricks/prompting-one",
@@ -113,18 +119,13 @@
       ]
     },
     {
-      "group": "Integrations",
+      "group": "Use Cases",
       "pages": [
-        "integrations/introduction",
-        "integrations/git-integration",
-        "integrations/supabase",
-        "tips-tricks/setting-up-payments",
-        "integrations/resend",
-        "integrations/clerk",
-        "integrations/make",
-        "integrations/replicate",
-        "integrations/ai-integration",
-        "integrations/21stdev-integration"
+        "tips-tricks/inspiration",
+        "user-guides/video-tutorials",
+        "use-case/landing-page",
+        "use-case/prototype",
+        "use-case/saas"
       ]
     }
   ],
