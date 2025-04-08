@@ -57,30 +57,47 @@
       "group": "Introduction",
       "pages": [
         "introduction", 
-        "user-guides/messaging-limits",
         "faq",
-        "changelog"
+        "tips-tricks/community",
+        "user-guides/support-policy",
+        "glossary"
       ]
     },
     {
-      "group": "User Guides",
+      "group": "Features",
       "pages": [
-        "user-guides/quickstart",
-        "user-guides/best-practice",
+        "changelog",
+        "user-guides/messaging-limits",
         "features/figma-to-lovable",
         "features/visual-edit",
         "features/knowledge",
         "features/dev-mode",
         "features/labs",
-        "tips-tricks/troubleshooting",
         "features/deploy",
-        "tips-tricks/custom-domain",
-        "features/launched"
+        "tips-tricks/custom-domain"
+      ]
+    },
+    {
+      "group": "Tips & tricks",
+      "pages": [
+        "user-guides/from-idea-to-app",
+        "user-guides/quickstart",
+        "user-guides/best-practice",
+        "tips-tricks/troubleshooting",
+        "tips-tricks/mobile-store",
+        "tips-tricks/seo",
+        "tips-tricks/using-images",
+        "tips-tricks/using-videos",
+        "integrations/chrome-extensions",
+        "tips-tricks/custom-fonts",
+        "features/npm-packages"
       ]
     },
     {
       "group": "Use Cases",
       "pages": [
+        "tips-tricks/inspiration",
+        "user-guides/video-tutorials",
         "use-case/landing-page",
         "use-case/prototype",
         "use-case/saas"
@@ -110,28 +127,6 @@
         "integrations/21stdev-integration"
       ]
     },
-    {
-      "group": "Tips and Tricks",
-      "pages": [
-        "tips-tricks/using-images",
-        "tips-tricks/using-videos",
-        "integrations/chrome-extensions",
-        "tips-tricks/custom-fonts",
-        "features/npm-packages",
-        "tips-tricks/mobile-store",
-        "tips-tricks/seo"
-      ]
-    },
-    {
-      "group": "Resources",
-      "pages": [
-        "user-guides/video-tutorials",
-        "tips-tricks/inspiration",
-        "tips-tricks/community",
-        "user-guides/support-policy",
-        "glossary"
-      ]
-    }
   ],
   "footerSocials": {
     "x": "https://x.com/lovable_dev",
