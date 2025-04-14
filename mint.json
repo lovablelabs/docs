@@ -68,6 +68,7 @@
       "pages": [
         "changelog",
         "user-guides/quickstart",
+        "features/modes",
         "user-guides/messaging-limits",
         "features/figma-to-lovable",
         "features/visual-edit",
