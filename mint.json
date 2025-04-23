@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Lovable Documentation",
   "logo": {
-    "dark": "/logo-new-dark.png",
-    "light": "/logo-new-light.png"
+    "dark": "/logo-new-dark.svg",
+    "light": "/logo-new-light.svg"
   },
   "favicon": "/favicon-new.svg",
   "colors": {
