@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Lovable Documentation",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/svgviewer-output.svg",
+    "light": "/svgviewer-output.svg"
   },
-  "favicon": "/favicon-32x32.png",
+  "favicon": "/favicon-new.png",
   "colors": {
     "primary": "#0095FF",
     "light": "#1AA3FF",
