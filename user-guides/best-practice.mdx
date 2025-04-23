@@ -19,7 +19,7 @@ This guide helps all users—new or experienced—get up to speed quickly and av
 - Role-specific behavior (e.g. Admin, User, Investor)
 
 <Tip>
-  You can auto-generate a Knowledge file via chat mode:
+  You can auto-generate a Knowledge file via Plan mode:
 
   ```
   Generate knowledge for my project at T=0 based on the features I’ve already implemented.
@@ -45,7 +45,7 @@ This guide helps all users—new or experienced—get up to speed quickly and av
   Do not edit /shared/Layout.tsx.
   ```
 - Repeat important instructions across prompts. The AI’s memory can be limiting.
-- Avoid trying to implement 5 things at once. Break work into smaller, testable chunks. Use Chat Mode between each block to validate before moving on.
+- Avoid trying to implement 5 things at once. Break work into smaller, testable chunks. Use Plan Mode between each block to validate before moving on.
 
   ```
   **Feature Breakdown Template:**
@@ -61,11 +61,11 @@ This guide helps all users—new or experienced—get up to speed quickly and av
   As an Investor, I want to view the company dashboard, but I shouldn’t be able to edit it. Please isolate this feature to the Investor role only.
   ```
 
-## 3. Use Chat Mode Early and Often
+## 3. Use Plan Mode Early and Often
 
-[**Chat mode**](https://docs.lovable.dev/features/labs#chat-mode)\*\* = your AI co-pilot.\*\* It helps you debug, brainstorm, and plan implementations—without editing your code until you’re ready.
+[**Plan mode**](https://docs.lovable.dev/features/labs#chat-mode) = your AI co-pilot. It helps you debug, brainstorm, and plan implementations—without editing your code until you’re ready.
 
-**When to switch to Chat Mode:**
+**When to switch to Plan Mode:**
 
 - After 2–3 failed “Try to Fix” attempts
 - When debugging complex logic or database issues
@@ -78,11 +78,11 @@ This guide helps all users—new or experienced—get up to speed quickly and av
 <Tip>
   **Workflow tip:**
 
-  Some users like to use Chat Mode for 60–70% of your time. Only click “Implement the plan” when you’re fully satisfied.
+  Some users like to use Plan Mode for 60–70% of your time. Only click “Implement the plan” when you’re fully satisfied.
 </Tip>
 
 <Tip>
-  If you forget using the chat mode, this format improves output consistency and prevents collateral edits.
+  If you forget using the Plan mode, this format improves output consistency and prevents collateral edits.
 
   ```
   On page /settings, implement [feature]. The expected behavior is [XYZ]. Please don’t touch component A, layout B, or shared logic unless necessary. Follow best practices from Tailwind / Supabase / X.
@@ -106,7 +106,7 @@ This guide helps all users—new or experienced—get up to speed quickly and av
 <Tip>
   When AI enters a "loop," use this sequence to avoid endless cycles of patching broken code:
 
-  1. Switch to chat mode
+  1. Switch to Plan mode
   2. Paste the error screenshot
   3. Say:
 
