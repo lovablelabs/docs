@@ -3,7 +3,7 @@
   "name": "Lovable Documentation",
   "logo": {
     "dark": "/svgviewer-output.png",
-    "light": "/svgviewer-output.png"
+    "light": "/svgviewer-output-light.png"
   },
   "favicon": "/favicon-new.png",
   "colors": {
