@@ -58,9 +58,8 @@
       "pages": [
         "introduction", 
         "faq",
-        "tips-tricks/community",
-        "user-guides/support-policy",
-        "glossary"
+        "user-guides/messaging-limits",
+        "user-guides/teams"
       ]
     },
     {
@@ -69,8 +68,6 @@
         "changelog",
         "user-guides/quickstart",
         "features/modes",
-        "user-guides/messaging-limits",
-        "user-guides/teams",
         "features/figma-to-lovable",
         "features/visual-edit",
         "features/knowledge",
@@ -108,7 +105,10 @@
         "tips-tricks/using-videos",
         "integrations/chrome-extensions",
         "tips-tricks/custom-fonts",
-        "features/npm-packages"
+        "tips-tricks/community",
+        "user-guides/support-policy",
+        "features/npm-packages",
+        "glossary"
       ]
     },
     {
