@@ -1,3 +1,78 @@
 .supabase {
-    color: #59cf8c;
+  color: #59cf8c;
+}
+
+/*
+ * Table element override
+ * makes the table full width and updates style
+*/
+.dark .prose table {
+  --table-border-color: rgb(var(--gray-700) / .5);
+  --table-header-background: rgb(var(--gray-900) / 0.8);
+  --table-header-color: rgb(var(--gray-400));
+}
+
+.prose table {
+  --table-border-color: rgb(var(--gray-950) / .1);
+  --table-header-background: rgb(var(--gray-400) / 0.1);
+  --table-header-color: rgb(var(--gray-950));
+}
+
+.prose {
+  :where(table) {
+    --border-style: 1px solid var(--table-border-color);
+    border: 0;
+    border-collapse: initial;
+    border-spacing: 0;
+    display: table;
+    width: 100%;
+
+    :where(thead) {
+      border: 0;
+      background-color: var(--table-header-background);
+    }
+
+    :where(thead th, td) {
+      border-bottom: var(--border-style);
+      color: var(--table-header-color);
+      padding-inline-start: calc(.5714286em * 1.5);
+      padding-inline-end: calc(.5714286em * 1.5);
+    }
+
+    :where(td:first-child) {
+      border-left: var(--border-style);
+    }
+
+    :where(td:last-child) {
+      border-right:var(--border-style);
+    }
+
+    :where(thead th) {
+      border-top: var(--border-style);
+      color: var(--table-header-color);
+      font-weight: 400;
+      padding-top: .5714286em;
+      text-align: left;
+    }
+
+    :where(thead th:first-child) {
+      border-left: var(--border-style);
+      border-top-left-radius: var(--rounded-2xl, 1rem);
+    }
+
+    :where(thead th:last-child) {
+      border-right: var(--border-style);
+      border-top-right-radius: var(--rounded-2xl, 1rem);
+    }
+
+    :where(tr:last-child td:first-child) {
+      border-left: var(--border-style);
+      border-bottom-left-radius: var(--rounded-2xl, 1rem);
+    }
+
+    :where(tr:last-child td:last-child) {
+      border-right: var(--border-style);
+      border-bottom-right-radius: var(--rounded-2xl, 1rem);
+    }
   }
+}
