@@ -24,7 +24,7 @@ Lovable now lets you set up Stripe entirely through **chat**.
 ### Key Takeaways
 
 - Use the **chat‑driven flow** for both subscriptions and one‑off payments.  
-- **Never paste your Stripe Secret Key in chat.** Store it with **Add API Key**.  
+- **Never paste your Stripe Secret Key in chat.** Configure it via the in-chat **Add API Key** form.  
 - **Webhooks are opt‑in.** Lovable relies on edge‑function polling unless you request webhooks.  
 - Debug in **Browser Console → Network/Errors**, **Supabase → Edge Functions → Logs**, and **Stripe Dashboard → Logs**.  
 - Always test in **Stripe Test Mode**, then deploy.
@@ -46,14 +46,14 @@ Before integrating Stripe, ensure the following prerequisites are met:
 
 ## Stripe Payment Setup (No‑Code Chat Flow)
 
-Lovable now generates all Stripe logic for you. Once your **Stripe Secret Key** is saved with **Add API Key** and your project is **connected to Supabase**, simply tell Lovable what you need in chat—no manual Payment Links required.
+Lovable now generates all Stripe logic for you. Once your **Stripe Secret Key** is configured via the in-chat **Add API Key** form and your project is **connected to Supabase**, simply tell Lovable what you need in chat—no manual Payment Links required.
 
 <Steps>
   <Step title="Step 1">
     **Prep your project**
 
     - Supabase connected
-    - Stripe Secret Key added via **Add API Key**
+    - Stripe Secret Key added via the in-chat **Add API Key** form
     - (Optional) Prices or product IDs handy
   </Step>
   <Step title="Step 2">
