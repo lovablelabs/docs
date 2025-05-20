@@ -146,14 +146,11 @@ By default, Supabase’s free tier allows files up to **50MB** each to be upload
 
 ## Storing Secrets (API Keys & Config)
 
-Many applications need to use secret keys or API credentials for third-party services (for example, Stripe API keys for payments or OpenAI keys for AI features). With Supabase connected, Lovable provides a secure way to store and use these secrets.
+Many applications require secret keys or API credentials to connect with third-party services — for example, Stripe for payments or OpenAI for AI features. When Supabase is connected, Lovable offers a secure way to manage and use these secrets.
 
-You can add secret keys to your Lovable project in two ways:
+Lovable automatically detects when a feature requires a secret and prompts you with a UI to input the necessary values.
 
-1. **Project Settings UI:** In Lovable, go to your project’s settings and find the **Secrets** section. Here you can add keys (name and value).
-2. **Via Prompt:** You can ask Lovable something like “Show me the secrets form” in the chat, and it will present a UI to input secret values.
-
-Under the hood, Lovable stores these secrets in **Supabase’s Edge Function secret manager** for your project. They are encrypted and kept safe on the backend. When you deploy Edge Functions (see next section), those functions can retrieve these secrets to interact with external services.
+These secrets are stored securely in Supabase’s Edge Function secret manager for your project. They are encrypted and kept safe on the backend. When you deploy Edge Functions (see next section), they can access these secrets to connect with external services.
 
 <Tip>
   For example, if you integrate Stripe for payments, you would store your Stripe Secret Key as a secret. When Lovable deploys a payment-processing function to Supabase, it will automatically include that key from the secret store so the function can authenticate with Stripe. This way, you never have to hard-code secrets into your app, and you avoid exposing them publicly.
