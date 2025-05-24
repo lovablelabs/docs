@@ -4,12 +4,42 @@ description: "News from the Lovable engineering team. "
 icon: "clock-rotate-left"
 ---
 
-<Update label="05/09/2025">
-  Here everything we shipped we shipped this week:
+<Update label="05/24/2025">
+  Here everything we shipped the last two weeks:
 
   **Spotlight**
 
-  - We’ve added support for transferring projects between workspaces!
+  - Claude 4 is now being used in Lovable\! It’s currently powering all initial prompts, and editing support is being tested. Early results show improved design quality and reduced error rates.
+
+  **Improvements**
+
+  - Revamped the setup flow for both GitHub and Supabase, simplifying multi-step onboarding to reduce confusion.
+  - Added visual labels to featured projects on the homepage for better discovery.
+  - Added support for removing custom domains from your Lovable app.
+  - Several improvements in collaborator management:
+  - Added validation to the email invite form in the People tab
+  - Tooltips now explain the permissions for each role (admin / owner / editor)
+  - You can now see the role of pending invites
+  - Better error messages for edge cases like inviting someone already in the workspace
+  - Commit messages now rely more on conversation history for better context.
+  - Improved the quality of streaming: smoother experience and no more flashing text.
+  - Users can now view public Lovable projects without being logged in.
+  - Active edit cards are now highlighted so it’s easier to see which one is active.
+  - The default “Edit Code” button now opens the preview instead of the raw code.
+
+  **Bug fixes**
+
+  - Fixed bugs that caused the wrong live preview to show in some cases.
+  - Fixed a bug where refreshing the preview could change the current path.
+  - Fixed a bug that caused infinite redirect loops when starting a live preview after logging in.
+</Update>
+
+<Update label="05/09/2025">
+  Here everything we shipped this week:
+
+  **Spotlight**
+
+  - We’ve added support for transferring projects between workspaces\!
   - Lovable is now better at understanding images — whether you’re uploading a design reference or a real site asset, it knows the difference and will handle it accordingly
 
   **Bug fixes**
@@ -19,11 +49,10 @@ icon: "clock-rotate-left"
   - Fixed issues where workspace owners were not able to edit projects created by non-owners in teams workspace
   - Fixed issue where “downgrade button” in billing page would link to wrong Stripe page
   - Fixed issue where some users were not seeing their plan after upgrading to a higher plan
-
 </Update>
 
 <Update label="05/02/2025">
-  Here everything we shipped we shipped this week:
+  Here everything we shipped this week:
 
   **Improvements**
 
