@@ -56,7 +56,7 @@
     {
       "group": "Introduction",
       "pages": [
-        "introduction", 
+        "introduction",
         "faq",
         "user-guides/messaging-limits",
         "user-guides/teams"
@@ -75,7 +75,8 @@
         "features/labs",
         "features/deploy",
         "tips-tricks/custom-domain",
-        "features/launched"
+        "features/launched",
+        "features/security"
       ]
     },
     {

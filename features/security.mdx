@@ -1,0 +1,29 @@
+---
+title: "Security"
+description: "Security features in Lovable"
+icon: "shield-halved"
+---
+
+
+
+# API keys
+
+Lovable writes frontend code, which means it runs in the browser. Therefore, no sensitive data of any kind should be stored in code.
+
+To connect to third party services (like OpenAI, Anthropic etc), API keys are needed. We recommend you use Supabase secrets to store your API keys, in combination with the [Supabase Edge Functions](https://docs.lovable.dev/integrations/supabase#edge-functions).
+
+## Supabase RLS
+
+RLS policies determine who can access what data in your Supabase database. We recommend you carefully review them before publishing your project.
+
+
+# Security scanning
+
+Before publishing, Lovable displays security warnings from the [Supabase security advisor](https://supabase.com/docs/guides/database/database-advisors?queryGroups=lint&lint=0002_auth_users_exposed) and  will ask you to confirm that you want to publish if there are any warnings.
+
+We highly recommend you resolve all issues before publishing your projects and to keep your app's data safe.
+
+
+<Info>
+  Seeing no warnings or errors from the Supabase security advisor does not guarantee that there are no security issues in your app. We recommend you ask Lovable to review your app's security before publishing.
+</Info>
