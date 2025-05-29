@@ -318,7 +318,7 @@ icon: "circle-question"
     Yes, you can integrate APIs like OpenAI, Stripe, and more by specifying them in your prompt.
   </Accordion>
   <Accordion title="Can I store sensitive API keys in Lovable?">
-    No\! Never enter your API keys directly in Lovable. Use environment variables to keep them secure.
+    No\! Never enter your API keys directly in Lovable. If you're integrating with an API, we recommend you use Supabase secrets to store your API keys, in combination with the [Supabase Edge Functions](https://docs.lovable.dev/integrations/supabase).
   </Accordion>
   <Accordion title="How does Lovable AI remember context?">
     Lovable processes recent messages to maintain context. For the best results, include relevant details in each prompt to ensure clarity and accuracy.
