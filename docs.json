@@ -1,0 +1,156 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Lovable Documentation",
+  "theme": "mint",
+  "logo": {
+    "dark": "/logo-new-dark.svg",
+    "light": "/logo-new-light.svg"
+  },
+  "favicon": "/favicon-new.svg",
+  "colors": {
+    "primary": "#0095FF",
+    "light": "#1AA3FF",
+    "dark": "#0084E6"
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@lovable.dev"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "App",
+    "url": "https://lovable.dev"
+  },
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/lovable-dev"
+    },
+    {
+      "name": "Status",
+      "icon": "signal",
+      "url": "https://status.lovable.dev/"
+    },
+    {
+      "name": "Product Announcement",
+      "icon": "newspaper",
+      "url": "https://lovable.dev/blog?category=announcements"
+    },
+    {
+      "name": "Request Feature",
+      "icon": "rocket",
+      "url": "https://feedback.lovable.dev/"
+    },
+    {
+      "name": "Youtube",
+      "icon": "film",
+      "url": "https://www.youtube.com/@lovable-labs/"
+    }
+  ],
+  "navigation": {
+    "dropdowns": [
+      {
+        "dropdown": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "introduction", 
+              "faq",
+              "user-guides/messaging-limits",
+              "user-guides/teams"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "user-guides/quickstart",
+              "features/modes",
+              "features/figma-to-lovable",
+              "features/visual-edit",
+              "features/knowledge",
+              "features/dev-mode",
+              "features/labs",
+              "features/deploy",
+              "tips-tricks/custom-domain",
+              "features/launched"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/introduction",
+              "integrations/git-integration",
+              "integrations/supabase",
+              "tips-tricks/setting-up-payments",
+              "integrations/resend",
+              "integrations/clerk",
+              "integrations/make",
+              "integrations/replicate",
+              "integrations/ai-integration",
+              "integrations/21stdev-integration"
+            ]
+          },
+          {
+            "group": "Tips & tricks",
+            "pages": [
+              "user-guides/from-idea-to-app",
+              "user-guides/best-practice",
+              "tips-tricks/troubleshooting",
+              "tips-tricks/mobile-store",
+              "tips-tricks/seo",
+              "tips-tricks/using-images",
+              "tips-tricks/using-videos",
+              "integrations/chrome-extensions",
+              "tips-tricks/custom-fonts",
+              "tips-tricks/community",
+              "user-guides/support-policy",
+              "features/npm-packages",
+              "glossary"
+            ]
+          },
+          {
+            "group": "Prompt Engineering",
+            "pages": [
+              "tips-tricks/prompting-one",
+              "tips-tricks/prompting-library",
+              "tips-tricks/prompting-debugging",
+              "integrations/prompt-integrations"
+            ]
+          },
+          {
+            "group": "Use Cases",
+            "pages": [
+              "tips-tricks/inspiration",
+              "user-guides/video-tutorials",
+              "use-case/landing-page",
+              "use-case/prototype",
+              "use-case/saas"
+            ]
+          }
+        ]
+      },
+      {
+        "dropdown": "Changelog",
+        "icon": "clock",
+        "pages": [
+          "changelog"
+        ]
+      }
+    ]
+  },
+  "footerSocials": {
+    "x": "https://x.com/lovable_dev",
+    "github": "https://github.com/lovablelabs",
+    "linkedin": "https://linkedin.com/company/lovable-dev"
+  },
+  "redirects": [
+    {
+      "source": "/user-guides/credits",
+      "destination": "/user-guides/messaging-limits"
+    }
+  ]
+}
