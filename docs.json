@@ -147,6 +147,11 @@
     "github": "https://github.com/lovablelabs",
     "linkedin": "https://linkedin.com/company/lovable-dev"
   },
+  "seo": {
+    "metatags": {
+      "og:image": "/assets/opengraph-image.png"
+    }
+  },
   "redirects": [
     {
       "source": "/user-guides/credits",
