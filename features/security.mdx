@@ -4,18 +4,39 @@ description: "Security features in Lovable"
 icon: "shield-halved"
 ---
 
-
-
 # API keys
 
 Lovable writes frontend code, which means it runs in the browser. Therefore, no sensitive data of any kind should be stored in code.
 
 To connect to third party services (like OpenAI, Anthropic etc), API keys are needed. We recommend you use Supabase secrets to store your API keys, in combination with the [Supabase Edge Functions](https://docs.lovable.dev/integrations/supabase#edge-functions).
 
+## Automatic API key detection
+
+Whenever you paste an API key into the chat, Lovable will automatically detect it and warn you not to hardcode sensitive credentials directly into your frontend code. Instead of pasting API keys, describe what you're trying to accomplish and Lovable will guide you through the secure implementation.
+
+![Screenshot 2025-05-30 at 09.21.22.png](/images/Screenshot2025-05-30at09.21.22.png)
+
+For example, instead of:
+
+"Add this API key to call OpenAI: sk_test_abc123..."
+
+Try this:
+
+"I want to integrate OpenAI's API to generate text responses"
+
+Lovable will then show you how to:
+
+1. Store your API key securely in Supabase secrets.
+
+2. Create a Supabase Edge Function to make the API call server-side.
+
+3. Call that Edge Function from your frontend code.
+
+This approach keeps your sensitive credentials secure and follows security best practices for web applications.
+
 ## Supabase RLS
 
 RLS policies determine who can access what data in your Supabase database. We recommend you carefully review them before publishing your project.
-
 
 # Security scanning
 
@@ -23,7 +44,37 @@ Before publishing, Lovable displays security warnings from the [Supabase securit
 
 We highly recommend you resolve all issues before publishing your projects and to keep your app's data safe.
 
-
 <Info>
   Seeing no warnings or errors from the Supabase security advisor does not guarantee that there are no security issues in your app. We recommend you ask Lovable to review your app's security before publishing.
 </Info>
+
+# Security scanning
+
+Lovable includes comprehensive AI-powered security scanning to help identify potential vulnerabilities in your code before you publish.
+
+## Enhanced RLS policy review
+
+The Supabase security advisor can sometimes miss incorrect RLS (Row Level Security) usage. To address this, Lovable includes a deep code security review that uses AI to analyze your app for potential security issues beyond what Supabase's built-in advisor catches. This provides additional coverage for RLS policy problems and suggests specific plans on how to fix them.
+
+## Manual security review
+
+You can request a security review at any time by asking Lovable to "review my app's security" or clicking the "Review Security" button in the publish dialog.
+
+Lovable will:
+
+1. Analyze your entire codebase for security vulnerabilities
+2. Check for common issues like XSS prevention, input sanitization, and authentication flaws
+3. Review your Supabase RLS policies and database security (going deeper than Supabase's own advisor)
+4. Provide a detailed report with specific recommendations
+
+![Screenshot 2025-05-30 at 09.30.34.png](/images/Screenshot2025-05-30at09.30.34.png)
+
+![Screenshot 2025-05-30 at 09.29.08.png](/images/Screenshot2025-05-30at09.29.08.png)
+
+## Pre-publish security checks
+
+Before publishing, Lovable automatically displays security warnings from both the Supabase security advisor and its own enhanced AI security scanner. You'll be asked to confirm if there are any warnings, though we highly recommend resolving all issues first.
+
+![Screenshot 2025-05-30 at 09.49.21.png](/images/Screenshot2025-05-30at09.49.21.png)
+
+Remember: Even with no warnings, always request a manual security review for production applications.
