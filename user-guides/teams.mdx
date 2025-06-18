@@ -115,14 +115,35 @@ Perfect for friends, startups, and smaller enterprise teams collaborating on the
 
 ## Permissions
 
-| Action | Owner | Admin | Editor |
-|--------|-------|-------|--------|
-| Edit projects | ✓ | ✓ | ✓ |
-| Publish projects | ✓ | ✓ | ✓ |
-| Connect/disconnect Supabase org to workspace | ✓ | ✓ | ✗ |
-| Connect/disconnect Supabase project org to projects | ✓ | ✓ | ✗ |
-| Connect/disconnect GitHub org to workspace | ✓ | ✓ | ✗ |
-| Connect/disconnect GitHub repo org to projects | ✓ | ✓ | ✗ |
-| Invite project-level collaborators | ✓ | ✓ | ✗ |
-| Transfer projects to other workspaces | ✓ | ✓ | ✗ |
-| Set roles for other | ✓ | ✓ | ✗ |
+|                | **Free**                 | **Pro**                              |
+|----------------|--------------------------|--------------------------------------|
+|                | Editor | Owner           | Editor | Admin | Owner              |
+| **Workspace**  |        |                  |        |       |                    |
+| Add Editor     | ❌     | ✅               | ❌     | ✅    | ✅                 |
+| Add Admin      | -      | -                | ❌     | ❌    | ✅                 |
+| See Usage      | ❌     | ❌               | ❌     | ✅    | ✅                 |
+| Manage Plan    | ❌     | ❌               | ❌     | ❌    | ✅                 |
+| Remove Editor  | ❌     | ✅               | ❌     | ✅    | ✅                 |
+| Remove Admin   | -      | -                | ❌     | ❌    | ✅                 |
+| Connect/disconnect Supabase | ❌     | ✅               | ❌     | ✅    | ✅     |
+| Connect/disconnect GitHub | ❌     | ✅               | ❌     | ✅    | ✅     |
+| Remove Editor  | ❌     | ✅               | ❌     | ✅    | ✅                 |
+
+| **Project**    |        |                  |        |       |                    |
+| Add Editor     | ✅     | ✅               | ✅     | ✅    | ✅                 |
+| Add Admin      | -      | -                | ❌     | ❌    | ✅                 |
+| Remove Editor  | ✅     | ✅               | ✅     | ✅    | ✅                 |
+| Remove Admin   | -      | -                | ❌     | ❌    | ✅                 |
+| Magic Link     | ✅     | ✅               | ✅     | ✅    | ✅                 |
+| Publish     | ✅     | ✅               | ✅     | ✅    | ✅                 |
+| Transfer to GitHub | ✅     | ✅               | ❌     | ✅    | ✅         |
+
+
+
+**Downgrade behavior:** Admins get demoted to editors.
+
+## Legend
+- ✅ = Permission granted  
+- ❌ = Permission denied
+- - = Not applicable
+
