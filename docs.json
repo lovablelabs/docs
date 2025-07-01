@@ -141,6 +141,14 @@
     {
       "source": "/user-guides/credits",
       "destination": "/user-guides/messaging-limits"
+    },
+    {
+      "source": "/user-guides/teams",
+      "destination": "/features/collaboration"
+    },
+    {
+      "source": "/user-guides/messaging-limits",
+      "destination": "/introduction/messaging-limits"
     }
   ]
 }
