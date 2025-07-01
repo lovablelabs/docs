@@ -140,7 +140,7 @@
   "redirects": [
     {
       "source": "/user-guides/credits",
-      "destination": "/user-guides/messaging-limits"
+      "destination": "/introduction/messaging-limits"
     },
     {
       "source": "/user-guides/teams",
