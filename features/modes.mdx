@@ -1,55 +1,87 @@
 ---
 title: "Modes"
-description: "Learn how to use Lovable’s two AI modes to build faster and smarter."
+description: "Learn how to use Lovable’s different modes to build faster and smarter."
 icon: "sliders"
 ---
 
-At Lovable, you can work with AI in two powerful modes:
+Lovable has different modes that are good for different things. 
 
-## 1. Edit Mode
+## Default Mode
 
-**Edit Mode** is your AI developer. It writes code, adds new features, and updates your project—automatically. This is the default mode when you start using Lovable.
+When you start building with Lovable the **Default mode** is automatically selected. It can write code, implement new functionality or troubleshoot depending on your prompt. 
 
-## 2. Chat Mode
+## Chat Mode
 
-**Chat Mode** is your development partner and is **10x smarter**. It helps you think through problems, debug issues, and plan your product—directly within the Lovable Editor.
+**Chat Mode** is your development and debugging partner. It helps you think through problems, debug issues and plan your product directly within Lovable.
 
-Unlike Edit Mode, Chat Mode is conversational and doesn't make edits to the code. This is perfect for asking questions, planning your project, and debugging. This mode is agentic, meaning it can reason across multiple steps and decide when to search files, inspect logs, query the database, and more. Then, when you're ready, simply prompt: “`Implement the plan`”.
+<Card title="Activate Chat mode" img="/assets/features/images/chat-mode-edit.png">
+  To activate **Chat mode**, simply click "Chat" next to where you input your messages in Lovable. 
+</Card>
 
-This switches you back to Edit Mode, where Lovable turns those ideas into working code.
+Unlike Default mode, Chat mode is conversational and can't make changes to your code. This is perfect for asking questions, planning your project, and debugging. 
+It is agentic, meaning it can reason across multiple steps and decide when to search files, inspect logs, query the database and more. 
 
-<Note>
-  Because these capabilities come with additional costs, messages in Chat Mode will now start counting towards your message limit.
-</Note>
+If you ask it for help with implementing a functionality or troubleshooting it will come up with a step-by-step plan to reach your desired outcome. 
+You'll get prompted with an "Implement the plan"-button. Simply press it and the AI will enter Default mode and implement the necessary code changes. 
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/afGwJCHuqGg?si=iLkpEYT5SLkLk4ur" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+**Best use cases for Chat mode**
 
-### Switching Modes
+- Efficient debugging by asking the AI to investigate issues in depth before requesting a fix.
+- Planning database structures and relationships to support effective system architecture.
+- Optimal implementation of new features by identifying the minimal necessary changes required for new functionality.
+- Requesting improvement tips to enhance your application. 
+- Understanding and evaluating how potential new features will impact the application’s structure and functionality. 
 
-Click the **“Chat”** prompt at the bottom of your editor to toggle between Edit and Chat Modes.
+## Agent Mode (Beta)
 
-![Chat Mode Switch Pn](/chat-mode-edit.png)
+**Agent mode** enables Lovable to think, plan, and take actions autonomously. 
+It's designed to make Lovable more capable, reliable, and independent when handling complex development tasks.  
 
-When you're in Chat Mode and say “implement the plan,” Lovable will seamlessly switch to Edit Mode and start building for you.
+<Note> Agent Mode is currently in **beta** and being gradually rolled out starting **June 30**. You may not have access yet. </Note>
 
-### ![Implement Plan Pn](/images/implement-plan.png)
+Agent mode can:
+- Interpret your request
+- Explore your codebase for the necessary context
+- Read files on demand
+- Fix and refactor code as needed
+- Debug issues proactively
 
-**Top 15 Chat Mode Use Cases**
+All without manual intervention. With deeper codebase understanding and real-time debugging, it delivers better results with fewer errors and fewer unwanted changes.
 
- 1. **Efficient debugging** by explaining errors, offering step-by-step breakdowns, and resolving issues when Lovable got stuck in loops.
- 2. **Optimized feature implementation** by identifying the minimal necessary changes required for new functionality.
- 3. **Effective system architecture**, planning database structures, relationships, and scalability strategies.
- 4. **Streamlined development**, collecting and refining feature ideas before implementation.
- 5. **Informed product decisions**, such as debating whether to fork a product or consolidate functions.
- 6. **Enhanced documentation and knowledge storage**, keeping development organized and reducing redundant prompts.
- 7. **Debugging Lovable itself**, such as redeploying edge functions when Supabase connections were lost.
- 8. **Guidance for non-specialists**, acting as an AI tutor for troubleshooting, from password resets to API integrations.
- 9. **Prompt generation and refinement**, improving workflows through clearer, more precise instructions.
-10. **Decision-making assistance**, analyzing multiple solutions before executing changes.
-11. **Product management support**, structuring features, onboarding flows, and pricing models.
-12. **Improved collaboration**, acting as a bridge between developers and non-technical founders.
-13. **Reduced trial-and-error**, preventing mistakes before they happen and saving hours of work.
-14. **Better AI-generated code quality**, refining outputs for maintainability, performance, and best practices.
-15. **Real-time coding feedback**, offering suggestions to improve readability, efficiency, and adherence to standards.
+<Card title="Activate Agent mode" img="/assets/features/videos/agent-mode-toggle.gif">
+Once available to you, you can enable Agent Mode by:
+  1. Going to your project’s dropdown settings
+  2. Turning on the Agent mode toggle
+</Card>
+<Warning>Access is rolling out gradually, so this option may not appear immediately.</Warning>
 
-Chat Mode transforms the no-code/low-code experience, bridging ideas and fully functional products. It bridges the gap between great ideas and fully functional products, making complex software **accessible** to founders who previously relied on engineers.
+Agent Mode has access to a new series of capabilities:
+
+- **Search your codebase** to locate exact files, functions, or components
+- **Read files on demand** for full context before making changes
+- **Inspect logs and network activity** to identify and fix errors automatically
+- **Search the web in real-time** to fetch documentation, assets, or screenshots
+- **Generate and edit images** for your application
+
+These tools allow Lovable to act with autonomy and precision, reducing friction during development.
+
+**Pricing**
+
+Agent Mode uses **usage-based pricing**. Requests can cost less than 1 credit or several credits, depending on their complexity. 
+This ensures you only pay for what you actually use.
+
+| Mode         | Cost                  |
+|--------------|-----------------------|
+| Default mode | 1 credit/message      |
+| Chat mode    | 1 credit/message      |
+| Agent mode   | Usage-based (see below) |
+
+**Example costs**
+
+- A simple message that reads 1 file and edits 1 file will cost 0.8 credits.
+- A message that leads to 5 file reads, 4 file edits and 1 image generation will cost 2.4 credits.
+
+You can view the exact credit usage per message by hovering over the **three dots** next to it in your message history.
+![View credits on messages sent with Agent mode](/assets/features/images/view-credits-on-message-agent.png)
+
+<Note>Pricing is subject to change during beta as we refine based on user behavior.</Note>
