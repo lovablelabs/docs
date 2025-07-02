@@ -38,7 +38,7 @@
         "tab": "Introduction",
             "pages": [
               "introduction/introduction",
-              "introduction/messaging-limits",
+              "introduction/plans-and-credit-limits",
               "introduction/faq",
               "introduction/quickstart"
             ]
@@ -140,7 +140,7 @@
   "redirects": [
     {
       "source": "/user-guides/credits",
-      "destination": "/introduction/messaging-limits"
+      "destination": "/introduction/plans-and-credit-limits"
     },
     {
       "source": "/user-guides/teams",
@@ -148,7 +148,7 @@
     },
     {
       "source": "/user-guides/messaging-limits",
-      "destination": "/introduction/messaging-limits"
+      "destination": "/introduction/plans-and-credit-limits"
     }
   ]
 }
