@@ -23,12 +23,7 @@ This guide walks you through how to optimize your Lovable-generated pages for se
     </Info>
   </Accordion>
   <Accordion title="Custom Sitemaps for Search Engine Indexing">
-    A sitemap helps search engines crawl and index your website efficiently. Lovable allows you to:
-
-    - Generate an XML **sitemap** for your project.
-    - Submit the sitemap to **Google Search Console** for faster indexing.
-
-    Ensure **all important pages are indexed** correctly.
+    A sitemap helps search engines crawl and index your website efficiently.
 
     **How to Generate a Sitemap in Lovable:**
 
@@ -37,12 +32,18 @@ This guide walks you through how to optimize your Lovable-generated pages for se
         Ask Lovable to **"Create a sitemap"** for your project.
       </Step>
       <Step title="Step 2">
-        Download the **sitemap.xml** file.
+        Publish/update your project.
       </Step>
       <Step title="Step 3">
-        Submit it to **Google Search Console** under “Sitemaps.”
+        Submit the sitemap **Google Search Console** under "Sitemaps" using the URL https://[yourdomain]/sitemap.xml (replace [yourdomain] with your custom domain. Note that if your sitemap has another name, you need to replace "sitemap.xml" with this name. This can be seen in code viewer under the public file.
+      </Step>
+      <Step title="Step 4">
+        Add Sitemap: https://[yourdomain]/sitemap.xml in your robots.txt file (optional)
       </Step>
     </Steps>
+    Remember to update your sitemap from time to time when adding new pages.
+
+    Your sitemap will not automatically be available at https://[youdomain]/sitemap.xml once you have done this. To check your sitemap, open your command-line interface and type curl https://[yourdomain]/sitemap.xml , your sitemap should show up.
   </Accordion>
   <Accordion title="Robots.txt Configuration for Search Control">
     The `robots.txt` file tells search engines which pages they should or shouldn’t crawl. Lovable can create and customize this file for you.
@@ -60,6 +61,7 @@ This guide walks you through how to optimize your Lovable-generated pages for se
         Upload it to your site’s root directory.
       </Step>
     </Steps>
+    Hi
   </Accordion>
   <Accordion title="SEO-Optimized Headings & Structure">
     Headings (H1, H2, H3…) help search engines understand your content. Lovable ensures:
