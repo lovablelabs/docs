@@ -63,15 +63,15 @@
             "tab": "Integrations",
             "pages": [
               "integrations/introduction",
-              "integrations/git-integration",
+              "integrations/github",
               "integrations/supabase",
-              "integrations/setting-up-payments",
+              "integrations/stripe",
               "integrations/resend",
               "integrations/clerk",
               "integrations/make",
               "integrations/replicate",
-              "integrations/ai-integration",
-              "integrations/21stdev-integration"
+              "integrations/ai",
+              "integrations/21stdev"
             ]
           },
           {
@@ -149,6 +149,10 @@
     {
       "source": "/user-guides/messaging-limits",
       "destination": "/introduction/plans-and-credit-limits"
+    },
+    {
+      "source": "/integrations/git-integration",
+      "destination": "/integrations/github"
     }
   ]
 }
