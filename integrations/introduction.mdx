@@ -1,29 +1,27 @@
 ---
-title: "Integrations"
-description: "Extend Lovable functionality with official integrations"
+title: "Introduction"
+description: "Extend your website's functionality by using integrations and external APIs"
 icon: "link"
 ---
 
+Lovable has native seamless integrations to export code and to add a backend. But it is also possible to integrate an external API if you are looking to add that specific functionality to your website. 
+
 ## What is an API?
 
-APIs are essential tools that allow different software systems to communicate. You can refer to [this article on our blog](https://lovable.dev/blog/2025-01-28-the-power-of-apis). Lovable supports several integrations enabling you to extend its functionality:
+An API is a way for software applications to communicate and share data with each other. 
+Different APIs offer different functionality such as sending emails or processing payments. 
+You can read more about the power of APIs in [this article on our blog](https://lovable.dev/blog/2025-01-28-the-power-of-apis). 
 
 ## Native Integrations
 
-Explore the sections below to get started quickly and learn more about GitHub, Supabase, Stripe and custom domains integrations currently offered by Lovable.
+Explore the sections below to get started quickly and learn more about our native GitHub and Supabase integrations. 
 
 <CardGroup cols="2">
-  <Card title="GitHub Integration" icon="github" href="git-integration">
-    Understand how to integrate Lovable with GitHub for seamless version control and collaboration.
+  <Card title="GitHub Integration" icon="github" href="github">
+    Understand how to integrate Lovable with GitHub to export your code and for seamless version control. 
   </Card>
   <Card title="Supabase Integration" icon="database" href="supabase">
-    Add support for authentication and persistent data storage with Supabase.
-  </Card>
-  <Card title="Stripe" icon="stripe" href="https://docs.lovable.dev/tips-tricks/setting-up-payments">
-    Add payment processing capabilities to your app.
-  </Card>
-  <Card title="Custom domain" icon="earth-europe" href="/tips-tricks/custom-domain">
-    Setting up a custom domain with Netlify and Vercel.
+    Add a backend to your website using Supabase, to support authentication and persistent data storage. 
   </Card>
 </CardGroup>
 
@@ -32,23 +30,23 @@ Explore the sections below to get started quickly and learn more about GitHub, S
 Verified integrations work best with Lovable:
 
 <CardGroup cols="3">
-  <Card title="Builder.io" href="https://lovable.dev/blog/2025-01-22-figma-to-lovable-builder-io-native-integration">
-    [Turn Figma](https://lovable.dev/blog/2025-01-22-figma-to-lovable-builder-io-native-integration) designs into full stack applications within Lovable.
+  <Card title="Stripe" href="stripe">
+    Add payment processing capabilities to your app.
   </Card>
-  <Card title="Runware" href="https://runware.ai/">
-    Make your app generate images from text prompts.
-  </Card>
-  <Card title="OpenAI" href="https://platform.openai.com/api-keys">
-    Add AI capabilities to your app using OpenAI's powerful language models.
+    <Card title="OpenAI" href="https://openai.com/api/">
+    Add AI capabilities to your app using OpenAI's models.
   </Card>
   <Card title="Anthropic" href="https://www.anthropic.com/api">
-    Add powerful AI capabilities to your app using Anthropic's Claude models.
+    Add AI capabilities to your app using Anthropic's Claude models.
+  </Card>  
+  <Card title="Resend" href="https://resend.com/">
+    Add email capabilities to your app using Resend's modern email API.
+  </Card>
+  <Card title="Clerk" href="https://clerk.com/">
+    Comprehensive User Management Platform.
   </Card>
   <Card title="Three.js" href="https://threejs.org/docs/">
     Add interactive 3D graphics to your app.
-  </Card>
-  <Card title="Resend" href="https://resend.com/">
-    Add email capabilities to your app using Resend's modern email API.
   </Card>
   <Card title="D3.js" href="https://devdocs.io/d3/">
     Create dynamic, interactive data visualizations.
@@ -57,7 +55,16 @@ Verified integrations work best with Lovable:
     Create professional, interactive charts and visualizations.
   </Card>
   <Card title="p5.js" href="https://p5js.org/reference/">
-    Create creative coding projects and interactive graphics. [Examples](https://x.com/lovable_dev/status/1869765295931527488) here.
+    Create creative coding projects and interactive graphics.
+  </Card>
+  <Card title="Runware" href="https://runware.ai/">
+    Make your app generate images from text prompts.
+  </Card>
+  <Card title="ElevenLabs" href="https://elevenlabs.io/developers">
+    Add Text-to-Speech functionality.
+  </Card>
+  <Card title="Make" href="https://developers.make.com/api-documentation">
+    Visual platform for building workflows that automate tasks and connect apps.
   </Card>
   <Card title="Replicate" href="https://replicate.com/docs/">
     Run and fine-tune open-source AI models.
@@ -65,41 +72,62 @@ Verified integrations work best with Lovable:
   <Card title="Stability AI" href="https://platform.stability.ai/docs/api-reference">
     Develops open AI models across various modalities.
   </Card>
-  <Card title="Clerk" href="https://clerk.com/">
-    Comprehensive User Management Platform.
-  </Card>
-  <Card title="Make" href="https://developers.make.com/api-documentation">
-    Visual platform for building workflows that automate tasks and connect apps.
-  </Card>
-  <Card title="ElevenLabs" href="https://elevenlabs.io/developers">
-    Text-to-Speech.
-  </Card>
 </CardGroup>
 
 You can always request new integrations [here](https://feedback.lovable.dev/?b=675883fb92175ba92d835f92).
 
-## Unverified Integrations
+## Using Any API with Lovable
 
-All other callable APIs can still be integrated, but they often require additional context and instructions. Proceed at your own risk.
+All other callable APIs can still be integrated, but they often require additional context and instructions. 
+
+You might have:
+
+- **Internal systems with custom APIs**  
+  These could be services your team has built (e.g. inventory systems, analytics pipelines, internal tools) that expose REST or GraphQL endpoints but aren’t publicly documented or widely known. 
+  You want Lovable to pull from or send data to these systems to automate workflows or power user interfaces.
+
+
+- **Third-party APIs Lovable doesn’t yet support**  
+  Maybe you use a niche SaaS product, a specialized data provider, or a partner integration that Lovable doesn’t have built-in knowledge of. 
+  Even though it’s not officially supported, you still want Lovable to connect, make calls, and work with the data.
+
+
+In both cases, the challenge is the same: Lovable doesn’t “know” the API by default. But with good documentation and authentication setup, it can still use it effectively.
+Either way, the approach is the same: **Lovable can still connect to it**. Here’s how.
+
 
 <Steps>
-  <Step title="Prompt">
-    Example:
+  <Step title="Give Lovable the context it needs">
+    Lovable works best when it understands the API. You can provide:
+    - **OpenAPI specification** (if available)
+    - **Copy-pasted docs or examples** (especially endpoints and sample requests/responses)
 
-    <Info>
-      Integrate [Integration Name] into my site by following the steps in the documentation below: [Copy and paste API instructions or provide the documentation URL]
-    </Info>
+The clearer the documentation, the better Lovable can reason about how to call the API.
+
+  </Step>
+
+  <Step title="Handle authentication safely"> 
+  For APIs that require authentication: 
+  
+  **Option 1: Use Supabase Edge Functions as a proxy**
+  - Store secrets securely on Supabase
+  - Let Lovable call the API endpoint via the Edge Function (not the API directly)
+
+  **Option 2: Implement the API integration directly in your Lovable project**
+  - Expose an authentication endpoint (e.g. to exchange credentials for a token or session)
+  - Let Lovable call that auth endpoint as part of the integration flow
+  - Include tokens, headers, or session info in subsequent API calls
   </Step>
 </Steps>
 
-For example:
+Example APIs:
 
 <CardGroup cols="3">
   <Card title="Mapbox" href="https://docs.mapbox.com/">
     Powers navigation for people, packages, and vehicles everywhere.
   </Card>
   <Card title="Rive" href="https://rive.app/docs/getting-started/introduction">
-    _Create and ship interactive animations._
+    Create and ship interactive animations.
   </Card>
   <Card title="Together.ai" href="https://docs.together.ai/docs/introduction">
     Run or fine-tune leading open source models with only a few lines of code.
