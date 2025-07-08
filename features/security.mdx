@@ -14,7 +14,7 @@ To connect to third party services (like OpenAI, Anthropic etc), API keys are ne
 
 Whenever you paste an API key into the chat, Lovable will automatically detect it and warn you not to hardcode sensitive credentials directly into your frontend code. Instead of pasting API keys, describe what you're trying to accomplish and Lovable will guide you through the secure implementation.
 
-![Screenshot 2025-05-30 at 09.21.22.png](/images/Screenshot2025-05-30at09.21.22.png)
+![API key detection in action](/assets/features/images/API-key-detection.png)
 
 For example, instead of:
 
@@ -67,14 +67,16 @@ Lovable will:
 3. Review your Supabase RLS policies and database security (going deeper than Supabase's own advisor)
 4. Provide a detailed report with specific recommendations
 
-![Screenshot 2025-05-30 at 09.30.34.png](/images/Screenshot2025-05-30at09.30.34.png)
+![How to find the security review](/assets/features/images/find-security-review.png)
 
-![Screenshot 2025-05-30 at 09.29.08.png](/images/Screenshot2025-05-30at09.29.08.png)
+![The security review in action](/assets/features/images/security-review-in-action.png)
 
 ## Pre-publish security checks
 
 Before publishing, Lovable automatically displays security warnings from both the Supabase security advisor and its own enhanced AI security scanner. You'll be asked to confirm if there are any warnings, though we highly recommend resolving all issues first.
 
-![Screenshot 2025-05-30 at 09.49.21.png](/images/Screenshot2025-05-30at09.49.21.png)
+![Pre-publish security review](/assets/features/images/pre-publish-security-review.png)
 
+<Warning>
 Remember: Even with no warnings, always request a manual security review for production applications.
+</Warning>

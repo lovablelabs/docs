@@ -3,11 +3,11 @@
   "name": "Lovable Documentation",
   "theme": "mint",
   "logo": {
-    "dark": "/logo-new-dark.svg",
-    "light": "/logo-new-light.svg",
+    "dark": "/assets/logo/logowhite.svg",
+    "light": "/assets/logo/logoblack.svg",
     "href": "https://lovable.dev/"
   },
-  "favicon": "/favicon-new.svg",
+  "favicon": "/assets/logo/favicon.svg",
   "colors": {
     "primary": "#0095FF",
     "light": "#1AA3FF",
@@ -134,7 +134,7 @@
   },
   "seo": {
     "metatags": {
-      "og:image": "/assets/opengraph-image.png"
+      "og:image": "/assets/logo/opengraph-image.png"
     }
   },
   "redirects": [
