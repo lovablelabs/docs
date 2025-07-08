@@ -1,22 +1,17 @@
 ---
-title: "Visual Edit"
-description: "Tailwind-native visual controls for easy refinement."
+title: "Using the Visual Edits Tool"
+description: "Lovable’s Visual Edits tool allows you to make design changes directly from the interface. You can select elements on the page and either edit them instantly,such as updating text or colors,or useprompts to adjust functionality and layout. This tool is useful for making quick, targeted updates without needing to modify the code manually or use the Ai."
 icon: "computer-mouse"
 ---
 
-<Info>
-  - Visual Edits DO NOT consume any credits, so it's totally FREE to use.
-  - You can make multiple changes before saving them all at once.
-  - Tailwind-native controls: Custom styling without leaving the UI.
-</Info>
+## When to Use Visual Edits
 
-Lovable brings programming into the hands of everyone. **Visual Edits** is our Figma-like interface that lets you visually update your app—directly on the canvas—while keeping full control over the underlying Tailwind code.
+Use the Visual Edits tool when you want to:
 
-No prompts, no guessing. Just click, tweak, and ship.
-
-## How to Use Visual Edit
-
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/b-O7Ew0Q2ig?si=qnEZvVf9PZ0prOZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
+- Change static text content on your site
+- Update fonts, font sizes, or styles
+- Modify colors of text, buttons or other elements
+- Select any element and use prompting to modify its visual appearance or functionality.
 
 <Tip>
   **Keyboard shortcut:**
@@ -25,76 +20,16 @@ No prompts, no guessing. Just click, tweak, and ship.
   - Alt \+ S on PC
 </Tip>
 
-1. **Activate Visual Edit** from the editor toolbar or via shortcut.
-2. **Hover \+ Click** on any element—text, images, buttons, layouts.
-3. **Edit visually**:
-   - Change text content
-   - Adjust spacing and layout
-   - Modify colors, fonts, sizes
-   - Apply or override Tailwind classes
-4. **Select parent elements** for structural or layout-level changes.
-5. **Use AI prompts** for complex tasks—but only if you want to.
-6. **Preview in real-time** before hitting save.
+## How to Access and Use Visual Edits
 
-All updates are applied instantly—no rebuilds, no AI wait times, no code confusion.
-
-## Why It Matters
-
-Visual Edits shortens the feedback loop between **idea → UI update**:
-
-- **No-code meets pro-level control**\
-  Designers get pixel-perfect control, and devs get clean, maintainable code.
-- **Faster iteration, zero frustration**\
-  No more guessing how CSS will behave—see it live, tweak in real-time.
-- **Hot Module Reloading**\
-  Thanks to Vite-powered Dev Servers, saved edits refresh instantly—without page reloads.
-- **Smarter Editing with AST**\
-  Behind the scenes, your code is converted into an Abstract Syntax Tree (AST) right in the browser. This allows safe, precise updates—no fragile regex hacks.
-- **Scalable Infrastructure**\
-  Every Visual Edit runs on ephemeral, containerized cloud dev servers—4,000\+ of them—so your experience stays fast and consistent no matter your app’s complexity.
-- **Tailwind-native**\
-  Whether you're using presets or writing your own classes, edits are always valid Tailwind. No locked-in styles.
-
-## Common Use Cases
-
-- Change button colors or font weights on the fly.
-- Resize and align layout elements visually.
-- Rewrite CTA copy inline.
-- Add Tailwind classes to fine-tune spacing, shadows, borders, and more.
-- Preview edits across breakpoints and themes instantly.
-
-## Under the Hood (for devs)
-
-We built Visual Edits by moving the code layer closer to the visual layer:
-
-- **Stable JSX Tagging**\
-  Every generated component is tagged at compile-time using a custom Vite plugin, so edits map directly back to JSX source.
-- **In-browser AST**\
-  The full codebase is parsed into an interactive AST client-side using Babel & SWC. This enables live updates and custom class handling—all without waiting on servers.
-- **Live Tailwind Generator**\
-  Changes reflect immediately with our real-time Tailwind parser. You see the update before you save it.
-- **Hot Module Replacement (HMR)**\
-  When you do save, we generate clean JSX/TSX, compute diffs, and instantly trigger HMR to update the app.
-
-## Built for Everyone
-
-Whether you're:
-
-- A **non-technical founder** making your product shine
-- A **designer** refining spacing and hierarchy
-- A **developer** polishing the details with real-time feedback
-
-Visual Edits fits right into your workflow.
-
-## Resources:
-
-- [📼 Launch video](https://www.youtube.com/watch?v=3FrKcqDGfe0&t=11s)
-- [📢 Feature launch: Introducing Visual Edits](https://lovable.dev/blog/introducing-visual-edits)
-- [🔧 Technical deep-dive](https://x.com/emilahlback/status/1894488375517671795) by Emil Ahlbäck
-- [🛠️ Engineering: How We Built Visual Edits](https://lovable.dev/blog/visual-edits)
-
-## Final Notes
-
-Visual Edits is part of our mission to bring the power of software creation to everyone—not just coders. It’s free, fast, and built to scale with your imagination.
-
-[Try it out.](https://lovable.dev/) Tweak something. Fall in love with iteration again.
+1. **Locate the Visual Edits Tool**
+   You'll find it inside the chat box at the bottom left corner of your project interface.
+2. **Click the Edit button to activate it**
+3. **Select the Element**
+   Hover over the element you want to change; headlines, buttons, background sections, etc. Then click to select it.
+4. **Edit via Prompt or Direct Input**
+   After selecting, you can:
+   -Type a prompt like “Make this heading bold and change the color to dark green.”
+   -Or use the inline editing options to directly change text or select new fonts and colors.
+5. **Apply and Review**
+   Once your change is made, click **Save** and Lovable will instantly update the live preview and code.
