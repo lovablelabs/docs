@@ -48,7 +48,7 @@
             "pages": [
               "features/modes",
               "features/visual-edit",
-              "features/dev-mode",
+              "features/code-mode",
               "features/knowledge",
               "features/collaboration",
               "features/deploy",
