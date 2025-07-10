@@ -1,119 +1,59 @@
 ---
 title: "Collaboration"
-description: "Collaborate on your app in real time with teammates"
+description: "Work together on your Lovable projects"
 icon: "people-group"
 ---
 
-Lovable lets you build apps together, live. Invite your designer, developer, agency, or anyone else to your workspace. Everyone sees changes as they happen.
+Lovable lets you build websites together. Invite your designer, developer, agency, or anyone else. Everyone sees changes as they happen.
 
-- All workspaces can now have up to 20 members. Owners & admins can freely invite & remove users and manage projects. Editors can only make edits to existing projects. All users and projects in a workspace share the workspace's credit pool. 
+There are two ways of collaborating. You can invite collaborators to a specific project or to your entire workspace. 
 
-More info on pricing [here](https://docs.lovable.dev/user-guides/messaging-limits).
+## Collaboration in a specific project
+You can invite users to work together on a specific project by pressing "Invite" in the project editor. 
+Add their email, and they'll receive an invite to their email.
 
-## Create a Workspace
+<Note>
+Collaborators will use credits from the project owner's workspace.
+</Note>
 
-A workspace is your shared space for building and collaborating on projects.
+## Collaboration in a Workspace
 
-<Steps>
-  <Step title="Step 1">
-    **“Create new workspace”** from the dashboard or any project.
-  </Step>
-  <Step title="Step 2">
-    Name your workspace.
+### What is a Workspace? 
+A workspace is your shared space for building and collaborating on projects. You can invite your teammates to your workspace, and they'll have access to all the projects in it. 
+They can see, edit and publish the workspaces's projects. 
 
-    ![Create Workspace Lovable Pn](/images/create-workspace-lovable.png)
-  </Step>
-  <Step title="Step 3">
-    Choose a plan for your workspace.
+<Warning>
+  For granular permission control and role assignment in your workspace, a paid subscription is needed. 
+</Warning>
 
-    ![Select Plan Workspace Pn](/images/select-plan-workspace.png)
-  </Step>
-</Steps>
+When you subscribe to a plan it gets tied to your desired workspace, and then all projects in the workspace use those credits, no matter who sends the messages. 
 
-## Rename a Workspace
+You can customize your workspace in the workspace settings by:
+- Renaming it
+- Changing the avatar
+- Writing a description
 
-<Steps>
-  <Step title="Step 1">
-    Make sure you're in the right workspace (switch if needed).
-  </Step>
-  <Step title="Step 2">
-    Go to **Settings**.
+### How do I add and manage collaborators in a Workspace?
+You manage and add collaborators from the People tab in the workspace settings. You can access it by going to **Settings** > **People**. 
 
-    ![Invite Lovable 2 Pn](/images/invite-lovable-2.png)
-  </Step>
-  <Step title="Step 3">
-    Edit the **Workspace name** and **description**.
-
-    ![Workspace Setting Pn](/images/workspace-setting.png)
-  </Step>
-</Steps>
-
-## Invite & Manage Collaborators
-
-<Steps>
-  <Step title="Step 1">
-    Upgrade your plan if you're not on the **Teams** tier.
-
-    ![Upgrade Plan Pn](/images/upgrade-plan.png)
-  </Step>
-  <Step title="Step 2">
-    Click **“Invite”** in a project or from the dashboard.
-
-    ![Invite Lovable Pn](/invite-lovable-2.png)
-  </Step>
-  <Step title="Step 3">
-    Enter email addresses to send invites.
-
-    ![Invite Collaborator Pn](/images/invite-collaborator.png)
-  </Step>
-  <Step title="Step 4">
-    When they accept, they'll join your workspace and see all projects.
-  </Step>
-</Steps>
-
-## Real-Time Collaboration
-
-Once teammates join:
-
-- You’ll see their cursor and live changes.
-- Their icons appear in the top-right corner.
-- You can edit any element together, instantly.
-
-## Move a Project Between Workspaces
-
-<Steps>
-  <Step title="Step 1">
-    In your project, open **Settings**.
-
-    ![Menu Project Pn](/images/menu-project.png)
-  </Step>
-  <Step title="Step 2">
-    Scroll to the **Workspaces** section.
-
-    ![Project Change Workspace Pn](/images/project-change-workspace.png)
-  </Step>
-  <Step title="Step 3">
-    Click **“Change Workspace”** and select the new one.
-
-    ![Change Workspace Pn](/images/change-workspace.png)
-  </Step>
-</Steps>
-
-## Managing Access
-
-- Teammates have access to all workspace projects.
-- Switch between teams from the dashboard sidebar.
-- Everyone must accept their email invite to join.
-
-Perfect for friends, startups, and smaller enterprise teams collaborating on the same app or wanting centralized billing.
-
+Here you can: 
+- Add new collaborators by inputting their email. They'll receive an invite to their email that they then can accept.
+- Manage existing collaborators by changing their roles or removing them.
+- See monthly credits usage for each collaborator
 
 ## Permissions
-
 Please note that free plans do not have admin roles.
 
 |                                | **Editor** | **Admin** | **Owner** |
 |--------------------------------|------------|-----------|-----------|
+| **Project**                    |            |           |           |
+| Add Editor                     | ✅         | ✅        | ✅        |
+| Add Admin                      | ❌         | ❌        | ✅        |
+| Remove Editor                  | ✅         | ✅        | ✅        |
+| Remove Admin                   | ❌         | ❌        | ✅        |
+| Magic Link                     | ✅         | ✅        | ✅        |
+| Publish                        | ✅         | ✅        | ✅        |
+| Transfer to GitHub             | ✅          | ✅        | ✅        |
 | **Workspace**                  |            |           |           |
 | Add Editor                     | ❌         | ✅        | ✅        |
 | Add Admin                      | ❌         | ❌        | ✅        |
@@ -123,15 +63,25 @@ Please note that free plans do not have admin roles.
 | Remove Admin                   | ❌         | ❌        | ✅        |
 | Connect/disconnect Supabase   | ❌         | ✅        | ✅        |
 | Connect/disconnect GitHub     | ❌         | ✅        | ✅        |
-| **Project**                    |            |           |           |
-| Add Editor                     | ✅         | ✅        | ✅        |
-| Add Admin                      | ❌         | ❌        | ✅        |
-| Remove Editor                  | ✅         | ✅        | ✅        |
-| Remove Admin                   | ❌         | ❌        | ✅        |
-| Magic Link                     | ✅         | ✅        | ✅        |
-| Publish                        | ✅         | ✅        | ✅        |
-| Transfer to GitHub             | ✅          | ✅        | ✅        |
 
-### Legend
+**Legend**
 - ✅ = Permission granted  
 - ❌ = Permission denied
+
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="How many members can one Workspace have?">
+    Right now one workspace can have up to 20 members. 
+  </Accordion>
+  <Accordion title="Can I have several Workspaces?">
+  Yes, but you'll need separate subscriptions for each one. 
+  </Accordion>
+  <Accordion title="Can I switch between Workspaces?">
+    Yes. Go to the main dashboard. From there press your workspace name. In the dropdown you'll see the other workspaces you have access to. To switch, simply click the desired workspace.
+  </Accordion>
+  <Accordion title="Is it possible to transfer projects between Workspaces?">
+    Yes! Go to the project settings where you'll find the option to **Transfer** the project. 
+  </Accordion>
+</AccordionGroup>
