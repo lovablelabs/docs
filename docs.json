@@ -40,7 +40,7 @@
               "introduction/introduction",
               "introduction/plans-and-credit-limits",
               "introduction/faq",
-              "introduction/quickstart"
+              "introduction/getting-started"
             ]
       },
       {
@@ -129,7 +129,8 @@
     "github": "https://github.com/lovablelabs",
     "linkedin": "https://linkedin.com/company/lovable-dev",
     "youtube": "https://www.youtube.com/@lovable-labs/",
-    "discord": "https://discord.gg/lovable-dev"
+    "discord": "https://discord.gg/lovable-dev",
+    "reddit": "https://www.reddit.com/r/lovable/"
     }
   },
   "seo": {
