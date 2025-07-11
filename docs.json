@@ -52,6 +52,7 @@
               "features/knowledge",
               "features/collaboration",
               "features/deploy",
+              "features/analytics",
               "features/custom-domain",
               "features/security",
               "features/labs",
