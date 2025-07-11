@@ -1,27 +1,27 @@
 ---
 title: "Introduction"
-description: "Extend your website's functionality by using integrations and external APIs"
+description: "Extend your website's functionality by using integrations and external APIs."
 icon: "link"
 ---
 
-Lovable has native seamless integrations to export code and to add a backend. But it is also possible to integrate an external API if you are looking to add that specific functionality to your website. 
+Lovable has native seamless integrations to export code and to add a backend. But it is also possible to integrate an external API if you are looking to add that specific functionality to your website.
 
 ## What is an API?
 
-An API is a way for software applications to communicate and share data with each other. 
-Different APIs offer different functionality such as sending emails or processing payments. 
-You can read more about the power of APIs in [this article on our blog](https://lovable.dev/blog/2025-01-28-the-power-of-apis). 
+An API is a way for software applications to communicate and share data with each other.
+Different APIs offer different functionality such as sending emails or processing payments.
+You can read more about the power of APIs in [this article on our blog](https://lovable.dev/blog/2025-01-28-the-power-of-apis).
 
 ## Native Integrations
 
-Explore the sections below to get started quickly and learn more about our native GitHub and Supabase integrations. 
+Explore the sections below to get started quickly and learn more about our native GitHub and Supabase integrations.
 
 <CardGroup cols="2">
   <Card title="GitHub Integration" icon="github" href="github">
-    Understand how to integrate Lovable with GitHub to export your code and for seamless version control. 
+    Understand how to integrate Lovable with GitHub to export your code and for seamless version control.
   </Card>
   <Card title="Supabase Integration" icon="database" href="supabase">
-    Add a backend to your website using Supabase, to support authentication and persistent data storage. 
+    Add a backend to your website using Supabase, to support authentication and persistent data storage.
   </Card>
 </CardGroup>
 
@@ -33,12 +33,12 @@ Verified integrations work best with Lovable:
   <Card title="Stripe" href="stripe">
     Add payment processing capabilities to your app.
   </Card>
-    <Card title="OpenAI" href="https://openai.com/api/">
+  <Card title="OpenAI" href="https://openai.com/api/">
     Add AI capabilities to your app using OpenAI's models.
   </Card>
   <Card title="Anthropic" href="https://www.anthropic.com/api">
     Add AI capabilities to your app using Anthropic's Claude models.
-  </Card>  
+  </Card>
   <Card title="Resend" href="https://resend.com/">
     Add email capabilities to your app using Resend's modern email API.
   </Card>
@@ -72,51 +72,51 @@ Verified integrations work best with Lovable:
   <Card title="Stability AI" href="https://platform.stability.ai/docs/api-reference">
     Develops open AI models across various modalities.
   </Card>
+  <Card title="Figma" icon="sparkles" href="https://lovable.dev/blog/2025-01-22-figma-to-lovable-builder-io-native-integration">
+    Import designs from your Figma workspace. 
+  </Card>
 </CardGroup>
 
 You can always request new integrations [here](https://feedback.lovable.dev/?b=675883fb92175ba92d835f92).
 
 ## Using Any API with Lovable
 
-All other callable APIs can still be integrated, but they often require additional context and instructions. 
+All other callable APIs can still be integrated, but they often require additional context and instructions.
 
 You might have:
 
-- **Internal systems with custom APIs**  
-  These could be services your team has built (e.g. inventory systems, analytics pipelines, internal tools) that expose REST or GraphQL endpoints but aren’t publicly documented or widely known. 
+- **Internal systems with custom APIs**\
+  These could be services your team has built (e.g. inventory systems, analytics pipelines, internal tools) that expose REST or GraphQL endpoints but aren’t publicly documented or widely known.
   You want Lovable to pull from or send data to these systems to automate workflows or power user interfaces.
-
-
-- **Third-party APIs Lovable doesn’t yet support**  
-  Maybe you use a niche SaaS product, a specialized data provider, or a partner integration that Lovable doesn’t have built-in knowledge of. 
+- **Third-party APIs Lovable doesn’t yet support**\
+  Maybe you use a niche SaaS product, a specialized data provider, or a partner integration that Lovable doesn’t have built-in knowledge of.
   Even though it’s not officially supported, you still want Lovable to connect, make calls, and work with the data.
-
 
 In both cases, the challenge is the same: Lovable doesn’t “know” the API by default. But with good documentation and authentication setup, it can still use it effectively.
 Either way, the approach is the same: **Lovable can still connect to it**. Here’s how.
 
-
 <Steps>
   <Step title="Give Lovable the context it needs">
     Lovable works best when it understands the API. You can provide:
+
     - **OpenAPI specification** (if available)
     - **Copy-pasted docs or examples** (especially endpoints and sample requests/responses)
 
-The clearer the documentation, the better Lovable can reason about how to call the API.
-
+    The clearer the documentation, the better Lovable can reason about how to call the API.
   </Step>
+  <Step title="Handle authentication safely">
+    For APIs that require authentication:
 
-  <Step title="Handle authentication safely"> 
-  For APIs that require authentication: 
-  
-  **Option 1: Use Supabase Edge Functions as a proxy**
-  - Store secrets securely on Supabase
-  - Let Lovable call the API endpoint via the Edge Function (not the API directly)
+    **Option 1: Use Supabase Edge Functions as a proxy**
 
-  **Option 2: Implement the API integration directly in your Lovable project**
-  - Expose an authentication endpoint (e.g. to exchange credentials for a token or session)
-  - Let Lovable call that auth endpoint as part of the integration flow
-  - Include tokens, headers, or session info in subsequent API calls
+    - Store secrets securely on Supabase
+    - Let Lovable call the API endpoint via the Edge Function (not the API directly)
+
+    **Option 2: Implement the API integration directly in your Lovable project**
+
+    - Expose an authentication endpoint (e.g. to exchange credentials for a token or session)
+    - Let Lovable call that auth endpoint as part of the integration flow
+    - Include tokens, headers, or session info in subsequent API calls
   </Step>
 </Steps>
 
