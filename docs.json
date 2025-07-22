@@ -45,19 +45,33 @@
       },
       {
             "tab": "Features",
-            "pages": [
+            "groups": [
+              {
+                "group": "Core Features",
+                "pages": [
               "features/modes",
               "features/visual-edit",
               "features/code-mode",
               "features/knowledge",
               "features/collaboration",
+              "features/private-projects",
               "features/deploy",
               "features/analytics",
               "features/custom-domain",
               "features/security",
               "features/labs",
-              "features/launched",
               "features/figma-to-lovable"
+                ]
+              },
+              {
+              "group": "Business Features",
+                "pages":[
+                  "features/business/sso",
+                  "features/business/data-opt-out",
+                  "features/business/personal-projects",
+                  "features/business/design-templates"
+                ]
+              }
             ]
           },
           {
@@ -107,7 +121,8 @@
               "use-case/video-tutorials",
               "use-case/landing-page",
               "use-case/prototype",
-              "use-case/saas"
+              "use-case/saas",
+              "use-case/launched"
             ]
           },
           {
