@@ -38,7 +38,7 @@
         "tab": "Introduction",
             "pages": [
               "introduction/welcome",
-              "introduction/plans-and-credit-limits",
+              "introduction/plans-and-credits",
               "introduction/faq",
               "introduction/getting-started"
             ]
@@ -157,7 +157,7 @@
   "redirects": [
     {
       "source": "/user-guides/credits",
-      "destination": "/introduction/plans-and-credit-limits"
+      "destination": "/introduction/plans-and-credits"
     },
     {
       "source": "/user-guides/teams",
@@ -165,7 +165,7 @@
     },
     {
       "source": "/user-guides/messaging-limits",
-      "destination": "/introduction/plans-and-credit-limits"
+      "destination": "/introduction/plans-and-credits"
     },
     {
       "source": "/integrations/git-integration",
