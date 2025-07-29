@@ -55,6 +55,7 @@
               "features/knowledge",
               "features/collaboration",
               "features/private-projects",
+              "features/backend",
               "features/deploy",
               "features/analytics",
               "features/custom-domain",

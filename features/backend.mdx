@@ -1,0 +1,39 @@
+---
+title: "Seamless Backend"
+description: "View and manage your project's data directly through Lovable"
+icon: "database"
+---
+
+Lovable now includes a fully integrated backend, allowing you to manage everything from data and users to authentication, API keys, and file uploads, all within the platform. 
+There’s no need for external tools or configurations. Our seamless backend system gives you complete control directly through the Lovable interface, making it easier than ever to build and manage full-stack applications. 
+
+<Note>
+A full-stack project includes both the frontend (what your users see and interact with, like buttons, images, and text) and the backend (the behind-the-scenes system that stores data, handles API-keys, logins, etc.).
+
+With Lovable, you don’t have to worry about any of the complex tech. Just describe what you want, and we’ll build both parts for you, automatically.
+</Note>
+To use the backend, simply select “Lovable Backend” when starting a new project from the dashboard. Then, describe a feature that requires backend functionality, such as user authentication, uploading files, or integrating an external API. 
+Once generated, you can view and manage all backend data and settings in the “Backend” section of your project settings.
+
+## Features
+- **Database** View tables and edit data
+- **Auth** Configure how users sign in to your app
+- **Secrets** Store and manage environment variables such as API keys securely
+- **Suggestions** Get security and performance recommendations
+- **Storage** Upload and manage files, images, and documents
+- **Users** View user data and track new user signups
+- **Logs** Monitor application logs to debug issues
+
+## Example flow
+
+You ask the AI add to authentication to your application, to enable users to log in to your application.
+The AI adds the functionality, and you can manage it through the Auth feature in the backend-tab. 
+You can change things like sign-in methods, if a confirmation email when signing up is needed etc.
+
+Then you move on and ask the AI implement functionality to be able to upload comments to your application. 
+This will be implemented through tables, that you can find in the Database-tab. 
+Here you can see all comments created and their corresponding data. 
+
+After that you'll maybe want to integrate with an external API that can summarize your comments. To do this, simply ask the AI and you'll be prompted to input an API key for an LLM. 
+This will be stored in Secrets, to make sure that no one can access your private API keys. 
+
