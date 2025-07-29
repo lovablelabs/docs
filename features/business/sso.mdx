@@ -9,8 +9,19 @@ With SSO, users can access all their tools with one set of credentials, simplify
 
 Lovable supports integration with major identity providers, including Google Workspace, Microsoft Azure AD, Okta, and more. 
 
-To enable SSO, first log in to your account and then navigate to **Settings → Workspace → Identity** and follow the setup instructions.
+### Setup SSO
+To set up SSO, a **Workspace Owner** or **Admin** must log in and navigate to  
+**Settings → Workspace → Identity**, then follow the setup instructions.
 
+In your identity provider, configure the following settings:
+
+**Redirect URI / ACS URL**
+https://auth.lovable.dev/__/auth/handler
+**Audience URI / Entity ID**
+https://auth.lovable.dev/__/auth/handler
+**Required Claims**
+Make sure the SAML response includes first_name, last_name and email as attributes.
+These attributes are required for authentication and user provisioning in Lovable.
 
 ### Common Issues and Troubleshooting
 <AccordionGroup>
