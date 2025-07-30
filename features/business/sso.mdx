@@ -9,13 +9,27 @@ With SSO, users can access all their tools with one set of credentials, simplify
 
 Lovable supports integration with major identity providers, including Google Workspace, Microsoft Azure AD, Okta, and more. 
 
-To enable SSO, navigate to **Settings → Workspace → Identity** and follow the setup instructions.
+### Setup SSO
+To set up SSO, a **Workspace Owner** or **Admin** must log in and navigate to  
+**Settings → Workspace → Identity**, then follow the setup instructions.
+
+In your identity provider, configure the following settings:
+
+**Redirect URI / ACS URL:**
+https://auth.lovable.dev/__/auth/handler
+
+**Audience URI / Entity ID:**
+https://auth.lovable.dev/__/auth/handler
+
+**Required Claims:**
+Make sure the SAML response includes first_name, last_name and email as attributes.
+These attributes are required for authentication and user provisioning in Lovable.
 
 ### Common Issues and Troubleshooting
 <AccordionGroup>
     <Accordion title="I already have an account, but I’m joining a business workspace that uses SSO. How do I log in?">
-        If you created your account using another login method (like email/password, Google, or GitHub), you’ll need to log in that way first. 
-        Once you’re logged in, try logging in again using SSO. This will link your existing account to your SSO identity.
+        If you created your account using another login method (like email/password, Google, or GitHub), you’ll need to log in that way **first**. 
+        Once you’re logged in, navigate to Settings → Identity → Link with SSO. This will link your existing account to your SSO identity.
         <Note>
         **Important:** If you attempt to log in with SSO before linking your existing account, you’ll see an error. 
         This is a security measure to prevent unauthorized access. Log in using your original method first to complete the linking process.
