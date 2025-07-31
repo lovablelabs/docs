@@ -31,7 +31,7 @@ Break down the suggestions into an ordered list of steps we could take, from mos
 
 This prompt is long, but it directs the AI to act like a code reviewer or architect. We’ve asked it to find mislocated code, check modularity, and even prioritize the fixes​. The AI might respond with something like:
 
-1. ”**Separate API calls from components:** The `ProjectList` component is directly fetching data. _Suggestion: move data fetching to a dedicated hook or context to keep components pure UI._
+1. “**Separate API calls from components:** The `ProjectList` component is directly fetching data. _Suggestion: move data fetching to a dedicated hook or context to keep components pure UI._
 2. **Reduce coupling in Task logic:** The task completion toggle is updating both state and directly writing to localStorage. This should be refactored to have a single source of truth.
 3. **Organize utility functions:** There are utility functions in `App.tsx` that would be better placed in a `utils` folder (e.g., date formatting functions).
 4. ...”
