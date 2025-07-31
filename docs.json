@@ -55,7 +55,7 @@
               "features/knowledge",
               "features/collaboration",
               "features/private-projects",
-              "features/deploy",
+              "features/publish",
               "features/analytics",
               "features/custom-domain",
               "features/security",
@@ -166,6 +166,10 @@
     {
       "source": "/integrations/git-integration",
       "destination": "/integrations/github"
+    },
+    {
+      "source": "/features/deploy",
+      "destination": "/features/publish"
     }
   ]
 }
