@@ -4,27 +4,22 @@ description: "Learn about and manage early access features."
 icon: "flask"
 ---
 
-## What is Labs?
-
+You can enable and disable different Labs-features by going to your [Account Settings](https://lovable.dev/settings/account), and then navigating to **Labs**.
+<Danger>
 These experimental features may change or be removed at any time.
+</Danger>
 
-You can access Labs from your [Account Setting tab](https://lovable.dev/settings/account) in the Lovable Editor.
+## Legacy Mode
 
-## **GitHub Branch Switching**
+With Legacy Mode enabled you will be sending messages using the earlier version of Lovable, pre Agent Mode. Read more about Legacy mode [here](/features/modes#legacy-mode).
 
-Select the branch to make edits to in your GitHub repository. To switch branches in GitHub through the Lovable editor:
+## GitHub Branch Switching
+By enabling GitHub Branch Switching you can select the branch that Lovable edits. Once enabled you can switch branch by following these steps.
 
-1. Enter your project.
-2. Go to Project Settings
-3. Go to GitHub
-4. Click the branch dropdown, and choose the branch you want to switch to.
+1. Go to the **Settings** of a project
+2. Go to **GitHub** tab
+3. Click the branch dropdown, and choose the branch you want to switch to
 
-<Warning>
-  ### **Important Notes:**
-
-  - Commit or stash any uncommitted changes before switching branches
-  - If you encounter "Branch not found" errors, pull the latest changes from the remote repository first
-  - If you can't switch branches, check if you have untracked files that would be overwritten
-  - Branch switching will change all files in your workspace to match that branch
-  - Lovable primarily syncs with your repository's default branch (usually main)
-</Warning>
+<Note>
+  Lovable defaults to synching with the "main" branch
+</Note>

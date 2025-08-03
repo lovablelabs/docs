@@ -16,122 +16,133 @@
   "navigation": {
     "global": {
       "anchors": [
-      {
-        "anchor": "Announcements",
-        "icon": "newspaper",
-        "href": "https://lovable.dev/blog?category=announcements"
-      },
-      {
-        "anchor": "Status",
-        "icon": "signal",
-        "href": "https://status.lovable.dev/"
-      },
-      {
-        "anchor": "Feature requests",
-        "icon": "rocket",
-        "href": "https://feedback.lovable.dev/"
-      }
-    ]
+        {
+          "anchor": "Announcements",
+          "icon": "newspaper",
+          "href": "https://lovable.dev/blog?category=announcements"
+        },
+        {
+          "anchor": "Status",
+          "icon": "signal",
+          "href": "https://status.lovable.dev/"
+        },
+        {
+          "anchor": "Feature requests",
+          "icon": "rocket",
+          "href": "https://feedback.lovable.dev/"
+        }
+      ]
     },
     "tabs": [
       {
         "tab": "Introduction",
-            "pages": [
-              "introduction/welcome",
-              "introduction/plans-and-credit-limits",
-              "introduction/faq",
-              "introduction/getting-started"
-            ]
+        "pages": [
+          "introduction/welcome",
+          "introduction/plans-and-credits",
+          "introduction/faq",
+          "introduction/getting-started"
+        ]
       },
       {
-            "tab": "Features",
+        "tab": "Features",
+        "groups": [
+          {
+            "group": "Core Features",
             "pages": [
               "features/modes",
               "features/visual-edit",
               "features/code-mode",
               "features/knowledge",
               "features/collaboration",
-              "features/deploy",
+              "features/private-projects",
+              "features/publish",
               "features/analytics",
               "features/custom-domain",
               "features/security",
               "features/labs",
-              "features/launched",
               "features/figma-to-lovable"
             ]
           },
           {
-            "tab": "Integrations",
+            "group": "Business Features",
             "pages": [
-              "integrations/introduction",
-              "integrations/github",
-              "integrations/supabase",
-              "integrations/stripe",
-              "integrations/resend",
-              "integrations/clerk",
-              "integrations/make",
-              "integrations/replicate",
-              "integrations/ai",
-              "integrations/21stdev"
-            ]
-          },
-          {
-            "tab": "Tips & tricks",
-            "pages": [
-              "tips-tricks/best-practice",
-              "tips-tricks/troubleshooting",
-              "tips-tricks/using-images",
-              "tips-tricks/using-videos",
-              "tips-tricks/custom-fonts",
-              "tips-tricks/npm-packages",
-              "tips-tricks/seo",
-              "tips-tricks/chrome-extensions",
-              "tips-tricks/from-idea-to-app",
-              "tips-tricks/community",
-              "tips-tricks/support-policy"
-            ]
-          },
-          {
-            "tab": "Prompt Engineering",
-            "pages": [
-              "prompting/prompting-one",
-              "prompting/prompting-library",
-              "prompting/prompting-debugging",
-              "prompting/prompt-integrations"
-            ]
-          },
-          {
-            "tab": "Use Cases",
-            "pages": [
-              "use-case/inspiration",
-              "use-case/video-tutorials",
-              "use-case/landing-page",
-              "use-case/prototype",
-              "use-case/saas"
-            ]
-          },
-          {
-            "tab": "Glossary",
-            "pages": [
-              "glossary"
-            ]
-          },
-          {
-            "tab": "Changelog",
-            "pages": [
-              "changelog"
+              "features/business/sso",
+              "features/business/data-opt-out",
+              "features/business/personal-projects",
+              "features/business/design-templates"
             ]
           }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "pages": [
+          "integrations/introduction",
+          "integrations/github",
+          "integrations/supabase",
+          "integrations/stripe",
+          "integrations/resend",
+          "integrations/clerk",
+          "integrations/make",
+          "integrations/replicate",
+          "integrations/ai",
+          "integrations/21stdev"
+        ]
+      },
+      {
+        "tab": "Tips & tricks",
+        "pages": [
+          "tips-tricks/best-practice",
+          "tips-tricks/troubleshooting",
+          "tips-tricks/using-images",
+          "tips-tricks/using-videos",
+          "tips-tricks/custom-fonts",
+          "tips-tricks/npm-packages",
+          "tips-tricks/seo",
+          "tips-tricks/chrome-extensions",
+          "tips-tricks/from-idea-to-app",
+          "tips-tricks/community",
+          "tips-tricks/support-policy"
+        ]
+      },
+      {
+        "tab": "Prompt Engineering",
+        "pages": [
+          "prompting/prompting-one",
+          "prompting/prompting-library",
+          "prompting/prompting-debugging",
+          "prompting/prompt-integrations"
+        ]
+      },
+      {
+        "tab": "Use Cases",
+        "pages": [
+          "use-case/inspiration",
+          "use-case/video-tutorials",
+          "use-case/landing-page",
+          "use-case/prototype",
+          "use-case/saas",
+          "use-case/launched"
+        ]
+      },
+      {
+        "tab": "Glossary",
+        "pages": ["glossary"]
+      },
+      {
+        "tab": "Changelog",
+        "pages": ["changelog"]
+      }
     ]
   },
   "footer": {
     "socials": {
-    "x": "https://x.com/lovable_dev",
-    "github": "https://github.com/lovablelabs",
-    "linkedin": "https://linkedin.com/company/lovable-dev",
-    "youtube": "https://www.youtube.com/@lovable-labs/",
-    "discord": "https://discord.gg/lovable-dev",
-    "reddit": "https://www.reddit.com/r/lovable/"
+      "x": "https://x.com/lovable_dev",
+      "github": "https://github.com/lovablelabs",
+      "linkedin": "https://linkedin.com/company/lovable-dev",
+      "youtube": "https://www.youtube.com/@lovable-labs/",
+      "discord": "https://discord.gg/lovable-dev",
+      "reddit": "https://www.reddit.com/r/lovable/"
     }
   },
   "seo": {
@@ -142,7 +153,7 @@
   "redirects": [
     {
       "source": "/user-guides/credits",
-      "destination": "/introduction/plans-and-credit-limits"
+      "destination": "/introduction/plans-and-credits"
     },
     {
       "source": "/user-guides/teams",
@@ -150,11 +161,15 @@
     },
     {
       "source": "/user-guides/messaging-limits",
-      "destination": "/introduction/plans-and-credit-limits"
+      "destination": "/introduction/plans-and-credits"
     },
     {
       "source": "/integrations/git-integration",
       "destination": "/integrations/github"
+    },
+    {
+      "source": "/features/deploy",
+      "destination": "/features/publish"
     }
   ]
 }
