@@ -163,102 +163,6 @@ Use the accordions below to identify specific issues and actions:
   </Accordion>
 </AccordionGroup>
 
-### Domain Issues
-
-<AccordionGroup>
-  <Accordion title="Custom Domain Setup">
-    To connect your custom domain to your Lovable app:
-
-    1. Navigate to Project → Settings → Domains in Lovable
-    2. Click "Add Domain" and enter your domain name
-    3. Update your DNS settings as instructed
-    4. Wait for DNS propagation (can take up to 48 hours)
-
-    <Info>
-      Custom domain functionality requires a paid Lovable plan.
-    </Info>
-  </Accordion>
-  <Accordion title="DNS Configuration">
-    Example DNS settings for your domain registrar:
-
-    ```
-    # For A record (example.com):
-    Type: A
-    Name: @
-    Value: 185.158.133.1
-    
-    # For www subdomain:
-    Type: CNAME
-    Name: www
-    Value: yourapp.lovable.app
-    ```
-
-    #### **DNS Settings Explanation:**
-
-    - **A Record:** Points your root domain to Lovable's IP address
-    - **CNAME Record:** Creates an alias from www to your Lovable app
-    - **TTL (Time-to-Live):** Set to 3600 (1 hour) or lower for faster propagation
-
-    #### **DNS Verification:**
-
-    To verify your DNS settings are correct, you can use:
-
-    - [**<u>DNSChecker.org</u>**](https://dnschecker.org/)
-    - [**<u>MXToolbox</u>**](https://mxtoolbox.com/)
-    - Command line: `dig example.com` or `nslookup example.com`
-  </Accordion>
-  <Accordion title="SSL Certificate Issues">
-    Lovable automatically provisions SSL certificates for custom domains. If you're experiencing SSL issues:
-
-    - Ensure your DNS is properly configured
-    - Check if your domain has CAA records that might restrict certificate issuance
-    - Wait up to 24 hours for the certificate to be issued
-    - Verify your browser isn't caching an old certificate
-    - Check for certificate transparency logs to see if a certificate was issued
-    - Contact Lovable support if issues persist
-
-    #### **Common SSL Errors:**
-
-    - **ERR_CERT_COMMON_NAME_INVALID:** Domain doesn't match certificate
-    - **ERR_CERT_AUTHORITY_INVALID:** Certificate not trusted by browser
-    - **SEC_ERROR_UNKNOWN_ISSUER:** Certificate issuer unknown
-    - **SSL_ERROR_BAD_CERT_DOMAIN:** Domain doesn't match certificate
-
-    <Info>
-      \*\*SSL Security Note: \*\*Lovable uses Let's Encrypt to provision SSL certificates. These certificates are valid for 90 days and are automatically renewed.
-    </Info>
-  </Accordion>
-  <Accordion title="Deployment Process">
-    To deploy your Lovable app:
-
-    1. Click the "Publish" button in the top-right corner
-    2. Wait for the build process to complete
-    3. Your app will be available at [yourapp.lovable.app](http://yourapp.lovable.app)
-    4. Review deployment logs for any issues
-
-    #### **Deployment Strategies:**
-
-    - **Preview Deployments:** Test your app before publishing to production
-    - **Automatic Deployments:** Configure your project to deploy automatically on Git changes
-    - **Rollbacks:** Revert to previous versions if needed
-  </Accordion>
-  <Accordion title="Removing Lovable Badge">
-    To remove the Lovable badge from your deployed app:
-
-    1. Go to Project Settings
-    2. Find "Show Lovable Badge" option
-    3. Toggle it off (requires paid plan)
-    4. Redeploy your application
-
-    <Info>
-      The badge removal option is available on all paid plans. If you don't see this option, make sure your billing is up to date.
-    </Info>
-  </Accordion>
-  <Accordion title="Published version not showing latest version">
-    Current workaround is user having to add both the domain as well as [www](http://www). domain counterpart to get the updates to sync.
-  </Accordion>
-</AccordionGroup>
-
 ### Supabase issues
 
 <AccordionGroup>
@@ -289,20 +193,6 @@ Use the accordions below to identify specific issues and actions:
     2. Select "Connect to Supabase"
     3. Follow the prompts to connect to your Supabase project
     4. Once connected, Lovable can see your tables, RLS policies, and functions
-  </Accordion>
-</AccordionGroup>
-
-### Stripe issues
-
-<AccordionGroup>
-  <Accordion title="Stripe error">
-    Try a different card or payment method. Contact support if unresolved.
-  </Accordion>
-  <Accordion title="Two active subscriptions">
-    Don't worry—support can easily fix this.
-  </Accordion>
-  <Accordion title="Cancel your subscription">
-    Go to your settings and cancel via Stripe account.
   </Accordion>
 </AccordionGroup>
 
@@ -402,13 +292,4 @@ Still stuck? Try this:
 
 ## Comprehensive Debugging Manual
 
-[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) or [this website](https://kb-lovable.netlify.app/?tab=errors#errors) were written by a Lovable power user in our Discord community.
-
-### How to use it
-
-1. **Download** it as `Comprehensive_Debugging_Manual.md`.
-2. **Upload** it to your GitHub project.
-3. Prompt Lovable: "Read this document. Let me know if it helps. Then create a prompt I should use to troubleshoot this issue."
-4. After Lovable responds, say: "Before you proceed, explain in detail why you think this will work. Wait for my approval."
-
-This ensures deeper understanding before implementing any fix.
+[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) or [this website](https://kb-lovable.netlify.app/?tab=errors#errors) were written by a Lovable power user in our Discord community. 
