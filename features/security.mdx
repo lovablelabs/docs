@@ -54,7 +54,14 @@ Lovable includes comprehensive AI-powered security scanning to help identify pot
 
 ## Security View
 
-The Supabase security advisor can sometimes miss incorrect RLS (Row Level Security) usage. To address this, Lovable includes a deep RLS security review that uses AI to analyze your app for potential security issues beyond what Supabase's built-in advisor catches. This provides additional coverage for RLS policy problems and suggests specific plans on how to fix them.
+The Security View displays findings from two sources: feedback from the Supabase security advisor and an in-depth AI review of your Supabase schema and RLS (Row Level Security) policies by the Lovable AI. This comprehensive approach ensures broader coverage of potential security issues.
+
+Findings are categorized by severity level:
+- **Error**: Critical security issues that should be addressed immediately. These include the "try to fix" option, though fixes are not guaranteed to resolve all cases.
+- **Warning**: Important security concerns that should be reviewed and likely addressed.
+- **Info**: General security recommendations and best practices for your consideration.
+
+The "Security Review" button triggers a more comprehensive AI analysis that includes your entire codebase, going beyond just the database schema and RLS policies to examine your application code for additional security vulnerabilities.
 
 ![API key detection in action](/assets/features/images/security-view.png)
 
