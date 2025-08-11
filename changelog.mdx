@@ -4,43 +4,114 @@ description: "News from the Lovable engineering team. "
 icon: "clock-rotate-left"
 ---
 
+<Update label="08/11/2025">
+  **Agent Mode is the new default mode**
 
-<Update label="06/26/2025">
-**Spotlight**
+  With this upgrade, Lovable becomes a truly agentic partner—interpreting requests, understanding your codebase, fixing issues, executing complex multi-step edits across files, integrating with external tools, and reducing errors by 91%, so you can build more ambitious apps faster and with less friction.
 
-We've made collaboration on Lovable even more accessible by making it a free feature for all users.
+  Legacy mode (where you don’t use agent) will be sunsetting on September 1, 2025.
 
-For Free and Pro users:
-- Workspace collaboration is now completely free – invite your teammates and start building together at no additional cost.
-- Unlocks workspace collaboration for up to 20 members on both Free and Pro plans.
-- On Free plans, additional members join as editors; Pro plans offer granular workspace roles and permissions.
+  **Real-time analytics on your Lovable apps**
 
-For Teams plan users:
-- We've simplified our pricing structure and moved you to the Pro plan with significant savings:
-  - You've been automatically moved from the Teams plan to the Pro plan.
-  - You'll now pay 20% less starting with your next renewal.
-  - You still have access to all the same features and credits as before – just at a lower price.
-  - All your project and workspace settings remain unchanged.
+  Curious how your app is performing in the wild?
+  You can now track live traffic and engagement directly inside Lovable including:
 
+  - Visitors: How many people are using your app
+    Pageviews: Which pages get the most attention
+  - Visit duration: How long users stay
+  - Bounce rate: What percentage leaves instantly
+  - Views per visit: How deeply users engage
 
-**Improvements**
+  The data updates in near real-time so you can spot trends, debug issues, or just celebrate your first users\! Available now under Project Settings → Analytics
 
-- Redesigned the mobile experience for building apps and websites directly from your phone.
-- Shipped a Visual Edits refresh with new floating combo box controls positioned right next to elements you're editing
-- Added project search functionality with fuzzy matching by name – _tip: rename your projects for better discoverability_.
-- Rolled out full-stack initial generations to all users that will enable you to connect Supabase before doing an initial generation
-- Added a floating prompt bar to our homepage that lets you enter prompt even when scrolled down.
-- Enhanced the history view with a cleaner timeline prioritizing dates, restored versions now visible, and simplified version navigation.
-- Updated the careers page with latest information. [Check it out here](https://lovable.dev/careers).
+  **Pricing change coming to chat mode**
 
+  Pricing for chat mode is moving from 1 credit per message to dynamic pricing, which matches the pricing model for agent mode. This means that each message and response cost is based on the complexity of the message; so some messages and responses cost less than 1 credit, and some, if quite complex, cost more. This change will be rolling out to all users on September 1, 2025.
 
-**Bug Fixes**
+  **Lovable business plan**
 
-- Fixed admin access to integration settings for user projects.
-- Resolved issue where admins couldn’t properly access workspaces, causing editor display and functionality issues when visiting team projects.
-- Fixed iframe redirect issue that was causing unwanted redirects within the Lovable app.
+  Introducing the Lovable Business Plan, built for teams that need more control, privacy, and flexibility. It includes everything in Pro, plus powerful upgrades:
+
+  - SSO for secure org-wide sign-in
+  - Personal projects only visible to you
+  - Templates for consistent styling
+  - Yearly plans now available
+
+  You can now switch to a yearly subscription for any paid Lovable plan. Get a discounted rate, simplify billing, and worry less about monthly renewals.
+
+  **Visual edits v2**
+
+  We have refined the visual edits experience after tons of feedback. More responsive, precise, and delightful to use. It’s faster than ever to tweak your UI, fix copy, or adjust layout—without leaving the live preview.
+
+  You can also jump to selected elements in code when using visual edits, tightens the loop between design and implementation.
+
+  **Project invites workflow**
+
+  Invited users must now formally accept or decline access to a project—both from email and magic links. This avoids stale “pending” members and improves collaborator tracking.
+
+  **Search all files in the code editor**
+
+  Use the file search inside the code editor to quickly locate code and add file paths directly into chat.
+
+  **Unified credits bar**
+
+  We’ve shipped a new credits bar that combines all credit types into one clean, unified view—no more jumping between different displays to track usage.
+
+  **Upgraded people tab**
+
+  The People tab in workspace settings has been redesigned. It now includes pagination (20 users per page), search, and filtering by member status—making it much easier to manage large teams.
+
+  **Scales to large workspaces**
+
+  Thanks to backend improvements, we now support massive workspaces with tens of thousands of members without performance issues.
+
+  **Published project badge**
+
+  We’ve added a small but useful touch: all published projects now display a “Published” badge so it’s easier to see what’s live at a glance.
+
+  **Bug fixes**
+
+  - Fixed image upload bug causing \>1% of initial generations to fail if the user wasn’t logged in.
+  - Prevents redundant updates when a project is already up to date with the deployed version.
+  - You can now disconnect a project from legacy Supabase when disconnecting the org.
+  - Reconnecting orgs with invalid tokens is now seamless.
 </Update>
 
+<Update label="06/26/2025">
+  **Spotlight**
+
+  We've made collaboration on Lovable even more accessible by making it a free feature for all users.
+
+  For Free and Pro users:
+
+  - Workspace collaboration is now completely free – invite your teammates and start building together at no additional cost.
+  - Unlocks workspace collaboration for up to 20 members on both Free and Pro plans.
+  - On Free plans, additional members join as editors; Pro plans offer granular workspace roles and permissions.
+
+  For Teams plan users:
+
+  - We've simplified our pricing structure and moved you to the Pro plan with significant savings:
+    - You've been automatically moved from the Teams plan to the Pro plan.
+    - You'll now pay 20% less starting with your next renewal.
+    - You still have access to all the same features and credits as before – just at a lower price.
+    - All your project and workspace settings remain unchanged.
+
+  **Improvements**
+
+  - Redesigned the mobile experience for building apps and websites directly from your phone.
+  - Shipped a Visual Edits refresh with new floating combo box controls positioned right next to elements you're editing
+  - Added project search functionality with fuzzy matching by name – _tip: rename your projects for better discoverability_.
+  - Rolled out full-stack initial generations to all users that will enable you to connect Supabase before doing an initial generation
+  - Added a floating prompt bar to our homepage that lets you enter prompt even when scrolled down.
+  - Enhanced the history view with a cleaner timeline prioritizing dates, restored versions now visible, and simplified version navigation.
+  - Updated the careers page with latest information. [Check it out here](https://lovable.dev/careers).
+
+  **Bug Fixes**
+
+  - Fixed admin access to integration settings for user projects.
+  - Resolved issue where admins couldn’t properly access workspaces, causing editor display and functionality issues when visiting team projects.
+  - Fixed iframe redirect issue that was causing unwanted redirects within the Lovable app.
+</Update>
 
 <Update label="06/04/2025">
   Here everything we shipped the last two weeks:
@@ -48,7 +119,6 @@ For Teams plan users:
   **Spotlight**
 
   - Enhanced project discoverability with new filtering options to easily find and manage your projects.
-
   - Added categorization to community projects to make it easier to discover projects by the community.
 
   **Improvements**
