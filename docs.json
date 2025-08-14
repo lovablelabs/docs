@@ -58,6 +58,7 @@
               "features/publish",
               "features/analytics",
               "features/custom-domain",
+              "features/seo",
               "features/security",
               "features/labs",
               "features/figma-to-lovable"
@@ -98,7 +99,6 @@
           "tips-tricks/using-videos",
           "tips-tricks/custom-fonts",
           "tips-tricks/npm-packages",
-          "tips-tricks/seo",
           "tips-tricks/chrome-extensions",
           "tips-tricks/from-idea-to-app",
           "tips-tricks/community",
