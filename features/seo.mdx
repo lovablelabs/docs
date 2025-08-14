@@ -4,25 +4,45 @@ description: "Rank #1 on Google on day one!"
 icon: "magnifying-glass"
 ---
 
-**Search Engine Optimization (SEO)** helps your pages rank higher on Google and other search engines, making them more discoverable. Lovable makes it easy to follow SEO best practices.
+**Search Engine Optimization (SEO)** helps your pages rank higher on Google and other search engines, making them more discoverable. Lovable includes comprehensive SEO optimizations automatically in every page and component you create.
+This guide outlines what Lovable does automatically and how to further optimize your Lovable-generated pages for search engines.
 
-This guide walks you through how to optimize your Lovable-generated pages for search engines and maximize visibility.
+## Automatic SEO Features
+Lovable includes these SEO optimizations out of the box for all new pages:
 
+- Optimized title tags under 60 characters with main keywords included
+- Meta descriptions under 160 characters with natural keyword integration
+- Single H1 tag per page that matches the page's main intent and includes relevant keywords
+- Semantic HTML structure using proper elements
+- Image optimization with descriptive alt text containing relevant keywords
+- Structured data (JSON-LD schema) for products, articles, and FAQs when applicable
+- Performance enhancements including lazy loading images and deferred non-critical scripts
+- Canonical tags to prevent duplicate content issues
+- Mobile-first responsive design with correct viewport settings
+- Clean, descriptive URLs that are human-readable and search engine friendly
+
+## Built-in Page Speed Optimization
+    Lovable includes built-in page speed optimization powered by Google Lighthouse, an open-source tool that analyzes your page's performance, accessibility, SEO, and best practices.
+
+    **How to Run a Speed Audit:**
+
+<Steps>
+  <Step title="Step 1">
+    Click **Tools** in your project navigation.
+  </Step>
+  <Step title="Step 2">
+    Select **Speed** to launch the Lighthouse audit.
+  </Step>
+  <Step title="Step 3">
+    Review the scorecard and specific recommendations for improvement.
+  </Step>
+</Steps>
+
+The audit will show you exactly what's affecting your page speed and provide actionable recommendations to load faster, rank higher, and improve user experience.
+
+## Tips and Tricks
 <AccordionGroup>
-  <Accordion title="Automatic Metadata & Meta Descriptions">
-    Metadata plays a crucial role in how search engines understand and display your content. Lovable can automatically generate:
-
-    - **Title Tags** – Optimized based on page content.
-    - **Meta Descriptions** – AI-generated summaries that improve click-through rates.
-    - **Keywords** – Relevant keyword suggestions based on content.
-
-    <Info>
-      **Pro Tip:**
-
-      When prompting Lovable, include “Follow SEO best practices” to ensure metadata is included.
-    </Info>
-  </Accordion>
-  <Accordion title="Custom Sitemaps for Search Engine Indexing">
+  <Accordion title="Sitemap for Search Engine Indexing">
     A sitemap helps search engines crawl and index your website efficiently.
 
     **How to Generate a Sitemap in Lovable:**
@@ -52,7 +72,7 @@ This guide walks you through how to optimize your Lovable-generated pages for se
 
     <Steps>
       <Step title="Step 1">
-        Prompt Lovable with **"Generate a robots.txt file for my site."**
+        Prompt Lovable to **"Generate a robots.txt file for my site."**
       </Step>
       <Step title="Step 2">
         Customize the file to allow or block search engines from specific pages.
@@ -61,21 +81,8 @@ This guide walks you through how to optimize your Lovable-generated pages for se
         Upload it to your site’s root directory.
       </Step>
     </Steps>
-    Hi
   </Accordion>
-  <Accordion title="SEO-Optimized Headings & Structure">
-    Headings (H1, H2, H3…) help search engines understand your content. Lovable ensures:
-
-    - **H1 tags are unique and descriptive.**
-    - **H2 and H3 tags** organize content logically.
-    - **Keyword-rich headings** are included where relevant.
-
-    <Info>
-      **Best Practice:**
-
-      Keep only **one H1 per page** and structure content hierarchically with H2 and H3 subheadings.
-    </Info>
-  </Accordion>
+  
   <Accordion title="Internal Linking for Better SEO">
     Internal links help users and search engines navigate your site. Lovable can:
 
@@ -97,32 +104,6 @@ This guide walks you through how to optimize your Lovable-generated pages for se
       </Step>
     </Steps>
   </Accordion>
-  <Accordion title="Schema Markup for Rich Snippets">
-    Schema markup enhances how your pages appear in search results (e.g., showing ratings, FAQs, or event details). Lovable supports:
-
-    - **Basic schema markup** for articles, FAQs, and products.
-    - **SEO-optimized structured data** that Google understands.
-
-    **How to Use Schema in Lovable:**
-
-    <Steps>
-      <Step title="Step 1">
-        Ask Lovable: **"Generate schema markup for this page."**
-      </Step>
-      <Step title="Step 2">
-        Copy the JSON-LD code and insert it into your site.
-      </Step>
-      <Step title="Step 3">
-        Validate it using **Google’s Rich Results Test.**
-      </Step>
-    </Steps>
-  </Accordion>
-  <Accordion title="Advanced Tips for SEO Success">
-    - **Optimize images** with alt text and compressed file sizes.
-    - **Avoid duplicate content** by making each page unique.
-    - **Use long-tail keywords** to target niche searches.
-    - **Keep content fresh** with regular updates.
-  </Accordion>
   <Accordion title="Customize Your Shared Image">
     When sharing your project on social media, you can customize the preview image in two ways:
 
@@ -134,7 +115,7 @@ This guide walks you through how to optimize your Lovable-generated pages for se
           **Example prompt**
 
           ```
-          Can you change the image that appears when the site is shared on social media platforms to the one above?
+          Can you change the OG image that appears when the site is shared on social media platforms to the one above?
           ```
         </Note>
       </Accordion>
@@ -155,12 +136,16 @@ This guide walks you through how to optimize your Lovable-generated pages for se
           <Step title="Step 5">
             Rename your new image to `og-image.png`.
           </Step>
-          <Step title="Step 6">
-            **Redeploy your project** to apply the changes.
-          </Step>
         </Steps>
       </Accordion>
     </AccordionGroup>
+  </Accordion>
+  
+  <Accordion title="More Tips for SEO Success">
+    - **Optimize images** with alt text and compressed file sizes.
+    - **Avoid duplicate content** by making each page unique.
+    - **Use long-tail keywords** to target niche searches.
+    - **Keep content fresh** with regular updates.
   </Accordion>
 </AccordionGroup>
 
