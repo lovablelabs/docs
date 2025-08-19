@@ -58,6 +58,11 @@ https://lovable.dev/?prompt=todoapp&autosubmit=true&images=URL1&images=URL2
 - URLs should be properly encoded
 - Supported formats: Common web image formats (JPEG, PNG, WebP, etc.)
 
+## Authentication
+
+- If user is already logged in: Project creates immediately
+- If user is not logged in: Redirected to signup, then autosubmit triggers after authentication. Parameters are preserved through the entire signup/login flow
+
 ## Best Practices
 
 1. **Keep prompts concise**: Focus on core functionality and key features
