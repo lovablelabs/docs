@@ -1,0 +1,105 @@
+---
+title: "Frontend API"
+description: "How to use Lovable Frontend API"
+---
+
+## Overview
+
+The Lovable Frontend API allows you to programmatically create applications by passing prompts and images via URL parameters. This enables direct integration with Lovable's app generation capabilities.
+
+## Base URL
+
+```
+https://lovable.dev/
+```
+
+## Parameters
+
+### Required Parameters
+
+- `prompt` (string): Description of the application you want to build
+- `autosubmit` (boolean): Must be set to `true` to automatically process the request
+
+### Optional Parameters
+
+- `images` (string): URL-encoded image URLs to include as references (can be specified multiple times)
+
+## Example Usage
+
+### Basic App Generation
+
+```
+https://lovable.dev/?prompt=todoapp+minimal+styling&autosubmit=true
+```
+
+### With Reference Images
+
+``` filename
+https://lovable.dev/?prompt=todoapp+use+picture+for+style+reference&autosubmit=true&images=https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg
+```
+
+### Multiple Images
+
+```
+https://lovable.dev/?prompt=todoapp&autosubmit=true&images=URL1&images=URL2
+```
+
+## Limitations
+
+### URL Length Constraints
+
+- **Maximum prompt length**: Approximately 2,000 characters (due to browser URL length limits of ~2,048 characters)
+- Browsers may handle URL lengths differently, so test across different browsers if needed
+
+### Image Requirements
+
+- Images must be publicly accessible URLs
+- URLs should be properly encoded
+- Supported formats: Common web image formats (JPEG, PNG, WebP, etc.)
+
+## Best Practices
+
+1. **Keep prompts concise**: Focus on core functionality and key features
+2. **Use descriptive language**: Clear descriptions yield better results
+3. **Include reference images**: Visual examples help guide the generation process
+4. **Test URL encoding**: Ensure special characters in URLs are properly encoded
+
+## Error Handling
+
+If the URL is malformed or exceeds length limits, you may encounter:
+
+- Browser "URL too long" errors
+- Incomplete parameter parsing
+- Failed autosubmission
+
+## Integration Examples
+
+### JavaScript
+
+```
+const baseUrl = 'https://lovable.dev/';
+const params = new URLSearchParams({
+  prompt: 'Create a modern todo app with dark mode',
+  autosubmit: 'true',
+  images: 'https://example.com/reference-image.jpg'
+});
+
+const lovableUrl = baseUrl + '?' + params.toString();
+window.open(lovableUrl, '_blank');
+```
+
+### Python
+
+```
+import urllib.parse
+
+base_url = "https://lovable.dev/"
+params = {
+    "prompt": "Create a modern todo app with dark mode",
+    "autosubmit": "true",
+    "images": "https://example.com/reference-image.jpg"
+}
+
+lovable_url = base_url + "?" + urllib.parse.urlencode(params)
+print(lovable_url)
+```
