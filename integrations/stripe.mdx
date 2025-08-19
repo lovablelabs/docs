@@ -8,25 +8,24 @@ icon: "credit-card"
 
 Lovable now lets you set up Stripe entirely through **chat**.
 
-**Chat‑driven auto‑setup (recommended)**  
-   After you connect **Supabase** and save your **Stripe Secret Key** via **Add API Key**, just describe what you need:  
-   - “Add three subscription tiers …”  
-   - “Create a one‑time checkout for my e‑book at $29”  
-   Lovable generates the checkout / portal edge functions, database tables with RLS, and UI buttons—no manual coding or webhooks unless you ask for them.
+**Chat‑driven auto‑setup (recommended)**\
+After you connect **Supabase** and save your **Stripe Secret Key** via **Add API Key**, just describe what you need:
 
+- “Add three subscription tiers …”
+- “Create a one‑time checkout for my e‑book at \$29”\
+  Lovable generates the checkout / portal edge functions, database tables with RLS, and UI buttons—no manual coding or webhooks unless you ask for them.
 
 <Note>
-  * For **one‑off sales**, be sure your cart or product page already works.
-  * For **subscriptions**, confirm Supabase Auth is in place so Lovable can link Stripe customers to each user’s **id**
+  - For **one‑off sales**, be sure your cart or product page already works.
+  - For **subscriptions**, confirm Supabase Auth is in place so Lovable can link Stripe customers to each user’s **id**
 </Note>
-
 
 ### Key Takeaways
 
-- Use the **chat‑driven flow** for both subscriptions and one‑off payments.  
-- **Never paste your Stripe Secret Key in chat.** Configure it via the in-chat **Add API Key** form.  
-- **Webhooks are opt‑in.** Lovable relies on edge‑function polling unless you request webhooks.  
-- Debug in **Browser Console → Network/Errors**, **Supabase → Edge Functions → Logs**, and **Stripe Dashboard → Logs**.  
+- Use the **chat‑driven flow** for both subscriptions and one‑off payments.
+- **Never paste your Stripe Secret Key in chat.** Configure it via the in-chat **Add API Key** form.
+- **Webhooks are opt‑in.** Lovable relies on edge‑function polling unless you request webhooks.
+- Debug in **Browser Console → Network/Errors**, **Supabase → Edge Functions → Logs**, and **Stripe Dashboard → Logs**.
 - Always test in **Stripe Test Mode**, then deploy.
 
 ## Requirements
@@ -59,8 +58,8 @@ Lovable now generates all Stripe logic for you. Once your **Stripe Secret Key** 
   <Step title="Step 2">
     Examples:
 
-    - Create a one-time checkout for my "Digital Course" at $29
-    - Set up an annual Premium plan for $99, tied to each user's id
+    - Create a one-time checkout for my "Digital Course" at \$29
+    - Set up an annual Premium plan for \$99, tied to each user's id
   </Step>
   <Step title="Step 3">
     **Review & apply**
@@ -105,6 +104,7 @@ For complex payment structures such as **subscriptions and role-based access**, 
       </Step>
       <Step title="Step 2">
         **Go to Stripe Dashboard** \> Developers \> Webhooks \> Create an Event Destination.
+
         ![Stripe API Key](https://lovable.dev/content/news/stripe-api.png)
       </Step>
       <Step title="Step 3">
