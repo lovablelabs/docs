@@ -87,7 +87,8 @@
           "integrations/make",
           "integrations/replicate",
           "integrations/ai",
-          "integrations/21stdev"
+          "integrations/21stdev",
+          "integrations/frontend-api"
         ]
       },
       {
