@@ -10,11 +10,11 @@ icon: "lock"
 Make sure to address Lovable's built-in [security checker](#using-lovable-security-checker) findings before publishing your app online. The security checker automatically scans your application and provides valuable recommendations for improving security.
 </Note>
 
-To build apps that can thrive on the internet without exposing sensitive data and business logic flaws, it's crucial to understand the architecture and implement proper security practices from the start.
+While Lovable AI and tools such as security checker try to cover a wide range of security issues, it's not always possible or realistic to automatically discover or address all problems that may appear after an app is live on the internet. This guide provides a deeper look into how Lovable apps look under the hood and cover important security practices that can help builders protect their customers' data and avoid common mistakes.
 
 ## Understanding Lovable's Architecture
 
-Lovable generates applications with the following architecture:
+Unless instructed otherwise, Lovable generates applications with the following architecture:
 
 - **Frontend**: TypeScript/React application
 - **Backend**: Supabase Edge Functions (serverless functions)
