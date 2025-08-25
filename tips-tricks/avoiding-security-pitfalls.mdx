@@ -253,22 +253,14 @@ const { data: { session } } = await supabase.auth.getSession();
 
 ## Workspace Protection: Secure Internal Applications
 
-### Mark Internal Apps as Protected
+### Ensure that internal apps have Visibility set to Protected
 
 For applications that should not be publicly accessible:
 
-- **Mark internal apps as "Protected" in your workspace**
+- **Make internal apps "Protected" in project dashboard**
 - **Verify they are not published to the internet**
 - **Use proper authentication for all internal tools**
 - **Regularly audit access to protected applications**
-
-### Workspace Security Checklist for Enterprise users
-
-- [ ] All internal apps should be marked as "Protected"
-- [ ] No sensitive applications published publicly
-- [ ] Proper authentication required for all internal tools
-- [ ] Regular access reviews conducted
-- [ ] Clear documentation of which apps are internal vs. public
 
 ## Security Best Practices Summary
 
