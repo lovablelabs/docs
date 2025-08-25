@@ -45,6 +45,24 @@ const validateUser = (userData) => {
 
 Correct way is to ask Lovable to add a secret key - it will open a form, and store the secret securely in its own backend.
 
+#### Examples of Prompts for Validating and Enhancing Frontend Security
+
+```
+Add an API key for Stripe payments securely without exposing it in the frontend code
+```
+
+```
+Move validation logic from React components to edge functions for better security
+```
+
+```
+Review frontend code for exposed secrets, API keys, or sensitive information. I have a settings page that displays user preferences and I want to make sure no sensitive data is visible
+```
+
+```
+Identify client-side validation that should be moved to backend edge functions
+```
+
 ## Backend Security: Move Business Logic to Edge Functions
 
 ### Treat Edge Functions as Your API Layer
@@ -97,6 +115,28 @@ Think of edge functions as your application's security guards and business manag
 **No Client-Side Exposure**: Sensitive business logic never reaches the user's browser, where it could be viewed or modified.
 
 **Consistent Validation**: Every request goes through the same validation process, ensuring consistent security across your application.
+
+#### Example of Prompts for Secure Edge Functions
+
+```
+Create an edge function for user registration with proper validation and security checks. Users should provide email, password, and optional profile picture during sign-up
+```
+
+```
+Move payment processing logic from frontend to secure edge function. I have a checkout component that currently processes Stripe payments directly in the browser
+```
+
+```
+Build edge function for file uploads with type and size validation. Users can upload profile pictures (max 5MB) and documents (PDF only, max 10MB)
+```
+
+```
+Set up edge function to send welcome emails securely when users sign up. Use provider API to send personalized welcome emails with user's name and account details
+```
+
+```
+Implement edge function for processing webhook events from external services. Handle Stripe payment confirmations and update order status in database
+```
 
 ## Database Security: Keep RLS Simple and Start Early
 
@@ -256,4 +296,4 @@ Lovable provides a built-in [security checker](/features/security#security-scann
 4. **Re-run the checker** after making changes
 5. **Document any exceptions** with clear rationale
 
-Remember: Security is not a one-time task but an ongoing process. Regularly review and update your security measures as your application evolves. 
+Remember: Security is not a one-time task but an ongoing process. Regularly review and update your security measures as your application evolves.
