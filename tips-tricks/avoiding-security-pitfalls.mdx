@@ -63,6 +63,8 @@ Review frontend code for exposed secrets, API keys, or sensitive information. I 
 Identify client-side validation that should be moved to backend edge functions
 ```
 
+For more prompts, see Lovable [Prompt Library](/prompting/prompting-library).
+
 ## Backend Security: Move Business Logic to Edge Functions
 
 ### Treat Edge Functions as Your API Layer
@@ -138,6 +140,8 @@ Set up edge function to send welcome emails securely when users sign up. Use pro
 Implement edge function for processing webhook events from external services. Handle Stripe payment confirmations and update order status in database
 ```
 
+For more prompts, see Lovable [Prompt Library](/prompting/prompting-library).
+
 ## Database Security: Keep RLS Simple and Start Early
 
 ### Row Level Security (RLS) in Lovable
@@ -185,29 +189,37 @@ Lovable automatically sets up basic RLS policies for your tables, but you should
 
 #### Prompt Examples for RLS Review
 
-**Review Current RLS Setup:**
-"Can you review the RLS policies in my Lovable app? I want to make sure users can only access their own data and that shared data is properly protected."
+```
+Review RLS policies in my Lovable app to ensure users can only access their own data and shared data is properly protected
+```
 
-**Check Specific Table Security:**
-"I have a users table and a posts table. Can you check if the RLS policies are set up correctly so users can only see their own profile but can read all public posts?"
+```
+Check RLS policies for users and posts tables - users should only see their own profile but can read all public posts
+```
 
-**Add Missing Security:**
-"I noticed my settings table doesn't have RLS enabled. Can you add policies so users can only access their own settings?"
+```
+Add RLS policies to settings table so users can only access their own settings
+```
 
-**Fix Overly Permissive Access:**
-"Users can currently see all posts from all users. I want to restrict this so users can only see their own posts and public posts. Can you update the RLS policies?"
+```
+Fix overly permissive access - users currently see all posts from all users, restrict to own posts and public posts only
+```
 
-**Team-Based Security:**
-"I have teams and projects tables. Can you set up RLS so team members can only see projects from their own team?"
+```
+Set up RLS for teams and projects tables so team members only see projects from their own team
+```
 
-**Organization Security:**
-"My app has organizations and users belong to companies. Can you ensure users can only access data from their own organization?"
+```
+Ensure users can only access data from their own organization in my multi-tenant app
+```
 
-**Review for Data Leaks:**
-"Can you audit my RLS policies to make sure there are no security holes where users might access data they shouldn't see?"
+```
+Audit RLS policies for security holes where users might access unauthorized data
+```
 
-**Simplify Complex Policies:**
-"The RLS policies in my app seem overly complex. Can you simplify them while maintaining security?"
+```
+Simplify complex RLS policies while maintaining security - current policies are too complicated
+```
 
 #### Quick RLS Checklist
 
