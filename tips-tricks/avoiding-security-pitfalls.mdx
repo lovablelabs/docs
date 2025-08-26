@@ -1,0 +1,303 @@
+---
+title: "Avoiding Security Pitfalls"
+description: "When building and publishing with Lovable"
+icon: "lock"
+---
+
+<Note>
+**Don't forget to fix Security Checker findings**
+
+Make sure to address Lovable's built-in [security checker](#using-lovable-security-checker) findings before publishing your app online. The security checker automatically scans your application and provides valuable recommendations for improving security.
+</Note>
+
+While Lovable AI and tools such as security checker find and prevent a wide range of security issues, it's not always possible or realistic to automatically discover or address all problems that may appear after an app goes live on the internet. This guide provides a deeper look into how Lovable apps work under the hood, what are important security practices that can help builders protect their customers' data, and ways to avoid common mistakes.
+
+## Understanding Lovable's Architecture
+
+Unless instructed otherwise, Lovable generates applications with the following architecture:
+
+- **Frontend**: TypeScript/React application
+- **Backend**: Supabase Edge Functions (serverless functions)
+- **Database**: Supabase (PostgreSQL with real-time capabilities)
+
+This separation of concerns is fundamental to maintaining security. Each layer has specific responsibilities and security considerations.
+
+## Frontend Security: Never Trust Client-Side Code
+
+### The Golden Rule: Frontend Code is Public
+
+All React code runs in the user's browser and is inherently public. Users can inspect, modify, or bypass any frontend code. Therefore:
+
+- **Never store secrets in frontend code** - API keys, passwords, or sensitive configuration
+- **Never perform validation in frontend code** - Client-side validation can be bypassed
+- **Never trust frontend data** - Always validate on the edge functions' side
+
+### Common Frontend Security Mistakes
+
+```typescript
+// ❌ WRONG - Never do this
+const API_KEY = "sk-1234567890abcdef"; // Exposed to users
+const validateUser = (userData) => {
+  // Client-side validation can be bypassed
+  return userData.email.includes('@');
+};
+```
+
+Correct way is to ask Lovable to add a secret key - it will open a form, and store the secret securely in its own backend.
+
+#### Examples of Prompts for Validating and Enhancing Frontend Security
+
+```
+Add an API key for Stripe payments securely without exposing it in the frontend code
+```
+
+```
+Move validation logic from React components to edge functions for better security
+```
+
+```
+Review frontend code for exposed secrets, API keys, or sensitive information. I have a settings page that displays user preferences and I want to make sure no sensitive data is visible
+```
+
+```
+Identify client-side validation that should be moved to backend edge functions
+```
+
+For more prompts, see Lovable [Prompt Library](/prompting/prompting-library).
+
+## Backend Security: Move Business Logic to Edge Functions
+
+### Treat Edge Functions as Your API Layer
+
+Supabase Edge Functions should contain all your business logic, validation, and sensitive operations:
+
+- **Authentication and authorization**
+- **Data validation and sanitization**
+- **Business logic and workflows**
+- **Integration with external services**
+- **Sensitive data processing**
+
+### Best Practices for Edge Functions
+
+Think of edge functions as your application's security guards and business managers. They handle all the important work that needs to be done safely, away from the public-facing parts of your app.
+
+#### What Edge Functions Should Handle
+
+**User Authentication & Authorization**
+- Always verify that users are who they claim to be before allowing them to perform actions
+- Check if users have the right permissions for specific operations
+- Never trust that someone is logged in just because they say they are
+
+**Data Validation & Sanitization**
+- Check all incoming data to make sure it's in the correct format
+- Remove any potentially harmful content from user inputs
+- Ensure data meets your business rules before processing it
+
+**Business Logic & Workflows**
+- Handle complex business processes like order processing, payment calculations, or user registration
+- Manage relationships between different pieces of data
+- Coordinate multiple steps in a single operation
+
+**External Service Integration**
+- Safely connect to third-party services like payment processors, email providers, or APIs
+- Keep sensitive API keys and credentials secure
+- Handle errors and timeouts gracefully
+
+**Sensitive Data Processing**
+- Process personal information, financial data, or other sensitive content
+- Apply encryption or other security measures when needed
+- Log important events for security auditing
+
+#### Security Benefits of Edge Functions
+
+**Isolation**: Edge functions run in a secure environment separate from your frontend, making it much harder for attackers to access sensitive code or data.
+
+**Centralized Security**: All security checks happen in one place, making it easier to maintain and update security policies.
+
+**No Client-Side Exposure**: Sensitive business logic never reaches the user's browser, where it could be viewed or modified.
+
+**Consistent Validation**: Every request goes through the same validation process, ensuring consistent security across your application.
+
+#### Example of Prompts for Secure Edge Functions
+
+```
+Create an edge function for user registration with proper validation and security checks. Users should provide email, password, and optional profile picture during sign-up
+```
+
+```
+Move payment processing logic from frontend to secure edge function. I have a checkout component that currently processes Stripe payments directly in the browser
+```
+
+```
+Build edge function for file uploads with type and size validation. Users can upload profile pictures (max 5MB) and documents (PDF only, max 10MB)
+```
+
+```
+Set up edge function to send welcome emails securely when users sign up. Use provider API to send personalized welcome emails with user's name and account details
+```
+
+```
+Implement edge function for processing webhook events from external services. Handle Stripe payment confirmations and update order status in database
+```
+
+For more prompts, see Lovable [Prompt Library](/prompting/prompting-library).
+
+## Database Security: Keep RLS Simple and Start Early
+
+### Row Level Security (RLS) in Lovable
+
+Lovable automatically sets up basic RLS policies for your tables, but you should review and customize them based on your app's security needs. Think of RLS as the rules that determine who can see and modify which pieces of data in your database.
+
+**Early Review is Critical**: It's much easier to adjust RLS policies when your app is new rather than after users have already created data.
+
+**Simple is Secure**: Keep RLS policies simple and focused on data access, not complex business logic. Lovable's default policies are usually a good starting point.
+
+#### Common RLS Patterns in Lovable Apps
+
+**Personal Data Protection**
+- Users should only see their own profile, settings, and personal data
+- Default pattern: "Users can only access their own data"
+
+**Team-Based Access**
+- Team members can see shared project data within their team
+- Pattern: "Users can access data from teams they belong to"
+
+**Public Content with Ownership**
+- Public posts that anyone can read, but only owners can edit
+- Pattern: "Anyone can read, only owners can modify"
+
+**Organization-Based Access**
+- Company employees can access company data
+- Pattern: "Users can access data from their organization"
+
+#### Reviewing RLS in Your Lovable App
+
+**Check Your Tables**
+- Review which tables have RLS enabled
+- Verify that sensitive data tables are protected
+- Ensure public data tables have appropriate read policies
+
+**Test Access Patterns**
+- Verify users can only see their own data
+- Test that shared data is accessible to the right people
+- Confirm that public data is visible to everyone
+
+**Common Issues to Look For**
+- Tables without RLS enabled on sensitive data
+- Overly permissive policies that expose too much data
+- Missing policies for new tables or features
+
+#### Prompt Examples for RLS Review
+
+```
+Review RLS policies in my Lovable app to ensure users can only access their own data and shared data is properly protected
+```
+
+```
+Check RLS policies for users and posts tables - users should only see their own profile but can read all public posts
+```
+
+```
+Add RLS policies to settings table so users can only access their own settings
+```
+
+```
+Fix overly permissive access - users currently see all posts from all users, restrict to own posts and public posts only
+```
+
+```
+Set up RLS for teams and projects tables so team members only see projects from their own team
+```
+
+```
+Ensure users can only access data from their own organization in my multi-tenant app
+```
+
+```
+Audit RLS policies for security holes where users might access unauthorized data
+```
+
+```
+Simplify complex RLS policies while maintaining security - current policies are too complicated
+```
+
+#### Quick RLS Checklist
+
+- [ ] All sensitive tables have RLS enabled
+- [ ] Users can only access their own personal data
+- [ ] Shared data has appropriate access controls
+- [ ] New tables automatically get RLS policies
+- [ ] Policies are simple and easy to understand
+
+## Authentication Security: Avoid Local Storage
+
+### Never Use Local Storage for Sensitive Data
+
+Local storage is accessible to any JavaScript code running on your domain and can be easily bypassed:
+
+- **Never store authentication tokens in localStorage**
+- **Never store sensitive user data in localStorage**
+- **Never store API keys or secrets in localStorage**
+
+### Secure Authentication Flow
+
+```typescript
+// ❌ WRONG - Using localStorage for auth
+localStorage.setItem('authToken', token);
+localStorage.setItem('userData', JSON.stringify(userData));
+
+// ✅ CORRECT - Use secure session management
+// Let Supabase handle authentication state
+const { data: { session } } = await supabase.auth.getSession();
+```
+
+## Workspace Protection: Secure Internal Applications
+
+### Ensure that internal apps have Visibility set to Protected
+
+For applications that should not be publicly accessible:
+
+- **Make internal apps "Protected" in project dashboard**
+- **Verify they are not published to the internet**
+- **Use proper authentication for all internal tools**
+- **Regularly audit access to protected applications**
+
+## Security Best Practices Summary
+
+### Development Workflow
+
+1. **Start with security in mind** - Implement RLS and authentication from day one
+2. **Use the security checker** - Run Lovable's security checker regularly
+3. **Follow recommendations** - Implement all security suggestions
+4. **Test thoroughly** - Verify security measures work as expected
+5. **Document security decisions** - Keep track of security choices and rationale
+
+### Regular Security Audits
+
+- **Review edge function permissions**
+- **Audit RLS policies**
+- **Check for exposed secrets**
+- **Verify authentication flows**
+- **Test access controls**
+
+### Common Security Checklist
+
+- [ ] No secrets in frontend code
+- [ ] All validation in edge functions
+- [ ] RLS policies implemented and tested
+- [ ] Authentication using secure methods
+- [ ] Internal apps properly protected
+- [ ] Security checker run and recommendations followed
+- [ ] Regular security reviews conducted
+
+## Using Lovable Security Checker
+
+Lovable provides a built-in [security checker](/features/security#security-scanning-2) to help identify potential security issues:
+
+1. **Run the security checker** in your project dashboard
+2. **Review all recommendations** carefully
+3. **Implement suggested fixes** promptly
+4. **Re-run the checker** after making changes
+5. **Document any exceptions** with clear rationale
+
+Remember: Security is not a one-time task but an ongoing process. Regularly review and update your security measures as your application evolves.
