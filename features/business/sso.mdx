@@ -4,16 +4,31 @@ description: "Implement secure, centralized authentication for your entire organ
 icon: "shield-keyhole"
 ---
 
-Single Sign-On (SSO) is available as a business feature in Lovable, enabling secure, centralized authentication across your organization. 
-With SSO, users can access all their tools with one set of credentials, simplifying access management and improving security. 
+Single Sign-On (SSO) is available as a business feature in Lovable, enabling secure, centralized authentication across your organization.
+With SSO, users can access all their tools with one set of credentials, simplifying access management and improving security.
 
-Lovable supports integration with major identity providers, including Google Workspace, Microsoft Azure AD, Okta, and more. 
+Lovable supports both **OIDC (OpenID Connect)** and **SAML** protocols, enabling integration with all major identity providers including Okta, Microsoft Entra ID (Azure AD), Google Workspace, and more.
 
 ### Setup SSO
+
 To set up SSO, a **Workspace Owner** or **Admin** must log in and navigate to  
 **Settings → Workspace → Identity**, then follow the setup instructions.
 
-In your identity provider, configure the following settings:
+## OIDC Configuration
+
+For OIDC providers, configure the following settings:
+
+**Redirect URI:**
+https://auth.lovable.dev/__/auth/handler
+
+**Required Scopes:**
+
+- `email`
+- `openid`
+
+## SAML Configuration
+
+For SAML providers, configure the following settings:
 
 **Redirect URI / ACS URL:**
 https://auth.lovable.dev/__/auth/handler
@@ -22,17 +37,30 @@ https://auth.lovable.dev/__/auth/handler
 https://auth.lovable.dev/__/auth/handler
 
 **Required Claims:**
-Make sure the SAML response includes first_name, last_name and email as attributes.
+Make sure the SAML response includes display_name and email as attributes.
 These attributes are required for authentication and user provisioning in Lovable.
 
 ### Common Issues and Troubleshooting
+
 <AccordionGroup>
-    <Accordion title="I already have an account, but I’m joining a business workspace that uses SSO. How do I log in?">
-        If you created your account using another login method (like email/password, Google, or GitHub), you’ll need to log in that way **first**. 
-        Once you’re logged in, navigate to Settings → Identity → Link with SSO. This will link your existing account to your SSO identity.
-        <Note>
-        **Important:** If you attempt to log in with SSO before linking your existing account, you’ll see an error. 
-        This is a security measure to prevent unauthorized access. Log in using your original method first to complete the linking process.
-        </Note>
-    </Accordion>
+  <Accordion title="I already have an account, but I'm joining a business workspace that uses SSO. How do I log in?">
+    If you created your account using another login method (like email/password,
+    Google, or GitHub), you'll need to log in that way **first**. Once you're
+    logged in, navigate to Settings → Identity → Link with SSO. This will link
+    your existing account to your SSO identity.
+    <Note>
+      **Important:** If you attempt to log in with SSO before linking your
+      existing account, you'll see an error. This is a security measure to
+      prevent unauthorized access. Log in using your original method first to
+      complete the linking process.
+    </Note>
+  </Accordion>
+  <Accordion title="Which SSO providers does Lovable support (Okta, Entra ID, Google SSO, etc.)?">
+    Lovable supports **all SSO providers** that implement OIDC (OpenID Connect)
+    or SAML protocols. This includes, but is not limited to: - Okta - Microsoft
+    Entra ID (formerly Azure AD) - Google Workspace - Auth0 - OneLogin - - Any
+    other OIDC or SAML-compliant identity provider Since we support the
+    industry-standard OIDC and SAML protocols, you can integrate with any SSO
+    provider that supports these protocols.
+  </Accordion>
 </AccordionGroup>
