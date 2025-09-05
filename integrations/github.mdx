@@ -232,8 +232,42 @@ However, you can connect to a different GitHub **organization** by following the
 
   This is the only way to get back up and running.
   </Accordion>
+  <Accordion title="Can I undo or disconnect my GitHub integration?">
+  Yes by remixing the project. This will create a copy of your project that is not connected to Github. 
+  </Accordion>
+  <Accordion title="Do I have to remix a project to switch GitHubs?">
+  Yes.
+  </Accordion>
+  <Accordion title="I don't want any accidental changes to happen on my project. How do I remove Lovable from my GitHub?">
+  To remove Lovable's access to your GitHub account and prevent any accidental changes, you have a couple of options. **Keep in mind that this will render your projects useless unless you remix the projects first.**
+
+  **Revoke Lovable's GitHub Access**
+  The most straightforward way to revoke Lovable's access directly from your GitHub account is by following these steps:
+    1. Go to your GitHub settings.
+    2. Navigate to Applications (or `Setting` → `Applications` → `Authorized OAuth Apps`).
+    3. Find the Lovable GitHub App in the list.
+    4. Click Revoke or Remove to completely disconnect Lovable from your GitHub account.
+
+  This will immediately stop all synchronization between Lovable and your GitHub repositories.
+
+  **Alternative: Limit Repository Access**
+  If you want to keep using Lovable but just protect specific repositories, you can:
+    1. Go to your GitHub settings and find the Lovable app.
+    2. Modify the permissions to "Only select repositories" instead of "All repositories".
+    3. Remove access to the repositories you want to protect.
+
+  **After Removal**
+  Once you revoke access:
+    - Lovable will no longer be able to push changes to your GitHub repositories.
+    - No new commits will be created from Lovable edits.
+    - Your existing code on GitHub remains completely safe and unchanged.
+    - You can still continue working in Lovable, but changes won't sync to GitHub.
+
+  **Re-Connecting**
+  If you ever want to reconnect Lovable to GitHub in the future, you can simply click the GitHub button in the Lovable editor and go through the authorization process again.
+
+  This approach gives you complete control over when and how Lovable can access your GitHub repositories, ensuring no accidental changes can occur.
+   </Accordion>
   </AccordionGroup>
 
 By following this guide and utilizing GitHub with Lovable, you’ll combine the speed of AI-assisted development with the reliability and control of traditional software practices. This integration is designed to be approachable for non-technical users (you get a safe backup and easy way to hand off code) while providing all the power that developers expect in a modern toolchain. 
-
-Happy coding!
