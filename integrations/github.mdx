@@ -165,6 +165,15 @@ Below are some common questions and issues that users encounter with the GitHub 
     </Warning>
     Do note that if you do host the app yourself outside of Lovable, you’ll need to manage environment variables, secrets, database connections, and other config in your new environment just as you would for any app. The Lovable integration with services like Supabase or Stripe will still be in your code – those continue to work as long as the appropriate config is in place on the new host.
   </Accordion>
+   <Accordion title="How do I switch the GitHub account if I already connected the wrong one?">
+     Unfortunately, you cannot switch the GitHub account once it’s been connected to a Lovable project, as the sync is fixed and cannot be disrupted.
+However, you can connect to a different GitHub **organization** by following these steps:
+     1. **Remix the Project:** In Lovable, click the “Remix” button on your project to create a new copy of it.
+     2. **Connect to GitHub:** Once remixed, connect this new project to GitHub.
+     3. **Select the Correct Organization:** During the GitHub connection process, you’ll have the option to choose the correct organization and complete the necessary configuration steps.
+
+     This is the only way to change the GitHub integration for a project.
+  </Accordion>
 </AccordionGroup>
 
 By following this guide and utilizing GitHub with Lovable, you’ll combine the speed of AI-assisted development with the reliability and control of traditional software practices. This integration is designed to be approachable for non-technical users (you get a safe backup and easy way to hand off code) while providing all the power that developers expect in a modern toolchain. 
