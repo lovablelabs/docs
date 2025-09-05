@@ -174,6 +174,25 @@ However, you can connect to a different GitHub **organization** by following the
 
      This is the only way to change the GitHub integration for a project.
   </Accordion>
+  <Accordion title="How do I update my GitHub if I move my repository into an organization from a personal account?">
+    If you move your repository from a personal GitHub account to an organization, the sync with your Lovable project will break. This is because Lovable projects are tightly coupled to the original GitHub repo configuration, and the webhook connection cannot survive a move across orgs or accounts.
+
+    **How to handle it:**
+    1. Move the repository back to its original location (the personal account it was connected from).
+    2. Once the sync is restored and you’re able to access the project again, remix the project in Lovable.
+    3. With the remixed version:
+      - Connect to GitHub using the desired organization.
+      - Authorize the Lovable GitHub App for the new org (admin access required).
+      - Choose the target repo (either the moved one or a new repo).
+
+    **Important Notes:**
+    - Lovable cannot switch GitHub accounts or orgs mid-project due to how sync is configured.
+    - Remixing is the only way to point a project to a different GitHub org.
+
+    This approach ensures your new org connection is clean and your project remains stable.
+  </Accordion>
+
+
 </AccordionGroup>
 
 By following this guide and utilizing GitHub with Lovable, you’ll combine the speed of AI-assisted development with the reliability and control of traditional software practices. This integration is designed to be approachable for non-technical users (you get a safe backup and easy way to hand off code) while providing all the power that developers expect in a modern toolchain. 
