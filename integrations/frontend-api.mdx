@@ -4,14 +4,26 @@ description: "How to use Lovable Frontend API"
 icon: "window-restore"
 ---
 
-## Overview
+## **Overview**
 
 The Lovable Frontend API allows you to programmatically create applications by passing prompts and images via URL parameters. This enables direct integration with Lovable's app generation capabilities.
+
+## **Link Generator**
+
+For a simple link generation experience go to the [<u>Lovable Links tool</u>](https://lovable.dev/links). You write your prompt and upload images. The Lovable Link tool returns a Frontend API link you can share to generate an application with the same prompt and images.
 
 ## Base URL
 
 ```
-https://lovable.dev/
+https://lovable.dev/?autosubmit=true#
+```
+
+`autosubmit` (boolean): Must be set to `true` to automatically process the request
+
+## **URL with Parameters**
+
+```
+https://lovable.dev/?autosubmit=true#prompt=YOUR_PROMPT_HERE&images=IMAGE_URL_1&images=IMAGE_URL_2
 ```
 
 ## Parameters
@@ -19,7 +31,6 @@ https://lovable.dev/
 ### Required Parameters
 
 - `prompt` (string): Description of the application you want to build
-- `autosubmit` (boolean): Must be set to `true` to automatically process the request
 
 ### Optional Parameters
 
@@ -30,47 +41,43 @@ https://lovable.dev/
 ### Basic App Generation
 
 ```
-https://lovable.dev/?prompt=todoapp+minimal+styling&autosubmit=true
+https://lovable.dev/?autosubmit=true#prompt=Create%20a%20todo%20app
 ```
 
 ### With Reference Images
 
 ```filename
-https://lovable.dev/?prompt=todoapp+use+picture+for+style+reference&autosubmit=true&images=https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg
+https://lovable.dev/?autosubmit=true#prompt=Display%20these%20images&images=https://img.com/1.jpg
 ```
 
 ### Multiple Images
 
 ```
-https://lovable.dev/?prompt=todoapp&autosubmit=true&images=URL1&images=URL2
+https://lovable.dev/?autosubmit=true#prompt=Display%20these%20images&images=https://img.com/1.jpg&images=https://img.com/2.jpg​
 ```
 
-## Limitations
+## **Limitations**
 
-### URL Length Constraints
+### **Image Requirements**
 
-- **Maximum prompt length**: Approximately 2,000 characters (due to browser URL length limits of ~2,048 characters)
-- Browsers may handle URL lengths differently, so test across different browsers if needed
+- Images must be publicly accessible URLs. 
+- You can attach a maximum of 10 images. 
+- Prompt cannot be longer than 50k characters. Very long URLs might break. 
+- Supported formats: Common web image formats (JPEG, PNG, and WebP)
 
-### Image Requirements
-
-- Images must be publicly accessible URLs
-- URLs should be properly encoded
-- Supported formats: Common web image formats (JPEG, PNG, WebP, etc.)
-
-## Authentication
+## **Authentication**
 
 - If user is already logged in: Project creates immediately
 - If user is not logged in: Redirected to signup, then autosubmit triggers after authentication. Parameters are preserved through the entire signup/login flow
 
-## Best Practices
+## **Best Practices**
 
 1. **Keep prompts concise**: Focus on core functionality and key features
 2. **Use descriptive language**: Clear descriptions yield better results
 3. **Include reference images**: Visual examples help guide the generation process
 4. **Test URL encoding**: Ensure special characters in URLs are properly encoded
 
-## Error Handling
+## **Error Handling**
 
 If the URL is malformed or exceeds length limits, you may encounter:
 
