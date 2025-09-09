@@ -86,7 +86,7 @@
             ]
           },
           {
-            "group": "Tool integrations",
+            "group": "Integrations",
             "pages": [
               "integrations/github",
               "integrations/supabase",
