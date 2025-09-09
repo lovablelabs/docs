@@ -77,18 +77,28 @@
       },
       {
         "tab": "Integrations",
-        "pages": [
-          "integrations/introduction",
-          "integrations/github",
-          "integrations/supabase",
-          "integrations/stripe",
-          "integrations/resend",
-          "integrations/clerk",
-          "integrations/make",
-          "integrations/replicate",
-          "integrations/ai",
-          "integrations/21stdev",
-          "integrations/frontend-api"
+        "groups": [
+          {
+            "group": "About Integrations",
+            "pages": [
+              "integrations/introduction",
+              "integrations/frontend-api"
+            ]
+          },
+          {
+            "group": "Tool integrations",
+            "pages": [
+              "integrations/github",
+              "integrations/supabase",
+              "integrations/stripe",
+              "integrations/resend",
+              "integrations/clerk",
+              "integrations/make",
+              "integrations/replicate",
+              "integrations/ai",
+              "integrations/21stdev"
+            ]
+          }
         ]
       },
       {
