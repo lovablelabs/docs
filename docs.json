@@ -25,11 +25,6 @@
           "anchor": "Status",
           "icon": "signal",
           "href": "https://status.lovable.dev/"
-        },
-        {
-          "anchor": "Feature requests",
-          "icon": "rocket",
-          "href": "https://feedback.lovable.dev/"
         }
       ]
     },
