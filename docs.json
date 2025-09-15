@@ -77,7 +77,7 @@
             "group": "About Integrations",
             "pages": [
               "integrations/introduction",
-              "integrations/frontend-api"
+              "integrations/build-with-url"
             ]
           },
           {
