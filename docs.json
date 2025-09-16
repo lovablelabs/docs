@@ -7,7 +7,7 @@
     "light": "/assets/logo/logoblack.svg",
     "href": "https://lovable.dev/"
   },
-  "favicon": "/assets/logo/lovable-logo.png",
+  "favicon": "/assets/logo/favicon.ico",
   "colors": {
     "primary": "#0095FF",
     "light": "#1AA3FF",
