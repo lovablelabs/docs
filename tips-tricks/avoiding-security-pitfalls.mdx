@@ -229,27 +229,48 @@ Simplify complex RLS policies while maintaining security - current policies are 
 - [ ] New tables automatically get RLS policies
 - [ ] Policies are simple and easy to understand
 
-## Authentication Security: Avoid Local Storage
+## Authentication Security: Keep Logic Server-Side
 
-### Never Use Local Storage for Sensitive Data
+### Authentication Logic Must Run on the Server
 
-Local storage is accessible to any JavaScript code running on your domain and can be easily bypassed:
+All authentication decisions, token validation, and user verification should happen on the server side, not in the browser. Client-side authentication can be easily bypassed or manipulated.
 
-- **Never store authentication tokens in localStorage**
-- **Never store sensitive user data in localStorage**
-- **Never store API keys or secrets in localStorage**
+**Key Principles:**
+- **Never trust client-side authentication checks** - Users can modify browser code
+- **Validate tokens on the server** - Always verify authentication in edge functions
+- **Keep session management server-side** - Let Supabase handle secure session storage
+- **Never expose authentication secrets** - API keys and tokens should never reach the frontend
 
 ### Secure Authentication Flow
 
 ```typescript
-// ❌ WRONG - Using localStorage for auth
-localStorage.setItem('authToken', token);
-localStorage.setItem('userData', JSON.stringify(userData));
+// ❌ WRONG - Client-side authentication logic
+const isAuthenticated = localStorage.getItem('authToken') !== null;
+if (isAuthenticated) {
+  // This can be bypassed by users
+  showAdminPanel();
+}
 
-// ✅ CORRECT - Use secure session management
-// Let Supabase handle authentication state
-const { data: { session } } = await supabase.auth.getSession();
+// ✅ CORRECT - Server-side authentication validation
+// In edge function:
+const { user } = await supabase.auth.getUser();
+if (!user) {
+  return new Response('Unauthorized', { status: 401 });
+}
+// Proceed with authenticated logic
 ```
+
+### Authentication Best Practices
+
+**Server-Side Validation:**
+- Always verify user authentication in edge functions before processing requests
+- Check user permissions and roles on the server, not in React components
+- Validate session tokens against the database or authentication service
+
+**Client-Side Handling:**
+- Use Supabase's built-in session management for secure token storage
+- Display UI based on authentication state, but never make security decisions
+- Redirect to login when sessions expire, but validate on server first
 
 ## Workspace Protection: Secure Internal Applications
 
