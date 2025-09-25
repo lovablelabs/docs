@@ -5,3 +5,4 @@ site
 .netlify
 
 .DS_Store
+**/.DS_Store
