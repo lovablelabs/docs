@@ -5,106 +5,260 @@ icon: "database"
 ---
 
 <Warning>
-  This feature is currently in private beta. We’re actively iterating on both pricing and functionality based on user feedback. 
-
-  \
-  [Request Access](https://lovable-private-beta.lovable.app/) to the Private Beta.
+  This feature is currently in beta. We’re actively iterating on both pricing and functionality based on user feedback.
 </Warning>
 
-Cloud is Lovable's fully integrated backend, allowing you to manage everything from data and users to authentication, API keys, and file uploads, all within the platform, making it easier than ever to build and manage full-stack applications.
+Lovable Cloud is a full-stack cloud platform that takes care of every part of your application — from the frontend your users see, to the backend that powers it behind the scenes. All you do is describe what you want directly in Lovable, and Lovable automatically generates both the frontend and backend, ready to run in the cloud.  Instead of managing hardware or complex infrastructure, you get on-demand access to hosting, compute, and storage that scale automatically as your app grows.
+
+Lovable Cloud utilizes Supabase’s open-source foundation, which means you get a production-ready environment from day one, without needing to set up Supabase separately. You have the power of a production-ready PostgreSQL database, real-time updates, user auth, and storage — with none of the manual setup steps.
+
+## Why choose Lovable Cloud
+
+- **Scales as you grow**: From your first prototype to millions of users, Lovable scales seamlessly with your needs.
+- **Secure by default**: Enterprise-grade authentication, fine-grained access controls, and compliance best practices protect your app and data.
+- **Fully portable**: Utilizes Supabase’s open-source stack. You retain full ownership of your app and data with the freedom to export, self-host, or migrate anytime.
+- **Cost-effective**: Manage multiple projects in one workspace with usage-based pricing. Every workspace starts with **\$25 free usage**, enough to launch and run multiple projects. Read more in [Lovable AI documentation](https://docs.lovable.dev/features/ai)
+
+## Enabling Lovable Cloud
+
+Lovable Cloud integration behavior can be managed at the workspace, user, and project level.
+
+- Cloud must be enabled at the workspace level before it can be used in any projects.
+- Only workspace owners and admins can enable or disable Cloud at the workspace level.
+
+### Default behavior
+
+| Lovable Cloud setting level | Default behavior |
+| --------------------------- | ---------------- |
+| Workspace                   | Enabled          |
+| User                        | Ask each time    |
+
+At the user level, Lovable prompts you whenever a feature requires backend functionality. For example, if authentication or file storage is needed, you can:
+
+- **Allow**: enable the integration for the current project.
+- **Deny**: decline the integration for this request (you may be asked again later).
+- **Adjust preferences**: set personal defaults for future use.
+
+If Cloud is disabled at the workspace level, the agent will notify you and suggest enabling it before continuing.
+
+## Lovable Cloud tools
+
+You can configure Cloud integration tools from **Settings → Account → Tools** at either the workspace or project level.
+
+Each tool has three options:
+
+- **Always allow**: Lovable automatically performs the action.
+- **Ask each time**: Lovable asks for your approval whenever the action is needed.
+- **Never allow**: Lovable blocks the action, informs you that Cloud access is required, and instructs you to enable Cloud.
+
+### Tool settings and defaults
+
+| Setting             | Description                                                                                                        | Default behavior |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| Enable integration  | Create and connect a Cloud project to add backend features (database, auth, storage). Required to use Cloud tools. | Ask each time    |
+| Read queries        | Allow Lovable to read your database.                                                                               | Always allow     |
+| Analytics queries   | Query logs to investigate issues and behavior.                                                                     | Always allow     |
+| Security linter     | Run automated security checks on your database. Not a full audit.                                                  | Always allow     |
+| Database migrations | Make schema and policy changes via SQL migrations. Updates generated types.                                        | Always allow     |
+| Insert data         | Add data to your database tables.                                                                                  | Always allow     |
+| Project info        | Read project configuration and environment details.                                                                | Always allow     |
+| Configure auth      | Allow Lovable to configure authentication settings (for exmple, signup policies).                                  | Always allow     |
+
+## Lovable Cloud features
+
+You’ll find the **Cloud tab** inside any Lovable project by clicking the `+` button next to **Preview** and **Code mode**.
+
+The following features live inside the Cloud tab:
+
+### Database
+
+- **Generate schemas automatically**: describe the data you need in plain language, and Lovable creates the tables and schema for you.
+- **Manage without SQL**: view, edit, and organize records directly in the UI. Update values, inspect tables, and keep your app’s data in sync without writing queries.
+
+### Users & Auth
+
+- **User management**: view user accounts, track activity, and manage access control.
+- **Built-in authentication**: Lovable can generate signup/login pages for your app. Supports email, phone, and Google sign-in.
+- **Secure by default**: authentication is backed by Lovable Cloud, keeping user credentials safe.
+
+### Storage
+
+- **File handling without code**: upload, manage, and serve files such as profile photos, documents, videos, or static assets.
+- **Storage buckets**: files are stored securely in a project bucket, with URLs or references you can use in your app.
+- **Limits**: Supports files up to 2 GB.
+
+### Edge Functions
+
+- **Serverless logic**: run custom code for APIs, workflows, or advanced features, without provisioning servers. Functions scale automatically with traffic.
+
+**Common use cases:**
+
+- AI-powered features
+- Sending emails or push notifications
+- Payment processing
+- Scheduled tasks
+- Heavy computations or external API calls
+
+**Other highlights:**
+
+- **Easy to create**: just describe the function you need in Lovable chat.
+- **Debugging built-in**: each function includes logs of executions, output, and errors. If something fails, Lovable surfaces the error directly in chat for quick troubleshooting.
+
+### AI
+
+- Monitor Lovable AI usage and performance for your project.
+- For more information, see [Lovable AI documentation](https://docs.lovable.dev/features/ai)
+
+### Secrets
+
+- **Secure environment variables**: store sensitive data such as API keys, tokens, or credentials without exposing them in code.
+- **Automatic detection**: when a feature needs a secret, Lovable prompts you to input it through a secure UI.
+- **Encrypted and safe**: secrets are stored securely and automatically injected into Edge Functions or other integrations.
+
+**Example:** Store your Stripe Secret Key once, and Lovable ensures it’s included in payment-processing functions without you hard-coding it.
 
 <Note>
-  A full-stack project includes both the frontend (what your users see and interact with, like buttons, images, and text) and the backend (the behind-the-scenes system that stores data, handles API keys, logins, etc.).
-
-  With Lovable, you don’t have to worry about any of the complex tech. Just describe what you want, and we’ll build both parts for you, automatically.
+  Some secrets, such as the Lovable API key, are required for the platform and cannot be deleted.
 </Note>
 
-- **Scales as you grow**\
-  From your first launch to serving millions, Lovable Cloud expands seamlessly with your application.
-- **Secure by default**\
-  With enterprise-grade authentication, granular access controls, and best-practice compliance, Lovable Cloud protects your data without extra effort.
-- **Fully portable**\
-  Your app stays yours. Export your data anytime, self-host, or run independently with ease. Lovable Cloud is built on Supabase’s open-source foundation, giving you true portability and freedom, without lock-in.
+### Logs
 
-### How do I use Lovable Cloud?
+- **Real-time monitoring**: watch app activity as it happens.
+- **Debug and trace issues**: identify errors, track events, and ensure your backend is healthy.
 
-Cloud will automatically be enable once the agent detects a feature that requires backend functionality, such as user authentication, uploading files, or integrating an external API.
+## Example flow - Prompting Lovable to build a CRM tool
 
-You can also enable it manually, by clicking on the "Cloud" tab and selecting "Enable Lovable Cloud".
+**Prompt:**\
+Build me a CRM tool to manage clients, track deals, handle invoices, and keep notes organized. Keep the design simple, modern, and business-friendly with a sidebar for navigation.
 
-Once enabled, you will be able to view and manage all backend data and settings in the "Cloud" section of your project.
+### Step 1: Organize the data (Database)
 
-### Lovable Cloud Features
+Tell Lovable what kind of information the tool should keep track of for you. Lovable will automatically create the tables for you, so you don’t need to touch databases yourself.
 
-All of these features live inside the **Cloud tab** in your Lovable project.
+**Prompt:**
+I want a place to keep track of my clients with their name, email, phone number, and notes. I also need a way to track deals, including which client it’s for, the value, the stage it’s in, and when I expect it to close. And I need a section for invoices with the client it belongs to, the amount, the status, and the due date.
 
-#### Database
+### Step 2: Make it secure (Users & Auth)
 
-View, edit, and manage the tables that power your app. Quickly inspect records, make updates, and keep your data organized without needing SQL.
+Add login so data is private and users can sign in easily.
 
-Find it in **Cloud → Database.**
+**Prompt:**
+Add login to the app. Require login before accessing the CRM dashboard. Also, add a ‘Sign in with Google’ button so users can log in with their Google accounts.
 
-#### Users & Auth
+### Step 3: Handle files (Storage)
 
-See who’s signing up, manage user profiles, and configure how people log in—email, social sign-ins, or SSO. Everything about your users, all in one spot.
+You can let users upload and see files right inside the app. Lovable takes care of the storage and linking, so you just describe what files should go where.
 
-Find it in **Cloud → Users.**
+**Prompt:**
+Add a contract upload field to each deal. Let clients have profile pictures and display them on the client detail page. Upload invoice PDFs to and show a download link on the invoices table.
 
-#### Storage
+### Step 4: Automate workflows (Edge Functions)
 
-Upload and manage files, images, and documents—from product photos to user-generated content. Lovable Cloud keeps them secure and easy to serve.
+Set up automatic actions that save you time.
 
-Find it in **Cloud → Storage.**
+**Prompt:**
+When a new lead is added to the Clients table, send me an email notification. Analyze client meeting notes with Lovable AI and save a sentiment score in the Clients table. Sync new contacts automatically. Schedule a daily job at 7am that emails me a summary of today’s follow-ups. When a payment is marked ‘paid’ in Stripe, automatically update the related invoice’s status to ‘Paid’.
 
-#### Edge Functions
+### Step 5: Connect to other tools (Secrets)
 
-Deploy custom logic that connects to APIs, automates workflows, or powers advanced features—without managing servers. Scales instantly with your traffic.
+When you use services like Stripe or Google Calendar, they’ll give you private “keys.”\
+Lovable will prompt you to add them securely whenever they’re needed, and only your app can use them.
 
-Find it in **Cloud → Edge Functions.**
+### Step 6: Add AI superpowers (AI)
 
-#### Secrets
+Make the tool act like your assistant:
 
-Securely store and manage environment variables such as API keys or tokens. Keep sensitive data safe while making development easier.
+**Prompt:**
+Summarize each client’s meeting notes and save them to their profile. Suggest next steps for every open deal. Generate personalized email drafts for following up with leads. Classify client messages into categories: sales, support, or billing.
 
-Find it in **Cloud → Secrets.**
+# Usage-based Cloud and AI pricing
 
-#### Logs
+Lovable includes Cloud hosting and built-in AI in all pricing plans, even the Free plan. These services run on a **usage-based pricing model**. This means your costs scale with how much you use and are not covered by your subscription.
 
-Monitor your app’s activity in real time. Use logs to debug issues, track events, and ensure everything is running smoothly.
+From your workspace or project, go to **Settings → Usage**. Here, you can:
 
-Find it in **Cloud → Logs.**
+- Track usage costs
+- View workspace balance status
+- Add funds (paid plans only)
 
-### Example flow
+The Usage screen updates as follows:
 
-1. You ask the AI to add authentication to your application, to enable users to log in to your application.
-2. The AI adds the functionality, and you can manage it through the Auth feature in the "Backend" tab. You can change things like sign-in methods, or if a confirmation email is needed when signing up.
-3. Then you move on and ask the AI to implement functionality to be able to add comments to your application. This will be implemented through tables, that you can find in the "Database" tab. Here you can see all comments created and their corresponding data.
-4. Next, you ask for file uploads. Lovable sets up storage, and you can see and manage uploads in the Storage section.
-
-### Pricing
+- Cloud usage updates daily at 10 AM CET
+- AI usage updates in realtime
 
 <Note>
-  Lovable Cloud is currently in **beta**. During this period, you will not be charged for usage, even if you exceed the free \$25 monthly allowance. This gives you the freedom to experiment, test, and grow your projects without cost while we gather feedback and refine the service.
+  - Your **Cloud balance** pays for hosting deployed apps.
+  - Your **AI balance** pays for AI features inside deployed apps.
+  - **Workspace Credits** are separate, only used for messaging while building apps, and can be tracked in **Settings → Plans & Billing**.
 </Note>
 
-Your costs are based on how much your apps are used. Two main factors influence this:
+## Included free usage (all plans)
 
-- How busy your app is: More users, more activity, more interactions, more resources used.
-- How much data your app transfers: Apps with large uploads/downloads (like images or videos) use more data than simple text-based tools.
+Every workspace receives free monthly usage, regardless of plan:
 
-Every workspace gets **\$25 of free usage each month**, enough to keep multiple projects running. After that you have the choice to:
+- **\$25 Cloud balance** for app hosting
+- **\$1 AI balance** for AI features
 
-- Keep it free with a built-in cap, so you’ll never face surprise charges.
-- Or turn on auto top-up to let your projects grow seamlessly, with optional budget limits for peace of mind.
+These free funds reset on the first day of each month at 00:00 UTC (displayed in your timezone). Unused free funds do not roll over to the next month.
 
-#### Example costs
+<Note>
+  **Temporary Promotion:** Until the end of the year, all users get \$25 Cloud and \$1 AI per month, even on the Free plan.
+</Note>
 
-| **App Example**              | **Typical Usage / Month**                                           | **Lovable Cloud Cost / Month** |
-| ---------------------------- | ------------------------------------------------------------------- | ------------------------------ |
-| **Basic Website**            | A few hundred visits, mostly static content, light data             | **\$4**                        |
-| **Internal Scheduling Tool** | Dozens of active users, calendar events & logins daily              | **\$8**                        |
-| **B2B2C Platform**           | ~1,000 users, frequent logins, data reads/writes, some file storage | **\$34**                       |
-| **Rental Marketplace**       | Thousands of users, heavy search, messaging, image uploads          | **\$112**                      |
+## Adding funds (paid plans only)
+
+Adding funds to your workspace balance for Lovable Cloud and AI usage is available only on paid plans. Free plan users must upgrade to access this functionality.
+
+Any usage that exceeds the included amount is billed separately and not covered by your subscription.
+
+- **Cloud usage:** depends on activity (number of users and interactions) and data transfer (uploads/downloads).
+- **AI usage:** depends on the model used and task complexity (more advanced models cost more).
+
+Workspace owners and admins on paid plans can top up balances:
+
+1. Go to **Settings → Usage → Add funds**
+2. Enter a custom amount or choose a predefined option (\$10 min, \$1000 max)
+3. Complete the payment securely via Stripe
+
+Unused workspace funds roll over month-to-month but expire after one year.
+
+## Alerts and notifications
+
+Lovable keeps you informed to avoid unexpected service interruptions:
+
+- **Email notifications** sent to workspace owners and admins
+- **Usage alerts** displayed in the Usage screen and Cloud overview
+
+Alerts trigger when your workspace:
+
+- Reaches a certain percentage of included usage
+- Uses up all included usage
+- Reaches a certain percentage of wallet balance
+- Uses up all wallet funds
+
+If your workspace balance runs out, your application will stop working until funds are added (or free usage resets at the start of the next month).
+
+To keep your application working:
+
+- **Free plan:** upgrade to a paid plan to add funds.
+- **Paid plans:** top up your workspace balance any time.
+
+## Example workspace Cloud and AI costs (per month)
+
+Here are a few examples to give you a feel for what typical monthly Cloud and AI costs might look like per workspace for different kinds of apps. These numbers are rough estimates, just to help set expectations.
+
+Keep in mind:
+
+- Your Lovable subscription does not include Cloud or AI costs — you cover those separately.
+- Every plan includes \$25/month of free Cloud usage and \$1/month of free AI usage per workspace.
+- AI costs are estimated using the default model, Gemini 2.5 Flash.
+
+| App type                       | Example monthly usage                                                                                                                                                                                                      | Cloud cost (before → after free \$25) | AI cost (before → after free \$1) | What you pay to Lovable          |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------- | -------------------------------- |
+| **Personal blog or portfolio** | 500 visits, a handful of posts/comments, some images, tiny server. AI adds summaries or catchy titles (2,500 AI calls/month, 50 input + 150 output tokens each).                                                           | $1 → $0                               | $1 → $0                           | Subscription only                |
+| **Small business website**     | 5,000 visits, product listings, forms/newsletter signups, product images, tiny server. AI adds simple chat assistant (6,500 AI calls/month, 30 input + 120 output tokens each).                                            | $5 → $0                               | $2 → $1                           | Subscription + \$1 (AI)          |
+| **Team project manager**       | 20 active users, 10,000 visits, tasks and comments, file uploads, live updates, small server. AI adds task suggestions, reminders, comment summaries (6,000 AI calls/month, 200 input + 300 output tokens each).           | $15 → $0                              | $5 → $4                           | Subscription + \$4 (AI)          |
+| **E-comm store**               | 10,000 visitors, 500 purchases, many product images, customer/order data, checkout flows, medium server. AI adds product descriptions and a shopping assistant (20,000 AI calls/month, 40 input + 200 output tokens each). | $65 → $40                             | $10 → $9                          | Subscription + \$49 (Cloud + AI) |
 
 ## FAQ
 
@@ -118,11 +272,9 @@ Every workspace gets **\$25 of free usage each month**, enough to keep multiple 
   <Accordion title="Do I have full control over my monthly expenses?">
     Yes. We designed Lovable Cloud to give you complete control:
 
-    - **Option 1: Hard Budget (Zero Charges)**
+    - **Option 1: Hard budget (zero charges)**\
       Stay strictly within the free allowance. If you go over, your projects pause automatically. Your bill stays at \$0.
-    - **Option 2: Auto Top-Up (Seamless Scaling)**\
-      Enable auto top-up on any paid plan. Your apps scale without interruption, and you only pay for usage beyond the free allowance. You can also set a monthly budget limit (e.g. \$50). If you reach it, projects pause automatically.
-    - **Option 3: Top-Up Manually (Controlled Scaling)**\
+    - **Option 2: Top-up manually (controlled scaling)**\
       Top-up your workspace balance with an amount you choose. Your apps scale, and you only pay for usage beyond the free allowance. If you spend your workspace balance, you will receive a notification and your projects will pause automatically.
   </Accordion>
 </AccordionGroup>
