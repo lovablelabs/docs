@@ -3,27 +3,25 @@ title: "Lovable AI"
 description: "Unlock powerful models like Gemini and GPT—no API keys, no setup."
 ---
 
-Normally, adding AI to an app means hunting down API keys, setting up billing with providers, and wiring it all together yourself. With Lovable AI, everything is built in so you can start building right away.
-
-\
-Lovable AI makes it simple to add powerful AI features to your app—without extra accounts, setup, or API keys. Intelligence comes built in.
-
 <Warning>
-  This feature is currently in private beta. We’re actively iterating on both pricing and functionality based on user feedback.
-
-  \
-  [Request Access](https://lovable-private-beta.lovable.app/) to the Private Beta.
+  This feature is currently in beta. We’re actively iterating on both pricing and functionality based on user feedback.
 </Warning>
 
-### How do I use Built-in AI?
+Normally, adding AI to an app means hunting down API keys, setting up billing with providers, and wiring it all together yourself. Lovable AI makes it simple to add powerful AI features to your app so you can start building right away.
 
-AI will automatically be enabled once you request a feature that requires AI functionality, such as chat, summarization, or translation.
+Lovable AI can only be used with [Lovable Cloud](https://docs.lovable.dev/features/cloud) and is enabled by default, which means that you allow Lovable to set everything as soon as you request a feature that requires AI functionality. 
 
-Lovable takes care of all the setup behind the scenes—no API keys or external accounts required.
+Lovable AI integration can be managed from workspace or project level by going to **Settings → Account → Tools.**
 
-Every project includes **\$1 of free AI usage to get started**. After that, you simply **pay as you go**, with costs depending on the underlying model you choose (e.g. OpenAI, Anthropic, or Google).
+Choose between:
 
-You can always **_track and manage your AI costs in Settings → Billing_**.
+- **Always allow**: Lovable automatically performs the action.
+- **Ask each time**: Lovable asks for your approval whenever the action is needed.
+- **Never allow**: Lovable blocks the action, informs you that AI is required, and instructs you to enable Lovable AI.
+
+Every workspace includes \$1 of free AI usage to get started. After that, you can top up your balance, with costs depending on the underlying model you choose.
+
+You can track and manage your usage costs in **Settings → Usage.** For more details and examples of usage-based pricing an, see _Usage-based Cloud and AI pricing_ in [Lovable Cloud](https://docs.lovable.dev/features/cloud) documentation.
 
 #### What You Can Build
 
@@ -31,12 +29,31 @@ With AI built in, you can quickly create features that make your app smarter and
 
 - **AI Summaries** – automatically condense long text into clear takeaways
 - **AI Chatbot or Agent** – build conversational helpers into your app
-- **Sentiment Detection** – understand user feedback at scale
+- **Sentiment detection** – understand user feedback at scale
 - **Document Q&A** – let users ask questions directly against your content
-- **Creative Generation** – brainstorming, copy drafting, or idea expansion
-- **Multilingual Translation** – serve global users seamlessly
-- **Task Completion** – automate repetitive or multi-step workflows (agent functionality)
+- **Creative generation** – brainstorming, copy drafting, or idea expansion
+- **Multilingual translation** – serve global users seamlessly
+- **Task completion** – automate repetitive or multi-step workflows (agent functionality)
+- **Image and document analysis** -  quickly extract, summarize, and interpret key information from images and documents, turning unstructured content into actionable insights
+- **Workflow automation** -  handle repetitive tasks, making decisions, and optimizing processes to save time and reduce errors.
 
-#### Why It Matters
+## Supported AI models
 
-By removing the complexity of API management and billing, Lovable AI makes it easy to bring advanced capabilities into your app. You focus on the product experience—Lovable handles the rest.
+Lovable AI uses **Gemini 2.5 Flash** as its default model, but you can configure the agent to use any other supported AI model.
+
+| Model                                                                          | Description                                                                                 | Best For                                                                           |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [**Gemini 2.5 Pro**](https://deepmind.google/models/gemini/pro/)               | Smartest and most complex Gemini. High reasoning, large context, slower and most expensive. | Deep reasoning, advanced coding, research, complex multimodal tasks                |
+| [**Gemini 2.5 Flash (default)**](https://deepmind.google/models/gemini/flash/) | Balanced model. Faster and cheaper than Pro but still capable of reasoning. Mid-range cost. | Assistants, analysis, general workflows where speed + intelligence balance matters |
+| [**Gemini 2.5 Flash Lite**](https://deepmind.google/models/gemini/flash-lite/) | Fastest and cheapest Gemini. Handles simple tasks at scale, less reasoning depth.           | High-volume, lightweight tasks like classification, summarization, translation     |
+| [**Gemini 2.5 Flash Image**](https://deepmind.google/models/gemini/image/)     | Optimized for generating images. Very cheap per image, not meant for text reasoning.        | Image generation, quick visual outputs                                             |
+| [**GPT-5**](https://openai.com/index/introducing-gpt-5/)                       | Smartest OpenAI model. Strong reasoning, very accurate, but slowest and most expensive.     | Highest-quality reasoning, accuracy-critical apps, complex decision making         |
+| [**GPT-5 Mini**](https://platform.openai.com/docs/models/gpt-5-mini)           | Balanced GPT-5. Cheaper and faster than GPT-5, less complex but strong general use.         | Assistants, mid-complexity reasoning, business workflows                           |
+| [**GPT-5 Nano**](https://platform.openai.com/docs/models/gpt-5-nano)           | Cheapest and fastest GPT-5. Very basic reasoning, best for quick or simple responses.       | Summaries, classification, extraction, high-volume simple tasks                    |
+
+## Best and most cost-effective choices
+
+- **Best overall intelligence**: GPT-5 and Gemini 2.5 Pro (deep reasoning, but most expensive)
+- **Best balance (speed + cost + smartness)**: GPT-5 Mini and Gemini 2.5 Flash
+- **Most cost-effective for scale**: GPT-5 Nano and Gemini 2.5 Flash Lite (simple, fast, cheapest)
+- **Best for images**: Gemini 2.5 Flash Image
