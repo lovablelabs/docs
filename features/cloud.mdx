@@ -47,7 +47,7 @@ You can configure Cloud integration tools from **Settings → Account → Tools*
 
 Each tool has three options:
 
-- **Always allow**: Lovable automatically performs the action.
+- **Always allow**: Lovable automatically performs the action, which means you are not asked to review or approve the action.
 - **Ask each time**: Lovable asks for your approval whenever the action is needed.
 - **Never allow**: Lovable blocks the action, informs you that Cloud access is required, and instructs you to enable Cloud.
 
@@ -66,7 +66,13 @@ Each tool has three options:
 
 ## Lovable Cloud features
 
-You’ll find the **Cloud tab** inside any Lovable project by clicking the `+` button next to **Preview** and **Code mode**.
+You’ll find the **Cloud tab** inside any Lovable project by clicking the `+` button next to **Preview** **mode**.
+
+<img
+  src="/images/cloud-icon.png"
+  alt="Lovable Cloud icon"
+  style={{ width:"37%" }}
+/>
 
 The following features live inside the Cloud tab:
 
@@ -93,7 +99,7 @@ The following features live inside the Cloud tab:
 
 **Common use cases:**
 
-- AI-powered features
+- AI-powered features, such as AI summaries or AI chatbots
 - Sending emails or push notifications
 - Payment processing
 - Scheduled tasks
@@ -106,8 +112,12 @@ The following features live inside the Cloud tab:
 
 ### AI
 
-- Monitor Lovable AI usage and performance for your project.
-- For more information, see [Lovable AI documentation](https://docs.lovable.dev/features/ai)
+- **Built in AI functionality**: Lovable Cloud comes with built in AI so you can quickly create features that make your app smarter and more engaging. For more information, see [Lovable AI](https://docs.lovable.dev/features/ai).
+- Some examples of AI powered features include:
+  - **AI summaries** – automatically condense long text into clear takeaways
+  - **AI chatbot or agent** – build conversational helpers into your app
+  - **Sentiment detection** – understand user feedback at scale
+- You can monitor Lovable AI usage and performance for your project from the AI overview.
 
 ### Secrets
 
@@ -118,7 +128,7 @@ The following features live inside the Cloud tab:
 **Example:** Store your Stripe Secret Key once, and Lovable ensures it’s included in payment-processing functions without you hard-coding it.
 
 <Note>
-  Some secrets, such as the Lovable API key, are required for the platform and cannot be deleted.
+  Some secrets, such as the Supabase keys and Lovable API key, are added automatically and are required for the functioning of the Lovable platform. These keys cannot be deleted.
 </Note>
 
 ### Logs
@@ -194,15 +204,15 @@ The Usage screen updates as follows:
 
 ### Included free usage (all plans)
 
-Every workspace receives free monthly usage, regardless of plan:
+Every workspace receives free monthly usage, regardless of plan and regardless of when in the month you start your plan:
 
 - **\$25 Cloud balance** for app hosting
 - **\$1 AI balance** for AI features
 
-These free funds reset on the first day of each month at 00:00 UTC (displayed in your timezone). Unused free funds do not roll over to the next month.
+These free funds reset on the first day of each month at 00:00 UTC (displayed in your timezone) and are not tied to the billing cycle of you subscription plan. Unused free funds do not roll over to the next month.
 
 <Note>
-  **Temporary Promotion:** Until the end of the year, all users get \$25 Cloud and \$1 AI per month, even on the Free plan.
+  **Temporary promotion:** Until the end of the year, all users get \$25 Cloud and \$1 AI per month, even on the Free plan.
 </Note>
 
 ### Adding funds (paid plans only)
@@ -255,10 +265,10 @@ Keep in mind:
 
 | App type                       | Example monthly usage                                                                                                                                                                                                      | Cloud cost (before → after free \$25) | AI cost (before → after free \$1) | What you pay to Lovable          |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------- | -------------------------------- |
-| **Personal blog or portfolio** | 500 visits, a handful of posts/comments, some images, tiny server. AI adds summaries or catchy titles (2,500 AI calls/month, 50 input + 150 output tokens each).                                                           | \$1 → \$0                           | \$1 → \$0                           | Subscription only                |
-| **Small business website**     | 5,000 visits, product listings, forms/newsletter signups, product images, tiny server. AI adds simple chat assistant (6,500 AI calls/month, 30 input + 120 output tokens each).                                            | \$5 → \$0                               | \$2 → \$1                           | Subscription + \$1 (AI)          |
-| **Team project manager**       | 20 active users, 10,000 visits, tasks and comments, file uploads, live updates, small server. AI adds task suggestions, reminders, comment summaries (6,000 AI calls/month, 200 input + 300 output tokens each).           | \$15 → \$0                              | \$5 → \$4                           | Subscription + \$4 (AI)          |
-| **E-comm store**               | 10,000 visitors, 500 purchases, many product images, customer/order data, checkout flows, medium server. AI adds product descriptions and a shopping assistant (20,000 AI calls/month, 40 input + 200 output tokens each). | \$65 → \$40                             | \$10 → \$9                          | Subscription + \$49 (Cloud + AI) |
+| **Personal blog or portfolio** | 500 visits, a handful of posts/comments, some images, tiny server. AI adds summaries or catchy titles (2,500 AI calls/month, 50 input + 150 output tokens each).                                                           | \$1 → \$0                             | \$1 → \$0                         | Subscription only                |
+| **Small business website**     | 5,000 visits, product listings, forms/newsletter signups, product images, tiny server. AI adds simple chat assistant (6,500 AI calls/month, 30 input + 120 output tokens each).                                            | \$5 → \$0                             | \$2 → \$1                         | Subscription + \$1 (AI)          |
+| **Team project manager**       | 20 active users, 10,000 visits, tasks and comments, file uploads, live updates, small server. AI adds task suggestions, reminders, comment summaries (6,000 AI calls/month, 200 input + 300 output tokens each).           | \$15 → \$0                            | \$5 → \$4                         | Subscription + \$4 (AI)          |
+| **E-comm store**               | 10,000 visitors, 500 purchases, many product images, customer/order data, checkout flows, medium server. AI adds product descriptions and a shopping assistant (20,000 AI calls/month, 40 input + 200 output tokens each). | \$65 → \$40                           | \$10 → \$9                        | Subscription + \$49 (Cloud + AI) |
 
 ## FAQ
 
