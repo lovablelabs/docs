@@ -266,6 +266,14 @@ Keep in mind:
     - **Option 2: Top-up manually (controlled scaling)**\
       Top-up your workspace balance with an amount you choose. Your apps scale, and you only pay for usage beyond the free allowance. If you spend your workspace balance, you will receive a notification and your projects will pause automatically.
   </Accordion>
+  <Accordion title="Are my credits deducted for Cloud and AI usage?">
+    No, your workspace credits are separate, only used for messaging while building apps. You can track your credit usage in **Settings → Plans & Billing**.
+
+    You can track your Cloud and AI usage in **Settings → Usage**.
+
+    - Your Cloud balance pays for hosting deployed apps.
+    - Your AI balance pays for AI features inside deployed apps.
+  </Accordion>
   <Accordion title="I’m currently using the Supabase integration. What does this change mean for me?">
     Don’t worry, nothing changes for your existing projects. Your Supabase integration will continue to work exactly as it does today, and we will continue to support it.
 
@@ -278,12 +286,12 @@ Keep in mind:
   <Accordion title="Can I remix Cloud projects?">
     Yes, Cloud projects can be remixed to Cloud projects only. This creates a copy of your project that you can edit separately in your currently selected workspace. The structure of backend-related data, such as tables and Edge Functions, is copied over without any information. For any automatically generated keys in the original project, Lovable generates fresh keys in the remixed project. Manually added keys are not copied over.
 
-   Keep in mind that you can't revert to a previous version of your app in the remixed project if the project is using Lovable backend. For frontend-only projects hosted in the Cloud, reverts are possible.
-  </Accordion> 
+    Keep in mind that you can't revert to a previous version of your app in the remixed project if the project is using Lovable backend. For frontend-only projects hosted in the Cloud, reverts are possible.
+  </Accordion>
   <Accordion title="Can I export my Cloud project to Supabase?">
     This is technically possible since you own the code in GitHub, but not straightforward. We are looking into making this easier.
   </Accordion>
   <Accordion title="How do I know what projects are generating most usage?">
     You can’t see this information at the moment, but we are working on adding this so you have a better understanding of your Cloud usage.
-  </Accordion>  
+  </Accordion>
 </AccordionGroup>
