@@ -17,6 +17,33 @@ Add their email, and they'll receive an invite to their email.
   Collaborators will use credits from the project owner's workspace.
 </Note>
 
+### Project permissions
+
+Please note that free plans do not have admin roles. Some of the features presented might be available on specific plans only.
+
+|                           | **Viewer** | **Editor** | **Admin** | **Owner** |
+| ------------------------- | ---------- | ---------- | --------- | --------- |
+| **Project access**        |            |            |           |           |
+| Magic Link                | **Yes**    | **Yes**    | **Yes**   | **Yes**   |
+| Add Viewer                | **Yes**    | **Yes**    | **Yes**   | **Yes**   |
+| Remove Viewer             | **Yes**    | **Yes**    | **Yes**   | **Yes**   |
+| Add Editor                | No         | **Yes**    | **Yes**   | **Yes**   |
+| Remove Editor             | No         | **Yes**    | **Yes**   | **Yes**   |
+| Add Admin                 | No         | No         | **Yes**   | **Yes**   |
+| Remove Admin              | No         | No         | **Yes**   | **Yes**   |
+| **Project management**    |            |            |           |           |
+| Remix project             | **Yes**    | **Yes**    | **Yes**   | **Yes**   |
+| Add Custom domain         | No         | **Yes**    | **Yes**   | **Yes**   |
+| Edit project              | No         | **Yes**    | **Yes**   | **Yes**   |
+| Remove Lovable badge      | No         | **Yes**    | **Yes**   | **Yes**   |
+| Change project visibility | No         | **Yes**    | **Yes**   | **Yes**   |
+| Manage GitHub             | No         | **Yes**    | **Yes**   | **Yes**   |
+| Publish                   | No         | No         | **Yes**   | **Yes**   |
+| Manage project settings   | No         | No         | **Yes**   | **Yes**   |
+| Disconnect Supabase       | No         | No         | **Yes**   | **Yes**   |
+| Transfer project          | No         | No         | **Yes**   | **Yes**   |
+| Delete project            | No         | No         | **Yes**   | **Yes**   |
+
 ## Collaboration in a Workspace
 
 ### What is a Workspace?
@@ -46,34 +73,29 @@ Here you can:
 - Manage existing collaborators by changing their roles or removing them.
 - See monthly credits usage for each collaborator
 
-## Permissions
+### Workspace permissions
 
 Please note that free plans do not have admin roles.
 
-|                             | **Editor** | **Admin** | **Owner** |
-| --------------------------- | ---------- | --------- | --------- |
-| **Project**                 |            |           |           |
-| Add Editor                  | ✅          | ✅         | ✅         |
-| Add Admin                   | ❌          | ❌         | ✅         |
-| Remove Editor               | ✅          | ✅         | ✅         |
-| Remove Admin                | ❌          | ❌         | ✅         |
-| Magic Link                  | ✅          | ✅         | ✅         |
-| Publish                     | ❌          | ✅         | ✅         |
-| Transfer to GitHub          | ✅          | ✅         | ✅         |
-| **Workspace**               |            |           |           |
-| Add Editor                  | ❌          | ✅         | ✅         |
-| Add Admin                   | ❌          | ❌         | ✅         |
-| See Usage                   | ❌          | ✅         | ✅         |
-| Manage Plan                 | ❌          | ❌         | ✅         |
-| Remove Editor               | ❌          | ✅         | ✅         |
-| Remove Admin                | ❌          | ❌         | ✅         |
-| Connect/disconnect Supabase | ❌          | ✅         | ✅         |
-| Connect/disconnect GitHub   | ❌          | ✅         | ✅         |
-
-**Legend**
-
-- ✅ = Permission granted
-- ❌ = Permission denied
+|                                    | **Viewer** | **Editor** | **Admin** | **Owner** |
+| :--------------------------------- | :--------- | :--------- | :-------- | :-------- |
+| **Workspace access**               |            |            |           |           |
+| Add Viewer                         | **Yes**    | **Yes**    | **Yes**   | **Yes**   |
+| Remove Viewer                      | **Yes**    | **Yes**    | **Yes**   | **Yes**   |
+| Add Editor                         | No         | **Yes**    | **Yes**   | **Yes**   |
+| Remove Editor                      | No         | **Yes**    | **Yes**   | **Yes**   |
+| Add Admin                          | No         | No         | **Yes**   | **Yes**   |
+| Remove Admin                       | No         | No         | **Yes**   | **Yes**   |
+| Add Owner                          | No         | No         | No        | **Yes**   |
+| Remove Owner                       | No         | No         | No        | **Yes**   |
+| **Workspace management**           |            |            |           |           |
+| View members                       | **Yes**    | **Yes**    | **Yes**   | **Yes**   |
+| Create new projects in a workspace | No         | **Yes**    | **Yes**   | **Yes**   |
+| Manage Supabase                    | No         | **Yes**    | **Yes**   | **Yes**   |
+| View usage                         | No         | No         | **Yes**   | **Yes**   |
+| Manage plans & billing             | No         | No         | **Yes**   | **Yes**   |
+| Manage SSO (Business plan)         | No         | No         | **Yes**   | **Yes**   |
+| Manage Integrations                | No         | No         | **Yes**   | **Yes**   |
 
 ## FAQ
 
@@ -85,9 +107,15 @@ Please note that free plans do not have admin roles.
     Yes, but you'll need separate subscriptions for each one.
   </Accordion>
   <Accordion title="Can I switch between Workspaces?">
-    Yes. Go to the main dashboard. From there press your workspace name. In the dropdown you'll see the other workspaces you have access to. To switch, simply click the desired workspace.
+    Yes! Go to the main dashboard. From there press your workspace name in the top right corner. In the dropdown you'll see the other workspaces you have access to. To switch, simply click the desired workspace.
   </Accordion>
   <Accordion title="Is it possible to transfer projects between Workspaces?">
-    Yes\! Go to the project settings where you'll find the option to **Transfer** the project.
+    Yes! Go to the project settings where you'll find the option to **Transfer** the project.
+  </Accordion>
+  <Accordion title="Can I change the workspace owner?">
+    Yes, an owner can add multiple workspace owners.
+  </Accordion>
+  <Accordion title="Can I change the project owner?">
+    At this moment it is not possible, but you can always remix that project into a new account and you will be an owner of that copy.
   </Accordion>
 </AccordionGroup>
