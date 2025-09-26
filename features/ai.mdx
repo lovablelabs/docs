@@ -24,30 +24,41 @@ Some examples include:
 ## Enabling Lovable AI
 
 <Note>
-  Lovable AI can only be used with [Lovable Cloud](https://docs.lovable.dev/features/cloud). It cannot be used with Supabase.
+  For the best experience, we recommend using Lovable AI with [Lovable Cloud](https://docs.lovable.dev/features/cloud).
 </Note>
 
-Lovable AI is enabled by default when using Lovable Cloud. This means Lovable automatically adds AI functionality when requested, using **Gemini 2.5 Flash** as the default model. 
+By default, Lovable AI is enabled at workspace and user level when using Lovable Cloud. This means Lovable automatically adds AI functionality when requested, using **Gemini 2.5 Flash** as the default model. 
 
-If you want to use a different model, you can specify that in the prompt when requesting AI functionality. For an overview of supported AI models, see [Supported AI models](https://docs.lovable.dev/features/ai#supported-ai-models).
+If you want to use a different model or combination of models, you can specify that in the prompt when requesting AI functionality. For an overview of supported AI models, see [Supported AI models](https://docs.lovable.dev/features/ai#supported-ai-models).
 
-Lovable AI integration can be managed from workspace or project level by going to **Settings → Account → Tools.**
+### User level
+
+By default, enabling the AI integration is set to **Always allow** on user level. This means Lovable AI will be used for your project. You can change your personal preference from **Settings → Account → Tools**.
 
 Choose between:
 
 - **Always allow**: Lovable automatically performs the action, which means you are not asked to review or approve the action.
-- **Ask each time**: Lovable asks for your approval whenever the action is needed.
+- **Ask each time**: Lovable asks for your approval whenever the action is needed. For example, if you want to add a chatbot, you can:
+  - **Allow**: enable the integration for the current project.
+  - **Deny**: decline the integration for this request (you may be asked again later).
+  - **Adjust preferences**: set personal defaults for future use.
 - **Never allow**: Lovable blocks the action, informs you that AI is required, and instructs you to enable Lovable AI.
 
 ## Usage and pricing
 
-Every workspace includes \$1 of free AI usage to get started. After that, you can top up your balance, with costs depending on the underlying model you choose.
+Lovable AI runs on a **usage-based pricing model**. This means your costs scale with how much you use and are not covered by your subscription.
 
-You can track and manage your usage costs in **Settings → Usage.** For more details and examples see [Usage-based Cloud and AI pricing](https://docs.lovable.dev/features/cloud#usage-based-cloud-and-ai-pricing).
+Every workspace includes **\$1 of free AI usage per month** to get started. After that, users on paid plans can top up their balance, with costs depending on the underlying model you choose.
+
+<Note>
+  **Temporary offering, subject to change:** Until the end of 2025, all users get \$25 Cloud and \$1 AI per month, even on the Free plan.
+</Note>
+
+You can track and manage your AI usage costs in **Settings → Usage.** For more details and examples see [Usage-based Cloud and AI pricing](https://docs.lovable.dev/features/cloud#usage-based-cloud-and-ai-pricing).
 
 ## Supported AI models
 
-Lovable AI uses **Gemini 2.5 Flash** as its default model, but you can configure the agent to use any other supported AI model.
+Lovable AI uses **Gemini 2.5 Flash** as its default model, but you can prompt the agent to use a different model or combination of models.
 
 | Model                                                                          | Description                                                                                 | Best For                                                                           |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
