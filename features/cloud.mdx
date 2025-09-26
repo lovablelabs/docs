@@ -10,36 +10,33 @@ icon: "database"
 
 Lovable Cloud is a full-stack cloud platform that takes care of every part of your application — from the frontend your users see, to the backend that powers it behind the scenes. All you do is describe what you want directly in Lovable, and Lovable automatically generates both the frontend and backend, ready to run in the cloud.  Instead of managing hardware or complex infrastructure, you get on-demand access to hosting, compute, and storage that scale automatically as your app grows.
 
-Lovable Cloud utilizes Supabase’s open-source foundation, which means you get a production-ready environment from day one, without needing to set up Supabase separately. You have the power of a production-ready PostgreSQL database, real-time updates, user auth, and storage — with none of the manual setup steps.
+Lovable Cloud utilizes Supabase’s open-source foundation, which means you get a production-ready environment from day one, without needing to set up Supabase separately. You have the power of a production-ready database, real-time updates, user auth, and storage — with none of the manual setup steps.
 
 ## Why choose Lovable Cloud
 
 - **Scales as you grow**: From your first prototype to millions of users, Lovable scales seamlessly with your needs.
 - **Secure by default**: Enterprise-grade authentication, fine-grained access controls, and compliance best practices protect your app and data.
-- **Fully portable**: Utilizes Supabase’s open-source stack. You retain full ownership of your app and data with the freedom to export, self-host, or migrate anytime.
-- **Cost-effective**: Manage multiple projects in one workspace with usage-based pricing. Every workspace starts with **\$25 free usage**, enough to launch and run multiple projects. Read more in [Usage-based Cloud and AI pricing](https://docs.lovable.dev/features/cloud#usage-based-cloud-and-ai-pricing).
+- **Cost-effective**: Manage multiple projects in one workspace with usage-based pricing. Every workspace starts with **\$25 free usage per month**, enough to launch and run multiple projects (temporary offering until end of 2025, subject to change). Read more in [Usage-based Cloud and AI pricing](https://docs.lovable.dev/features/cloud#usage-based-cloud-and-ai-pricing).
 
 ## Enabling Lovable Cloud
 
 Lovable Cloud integration behavior can be managed at the workspace, user, and project level.
 
-- Cloud must be enabled at the workspace level before it can be used in any projects.
-- Only workspace owners and admins can enable or disable Cloud at the workspace level.
+### Workspace level
 
-### Default behavior
+By default, Cloud is enabled at workspace level. Only workspace owners and admins can enable or disable Cloud at the workspace level.
 
-| Lovable Cloud setting level | Default behavior |
-| --------------------------- | ---------------- |
-| Workspace                   | Enabled          |
-| User                        | Ask each time    |
+Cloud must be enabled at the workspace level before it can be used in any projects. If Cloud is disabled at the workspace level, the agent will notify you and suggest enabling it before continuing.
+
+### User level
+
+By default, enabling the Cloud integration is set to **Ask each time** on user level. This means Cloud will be enabled or disabled for your project based on your answer. You can change your personal preference from **Settings → Account → Tools.**
 
 At the user level, Lovable prompts you whenever a feature requires backend functionality. For example, if authentication or file storage is needed, you can:
 
 - **Allow**: enable the integration for the current project.
 - **Deny**: decline the integration for this request (you may be asked again later).
-- **Adjust preferences**: set personal defaults for future use.
-
-If Cloud is disabled at the workspace level, the agent will notify you and suggest enabling it before continuing.
+- **Adjust preferences**: set personal defaults for future use. Set to **Ask each time** by default.
 
 ## Lovable Cloud tools
 
@@ -99,16 +96,16 @@ The following features live inside the Cloud tab:
 
 **Common use cases:**
 
-- AI-powered features, such as AI summaries or AI chatbots
+- AI-powered features, such as AI summaries or AI chatbots. Use built-in [Lovable AI](https://docs.lovable.dev/features/ai).
 - Sending emails or push notifications
-- Payment processing
+- Payment processing, for example with [Stripe](https://docs.lovable.dev/integrations/stripe#stripe-integration)
 - Scheduled tasks
 - Heavy computations or external API calls
 
 **Other highlights:**
 
 - **Easy to create**: just describe the function you need in Lovable chat.
-- **Debugging built-in**: each function includes logs of executions, output, and errors. If something fails, Lovable surfaces the error directly in chat for quick troubleshooting.
+- **Debugging built-in**: each function includes logs of executions, output, and errors. If something fails, Lovable surfaces the error for quick troubleshooting.
 
 ### AI
 
@@ -138,36 +135,31 @@ The following features live inside the Cloud tab:
 
 ## Example flow - Prompting Lovable to build a CRM tool
 
-**Prompt:**\
-Build me a CRM tool to manage clients, track deals, handle invoices, and keep notes organized. Keep the design simple, modern, and business-friendly with a sidebar for navigation.
+_Build me a CRM tool to manage clients, track deals, handle invoices, and keep notes organized. Keep the design simple, modern, and business-friendly with a sidebar for navigation._
 
 ### Step 1: Organize the data (Database)
 
 Tell Lovable what kind of information the tool should keep track of for you. Lovable will automatically create the tables for you, so you don’t need to touch databases yourself.
 
-**Prompt:**
-I want a place to keep track of my clients with their name, email, phone number, and notes. I also need a way to track deals, including which client it’s for, the value, the stage it’s in, and when I expect it to close. And I need a section for invoices with the client it belongs to, the amount, the status, and the due date.
+_I want a place to keep track of my clients with their name, email, phone number, and notes. I also need a way to track deals, including which client it’s for, the value, the stage it’s in, and when I expect it to close. And I need a section for invoices with the client it belongs to, the amount, the status, and the due date._
 
 ### Step 2: Make it secure (Users & Auth)
 
 Add login so data is private and users can sign in easily.
 
-**Prompt:**
-Add login to the app. Require login before accessing the CRM dashboard. Also, add a ‘Sign in with Google’ button so users can log in with their Google accounts.
+_Add login to the app. Require login before accessing the CRM dashboard. Also, add a ‘Sign in with Google’ button so users can log in with their Google accounts._
 
 ### Step 3: Handle files (Storage)
 
 You can let users upload and see files right inside the app. Lovable takes care of the storage and linking, so you just describe what files should go where.
 
-**Prompt:**
-Add a contract upload field to each deal. Let clients have profile pictures and display them on the client detail page. Upload invoice PDFs to and show a download link on the invoices table.
+_Add a contract upload field to each deal. Let clients have profile pictures and display them on the client detail page. Upload invoice PDFs and show a download link on the invoices table._
 
 ### Step 4: Automate workflows (Edge Functions)
 
 Set up automatic actions that save you time.
 
-**Prompt:**
-When a new lead is added to the Clients table, send me an email notification. Analyze client meeting notes with Lovable AI and save a sentiment score in the Clients table. Sync new contacts automatically. Schedule a daily job at 7am that emails me a summary of today’s follow-ups. When a payment is marked ‘paid’ in Stripe, automatically update the related invoice’s status to ‘Paid’.
+_When a new lead is added to the Clients table, send me an email notification. Analyze client meeting notes with Lovable AI and save a sentiment score in the Clients table. Sync new contacts automatically. Schedule a daily job at 7 AM that emails me a summary of today’s follow-ups. When a payment is marked ‘paid’ in Stripe, automatically update the related invoice’s status to ‘Paid’._
 
 ### Step 5: Connect to other tools (Secrets)
 
@@ -176,10 +168,9 @@ Lovable will prompt you to add them securely whenever they’re needed, and only
 
 ### Step 6: Add AI superpowers (AI)
 
-Make the tool act like your assistant:
+Make the tool act like your assistant.
 
-**Prompt:**
-Summarize each client’s meeting notes and save them to their profile. Suggest next steps for every open deal. Generate personalized email drafts for following up with leads. Classify client messages into categories: sales, support, or billing.
+_Summarize each client’s meeting notes and save them to their profile. Suggest next steps for every open deal. Generate personalized email drafts for following up with leads. Classify client messages into categories: sales, support, or billing._
 
 ## Usage-based Cloud and AI pricing
 
@@ -212,7 +203,7 @@ Every workspace receives free monthly usage, regardless of plan and regardless o
 These free funds reset on the first day of each month at 00:00 UTC (displayed in your timezone) and are not tied to the billing cycle of you subscription plan. Unused free funds do not roll over to the next month.
 
 <Note>
-  **Temporary promotion:** Until the end of the year, all users get \$25 Cloud and \$1 AI per month, even on the Free plan.
+  **Temporary offering, subject to change:** Until the end of 2025, all users get \$25 Cloud and \$1 AI per month, even on the Free plan.
 </Note>
 
 ### Adding funds (paid plans only)
