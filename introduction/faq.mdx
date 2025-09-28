@@ -87,15 +87,13 @@ icon: "circle-question"
     Alternatively, use the keyboard shortcut:
 
     - <kbd>⌘</kbd>
+      - <kbd>.</kbd>
 
-       + <kbd>.</kbd>
-
-       on Mac.
+      on Mac.
     - <kbd>Ctrl</kbd>
+      - <kbd>.</kbd>
 
-       + <kbd>.</kbd>
-
-       on Windows.
+      on Windows.
   </Accordion>
   <Accordion title="Can I change the visibility of my project?">
     Yes, navigate to the **Project settings** where you can change the visibility. Read more about this [here](/features/private-projects).
@@ -163,7 +161,14 @@ icon: "circle-question"
     You can view your project history by simply scrolling up in the chat or pressing "View History" on top of the chat. You can also select older versions to preview them or restore your project to that version.
   </Accordion>
   <Accordion title="Can I restore an earlier version of my project?">
-    Yes! You can find the option on that version's code-card, or in the history tab when you select the version you want to restore.
+    Yes! You can find the option on that version's code-card, or in the history tab when you select the version you want to restore.\
+    \
+    If the **restore **function isn’t working, it could be due to one of the following reasons:
+
+    - There’s an **ongoing edit** still in progress.
+    - The version you’re trying to restore **contains an error**.
+    - The selected version is **identical to the current one**.
+    - You have only made changes to backend (SQL/edge functions), the restore button doesn't roll back database changes, therefore it won't be possible to restore to a version which only differs from the current one in the database.
   </Accordion>
 </AccordionGroup>
 
@@ -183,10 +188,10 @@ For feature-specific questions and troubleshooting tips, check out the individua
     Note: If your target workspace is on a paid plan, remixing public projects may be necessary for access. Remixed projects won’t carry over subscription-level features unless the new workspace has them too.
   </Accordion>
   <Accordion title="Can I delete my account?">
-    To delete your account, please email [**support@lovable.dev**](mailto:support@lovable.dev).
+    To delete your account, please email [**support@lovable.dev**](mailto:support@lovable.dev). All deletion requests must be sent from the email address associated with the account you wish to delete. This is a mandatory security measure to ensure the request is legitimate.
   </Accordion>
   <Accordion title="Can I change the workspace owner?">
-    Yes, an owner can add multiple workspace owners
+    Yes, an owner can add multiple workspace owners.
   </Accordion>
   <Accordion title="How can I transfer project ownership to someone else?">
     One way around this is to remix the project, and the person who remixes the project will now be the owner of that version.
