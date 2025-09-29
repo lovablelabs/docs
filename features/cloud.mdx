@@ -16,40 +16,41 @@ Lovable Cloud utilizes Supabase’s open-source foundation, which means you get 
 
 ## Enabling Lovable Cloud
 
-By default, Lovable Cloud is enabled at workspace level.
+By default, Lovable Cloud is enabled for your workspace. You can manage Lovable Cloud behavior for your projects in your user preferences: **Settings → Account → Tools.**
 
-### User level
+### User preferences
 
-By default, enabling the Cloud integration is set to **Ask each time** on user level. This means Cloud will be enabled or disabled for your project based on your answer. You can change your personal preference from **Settings → Account → Tools.**
+The default setting for Cloud integration is **Ask each time**, meaning you decide whether to enable or disable Cloud for each project. You can change your preference anytime from **Settings → Account → Tools.**
 
-Lovable prompts you whenever a feature requires backend functionality. For example, if authentication or file storage is needed, you can:
+Lovable prompts you when a feature requires backend functionality (for example, authentication or file storage). You have three options:
 
 - **Allow**: enable the integration for the current project.
 - **Deny**: decline the integration for this request (you may be asked again later).
-- **Adjust preferences**: set personal defaults for future use. Set to **Ask each time** by default.
+- **Adjust preferences**: change the default behavior for future projects (does not affect the current project).
 
-## Lovable Cloud tools
+### Configuring Lovable Cloud tools
 
-You can configure Cloud integration tools from **Settings → Account → Tools**.
+Each Cloud tool in your user preferences has three options:
 
-Each tool has three options:
-
-- **Always allow**: Lovable automatically performs the action, which means you are not asked to review or approve the action.
+- **Always allow**: Lovable automatically performs the action, without asking for review or approval.
 - **Ask each time**: Lovable asks for your approval whenever the action is needed.
 - **Never allow**: Lovable blocks the action, informs you that Cloud access is required, and instructs you to enable Cloud.
 
-### Tool settings and defaults
+You can change your Cloud tools preferences anytime from **Settings → Account → Tools.**
+
+#### Tool settings and defaults
 
 | Setting             | Description                                                                                                        | Default behavior |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------- |
-| Enable integration  | Create and connect a Cloud project to add backend features (database, auth, storage). Required to use Cloud tools. | Ask each time    |
-| Read queries        | Allow Lovable to read your database.                                                                               | Always allow     |
-| Analytics queries   | Query logs to investigate issues and behavior.                                                                     | Always allow     |
-| Security linter     | Run automated security checks on your database. Not a full audit.                                                  | Always allow     |
-| Database migrations | Make schema and policy changes via SQL migrations. Updates generated types.                                        | Always allow     |
-| Insert data         | Add data to your database tables.                                                                                  | Always allow     |
-| Project info        | Read project configuration and environment details.                                                                | Always allow     |
+| Cloud               | Create and connect a Cloud project to add backend features (database, auth, storage). Required to use Cloud tools. | Ask each time    |
+| Read database       | Allow Lovable to read your database.                                                                               | Always allow     |
+| Read analytics      | Query logs to investigate issues and behavior.                                                                     | Always allow     |
+| Run security checks | Run automated security checks on your database. Not a full audit.                                                  | Always allow     |
+| Modify database     | Make schema and policy changes via SQL migrations. Updates generated types.                                        | Always allow     |
+| Add data            | Add data to your database tables.                                                                                  | Always allow     |
+| Read project info   | Read project configuration and environment details.                                                                | Always allow     |
 | Configure auth      | Allow Lovable to configure authentication settings (for exmple, signup policies).                                  | Always allow     |
+| Read backend logs   | Read logs from backend services.                                                                                   | Always allow     |
 
 ## Lovable Cloud features
 
@@ -61,7 +62,7 @@ You’ll find the **Cloud tab** inside any Lovable project by clicking the `+` b
   style={{ width:"37%" }}
 />
 
-The following features live inside the Cloud tab:
+The following features and settings live inside the Cloud tab:
 
 ### Database
 
@@ -122,6 +123,18 @@ The following features live inside the Cloud tab:
 
 - **Real-time monitoring**: watch app activity as it happens.
 - **Debug and trace issues**: identify errors, track events, and ensure your backend is healthy.
+
+### Advanced settings - Upgrade instance
+
+Use the advanced settings to view anad manage your current instance size. A larger instance allows your app to handle more users and traffic. Keep in mind that your Cloud usage costs will increase as your app usage grows.
+
+- **Free plan users**: upgrade from **Tiny** to a larger instance by upgrading your plan at anytime
+- **Paid plan users**: choose a new instance size from the options below:
+  - **Tiny**: great for trying things out
+  - **Mini**: reliable for early projects
+  - **Small**: room to grow with your app
+  - **Medium**: steady choice for regular use
+  - **Large**: confident option for higher demand
 
 ## Example flow - Prompting Lovable to build a CRM tool
 
@@ -193,7 +206,7 @@ Every workspace receives free monthly usage, regardless of plan and regardless o
 These free funds reset on the first day of each month at 00:00 UTC (displayed in your timezone) and are not tied to the billing cycle of you subscription plan. Unused free funds do not roll over to the next month.
 
 <Note>
-  **Temporary offering, subject to change:** Until the end of 2025, all users get \$25 Cloud and \$1 AI per month, even on the Free plan.
+  **Temporary offering, subject to change:** Until the end of 2025, every workspace gets \$25 Cloud and \$1 AI per month, even for users on the Free plan.
 </Note>
 
 ### Adding funds (paid plans only)

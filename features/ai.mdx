@@ -23,21 +23,23 @@ Some examples include:
   For the best experience, we recommend using Lovable AI with [Lovable Cloud](https://docs.lovable.dev/features/cloud).
 </Note>
 
-By default, Lovable AI is enabled at workspace and user level when using Lovable Cloud. This means Lovable automatically adds AI functionality when requested, using **Gemini 2.5 Flash** as the default model. 
+By default, Lovable AI is enabled for your workspace and in your user preferences. This means Lovable automatically adds AI functionality when requested. You can manage Lovable AI behavior for your projects in your user preferences: **Settings → Account → Tools**.
 
-If you want to use a different model or combination of models, you can specify that in the prompt when requesting AI functionality. For an overview of supported AI models, see [Supported AI models](https://docs.lovable.dev/features/ai#supported-ai-models).
+### Default AI model
 
-### User level
+Lovable AI uses **Gemini 2.5 Flash** as the default model. If you want to use a different model or combination of models, you can specify your choice directly in the prompt when requesting AI functionality. For an overview of supported AI models, see [Supported AI models](https://docs.lovable.dev/features/ai#supported-ai-models).
 
-By default, enabling the AI integration is set to **Always allow** on user level. This means Lovable AI will be used for your project. You can change your personal preference from **Settings → Account → Tools**.
+### User preferences
+
+The default setting for AI integration is **Always allow**, meaning Lovable AI will be automatically used in your projects. You can change your preference anytime from **Settings → Account → Tools**.
 
 Choose between:
 
-- **Always allow**: Lovable automatically performs the action, which means you are not asked to review or approve the action.
+- **Always allow**: Lovable automatically performs the action, without asking for review or approval.
 - **Ask each time**: Lovable asks for your approval whenever the action is needed. For example, if you want to add a chatbot, you can:
   - **Allow**: enable the integration for the current project.
   - **Deny**: decline the integration for this request (you may be asked again later).
-  - **Adjust preferences**: set personal defaults for future use.
+  - **Adjust preferences**: change the default behavior for future projects (does not affect the current project).
 - **Never allow**: Lovable blocks the action, informs you that AI is required, and instructs you to enable Lovable AI.
 
 ## Usage and pricing
@@ -47,10 +49,10 @@ Lovable AI runs on a **usage-based pricing model**. This means your costs scale 
 Every workspace includes **\$1 of free AI usage per month** to get started. After that, users on paid plans can top up their balance, with costs depending on the underlying model you choose.
 
 <Note>
-  **Temporary offering, subject to change:** Until the end of 2025, all users get \$25 Cloud and \$1 AI per month, even on the Free plan.
+  **Temporary offering, subject to change:** Until the end of 2025, every workspace gets \$25 Cloud and \$1 AI per month, even for users on the Free plan.
 </Note>
 
-You can track and manage your AI usage costs in **Settings → Usage.** For more details and examples see [Usage-based Cloud and AI pricing](https://docs.lovable.dev/features/cloud#usage-based-cloud-and-ai-pricing).
+You can track and manage your AI usage costs in **Settings → Usage.** For more details and examples, see [Usage-based Cloud and AI pricing](https://docs.lovable.dev/features/cloud#usage-based-cloud-and-ai-pricing).
 
 ## Supported AI models
 
@@ -72,3 +74,14 @@ Lovable AI uses **Gemini 2.5 Flash** as its default model, but you can prompt th
 - **Best balance (speed + cost + smartness)**: GPT-5 Mini and Gemini 2.5 Flash
 - **Most cost-effective for scale**: GPT-5 Nano and Gemini 2.5 Flash Lite (simple, fast, cheapest)
 - **Best for images**: Gemini 2.5 Flash Image
+
+## Workspace rate limits
+
+To ensure reliable performance and fair access for all users, Lovable AI applies rate limits per workspace. These limits help maintain system stability, prevent abuse, control costs, and provide a consistent experience for everyone.
+
+If your requests exceed the allowed rate, the server returns a **429 Too Many Requests** status code, and the request will not be processed.
+
+Rate limits are more restrictive for free users, while paid plans include higher thresholds and greater flexibility.
+
+- **Free plan users**: upgrade anytime to increase your limits.
+- **Paid plan users**: contact [Lovable Support](https://lovable.dev/support) if you need additional capacity.
