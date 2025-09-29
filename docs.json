@@ -47,6 +47,8 @@
               "features/modes",
               "features/visual-edit",
               "features/code-mode",
+              "features/cloud",
+              "features/ai",
               "features/knowledge",
               "features/collaboration",
               "features/private-projects",
@@ -56,7 +58,7 @@
               "features/seo",
               "features/security",
               "features/labs",
-              "features/figma-to-lovable"
+              "features/figma-to-lovable"              
             ]
           },
           {
