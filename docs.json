@@ -92,7 +92,6 @@
               "integrations/clerk",
               "integrations/make",
               "integrations/replicate",
-              "integrations/ai",
               "integrations/21stdev"
             ]
           }
