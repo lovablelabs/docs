@@ -3,7 +3,7 @@ title: "Build an eCommerce store with Shopify"
 description: "Create and manage an online store effortlessly using Lovable + Shopify"
 ---
 
-![Shopify](/images/shopify.jpg)
+![Shopify Jp](/images/shopify.jpg)
 
 From selling physical products to digital downloads, Lovable helps you build, customize, and iterate your store using natural language, while Shopify handles payments, inventory, and logistics when you go live.
 
@@ -18,43 +18,58 @@ With Lovable + Shopify, you can launch real online stores for:
 - **Testing new product ideas**: add a few products and evaluate performance before full-scale production
 - **Business expansion**: introduce new collections, seasonal campaigns, or bundles with just a prompt
 
-## Shopify integration setup notes
+## Before you begin
 
 Before you start building your eCommerce store with **Lovable + Shopify**, here are a few important things to know:
 
-- **Sandbox store for testing:**\
+- **Sandbox store - free for testing**\
   Lovable automatically creates a sandbox store so you can build and experiment safely for free. This environment is perfect for setup and testing, but it **won’t process real payments**.
-- **Claiming your store:**\
-  When you’re ready to go live, you’ll need to **claim your store**. This migrates it to your Shopify account and starts a **30-day free Shopify trial**. In Shopify, you need to activate payments and complete your store setup to start accepting real payments from your customers.
-- **Required Shopify subscription:**\
+- **Claiming your store**\
+  When you’re ready to launch your store, you’ll need to **claim your store**. This migrates it to your Shopify account and starts a **30-day free Shopify trial**. In Shopify, you need to activate payments and complete your store setup to start accepting real payments from your customers.
+- **Required Shopify subscription**\
   After the free trial period, you’ll need a **paid Shopify plan** to continue selling products online. This subscription is managed **directly through Shopify** and is **separate from Lovable pricing**.
-- **Shopify review policy compliance:**\
-  Before publishing your store, make sure all reviews are **authentic, unbiased, and compliant with** [Shopify's Review Policy](https://help.shopify.com/en/partners/help-support/faq/reviews).
+- **Shopify review policy compliance**\
+  Before publishing your store, make sure all reviews are **authentic, unbiased, and compliant with** [**Shopify’s Review Policy**](https://help.shopify.com/en/partners/help-support/faq/reviews).
 
-## Create your sandbox store
+## Shopify integration flow
 
-Tell Lovable what type of store you want to create and mention you want to build it with Shopify. For example:
+You can start by:
+
+- Creating a new project
+- Remixing an existing project, see [Lovable + Shopify templates](https://lovable.dev/shopify).
+
+### 1. Create your store
+
+**When creating a new project from scratch**, tell Lovable what type of store you want to create and specify Shopify.
 
 > Create an eCommerce store with Shopify for selling handmade scented candles.
 
-Lovable prompts you to enable the Shopify connection. Press **Allow**. 
+**When remixing an existing project**, prompt Lovable to integrate Shopify and remove mock data. It is important to use a good, comprehensive prompt. For example:
 
-Lovable automatically creates a **sandbox store,** which won't accept real payments. Now, you can create, update, and delete your products immediately directly from Lovable. You can build and customize your storefront as long as you want before claiming your store on Shopify.
+> I would like to replace the products in this store with my own products and create my Shopify store. Please proceed to:
+>
+> 1. Connect to Shopify.
+> 2. Remove all mock product data from the store and create X new products with product images.
+> 3. Update the product cards and product details page to use the new product information.
+> 4. Update the product details page URL to match the new product.
+> 5. Update the add to wishlist component and logic to match this change.
+> 6. Update my cart, buy now CTA, and any related checkout actions on any page to reflect Shopify store integration.
 
-## Add products to your store
+Lovable will prompt you to **enable the Shopify connection** — just click **Allow**. Your sandbox store is ready for setup.
+
+### 2. Add products and product images
 
 Start by adding products with a **name, description, and price**. For example:
 
-> Add a product named _Lavender Breeze Candle_ with the description _A calming handmade soy candle infused with lavender essential oils_ and the price _\$25_.
+> Add a product named _Lavender Breeze Candle_, description: ‘A calming handmade soy candle infused with lavender essential oils,’ price: \$25.
 
-Click **Allow** to create a Shopify product and add it to your store. You can edit details later.\
-If your product doesn’t appear, prompt:
+You can edit details later. If your product doesn’t appear, prompt:
 
 > Display the products on the website.
 
-Add product images and ensure that you use representative images at all times. Add visuals using any of these options:
+Then, enhance your listings with visuals using any of the below options. Always use representative images.
 
-**Generate with AI**
+**Generate AI images**
 
 > Add an AI-generated image to the product _Lavender Breeze Candle_.
 
@@ -62,11 +77,11 @@ Add product images and ensure that you use representative images at all times. A
 
 > Add the attached image to the product _Lavender Breeze Candle_.
 
-**Use image from URL**
+**Add image from URL**
 
 > Add image from URL to the product _Lavender Breeze Candle_.
 
-## Manage your store
+### 3. Manage your store
 
 Manage your products and refine your store without leaving Lovable. For example, you can tell Lovable to:
 
@@ -74,26 +89,55 @@ Manage your products and refine your store without leaving Lovable. For example,
 - Change product names
 - Remove products
 - Display all products
+- Add product review functionality
+- Add percentage-based or fixed amount-based (USD) discount codes, and include the validity period
+- Add and share wishlist
 
-> “Update the price of _Lavender Breeze Candle_ to _\$28_.”\
-> “Change the description of _Vanilla Bean Candle_ to highlight the wooden wick.”
+> Update the price of _Lavender Breeze Candle_ to _\$28_.\
+> Change the description of _Vanilla Bean Candle_ to highlight the wooden wick. \
+> Remove the product _Cinnamon Spice Candle_.\
+> Display all products.\
+> Create a 15% discount code for the product _Lavender Breeze Candle_. The code should be LAVANDER15 and valid until the end of November 2025. \
+> Allow me to add products to the wishlist and share it.\
+> Create a product review system and only allow reviews on verified purchases. 
 
-## Claim your store
+### 4. Claim your store
 
-When you’re ready to go live with your store, **claim your store** to migrate it to Shopify and start a **30-day free Shopify trial**, followed by a required Shopify subscription.
+When you are ready to launch your store:
 
-> Claim the store.
+1. Type "Claim the store". Lovable prompts you to claim the store. Press **Claim**.
+2. Enter your email address, then accept the claim link from Shopify. Log in with your Shopify ID or create a new one. You will receive an email confirming that you are the store owner.
+4. Activate payments in Shopify and complete your store setup to begin selling.
 
-Lovable prompts you to claim the store. Press **Claim** and input your email address. Shopify sends a claim link to your email address. To accept the invitation, log in with your Shopify ID or create a new one. You will receive an email confirming that you are the store owner.
-
-Now, you need to activate payments and complete your store setup in Shopify to start accepting real payments from your customers.
-
-After the free trial, you need to get a paid Shopify subscription to continue selling products online. Shopify offers low starting fees (for example, \$1/month in the US for the first 3 months).
+When you claim your store, Shopify assigns a permanent domain for your shop - don't worry, that's just your backend. **Your real store URL will be your lovable.app or your custom domain.**
 
 <Warning>
   Only claim your store when you are fully ready to launch as you need a paid Shopify subscription  after the 30-day free trial to continue selling products online.
 </Warning>
 
-## Launch your store
+### 5. Launch your store
 
-Publish your Lovable project and share it with the world.
+When your store is claimed and your setup complete, publish your Lovable project and share your store with the world!
+
+At anytime, directly from Lovable, you can:
+
+- Create, update, and delete products
+- Manage prices and descriptions
+- Launch new collections, promotions, or bundles
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="I added my products to a remixed project, but the link to the product page is broken. How do I fix that?">
+    No worries - our agent is still learning about your new store and you only need to prompt it once to fix this for good! Prompt the agent to do the following:
+
+    > Please update the product URL logic to ensure that all new and future products in the store correctly display their respective product detail pages.
+
+    This should ensure that you won’t have any issues in the future. For all other issues, clicking on the “Try to Fix” button will prompt the agent to address and resolve it. 
+  </Accordion>
+  <Accordion title="I am still seeing some mock products in my remixed project, how can I remove them?">
+    Prompt the agent to update the pages where you’ve seen these products, for example:
+
+    > Clear the store from any existing products across all pages except for those that I added to my Shopify store.
+  </Accordion>
+</AccordionGroup>
