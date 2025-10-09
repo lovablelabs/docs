@@ -36,7 +36,7 @@ Before you start building your eCommerce store with **Lovable + Shopify**, here 
 You can start by:
 
 - Creating a new project
-- Remixing an existing project. Find Lovable + Shopify templates here:
+- Remixing an existing project, see [Lovable + Shopify templates](https://lovable.dev/shopify).
 
 ### 1. Create your store
 
@@ -46,17 +46,16 @@ You can start by:
 
 **When remixing an existing project**, prompt Lovable to integrate Shopify and remove mock data. It is important to use a good, comprehensive prompt. For example:
 
-> I would like to replace the products in this store with my own products and create my Shopify store. Please proceed to: 
+> I would like to replace the products in this store with my own products and create my Shopify store. Please proceed to:
 >
-> 1. Connect to Shopify. \
-> 2. Remove all mock product data from the store and create X new products with product images. \
-> 3. Update the product cards and product details page to use the new product information.\
-> 4. Update the product details page URL to match the new product. \
-> 5. Update the add to wishlist component and logic to match this change. \
+> 1. Connect to Shopify.
+> 2. Remove all mock product data from the store and create X new products with product images.
+> 3. Update the product cards and product details page to use the new product information.
+> 4. Update the product details page URL to match the new product.
+> 5. Update the add to wishlist component and logic to match this change.
 > 6. Update my cart, buy now CTA, and any related checkout actions on any page to reflect Shopify store integration.
 
-Lovable will prompt you to **enable the Shopify connection** — just click **Allow**.\
-Your sandbox store is ready for setup.
+Lovable will prompt you to **enable the Shopify connection** — just click **Allow**. Your sandbox store is ready for setup.
 
 ### 2. Add products and product images
 
@@ -90,15 +89,17 @@ Manage your products and refine your store without leaving Lovable. For example,
 - Change product names
 - Remove products
 - Display all products
+- Add product review functionality
 - Add percentage-based or fixed amount-based (USD) discount codes, and include the validity period
 - Add and share wishlist
 
 > Update the price of _Lavender Breeze Candle_ to _\$28_.\
-> Change the description of _Vanilla Bean Candle_ to highlight the wooden wick.\
+> Change the description of _Vanilla Bean Candle_ to highlight the wooden wick. \
 > Remove the product _Cinnamon Spice Candle_.\
 > Display all products.\
-> Create a 15% discount code for the product _Lavender Breeze Candle_. The code should be LAVANDER15 and valid until the end of November 2025.\
-> Allow me to add products to the wishlist and share it.
+> Create a 15% discount code for the product _Lavender Breeze Candle_. The code should be LAVANDER15 and valid until the end of November 2025. \
+> Allow me to add products to the wishlist and share it.\
+> Create a product review system.
 
 ### 4. Claim your store
 
@@ -123,3 +124,22 @@ At anytime, directly from Lovable, you can:
 - Create, update, and delete products
 - Manage prices and descriptions
 - Launch new collections, promotions, or bundles
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="I added my products to a remixed project, but the link to the product page is broken. How do I fix that?">
+    No worries - our agent is still learning about your new store and you only need to prompt it once to fix this for good! Prompt the agent to do the following:
+
+    > Please update the product URL logic to ensure that all new and future products in the store correctly display their respective product detail pages.
+
+    This should ensure that you won’t have any issues in the future. For all other issues, clicking on the “Try to Fix” button will prompt the agent to address and resolve it. 
+  </Accordion>
+  <Accordion title="I am still seeing some mock products in my remixed project, how can I remove them?">
+    
+Prompt the agent to update the pages where you’ve seen these products, for example: 
+
+    > Clear the store from any existing products across all pages except for those that I added to my Shopify store.
+  </Accordion>
+    
+</AccordionGroup>
