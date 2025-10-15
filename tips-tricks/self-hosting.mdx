@@ -4,7 +4,7 @@ description: "Deploy and manage your Lovable Cloud projects on your own infrastr
 icon: "door-open"
 ---
 
-[Lovable Cloud](https://docs.lovable.dev/features/cloud) is designed for speed, simplicity, and reliability. You can build, host, and scale confidently, knowing you can take your project with you.
+[Lovable Cloud](https://docs.lovable.dev/features/cloud) is designed to be the easiest, fastest, and most enjoyable place to build. Migration is possible because we want you to stay by choice, not necessity.
 
 This guide explains how you can self-host and move your Lovable Cloud project to another provider, for example Supabase.
 
@@ -20,20 +20,21 @@ This guide explains how you can self-host and move your Lovable Cloud project to
   Your database, storage, and configurations can be exported or migrated to another provider.
 - **Lovable is built on open source technologies**. \
   Everything runs on open standards and open-source technologies. No proprietary frameworks, no hidden dependencies.
-- **We earn your trust through quality, not control**. \
-  Lovable Cloud is designed to be the easiest, fastest, and most enjoyable place to build. Migration is possible because we want you to stay by choice, not necessity.
+- **We earn your trust through quality, not control**. 
+
+  Lovable Cloud is designed for speed, simplicity, and reliability. You can build, host, and scale confidently, knowing you can take your project with you.
 
 ## Migration overview
 
-| **App components**                | **Migration method**         | **Notes**                                                                                 |
-| :-------------------------------- | :--------------------------- | :---------------------------------------------------------------------------------------- |
-| Database schema                   | Automatic via SQL migrations | Includes tables, columns, indexes, RLS policies, functions, triggers                      |
-| Storage buckets                   | Automatic via SQL migrations | Includes access policies                                                                  |
-| Authentication providers          | Manual                       | Reconfigure auth (for example, Google OAuth, GitHub) in your new hosting environment      |
-| Environment variables and secrets | Manual                       | Reconfigure any API keys for external services in your new hosting environment            |
-| Data (table contents)             | Manual                       | Export/import as CSV                                                                      |
-| Storage files                     | Manual                       | Download/upload manually                                                                  |
-| User accounts                     | Not supported                | Migrating users is not possible at the moment -  migrate **before onboarding real users** |
+| **App components**                | **Migration method**         | **Notes**                                                                                                                    |
+| :-------------------------------- | :--------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| Database schema                   | Automatic via SQL migrations | Includes tables, columns, indexes, RLS policies, functions, triggers                                                         |
+| Storage buckets                   | Automatic via SQL migrations | Includes access policies                                                                                                     |
+| Authentication providers          | Manual                       | Reconfigure auth (for example, Google OAuth, GitHub) in your new hosting environment                                         |
+| Environment variables and secrets | Manual                       | Reconfigure any API keys, tokens, or credentials for external services (for example, Stripe) in your new hosting environment |
+| Data (table contents)             | Manual                       | Export/import as CSV                                                                                                         |
+| Storage files                     | Manual                       | Download/upload manually                                                                                                     |
+| User accounts                     | Not supported                | Migrating users is not possible at the moment -  migrate **before onboarding real users**                                    |
 
 ## Example: Move your Lovable Cloud project to Supabase
 
@@ -141,7 +142,7 @@ Download any files from storage buckets in your Lovable Cloud project and upload
 
 ### 8. Set up environment variables and secrets
 
-If you are using any external services in your Lovable Cloud project, you need to manually reconfigure API keys and credentials in your new Supabase project.
+If you are using any external services (for example, Stripe) in your Lovable Cloud project, you need to manually reconfigure API keys, tokens, and credentials in your new Supabase project.
 
 - In your new Supabase project, go to **Edge Functions → Manage Secrets**.
 - Add any API keys or external service credentials.
