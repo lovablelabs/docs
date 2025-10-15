@@ -1,12 +1,12 @@
 ---
-title: "Self-hosting: Move your project off Lovable Cloud"
+title: "Self-hosting: Run your Lovable Cloud project anywhere"
 description: "Deploy and manage your Lovable Cloud projects on your own infrastructure"
 icon: "door-open"
 ---
 
-[Lovable Cloud](https://docs.lovable.dev/features/cloud) is designed for speed, simplicity, and reliability. You can build, host, and scale confidently, knowing you can always take your project with you.
+[Lovable Cloud](https://docs.lovable.dev/features/cloud) is designed for speed, simplicity, and reliability. You can build, host, and scale confidently, knowing you can take your project with you.
 
-This guide explains how you can self-host and move your Lovable Cloud project to another provider, like Supabase.
+This guide explains how you can self-host and move your Lovable Cloud project to another provider, for example Supabase.
 
 <Warning>
   **It is not possible to migrate users at the moment**. Plan the migration before your app accumulates real users you don't want to lose.
@@ -18,10 +18,10 @@ This guide explains how you can self-host and move your Lovable Cloud project to
   Use our [GitHub integration](https://docs.lovable.dev/integrations/github) to export your code anytime. Clone, export, and self-host without restriction.
 - **You own your data**. \
   Your database, storage, and configurations can be exported or migrated to another provider.
-- **Lovable is open source at its core**. \
+- **Lovable is built on open source technologies**. \
   Everything runs on open standards and open-source technologies. No proprietary frameworks, no hidden dependencies.
 - **We earn your trust through quality, not control**. \
-  Lovable Cloud is designed to be the easiest, fastest, and most enjoyable place to build. Migration is always possible because we want you to stay by choice, not necessity.
+  Lovable Cloud is designed to be the easiest, fastest, and most enjoyable place to build. Migration is possible because we want you to stay by choice, not necessity.
 
 ## Migration overview
 
@@ -32,12 +32,12 @@ This guide explains how you can self-host and move your Lovable Cloud project to
 | Authentication providers          | Manual                       | Reconfigure auth (for example, Google OAuth, GitHub) in your new hosting environment      |
 | Environment variables and secrets | Manual                       | Reconfigure any API keys for external services in your new hosting environment            |
 | Data (table contents)             | Manual                       | Export/import as CSV                                                                      |
-| Storage files                     | Manual                       | Download/upload manually or via API                                                       |
+| Storage files                     | Manual                       | Download/upload manually                                                                  |
 | User accounts                     | Not supported                | Migrating users is not possible at the moment -  migrate **before onboarding real users** |
 
-## Migration flow: Lovable Cloud to Supabase
+## Example: Move your Lovable Cloud project to Supabase
 
-Follow the steps below to migrate your Lovable Cloud project to Supabase. For more information on Supabase specific steps, see [Supabase Documentation](https://supabase.com/docs).
+You can connect to any backend solution with some technical knowledge. The below steps guide you how to migrate your Lovable Cloud project to Supabase. For more information on Supabase specific steps, see [Supabase Documentation](https://supabase.com/docs).
 
 ### 1. Create a new Supabase project
 
@@ -136,8 +136,8 @@ If your Lovable Cloud project requires authentication, you need to manually reco
 Download any files from storage buckets in your Lovable Cloud project and upload them to your new Supabase project.
 
 1. In your Lovable project, go to **Cloud → Storage**.
-1. Download files from your storage buckets (manually or via API).
-2. In Supabase, go to **Storage** and upload files to corresponding buckets (manually or via API).
+1. Download files from your storage buckets.
+2. In Supabase, go to **Storage** and upload files to corresponding buckets.
 
 ### 8. Set up environment variables and secrets
 
@@ -156,7 +156,7 @@ When you are done with all off the steps, your app runs entirely on your Supabas
 - Authentication works
 - Storage uploads/downloads succeed
 
-## Advanced: CLI Migration Option
+### Advanced: CLI Migration Option
 
 For developers comfortable with the command line:
 
