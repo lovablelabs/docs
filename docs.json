@@ -87,7 +87,7 @@
             "pages": [
               "integrations/github",
               "integrations/supabase",
-              "integrations/stripe",
+              "integrations/stripe",      
               "integrations/resend",
               "integrations/clerk",
               "integrations/make",
