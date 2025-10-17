@@ -216,7 +216,7 @@ Adding funds to your workspace balance for Lovable Cloud and AI usage is availab
 Any usage that exceeds the included amount is billed separately and not covered by your subscription.
 
 - **Cloud usage:** depends on activity (number of users and interactions) and data transfer (uploads/downloads).
-- **AI usage:** depends on the model used and task complexity (more advanced models cost more).
+- **AI usage:** depends on the model used and task complexity (more advanced models cost more). To verify costs, refer to the official sources linked in our list of supported AI models at [Lovable AI](https://docs.lovable.dev/features/ai).
 
 Workspace owners and admins on paid plans can top up balances:
 
@@ -255,14 +255,15 @@ Keep in mind:
 
 - Your Lovable subscription does not include Cloud or AI costs — you cover those separately.
 - Every plan includes \$25/month of free Cloud usage and \$1/month of free AI usage per workspace.
-- AI costs are estimated using the default model, Gemini 2.5 Flash.
+- The cost of using Lovable AI is exactly the same as going directly to the LLM provider. To verify costs, refer to the official sources linked in our list of supported AI models at [Lovable AI](https://docs.lovable.dev/features/ai).
+- The AI costs below are estimated using the default model, Gemini 2.5 Flash.
 
-| App type                       | Example monthly usage                                                                                                                                                                                                      | Cloud cost (before → after free \$25) | AI cost (before → after free \$1) | What you pay to Lovable          |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------- | -------------------------------- |
-| **Personal blog or portfolio** | 500 visits, a handful of posts/comments, some images, tiny server. AI adds summaries or catchy titles (2,500 AI calls/month, 50 input + 150 output tokens each).                                                           | \$1 → \$0                             | \$1 → \$0                         | Subscription only                |
-| **Small business website**     | 5,000 visits, product listings, forms/newsletter signups, product images, tiny server. AI adds simple chat assistant (6,500 AI calls/month, 30 input + 120 output tokens each).                                            | \$5 → \$0                             | \$2 → \$1                         | Subscription + \$1 (AI)          |
-| **Team project manager**       | 20 active users, 10,000 visits, tasks and comments, file uploads, live updates, small server. AI adds task suggestions, reminders, comment summaries (6,000 AI calls/month, 200 input + 300 output tokens each).           | \$15 → \$0                            | \$5 → \$4                         | Subscription + \$4 (AI)          |
-| **E-comm store**               | 10,000 visitors, 500 purchases, many product images, customer/order data, checkout flows, medium server. AI adds product descriptions and a shopping assistant (20,000 AI calls/month, 40 input + 200 output tokens each). | \$65 → \$40                           | \$10 → \$9                        | Subscription + \$49 (Cloud + AI) |
+| App type                       | Example monthly usage                                                                                                                                                                                                      | Cloud cost | AI cost | What you pay to Lovable                                                                                                   |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Personal blog or portfolio** | 500 visits, a handful of posts/comments, some images, tiny server. AI adds summaries or catchy titles (2,500 AI calls/month, 50 input + 150 output tokens each).                                                           | \$1        | \$1     | **Subscription only.**<br /><br />_The included free usage entirely covers your Cloud and AI costs._                      |
+| **Small business website**     | 5,000 visits, product listings, forms/newsletter signups, product images, tiny server. AI adds simple chat assistant (6,500 AI calls/month, 30 input + 120 output tokens each).                                            | \$5        | \$2     | **Subscription + \$1 (AI)** <br /><br />_The included free usage entirely covers your Cloud costs and \$1 of AI costs._   |
+| **Team project manager**       | 20 active users, 10,000 visits, tasks and comments, file uploads, live updates, small server. AI adds task suggestions, reminders, comment summaries (6,000 AI calls/month, 200 input + 300 output tokens each).           | \$15       | \$5     | **Subscription + \$4 (AI)** <br /><br />_The included free usage entirely covers your Cloud costs and \$1 of AI costs._   |
+| **E-comm store**               | 10,000 visitors, 500 purchases, many product images, customer/order data, checkout flows, medium server. AI adds product descriptions and a shopping assistant (20,000 AI calls/month, 40 input + 200 output tokens each). | \$65       | \$10    | **Subscription + \$49 (Cloud + AI)**<br /><br />_The included free usage covers \$25 of Cloud costs and \$1 of AI costs._ |
 
 ## FAQ
 
@@ -283,6 +284,9 @@ Keep in mind:
     - Your Cloud balance pays for hosting deployed apps.
     - Your AI balance pays for AI features inside deployed apps.
   </Accordion>
+  <Accordion title="What is the cost of Lovable AI?">
+    The cost of using Lovable AI is exactly the same as going directly to the LLM provider. There are no hidden fees. To verify costs, refer to the official sources linked in our list of supported AI models at [Lovable AI](https://docs.lovable.dev/features/ai).
+  </Accordion>
   <Accordion title="I’m currently using the Supabase integration. What does this change mean for me?">
     Don’t worry, nothing changes for your existing projects. Your Supabase integration will continue to work exactly as it does today, and we will continue to support it.
 
@@ -298,12 +302,12 @@ Keep in mind:
     Keep in mind that you can't revert to a previous version of your app in the remixed project if the project is using Lovable backend. For frontend-only projects hosted in the Cloud, reverts are possible.
   </Accordion>
   <Accordion title="Can I export my Cloud project to Supabase?">
-    This is technically possible since you own the code in GitHub, but not straightforward. We are looking into making this easier.
+    This is technically possible since you own the code in GitHub, but not straightforward. We are looking into making this easier. For more information, see [Self-hosting: Run your Lovable Cloud project anywhere](https://docs.lovable.dev/tips-tricks/self-hosting).
   </Accordion>
   <Accordion title="How do I know what projects are generating most usage?">
     You can't see this information at the moment, but we are working on adding this so you have a better understanding of your Cloud usage.
   </Accordion>
   <Accordion title="Can I migrate my project from Supabase to Cloud?">
     At the moment, migration from Supabase to Cloud is not supported. If your project is already connected to Supabase, we recommend continuing to use it, as we will keep supporting Supabase moving forward.
-    </Accordion>
+  </Accordion>
 </AccordionGroup>
