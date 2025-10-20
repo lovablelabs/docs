@@ -1,6 +1,6 @@
 ---
 title: "Lovable API - Build with URL "
-description: "Open Beta of Build with URL API enabling you to build an application with URL."
+description: "Open Beta of Build with URL API enabling you to build an application from a shareable URL."
 icon: "window-restore"
 ---
 
@@ -8,7 +8,7 @@ The Lovable **Build with URL API** allows you to programmatically create applica
 
 ## Use cases
 
-You can do the following with Build with URL:
+You can do the following with Build with URL API:
 
 - Embed a **Build with Lovable** button on your website or application. When the user clicks the button, they are taken to Lovable and the app is built automatically.
 - Share predefined prompts via URLs with friends, collegues, or on social media.
@@ -33,10 +33,10 @@ https://lovable.dev/?autosubmit=true#prompt=YOUR_PROMPT_HERE&images=IMAGE_URL_1&
 
 ### Parameters
 
-| Parameter | Type   | Description                                                                                                                                                                        | Required/Optional |
-| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| `prompt`  | string | Text describing the application to build. Max 50,000 characters. Use URL encoding (for example, `%20` for spaces). Very long URLs might fail due to browser or parsing constraints | Required          |
-| `images`  | string | Max 10 URL-encoded image URLs as references. Image URLs must be publicly accessible. Supported formats: JPEG, PNG, WebP.                                                           | Optional          |
+| Parameter | Type   | Description                                                                                                                                                                         | Required/Optional |
+| --------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| `prompt`  | string | Text describing the application to build. Max 50,000 characters. Use URL encoding (for example, `%20` for spaces). Very long URLs might fail due to browser or parsing constraints. | Required          |
+| `images`  | string | Max 10 URL-encoded image URLs as references. Image URLs must be publicly accessible. Supported formats: JPEG, PNG, WebP.                                                            | Optional          |
 
 ## Lovable Link Generator
 
@@ -79,7 +79,7 @@ https://lovable.dev/?autosubmit=true#prompt=Display%20these%20images&images=http
 
 ## App creation and authentication flow for shared URLs
 
-When a user clicks a Build with URL link:
+When a user clicks a **Build with URL** link:
 
 - **Logged in users**: select the workspace for creating the project, then app creation starts automatically.
 - **Not logged in users**: redirected to signup/login page. After successful authentication, select the workspace for creating the project, and then the app creation starts automatically, preserving the original prompt and images.
