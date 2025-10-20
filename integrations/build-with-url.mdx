@@ -1,27 +1,21 @@
 ---
-title: "Build with URL "
-description: "Open Beta of Lovable build application with URL."
+title: "Lovable API - Build with URL "
+description: "Open Beta of Build with URL API enabling you to build an application with URL."
 icon: "window-restore"
 ---
 
-## **Overview**
+The Lovable **Build with URL API** allows you to programmatically create applications by passing prompts and images via URL parameters. This enables seamless integration with websites, internal tools, or automation workflows, letting users generate Lovable apps with a single click.
 
-The Lovable build with URL allows you to programmatically create applications by passing prompts and images via URL parameters. This enables direct integration with Lovable's app generation capabilities.
+## Use cases
 
-[You can test it here. ](https://lovable.dev/links)
+You can do the following with Build with URL:
 
-## What to use it for
+- Embed a **Build with Lovable** button on your website or application. When the user clicks the button, they are taken to Lovable and the app is built automatically.
+- Share predefined prompts via URLs with friends, collegues, or on social media.
+- Automate app generation as part of internal workflows.
+- Rapidly prototype apps using URLs with prompts and reference images.
 
-You can do the following with build with URL:
-
-- Implement a build with Lovable button in your application or on your website.
-- Generate a link with your favourite prompt to share with friends, collegues, or post on social.
-
-To generate a link to share you can use the link generator described below.
-
-## **Link Generator**
-
-For a simple link generation experience go to the [<u>Lovable Links tool</u>](https://lovable.dev/links). You write your prompt and upload images. The Lovable Link tool returns a URL you can share to generate an application with the same prompt and images.
+You can construct the URL yourself or use the [Lovable Link Generator](https://lovable.dev/links). See below for more information.
 
 ## Base URL
 
@@ -31,67 +25,69 @@ https://lovable.dev/?autosubmit=true#
 
 `autosubmit` (boolean): Must be set to `true` to automatically process the request
 
-## **URL with Parameters**
+## URL with parameters
 
 ```
 https://lovable.dev/?autosubmit=true#prompt=YOUR_PROMPT_HERE&images=IMAGE_URL_1&images=IMAGE_URL_2
 ```
 
-## Parameters
+### Parameters
 
-### Required Parameters
+| Parameter | Type   | Description                                                                                                                                                                        | Required/Optional |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| `prompt`  | string | Text describing the application to build. Max 50,000 characters. Use URL encoding (for example, `%20` for spaces). Very long URLs might fail due to browser or parsing constraints | Required          |
+| `images`  | string | Max 10 URL-encoded image URLs as references. Image URLs must be publicly accessible. Supported formats: JPEG, PNG, WebP.                                                           | Optional          |
 
-- `prompt` (string): Description of the application you want to build
+## Lovable Link Generator
 
-### Optional Parameters
+Use the [Lovable Link Generator](https://lovable.dev/links) to easily build shareable URLs that generate apps with your chosen prompt and images.
 
-- `images` (string): URL-encoded image URLs to include as references (can be specified multiple times)
+1. Enter your prompt, which describes the application to build (up to 50k characters).
+2. Upload up to 10 public image URLs (JPEG, PNG, or WebP).
+3. Copy the generated Lovable URL and share it.
 
-## Example Usage
+This tool helps prevent URL-encoding errors and ensures links are formatted correctly.
 
-### Basic App Generation
+## Build with URL examples
+
+**Basic app generation**
 
 ```
 https://lovable.dev/?autosubmit=true#prompt=Create%20a%20todo%20app
 ```
 
-### With Reference Images
+Clicking this link automatically opens Lovable and builds a to-do app.
 
-```filename
+**Single reference image**
+
+```
 https://lovable.dev/?autosubmit=true#prompt=Display%20these%20images&images=https://img.com/1.jpg
 ```
 
-### Multiple Images
+**Multiple reference images**
 
 ```
 https://lovable.dev/?autosubmit=true#prompt=Display%20these%20images&images=https://img.com/1.jpg&images=https://img.com/2.jpg​
 ```
 
-## **Limitations**
+## Best practices
 
-### **Image Requirements**
+- Keep prompts concise and focused on core features.
+- Use clear, descriptive language for best generation results.
+- Include reference images when relevant to help guide the generation process.
+- Ensure special characters in prompts and image URLs are URL-encoded to avoid parsing issues.
 
-- Images must be publicly accessible URLs. 
-- You can attach a maximum of 10 images. 
-- Prompt cannot be longer than 50k characters. Very long URLs might break. 
-- Supported formats: Common web image formats (JPEG, PNG, and WebP)
+## App creation and authentication flow for shared URLs
 
-## **Authentication**
+When a user clicks a Build with URL link:
 
-- If user is already logged in: Project creates immediately
-- If user is not logged in: Redirected to signup, then autosubmit triggers after authentication. Parameters are preserved through the entire signup/login flow
+- **Logged in users**: select the workspace for creating the project, then app creation starts automatically.
+- **Not logged in users**: redirected to signup/login page. After successful authentication, select the workspace for creating the project, and then the app creation starts automatically, preserving the original prompt and images.
 
-## **Best Practices**
+## Error handling
 
-1. **Keep prompts concise**: Focus on core functionality and key features
-2. **Use descriptive language**: Clear descriptions yield better results
-3. **Include reference images**: Visual examples help guide the generation process
-4. **Test URL encoding**: Ensure special characters in URLs are properly encoded
+If the URL is too long or malformed, you may encounter:
 
-## **Error Handling**
-
-If the URL is malformed or exceeds length limits, you may encounter:
-
-- Browser "URL too long" errors
+- Browser “URL too long” errors
 - Incomplete parameter parsing
 - Failed autosubmission
