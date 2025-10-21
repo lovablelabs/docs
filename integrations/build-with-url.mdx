@@ -1,10 +1,20 @@
 ---
-title: "Lovable API - Build with URL "
-description: "Open Beta of Build with URL API enabling you to build an application from a shareable URL."
+title: "Lovable API: Build with URL "
+description: "The Lovable API Build with URL feature is now in open Beta, enabling you to build and share Lovable apps using simple, shareable URLs."
 icon: "window-restore"
 ---
 
-The Lovable **Build with URL API** allows you to programmatically create applications by passing prompts and images via URL parameters. This enables seamless integration with websites, internal tools, or automation workflows, letting users generate Lovable apps with a single click.
+The Lovable API **Build with URL** feature allows you to programmatically create applications by passing prompts and images via URL parameters. This enables seamless integration with websites, internal tools, or automation workflows, letting users generate Lovable apps with a single click.
+
+Each link tells Lovable _what_ to build and optionally _what images to include_ — and Lovable takes care of the rest.
+
+Example:
+
+```
+https://lovable.dev/?autosubmit=true#prompt=Create%20a%20todo%20app
+```
+
+Clicking this link automatically opens Lovable and begins building a to-do app.
 
 ## Use cases
 
@@ -55,8 +65,6 @@ This tool helps prevent URL-encoding errors and ensures links are formatted corr
 ```
 https://lovable.dev/?autosubmit=true#prompt=Create%20a%20todo%20app
 ```
-
-Clicking this link automatically opens Lovable and builds a to-do app.
 
 **Single reference image**
 
