@@ -156,7 +156,8 @@
   "seo": {
     "metatags": {
       "og:image": "/assets/logo/opengraph-image.png"
-    }
+    },
+    "indexing": "all"
   },
   "redirects": [
     {
