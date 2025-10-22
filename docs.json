@@ -3,8 +3,8 @@
   "name": "Lovable Documentation",
   "theme": "mint",
   "logo": {
-    "dark": "features/assets/logo/logowhite.svg",
-    "light": "features/assets/logo/logoblack.svg",
+    "dark": "/assets/logo/logowhite.svg",
+    "light": "/assets/logo/logoblack.svg",
     "href": "https://lovable.dev/"
   },
   "favicon": "/assets/logo/favicon.ico",
@@ -87,8 +87,7 @@
             "pages": [
               "integrations/github",
               "integrations/supabase",
-              "integrations/stripe",
-              "integrations/shopify",
+              "integrations/stripe",      
               "integrations/resend",
               "integrations/clerk",
               "integrations/make",
@@ -157,8 +156,7 @@
   "seo": {
     "metatags": {
       "og:image": "/assets/logo/opengraph-image.png"
-    },
-    "indexing": "all"
+    }
   },
   "redirects": [
     {
