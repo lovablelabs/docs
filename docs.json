@@ -3,8 +3,8 @@
   "name": "Lovable Documentation",
   "theme": "mint",
   "logo": {
-    "dark": "features/assets/logo/logowhite.svg",
-    "light": "features/assets/logo/logoblack.svg",
+    "dark": "/assets/logo/logowhite.svg",
+    "light": "/assets/logo/logoblack.svg",
     "href": "https://lovable.dev/"
   },
   "favicon": "/assets/logo/favicon.ico",
