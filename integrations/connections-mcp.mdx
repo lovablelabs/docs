@@ -1,0 +1,135 @@
+---
+title: "Connect Lovable to third-party apps and MCP servers"
+description: "Enhance your development workflow by connecting apps and custom MCP Servers to Lovable"
+icon: "plug"
+keywords: ["Lovable integrations","Lovable connections","MCP Server","Model Context Protocol","AI workspace automation","Notion","Linear","Jira","Atlassian","custom AI integrations","AI tools for productivity"]
+---
+
+When you describe what you want to build, Lovable’s AI writes your code, sets up your backend, and deploys your app automatically. To make this process even smarter, Lovable can connect to your real tools and data sources through something called **Connections** and **MCP Servers**. 
+
+These integrations make your AI-assisted builds faster, context-aware, and deeply connected to your real data — all while keeping your deployed apps independent and secure.
+
+Connections allow you to integrate Lovable with:
+
+- External services, through **prebuilt integrations** for tools like **Notion**, **Linear**, and **Atlassian**
+- Your own **custom integration** using a **Model Context Protocol (MCP) Server**.
+
+## What are connections?
+
+Connections are integrations that let Lovable communicate with third-party apps and services.\
+When you connect a service, you grant the Lovable AI permission to perform specific actions in that tool — for example, reading data, creating tasks, or updating content. This enables your projects to access that data and functionality directly within Lovable.
+
+For example, enhance your development workflow by allowing Lovable to:
+
+- Fetch content from your Notion pages and use it in your app
+- Build UI components that reflect your Linear or Jira issues
+- Sync with files or data stored in Google Drive
+- Automate parts of your development workflow across these tools
+
+## What is an MCP server?
+
+**MCP** stands for **Model Context Protocol**, an open standard that allows AI tools to communicate securely with external systems. An **MCP Server** acts as a bridge between Lovable’s AI and any app, database, or API — including your organization’s internal tools.
+
+If prebuilt integrations don’t meet your needs, you can connect your own **custom-built connector** using an **MCP Server**, following a standardized and safe protocol.
+
+You can use it to:
+
+- Connect Lovable to your internal CRM, analytics API, or data warehouse
+- Allow the AI to fetch and model your private data securely
+- Automatically generate integrations for your custom APIs
+
+## Why use connections and MCP servers?
+
+| Benefit                        | Description                                                                    |
+| :----------------------------- | :----------------------------------------------------------------------------- |
+| **Build apps with real data**  | Use your company’s actual Notion pages, Linear issues, or APIs while building. |
+| **Save setup time**            | Skip manual API setup — Lovable’s AI wires it up automatically.                |
+| **Keep everything in sync**    | Build apps that reflect the latest information from your connected tools.      |
+| **Enable custom integrations** | With MCP Servers, you can connect private or proprietary systems.              |
+| **Stay secure**                | All access is permission-based and can be revoked at any time.                 |
+
+## How these work inside Lovable
+
+When you connect a service (like Notion or a custom MCP Server), Lovable’s AI can reference that data **while generating your app’s code**.
+
+It’s not something your end users will see — it’s part of the **AI’s building context** inside the Lovable platform.
+
+Here’s what that looks like in practice:
+
+| You Ask Lovable To…                                        | What Happens Behind the Scenes                                                                                  |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| “Build a feature board that syncs with our Linear issues.” | The AI uses your Linear connection to map real issue data into your app’s database and UI.                      |
+| “Create a wiki using our Notion workspace.”                | Lovable reads your Notion schema and generates pages and content blocks automatically.                          |
+| “Add an analytics dashboard using our internal API.”       | The AI connects to your MCP Server, understands your API endpoints, and scaffolds the dashboard with live data. |
+
+These connections don’t alter your deployed app unless you include them — they simply make the **building process faster, smarter, and more accurate**.
+
+### Example workflows
+
+| Role                | Use Case                                                                | Benefit                                                |
+| :------------------ | :---------------------------------------------------------------------- | :----------------------------------------------------- |
+| **Product Manager** | Build an internal dashboard linked to your team’s Linear and Jira data. | See real issues and sprint status inside your new app. |
+| **Designer**        | Generate a component library based on your Notion design docs.          | Auto-build UIs that match your design system.          |
+| **Engineer**        | Create a live analytics dashboard using your internal API.              | Use MCP to connect private endpoints safely.           |
+| **Marketing Team**  | Build a landing page that pulls campaign content from Notion.           | Keep content synced automatically.                     |
+
+## Common Use Cases
+
+| Category                 | Example Use                                                             |
+| :----------------------- | :---------------------------------------------------------------------- |
+| **Project Management**   | Create or update Jira issues, Linear tasks, or Monday items.            |
+| **Documentation**        | Generate or update Notion pages directly from conversations.            |
+| **Design & Marketing**   | Manage Canva projects or content briefs through AI prompts.             |
+| **Automation**           | Use Zapier to trigger cross-app workflows when tasks are completed.     |
+| **Custom Systems (MCP)** | Connect Lovable to internal CRMs, analytics APIs, or proprietary tools. |
+
+## Available connections
+
+| Integration      | Description                                                                                     | Status      |
+| :--------------- | :---------------------------------------------------------------------------------------------- | :---------- |
+| **Notion**       | Create, edit, and manage Notion pages and databases directly from Lovable.                      | Available   |
+| **Linear**       | Manage sprints, track issues, and update project statuses.                                      | Available   |
+| **Atlassian**    | Integrate with Jira, Confluence, and other Atlassian tools to manage tickets and documentation. | Available   |
+| **Google Drive** | Access, upload, and organize files in your Drive.                                               | Coming Soon |
+| **Monday.com**   | Manage projects, tasks, and team workflows.                                                     | Coming Soon |
+| **Asana**        | Track tasks, projects, and team collaboration.                                                  | Coming Soon |
+| **Canva**        | Design and organize visuals, presentations, and graphics.                                       | Coming Soon |
+| **Zapier**       | Automate workflows between different connected apps.                                            | Coming Soon |
+
+## How to add a connection
+
+Connections are managed **inside Lovable**, not in your deployed app.
+
+- You can access them under **Settings → Connections**.
+- Once added, they’re available for any app you build within Lovable.
+- Your deployed apps are independent — they only include these connections if you choose to integrate them into your code.
+
+So while the AI uses these connections during development, your finished app remains standalone and fully under your control.
+
+1. Go to **Settings →Integrations → Connections**
+2. **Select a service**\
+   Choose the app you want to integrate, such as Notion, Linear, or Atlassian.
+3. **Click “Connect”**\
+   Sign in and grant Lovable access to your account.
+4. **Start using it**\
+   Once connected, you can interact with the service through AI commands:
+   - “Create a new Linear issue titled _Update onboarding flow_.”
+   - “Add a Notion page for our Q4 marketing roadmap.”
+   - “Show Jira tickets assigned to me this week.”
+
+Lovable’s integrations and MCP Servers use permission-based access. You have full control over which tools are connected and what data can be accessed. Connections can be modified or removed anytime from **Settings → Connections**.
+
+## How to add an MCP server
+
+If your team has developed a custom integration, you can add it through the MCP Server option.
+
+1. **Go to the Connections page**\
+   Scroll to the bottom of the list.
+2. **Select “Add MCP Server”**\
+   This opens the configuration panel for your custom integration.
+3. **Enter server details**
+   - **Server name:** A clear name for your server (e.g., _Internal CRM_ or _Analytics API_).
+   - **Server URL:** The address where Lovable can reach your MCP server.
+   - **Authentication:** Add any Bearer token or API key if required.
+6. **Add server**\
+   The MCP Server now appears alongside other connections, allowing the AI to access and use it like any other service.
