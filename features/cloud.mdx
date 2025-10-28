@@ -179,21 +179,27 @@ _Summarize each client’s meeting notes and save them to their profile. Suggest
 
 Lovable includes Cloud hosting and built-in AI in all pricing plans, even the Free plan. These services run on a **usage-based pricing model**. This means your costs scale with how much you use and are not covered by your subscription.
 
-From your workspace or project, go to **Settings → Usage**. Here, you can:
+From your workspace or project, go to **Settings → Cloud & AI balance**. Here, you can:
 
-- Track usage costs
 - View workspace balance status
-- Add funds (paid plans only)
+- Top up and add funds to your worksapce balance (available for paid plans only)
+- Access your invoice history and manage payment preferences
+- Track total Cloud and AI usage costs across your workspace
+- View detailed Cloud and AI usage costs for each project
+
+  <Note>
+    Currently, the list includes all projects, even those not using Lovable Cloud or AI. Projects without usage always show \$0.00. 
+  </Note>
 
 The Usage screen updates as follows:
 
 - Cloud usage updates daily at 10 AM CET
-- AI usage updates in realtime
+- AI usage updates continuously
 
 <Note>
   - Your **Cloud balance** pays for hosting deployed apps.
   - Your **AI balance** pays for AI features inside deployed apps.
-  - **Workspace Credits** are separate, only used for messaging while building apps, and can be tracked in **Settings → Plans & Billing**.
+  - **Workspace Credits** are separate, only used for messaging while building apps, and can be tracked in **Settings → Plans & credits**.
 </Note>
 
 ### Included free usage (all plans)
@@ -218,20 +224,32 @@ Any usage that exceeds the included amount is billed separately and not covered 
 - **Cloud usage:** depends on activity (number of users and interactions) and data transfer (uploads/downloads).
 - **AI usage:** depends on the model used and task complexity (more advanced models cost more). To verify costs, refer to the official sources linked in our list of supported AI models at [Lovable AI](https://docs.lovable.dev/features/ai).
 
-Workspace owners and admins on paid plans can top up balances:
+Workspace owners and admins on paid plans can top up balances either by doing a one-time top-up or configuring automatic top-ups.
 
-1. Go to **Settings → Usage → Add funds**
+Unused workspace funds roll over month-to-month but expire after one year.
+
+**One-time top-up**
+
+1. Go to **Settings → Cloud & AI balance → Top up → One-time to-up**
 2. Enter a custom amount or choose a predefined option (\$10 min, \$1000 max)
 3. Complete the payment securely via Stripe
 
-Unused workspace funds roll over month-to-month but expire after one year.
+**[Beta] Automatic top-up**
+
+Enable automatic top-up when your balance drops below \$10, and set a monthly limit to track your spending. 
+
+1. Go to **Settings → Cloud & AI balance → Top up → Automatic top-up**
+2. Enable automatic top-up
+3. Enter a custom amount which will be automatically added when your balance drops below \$10 (\$10 min, \$1000 max)
+4. Set a monthly spend amount to ensure you do not go over a certain limit (\$20 min, \$10,000 max)
+3. Click**Save. ** Your default payment method will automatically be charged when the conditions are met.
 
 ### Alerts and notifications
 
 Lovable keeps you informed to avoid unexpected service interruptions:
 
 - **Email notifications** sent to workspace owners and admins
-- **Usage alerts** displayed in the Usage screen and Cloud overview
+- **Usage alerts** displayed in the Cloud & AI balance screen and Cloud overview
 
 Alerts trigger when your workspace:
 
@@ -245,7 +263,7 @@ If your workspace balance runs out, your application will stop working until fun
 To keep your application working:
 
 - **Free plan:** upgrade to a paid plan to add funds.
-- **Paid plans:** top up your workspace balance any time.
+- **Paid plans:** top up your workspace balance any time or enable automatic top-up (in beta).
 
 ### Example workspace Cloud and AI costs (per month)
 
@@ -273,13 +291,17 @@ Keep in mind:
 
     - **Option 1: Hard budget (zero charges)**\
       Stay strictly within the free allowance. If you go over, your projects pause automatically. Your bill stays at \$0.
-    - **Option 2: Top-up manually (controlled scaling)**\
-      Top-up your workspace balance with an amount you choose. Your apps scale, and you only pay for usage beyond the free allowance. If you spend your workspace balance, you will receive a notification and your projects will pause automatically.
+    - **Option 2: Top up manually (controlled scaling)**\
+      Top up your workspace balance with an amount you choose. Your apps scale, and you only pay for usage beyond the free allowance. If you spend your workspace balance, you will receive a notification and your projects will pause automatically.
+    - **|Beta] Option 3: Top up automatically (seamless scaling)**
+
+      \
+      Automatically add funds when your balance drops below \$10, but remain in control of your monthly spend by adding a monthly spend limit. If you reach the limit, you will receive a notification and your projects will pause automatically. Your apps scale without interruption, and you only pay for usage beyond the free allowance. 
   </Accordion>
   <Accordion title="Are my credits deducted for Cloud and AI usage?">
-    No, your workspace credits are separate, only used for messaging while building apps. You can track your credit usage in **Settings → Plans & Billing**.
+    No, your workspace credits are separate, only used for messaging while building apps. You can track your credit usage in **Settings → Plans & credits**.
 
-    You can track your Cloud and AI usage in **Settings → Usage**.
+    You can track your Cloud and AI usage in **Settings → Cloud & AI balance**.
 
     - Your Cloud balance pays for hosting deployed apps.
     - Your AI balance pays for AI features inside deployed apps.
@@ -305,7 +327,11 @@ Keep in mind:
     This is technically possible since you own the code in GitHub, but not straightforward. We are looking into making this easier. For more information, see [Self-hosting: Run your Lovable Cloud project anywhere](https://docs.lovable.dev/tips-tricks/self-hosting).
   </Accordion>
   <Accordion title="How do I know what projects are generating most usage?">
-    You can't see this information at the moment, but we are working on adding this so you have a better understanding of your Cloud usage.
+    You can see the Cloud and AI usage breakdown per project by going to **Settings → Cloud & AI balance.**
+
+    <Note>
+      Currently, the list includes all projects, even those not using Lovable Cloud or AI. Projects without usage always show \$0.00. 
+    </Note>
   </Accordion>
   <Accordion title="Can I migrate my project from Supabase to Cloud?">
     At the moment, migration from Supabase to Cloud is not supported. If your project is already connected to Supabase, we recommend continuing to use it, as we will keep supporting Supabase moving forward.
