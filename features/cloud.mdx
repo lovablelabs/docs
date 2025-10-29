@@ -191,7 +191,7 @@ From your workspace or project, go to **Settings → Cloud & AI balance**. Here,
     Currently, the list includes all projects, even those not using Lovable Cloud or AI. Projects without usage always show \$0.00.
   </Note>
 
-The Usage screen updates as follows:
+The Cloud & AI balance screen updates as follows:
 
 - Cloud usage updates daily at 10 AM CET
 - AI usage updates continuously
@@ -225,6 +225,10 @@ Any usage that exceeds the included amount is billed separately and not covered 
 - **AI usage:** depends on the model used and task complexity (more advanced models cost more). To verify costs, refer to the official sources linked in our list of supported AI models at [Lovable AI](https://docs.lovable.dev/features/ai).
 
 Workspace owners and admins on paid plans can top up balances either by doing a manual one-time top-up or by configuring automatic top-ups.
+
+1. Go to **Settings → Cloud & AI balance → Add funds**
+2. Enter a custom amount or choose a predefined option (\$10 min, \$1000 max)
+3. Complete the payment securely via Stripe
 
 Unused workspace funds roll over month-to-month but expire after one year.
 
@@ -340,5 +344,8 @@ Keep in mind:
   </Accordion>
   <Accordion title="Can I migrate my project from Supabase to Cloud?">
     At the moment, migration from Supabase to Cloud is not supported. If your project is already connected to Supabase, we recommend continuing to use it, as we will keep supporting Supabase moving forward.
+  </Accordion>
+  <Accordion title="My Cloud data isn't loading. What should I do?">
+    This can happen if you have too much data running on a smaller Cloud project instance. To fix it please go to the Cloud tab -> Overview -> Advanced settings and then choose a larger instance size. After you've switched to a larger instance, and given it a couple of minutes to change, the data should load, and your Cloud project should work again. Please note that a larger instance size will result in higher Cloud usage. 
   </Accordion>
 </AccordionGroup>
