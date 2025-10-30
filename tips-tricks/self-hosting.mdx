@@ -8,10 +8,6 @@ icon: "door-open"
 
 This guide explains how you can self-host and move your Lovable Cloud project to another provider, for example [Supabase](http://supabase.com/).
 
-<Warning>
-  **It is not possible to migrate users at the moment**. Plan the migration before your app accumulates real users you don't want to lose.
-</Warning>
-
 ## Key principles
 
 - **You own your code**. \
@@ -26,15 +22,15 @@ This guide explains how you can self-host and move your Lovable Cloud project to
 
 ## Migration overview
 
-| **App components**                | **Migration method**         | **Notes**                                                                                                                    |
-| :-------------------------------- | :--------------------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| Database schema                   | Automatic via SQL migrations | Includes tables, columns, indexes, RLS policies, functions, triggers                                                         |
-| Storage buckets                   | Automatic via SQL migrations | Includes access policies                                                                                                     |
-| Authentication providers          | Manual                       | Reconfigure auth (for example, Google OAuth, GitHub) in your new hosting environment                                         |
-| Environment variables and secrets | Manual                       | Reconfigure any API keys, tokens, or credentials for external services (for example, Stripe) in your new hosting environment |
-| Data (table contents)             | Manual                       | Export/import as CSV                                                                                                         |
-| Storage files                     | Manual                       | Download/upload manually                                                                                                     |
-| User accounts                     | Not supported                | Migrating users is not possible at the moment -  migrate **before onboarding real users**                                    |
+| **App components**                | **Migration method**         | **Notes**                                                                                                                              |
+| :-------------------------------- | :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| Database schema                   | Automatic via SQL migrations | Includes tables, columns, indexes, RLS policies, functions, triggers                                                                   |
+| Storage buckets                   | Automatic via SQL migrations | Includes access policies                                                                                                               |
+| Authentication providers          | Manual                       | Reconfigure auth (for example, Google OAuth, GitHub) in your new hosting environment                                                   |
+| Environment variables and secrets | Manual                       | Reconfigure any API keys, tokens, or credentials for external services (for example, Stripe) in your new hosting environment           |
+| Data (table contents)             | Manual                       | Export/import as CSV                                                                                                                   |
+| Storage files                     | Manual                       | Download/upload manually                                                                                                               |
+| User accounts                     | Not supported                | You can export user data from the database, but you cannot export user passwords. Plan the migration **before onboarding real users.** |
 
 ## Example: Move your Lovable Cloud project to Supabase
 
