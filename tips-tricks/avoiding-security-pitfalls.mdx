@@ -1,5 +1,5 @@
 ---
-title: "Avoiding Security Pitfalls"
+title: "Avoiding security pitfalls"
 description: "When building and publishing with Lovable"
 icon: "lock"
 ---
@@ -12,7 +12,7 @@ Make sure to address Lovable's built-in [security checker](#using-lovable-securi
 
 While Lovable AI and tools such as security checker find and prevent a wide range of security issues, it's not always possible or realistic to automatically discover or address all problems that may appear after an app goes live on the internet. This guide provides a deeper look into how Lovable apps work under the hood, what are important security practices that can help builders protect their customers' data, and ways to avoid common mistakes.
 
-## Understanding Lovable's Architecture
+## Understanding Lovable's architecture
 
 Unless instructed otherwise, Lovable generates applications with the following architecture:
 
@@ -22,9 +22,9 @@ Unless instructed otherwise, Lovable generates applications with the following a
 
 This separation of concerns is fundamental to maintaining security. Each layer has specific responsibilities and security considerations.
 
-## Frontend Security: Never Trust Client-Side Code
+## Frontend security: Never trust client-side code
 
-### The Golden Rule: Frontend Code is Public
+### The golden rule: Frontend code is public
 
 All React code runs in the user's browser and is inherently public. Users can inspect, modify, or bypass any frontend code. Therefore:
 
@@ -32,7 +32,7 @@ All React code runs in the user's browser and is inherently public. Users can in
 - **Never perform validation in frontend code** - Client-side validation can be bypassed
 - **Never trust frontend data** - Always validate on the edge functions' side
 
-### Common Frontend Security Mistakes
+### Common frontend security mistakes
 
 ```typescript
 // ❌ WRONG - Never do this
@@ -45,7 +45,7 @@ const validateUser = (userData) => {
 
 Correct way is to ask Lovable to add a secret key - it will open a form, and store the secret securely in its own backend.
 
-#### Examples of Prompts for Validating and Enhancing Frontend Security
+#### Examples of prompts for validating and enhancing frontend security
 
 ```
 Add an API key for Stripe payments securely without exposing it in the frontend code
@@ -65,9 +65,9 @@ Identify client-side validation that should be moved to backend edge functions
 
 For more prompts, see Lovable [Prompt Library](/prompting/prompting-library).
 
-## Backend Security: Move Business Logic to Edge Functions
+## Backend security: Move business logic to Edge Functions
 
-### Treat Edge Functions as Your API Layer
+### Treat Edge Functions as your API layer
 
 Supabase Edge Functions should contain all your business logic, validation, and sensitive operations:
 
@@ -77,38 +77,38 @@ Supabase Edge Functions should contain all your business logic, validation, and 
 - **Integration with external services**
 - **Sensitive data processing**
 
-### Best Practices for Edge Functions
+### Best practices for Edge Functions
 
 Think of edge functions as your application's security guards and business managers. They handle all the important work that needs to be done safely, away from the public-facing parts of your app.
 
-#### What Edge Functions Should Handle
+#### What Edge Functions should handle
 
-**User Authentication & Authorization**
+**User authentication and authorization**
 - Always verify that users are who they claim to be before allowing them to perform actions
 - Check if users have the right permissions for specific operations
 - Never trust that someone is logged in just because they say they are
 
-**Data Validation & Sanitization**
+**Data validation and sanitization**
 - Check all incoming data to make sure it's in the correct format
 - Remove any potentially harmful content from user inputs
 - Ensure data meets your business rules before processing it
 
-**Business Logic & Workflows**
+**Business logic and workflows**
 - Handle complex business processes like order processing, payment calculations, or user registration
 - Manage relationships between different pieces of data
 - Coordinate multiple steps in a single operation
 
-**External Service Integration**
+**External service integration**
 - Safely connect to third-party services like payment processors, email providers, or APIs
 - Keep sensitive API keys and credentials secure
 - Handle errors and timeouts gracefully
 
-**Sensitive Data Processing**
+**Sensitive data processing**
 - Process personal information, financial data, or other sensitive content
 - Apply encryption or other security measures when needed
 - Log important events for security auditing
 
-#### Security Benefits of Edge Functions
+#### Security benefits of Edge Functions
 
 **Isolation**: Edge functions run in a secure environment separate from your frontend, making it much harder for attackers to access sensitive code or data.
 
@@ -118,7 +118,7 @@ Think of edge functions as your application's security guards and business manag
 
 **Consistent Validation**: Every request goes through the same validation process, ensuring consistent security across your application.
 
-#### Example of Prompts for Secure Edge Functions
+#### Example of prompts for secure Edge Functions
 
 ```
 Create an edge function for user registration with proper validation and security checks. Users should provide email, password, and optional profile picture during sign-up
@@ -142,7 +142,7 @@ Implement edge function for processing webhook events from external services. Ha
 
 For more prompts, see Lovable [Prompt Library](/prompting/prompting-library).
 
-## Database Security: Keep RLS Simple and Start Early
+## Database security: Keep RLS simple and start early
 
 ### Row Level Security (RLS) in Lovable
 
@@ -152,7 +152,7 @@ Lovable automatically sets up basic RLS policies for your tables, but you should
 
 **Simple is Secure**: Keep RLS policies simple and focused on data access, not complex business logic. Lovable's default policies are usually a good starting point.
 
-#### Common RLS Patterns in Lovable Apps
+#### Common RLS patterns in Lovable apps
 
 **Personal Data Protection**
 - Users should only see their own profile, settings, and personal data
@@ -221,7 +221,7 @@ Audit RLS policies for security holes where users might access unauthorized data
 Simplify complex RLS policies while maintaining security - current policies are too complicated
 ```
 
-#### Quick RLS Checklist
+#### Quick RLS checklist
 
 - [ ] All sensitive tables have RLS enabled
 - [ ] Users can only access their own personal data
@@ -229,19 +229,19 @@ Simplify complex RLS policies while maintaining security - current policies are 
 - [ ] New tables automatically get RLS policies
 - [ ] Policies are simple and easy to understand
 
-## Authentication Security: Keep Logic Server-Side
+## Authentication security: Keep logic server-side
 
-### Authentication Logic Must Run on the Server
+### Authentication logic must run on the server
 
 All authentication decisions, token validation, and user verification should happen on the server side, not in the browser. Client-side authentication can be easily bypassed or manipulated.
 
-**Key Principles:**
+**Key principles:**
 - **Never trust client-side authentication checks** - Users can modify browser code
 - **Validate tokens on the server** - Always verify authentication in edge functions
 - **Keep session management server-side** - Let Supabase handle secure session storage
 - **Never expose authentication secrets** - API keys and tokens should never reach the frontend
 
-### Secure Authentication Flow
+### Secure authentication flow
 
 ```typescript
 // ❌ WRONG - Client-side authentication logic
@@ -260,7 +260,7 @@ if (!user) {
 // Proceed with authenticated logic
 ```
 
-### Authentication Best Practices
+### Authentication best practices
 
 **Server-Side Validation:**
 - Always verify user authentication in edge functions before processing requests
@@ -272,9 +272,9 @@ if (!user) {
 - Display UI based on authentication state, but never make security decisions
 - Redirect to login when sessions expire, but validate on server first
 
-## Workspace Protection: Secure Internal Applications
+## Workspace protection: Secure internal applications
 
-### Ensure that internal apps have Visibility set to Protected
+### Ensure that internal apps have "visibility" set to "protected"
 
 For applications that should not be publicly accessible:
 
@@ -283,9 +283,9 @@ For applications that should not be publicly accessible:
 - **Use proper authentication for all internal tools**
 - **Regularly audit access to protected applications**
 
-## Security Best Practices Summary
+## Security best practices summary
 
-### Development Workflow
+### Development workflow
 
 1. **Start with security in mind** - Implement RLS and authentication from day one
 2. **Use the security checker** - Run Lovable's security checker regularly
@@ -293,7 +293,7 @@ For applications that should not be publicly accessible:
 4. **Test thoroughly** - Verify security measures work as expected
 5. **Document security decisions** - Keep track of security choices and rationale
 
-### Regular Security Audits
+### Regular security audits
 
 - **Review edge function permissions**
 - **Audit RLS policies**
@@ -301,7 +301,7 @@ For applications that should not be publicly accessible:
 - **Verify authentication flows**
 - **Test access controls**
 
-### Common Security Checklist
+### Common security checklist
 
 - [ ] No secrets in frontend code
 - [ ] All validation in edge functions
@@ -311,7 +311,7 @@ For applications that should not be publicly accessible:
 - [ ] Security checker run and recommendations followed
 - [ ] Regular security reviews conducted
 
-## Using Lovable Security Checker
+## Using Lovable security checker
 
 Lovable provides a built-in [security checker](/features/security#security-scanning-2) to help identify potential security issues:
 
