@@ -57,22 +57,25 @@ icon: "circle-question"
     - Prevent conflicts by structuring logic more clearly.
   </Accordion>
   <Accordion title="Can I connect my project to a backend to store data?">
-    You can use Supabase, a backend-as-a-service solution that integrates seamlessly with Lovable. Read more [here](/integrations/supabase).
+    If you need to add backend capabilities to your application, you can:
+
+    - Connect to Lovable's built-in backend -  [Lovable Cloud](https://docs.lovable.dev/features/cloud)
+    - Use Lovable's native [Supabase integration](https://docs.lovable.dev/integrations/supabase)
   </Accordion>
   <Accordion title="Can I add login to my website?">
-    Yes, you can add authentication by integrating with Supabase. Simply prompt the AI to add it and follow the instructions.
+    Yes, you can add authentication by using [Lovable Cloud](https://docs.lovable.dev/features/cloud) or integrating with [Supabase ](https://docs.lovable.dev/integrations/supabase). Simply prompt the AI to add it and follow the instructions.
   </Accordion>
   <Accordion title="Can I add third-party APIs to my project?">
     Yes, you can integrate APIs like OpenAI, Stripe, and more by specifying them in your prompt. Read more [here](/integrations/introduction).
   </Accordion>
   <Accordion title="Can I store sensitive API keys in Lovable?">
-    No! Never enter your API keys directly in Lovable. If you're integrating with an API, we recommend you use Supabase secrets to store your API keys, in combination with the [Supabase Edge Functions](https://docs.lovable.dev/integrations/supabase).
+    No! Never enter your API keys directly in Lovable. If you're integrating with an API, we recommend you use secrets in [Lovable Cloud](https://docs.lovable.dev/features/cloud) or [Supabase](https://docs.lovable.dev/integrations/supabase) to store your API keys, in combination with their Edge Functions.
   </Accordion>
   <Accordion title="How do I add payments to my website?">
-    You can add payments by adding Stripe to your project. Follow [this guide](/integrations/stripe) to set it up.
+    You can add payments by adding Stripe to your project. See [Stripe integration](/integrations/stripe) to set it up.
   </Accordion>
   <Accordion title="How can I improve SEO for my project?">
-    You can read more about SEO of Lovable projects [here](/tips-tricks/seo).
+    See [SEO](https://docs.lovable.dev/features/seo) for more information.
   </Accordion>
   <Accordion title="How long does it take to complete a project?">
     It depends on complexity. By breaking tasks into smaller steps, planning ahead, and refining based on feedback, you can move quickly while ensuring quality.
@@ -206,7 +209,7 @@ For feature-specific questions and troubleshooting tips, check out the individua
     Note: If your target workspace is on a paid plan, remixing public projects may be necessary for access. Remixed projects won’t carry over subscription-level features unless the new workspace has them too.
   </Accordion>
   <Accordion title="Can I delete my account?">
-    To delete your account, go to Account Settings → Your Account → scroll down and press “Delete Account.” This will permanently remove your account and all associated data.
+    To delete your account, go to **Settings → Your Account**, scroll down and press **Delete account**. This will permanently remove your account and all associated data.
   </Accordion>
   <Accordion title="Can I reactivate a deleted account?">
     No, you can't reactivate a deleted account. However, after pressing the button to delete the account, this action can be cancelled within 48 hours to stop the deletion.
@@ -248,7 +251,7 @@ For further questions about credits and subscription issues, see [Plans and cred
 
 <AccordionGroup>
   <Accordion title="What tech stacks does Lovable know?">
-    Lovable builds front-end using React, Tailwind & Vite, and can connect to OpenAPI backends. Support for data persistence and authentication is in alpha, using Supabase.
+    Lovable builds front-end using React, Tailwind & Vite, and can connect to OpenAPI backends. Support for data persistence and authentication is available using Lovable Cloud or Supabase.
   </Accordion>
   <Accordion title="Does Lovable support mobile app development?">
     No, Lovable is focused on **web applications**, but you can design mobile-friendly web apps.
