@@ -19,7 +19,7 @@
         "tab": "Introduction",
         "pages": [
           "introduction/welcome",
-          "introduction/plans-and-credits",          
+          "introduction/plans-and-credits",
           "introduction/getting-started",
           "introduction/faq"
         ]
@@ -93,7 +93,6 @@
           "tips-tricks/using-videos",
           "tips-tricks/custom-fonts",
           "tips-tricks/npm-packages",
-          "tips-tricks/chrome-extensions",
           "tips-tricks/from-idea-to-app",
           "tips-tricks/support-policy",
           "tips-tricks/avoiding-security-pitfalls",
