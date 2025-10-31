@@ -14,35 +14,21 @@
     "dark": "#0084E6"
   },
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Announcements",
-          "icon": "newspaper",
-          "href": "https://lovable.dev/blog?category=announcements"
-        },
-        {
-          "anchor": "Status",
-          "icon": "signal",
-          "href": "https://status.lovable.dev/"
-        }
-      ]
-    },
     "tabs": [
       {
         "tab": "Introduction",
         "pages": [
           "introduction/welcome",
-          "introduction/plans-and-credits",
-          "introduction/faq",
-          "introduction/getting-started"
+          "introduction/plans-and-credits",          
+          "introduction/getting-started",
+          "introduction/faq"
         ]
       },
       {
         "tab": "Features",
         "groups": [
           {
-            "group": "Core Features",
+            "group": "Core features",
             "pages": [
               "features/modes",
               "features/visual-edit",
@@ -58,11 +44,11 @@
               "features/seo",
               "features/security",
               "features/labs",
-              "features/figma-to-lovable"              
+              "features/figma-to-lovable"
             ]
           },
           {
-            "group": "Business Features",
+            "group": "Business features",
             "pages": [
               "features/business/sso",
               "features/business/data-opt-out",
@@ -76,7 +62,7 @@
         "tab": "Integrations",
         "groups": [
           {
-            "group": "About Integrations",
+            "group": "About integrations",
             "pages": [
               "integrations/introduction",
               "integrations/build-with-url"
@@ -99,7 +85,7 @@
         ]
       },
       {
-        "tab": "Tips & tricks",
+        "tab": "Tips & Tricks",
         "pages": [
           "tips-tricks/best-practice",
           "tips-tricks/troubleshooting",
@@ -115,7 +101,7 @@
         ]
       },
       {
-        "tab": "Prompt Engineering",
+        "tab": "Prompt engineering",
         "pages": [
           "prompting/prompting-one",
           "prompting/prompting-library",
@@ -124,9 +110,8 @@
         ]
       },
       {
-        "tab": "Use Cases",
+        "tab": "Use cases",
         "pages": [
-          "use-case/inspiration",
           "use-case/video-tutorials",
           "use-case/landing-page",
           "use-case/prototype",
@@ -136,11 +121,15 @@
       },
       {
         "tab": "Glossary",
-        "pages": ["glossary"]
+        "pages": [
+          "glossary"
+        ]
       },
       {
         "tab": "Changelog",
-        "pages": ["changelog"]
+        "pages": [
+          "changelog"
+        ]
       }
     ]
   },

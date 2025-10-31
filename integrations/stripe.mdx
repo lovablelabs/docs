@@ -1,5 +1,5 @@
 ---
-title: "Stripe Integration"
+title: "Stripe integration"
 description: "How to set up payments in your app using our Stripe integration"
 icon: "credit-card"
 ---
@@ -20,7 +20,7 @@ After you connect **Supabase** and save your **Stripe Secret Key** via **Add AP
   - For **subscriptions**, confirm Supabase Auth is in place so Lovable can link Stripe customers to each user’s **id**
 </Note>
 
-### Key Takeaways
+### Key takeaways
 
 - Use the **chat‑driven flow** for both subscriptions and one‑off payments.
 - **Never paste your Stripe Secret Key in chat.** Configure it via the in-chat **Add API Key** form.
@@ -43,7 +43,7 @@ Before integrating Stripe, ensure the following prerequisites are met:
   Stripe integration doesn't work in preview. To test the integration, make sure to deploy. You should also make sure to be in test mode in Stripe when trying out the functionality. When testing payment, card number: 4242 4242 4242 4242, any 3 digits as CVC and any future date will work as a card.
 </Note>
 
-## Stripe Payment Setup (No‑Code Chat Flow)
+## Stripe payment setup (No‑code chat flow)
 
 Lovable now generates all Stripe logic for you. Once your **Stripe Secret Key** is configured via the in-chat **Add API Key** form and your project is **connected to Supabase**, simply tell Lovable what you need in chat—no manual Payment Links required.
 
@@ -71,7 +71,7 @@ Lovable now generates all Stripe logic for you. Once your **Stripe Secret Key** 
   - Subscriptions should always linked to the authenticated user’s `id` in Supabase for secure, role‑based access.
 </Note>
 
-## Advanced Integration: Webhooks & Supabase
+## Advanced integration: Webhooks & Supabase
 
 For complex payment structures such as **subscriptions and role-based access**, Lovable recommends using **Supabase** to securely handle Stripe integration. This allows for proper webhook handling, subscription management, and role-based access control based on payment tiers.
 

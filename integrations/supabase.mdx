@@ -1,5 +1,5 @@
 ---
-title: "Supabase Integration"
+title: "Supabase integration"
 description: "Integrate a full-featured backend into your Lovable application with Supabase."
 icon: "database"
 ---
@@ -24,7 +24,7 @@ Supabase is an open-source alternative to Firebase, providing a hosted PostgreSQ
 
 With Lovable, you don’t have to juggle separate tools for front-end design and back-end setup. By simply conversing with Lovable’s AI, you can build your UI _and_ have the underlying database and server functions created for you automatically. This means faster development and fewer integration headaches. For example, if you prompt Lovable with “Add a user feedback form and save responses to the database,” Lovable will generate the form UI **and** set up a Supabase table to store the feedback – all in one go. This seamless end-to-end generation is Lovable’s unique strength, empowering beginners to build complex apps and allowing power users to move faster.
 
-## Getting Started: Connecting Supabase to Lovable
+## Getting started: Connecting Supabase to Lovable
 
 Connecting a Supabase backend to your Lovable project is straightforward. You’ll need a Supabase account (free tier is fine) and a Lovable project ready. If you don’t have a Supabase account yet, you can sign up at the Supabase website – no credit card required for the free tier.
 
@@ -59,13 +59,13 @@ Connecting a Supabase backend to your Lovable project is straightforward. You’
   </Step>
 </Steps>
 
-## Adding User Authentication
+## Adding user authentication
 
 One of the first things you’ll likely want is user authentication (so people can sign up and log into your app). Lovable’s Supabase integration makes this trivial to set up via chat.
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/LHpMUj-Jf_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 
-### Email and Password (Basic Setup)
+### Email and password (basic setup)
 
 Once your project is connected to Supabase, Lovable can generate authentication pages for you. For example, you can simply prompt: **“Add login”**. This will typically create a basic login page (and related signup flow) in your app, wired up to Supabase’s authentication system.
 
@@ -88,7 +88,7 @@ After Lovable adds the login UI, you have a couple of ways to create users for t
 
 Lovable will have already configured your Lovable app to recognize authenticated users (for example, gating certain pages to logged-in users only, if appropriate). You can further customize the look and feel of the login/signup pages using Lovable’s editor or prompts. Supabase Integration 2.0 even allows adding extra fields to your signup form or styling the form to match your brand.
 
-### Social Logins (e.g. Google)
+### Social logins (e.g. Google)
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/W6-_0-Eekio?si=8WkxiJn0oe4wfSbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
@@ -99,13 +99,13 @@ Supabase supports OAuth logins like Google, GitHub, Twitter, and more. You can i
 
 Once this is done, users of your app will be able to click “Sign in with Google”, be redirected to Google for authentication, and then return to your app as logged-in users. You can enable other providers (GitHub, Facebook, etc.) in a similar way – just remember to configure each in Supabase and then adjust your Lovable UI accordingly.
 
-## Managing Data with Supabase
+## Managing data with Supabase
 
 Beyond authentication, the core of most apps is reading and writing data. With Lovable and Supabase, you can create database tables and connect them to your UI without leaving the chat prompt.
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/V5LdDEuCli4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 
-### Creating Database Tables via Lovable
+### Creating database tables via Lovable
 
 After connecting Supabase, whenever you need to store data persistently, you can instruct Lovable and it will coordinate the database setup for you. The process typically looks like this:
 
@@ -132,7 +132,7 @@ For example, if you want users to be able to post articles in your app, you coul
   Supabase’s dashboard offers a rich interface to manage your data. You can view and edit table rows in a spreadsheet-like UI, define relationships between tables, and even import data from CSV or Excel. Under the hood, it’s all PostgreSQL – which means you can perform complex queries or use SQL features as needed. Supabase even provides an **AI SQL Assistant** in its SQL editor to help you write queries if you’re not familiar with SQL. This can be handy for advanced analysis or troubleshooting.
 </Note>
 
-### File Storage (Images & Media)
+### File storage (images & media)
 
 When your Lovable app needs to handle file uploads (for example, user profile pictures, attachments, or any media), Supabase integration has you covered. Supabase includes a **Storage** service for hosting files (images, videos, PDFs, etc.) conveniently alongside your database.
 
@@ -144,7 +144,7 @@ By default, Supabase’s free tier allows files up to **50MB** each to be upload
   Suppose your app has user profiles and you want users to add a profile picture. You might prompt Lovable: _“Add a profile picture upload to the account settings page.”_ Lovable will create the UI for uploading an image. Thanks to the Supabase integration, when a user uploads a file, it’s saved in your Supabase Storage (in a bucket, e.g. `public/avatar-images`), and Lovable will handle retrieving that image URL to display the profile picture in your app. All of this happens without you writing any storage-handling code.
 </Note>
 
-## Storing Secrets (API Keys & Config)
+## Storing secrets (API Keys & Config)
 
 Many applications require secret keys or API credentials to connect with third-party services — for example, Stripe for payments or OpenAI for AI features. When Supabase is connected, Lovable offers a secure way to manage and use these secrets.
 
@@ -156,7 +156,7 @@ These secrets are stored securely in Supabase’s Edge Function secret manager f
   For example, if you integrate Stripe for payments, you would store your Stripe Secret Key as a secret. When Lovable deploys a payment-processing function to Supabase, it will automatically include that key from the secret store so the function can authenticate with Stripe. This way, you never have to hard-code secrets into your app, and you avoid exposing them publicly.
 </Tip>
 
-## Backend Logic with Edge Functions
+## Backend logic with Edge Functions
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/p_hKIDlxXp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
 

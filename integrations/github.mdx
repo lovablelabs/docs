@@ -1,5 +1,5 @@
 ---
-title: "GitHub Integration"
+title: "GitHub integration"
 description: "Learn how to connect and sync your projects with GitHub repositories"
 icon: "github"
 ---
@@ -15,7 +15,7 @@ Integrating GitHub into your Lovable project ensures you have full version contr
 - By linking your project to GitHub, every change in your Lovable app is backed up in a Git repository in real time. This means you get a complete history of your code, the ability to collaborate with developers in familiar workflows, and the freedom to host or deploy your app outside of Lovable if needed.
 - **GitHub integration** brings transparency, safety, and flexibility to your Lovable development process.
 
-## Key Benefits of GitHub Integration:
+## Key benefits of GitHub integration:
 
 Lovable backs every project with a Git repository, making it easy for developers to push commits directly to GitHub. This means:
 
@@ -25,7 +25,7 @@ Lovable backs every project with a Git repository, making it easy for developers
 - **Workflow Integration:** Use GitHub’s tools (branches, pull requests, issues, CI/CD, etc.) alongside Lovable​. For example, you can run tests or deploy your app via GitHub Actions when code is merged, all while continuing to use Lovable’s editor and AI to develop features.
 - **Deployment Flexibility:** Connecting to GitHub gives you the option to host your app on your own infrastructure or platform of choice. You’re not locked into Lovable’s hosting – you can export the code and deploy it anywhere​. (Lovable will still sync changes with GitHub, so you can continue editing in Lovable even if you host the app elsewhere.)
 
-## Connecting Lovable to Your GitHub Account (Setup Guide)
+## Connecting Lovable to your GitHub account (setup guide)
 
 <Frame>
   <video autoPlay controls loop muted className="w-full">
@@ -61,7 +61,7 @@ To start using GitHub with Lovable, you need to connect your GitHub account and 
   If you plan to connect multiple Lovable projects to GitHub, you can repeat the above for each project (each will create its own repo). Each Lovable project can have one linked GitHub repo. Remember that your Lovable account remains linked to whichever GitHub login you authorized.
 </Tip>
 
-## How Syncing Works (Lovable ↔ GitHub)
+## How syncing works (Lovable ↔ GitHub)
 
 Once your project is connected to GitHub, Lovable ensures that code changes stay in sync between the Lovable editor and your GitHub repository. The integration is **bidirectional**, but it follows some specific rules and behaviors:
 
@@ -79,7 +79,7 @@ Once your project is connected to GitHub, Lovable ensures that code changes stay
 
 In summary, the GitHub integration means your Lovable project’s code and the GitHub repository are effectively one and the same source, mirrored in real time. You can confidently switch between the Lovable editor and other development tools knowing both will stay updated​
 
-## Importing an Existing GitHub Repository into Lovable
+## Importing an existing GitHub repository into Lovable
 
 What if you already have a codebase on GitHub and want to use Lovable with it? Currently, **Lovable does not yet support directly importing or linking to an existing external GitHub repo as a new project**​. In other words, you can’t point Lovable at an existing repository and have it pull in all that code automatically (as of now). However, there are ways to bring your existing code into Lovable:
 
@@ -89,7 +89,7 @@ What if you already have a codebase on GitHub and want to use Lovable with it? C
   Importing an existing codebase may involve setting up any necessary configuration in Lovable (e.g., environment variables, dependencies) to mirror the original project’s setup. After you’ve brought in the code, test the project within Lovable to ensure everything runs. From then on, you can use Lovable’s AI features on your code and still sync back to GitHub.
 </Info>
 
-## Developing with GitHub and Lovable in Parallel
+## Developing with GitHub and Lovable in parallel
 
 Once connected, you can build and edit your application using GitHub (or your local development environment) and Lovable simultaneously. This is great for developers who want to use their own tools or for teams where some members prefer coding by hand. Here are some ways to work effectively with the integration:
 
@@ -107,7 +107,7 @@ Once connected, you can build and edit your application using GitHub (or your lo
   </Note>
 - **Remember:** even while doing heavy development through GitHub, you can always go back to the Lovable editor to use the visual tools or AI chat for assistance. The codebase is the same, so any changes you made by hand will be present in Lovable. This integration makes Lovable a part of your toolchain rather than an isolated environment.
 
-## Documenting Changes and Rolling Back
+## Documenting changes and rolling back
 
 Working with GitHub encourages good software development practices like documenting changes and managing versions. Here are some tips on managing your code changes and reverting when necessary:
 
@@ -222,7 +222,7 @@ However, you can connect to a different GitHub **organization** by following the
     - If support is able to do this, you can then start fresh with a new GitHub account.
     - However, **none of your old projects will be recoverable or usable.**
 
-  **Next Steps:**
+  **Next steps:**
     1. Create a new GitHub account.
     2. Connect these new projects to your new GitHub account.
 
@@ -237,7 +237,7 @@ However, you can connect to a different GitHub **organization** by following the
   <Accordion title="I don't want any accidental changes to happen on my project. How do I remove Lovable from my GitHub?">
   To remove Lovable's access to your GitHub account and prevent any accidental changes, you have a couple of options. **Keep in mind that this will render your projects useless unless you remix the projects first.**
 
-  **Revoke Lovable's GitHub Access**
+  **Revoke Lovable's GitHub access**
   The most straightforward way to revoke Lovable's access directly from your GitHub account is by following these steps:
     1. Go to your GitHub settings.
     2. Navigate to Applications (or `Setting` → `Applications` → `Authorized OAuth Apps`).
@@ -246,20 +246,20 @@ However, you can connect to a different GitHub **organization** by following the
 
   This will immediately stop all synchronization between Lovable and your GitHub repositories.
 
-  **Alternative: Limit Repository Access**
+  **Alternative: Limit repository access**
   If you want to keep using Lovable but just protect specific repositories, you can:
     1. Go to your GitHub settings and find the Lovable app.
     2. Modify the permissions to "Only select repositories" instead of "All repositories".
     3. Remove access to the repositories you want to protect.
 
-  **After Removal**
+  **After removal**
   Once you revoke access:
     - Lovable will no longer be able to push changes to your GitHub repositories.
     - No new commits will be created from Lovable edits.
     - Your existing code on GitHub remains completely safe and unchanged.
     - You can still continue working in Lovable, but changes won't sync to GitHub.
 
-  **Re-Connecting**
+  **Re-connecting**
   If you ever want to reconnect Lovable to GitHub in the future, you can simply click the GitHub button in the Lovable editor and go through the authorization process again.
 
   This approach gives you complete control over when and how Lovable can access your GitHub repositories, ensuring no accidental changes can occur.

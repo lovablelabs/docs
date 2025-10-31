@@ -1,5 +1,5 @@
----
-title: "Prompt Library"
+i---
+title: "Prompt library"
 description: "List of prompting strategies and approaches."
 icon: "book"
 ---
@@ -8,7 +8,7 @@ _Welcome to the prompt library\\\!_ Here we’ve collected a set of reusable pro
 
 Feel free to copy these, modify the details, and use them in Lovable or any AI builder. The tone is official yet casual – just like talking to a colleague – and each prompt provides enough context so the AI knows exactly what to do.
 
-## Starting Projects
+## Starting projects
 
 <Info>
   **When to use:** At the very beginning of a project. This prompt helps the AI understand the high-level requirements and start building the foundation. Use it to **kick off a new app** by specifying what you’re building, the tech stack, and core features. It’s your project brief.
@@ -18,7 +18,7 @@ Feel free to copy these, modify the details, and use them in Lovable or any AI b
   **How to use:** Outline the type of application, key technologies (frontend framework, backend, any services), and the primary features or pages. Then, direct the AI on where to start (often the main page or an important feature). This establishes the project scope and initial focus.
 </Info>
 
-**Example Prompt – Starting a New Project:**
+**Example prompt – starting a new project:**
 
 ```
 I need a **task management** application with:
@@ -43,7 +43,7 @@ Explain how this function works in simple terms, highlighting its inputs, output
 
 This prompt follows a proven structure for new projects​. It first states the app type and tech stack, then lists core features, and finally tells the AI where to begin (the main dashboard page, with specifics). By doing this, you give Lovable a clear roadmap to initiate the project. _(Pro tip: It’s often wise to start with an empty project and build up gradually, so the AI doesn’t get overwhelmed​.)_
 
-## UI/UX Design
+## UI/UX design
 
 <Info>
   **When to use:** Any time you want to **refine the look and feel** of your app without changing its functionality. This could be polishing the UI, adjusting layouts, or implementing a specific design style.
@@ -55,7 +55,7 @@ This prompt follows a proven structure for new projects​. It first states the 
 
 Lovable has pretty good taste out of the box, but a targeted prompt can help achieve a specific aesthetic or UX improvement​. For example, you might want to restyle a button, improve form layout, or ensure consistency in spacing.
 
-**Example Prompt – UI Only Changes:**
+**Example prompt – UI only changes:**
 
 ```
 The app UI should be improved, **without changing any functionality**. 
@@ -107,7 +107,7 @@ In this prompt, we explicitly say to make solely visual enhancements and not aff
   **How to use:** Emphasize a **mobile-first approach** and ask the AI to ensure the design is responsive at all standard breakpoints​. If using a CSS framework like Tailwind, mention to use its grid/flex and built-in breakpoints. You can also instruct the AI to avoid any fixed widths or anything that would prevent fluid resizing. Providing an example of what breaks on small screens (if you have one) can help, or simply say “make everything adapt to smaller screens gracefully.”
 </Info>
 
-**Example Prompt – Mobile Responsiveness:**
+**Example prompt – mobile responsiveness:**
 
 ```
 Our app needs to be **fully responsive** across mobile, tablet, and desktop.
@@ -136,7 +136,7 @@ In this prompt, we explicitly instruct the AI to make all designs responsive at 
   **How to use:** Identify the scope: is it a single file, a specific feature, or the whole codebase? For a single file or component, you can prompt something like “Refactor this file for clarity and efficiency, but **do not alter its functionality or output**.” Emphasize that everything should behave the same after refactoring​. If you want, specify what to focus on (e.g., reduce duplication, improve variable names, simplify logic). For larger-scale refactoring, it’s wise to ask the AI to **plan the refactor in steps** (see the next section on Planning) or audit the code structure first.
 </Info>
 
-**Example Prompt – Safe File Refactor:**
+**Example prompt – safe file refactor:**
 
 ```
 Refactor the **ProjectList component file**, but **keep its behavior and UI exactly the same**. 
@@ -165,7 +165,7 @@ This prompt clearly states the component to refactor and the constraints (no fun
 
 For bigger refactoring efforts (like many files or an entire project), consider having the AI **analyze the codebase first**. You can use a prompt to get a report on what could be improved and where (see the Debugging section’s _Full System Review_ prompt for an idea). Then, apply changes incrementally. Refactor in small pieces and test as you go, rather than one massive overhaul.
 
-## App Types
+## App types
 
 ```
 Create a starter e-commerce store with product listing, search, filtering, cart functionality, and checkout process. Include user accounts, order history, and basic product management. Focus on a clean, conversion-oriented UI.
@@ -215,7 +215,7 @@ Create a dashboard that uses AI to analyze [describe data] and present insights 
 Implement a system for personalizing the user experience based on behavior and preferences. Include customizable UI elements, content recommendations, and settings that allow users to control their personalization.
 ```
 
-## React Development
+## React development
 
 ```
 Create a custom React hook called use[Name] that handles [functionality]. It should handle proper state initialization, cleanup, memoization of values, and TypeScript typing. Include example usage and error handling.
@@ -241,7 +241,7 @@ Implement a data fetching pattern for [describe the data] using React Query. Inc
 Create a smooth transition animation for [describe the element] when it [describe the action]. Use CSS transitions or Framer Motion, ensuring the animation works well across devices and doesn't harm performance.
 ```
 
-## Locking Files / Limiting Scope
+## Locking files / Limiting scope
 
 <Info>
   **When to use:** Sometimes you want the AI to focus on specific parts of the project and leave everything else untouched – essentially “lock” certain files or areas so they are not modified. This is useful if you’ve manually written some code or have a stable component you don’t want altered while the AI works on something else. Since Lovable doesn’t have a literal file-lock feature yet, using the prompt to constrain scope is the next best thing.
@@ -251,7 +251,7 @@ Create a smooth transition animation for [describe the element] when it [describ
   **How to use:** In your prompt, **explicitly instruct the AI not to change** certain files or components. You might say, “Don’t edit the authentication files,” or “Keep the HomePage component unchanged.” Also, be clear about where the AI _should_ focus changes. This directive should be included each time you prompt during that sensitive period, to remind the AI of the boundary.
 </Info>
 
-**Example Prompt – Limit Scope of Changes:**
+**Example prompt – limit scope of changes:**
 
 ```
 Please **focus only on the Dashboard page** for this change. 
@@ -278,7 +278,7 @@ Another scenario is when updating a very delicate feature. In such cases, you ca
   **How to use:** Ask the AI to produce a plan or checklist. You can say, “Outline a step-by-step plan for X” or “Before coding, list the steps you will take to implement Y.” This can be done in Chat mode to ensure it doesn’t execute any code changes while planning​. After getting the plan, you might even discuss it (maybe have the AI explain why each step is needed) and then proceed to implementation step by step. Planning prompts are meta – they don’t build the app directly, but they set the stage for a smoother build.
 </Info>
 
-**Example Prompt – Planning a Feature Implementation:**
+**Example prompt – planning a feature implementation:**
 
 ```
 Before writing any code, **plan out the implementation** of the new Notifications feature.
@@ -301,7 +301,7 @@ This prompt tells the AI to act as a planner. It asks for a sequenced plan to im
 
 By reviewing such a plan, you can catch any issues (maybe we realize we need a new DB table, or maybe step 4 is out-of-scope for now, etc.) _before_ any coding happens. It’s a lot easier to tweak the plan than to rewrite bad code. Planning prompts save time in complex features by getting the approach right from the start​.
 
-## Stripe Setup
+## Stripe setup
 
 <Info>
   **When to use:** When you want to integrate payments into your app using Stripe. Lovable has integration points for Stripe, but it requires setting up keys, webhooks, and UI for checkout. A prompt can handle the boilerplate of connecting to Stripe’s API. Use this when you need to add commerce (selling a product, subscription, etc.) in your project.
@@ -311,7 +311,7 @@ By reviewing such a plan, you can catch any issues (maybe we realize we need a n
   **How to use:** Provide the details Stripe needs: mode (test or live), product or pricing info, and redirect URLs after payment. Also, instruct how the UI should behave (e.g., a checkout form/modal). It’s **crucial** to mention that sensitive keys will be provided securely (not hard-coded in the prompt)​ – you typically store those in environment variables or Lovable’s secret storage. So you can say “assume I have set the API keys in the environment.” This way, the AI will know to call the keys, not include them literally. Additionally, specify _not_ to alter unrelated code while setting up Stripe (to avoid accidental changes).
 </Info>
 
-**Example Prompt – Integrating Stripe Payments:**
+**Example prompt – integrating Stripe payments:**
 
 ```
 I want to **add Stripe payments** to the app.
@@ -334,7 +334,7 @@ _Note:_ We included a line about API keys being secure because we never want sec
 
 After running this prompt, test the payment flow with Stripe’s test card numbers. If something isn’t working (e.g., the webhook), Lovable might show errors which you can then debug or refine with another prompt.
 
-## Supabase & Backend
+## Supabase and backend
 
 ```
 Enhance the visual appeal of this component: [paste component]. Add animations, improve spacing, create a polished look while maintaining accessibility standards and responsive behavior.
@@ -410,22 +410,22 @@ Set up a deployment pipeline for this application that includes staging and prod
 Analyze and optimize this user flow: [describe flow]. Suggest improvements for user experience, reduce friction points, implement progressive enhancement, and ensure accessibility throughout.
 ```
 
-## Using Chat Mode vs Default Mode
+## Using chat mode vs Agent Mode
 
 <Info>
-  **When to use:** Lovable has two modes for prompting: **Default Mode** (which immediately applies changes to your project) and **Chat-Only Mode** (which is more like a conversation without altering code until you say so). Knowing when to use each can streamline your workflow. Use Default for straight coding tasks and use Chat mode for brainstorming, debugging, or when you want to discuss changes before executing them.
+  **When to use:** Lovable has two modes for prompting: **Agent Mode** (which immediately applies changes to your project) and **Chat-only Mode** (which is more like a conversation without altering code until you say so). Knowing when to use each can streamline your workflow. Use Agent mode for straight coding tasks and use Chat mode for brainstorming, debugging, or when you want to discuss changes before executing them.
 </Info>
 
 <Info>
   **How to use:**
 
-  - **Default Mode** is great for when you have a well-defined feature to build or change to make. You give the instruction, and Lovable will do it in one go if possible.
+  - **Agent mode** is great for when you have a well-defined feature to build or change to make. You give the instruction, and Lovable will do it in one go if possible.
   - **Chat Mode**, on the other hand, is useful if you want to have a back-and-forth or analyze something (like asking _“Why is this not working?”_ or _“What’s the best way to do X?”_) without immediately changing the codebase​. In Chat Mode, the AI will respond with analysis or a plan, and you usually have to explicitly say “go ahead and implement” when ready.
 </Info>
 
-**Example use case – Default vs Chat:**
+**Example use case – Agent vs Chat:**
 
-Suppose you suspect there is outdated code in your project that needs cleaning up. In Default mode, you might directly prompt:
+Suppose you suspect there is outdated code in your project that needs cleaning up. In Agent mode, you might directly prompt:
 
 <Info>
   _Review the app and tell me where there is outdated code._
@@ -445,13 +445,13 @@ Similarly, if you have an error and you want the AI to analyze it, Chat mode is 
   _What does this error mean, and how can we fix it?_
 </Info>
 
-The AI will explain and propose a solution. Once you agree, you might switch to Default mode or explicitly instruct to apply the fix.
+The AI will explain and propose a solution. Once you agree, you might switch to Agent mode or explicitly instruct to apply the fix.
 
-In summary, **use Default Mode for straightforward building** (“do X for me”), and **use Chat Mode for troubleshooting or design discussions** (“why or how should we do X?”). One concrete workflow is: _Brainstorm in Chat (get a plan or identify issues), then execute in Default._ This approach is even recommended: for example, \_use Chat Mode to have the AI analyze errors before making changes\_​. It’s like using ChatGPT for advice and then applying the changes once you’re confident.
+In summary, **use Agent Mode for straightforward building** (“do X for me”), and **use Chat Mode for troubleshooting or design discussions** (“why or how should we do X?”). One concrete workflow is: _Brainstorm in Chat (get a plan or identify issues), then execute in Default._ This approach is even recommended: for example, \_use Chat Mode to have the AI analyze errors before making changes\_​. It’s like using ChatGPT for advice and then applying the changes once you’re confident.
 
 _(Make sure Chat-Only Mode is enabled in your settings under Labs if you don’t see it​. This mode ensures the AI won’t write code to your project until you say so, which is perfect for safe experimentation.)_
 
-## Writing Knowledge Bases and PRDs
+## Writing knowledge bases and PRDs
 
 <Info>
   **When to use:** At the start of a project and whenever you have more context to give the AI than can fit in a single prompt. In Lovable, the **Knowledge Base** is a special place in your project settings where you can store background information, requirements, and guidelines that persist across prompts​. A **Project Requirements Document (PRD)** is a comprehensive summary of your app’s objectives and specs – essentially, the blueprint of what you’re building. Use these tools to prevent misunderstanding and to anchor the AI with the big picture of your project.
@@ -472,7 +472,7 @@ This might sound like a lot, but writing it down pays off. **The AI will use thi
 
 After populating the knowledge base, you can literally tell the AI to use it. For example, your very first prompt to Lovable might be: \_“Before writing any code, please **__review the Knowledge Base__** and confirm you understand the project.”\_​ This lets the AI summarize or acknowledge the context, and you can catch if it missed something.
 
-**Example Prompt – Using the Knowledge Base:**
+**Example prompt – using the knowledge base:**
 
 ```
 User: Before you write any code, please review the Knowledge Base and share your understanding of my project.

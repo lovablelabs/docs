@@ -1,20 +1,20 @@
 ---
-title: "Debugging Prompts"
+title: "Debugging prompts"
 description: "Debug workflows, with strategies, sample prompts, troubleshooting flows, and deep debugging mindset examples."
 icon: "bug"
 ---
 
 Building with AI is fast and fun – until something goes wrong. Errors, unexpected behaviors, or “the AI did something weird” moments are part of the process. This guide will help you navigate **AI-based debugging workflows in Lovable**. We’ll cover how to quickly fix simple issues, strategies for tougher bugs, using Lovable’s chat for debugging, and even prompt recipes to systematically squash bugs. Debugging with an AI assistant is a new skill, but with structure and the right prompts, you can resolve problems efficiently and even turn them into learning opportunities. 
 
-## Advanced Debugging Prompts
+## Advanced debugging prompts
 
 Sometimes you need a heavy-duty prompt to dig into a problem or review your project’s health. Here are some structured prompt examples for deep debugging or optimization scenarios. These can be used in Chat mode to get a thorough analysis without immediately changing code.
 
-### Full System Review (Codebase Audit)
+### Full system review (codebase audit)
 
 If your project has grown large or you suspect there are structural issues, a full codebase audit prompt can be useful. This asks the AI to analyze the entire project for cleanliness, correct architecture, and any misplaced code. It’s like asking “Is everything organized the way it should be?”
 
-**Example Prompt – Codebase Audit:**
+**Example prompt – codebase audit:**
 
 ```
 Perform a comprehensive **audit of the entire codebase** to check if the architecture is clean, modular, and optimized:
@@ -58,11 +58,11 @@ Each point might come with explanation and maybe references to specific files. S
 
 After getting this output, you can decide which refactoring tasks to tackle (maybe even prompt the AI to implement some of those recommendations one by one).
 
-### Safe Approach for Fragile Updates
+### Safe approach for fragile updates
 
 When you know the area you’re changing is delicate (maybe a complex authentication flow or a core algorithm), it’s wise to prepend a _cautionary guideline_ in your prompt. This doesn’t find bugs per se, but it helps prevent them by telling the AI to be extra careful. We saw an example in the Prompt Library section for locking files. Here’s a similar pattern focusing on not breaking things.
 
-**Example Prompt – Fragile Update Guidance:**
+**Example prompt – fragile update guidance:**
 
 ```
 The next change is in a **critical part of the app**, so proceed with **utmost caution**. 
@@ -81,11 +81,11 @@ By including the italicized guidelines and bold warnings, you’re basically set
 
 This strategy is useful for **fragile sections**: authentication, payment processing, data migration – anything where a small mistake can break a lot. It’s a preemptive debugging measure.
 
-### Performance Optimization Check
+### Performance optimization check
 
 If your app works correctly but is **slow** or resource-heavy, you can use a prompt to have the AI analyze performance. This might involve reviewing data fetching patterns, looking at rendering inefficiencies, or suggesting optimizations (caching, memoization, etc.). It’s like asking, “How can we make this faster and smoother?”
 
-**Example Prompt – Performance Audit:**
+**Example prompt – performance audit:**
 
 ```
 Our app is functional but seems **sluggish**. Please **analyze the project for performance bottlenecks** and suggest optimizations:
@@ -108,7 +108,7 @@ Running this in Chat mode will give you a diagnostic report. The AI might say fo
 
 Each suggestion comes from common performance best practices​. You can then decide which ones to implement. Maybe you prompt Lovable to apply one of them: _“Implement caching for project data using context as suggested.”_ By addressing these, you improve user experience and possibly reduce costs (fewer calls, less computation).
 
-### Handling Persistent Errors
+### Handling persistent errors
 
 What about errors that just won’t go away or keep coming back in slight variations? This can happen if the root cause isn’t addressed. For example, you fix one thing, but the underlying problem surfaces as a new error elsewhere. Here’s a strategy for that:
 
@@ -121,7 +121,7 @@ Finally, if a specific component is “dead” (not working at all, no matter wh
 
 Throughout all this, maintain a dialogue with the AI. Treat it like a collaborator: _“We fixed X but now Y is acting up. What’s the relationship between X and Y? Could the fix have caused Y’s issue?”_ The AI might make connections you didn’t see.
 
-## Sample Debugging Flows
+## Sample debugging flows
 
 To cement these ideas, let’s walk through two common debugging scenarios with example flows:
 
@@ -228,11 +228,11 @@ In this flow, the key was to notice the component was completely gone and commun
 
 In all these cases, _communication and incremental steps_ are your friends. Use the AI’s strength in recalling details (like what it did before) and analyzing logs or errors. And use your strength in steering the process – you understand the high-level goal and can decide when to try a different angle.
 
-## Root Cause Analysis, Rollback, and Progressive Enhancement
+## Root cause analysis, rollback, and progressive enhancement
 
 A few final pieces of advice:
 
-### Root Cause vs. Symptom
+### Root cause vs. symptom
 
 Always ask “why did this happen?” not just “what to do now?”. The AI can help find the root cause so that when you fix something, it stays fixed. For example, an AI quick fix might silence an error but not address the underlying logic bug. If you suspect that, dig deeper:
 
@@ -280,7 +280,7 @@ The AI’s summary can be saved in a `README` or log. This is great for future y
 
 Sometimes, despite all efforts, you might hit a wall (maybe a true bug in the Lovable platform or something outside your/AI control). The Lovable community and support are there for you. There’s no shame in reaching out on their Discord or forums with a question. Often, others have faced a similar issue. Use the AI to gather as much info as possible first (so you can provide details), and then ask the community if needed.
 
-## Community Debugging Guidebook
+## Community debugging guidebook
 
 This guidebook was shared in our community Discord—it might be useful for debugging your project:
 
