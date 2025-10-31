@@ -4,7 +4,7 @@ description: "Prompt structure, levels of prompting, meta/reverse meta prompting
 icon: "graduation-cap"
 ---
 
-## Heads up\!
+## Heads up!
 
 To help you make the most out of Lovable, we compiled a list of prompting strategies and approaches. Some of these were collected from our team's experience, and others were shared with us by our community members. Since Lovable relies on large language models (LLMs), effective prompting strategies can significantly improve its efficiency and accuracy.
 
@@ -155,7 +155,7 @@ In Lovable, hallucinations might also mean the AI creates a file or component yo
 
 Not all AI models are the same, and even the same model can behave differently depending on settings. To get master-level results, it helps to understand the tools at your disposal in Lovable:
 
-- **Chat Mode vs Default Mode:** Lovable provides (as of this writing) a **Chat mode** (conversational AI assistant) and a Default/Editor mode (which directly applies changes). Use them intentionally. **Chat Mode** is excellent for brainstorming, discussing design decisions, or debugging – the AI can freely generate ideas or analysis without immediately coding. For example, you might describe an error and in Chat mode say, _“Let’s analyze this error log and figure out what went wrong.”_ The AI can then walk through potential causes. **Default Mode**, on the other hand, is for executing changes (writing code, creating components). A typical workflow might be: outline or troubleshoot in Chat mode, and once you have a plan, switch to Default mode to implement it with a straightforward prompt (since default mode will modify your project files). Knowing when to use each mode keeps your development flow efficient and safe.
+- **Chat Mode vs Agent Mode:** Lovable provides (as of this writing) a **Chat mode** (conversational AI assistant) and an Agent/Editor mode (which directly applies changes). Use them intentionally. **Chat Mode** is excellent for brainstorming, discussing design decisions, or debugging – the AI can freely generate ideas or analysis without immediately coding. For example, you might describe an error and in Chat mode say, _“Let’s analyze this error log and figure out what went wrong.”_ The AI can then walk through potential causes. **Agent Mode**, on the other hand, is for executing changes (writing code, creating components). A typical workflow might be: outline or troubleshoot in Chat mode, and once you have a plan, switch to Agent mode to implement it with a straightforward prompt (since agent mode will modify your project files). Knowing when to use each mode keeps your development flow efficient and safe.
 - **Token Length and Responses:** Be aware of the response length. If you ask for a very large output (like a whole module of code), the AI might cut off or lose coherence if it exceeds the token limit. In such cases, break the task into smaller prompts (e.g., generate code for one function at a time). Lovable’s chat or prompt UI might show a warning if output is truncated – that’s a sign to request the remaining part or divide the work.
 - **Formatting and Code Preferences:** The AI can adapt to your formatting preferences if you state them. For example, tell it “output code in markdown format” or “follow the project’s ESLint rules” if you have them. It won’t magically know your style guide unless you include it in the context. If you prefer certain naming conventions or patterns, you can mention that in the prompt (this is part of being Explicit). Over time, as the AI sees consistent style in your project, it will mimic it – but giving gentle reminders in prompts can accelerate that alignment.
 
@@ -316,7 +316,7 @@ While it doesn’t change functionality, a polite tone can sometimes yield bette
   _Please refrain from modifying the homepage, focus only on the dashboard component._
 </Info>
 
-This reads as polite, and it explicitly tells the AI what not to do. It’s not about the AI’s feelings – it’s about packing in detail. (Plus, it never hurts to be nice​\!)
+This reads as polite, and it explicitly tells the AI what not to do. It’s not about the AI’s feelings – it’s about packing in detail. (Plus, it never hurts to be nice​!)
 
 ### Use Lovable’s modes intentionally
 
@@ -326,7 +326,7 @@ As mentioned, utilize **Chat Mode** for planning and **Agent Mode** for building
   I want to add a blog section to my app. Let’s discuss how to structure the data and pages.
 </Info>
 
-The AI might respond with an outline. Once you’re satisfied, you can switch to Default Mode and say:
+The AI might respond with an outline. Once you’re satisfied, you can switch to Agent Mode and say:
 
 <Info>
   Create a `BlogPost` page and a supabase table or schema for blog posts based on the above plan.
@@ -467,7 +467,7 @@ Clearly outline the project structure, including file names and paths, to ensure
 
 ### Provide precise edit instructions (focus the AI)
 
-By default, when you ask Lovable AI to change something, it might rewrite an entire file or multiple files. To avoid unintended changes, be very specific about _where_ and _what_ to change. You can use Lovable’s “Select” feature to highlight a component or file, then prompt about that selection only. Or explicitly name the file/component in your prompt. For example:
+By default, when you ask the Lovable Agent to change something, it might rewrite an entire file or multiple files. To avoid unintended changes, be very specific about _where_ and _what_ to change. You can use Lovable’s “Select” feature to highlight a component or file, then prompt about that selection only. Or explicitly name the file/component in your prompt. For example:
 
 <Info>
   \_In the \_`Header`_component, change the signup button’s text to ‘Get Started’ and move it to the left side of the nav bar._
@@ -515,7 +515,7 @@ Bugs are inevitable. Lovable has a “Try to Fix” feature for quick fixes, but
 - When an error occurs, copy any **error logs or messages** into a prompt (in Chat mode ideally) and ask: _“Here’s the error and relevant code snippet – what is causing this and how can we fix it?”_ Detailed error context helps the AI pinpoint the issue.
 - Use the CLEAR principles while debugging: be Explicit about what the code was supposed to do versus what happened. Sometimes just explaining the bug in detail to the AI will lead it to the solution.
 - If the AI’s first fix doesn’t work, use the Adaptive principle: clarify what changed or provide the new error, and ask it to try again or suggest an alternative approach.
-- Leverage Chat Mode to discuss the bug: _“The fix didn’t work. The state is still undefined at runtime. What else could be wrong? Let’s think through possible causes.”_ You can have a back-and-forth until a plausible solution is found, then apply it in Default Mode.
+- Leverage Chat Mode to discuss the bug: _“The fix didn’t work. The state is still undefined at runtime. What else could be wrong? Let’s think through possible causes.”_ You can have a back-and-forth until a plausible solution is found, then apply it in Agent Mode.
 
   <Tip>
     For UI bugs, you can even share a screenshot (if Lovable supports image input in chat) or describe the visual issue. E.g., “The sidebar is supposed to hide on mobile, but it’s still visible. Here’s the CSS… Why might it be failing?” The AI can reason about CSS or layout issues if given enough info.
@@ -596,4 +596,4 @@ Finally, always keep learning from each interaction (that Reflective habit). Eve
 
 **Focus on your big ideas** – let Lovable’s AI handle the execution details once you clearly tell it what to do.
 
-Happy prompting, and happy building\!
+Happy prompting, and happy building!
