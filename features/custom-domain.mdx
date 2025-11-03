@@ -2,10 +2,10 @@
 title: "Custom domains"
 description: "Learn how to connect, verify, and manage custom domains in Lovable"
 icon: "earth-europe"
-keywords: ["custom domains","connect custom domain","primary domain","domain status","SSL certificate","DNS verification"]
+keywords: ["custom domains","connect custom domain","how to add custom domain","primary domain","domain status","SSL certificate","DNS verification","DNS setup"]
 ---
 
-Lovable lets you connect your own domain or subdomain to your published project, so visitors can access it from a custom URL instead of the default `xxx.lovable.app` project URL.
+Lovable lets you connect your own custom domain or subdomain to your published project. This allows visitors to access your app from a branded URL instead of the default `xxx.lovable.app` project URL.
 
 Connecting a custom domain improves your site's:
 
@@ -20,11 +20,11 @@ To connect a custom domain, ensure that:
 - You are on a paid Lovable plan.
 - Your project is published. You cannot connect a domain to an unpublished project. See [Publish your app](/features/publish) for more information.
 - You own a domain name. See [full list of supported providers](https://developers.entri.com/provider-list) where you can purchase a domain.
-- You can **verify ownership** and have access to the DNS settings for the domain or subdomain you want to connect.
+- You have **access to the DNS settings** for the domain or subdomain you want to connect. **Ownership verification** happens by adding DNS records (A and TXT records) provided by Lovable during setup.
 
 ## Connect a custom domain
 
-Lovable uses a tool called Entri to help you connect your domain quickly and securely. For some providers it offers an automatic DNS setup.
+You can connect a domain to your published Lovable project using automatic setup (using a tool called Entri) or manual DNS configuration. Both methods require verifying ownership of your domain.
 
 You can connect a domain from two locations:
 
@@ -40,7 +40,7 @@ Follow the steps below to connect a custom domain:
      When adding a domain, Lovable does not automatically add the `www` subdomain. You can add it separately if you want both.
    </Info>
 4. Now, you can connect your domain in two ways:
-   - **Automatic setup with Entri**: Select your domain provider from the list, log in, and authorize access for Entri to update your DNS records. This includes a TXT record to verify ownership.
+   - **Automatic setup with Entri**: Select your domain provider from the list, log in, and authorize Entri to update your DNS records. This includes a TXT record to verify ownership.
    - **Manual setup**: If your DNS provider is not listed, scroll to the bottom of the **Select your domain provider** modal and choose **Go to our manual setup**. Copy the A record and TXT record and input them directly into your domain registrar.
 4. Click **Done**. Wait for verification and SSL certificate to be issued. When complete, the domain will become **Live** and your Lovable app will be live at your custom domain.
 
@@ -52,27 +52,28 @@ Follow the steps below to connect a custom domain:
 
 Domains have clear statuses that indicate the current state and required user action.
 
-| Status              | Description                                                                                                                         | User action                                                                   |
-| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- |
-| **Unpublished**     | Shown only for your `xxx.lovable.app` project URL when the project is not yet published.                                            | Publish the project.                                                          |
-| **Ready**           | The domain was **Live** but the project was unpublished later. Domain is ready and status changes to **Live** when published again. | Publish the project.                                                          |
-| **Action required** | The custom domain setup was not completed.                                                                                          | Click **Complete setup** to finish connecting.                                |
-| **Verifying**       | Waiting for DNS records to propagate.                                                                                               | Wait; no action required.                                                     |
-| **Setting up**      | Verification complete; SSL certificates being issued.                                                                               | No action required; domain will automatically move to **Live** or **Failed.** |
-| **Failed**          | Ownership verified, but SSL certificate could not be provisioned.                                                                   | Click **Retry** to attempt again.                                             |
-| **Live**            | Domain is live and serving your project.                                                                                            | No action required.                                                           |
-| **Offline**         | Domain was **Live** but DNS records are no longer valid.                                                                            | Review displayed DNS records and fix them with your DNS provider.             |
-| **Removed**         | Domain was removed because it was added to another project.                                                                         | Reconnect if needed.                                                          |
+| Status              | Description                                                                                                           | User action                                                                   |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- |
+| **Unpublished**     | Shown only for your `xxx.lovable.app` project URL when the project is not yet published.                              | Publish the project.                                                          |
+| **Ready**           | The domain is ready but the project was unpublished. When published again, the status automatically becomes **Live**. | Publish the project.                                                          |
+| **Action required** | The custom domain setup was not completed.                                                                            | Click **Complete setup** to finish connecting.                                |
+| **Verifying**       | Waiting for DNS records to propagate.                                                                                 | Wait; no action required.                                                     |
+| **Setting up**      | Verification complete; SSL certificates being issued.                                                                 | No action required; domain will automatically move to **Live** or **Failed.** |
+| **Failed**          | Ownership verified, but SSL certificate could not be provisioned.                                                     | Click **Retry** to attempt again.                                             |
+| **Live**            | Domain is live and serving your project.                                                                              | No action required.                                                           |
+| **Offline**         | Domain was **Live** but DNS records are no longer valid.                                                              | Review displayed DNS records and fix them with your DNS provider.             |
+| **Removed**         | Domain was removed because it was added to another project.                                                           | Reconnect if needed.                                                          |
 
 You can remove a domain at any point regardless of its status.
 
 ## Primary domain
 
-Lovable allows you to mark **one domain as the primary domain**.
+Lovable allows you to set **one domain as the primary domain**.
 
-- The domain status must be **Live** in order to mark it as primary. Click the three dots menu  next to your domain and click **Set as primary**.
-- The first domain added to a project automatically becomes primary (applies to domains added after 29 October 2025)
+- The domain status must be **Live** in order to mark it as primary. Click the three dots menu next to your domain and click **Set as primary**.
+- The first custom domain you add to a project automatically becomes the primary domain (for domains added after October 29, 2025).
 - If a domain is primary, all other domains redirect to it.
+- Only one domain can be primary at a time.
 - You can unset the primary domain; in that case, all connected domains serve the project equally. Click the three dots menu next to your primary domain and click **Unset as primary**.
 
 ## FAQ
@@ -86,10 +87,10 @@ Lovable allows you to mark **one domain as the primary domain**.
     - Try removing and re-adding the domain in **Project → Settings → Domains**.
   </Accordion>
   <Accordion title="Can I buy a domain through Lovable?">
-    Lovable doesn't sell domains directly, but we partner with IONOS to facilitate the setup. Go to **Project → Settings → Domains** and click **Buy new domain**  to buy a domain through IONOS. This is available on a paid plans only.
+    Buying a custom domain is possible through our partner IONOS. Go to **Project → Settings → Domains** and click **Buy new domain**  to buy a domain through IONOS. This is available on paid plans only.
   </Accordion>
   <Accordion title="Will connecting a custom domain affect my SEO?">
-    Yes, positively. A custom domain improves your site's discoverability in search engines and makes it look more trustworthy to users.
+    Yes, connecting a custom domain affects your SEO positively. A custom domain improves your site's discoverability in search engines and makes it look more trustworthy to users.
   </Accordion>
   <Accordion title="Does Lovable provide an SSL certificate for my custom domain?">
     Yes. When you connect a custom domain to your Lovable app, we automatically generate and install an SSL certificate for it. This ensures your site is served over HTTPS, keeping your visitors’ data secure and improving your site's SEO ranking. If it hasn't been issued after 72 hours, please reach out to [Lovable Support](https://lovable.dev/support).
@@ -98,7 +99,7 @@ Lovable allows you to mark **one domain as the primary domain**.
     Yes. You can connect a subdomain (for example, `blog.yourdomain.com` or `app.yourdomain.com`) instead of the root domain. When entering your domain in the setup flow, just include the subdomain you want to use.
   </Accordion>
   <Accordion title="Can I connect multiple subdomains to my Lovable project?">
-    You can connect multiple subdomains, but each one must be added and configured individually in **Project → Settings → Domains**. For example, you can connect `blog.yourdomain.com`, `shop.yourdomain.com`, and `app.yourdomain.com`.
+    Yes. You can connect multiple subdomains, but each one must be added and configured individually in **Project → Settings → Domains**. For example, you can connect `blog.yourdomain.com`, `shop.yourdomain.com`, and `app.yourdomain.com`.
   </Accordion>
   <Accordion title="Where can I see my connected domains?">
     You can see your connected domains in two locations:
@@ -107,10 +108,10 @@ Lovable allows you to mark **one domain as the primary domain**.
     - **Publish modal** - here you see all **Live** domains
   </Accordion>
   <Accordion title="Can I connect a domain used by another project?">
-    You, as long as you can verify ownership, you can connect a domain or subdomain used by another project, even if the project is deleted.
+    Yes. As long as you can verify ownership, you can connect a domain or subdomain used by another project, even if the project has been deleted.
   </Accordion>
   <Accordion title="How do I set a primary domain?">
-    The domain status must be **Live** in order to mark it as primary.
+    The domain status must be **Live** in order to set it as primary.
 
     Go to **Project → Settings → Domains**, click the three dots menu  next to a **Live** domain, and click **Set as primary**.
   </Accordion>
@@ -129,6 +130,6 @@ Lovable allows you to mark **one domain as the primary domain**.
     Currently there is no way to remove the `xxx.lovable.app` project URL from your project.
   </Accordion>
   <Accordion title="Do I need to connect a www subdomain separately?">
-    Yes, you need to add it separetely, and it will be listed separately. The **www** subdomain is not included  when you set up your domain.
+    Yes, you need to add it separately, and it will be listed separately. The **www** subdomain is not included  when you set up your domain.
   </Accordion>
 </AccordionGroup>
