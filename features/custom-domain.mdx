@@ -1,141 +1,135 @@
 ---
-title: "Custom domain"
-description: "Add your own domain to any Lovable project."
+title: "Custom domains"
+description: "Learn how to connect, verify, and manage custom domains in Lovable"
 icon: "earth-europe"
+keywords: ["custom domains","connect custom domain","how to add custom domain","primary domain","domain status","SSL certificate","DNS verification","DNS setup"]
 ---
 
-Lovable makes it easy to [publish](/features/deploy) your project to the web, either on a free lovable staging subdomain (e.g. yoursite.lovable.app) or your own custom domain.
-This guide walks you through how to connect your domain, troubleshoot common issues, and understand your options across different hosting providers.
+Lovable lets you connect your own custom domain or subdomain to your published project. This allows visitors to access your app from a branded URL instead of the default `xxx.lovable.app` project URL.
 
-## Why use a custom domain
-
-Connecting a custom domain (e.g., yourdomain.com) improves your site's:
+Connecting a custom domain improves your site's:
 
 - **Brand identity** - looks more professional
 - **Search engine visibility** - better SEO
 - **Memorability** - easier to share and remember
 
-## Requirements to use a custom domain
+## Prerequisites
 
-Before you begin:
+To connect a custom domain, ensure that:
 
-- You must be on a paid Lovable plan.
-- You need to own a domain name. For easier setup, you can purchase one from providers like:
-  - [Namecheap](https://www.namecheap.com)
-  - [GoDaddy](https://www.godaddy.com)
-  - [Full list of supported providers](https://developers.entri.com/provider-list)
+- You are on a paid Lovable plan.
+- Your project is published. See [Publish your app](/features/publish) for more information.
+- You own a domain name. See [full list of supported providers](https://developers.entri.com/provider-list) where you can purchase a domain.
+- You have **access to the DNS settings** for the domain or subdomain you want to connect. **Ownership verification** happens by adding DNS records (A and TXT records) provided by Lovable during setup.
 
-Lovable uses a tool called Entri to help you connect your domain quickly and securely. For some providers it offers an automatic DNS setup and www redirect.
+## Connect a custom domain
 
-## Connect your domain (via Entri)
+You can connect a domain to your published Lovable project using automatic setup (using a tool called Entri) or manual DNS configuration. Both methods require verifying ownership of your domain.
 
-<Steps>
-  <Step title="Open your Project Settings">
-    Go to Project \> Settings \> Domains and click Connect Domain.
-  </Step>
-  <Step title="Continue Setup">
-    Click Continue and enter your domain (e.g., yourdomain.com).
-    
+You can connect a domain from two locations:
 
-    ![Connect your domain](/assets/features/images/connect-entri.png)
-  </Step>
-  <Step title="Select Your DNS Provider">
-    Choose your domain provider from the list. If your provider isn’t listed, please see the steps listed further down on this page.
-    
+- **Project → Settings → Domains**
+- **Publish modal → Custom domain** (can be done after publishing your project)
 
-    ![Choose your provider](/assets/features/images/dns-provider.png)
-  </Step>
-  <Step title="Authorize with Entri">
-    Follow the prompts to log in to your provider and authorize access for Entri to update your DNS settings.
-  </Step>
-  <Step title="Close and Complete">
-    Click Close Window, return to Lovable, and click Done.
-  </Step>
-</Steps>
+Follow the steps below to connect a custom domain:
 
-<Warning>
-  DNS changes may take up to **48 hours to propagate**, though most updates are live within a few hours.
-</Warning>
+1. Click **Connect domain**.
+2. Enter your domain or subdomain (for example, `yourdomain.com` or `blog.yourdomain.com`), click **Connect domain**, then click **Continue**.
 
-All set\! Once verified, your Lovable app will be live at your custom domain.
+   <Info>
+     When adding a domain, Lovable does not automatically add the `www` subdomain. You can add it separately if you want both.
+   </Info>
+4. Now, you can connect your domain in two ways:
+   - **Automatic setup with Entri**: Select your domain provider from the list, log in, and authorize Entri to update your DNS records.
+   - **Manual setup**: If your DNS provider is not listed, scroll to the bottom of the **Select your domain provider** modal and choose **Go to our manual setup**. Copy the A record and TXT record and input them directly into your domain registrar.
+4. Click **Done**. Wait for verification and SSL certificate to be issued. When complete, the domain will become **Live** and your Lovable app will be live at your custom domain.
 
-### What if my provider isn't listed?
+<Info>
+  DNS changes may take up to **72 hours to propagate**, though most updates are live within a few hours.
+</Info>
 
-If your provider isn’t supported by Entri, you can still connect your domain manually.
+## Domain statuses
 
-1. Open your Project Settings and go to Project \> Settings \> Domains and click Connect Domain.
-2. Enter your domain and continue.
-3. When choosing a provider, scroll to the bottom and choose a manual setup.
-   From there you’ll be able to copy the records to input directly into your domain registrar.
-   
+Domains have clear statuses that indicate the current state and required user action.
 
-   ![DNS settings](/assets/features/images/dns-settings.png)
+| Status              | Description                                                                                                           | User action                                                                   |
+| :------------------ | :-------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- |
+| **Unpublished**     | Shown only for your `xxx.lovable.app` project URL when the project is not yet published.                              | Publish the project.                                                          |
+| **Ready**           | The domain is ready but the project was unpublished. When published again, the status automatically becomes **Live**. | Publish the project.                                                          |
+| **Action required** | The custom domain setup was not completed.                                                                            | Click **Complete setup** to finish connecting.                                |
+| **Verifying**       | Waiting for DNS records to propagate.                                                                                 | Wait; no action required.                                                     |
+| **Setting up**      | Verification complete; SSL certificates being issued.                                                                 | No action required; domain will automatically move to **Live** or **Failed.** |
+| **Failed**          | Ownership verified, but SSL certificate could not be provisioned.                                                     | Click **Retry** to attempt again.                                             |
+| **Live**            | Domain is live and serving your project.                                                                              | No action required.                                                           |
+| **Offline**         | Domain was **Live** but DNS records are no longer valid.                                                              | Review displayed DNS records and fix them with your DNS provider.             |
+| **Removed**         | Domain was removed because it was added to another project.                                                           | Reconnect if needed.                                                          |
 
-## Hosting on Third-Party Platforms
+You can remove a domain at any point regardless of its status.
 
-You can also deploy your Lovable app using GitHub and host it on platforms like Netlify, Vercel, or using GitHub Pages with providers like Namecheap.
+## Primary domain
 
-### Netlify
+Lovable allows you to set **one domain as the primary domain**.
 
-1. Transfer your project to GitHub.
-2. Import it into Netlify and deploy.
-3. Add a domain in Netlify by going to Domain Management.
-4. Follow DNS instructions in Netlify to connect your custom domain.
-5. Done\! Your site redeploys automatically when changes are made in Lovable.
-
-### Vercel
-
-1. Create a GitHub repo from Lovable.
-2. Import into Vercel and assign your custom domain.
-3. Create a development branch for staging.
-4. Set Vercel to only deploy from the main branch.
-5. Switch in Lovable to the development branch. Now you can make changes without them directly going live to production.
-6. Deploy changes to production when ready by merging dev → main.
-
-### Namecheap \+ GitHub Pages
-
-Use [this guide](https://custom-domain.lovable.app/) made by one of our users, to get personalized step-by-step instructions on how to set it up.
+- The domain status must be **Live** in order to mark it as primary. Click the three dots menu next to your domain and click **Set as primary**.
+- The first custom domain you add to a project automatically becomes the primary domain (for domains added after October 29, 2025).
+- If a domain is primary, all other domains redirect to it.
+- Only one domain can be primary at a time.
+- You can unset the primary domain; in that case, all connected domains serve the project equally. Click the three dots menu next to your primary domain and click **Unset as primary**.
 
 ## FAQ
 
 <AccordionGroup>
   <Accordion title="My custom domain is connected, but my site isn't live. What should I do?">
-    - Double-check your DNS settings by using for example [dnschecker.org](https://dnschecker.org/all-dns-records-of-domain.php).
-      Sometimes DNS changes can take up to 48 hours to propagate. Correct DNS settings should be:
+    - Double-check your DNS settings by using for example [dnschecker.org](https://dnschecker.org/all-dns-records-of-domain.php). Sometimes DNS changes can take up to 72 hours to propagate. Correct DNS settings should be:
       - A record pointing to 185.158.133.1 for @ as host name.
       - A record pointing to 185.158.133.1 for www as host name.
     - Clear your browser cache or test in an incognito window.
-    - Try removing and re-adding the domain in Project \> Settings \> Domains.
+    - Try removing and re-adding the domain in **Project → Settings → Domains**.
   </Accordion>
   <Accordion title="Can I buy a domain through Lovable?">
-    Lovable doesn't sell domains directly, but have partnered with IONOS to facilitate the setup.
-    Please click the "Buy Domain" button in the Project Settings \> Domains to buy a domain through IONOS.
+    Buying a custom domain is possible through our partner IONOS. Go to **Project → Settings → Domains** and click **Buy new domain**  to buy a domain through IONOS. This is available on paid plans only.
   </Accordion>
   <Accordion title="Will connecting a custom domain affect my SEO?">
-    Yes, positively. A custom domain improves your site's discoverability in search engines and makes it look more trustworthy to users.
+    Yes, connecting a custom domain affects your SEO positively. A custom domain improves your site's discoverability in search engines and makes it look more trustworthy to users.
   </Accordion>
   <Accordion title="Does Lovable provide an SSL certificate for my custom domain?">
-    Yes\! When you connect a custom domain to your Lovable app, we automatically generate and install a SSL certificate for it.
-    This ensures your site is served over HTTPS, keeping your visitors’ data secure and improving your site's SEO ranking.
-    If it hasn't been issued after 48 hours, please reach out to support.
+    Yes. When you connect a custom domain to your Lovable app, we automatically generate and install an SSL certificate for it. This ensures your site is served over HTTPS, keeping your visitors’ data secure and improving your site's SEO ranking. If it hasn't been issued after 72 hours, please reach out to [Lovable Support](https://lovable.dev/support).
   </Accordion>
   <Accordion title="Can I connect a subdomain instead of a full domain?">
-    Yes\! You can connect a subdomain (like blog.yourdomain.com or app.yourdomain.com) instead of the root domain.
-    When entering your domain in the setup flow, just include the subdomain you want to use.
+    Yes. You can connect a subdomain (for example, `blog.yourdomain.com` or `app.yourdomain.com`) instead of the root domain. When entering your domain in the setup flow, just include the subdomain you want to use.
   </Accordion>
   <Accordion title="Can I connect multiple subdomains to my Lovable project?">
-    You can connect multiple subdomains, but each one must be added and configured individually.\
-    For example, if you want to use blog.yourdomain.com, shop.yourdomain.com, and app.yourdomain.com, you’ll need to repeat the connection process for each subdomain in Project \> Settings \> Domains.
+    Yes. You can connect multiple subdomains, but each one must be added and configured individually in **Project → Settings → Domains**. For example, you can connect `blog.yourdomain.com`, `shop.yourdomain.com`, and `app.yourdomain.com`.
+  </Accordion>
+  <Accordion title="Where can I see my connected domains?">
+    You can see your connected domains in two locations:
+
+    - **Project → Settings → Domains** - here you see all domains, regardless of their status
+    - **Publish modal** - here you see all **Live** domains
+  </Accordion>
+  <Accordion title="Can I connect a domain used by another project?">
+    Yes. As long as you can verify ownership, you can connect a domain or subdomain used by another project, even if the project has been deleted.
+  </Accordion>
+  <Accordion title="How do I set a primary domain?">
+    The domain status must be **Live** in order to set it as primary.
+
+    Go to **Project → Settings → Domains**, click the three dots menu  next to a **Live** domain, and click **Set as primary**.
+  </Accordion>
+  <Accordion title="How do I unset a primary domain?">
+    Go to **Project → Settings → Domains**, click the three dots menu  next to your primary domain, and click **Unset as primary**.
   </Accordion>
   <Accordion title="How do I remove a custom domain?">
-    1. Go to Project \> Settings \> Domains
-    2. Click the bin-icon next to your domain
-    3. Your domain will be disconnected from the project. Make sure to clear DNS settings in your domain provider to completely clear the connection.
+    You can remove a domain at any time regardless of its status.
+
+    1. Go to **Project → Settings → Domains.**
+    2. Click the three dots menu  next to your domain, click **Remove**, then click **Remove** again to confirm.
+
+    This will disconnect the domain from the project. Make sure to clear DNS settings in your domain provider to completely clear the connection.
   </Accordion>
-  <Accordion title="Can I remove the .lovable.app subdomain?">
-    Currently there is no way to remove the .lovable.app subdomain from your project.
+  <Accordion title="Can I remove the xxx.lovable.app project URL?">
+    Currently there is no way to remove the `xxx.lovable.app` project URL from your project.
   </Accordion>
   <Accordion title="Do I need to connect a www subdomain separately?">
-    The www subdomain configuration is included when you set up your root domain, so there’s no need to add it separately in the Lovable UI.
+    Yes, you need to add it separately, and it will be listed separately. The **www** subdomain is not included  when you set up your domain.
   </Accordion>
 </AccordionGroup>
