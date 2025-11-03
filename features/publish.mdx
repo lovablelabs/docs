@@ -26,23 +26,21 @@ Access can be managed at both the **workspace level** and **project level**.
 
 ### Workspace-level setting
 
-Workspace **Admins** and **Owners** can set a default access policy for all published apps.
+Workspace **admins** and **owners** can set a default access policy for all published apps.
 
-Go to **Workspace Settings → Default Website Access**
+Go to **Workspace settings → Default website access**, and choose one of:
 
-Choose one of:
-
-- **Anyone with link can view:** All published apps are public by default and accessible to anyone.
-- **Anyone in workspace can view:** All published apps are private by default and restricted to authenticated workspace members only. This ensures new apps stay private unless explicitly made public.
+- **Anyone with link:** All published apps are public by default and accessible to anyone.
+- **Workspace members**: All published apps are private by default and restricted to authenticated workspace members only. This ensures new apps stay private unless explicitly made public.
 
 ### Project-level setting
 
 You can override the workspace default for individual projects.
 
-When you click **Publish**, set **website access**  to:
+Go to **Publish** **→** **Advanced**, and set **Who can access?** to:
 
-- **Public – Anyone with link can view:** Accessible to anyone with the URL.
-- **Private – Anyone in workspace can view:** Restricted to signed-in workspace members.
+- **Anyone with link:** Accessible to anyone with the URL.
+- **Workspace members:** Restricted to signed-in workspace members.
 
 If you don’t change this, the project inherits the workspace default.
 
@@ -54,12 +52,12 @@ If you don’t change this, the project inherits the workspace default.
 
 1. In your project, click the **Publish** icon in the top-right corner.
 2. In the **Publish** modal, review and configure:
-   - **Website address**: by default, your app is published to `[project-url-slug].lovable.app`. You can edit the `[project-url-slug]`or add a [custom domain](/features/custom-domain) (available on paid plans).
-   - **Website access**: only for Business and Enterprise plans, choose between:
-     - **Public - Anyone with link can view**
-     - **Private - Anyone in workspace can view**
-   - **Website info**: customize your app's metadata - icon, title, description, and share image.
-3. Click **Review Security** to surface potential security vulnerabilities before going live.
+   - **Website address**: By default, your app is published to `[project-url-slug].lovable.app`. You can edit the `[project-url-slug]`or add a [custom domain](/features/custom-domain) (available on paid plans).
+   - **Website info**: Customize your app's metadata - icon, title, description, and share image.
+   - **Advanced**: Choose **who can access **your published app, configurable only on Business and Enterprise plans:
+     - **Anyone with link**
+     - **Workspace members**
+3. Click **Review security** to surface potential security vulnerabilities before going live.
 
 <Danger>
   Always perform a security review before publishing. This helps identify vulnerabilities that could expose sensitive data or allow unauthorized access. Learn more in [Security](/features/security).
@@ -83,7 +81,7 @@ You can continue to iterate on your app — when ready to push updates, click **
     Yes. You can change your project URL slug, which forms your [lovable.app](http://lovable.app) website address in two ways:
 
     1. Click **Publish**, edit your website address, and click **Update**.
-    2. Go to **Project settings → Edit URL Slug**, change the URL slug, and click**Update URL Slug** . 
+    2. Go to **Project settings → Edit URL Slug**, change the URL slug, and click **Update URL Slug**. 
 
     Note that renaming the project  does not change the project URL, it only changes the project display name.
   </Accordion>
