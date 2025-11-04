@@ -80,9 +80,7 @@ Lovable allows you to set **one domain as the primary domain**.
 
 <AccordionGroup>
   <Accordion title="My custom domain is connected, but my site isn't live. What should I do?">
-    - Double-check your DNS settings by using for example [dnschecker.org](https://dnschecker.org/all-dns-records-of-domain.php). Sometimes DNS changes can take up to 72 hours to propagate. Correct DNS settings should be:
-      - A record pointing to 185.158.133.1 for @ as host name.
-      - A record pointing to 185.158.133.1 for www as host name.
+    - Double-check your DNS settings by using for example [dnschecker.org](https://dnschecker.org/all-dns-records-of-domain.php). Sometimes DNS changes can take up to 72 hours to propagate. Go to **Project → Settings → Domains** to find the correct DNS settings.
     - Clear your browser cache or test in an incognito window.
     - Try removing and re-adding the domain in **Project → Settings → Domains**.
   </Accordion>
@@ -127,7 +125,7 @@ Lovable allows you to set **one domain as the primary domain**.
     This will disconnect the domain from the project. Make sure to clear DNS settings in your domain provider to completely clear the connection.
   </Accordion>
   <Accordion title="Can I remove the xxx.lovable.app project URL?">
-    Currently there is no way to remove the `xxx.lovable.app` project URL from your project.
+    Currently there is no way to remove the `xxx.lovable.app` project URL from your project. However, you can add a custom domain and set it as your primary domain. This allows visitors to access your app from a branded URL instead of the default `xxx.lovable.app` project URL.
   </Accordion>
   <Accordion title="Do I need to connect a www subdomain separately?">
     Yes, you need to add it separately, and it will be listed separately. The **www** subdomain is not included  when you set up your domain.
