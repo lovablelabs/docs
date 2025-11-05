@@ -133,9 +133,32 @@
       }
     ]
   },
+ "contextual": {
+   "options": [
+     "copy",          
+     {
+        "title": "Lovable Blog",
+        "description": "Product news, updates, and insights from the Lovable team.",
+        "icon": "blog",
+        "href": "https://lovable.dev/blog"
+     },
+     {
+        "title": "Lovable Support",
+        "description": "Direct support for paying users. Get help with your account, billing, and platform issues",
+        "icon": "message",
+        "href": "https://lovable.dev/support"
+     },
+     {
+        "title": "Ask the Community",
+        "description": "Join our Discord to connect, collaborate, and get community support on your projects",
+        "icon": "discord",
+        "href": "https://discord.gg/lovable-dev"
+     }
+   ]
+},
   "footer": {
     "socials": {
-      "x": "https://x.com/lovable_dev",
+      "x": "https://x.com/Lovable",
       "github": "https://github.com/lovablelabs",
       "linkedin": "https://linkedin.com/company/lovable-dev",
       "youtube": "https://youtube.com/@lovable",
