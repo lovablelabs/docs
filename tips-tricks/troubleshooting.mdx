@@ -4,9 +4,9 @@ description: "Actionable steps to resolve issues in your development lifecycle."
 icon: "toolbox"
 ---
 
-## "Try to Fix" error loops
+## Build errors
 
-Building with Lovable makes coding faster and more intuitive—but even the best AI development tools can occasionally hit a snag. Sometimes your code won't run as expected, or you might notice unexpected behavior where the AI interprets your intent incorrectly.
+Building with Lovable makes coding faster and more intuitive, but even the best AI development tools can occasionally hit a snag. Sometimes your code won't run as expected, or you might notice unexpected behavior where the AI interprets your intent incorrectly.
 
 Here's a step-by-step guide to help you navigate issues and get back on track:
 
@@ -17,113 +17,48 @@ Here's a step-by-step guide to help you navigate issues and get back on track:
     Click the **Try to Fix** button when an error shows up. Lovable will scan your logs, detect the issue, and attempt a quick fix. It's your fastest first move. If that doesn't work, it's time to dig deeper.
   </Step>
   <Step title="Diagnose Unexpected Behavior">
-    Your code may run without errors but not behave as intended. That's **unexpected behavior**—harder to spot and harder to fix. Try this:
+    Your code may run without errors but not behave as intended. That's **unexpected behavior**, harder to spot and harder to fix. Try this:
 
-    - **Review your original prompt** to confirm your instructions.
-    - **Break it down**: Check individual components and logic.
-    - **Add visuals**: Use screenshots to clarify what went wrong.
+    - **Revert and re‑prompt**: Roll back to just before the issue occurred, then try a clearer, revised prompt.
   </Step>
   <Step title="Write More Effective Prompts">
     Clear, structured prompts lead to better results. Use this format:
 
-    1. **Project Overview** – What are you building?
-    2. **Page Structure** – List key pages/components.
-    3. **Navigation Logic** – Describe user flow.
-    4. **Visual Aids** – Upload wireframes or screenshots.
-    5. **Implementation Steps** – Lay out the build order.
+    1. **Use Chat Mode** and ask, "Can you outline the steps or plan for this feature?"
+    2. **Review the plan** that Lovable suggests, ask for changes or clarifications if needed.
+    3. **Prompt Lovable**: "Now, let's build this step by step."
   </Step>
   <Step title="Build in Logical Order">
     Structure matters. Follow this recommended flow:
 
     1. Create layout and pages.
-    2. Connect Supabase or your backend.
+    2. Connect to Lovable Cloud or an external Supabase connection.
     3. Set up authentication and user roles.
     4. Plan and organize feature logic.
     5. Prompt Lovable to implement features.
   </Step>
-  <Step title="Use Chat Mode for Clarity">
-    When unsure, switch to **Chat Mode**:
-
-    - Ask Lovable to **analyze your project state**.
-    - Request a **recap of attempted solutions**.
-    - Prompt for **new directions** to solve persistent problems.
-  </Step>
-  <Step title="If You're Still Stuck: Advanced Tactics">
-    Still no luck? Try this:
-
-    - **Be exact** – Describe the bug and your expectations clearly.
-    - **Use images** – Screenshots or videos help illustrate problems.
-    - **Ask directly** – "What else can we try?"
-    - **Rollback** – Restore to a working version and rebuild incrementally.
-  </Step>
 </Steps>
-
-## What's Going Wrong? Common Troubleshooting Areas
-
-Troubleshooting generally falls into these categories:
-
-1. **UI or Layout Glitches**
-2. **API or Backend Issues**
-3. **Prompt Misinterpretations**
-4. **AI Unresponsiveness or Misbehavior**
-5. **Platform or Integration Errors**
-
-Use the accordions below to identify specific issues and actions:
 
 ### General issues
 
 <AccordionGroup>
-  <Accordion title="Need a fast diagnosis?">
-    Jump into Chat-Only Mode and type: "Something's off. Can you walk me through what's happening and what you've tried?"
+  <Accordion title="Need some quick help?">
+    Jump into Chat-Only Mode and type: "This specific function is not working. Can you walk me through what's happening and what you've tried?"
   </Accordion>
   <Accordion title="UI or Layout Problems">
-    - Check component hierarchy and styles.
-    - Use screenshots to explain visual bugs.
-    - Prompt Lovable with: "Why is this element misaligned? Fix it."
+    - Provide screenshots of the UI issue directly to the AI for a clearer diagnosis.
+    - Use the Edit tool to select and highlight specific UI features you want to change, then describe the adjustment you want.
+    - For example: "See the highlighted element? Center it vertically and increase padding."
   </Accordion>
   <Accordion title="When completely stuck">
     - Prompt: "Take a step back. Analyze the error and suggest a different approach."
     - Break the task into smaller parts.
     - Use the revert button if errors persist.
   </Accordion>
-  <Accordion title="Code sandbox error">
-    This should not happen. Please report it to the support team.
-  </Accordion>
   <Accordion title="Not found preview or spinning up sandbox">
-    Try a hard refresh. If unresolved, contact support.
-  </Accordion>
-</AccordionGroup>
-
-### AI Reliability
-
-<AccordionGroup>
-  <Accordion title="Avoiding AI mistakes in prompt engineering">
-    - Keep prompts clear and structured.
-    - Use reverse meta prompting.
-    - Test in Chat-Only Mode before applying big changes.
-  </Accordion>
-  <Accordion title="AI not responding">
-    This shouldn't happen. Please report it to the support team.
-  </Accordion>
-  <Accordion title="Persistent Fix error loops">
-    Adjust your prompt to help the AI understand your goal or ask for step-by-step debugging help.
-  </Accordion>
-  <Accordion title="Refactor broke everything">
-    Make small, incremental changes. If the issue persists, roll back to a stable version or debug in chat.
-  </Accordion>
-  <Accordion title="Error loops, hallucinations, or broken logic">
-    Revert to a stable version and provide more context in your next prompt. Use visual editor or attach a knowledge file.
-  </Accordion>
-  <Accordion title="AI not doing changes">
-    The AI might be editing the wrong files or misinterpreting. Be very specific or edit manually.
-  </Accordion>
-  <Accordion title="Chat mode not responding or incomplete">
-    This was fixed by engineering. Please report if it happens again.
-  </Accordion>
-  <Accordion title="Unexpected Crashes, Errors, or Loops">
-    - Don't retry the same prompt. Simplify or rephrase.
-    - Ask: "What fixes have we already tried?"
-    - Rebuild from a previous working state.
+    Issues with the preview not found or the sandbox spinning up can be related to either the sandbox environment or your connection. 
+    Sandbox problems are often temporary, try a hard refresh first. If this continues, it may indicate a broken sync with GitHub or a connection issue. 
+    For persistent issues, review our [GitHub integration guide](https://docs.lovable.dev/integrations/github).
   </Accordion>
 </AccordionGroup>
 
@@ -131,154 +66,25 @@ Use the accordions below to identify specific issues and actions:
 
 <AccordionGroup>
   <Accordion title="Preview is white">
-    - Likely a runtime error. Check browser console logs.
-    - Use chat to troubleshoot.
-    - Try a hard refresh or revert.
-  </Accordion>
-  <Accordion title="Rollback fails">
-    Report to the support team if you can't revert your project.
+    - These are often the result of issues in the vite.config.ts file or that security headers have been introduced into the project.
+    - Build errors or syntax errors in the code
+    - JavaScript runtime errors causing crashes
+    - Missing dependencies or broken components
+    - Authentication or routing issues blocking the page
+
+    To troubleshoot: Ask Lovable to review the vite.config.ts file or remove security headers. 
+    Check browser console for errors, restore to an earlier version, or ask Lovable to investigate the blank screen issue.
   </Accordion>
   <Accordion title="Unpublish or deactivate projects">
     You can unpublish or delete your project in Project Settings.
   </Accordion>
-  <Accordion title="Kicked out of project">
-    This issue has been resolved. Report it if it recurs.
-  </Accordion>
-  <Accordion title="Remix doesn't work (no Supabase connection)">
-    Shouldn't happen. Contact support.
-  </Accordion>
-  <Accordion title="Loading profile error">
-    Shouldn't happen. Report to the support team.
-  </Accordion>
-  <Accordion title="Email unsubscribe not working">
-    This is a serious issue likely related to our email provider. Contact support immediately.
-  </Accordion>
-  <Accordion title="Unexpected logout or access loss">
-    Reach out to support directly.
-  </Accordion>
-  <Accordion title="Challenges with larger projects">
-    - Break up large changes into smaller steps.
-    - Restart your browser if it slows down.
-    - If it persists, report your use case to support.
-  </Accordion>
-</AccordionGroup>
-
-### Supabase issues
-
-<AccordionGroup>
   <Accordion title="Error with Edge Functions">
-    - **l Scope:** Use the principle of least privilege for all credentials
-
-    When using Lovable with Supabase, always store sensitive API keys as Supabase Edge Function secrets rather than environment variables or in source code.
-  </Accordion>
-  <Accordion title="Setting Environment Variables">
-    Double-check syntax and variable names. See the [Supabase docs](https://supabase.com/docs).
-  </Accordion>
-  <Accordion title="Supabase connection is lost">
-    Disconnect and reconnect. Might be caused by an integration update.
-  </Accordion>
-  <Accordion title="Remix does not work with Supabase">
-    Remixing is blocked for Supabase-connected projects for security reasons.
+    Check the Cloud tab -> Logs for specific error messages. Verify all required secrets and environment variables are properly configured. 
+    Try redeploying by making a small change to the edge function code by prompting Lovable. Ensure your database connection is working. 
+    Ask Lovable to investigate the specific error and fix any issues found in the logs.
   </Accordion>
   <Accordion title="Project not found">
-    Please report to support.
-  </Accordion>
-  <Accordion title="HTTP Fetch failures">
-    Usually means a backend server isn't responding. Use chat mode to debug.
-  </Accordion>
-  <Accordion title="Connecting Supabase">
-    To connect your Lovable project to Supabase:
-
-    1. Click the Supabase menu in the top right of the editor
-    2. Select "Connect to Supabase"
-    3. Follow the prompts to connect to your Supabase project
-    4. Once connected, Lovable can see your tables, RLS policies, and functions
-  </Accordion>
-</AccordionGroup>
-
-### GitHub issues
-
-<AccordionGroup>
-  <Accordion title="Can't push to GitHub">
-    You may have deleted your repo. [Restore it here](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
-  </Accordion>
-  <Accordion title="Branches are broken">
-    Branch switching is experimental. Use at your own risk.
-
-    Once connected to GitHub, you can work with different branches:
-
-    #### **Branch Switching Steps**
-
-    ```
-    # To switch from main to dev:
-    1. In Dev Mode, open the Git panel
-    2. Select the branch dropdown
-    3. Choose "dev" or click "Create new branch" if it doesn't exist
-    4. Your workspace will update to reflect the selected branch
-    ```
-
-    <Note>
-      Switching branches will change all files in your workspace to match that branch.
-    </Note>
-    #### **Branch Management:**
-
-    - **Create a new branch:** Click "Create new branch" in the Git panel
-    - **Delete a branch:** Use the GitHub interface (not available directly in Lovable)
-    - **Default branch:** Set in GitHub repository settings
-
-    If you can't switch branches:
-
-    - Commit or stash any uncommitted changes
-    - Check if you have untracked files that would be overwritten
-    - Try refreshing the Lovable editor
-  </Accordion>
-  <Accordion title="Repository sync issues">
-    - Check your [GitHub permissions](https://docs.lovable.dev/integrations/git-integration).
-    - Use rollback to undo unwanted changes.
-  </Accordion>
-  <Accordion title="Deleted repository, now nothing works">
-    [Restore your GitHub repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
-  </Accordion>
-  <Accordion title="Connecting GitHub">
-    To connect your Lovable project to GitHub:
-
-    1. Click the GitHub button in the top right of the editor
-    2. Authorize Lovable to access your GitHub account
-    3. Choose whether to create a new repository or use an existing one
-    4. Follow the prompts to complete the connection
-
-    #### **Repository Access Levels:**
-
-    When connecting Lovable to GitHub, you can choose different access levels:
-
-    - **All repositories:** Access to all your GitHub repositories
-    - **Only select repositories:** Choose specific repositories to connect
-
-    <Info>
-      Lovable uses GitHub's OAuth flow for secure authentication. You can revoke access anytime from your GitHub account settings.
-    </Info>
-  </Accordion>
-  <Accordion title="Authentication Issues">
-    If you're having trouble with GitHub authentication:
-
-    - Reconnect your GitHub account in Lovable
-    - Check if your GitHub access token has expired
-    - Verify you have the necessary permissions for the repository
-    - Ensure two-factor authentication isn't blocking access
-  </Accordion>
-  <Accordion title="Failed Pushes">
-    If your push is rejected:
-
-    1. Pull the latest changes from the remote repository
-    2. Resolve any conflicts
-    3. Try pushing again
-    4. If still failing, check if the branch is protected
-  </Accordion>
-  <Accordion title="Branches are broken">
-    This is an experimental feature. Expect occasional instability.
-  </Accordion>
-  <Accordion title="Deleted your repository">
-    [Restore your GitHub repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+    This usually means the project was deleted. If you didn't delete it on purpose, please reach out to support for help restoring your project.
   </Accordion>
 </AccordionGroup>
 
@@ -286,9 +92,6 @@ Use the accordions below to identify specific issues and actions:
 
 Still stuck? Try this:
 
-1. Use [Chat Mode](https://lovable.dev/chat) for step-by-step help.
-2. If you're a paid customer, contact [Support](https://lovable.dev/support).
-
-## Comprehensive Debugging Manual
-
-[This document](https://docs.google.com/document/d/1dfIy5rtkPN9Zi4smX1VAbfbhAiEyBvVw8p7B8kJiEVs/edit?tab=t.0) or [this website](https://kb-lovable.netlify.app/?tab=errors#errors) were written by a Lovable power user in our Discord community. 
+1. Use chat mode for step-by-step help.
+2. If it's an issue with the UI or a feature, revert back to a stable state.
+3. If you're a paid customer and want to report a platform-wide issue, contact [Support](https://lovable.dev/support).
