@@ -149,9 +149,7 @@
   },
  "contextual": {
    "options": [
-     "copy",
-     "chatgpt",
-     "claude"
+     "copy"
    ]
 },
   "footer": {
