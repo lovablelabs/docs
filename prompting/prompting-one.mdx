@@ -6,7 +6,23 @@ icon: "graduation-cap"
 
 ![Mastering Lovable cover](../images/mastering-hero.png)
 
-Use this practical playbook to get consistent, high‑quality results in Lovable. The content below mirrors the public guide at [mastering-lovable.lovable.app](https://mastering-lovable.lovable.app/).
+### Make Lovable ask clarifying questions
+
+One of the most effective ways to get better results from Lovable is to let it fill in the gaps before writing code. After stating what feature or change you want, add a line at the end of your prompt like:
+
+> "Ask me any questions you need in order to fully understand what I want from this feature and how I envision it."
+
+It's recommended to use Chat Mode for this approach.
+
+Lovable will respond with focused, often insightful follow-up questions, sometimes ones you wouldn’t have thought to specify. This process helps clarify your requirements up front and prevents misunderstanding or wasted effort later.
+
+If you haven’t tried prompting this way, give it a shot: you’ll likely notice that new features land closer to your true intent, with less back-and-forth.
+
+
+## Further Prompting Knowledge: Your Practical Playbook for Consistent, High‑Quality Results in Lovable
+Welcome to your comprehensive guide for high-impact prompting in Lovable!  
+This playbook brings together the most effective techniques, strategies, and principles for getting the best possible results with Lovable's AI. Whether you're new to prompting or ready to refine your skills, you'll find actionable advice and clear examples to help you turn ideas into polished UI quickly and consistently.  
+
 
 ## Phase 1: Lay the Foundation
 
@@ -161,9 +177,6 @@ Prompt for placement (e.g., below hero or inside a feature card), style (e.g., r
 Embed a product demo video from Midjourney. Use this URL: https://cdn.midjourney.com/video/cb84f296-92a0-4a37-a0e3-1c9c95299488/0.mp4. Place it below the feature section in a full‑width card with a soft shadow.
 ```
 
-**This video will further help you master prompt engineering inside Lovable.**
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/IqWfKj4mUIo?si=aHVQNRgD8xF7EW06" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
-
 ### 10. Layer context with the Edit button
 
 The Edit button is one of the most powerful features in Lovable—but only if you use it properly. Instead of rewriting full prompts when something needs to change, use the edit function to focus on specific layers or elements. This lets you iterate quickly without disturbing what's already working.
@@ -182,13 +195,13 @@ Change the CTA button text to "Get Started" and increase the padding to 24px hor
 
 ## Phase 4: Iterate and Ship
 
-### 11. Build with Supabase in mind
+### 11. Build with Lovable Cloud in mind
 
-Designing a layout is just one part of building a product. If you want your Lovable projects to do more than look good, you need to think about how they'll actually work—and Supabase is a great place to start.
+Designing a layout is just one part of building a product. If you want your Lovable projects to do more than look good, you need to think about how they'll actually work—and our built in Cloud is a great place to start.
 
-Supabase handles user authentication, databases, storage, and even edge functions—all in a way that pairs well with modern frontends. And Lovable lets you shape your UI to match these real‑world behaviors right from the prompt.
+Cloud handles user authentication, databases, storage, and even edge functions—all in a way that pairs well with modern frontends. And Lovable lets you shape your UI to match these real‑world behaviors right from the prompt.
 
-When you're designing with Supabase in mind, start by anticipating:
+When you're designing with Cloud in mind, start by anticipating:
 
 - **Auth logic** — What should the UI show if the user is logged in vs logged out?
 - **Dynamic content** — Are you pulling user data, posts, items, or metrics from a table?
@@ -199,7 +212,7 @@ This early thinking helps you prompt smarter sections and makes development smoo
 **Prompt example**
 
 ```text
-If the user is logged in via Supabase, show their profile image and name in the top right. If not, display a "Log In" button and route them to the auth screen.
+If the user is logged in via Cloud, show their profile image and name in the top right. If not, display a "Log In" button and route them to the auth screen.
 ```
 
 > Tip: You don't need a working backend during design—but shaping your UI as if it's already there is how you future‑proof your layout.
