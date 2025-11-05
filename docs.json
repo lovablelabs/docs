@@ -149,19 +149,7 @@
   },
  "contextual": {
    "options": [
-     "copy",          
-     {
-        "title": "Lovable Support",
-        "description": "Direct support for paying users. Get help with your account, billing, and platform issues",
-        "icon": "message",
-        "href": "https://lovable.dev/support"
-     },
-     {
-        "title": "Lovable Blog",
-        "description": "Product news, updates, and insights from the Lovable team.",
-        "icon": "blog",
-        "href": "https://lovable.dev/blog"
-     }
+     "copy"          
    ]
 },
   "footer": {
