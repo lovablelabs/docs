@@ -1,6 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Lovable Documentation",
+  "description": "Lovable Documentation — Build full-stack websites with AI using natural language. Explore Lovable features, integrations, tutorials, and best practices.",
   "theme": "mint",
   "logo": {
     "dark": "/assets/logo/logowhite.svg",
