@@ -150,7 +150,8 @@
  "contextual": {
    "options": [
      "copy",
-     "view"
+     "chatgpt",
+     "claude"
    ]
 },
   "footer": {
