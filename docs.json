@@ -1,6 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Lovable Documentation",
+  "description": "Lovable Documentation — Build full-stack websites with AI using natural language. Explore Lovable features, integrations, tutorials, and best practices.",
   "theme": "mint",
   "logo": {
     "dark": "/assets/logo/logowhite.svg",
@@ -12,6 +13,20 @@
     "primary": "#0095FF",
     "light": "#1AA3FF",
     "dark": "#0084E6"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Lovable Support",
+        "href": "https://lovable.dev/support",
+        "icon": "message"
+      },
+      {
+        "label": "Lovable Blog",
+        "href": "https://lovable.dev/blog",
+        "icon": "blog"
+      }
+    ]
   },
   "navigation": {
     "tabs": [
@@ -132,9 +147,14 @@
       }
     ]
   },
+ "contextual": {
+   "options": [
+     "copy"
+   ]
+},
   "footer": {
     "socials": {
-      "x": "https://x.com/lovable_dev",
+      "x": "https://x.com/Lovable",
       "github": "https://github.com/lovablelabs",
       "linkedin": "https://linkedin.com/company/lovable-dev",
       "youtube": "https://youtube.com/@lovable",
