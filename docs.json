@@ -41,9 +41,6 @@
       },
       {
         "tab": "Features",
-        "groups": [
-          {
-            "group": "Core features",
             "pages": [
               "features/modes",
               "features/visual-edit",
@@ -59,20 +56,12 @@
               "features/seo",
               "features/security",
               "features/labs",
-              "features/figma-to-lovable"
-            ]
-          },
-          {
-            "group": "Business features",
-            "pages": [
+              "features/figma-to-lovable",
               "features/business/sso",
               "features/business/data-opt-out",
-              "features/business/personal-projects",
               "features/business/design-templates"
             ]
-          }
-        ]
-      },
+          },
       {
         "tab": "Integrations",
         "groups": [
@@ -184,6 +173,10 @@
     {
       "source": "/features/deploy",
       "destination": "/features/publish"
+    },
+    {
+      "source": "features/business/personal-projects",
+      "destination": "/features/private-projects"
     }
   ]
 }
