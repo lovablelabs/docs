@@ -5,9 +5,9 @@ icon: "lock"
 ---
 
 <Note>
-**Don't forget to fix Security Checker findings**
+  **Don't forget to fix Security Checker findings**
 
-Make sure to address Lovable's built-in [security checker](#using-lovable-security-checker) findings before publishing your app online. The security checker automatically scans your application and provides valuable recommendations for improving security.
+  Make sure to address Lovable's built-in [security checker](#using-lovable-security-checker) findings before publishing your app online. The security checker automatically scans your application and provides valuable recommendations for improving security.
 </Note>
 
 While Lovable AI and tools such as security checker find and prevent a wide range of security issues, it's not always possible or realistic to automatically discover or address all problems that may appear after an app goes live on the internet. This guide provides a deeper look into how Lovable apps work under the hood, what are important security practices that can help builders protect their customers' data, and ways to avoid common mistakes.
@@ -84,26 +84,31 @@ Think of edge functions as your application's security guards and business manag
 #### What Edge Functions should handle
 
 **User authentication and authorization**
+
 - Always verify that users are who they claim to be before allowing them to perform actions
 - Check if users have the right permissions for specific operations
 - Never trust that someone is logged in just because they say they are
 
 **Data validation and sanitization**
+
 - Check all incoming data to make sure it's in the correct format
 - Remove any potentially harmful content from user inputs
 - Ensure data meets your business rules before processing it
 
 **Business logic and workflows**
+
 - Handle complex business processes like order processing, payment calculations, or user registration
 - Manage relationships between different pieces of data
 - Coordinate multiple steps in a single operation
 
 **External service integration**
+
 - Safely connect to third-party services like payment processors, email providers, or APIs
 - Keep sensitive API keys and credentials secure
 - Handle errors and timeouts gracefully
 
 **Sensitive data processing**
+
 - Process personal information, financial data, or other sensitive content
 - Apply encryption or other security measures when needed
 - Log important events for security auditing
@@ -155,34 +160,41 @@ Lovable automatically sets up basic RLS policies for your tables, but you should
 #### Common RLS patterns in Lovable apps
 
 **Personal Data Protection**
+
 - Users should only see their own profile, settings, and personal data
 - Default pattern: "Users can only access their own data"
 
 **Team-Based Access**
+
 - Team members can see shared project data within their team
 - Pattern: "Users can access data from teams they belong to"
 
 **Public Content with Ownership**
+
 - Public posts that anyone can read, but only owners can edit
 - Pattern: "Anyone can read, only owners can modify"
 
 **Organization-Based Access**
+
 - Company employees can access company data
 - Pattern: "Users can access data from their organization"
 
 #### Reviewing RLS in Your Lovable App
 
 **Check Your Tables**
+
 - Review which tables have RLS enabled
 - Verify that sensitive data tables are protected
 - Ensure public data tables have appropriate read policies
 
 **Test Access Patterns**
+
 - Verify users can only see their own data
 - Test that shared data is accessible to the right people
 - Confirm that public data is visible to everyone
 
 **Common Issues to Look For**
+
 - Tables without RLS enabled on sensitive data
 - Overly permissive policies that expose too much data
 - Missing policies for new tables or features
@@ -223,11 +235,11 @@ Simplify complex RLS policies while maintaining security - current policies are 
 
 #### Quick RLS checklist
 
-- [ ] All sensitive tables have RLS enabled
-- [ ] Users can only access their own personal data
-- [ ] Shared data has appropriate access controls
-- [ ] New tables automatically get RLS policies
-- [ ] Policies are simple and easy to understand
+- All sensitive tables have RLS enabled
+- Users can only access their own personal data
+- Shared data has appropriate access controls
+- New tables automatically get RLS policies
+- Policies are simple and easy to understand
 
 ## Authentication security: Keep logic server-side
 
@@ -236,6 +248,7 @@ Simplify complex RLS policies while maintaining security - current policies are 
 All authentication decisions, token validation, and user verification should happen on the server side, not in the browser. Client-side authentication can be easily bypassed or manipulated.
 
 **Key principles:**
+
 - **Never trust client-side authentication checks** - Users can modify browser code
 - **Validate tokens on the server** - Always verify authentication in edge functions
 - **Keep session management server-side** - Let Supabase handle secure session storage
@@ -263,25 +276,27 @@ if (!user) {
 ### Authentication best practices
 
 **Server-Side Validation:**
+
 - Always verify user authentication in edge functions before processing requests
 - Check user permissions and roles on the server, not in React components
 - Validate session tokens against the database or authentication service
 
 **Client-Side Handling:**
+
 - Use Supabase's built-in session management for secure token storage
 - Display UI based on authentication state, but never make security decisions
 - Redirect to login when sessions expire, but validate on server first
 
 ## Workspace protection: Secure internal applications
 
-### Ensure that internal apps have "visibility" set to "protected"
+### Ensure that internal apps have "visibility" set to "workspace"
 
 For applications that should not be publicly accessible:
 
-- **Make internal apps "Protected" in project dashboard**
+- **Set project visibility of internal apps to "Workspace" in project dashboard**
 - **Verify they are not published to the internet**
 - **Use proper authentication for all internal tools**
-- **Regularly audit access to protected applications**
+- **Regularly audit access to private applications**
 
 ## Security best practices summary
 
@@ -303,13 +318,13 @@ For applications that should not be publicly accessible:
 
 ### Common security checklist
 
-- [ ] No secrets in frontend code
-- [ ] All validation in edge functions
-- [ ] RLS policies implemented and tested
-- [ ] Authentication using secure methods
-- [ ] Internal apps properly protected
-- [ ] Security checker run and recommendations followed
-- [ ] Regular security reviews conducted
+- No secrets in frontend code
+- All validation in edge functions
+- RLS policies implemented and tested
+- Authentication using secure methods
+- Internal apps properly protected
+- Security checker run and recommendations followed
+- Regular security reviews conducted
 
 ## Using Lovable security checker
 

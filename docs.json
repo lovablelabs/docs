@@ -184,6 +184,10 @@
     {
       "source": "/features/deploy",
       "destination": "/features/publish"
+    },
+    {
+      "source": "features/business/personal-projects",
+      "destination": "/features/private-projects"
     }
   ]
 }
