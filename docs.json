@@ -126,9 +126,6 @@
         "tab": "Use cases",
         "pages": [
           "use-case/video-tutorials",
-          "use-case/landing-page",
-          "use-case/prototype",
-          "use-case/saas",
           "use-case/launched"
         ]
       },
