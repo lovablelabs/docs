@@ -118,7 +118,6 @@
         "tab": "Prompt engineering",
         "pages": [
           "prompting/prompting-one",
-          "prompting/prompting-library",
           "prompting/prompting-debugging",
           "prompting/prompt-integrations"
         ]
