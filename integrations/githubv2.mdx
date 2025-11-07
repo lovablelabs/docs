@@ -1,0 +1,147 @@
+---
+title: "Connect your project to GitHub"
+description: "Learn how to connect, sync, and disconnect your Lovable project with GitHub for code backup, collaboration, and deployment."
+icon: "github"
+keywords: ["Connect Lovable to GitHub","Export Lovable project to GitHub","GitHub integration","GitHub sync","Disconnect GitHub","Backup Lovable code","Sync Lovable and GitHub","GitHub repository setup","two-way sync","Lovable code export"]
+---
+
+When you build with Lovable, your code lives inside the platform — perfect for most creators.\
+But if you want your own copy, plan to work with developers, or move your project elsewhere, you can export and sync everything with GitHub in just a few clicks.
+
+## What is GitHub
+
+GitHub is a cloud-based platform for storing, managing, and sharing code. It keeps track of every change, supports collaboration, and integrates with popular deployment tools like Vercel and Netlify. Think of it as **Google Drive for code**, built for developers.
+
+## Why connect GitHub to Lovable
+
+Use the GitHub integration when you want to:
+
+- **Keep a personal backup** — Store your code safely outside of Lovable
+- **Collaborate with developers** — Give your team direct access to the code
+- **Migrate your project** — Move your Lovable project to another platform or workflow
+
+<Note>
+  You don’t need GitHub to use Lovable — many creators build and launch entirely within the platform.
+</Note>
+
+## Before you connect
+
+Make sure you understand how the integration works:
+
+- **GitHub account required** — Create one for free at [github.com](https://github.com)
+- **Single source of truth** — When connected, your code lives in GitHub, not separately in Lovable
+- **Two-way sync** — Changes made in Lovable appear in GitHub, and vice versa
+- **Stable repo path** — The connection depends on the exact GitHub repository location (same name, organization, and account)
+
+<Warning>
+  Don’t rename, move, or delete your GitHub repository after connecting. Doing so will break the sync, and Lovable won’t be able to update your project.
+</Warning>
+
+## How to connect your GitHub account and project to GitHub
+
+Follow these steps to export your Lovable project:
+
+1. Go to project settings - GitHub, and click Connect GitHub (Admin)
+1. Sign in to GitHub
+1. Connect project
+1. Link your workspace to GitHub - add organizations - i**nstall and authorize** [lovable.dev](http://lovable.dev)
+5. Choose which GitHub organization or account should store your code and click **Continue**.
+6. Connect project  - click **Connect**
+7. Click Transfer anwyay to confirm transfer to set up 2-way sync. \
+   A GitHub repository is now under your account.
+1. In your Lovable project editor, click the GitHub icon in the top-right corner.
+2. Select Connect GitHub. You’ll be redirected to your project’s GitHub settings.
+3. Click Connect GitHub again to start the authorization process.
+4. Log into GitHub and authorize the Lovable app to access your repositories.
+5. Choose which GitHub organization or account should store your code.
+6. Click Transfer Anyway to complete the export. Your code is now live on GitHub!
+
+---
+
+## After connecting
+
+Once the connection is established:
+
+- Your code is stored in your GitHub account or organization
+- Updates in Lovable and GitHub stay in sync automatically
+- You can clone, download, or edit your code anytime
+- You can share your repository with collaborators or developers
+
+---
+
+## Disconnecting GitHub
+
+You can disconnect your Lovable project from GitHub at any time in your project’s **GitHub settings**.
+
+When you disconnect:
+
+- The bidirectional sync between Lovable and GitHub stops
+- Your GitHub repository remains intact with all its history and files
+- Your code is stored exclusively within Lovable
+
+If you reconnect later:
+
+- A new GitHub repository is created with your latest Lovable code
+- Your original repository remains on GitHub but is no longer linked to Lovable
+
+---
+
+## Working with branches (Labs feature)
+
+Advanced users can enable **GitHub branch switching** from\
+**Settings → Account → Labs → GitHub branch switching.”**
+
+Branches let you test or develop features safely before merging changes to your live project.\
+Learn more in the [Labs features](/features/labs) page.
+
+---
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What happens if I rename or move my GitHub repository?">
+    The connection will break. Restore the repository to its original location and name to fix it.\
+    If deleted, you can [restore it on GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/restoring-a-deleted-repository).
+  </Accordion>
+  <Accordion title="What if I rename my GitHub username or organization?">
+    Renaming your GitHub account or organization will break the connection.\
+    Revert to the original name to restore sync with Lovable.
+  </Accordion>
+  <Accordion title="Clicking 'Connect GitHub' does nothing — what’s wrong?">
+    Your browser probably blocked the GitHub login popup.\
+    Allow popups for Lovable, then try again.
+  </Accordion>
+  <Accordion title="Do I need to know GitHub to use this feature?">
+    Not at all. Just connect and authorize — GitHub will safely store your code.\
+    Advanced GitHub features are optional.
+  </Accordion>
+  <Accordion title="Can I disconnect from GitHub?">
+    Yes — you can disconnect at any time in your project’s GitHub settings.\
+    Your repository stays on GitHub, but syncing stops.\
+    If you reconnect later, a new repository is created.
+  </Accordion>
+  <Accordion title="Can I import an existing GitHub repo into Lovable?">
+    Not currently. You can only export from Lovable to GitHub, not the other way around.
+  </Accordion>
+  <Accordion title="How can I switch to a different GitHub account?">
+    You can’t change the linked GitHub account once connected.\
+    To use another, create a new Lovable project and connect it fresh.
+  </Accordion>
+  <Accordion title="The repo ended up in the wrong organization — can I move it?">
+    Not directly. Try this workaround:
+
+    1. **Remix your project** to create a new copy.
+    2. **Connect the new project** to GitHub.
+    3. Choose the correct organization during setup.
+  </Accordion>
+  <Accordion title="Lovable can’t access my repository — what should I do?">
+    You’ve likely renamed, moved, or deleted the repo.\
+    Restore or revert any changes to the repo’s name, path, or owner.
+  </Accordion>
+  <Accordion title="Why don’t my commits appear in Lovable?">
+    Lovable only syncs the **default branch** (usually `main`).\
+    Merge your branch into `main` or [switch branches](/features/labs) inside Lovable.
+  </Accordion>
+</AccordionGroup>
+
+---
