@@ -1,0 +1,57 @@
+---
+title: "Okta SSO (SAML)"
+description: "Configure Okta SAML with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Okta to Lovable using SAML.
+
+## Prerequisites
+
+- Okta admin access
+- Lovable workspace Owner or Admin
+
+## Configure in Okta
+
+<Steps>
+  <Step title="Create a SAML 2.0 app" stepNumber="1">
+    Okta Admin → Applications → Create App Integration → SAML 2.0.
+  </Step>
+  <Step title="Single sign-on settings" stepNumber="2">
+    Set:
+    
+    - Single sign on URL (ACS): https://auth.lovable.dev/\_\_/auth/handler
+    - Audience URI (SP Entity ID): https://auth.lovable.dev/\_\_/auth/handler
+  </Step>
+  <Step title="Attribute Statements" stepNumber="3">
+    Add:
+    
+    - Name: `email` → Value: `user.email`
+    - Name: `display_name` → Value: `user.firstName` + `user.lastName` or `user.displayName`
+  </Step>
+  <Step title="Assignments" stepNumber="4">
+    Assign the application to required users/groups.
+  </Step>
+  <Step title="Download metadata (optional)" stepNumber="5">
+    Use metadata for verification if needed. Copy SAML values to Lovable if prompted.
+  </Step>
+</Steps>
+
+## Reference
+
+- ACS URL: https://auth.lovable.dev/\_\_/auth/handler
+- Audience/Entity ID: https://auth.lovable.dev/\_\_/auth/handler
+- Required attributes: `email`, `display_name`
+
+### Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Invalid Audience or ACS">
+    Ensure both ACS and Audience match https://auth.lovable.dev/\_\_/auth/handler.
+  </Accordion>
+  <Accordion title="Missing attributes">
+    Verify Attribute Statements include `email` and `display_name`.
+  </Accordion>
+</AccordionGroup>
+
+

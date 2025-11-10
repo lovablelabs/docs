@@ -13,28 +13,27 @@ Lovable supports both **OIDC (OpenID Connect)** and **SAML** protocols, enabling
 To set up SSO, a **Workspace Owner** or **Admin** must log in and navigate to\
 **Settings → Workspace → Identity**, then follow the setup instructions.
 
-## OIDC Configuration
+<Note>
+  SSO is available on **Business** and **Enterprise** plans. The Identity tab is visible only on these plans.
+</Note>
 
-For OIDC providers, configure the following settings:
+## Choose your protocol
 
-**Redirect URI:** https://auth.lovable.dev/\_\_/auth/handler
+Pick the protocol used by your identity provider:
 
-**Required Scopes:**
+- **OIDC (recommended when available)** → See provider guides below
+- **SAML** → See provider guides below
 
-- `email`
-- `openid`
+<CardGroup cols="2">
+  <Card title="Use OIDC (recommended)" icon="key" href="/features/business/sso/oidc">
+    Modern, simpler configuration with standardized scopes and discovery.
+  </Card>
+  <Card title="Use SAML" icon="shield" href="/features/business/sso/saml">
+    Enterprise-friendly option with attribute mapping.
+  </Card>
+</CardGroup>
 
-## SAML Configuration
-
-For SAML providers, configure the following settings:
-
-**Redirect URI / ACS URL:** https://auth.lovable.dev/\_\_/auth/handler
-
-**Audience URI / Entity ID:** https://auth.lovable.dev/\_\_/auth/handler
-
-**Required Claims:** Make sure the SAML response includes display_name and email as attributes. These attributes are required for authentication and user provisioning in Lovable.
-
-### Common Issues and Troubleshooting
+### Common issues and troubleshooting
 
 <AccordionGroup>
   <Accordion title="I already have an account, but I'm joining a business workspace that uses SSO. How do I log in?">

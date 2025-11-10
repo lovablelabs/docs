@@ -1,0 +1,58 @@
+---
+title: "Auth0 SSO (SAML)"
+description: "Configure Auth0 SAML with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Auth0 to Lovable using SAML.
+
+## Prerequisites
+
+- Auth0 tenant admin access
+- Lovable workspace Owner or Admin
+
+## Configure in Auth0
+
+<Steps>
+  <Step title="Create a SAML application" stepNumber="1">
+    Auth0 Dashboard → Applications → Applications → Create Application → Regular Web Application → Enable SAML2 Addon.
+  </Step>
+  <Step title="Application Callback URL (ACS)" stepNumber="2">
+    Set:
+    
+    - https://auth.lovable.dev/\_\_/auth/handler
+  </Step>
+  <Step title="Audience (Entity ID)" stepNumber="3">
+    Set:
+    
+    - https://auth.lovable.dev/\_\_/auth/handler
+  </Step>
+  <Step title="Attribute Mapping" stepNumber="4">
+    Ensure SAML mapping includes:
+    
+    - `email` → `user.email`
+    - `display_name` → `user.name`
+  </Step>
+  <Step title="Enable users" stepNumber="5">
+    Assign or enable connections so target users can authenticate.
+  </Step>
+</Steps>
+
+## Reference
+
+- ACS URL: https://auth.lovable.dev/\_\_/auth/handler
+- Audience/Entity ID: https://auth.lovable.dev/\_\_/auth/handler
+- Required attributes: `email`, `display_name`
+
+### Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Callback URL mismatch">
+    Ensure the Application Callback URL exactly matches https://auth.lovable.dev/\_\_/auth/handler.
+  </Accordion>
+  <Accordion title="Missing attributes">
+    Confirm `email` and `display_name` are included in the SAML assertion.
+  </Accordion>
+</AccordionGroup>
+
+

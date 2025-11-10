@@ -1,0 +1,57 @@
+---
+title: "Microsoft Entra ID SSO (SAML)"
+description: "Configure Microsoft Entra ID (Azure AD) SAML with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Microsoft Entra ID to Lovable using SAML.
+
+## Prerequisites
+
+- Entra ID admin access
+- Lovable workspace Owner or Admin
+
+## Configure in Entra ID
+
+<Steps>
+  <Step title="Enterprise application" stepNumber="1">
+    Microsoft Entra ID → Enterprise applications → New application → Create your own application → Integrate any other application you don't find in the gallery.
+  </Step>
+  <Step title="Set up single sign-on" stepNumber="2">
+    Choose SAML and configure:
+    
+    - Identifier (Entity ID): https://auth.lovable.dev/\_\_/auth/handler
+    - Reply URL (Assertion Consumer Service URL): https://auth.lovable.dev/\_\_/auth/handler
+  </Step>
+  <Step title="User Attributes & Claims" stepNumber="3">
+    Ensure:
+    
+    - `email` → user.mail or user.userprincipalname
+    - `display_name` → user.displayname
+  </Step>
+  <Step title="Users and groups" stepNumber="4">
+    Assign users/groups who should have access.
+  </Step>
+  <Step title="SAML Signing Certificate" stepNumber="5">
+    Use default signing unless your policy requires otherwise. Download metadata if needed.
+  </Step>
+</Steps>
+
+## Reference
+
+- ACS URL: https://auth.lovable.dev/\_\_/auth/handler
+- Entity ID: https://auth.lovable.dev/\_\_/auth/handler
+- Required attributes: `email`, `display_name`
+
+### Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Reply URL mismatch">
+    Ensure the Reply URL exactly matches https://auth.lovable.dev/\_\_/auth/handler.
+  </Accordion>
+  <Accordion title="Email claim missing">
+    Map `email` to user.mail or user.userprincipalname if mail is empty.
+  </Accordion>
+</AccordionGroup>
+
+
