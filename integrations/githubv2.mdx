@@ -37,26 +37,35 @@ Make sure you understand how the integration works:
   Don’t rename, move, or delete your GitHub repository after connecting. Doing so will break the sync, and Lovable won’t be able to update your project.
 </Warning>
 
-## How to connect your GitHub account and project to GitHub
+## Integration steps
 
-Follow these steps to export your Lovable project:
+To connect a project to GitHub, your workspace must first be linked to a GitHub account with at least one connected and enabled organization.
 
-1. Go to project settings - GitHub, and click Connect GitHub (Admin)
-1. Sign in to GitHub
-1. Connect project
-1. Link your workspace to GitHub - add organizations - i**nstall and authorize** [lovable.dev](http://lovable.dev)
-5. Choose which GitHub organization or account should store your code and click **Continue**.
-6. Connect project  - click **Connect**
-7. Click Transfer anwyay to confirm transfer to set up 2-way sync. \
-   A GitHub repository is now under your account.
-1. In your Lovable project editor, click the GitHub icon in the top-right corner.
-2. Select Connect GitHub. You’ll be redirected to your project’s GitHub settings.
-3. Click Connect GitHub again to start the authorization process.
-4. Log into GitHub and authorize the Lovable app to access your repositories.
-5. Choose which GitHub organization or account should store your code.
-6. Click Transfer Anyway to complete the export. Your code is now live on GitHub!
+Only workspace **admins and owners** can manage this setup by adding the GitHub account and connecting organizations. 
 
----
+Anyone in the workspace can then connect projects to a GitHub organization. Only admins and owners can disconnect a project from GitHub.
+
+### Step 1: Connect GitHub account to your workspace (Admin)
+
+1. Go to **Settings → Integrations → GitHub **
+1. Click**Connect GitHub ** and sign in to your GitHub account or authorize [lovable.dev](http://lovable.dev) to verify your GitHub identity\
+   Now, you see an option to connect a project.
+
+### Step 2: Add organizations (Admin)
+
+Choose which GitHub organization or account should store your code.
+
+1. Click **Connect project.**
+1. Click **Add organizations** and select where you want to install and authorize lovable.dev (all repositories or only select ones). 
+1. Click **Install & Authorize. **This means you’re giving Lovable permission to create and update your code repository on GitHub.\
+   Now, anyone in your workspace can add Lovable projects to the added organizations, sa long as they are enabled.
+
+### Step 3: Connect a project to your GitHub organization
+
+1. Go to **Settings → Integrations → GitHub **and click**Connect project ** or click the GitHub icon in the top-right corner of your project and click**Connect project to GitHub.** 
+2. Choose which GitHub organization (your account or team account) should store your code. Select the one you want from the list.
+3. Click**Transfer anyway ** and confirm transfer to set up 2-way sync.\
+   A GitHub repository is now created. Your project code now lives in your own GitHub repository.  You can view it on GitHub. Admins can disconnect the project from GitHub.
 
 ## After connecting
 
