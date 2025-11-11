@@ -1,0 +1,32 @@
+---
+title: "SSO via SAML"
+description: "Choose your identity provider (SAML) and follow provider-specific setup"
+icon: "shield-keyhole"
+---
+
+SAML is widely used in enterprise SSO. Configure SSO in **Settings → Workspace → Identity**. SSO is available on **Business** and **Enterprise** plans.
+
+### Choose your SAML provider
+
+<CardGroup cols="2">
+  <Card title="Okta (SAML)" icon="id-card-clip" href="/features/business/sso/saml/okta">
+    SAML 2.0 app with ACS, Audience and attribute statements.
+  </Card>
+  <Card title="Microsoft Entra ID (SAML)" icon="microsoft" href="/features/business/sso/saml/entra-id">
+    Enterprise application with Reply URL, Entity ID and claims.
+  </Card>
+  <Card title="Auth0 (SAML)" icon="lock" href="/features/business/sso/saml/auth0">
+    SAML addon enabled with required attributes.
+  </Card>
+  <Card title="Other SAML provider" icon="circle-nodes" href="/features/business/sso/saml/generic">
+    Works with any SAML-compliant IdP.
+  </Card>
+</CardGroup>
+
+### Quick reference
+
+- ACS URL: https://auth.lovable.dev/\_\_/auth/handler
+- Audience / Entity ID: https://auth.lovable.dev/\_\_/auth/handler
+- Required attributes: `email`, `display_name`
+
+

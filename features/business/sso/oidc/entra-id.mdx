@@ -1,0 +1,58 @@
+---
+title: "Microsoft Entra ID SSO (OIDC)"
+description: "Configure Microsoft Entra ID (Azure AD) OIDC with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Microsoft Entra ID to Lovable using OIDC.
+
+## Prerequisites
+
+- Entra ID admin (App registrations access)
+- Lovable workspace Owner or Admin
+
+## Configure in Entra ID
+
+<Steps>
+  <Step title="Register an application" stepNumber="1">
+    Microsoft Entra ID → App registrations → New registration.
+  </Step>
+  <Step title="Redirect URI (Web)" stepNumber="2">
+    Add:
+    
+    - https://auth.lovable.dev/\_\_/auth/handler
+  </Step>
+  <Step title="Expose API / permissions" stepNumber="3">
+    No custom API permissions are required. Ensure default OpenID permissions are enabled.
+  </Step>
+  <Step title="Grant admin consent (if needed)" stepNumber="4">
+    Grant consent for the `openid` and `email` scopes if prompted.
+  </Step>
+  <Step title="Copy values to Lovable" stepNumber="5">
+    From the app registration:
+    
+    - Application (client) ID
+    - Directory (tenant) ID
+    - Client secret (create one)
+    
+    Enter these in Lovable → Settings → Workspace → Identity.
+  </Step>
+</Steps>
+
+## Reference
+
+- Redirect URI: https://auth.lovable.dev/\_\_/auth/handler
+- Required scopes: `openid`, `email`
+
+### Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="AADB2C or multi-tenant setup">
+    Use the correct tenant in the issuer URL for your configuration.
+  </Accordion>
+  <Accordion title="Email missing">
+    Ensure users have an email attribute and consent includes the `email` scope.
+  </Accordion>
+</AccordionGroup>
+
+

@@ -1,0 +1,31 @@
+---
+title: "SSO via OIDC"
+description: "Choose your identity provider (OIDC) and follow provider-specific setup"
+icon: "key"
+---
+
+OIDC (OpenID Connect) is the recommended protocol for SSO when your identity provider supports it. Configure SSO in **Settings → Workspace → Identity**. SSO is available on **Business** and **Enterprise** plans.
+
+### Choose your OIDC provider
+
+<CardGroup cols="2">
+  <Card title="Okta (OIDC)" icon="id-card" href="/features/business/sso/oidc/okta">
+    Standard OIDC app with Lovable callback and email scope.
+  </Card>
+  <Card title="Microsoft Entra ID (OIDC)" icon="microsoft" href="/features/business/sso/oidc/entra-id">
+    App registration with redirect URI and OpenID permissions.
+  </Card>
+  <Card title="Auth0 (OIDC)" icon="lock" href="/features/business/sso/oidc/auth0">
+    Regular Web App with allowed callback URL and email scope.
+  </Card>
+  <Card title="Other OIDC provider" icon="circle-nodes" href="/features/business/sso/oidc/generic">
+    Works with any OIDC-compliant IdP.
+  </Card>
+</CardGroup>
+
+### Quick reference
+
+- Redirect URI: https://auth.lovable.dev/\_\_/auth/handler
+- Scopes: `openid`, `email`
+
+

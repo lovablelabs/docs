@@ -1,0 +1,61 @@
+---
+title: "Okta SSO (OIDC)"
+description: "Configure Okta OIDC with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Okta to Lovable using OIDC.
+
+## Prerequisites
+
+- Okta admin access
+- Lovable workspace Owner or Admin
+
+## Configure in Okta
+
+<Steps>
+  <Step title="Create an OIDC app" stepNumber="1">
+    In Okta Admin → Applications → Create App Integration → OIDC - Web Application.
+  </Step>
+  <Step title="Redirect URI" stepNumber="2">
+    Add:
+    
+    - https://auth.lovable.dev/\_\_/auth/handler
+  </Step>
+  <Step title="Assignments" stepNumber="3">
+    Assign the application to your users/groups who should access Lovable.
+  </Step>
+  <Step title="Grants and scopes" stepNumber="4">
+    Ensure Authorization Code flow is enabled. Scopes required:
+    
+    - `openid`
+    - `email`
+  </Step>
+  <Step title="Copy values to Lovable" stepNumber="5">
+    In Okta, locate:
+    
+    - Okta domain (issuer)
+    - Client ID
+    - Client Secret
+    
+    Enter these in Lovable → Settings → Workspace → Identity.
+  </Step>
+</Steps>
+
+## Reference
+
+- Redirect URI: https://auth.lovable.dev/\_\_/auth/handler
+- Required scopes: `openid`, `email`
+
+### Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Invalid redirect URI">
+    Ensure the redirect URI exactly matches https://auth.lovable.dev/\_\_/auth/handler in Okta.
+  </Accordion>
+  <Accordion title="Email missing in profile">
+    Grant the `email` scope and ensure users have a primary email in Okta.
+  </Accordion>
+</AccordionGroup>
+
+
