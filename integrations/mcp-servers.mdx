@@ -1,0 +1,83 @@
+---
+title: "Integrate Lovable with your tools using MCP servers"
+description: "Connect Lovable to your team’s tools and enable context-driven creation — moving from idea to validation to live app faster than ever."
+icon: "plug"
+keywords: ["Lovable integrations","Lovable connections","MCP Server","Model Context Protocol","MCP connector","AI workspace automation","Notion","Linear","Jira","Confluence","Atlassian","Miro","n8n","Canva","custom MCP server","AI tools for productivity"]
+---
+
+**MCP (Model Context Protocol)** is an open standard that connects AI systems, like Lovable, to external tools, services, and data sources.
+
+By connecting Lovable to tools such as Notion, Jira, or Miro, the Lovable Agent can use real team context to generate more accurate code, prototypes, and documentation.
+
+When you connect an MCP server, Lovable can read structured data (like text from docs, issues, or diagrams) and, where supported, perform limited actions such as creating or updating items.
+
+Lovable includes several prebuilt MCP servers on all plans, with the option to add custom ones on Business and Enterprise plans.
+
+## Why connect MCP servers
+
+In Lovable, MCP servers unlock two key capabilities:
+
+- **Bring your existing context into Lovable.**\
+  The Lovable Agent can read your team’s documentation, tickets, and design files to build prototypes and flows aligned with your standards.
+- **Connect your Lovable apps to your workflows.**\
+  Apps built in Lovable can fetch data or trigger actions across tools — for example, pulling Linear data or sending updates to Slack through n8n.
+
+Lovable becomes more powerful when it understands your team’s world — eliminating guesswork, speeding up iteration, and helping you go from **idea to live app faster than ever.**
+
+## Prebuilt MCP servers
+
+| Tool          | Description                                         | Example capabilities                                                                                                                                                                                                                                                              |
+| ------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Atlassian** | Access your Jira issues and Confluence pages.       | **Turn product documentation into working prototypes.**<br />Lovable can read product documentation and linked Jira epics (PRDs, specs, architecture docs) to generate prototypes that match your team’s standards. Embed generated prototypes back into Confluence for feedback. |
+| **Canva**     | Access your Canva designs.                          | **Turn designs into real, working apps.**<br />Import Canva designs and Lovable can convert them into working prototypes, ready for iteration or developer handoff.                                                                                                               |
+| **Linear**    | Access your Linear issues and project data.         | **Prototype from real issues and tickets.**<br />Lovable can read Linear issues, including descriptions and acceptance criteria, to generate functional prototypes. Attach resulting apps back to Linear for review.                                                              |
+| **Miro**      | Access your Miro boards and diagrams.               | **Bring your boards to life.**<br />Lovable can convert user flows, wireframes, or information architecture from your boards into interactive prototypes you can test and export back for feedback.                                                                               |
+| **Notion**    | Access your Notion pages and databases.             | **Build directly from your team’s Notion workspace.**<br />Lovable can read PRDs, design specs, or marketing briefs and turn them into working apps, landing pages, or prototypes. Embed generated Lovable apps back into Notion for seamless collaboration.                      |
+| **n8n**       | Access and power your apps with your n8n workflows. | **Build workflow-rich apps with live data.**<br />Connect your n8n automations to Lovable to pull data from tools like HubSpot, Google Sheets, or Slack, and build user-facing apps powered by existing automations.                                                              |
+
+### How to connect a prebuilt MCP server
+
+To use prebuilt integrations with popular third-party apps and services:
+
+1. Go to **Settings → Integrations → MCP servers**.
+2. **Select an MCP server** (for example, Notion, Linear, or Atlassian).
+3. Click **Connect**. Sign in and grant Lovable access to your account.
+
+## Custom MCP servers (Business & Enterprise)
+
+For full flexibility, you can connect **custom MCP servers** to bring internal or third-party systems into Lovable — perfect for private APIs, internal CRMs, or custom data sources.
+
+Explore  [remote MCP servers](https://mcpservers.org/remote-mcp-servers), a curated list of high-quality remote MCP servers compatible with Lovable.
+
+### How to connect a custom MCP server
+
+To connect a custom or internal MCP server:
+
+1. Go to **Settings → Integrations**.
+1. Click **Add** next to **New MCP server**.
+3. **Enter server details:**
+   - **Server name**: A clear name for your server (for example, _Internal CRM_ or _Analytics API_).
+   - **Server URL**: The address where Lovable can reach your MCP server.
+   - **Authentication**: Add any Bearer token or API key if required.
+6. Click **Add server**.\
+   The custom MCP server now appears in your list and can provide contextual data for builds.
+
+## Practical examples
+
+Each connected app instantly becomes available as context for the Lovable Agent. You can interact with connected tools using natural prompts.
+
+| **Scenario**                                          | **Example prompt**                                               | **Example outcome**                                                                                                    |
+| :---------------------------------------------------- | :--------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| A **product manager** connects **Linear** or **Jira** | _Generate a prototype based on tickets in the current sprint._   | Lovable reads issue descriptions and acceptance criteria to build aligned, testable UI.                                |
+| A **designer** connects **Miro** or **Canva**         | _Prototype the signup flow from our whiteboard._                 | Lovable reads flow diagrams to scaffold UI navigation and turns them into an interactive prototype your team can test. |
+| A **marketer** links **Notion** or **Confluence**     | _Turn our Q4 campaign brief into a landing page._                | Lovable uses the document as context to generate an on-brand, editable page.                                           |
+| An **Engineer** links **n8n** or **internal MCP**     | _Build a workflow UI that lists users and allows deleting them._ | Lovable builds an app that uses live data and workflows.                                                               |
+
+## Security and permissions
+
+MCP server connections are **user-based and personal**. You can review or revoke any connection anytime in **Settings → Integrations.**
+
+On **Business** and **Enterprise** plans, workspace **admins and owners** can manage which servers are available for all users:
+
+- Go to **Settings → Privacy & Security** to enable or disable all MCP server access for the workspace.
+- Go to **Settings → Integrations → Manage servers** to enable or disable individual MCP servers.

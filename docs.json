@@ -76,6 +76,7 @@
             "group": "Integrations",
             "pages": [
               "integrations/github",
+              "integrations/mcp-servers",
               "integrations/supabase",
               "integrations/stripe",
               "integrations/shopify",
