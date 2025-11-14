@@ -26,14 +26,14 @@ Lovable becomes more powerful when it understands your team’s world — elimin
 
 ## Prebuilt MCP servers
 
-| Tool          | Description                                         | Example capabilities                                                                                                                                                                                                                                                              |
-| ------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Atlassian** | Access your Jira issues and Confluence pages.       | **Turn product documentation into working prototypes.**<br />Lovable can read product documentation and linked Jira epics (PRDs, specs, architecture docs) to generate prototypes that match your team’s standards. Embed generated prototypes back into Confluence for feedback. |
-| **Canva**     | Access your Canva designs.                          | **Turn designs into real, working apps.**<br />Import Canva designs and Lovable can convert them into working prototypes, ready for iteration or developer handoff.                                                                                                               |
-| **Linear**    | Access your Linear issues and project data.         | **Prototype from real issues and tickets.**<br />Lovable can read Linear issues, including descriptions and acceptance criteria, to generate functional prototypes. Attach resulting apps back to Linear for review.                                                              |
-| **Miro**      | Access your Miro boards and diagrams.               | **Bring your boards to life.**<br />Lovable can convert user flows, wireframes, or information architecture from your boards into interactive prototypes you can test and export back for feedback.                                                                               |
-| **Notion**    | Access your Notion pages and databases.             | **Build directly from your team’s Notion workspace.**<br />Lovable can read PRDs, design specs, or marketing briefs and turn them into working apps, landing pages, or prototypes. Embed generated Lovable apps back into Notion for seamless collaboration.                      |
-| **n8n**       | Access and power your apps with your n8n workflows. | **Build workflow-rich apps with live data.**<br />Connect your n8n automations to Lovable to pull data from tools like HubSpot, Google Sheets, or Slack, and build user-facing apps powered by existing automations.                                                              |
+| Tool                                                                                                                                | Description                                         | Example capabilities                                                                                                                                                                                                                                                              |
+| ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**Atlassian**](https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/) | Access your Jira issues and Confluence pages.       | **Turn product documentation into working prototypes.**<br />Lovable can read product documentation and linked Jira epics (PRDs, specs, architecture docs) to generate prototypes that match your team’s standards. Embed generated prototypes back into Confluence for feedback. |
+| **Canva**                                                                                                                           | Access your Canva designs.                          | **Turn designs into real, working apps.**<br />Import Canva designs and Lovable can convert them into working prototypes, ready for iteration or developer handoff.                                                                                                               |
+| [**Linear**](https://linear.app/docs/mcp)                                                                                           | Access your Linear issues and project data.         | **Prototype from real issues and tickets.**<br />Lovable can read Linear issues, including descriptions and acceptance criteria, to generate functional prototypes. Attach resulting apps back to Linear for review.                                                              |
+| [**Miro**](https://miro.com/ai/mcp/)                                                                                                | Access your Miro boards and diagrams.               | **Bring your boards to life.**<br />Lovable can convert user flows, wireframes, or information architecture from your boards into interactive prototypes you can test and export back for feedback.                                                                               |
+| [**Notion**](https://developers.notion.com/docs/mcp)                                                                                | Access your Notion pages and databases.             | **Build directly from your team’s Notion workspace.**<br />Lovable can read PRDs, design specs, or marketing briefs and turn them into working apps, landing pages, or prototypes. Embed generated Lovable apps back into Notion for seamless collaboration.                      |
+| [**n8n**](https://docs.n8n.io/advanced-ai/accessing-n8n-mcp-server/)                                                                | Access and power your apps with your n8n workflows. | **Build workflow-rich apps with live data.**<br />Connect your n8n automations to Lovable to pull data from tools like HubSpot, Google Sheets, or Slack, and build user-facing apps powered by existing automations.                                                              |
 
 ### How to connect a prebuilt MCP server
 
@@ -42,6 +42,17 @@ To use prebuilt integrations with popular third-party apps and services:
 1. Go to **Settings → Integrations → MCP servers**.
 2. **Select an MCP server** (for example, Notion, Linear, or Atlassian).
 3. Click **Connect**. Sign in and grant Lovable access to your account.
+
+In addition to these steps, you need to do the following in **Miro (only if on Miro Enterprise plan**) and **n8n**:
+
+**Miro Enterprise**
+
+- Register your interest for Miro's MCP beta program, see [Miro MCP](https://miro.com/ai/mcp/).
+
+**n8n**
+
+- Go to **Settings → MCP access** and toggle **Enable MCP access** (requires instance owner or admin permissions)
+- For each workflow you want to expose, go to **Settings** in the workflow editor and toggle **Availabe in MCP.**
 
 ## Custom MCP servers (Business & Enterprise)
 
