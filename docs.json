@@ -56,7 +56,6 @@
               "features/seo",
               "features/security",
               "features/labs",
-              "features/figma-to-lovable",
               "features/business/sso",
               "features/business/data-opt-out",
               "features/business/design-templates"
