@@ -20,7 +20,7 @@ In Lovable, MCP servers unlock two key capabilities:
 - **Bring your existing context into Lovable.**\
   The Lovable Agent can read your team’s documentation, tickets, and design files to build prototypes and flows aligned with your standards.
 - **Connect your Lovable apps to your workflows.**\
-  Apps built in Lovable can fetch data or trigger actions across tools — for example, pulling Linear data or sending updates to Slack through n8n.
+  The Lovable Agent can take follow-up actions in your connected tools — such as updating ticket statuses, adding prototype links as comments, or creating new items when supported.
 
 Lovable becomes more powerful when it understands your team’s world — eliminating guesswork, speeding up iteration, and helping you go from **idea to live app faster than ever.**
 
@@ -75,9 +75,18 @@ Each connected app instantly becomes available as context for the Lovable Agent.
 
 ## Security and permissions
 
-MCP server connections are **user-based and personal**. You can review or revoke any connection anytime in **Settings → Integrations.**
+MCP server connections are **user-based and personal**. You can review or revoke connections anytime in **Settings → Integrations. **
+
+For quick access on project level,  click `+` in the prompt box and go to **Integrations** to view and manage connected apps.
+
+<img
+  src="/images/mcp_integrations_project_access.png"
+  alt="mcp_integrations_project_access.png"
+  title="mcp_integrations_project_access.png"
+  style={{ width:"51%" }}
+/>
 
 On **Business** and **Enterprise** plans, workspace **admins and owners** can manage which servers are available for all users:
 
-- Go to **Settings → Privacy & Security** to enable or disable all MCP server access for the workspace.
+- Go to **Settings → Privacy & Security** to enable or disable all MCP server access for the entire workspace.
 - Go to **Settings → Integrations → Manage servers** to enable or disable individual MCP servers.
