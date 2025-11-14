@@ -39,13 +39,13 @@ icon: "circle-question"
   <Accordion title="What should I do when I hit an error?">
     <Steps>
       <Step title="Try-to-fix button">
-        Press the Try-to-fix button. Lovable will try to solve the issue automatically. The best part: using the button doesn't deduct any credits!
+        Use **Try-to-fix** option. Lovable will try to solve the issue automatically. Using the button doesn't deduct any credits.
       </Step>
       <Step title="Investigate">
-        If the Try-to-fix button doesn't resolve the issue, you need to ask the AI to investigate the issue. Explain what you are seeing and what specific parts aren't working.
+        If **Try-to-fix** doesn't resolve the issue, ask the Lovable Agent to investigate the issue. Explain what you are seeing and what specific parts aren't working.
       </Step>
-      <Step title="Restore">
-        If that doesn’t work, restore to a previous working version. Send a couple of unrelated messages to clear the AI's context and try implementing the same functionality with a different approach. Hopefully the AI understands you better this time.
+      <Step title="Revert to an older version">
+        If that doesn’t work, you can preview an older working version and then revert to that version if needed, or revert and edit a past message to explore a different approach. Nothing gets lost — all changes made after that point stay in the chat and can be reapplied anytime any.
       </Step>
     </Steps>
   </Accordion>
@@ -153,15 +153,11 @@ icon: "circle-question"
   <Accordion title="How do I see my project history?">
     You can view your project history by simply scrolling up in the chat or pressing the **View history** icon on top of the chat. You can also select older versions to preview them or restore your project to that version.
   </Accordion>
-  <Accordion title="Can I restore an earlier version of my project?">
-    Yes. You can find the option on that version's code-card, or in the history tab when you select the version you want to restore.\
-    \
-    If the **restore** function isn’t working, it could be due to one of the following reasons:
+  <Accordion title="Can I revert to an earlier version of my project?">
+    Yes. You can preview an older working version and then revert to that version if needed, or edit a past message and revert to explore a different approach. Nothing gets lost — all changes made after that point stay in the chat and can be reapplied anytime any.
 
-    - There’s an **ongoing edit** still in progress.
-    - The version you’re trying to restore **contains an error**.
-    - The selected version is **identical to the current one**.
-    - You have only made changes to backend (SQL/edge functions), the restore button doesn't roll back database changes, therefore it won't be possible to restore to a version which only differs from the current one in the database.
+    - Find the option to revert under each response in the chat or in the history tab when you select the version you want to revert to.
+    - Find the option to edit a past message and revert under each past message you sent in the chat.
   </Accordion>
 </AccordionGroup>
 

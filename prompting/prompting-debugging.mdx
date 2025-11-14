@@ -4,7 +4,7 @@ description: "Debug workflows, with strategies, sample prompts, troubleshooting 
 icon: "bug"
 ---
 
-Building with AI is fast and fun – until something goes wrong. Errors, unexpected behaviors, or “the AI did something weird” moments are part of the process. This guide will help you navigate **AI-based debugging workflows in Lovable**. We’ll cover how to quickly fix simple issues, strategies for tougher bugs, using Lovable’s chat for debugging, and even prompt recipes to systematically squash bugs. Debugging with an AI assistant is a new skill, but with structure and the right prompts, you can resolve problems efficiently and even turn them into learning opportunities. 
+Building with AI is fast and fun – until something goes wrong. Errors, unexpected behaviors, or “the AI did something weird” moments are part of the process. This guide will help you navigate **AI-based debugging workflows in Lovable**. We’ll cover how to quickly fix simple issues, strategies for tougher bugs, using Lovable’s chat for debugging, and even prompt recipes to systematically squash bugs. Debugging with an AI assistant is a new skill, but with structure and the right prompts, you can resolve problems efficiently and even turn them into learning opportunities.
 
 ## Advanced debugging prompts
 
@@ -31,7 +31,7 @@ Break down the suggestions into an ordered list of steps we could take, from mos
 
 This prompt is long, but it directs the AI to act like a code reviewer or architect. We’ve asked it to find mislocated code, check modularity, and even prioritize the fixes​. The AI might respond with something like:
 
-- \_“1. **__Separate API calls from components:__** The \_`ProjectList`_component is directly fetching data. Suggestion: move data fetching to a dedicated hook or context to keep components pure UI.​_
+- \_“1. ****Separate API calls from components:**** The \_`ProjectList`_component is directly fetching data. Suggestion: move data fetching to a dedicated hook or context to keep components pure UI.​_
 
 1. **Reduce coupling in Task logic:** The task completion toggle is updating both state and directly writing to localStorage. This should be refactored to have a single source of truth.​
 2. **Organize utility functions:** There are utility functions in `App.tsx` that would be better placed in a `utils` folder (e.g., date formatting functions).
@@ -115,7 +115,7 @@ What about errors that just won’t go away or keep coming back in slight variat
 - **Ask the AI what it has tried already.** Sometimes after a few “Try to Fix” attempts or manual prompts, it’s unclear what’s been changed. Use: \_“What solutions have we tried so far for this error?”\_​. The AI can list the attempts, which helps you avoid repeating the same fixes.
 - **Have the AI explain the error in simple terms.** _“Explain in simple terms why this error occurs.”_ This can reveal if the AI (and you) truly understand it. You might catch a misconception here.
 - **Consider an alternate approach.** Ask: \_“Given this error keeps happening, can we try a different approach to achieve the goal?”\_​. The AI might suggest a different implementation strategy that bypasses the problematic area.
-- **Revert and replay.** In worst-case scenarios, you might roll back a few steps (Lovable lets you restore older versions). Then proceed with smaller changes. You can even tell the AI: _“We’re going to undo the last changes and try a more incremental approach.”_ This resets the context a bit and often avoids the rut you were in.
+- **Revert and replay.** In worst-case scenarios, you might roll back a few steps. Lovable lets you revert to older versions and even edit past messages and revert to take a different approach. Then proceed with smaller changes.
 
 Finally, if a specific component is “dead” (not working at all, no matter what), isolate it. Create a fresh minimal version of that component via prompt to see if it works, then slowly integrate it back into your project. This is akin to turning things off and on again, but with code – sometimes starting fresh on a piece is easier than trying to patch an overly broken one.
 
@@ -129,7 +129,7 @@ To cement these ideas, let’s walk through two common debugging scenarios with 
 
 You prompted something complex, and now the app won’t build, and Try to Fix failed twice.
 
-_Flow:_ 
+_Flow:_
 
 <Steps>
   <Step title="You switch to Chat mode.">
@@ -164,7 +164,7 @@ Throughout, you specifically described the error and had the AI confirm its unde
 
 You added a notification feature, but emails aren’t sending.
 
-_Flow:_ 
+_Flow:_
 
 <Steps>
   <Step title="No error shows, so you ask in Chat, “The email notification isn’t working – I expected an email when a task is overdue, but got nothing. How can we debug this?”">
@@ -200,7 +200,7 @@ _Flow:_
     
   </Step>
   <Step title="The AI might check if the component is still being rendered or if a return statement is missing. ">
-    Perhaps it realizes the refactor removed the `ProjectList` from the parent’s JSX. It suggests to re-import and include it. Or maybe state changes in a parent mean the list is now filtered out unintentionally. 
+    Perhaps it realizes the refactor removed the `ProjectList` from the parent’s JSX. It suggests to re-import and include it. Or maybe state changes in a parent mean the list is now filtered out unintentionally.
   </Step>
   <Step title="The AI could walk through possibilities: “Is the data still being fetched? Is the component getting the data? Let’s add a console.log in the render to see if it’s receiving props.” ">
     
@@ -343,7 +343,7 @@ This guidebook was shared in our community Discord—it might be useful for debu
     Conceptualize data flow as a complete pipeline from database through API and state to UI. When implementing features, carefully track how data is transformed at each stage. Implement proper query invalidation patterns to ensure UI remains synchronized with database state. Add strategic console logs at critical points to monitor data transitions. Create clear mental models of when and how data should update in response to actions. Pay careful attention to caching strategies and potential stale data issues. When debugging flow problems, methodically follow the data journey from source to destination. Check timing issues, race conditions, and transformation errors. Verify that the final data shape reaching components matches what they expect. Implement robust error boundaries and loading state management to maintain UI stability during data flow disruptions.
   </Accordion>
   <Accordion title="Performance Optimization">
-    Monitor application performance proactively rather than waiting for issues to become severe. Review query caching strategies to minimize unnecessary database calls. Check for and eliminate unnecessary component re-renders through proper memoization and dependency management. Analyze data fetching patterns for potential N\+1 query problems, excessive waterfalls, or redundant requests. Implement virtualization for long lists and paginate large data sets. Optimize bundle size through code splitting and lazy loading. Compress and optimize assets including images. Use appropriate performance measurement tools to identify bottlenecks including React DevTools, Performance tab, Network panel, and Memory profiler. Focus optimization efforts on metrics that directly impact user experience such as load times, time to interactive, and UI responsiveness. Implement targeted performance improvements rather than premature optimization.
+    Monitor application performance proactively rather than waiting for issues to become severe. Review query caching strategies to minimize unnecessary database calls. Check for and eliminate unnecessary component re-renders through proper memoization and dependency management. Analyze data fetching patterns for potential N+1 query problems, excessive waterfalls, or redundant requests. Implement virtualization for long lists and paginate large data sets. Optimize bundle size through code splitting and lazy loading. Compress and optimize assets including images. Use appropriate performance measurement tools to identify bottlenecks including React DevTools, Performance tab, Network panel, and Memory profiler. Focus optimization efforts on metrics that directly impact user experience such as load times, time to interactive, and UI responsiveness. Implement targeted performance improvements rather than premature optimization.
   </Accordion>
   <Accordion title="Error Management and Resilience">
     Implement a comprehensive error handling strategy that maintains application stability while providing meaningful feedback. Use try/catch blocks strategically around potentially problematic code sections. Create a hierarchy of error boundaries to contain failures within specific components rather than crashing the entire application. Design graceful degradation patterns where components can continue functioning with limited data. Provide clear, user-friendly error messages that explain the problem without technical jargon. Implement recovery mechanisms including retry logic, fallbacks, and state resets. Maintain robust error logging that captures sufficient context for debugging while respecting privacy. Test error scenarios thoroughly to ensure recovery mechanisms work as expected. When suggesting solutions, ensure they address the root cause rather than merely suppressing symptoms, and verify they work across all relevant environments and edge cases.
