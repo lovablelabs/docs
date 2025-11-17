@@ -74,7 +74,7 @@
           {
             "group": "Integrations",
             "pages": [
-              "integrations/github",
+              "integrations/github",    
               "integrations/supabase",
               "integrations/stripe",
               "integrations/shopify",
