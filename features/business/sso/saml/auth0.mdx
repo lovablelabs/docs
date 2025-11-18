@@ -18,19 +18,12 @@ Use this guide to connect Auth0 to Lovable using SAML.
     Auth0 Dashboard → Applications → Create Application → Regular Web Application → Create → Add-ons → enable SAML2 Web App.
   </Step>
   <Step title="Configure SAML2 Add-on" stepNumber="2">
-    Set <code>Application Callback URL (ACS)</code> to:
-    - https://auth.lovable.dev/__/auth/handler
-    Save.
+    In <code>Settings</code>:
+    - Set <code>Application Callback URL (ACS)</code> to https://auth.lovable.dev/__/auth/handler
+    - Paste the <em>Settings Map</em> JSON shown below
+    - Save
   </Step>
-  <Step title="Required Values You Provided (Add-on panel)" stepNumber="3">
-    <strong>Callback URL:</strong>
-    
-    ```
-    https://auth.lovable.dev/__/auth/handler
-    ```
-    
-    <strong>Settings Map:</strong>
-    
+  <Step title="Settings Map (paste into SAML2 Add-on settings)" stepNumber="3">
     ```json
     {
       "mappings": {
@@ -43,13 +36,13 @@ Use this guide to connect Auth0 to Lovable using SAML.
   <Step title="Copy values from Add-on panel" stepNumber="4">
     After saving, copy:
     - <code>Issuer</code>
-    - <code>Identity Provider Login URL</code> (SAML SSO URL)
+    - <code>SAML Protocol URL</code> (SAML SSO URL)
     - <code>Certificate</code> (X.509)
   </Step>
   <Step title="Configure it in Lovable" stepNumber="5">
     In Lovable → Settings → Workspace → Identity (SAML 2.0):
     - <code>Issuer</code> → Auth0 Issuer
-    - <code>SAML SSO URL</code> → Identity Provider Login URL
+    - <code>SAML SSO URL</code> → SAML Protocol URL
     - <code>Certificate</code> → X.509 certificate
   </Step>
 </Steps>
