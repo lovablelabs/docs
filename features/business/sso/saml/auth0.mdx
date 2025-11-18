@@ -22,8 +22,14 @@ Use this guide to connect Auth0 to Lovable using SAML.
     - https://auth.lovable.dev/__/auth/handler
     Save.
   </Step>
-  <Step title="Optional: Settings Map (email as NameID)" stepNumber="3">
-    In the SAML2 Add-on settings, use a Settings Map to ensure email is the NameID:
+  <Step title="Required Values You Provided (Add-on panel)" stepNumber="3">
+    <strong>Callback URL:</strong>
+    
+    ```
+    https://auth.lovable.dev/__/auth/handler
+    ```
+    
+    <strong>Settings Map:</strong>
     
     ```json
     {
