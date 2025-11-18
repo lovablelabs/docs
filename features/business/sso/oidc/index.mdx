@@ -12,9 +12,6 @@ OIDC (OpenID Connect) is the recommended protocol for SSO when your identity pro
   <Card title="Okta (OIDC)" icon="id-card" href="/features/business/sso/oidc/okta">
     Standard OIDC app with Lovable callback and email scope.
   </Card>
-  <Card title="Microsoft Entra ID (OIDC)" icon="microsoft" href="/features/business/sso/oidc/entra-id">
-    App registration with redirect URI and OpenID permissions.
-  </Card>
   <Card title="Auth0 (OIDC)" icon="lock" href="/features/business/sso/oidc/auth0">
     Regular Web App with allowed callback URL and email scope.
   </Card>
@@ -25,7 +22,24 @@ OIDC (OpenID Connect) is the recommended protocol for SSO when your identity pro
 
 ### Quick reference
 
-- Redirect URI: https://auth.lovable.dev/\_\_/auth/handler
+- Redirect URI: https://auth.lovable.dev/__/auth/handler
 - Scopes: `openid`, `email`
+
+### Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Invalid or mismatched Redirect URI">
+    Ensure the redirect/callback URL exactly matches https://auth.lovable.dev/__/auth/handler in your IdP.
+  </Accordion>
+  <Accordion title="Issuer URL / discovery fails">
+    Use the provider's OIDC Issuer URL (not just the domain). For Okta, copy from the Sign-on tab; for Auth0, use your tenant Domain.
+  </Accordion>
+  <Accordion title="Email not returned">
+    Grant the `email` scope and ensure the user account has a primary email.
+  </Accordion>
+  <Accordion title="Authorization flow issues">
+    Use Authorization Code with a confidential client and client secret. Avoid implicit or PKCE-only app types.
+  </Accordion>
+</AccordionGroup>
 
 

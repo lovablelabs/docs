@@ -8,9 +8,13 @@ Use this guide for any OIDC provider.
 
 ## Required values
 
-- Redirect URI: https://auth.lovable.dev/\_\_/auth/handler
+- Redirect URI: https://auth.lovable.dev/__/auth/handler
 - Scopes: `openid`, `email`
 - Grant type: Authorization Code
+
+<Note>
+  Use your provider's Issuer URL that supports OIDC discovery. If unsure, copy the Issuer/Domain shown in your app settings.
+</Note>
 
 ## Provider mapping
 
@@ -27,25 +31,22 @@ Common field names across providers:
     Create a new OIDC/Web application in your provider.
   </Step>
   <Step title="Configure redirect URI" stepNumber="2">
-    Add https://auth.lovable.dev/\_\_/auth/handler as an allowed redirect/callback URL.
+    In <code>Redirect/Callback URLs</code>, add:
+    - https://auth.lovable.dev/__/auth/handler
   </Step>
   <Step title="Enable required scopes" stepNumber="3">
     Ensure `openid` and `email` scopes are enabled and consented if needed.
   </Step>
-  <Step title="Copy credentials to Lovable" stepNumber="4">
-    Copy the Issuer/Domain, Client ID and Client Secret into Lovable.
+  <Step title="Configure it in Lovable" stepNumber="4">
+    Copy into Lovable:
+    - <code>Issuer URL / Domain</code>
+    - <code>Client ID</code>
+    - <code>Client Secret</code>
   </Step>
 </Steps>
 
-### Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Invalid issuer or discovery">
-    Verify the issuer URL is correct for your tenant and supports OIDC discovery.
-  </Accordion>
-  <Accordion title="Email not returned">
-    Ensure the `email` scope is granted and the user has a primary email.
-  </Accordion>
-</AccordionGroup>
+<Note>
+  See OIDC overview for Quick reference and Troubleshooting.
+</Note>
 
 

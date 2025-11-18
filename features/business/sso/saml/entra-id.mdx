@@ -19,39 +19,21 @@ Use this guide to connect Microsoft Entra ID to Lovable using SAML.
   </Step>
   <Step title="Set up single sign-on" stepNumber="2">
     Choose SAML and configure:
-    
-    - Identifier (Entity ID): https://auth.lovable.dev/\_\_/auth/handler
-    - Reply URL (Assertion Consumer Service URL): https://auth.lovable.dev/\_\_/auth/handler
-  </Step>
-  <Step title="User Attributes & Claims" stepNumber="3">
-    Ensure:
-    
-    - `email` → user.mail or user.userprincipalname
-    - `display_name` → user.displayname
+    - <code>Reply URL (ACS)</code>: https://auth.lovable.dev/__/auth/handler
+    - <code>Identifier (Entity ID)</code>: a unique value (can be the same ACS URL)
   </Step>
   <Step title="Users and groups" stepNumber="4">
     Assign users/groups who should have access.
   </Step>
-  <Step title="SAML Signing Certificate" stepNumber="5">
-    Use default signing unless your policy requires otherwise. Download metadata if needed.
+  <Step title="Configure it in Lovable" stepNumber="5">
+    From the SAML single sign-on page:
+    - <code>Login URL</code> → use as SAML SSO URL in Lovable
+    - <code>Identifier (Entity ID)</code> → use as Issuer in Lovable
+    - <code>Certificate (Base64)</code> → paste into Lovable
   </Step>
 </Steps>
 
-## Reference
-
-- ACS URL: https://auth.lovable.dev/\_\_/auth/handler
-- Entity ID: https://auth.lovable.dev/\_\_/auth/handler
-- Required attributes: `email`, `display_name`
-
-### Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Reply URL mismatch">
-    Ensure the Reply URL exactly matches https://auth.lovable.dev/\_\_/auth/handler.
-  </Accordion>
-  <Accordion title="Email claim missing">
-    Map `email` to user.mail or user.userprincipalname if mail is empty.
-  </Accordion>
-</AccordionGroup>
-
+<Note>
+  Make sure to Map `email` to <code>user.mail</code>. If <code>user.mail</code> is empty, use <code>user.userprincipalname</code>.
+</Note>
 

@@ -10,13 +10,13 @@ SAML is widely used in enterprise SSO. Configure SSO in **Settings → Workspace
 
 <CardGroup cols="2">
   <Card title="Okta (SAML)" icon="id-card-clip" href="/features/business/sso/saml/okta">
-    SAML 2.0 app with ACS, Audience and attribute statements.
+    SAML app; use metadata to get Issuer, SSO URL, and certificate.
   </Card>
   <Card title="Microsoft Entra ID (SAML)" icon="microsoft" href="/features/business/sso/saml/entra-id">
-    Enterprise application with Reply URL, Entity ID and claims.
+    Enterprise app; use Login URL (SSO URL), Entity ID (Issuer), certificate.
   </Card>
   <Card title="Auth0 (SAML)" icon="lock" href="/features/business/sso/saml/auth0">
-    SAML addon enabled with required attributes.
+    Enable SAML2 Web App Add-on; copy SSO URL, Issuer, certificate.
   </Card>
   <Card title="Other SAML provider" icon="circle-nodes" href="/features/business/sso/saml/generic">
     Works with any SAML-compliant IdP.
@@ -25,8 +25,28 @@ SAML is widely used in enterprise SSO. Configure SSO in **Settings → Workspace
 
 ### Quick reference
 
-- ACS URL: https://auth.lovable.dev/\_\_/auth/handler
-- Audience / Entity ID: https://auth.lovable.dev/\_\_/auth/handler
-- Required attributes: `email`, `display_name`
+- ACS URL: https://auth.lovable.dev/__/auth/handler
+- Audience / Entity ID: https://auth.lovable.dev/__/auth/handler
+- Required attribute: `email`
 
+<Note>
+  `display_name` is optional. If provided, it will be used for the user's name.
+</Note>
+
+### Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Invalid ACS or Audience">
+    Ensure both ACS and Audience/Entity ID exactly match https://auth.lovable.dev/__/auth/handler in your IdP.
+  </Accordion>
+  <Accordion title="Email claim missing">
+    Map an email claim. For Microsoft Entra, use user.mail, falling back to user.userprincipalname if mail is empty.
+  </Accordion>
+  <Accordion title="IdP-initiated SSO not supported">
+    Launch SSO from Lovable. Starting from your IdP dashboard tile will not work.
+  </Accordion>
+  <Accordion title="Provider credentials invalid">
+    Paste the correct X.509 certificate. If the certificate rotates, update it in Lovable.
+  </Accordion>
+</AccordionGroup>
 

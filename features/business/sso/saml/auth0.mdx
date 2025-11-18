@@ -14,45 +14,38 @@ Use this guide to connect Auth0 to Lovable using SAML.
 ## Configure in Auth0
 
 <Steps>
-  <Step title="Create a SAML application" stepNumber="1">
-    Auth0 Dashboard → Applications → Applications → Create Application → Regular Web Application → Enable SAML2 Addon.
+  <Step title="Create app and enable SAML2 Add-on" stepNumber="1">
+    Auth0 Dashboard → Applications → Create Application → Regular Web Application → Create → Add-ons → enable SAML2 Web App.
   </Step>
-  <Step title="Application Callback URL (ACS)" stepNumber="2">
-    Set:
+  <Step title="Configure SAML2 Add-on" stepNumber="2">
+    Set <code>Application Callback URL (ACS)</code> to:
+    - https://auth.lovable.dev/__/auth/handler
+    Save.
+  </Step>
+  <Step title="Optional: Settings Map (email as NameID)" stepNumber="3">
+    In the SAML2 Add-on settings, use a Settings Map to ensure email is the NameID:
     
-    - https://auth.lovable.dev/\_\_/auth/handler
+    ```json
+    {
+      "mappings": {
+        "email": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
+      },
+      "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
+    }
+    ```
   </Step>
-  <Step title="Audience (Entity ID)" stepNumber="3">
-    Set:
-    
-    - https://auth.lovable.dev/\_\_/auth/handler
+  <Step title="Copy values from Add-on panel" stepNumber="4">
+    After saving, copy:
+    - <code>Issuer</code>
+    - <code>Identity Provider Login URL</code> (SAML SSO URL)
+    - <code>Certificate</code> (X.509)
   </Step>
-  <Step title="Attribute Mapping" stepNumber="4">
-    Ensure SAML mapping includes:
-    
-    - `email` → `user.email`
-    - `display_name` → `user.name`
-  </Step>
-  <Step title="Enable users" stepNumber="5">
-    Assign or enable connections so target users can authenticate.
+  <Step title="Configure it in Lovable" stepNumber="5">
+    In Lovable → Settings → Workspace → Identity (SAML 2.0):
+    - <code>Issuer</code> → Auth0 Issuer
+    - <code>SAML SSO URL</code> → Identity Provider Login URL
+    - <code>Certificate</code> → X.509 certificate
   </Step>
 </Steps>
-
-## Reference
-
-- ACS URL: https://auth.lovable.dev/\_\_/auth/handler
-- Audience/Entity ID: https://auth.lovable.dev/\_\_/auth/handler
-- Required attributes: `email`, `display_name`
-
-### Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Callback URL mismatch">
-    Ensure the Application Callback URL exactly matches https://auth.lovable.dev/\_\_/auth/handler.
-  </Accordion>
-  <Accordion title="Missing attributes">
-    Confirm `email` and `display_name` are included in the SAML assertion.
-  </Accordion>
-</AccordionGroup>
 
 

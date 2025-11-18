@@ -8,9 +8,13 @@ Use this guide for any SAML provider.
 
 ## Required values
 
-- ACS URL: https://auth.lovable.dev/\_\_/auth/handler
-- Audience / Entity ID: https://auth.lovable.dev/\_\_/auth/handler
-- Required attributes: `email`, `display_name`
+- ACS URL: https://auth.lovable.dev/__/auth/handler
+- Audience / Entity ID: https://auth.lovable.dev/__/auth/handler
+- Required attribute: `email`
+
+<Note>
+  `display_name` is optional. If present, it will populate the user's name.
+</Note>
 
 ## Provider mapping
 
@@ -27,25 +31,14 @@ Common field names across providers:
     Create a new SAML 2.0 application in your provider.
   </Step>
   <Step title="Configure endpoints" stepNumber="2">
-    Set both ACS and Audience/Entity ID to https://auth.lovable.dev/\_\_/auth/handler.
+    Set:
+    - <code>ACS URL</code>: https://auth.lovable.dev/__/auth/handler
+    - <code>Audience / Entity ID</code>: https://auth.lovable.dev/__/auth/handler
   </Step>
   <Step title="Map attributes" stepNumber="3">
-    Ensure `email` and `display_name` are included in the SAML assertion.
+    Ensure `email` is included in the SAML assertion. `display_name` is optional.
   </Step>
   <Step title="Assign users" stepNumber="4">
     Assign the application to users/groups who should access Lovable.
   </Step>
 </Steps>
-
-### Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Invalid Audience or ACS">
-    Ensure both values match https://auth.lovable.dev/\_\_/auth/handler exactly.
-  </Accordion>
-  <Accordion title="Attributes missing">
-    Add `email` and `display_name` mappings in your provider.
-  </Accordion>
-</AccordionGroup>
-
-

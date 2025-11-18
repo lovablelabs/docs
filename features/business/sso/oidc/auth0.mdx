@@ -18,44 +18,28 @@ Use this guide to connect Auth0 to Lovable using OIDC.
     Auth0 Dashboard → Applications → Applications → Create Application → Regular Web Application.
   </Step>
   <Step title="Allowed Callback URLs" stepNumber="2">
-    Add:
+    In <code>Allowed Callback URLs</code>, add:
     
-    - https://auth.lovable.dev/\_\_/auth/handler
+    - https://auth.lovable.dev/__/auth/handler
   </Step>
-  <Step title="Allowed Logout URLs (optional)" stepNumber="3">
-    Add your Lovable app logout URL if desired.
-  </Step>
-  <Step title="API and scopes" stepNumber="4">
-    Scopes required:
+  <Step title="Configure it in Lovable" stepNumber="3">
+    From <code>Settings</code>, copy:
     
-    - `openid`
-    - `email`
-  </Step>
-  <Step title="Copy values to Lovable" stepNumber="5">
-    From Settings:
-    
-    - Domain
-    - Client ID
-    - Client Secret
+    - <code>Domain</code> → Issuer URL
+    - <code>Client ID</code>
+    - <code>Client Secret</code>
     
     Enter these in Lovable → Settings → Workspace → Identity.
   </Step>
 </Steps>
 
-## Reference
+<Note>
+  No additional configuration is required beyond the callback URL. Use your Auth0 Domain as the Issuer URL in Lovable.
+</Note>
 
-- Redirect URI: https://auth.lovable.dev/\_\_/auth/handler
-- Required scopes: `openid`, `email`
+<Note>
+  See OIDC overview for Quick reference and Troubleshooting.
+</Note>
 
-### Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Callback URL mismatch">
-    Ensure the callback URL exactly matches https://auth.lovable.dev/\_\_/auth/handler.
-  </Accordion>
-  <Accordion title="Email not returned">
-    Ensure the user has a verified email and the `email` scope is requested.
-  </Accordion>
-</AccordionGroup>
 
 

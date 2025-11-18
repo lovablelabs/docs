@@ -17,45 +17,21 @@ Use this guide to connect Okta to Lovable using OIDC.
   <Step title="Create an OIDC app" stepNumber="1">
     In Okta Admin → Applications → Create App Integration → OIDC - Web Application.
   </Step>
-  <Step title="Redirect URI" stepNumber="2">
-    Add:
+  <Step title="Sign-in redirect URI" stepNumber="2">
+    In <code>Sign-in redirect URIs</code>, add:
     
-    - https://auth.lovable.dev/\_\_/auth/handler
+    - https://auth.lovable.dev/__/auth/handler
   </Step>
   <Step title="Assignments" stepNumber="3">
     Assign the application to your users/groups who should access Lovable.
   </Step>
-  <Step title="Grants and scopes" stepNumber="4">
-    Ensure Authorization Code flow is enabled. Scopes required:
+  <Step title="Configure it in Lovable" stepNumber="4">
+    In Okta, copy:
     
-    - `openid`
-    - `email`
-  </Step>
-  <Step title="Copy values to Lovable" stepNumber="5">
-    In Okta, locate:
-    
-    - Okta domain (issuer)
-    - Client ID
-    - Client Secret
+    - <code>Issuer URL</code> (Sign-on tab → OpenID Connect ID Token)
+    - <code>Client ID</code>
+    - <code>Client Secret</code>
     
     Enter these in Lovable → Settings → Workspace → Identity.
   </Step>
 </Steps>
-
-## Reference
-
-- Redirect URI: https://auth.lovable.dev/\_\_/auth/handler
-- Required scopes: `openid`, `email`
-
-### Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Invalid redirect URI">
-    Ensure the redirect URI exactly matches https://auth.lovable.dev/\_\_/auth/handler in Okta.
-  </Accordion>
-  <Accordion title="Email missing in profile">
-    Grant the `email` scope and ensure users have a primary email in Okta.
-  </Accordion>
-</AccordionGroup>
-
-
