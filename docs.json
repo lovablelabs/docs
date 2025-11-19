@@ -177,6 +177,10 @@
     {
       "source": "features/business/personal-projects",
       "destination": "/features/private-projects"
+    },
+    {
+      "source": "features/visual-edit",
+      "destination": "/features/design"
     }
   ]
 }
