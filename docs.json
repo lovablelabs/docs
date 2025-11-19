@@ -42,9 +42,9 @@
       {
         "tab": "Features",
             "pages": [
-              "features/modes",
-              "features/visual-edit",
+              "features/modes",             
               "features/code-mode",
+              "features/design",
               "features/cloud",
               "features/ai",
               "features/knowledge",
