@@ -1,0 +1,45 @@
+---
+title: "Auth0 SSO (OIDC)"
+description: "Configure Auth0 OIDC with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Auth0 to Lovable using OIDC.
+
+## Prerequisites
+
+- Auth0 tenant admin access
+- Lovable workspace Owner or Admin
+
+## Configure in Auth0
+
+<Steps>
+  <Step title="Create an application" stepNumber="1">
+    Auth0 Dashboard → Applications → Applications → Create Application → Regular Web Application.
+  </Step>
+  <Step title="Allowed Callback URLs" stepNumber="2">
+    In <code>Allowed Callback URLs</code>, add:
+    
+    - https://auth.lovable.dev/__/auth/handler
+  </Step>
+  <Step title="Configure it in Lovable" stepNumber="3">
+    From <code>Settings</code>, copy:
+    
+    - <code>Domain</code> → Issuer URL
+    - <code>Client ID</code>
+    - <code>Client Secret</code>
+    
+    Enter these in Lovable → Settings → Workspace → Identity.
+  </Step>
+</Steps>
+
+<Note>
+  No additional configuration is required beyond the callback URL. Use your Auth0 Domain as the Issuer URL in Lovable.
+</Note>
+
+<Note>
+  See OIDC overview for Quick reference and Troubleshooting.
+</Note>
+
+
+

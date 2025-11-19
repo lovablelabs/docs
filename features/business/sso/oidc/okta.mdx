@@ -1,0 +1,37 @@
+---
+title: "Okta SSO (OIDC)"
+description: "Configure Okta OIDC with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Okta to Lovable using OIDC.
+
+## Prerequisites
+
+- Okta admin access
+- Lovable workspace Owner or Admin
+
+## Configure in Okta
+
+<Steps>
+  <Step title="Create an OIDC app" stepNumber="1">
+    In Okta Admin → Applications → Create App Integration → OIDC - Web Application.
+  </Step>
+  <Step title="Sign-in redirect URI" stepNumber="2">
+    In <code>Sign-in redirect URIs</code>, add:
+    
+    - https://auth.lovable.dev/__/auth/handler
+  </Step>
+  <Step title="Assignments" stepNumber="3">
+    Assign the application to your users/groups who should access Lovable.
+  </Step>
+  <Step title="Configure it in Lovable" stepNumber="4">
+    In Okta, copy:
+    
+    - <code>Issuer URL</code> (Sign-on tab → OpenID Connect ID Token)
+    - <code>Client ID</code>
+    - <code>Client Secret</code>
+    
+    Enter these in Lovable → Settings → Workspace → Identity.
+  </Step>
+</Steps>

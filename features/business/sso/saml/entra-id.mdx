@@ -1,0 +1,39 @@
+---
+title: "Microsoft Entra ID SSO (SAML)"
+description: "Configure Microsoft Entra ID (Azure AD) SAML with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Microsoft Entra ID to Lovable using SAML.
+
+## Prerequisites
+
+- Entra ID admin access
+- Lovable workspace Owner or Admin
+
+## Configure in Entra ID
+
+<Steps>
+  <Step title="Enterprise application" stepNumber="1">
+    Microsoft Entra ID → Enterprise applications → New application → Create your own application → Integrate any other application you don't find in the gallery.
+  </Step>
+  <Step title="Set up single sign-on" stepNumber="2">
+    Choose SAML and configure:
+    - <code>Reply URL (ACS)</code>: https://auth.lovable.dev/__/auth/handler
+    - <code>Identifier (Entity ID)</code>: a unique value (can be the same ACS URL)
+  </Step>
+  <Step title="Users and groups" stepNumber="4">
+    Assign users/groups who should have access.
+  </Step>
+  <Step title="Configure it in Lovable" stepNumber="5">
+    From the SAML single sign-on page:
+    - <code>Login URL</code> → use as SAML SSO URL in Lovable
+    - <code>Identifier (Entity ID)</code> → use as Issuer in Lovable
+    - <code>Certificate (Base64)</code> → paste into Lovable
+  </Step>
+</Steps>
+
+<Note>
+  Make sure to Map `email` to <code>user.mail</code>. If <code>user.mail</code> is empty, use <code>user.userprincipalname</code>.
+</Note>
+

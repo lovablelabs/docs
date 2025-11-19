@@ -1,0 +1,52 @@
+---
+title: "Generic OIDC SSO"
+description: "Configure any OIDC-compliant provider with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide for any OIDC provider.
+
+## Required values
+
+- Redirect URI: https://auth.lovable.dev/__/auth/handler
+- Scopes: `openid`, `email`
+- Grant type: Authorization Code
+
+<Note>
+  Use your provider's Issuer URL that supports OIDC discovery. If unsure, copy the Issuer/Domain shown in your app settings.
+</Note>
+
+## Provider mapping
+
+Common field names across providers:
+
+- Redirect URI may be called: Callback URL, Sign-in redirect URI
+- Issuer/Domain may be called: Issuer URL, Authority, Okta domain, Auth0 domain, Tenant domain
+- Client credentials: Client ID and Client Secret
+
+## Steps
+
+<Steps>
+  <Step title="Create an OIDC confidential app" stepNumber="1">
+    Create a new OIDC/Web application in your provider.
+  </Step>
+  <Step title="Configure redirect URI" stepNumber="2">
+    In <code>Redirect/Callback URLs</code>, add:
+    - https://auth.lovable.dev/__/auth/handler
+  </Step>
+  <Step title="Enable required scopes" stepNumber="3">
+    Ensure `openid` and `email` scopes are enabled and consented if needed.
+  </Step>
+  <Step title="Configure it in Lovable" stepNumber="4">
+    Copy into Lovable:
+    - <code>Issuer URL / Domain</code>
+    - <code>Client ID</code>
+    - <code>Client Secret</code>
+  </Step>
+</Steps>
+
+<Note>
+  See OIDC overview for Quick reference and Troubleshooting.
+</Note>
+
+

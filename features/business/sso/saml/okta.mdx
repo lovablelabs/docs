@@ -1,0 +1,39 @@
+---
+title: "Okta SSO (SAML)"
+description: "Configure Okta SAML with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide to connect Okta to Lovable using SAML.
+
+## Prerequisites
+
+- Okta admin access
+- Lovable workspace Owner or Admin
+
+## Configure in Okta
+
+<Steps>
+  <Step title="Create a SAML 2.0 app" stepNumber="1">
+    Okta Admin → Applications → Create App Integration → SAML 2.0.
+  </Step>
+  <Step title="Single sign-on settings" stepNumber="2">
+    Configure:
+    - <code>Single sign on URL (ACS)</code>: https://auth.lovable.dev/__/auth/handler
+    - <code>Audience URI (SP Entity ID)</code>: https://auth.lovable.dev/__/auth/handler
+    - <code>Name ID format</code>: EmailAddress
+  </Step>
+  <Step title="Assignments" stepNumber="3">
+    Assign the application to required users/groups.
+  </Step>
+  <Step title="Get metadata and configure it in Lovable" stepNumber="4">
+    Open the app metadata URL and extract:
+    - <code>EntityID</code> → use as Issuer in Lovable
+    - <code>SingleSignOnService Location</code> → use as SAML SSO URL in Lovable
+    - <code>Certificate</code> (X.509) → paste into Lovable
+  </Step>
+</Steps>
+
+<Note>
+  Lovable does not support IdP‑initiated SAML. Launching from the Okta app tile will not work; start the sign‑in from Lovable (SP‑initiated).
+</Note>

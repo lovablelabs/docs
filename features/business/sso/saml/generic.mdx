@@ -1,0 +1,44 @@
+---
+title: "Generic SAML SSO"
+description: "Configure any SAML-compliant provider with Lovable SSO"
+icon: "shield-keyhole"
+---
+
+Use this guide for any SAML provider.
+
+## Required values
+
+- ACS URL: https://auth.lovable.dev/__/auth/handler
+- Audience / Entity ID: https://auth.lovable.dev/__/auth/handler
+- Required attribute: `email`
+
+<Note>
+  `display_name` is optional. If present, it will populate the user's name.
+</Note>
+
+## Provider mapping
+
+Common field names across providers:
+
+- ACS URL may be called: Single Sign-On URL, Reply URL, Assertion Consumer Service URL
+- Audience may be called: SP Entity ID, Audience URI, Identifier
+- Attribute mapping may be called: Attribute Statements, User Attributes & Claims
+
+## Steps
+
+<Steps>
+  <Step title="Create a SAML application" stepNumber="1">
+    Create a new SAML 2.0 application in your provider.
+  </Step>
+  <Step title="Configure endpoints" stepNumber="2">
+    Set:
+    - <code>ACS URL</code>: https://auth.lovable.dev/__/auth/handler
+    - <code>Audience / Entity ID</code>: https://auth.lovable.dev/__/auth/handler
+  </Step>
+  <Step title="Map attributes" stepNumber="3">
+    Ensure `email` is included in the SAML assertion. `display_name` is optional.
+  </Step>
+  <Step title="Assign users" stepNumber="4">
+    Assign the application to users/groups who should access Lovable.
+  </Step>
+</Steps>
