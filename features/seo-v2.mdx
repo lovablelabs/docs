@@ -424,86 +424,77 @@ This section bundles all the “how to check” steps into a single, ordered flo
 
 <AccordionGroup>
   <Accordion title="Can my site rank well on search using Lovable?">
-    Yes. Lovable apps can rank like any modern JavaScript site. As long as your resources aren’t blocked and pages load normally, Google can index and rank them. Examples performing well:
+    Yes. Lovable apps can rank like any modern JavaScript site. As long as resources aren’t blocked and pages load normally, Google can index and rank them. Examples performing well today:
 
-    - sparklestales.com
-    - workveg.com
-    - renamify.co
+    - [sparklestales.com](http://sparklestales.com)
+    - [workveg.com](http://workveg.com)
+    - [renamify.co](http://renamify.co)
 
-    For best results, follow this guide—especially around performance, metadata, and sitemap setup.
+    Follow the technical and content recommendations in this guide—especially metadata, performance, and sitemap configuration—for the best results.
   </Accordion>
-  <Accordion title="What kinds of projects are a good fit for SEO on Lovable?">
-    Lovable is a strong fit when SEO is helpful but not the sole growth engine, or when the site is small enough for manual SEO. Best-fit scenarios
+  <Accordion title="When is Lovable a good fit for SEO, and when should I consider SSR or prerendering?">
+    ### **Lovable is a strong fit when SEO is helpful but not the sole growth engine**, or when the site is small enough for manual SEO:
 
     - Marketing sites & landing pages
     - Startups needing a fast, professional web presence
     - Simple blogs or docs sites (≈ ≤ 200 pages)
     - Portfolios and personal sites
-    - Internal tools and dashboards (SEO irrelevant)
+    - Internal tools/dashboards (SEO irrelevant)
     - Apps behind authentication (should not be indexed)
-    - MVPs and prototypes where speed matters more than search
-    - Interactive apps where UI is the main value
-    - Small sites (≈ 5–20 pages) where manual SEO is manageable
-    - Projects driven by paid acquisition, social, or partnerships
+    - Small sites (≈ 5–20 pages) with manageable metadata
+    - Projects driven by referrals, social, paid, or product usage
 
-    Why Lovable works well here
+    **Why:**\
+    You can easily review meta tags, sitemaps, internal links, and performance manually.
 
-    - You can manually verify meta tags, internal links, sitemaps.
-    - You’re not publishing hundreds of new URLs.
-    - SEO is important but not existential.
-    - Fast development and iteration are higher priorities than perfect indexing.
-  </Accordion>
-  <Accordion title="When is SEO on Lovable more challenging?">
-    These can still work, but require extra care, manual SEO, and sometimes prerendering:
+    ### **Lovable is still workable but more challenging** when ranking is important and pages are numerous or competitive:
 
-    - Content-heavy blogs (50+ articles intended for ongoing organic traffic)
-    - Medium-size e-commerce sites (hundreds of products)
-    - Local business directories needing strong local SEO
-    - News/media sites or time-sensitive hubs needing fast indexing
-    - Sites where organic search is the primary growth channel
-    - Competitive SEO markets (health, finance, legal, SaaS)
-    - Projects requiring reliable AI/LLM visibility
+    - Content-heavy blogs (50+ articles)
+    - Medium e-commerce sites (hundreds of products)
+    - Local directories
+    - News/media or time-sensitive hubs
+    - Sites dependent on organic search
+    - Competitive markets (health, finance, legal, SaaS)
+    - Projects needing reliable AI/LLM visibility
 
-    Why these are challenging
+    **Why:**
 
-    - Many pages → lots of manual metadata & sitemap upkeep.
-    - CSR can slow Google’s rendering pass.
-    - Social and AI crawlers don’t execute JS.
-    - Competing against SSR sites is harder when SEO is a primary battlefield.
-  </Accordion>
-  <Accordion title="When is Lovable a poor fit without prerendering or SSR?">
-    These usually need a server-side or hybrid framework (e.g. Next.js, Remix, Astro):
+    - More pages → more manual metadata & sitemap upkeep
+    - CSR can slow Google’s rendering pass
+    - Social & AI crawlers don’t execute JS
+    - Competing against SSR sites is harder
+
+    ### **Lovable is a poor fit without prerendering or SSR** for very large or SEO-critical projects:
 
     - Large content catalogs (≈ 500+ pages)
-    - Massive e-commerce stores (thousands of products)
-    - Large news/magazine sites publishing dozens–hundreds of URLs per week
-    - Businesses where 70%+ of traffic must come from organic search
-    - Highly competitive keywords where technical SEO margins matter
-    - Projects where AI discoverability is mission-critical
-    - Complex multilingual / multi-locale sites
-    - Highly time-sensitive content (events, breaking news, stock alerts)
-    - \
-      If SEO is mission-critical or you’re in a brutally competitive organic market, SSR/hybrid frameworks give you real structural advantages. Lovable is optimized for building quickly and managing small-to-medium sites; very large, SEO-dependent projects require infrastructure Lovable intentionally does not provide.
-  </Accordion>
-  <Accordion title="Is it okay for SEO to use a lovable.app subdomain?">
-    Yes—for projects where SEO is not a priority:
+    - Massive e-commerce (thousands of products)
+    - Big news or magazine sites
+    - Businesses where ~70%+ traffic must come from SEO
+    - Highly competitive or time-sensitive markets
+    - Multilingual/multilocale sites
+    - Projects where AI visibility is mission-critical
 
-    - Early MVPs
-    - Portfolio / demo sites
-    - Internal or client demos
-    - Temporary landing pages
-    - Apps driven by referrals, social, or paid ads
-
-    For these, a lovable.app subdomain is fine.
+    **Why:**\
+    SSR/hybrid frameworks give real structural advantages for large-scale or SEO-dependent websites.
   </Accordion>
   <Accordion title="When do I need a custom domain?">
-    You should use a custom domain if you care about:
+    Use a **custom domain** if you care about:
 
     - Organic search traffic
     - Long-term brand building
-    - Competitive rankings
-    - Backlinks strengthening your domain
+    - Competitive SEO
+    - Backlink value
     - Full control over technical SEO
+
+    A lovable.app subdomain is fine for:
+
+    - MVPs
+    - Demos
+    - Temporary landing pages
+    - Internal tools
+    - Social/paid-driven projects
+
+    But for meaningful SEO, a custom domain is the #1 upgrade.
 
     Without one:
 
@@ -549,30 +540,48 @@ This section bundles all the “how to check” steps into a single, ordered flo
     If AI visibility is important, prerendering or SSR becomes more valuable.
   </Accordion>
   <Accordion title="Do I need an XML sitemap for my Lovable site?">
-    Yes—for Lovable CSR sites, an XML sitemap is very important because crawlers might not see all JS-generated routes.
+    Yes. Sitemaps are especially important for CSR apps because crawlers might not see all JS-generated routes.
 
-    - Ask Lovable to create/update sitemap.xml.
+    - Ask Lovable to create/update `sitemap.xml`.
     - Publish the site so it’s accessible.
-    - Submit it to Google and Bing.
+    - Submit it to Google Search Console and Bing Webmaster Tools.
 
-    This ensures new or JS-heavy pages are not missed.
-  </Accordion>
-  <Accordion title="How should I optimize content for SEO on a CSR Lovable site?">
-    Because CSR can add some friction for crawlers, content quality matters even more:
-
-    - Target long-tail keywords (lower competition, higher conversion).
-    - Create comprehensive content on key pages (often 1,500+ words for pillar pages).
-    - Update regularly—freshness signals relevance.
-    - Focus on user intent: answer the questions users actually search.
-    - Build backlinks to compensate for CSR limitations.
-
-    High-quality content + backlinks can outperform technically stronger sites.
+    This ensures that all important pages are seen and indexed.
   </Accordion>
   <Accordion title="How can I get the best SEO results with Lovable?">
-    - Allow time for indexing: JS pages are rendered in a second pass, so new content may take longer than SSR to appear.
-    - Focus on compatibility: optimize for Google and Bing (Bing’s JS rendering is weaker, so prerendering can help).
-    - Be AI-friendly: clear HTML, semantic structure, and schema improve visibility with AI crawlers that don’t execute JS.
-    - Prioritize performance: fast, stable pages benefit both SEO and user experience.
+    To get the strongest results:
+
+    ### **1. Content & on-page**
+
+    - Target long-tail keywords
+    - Write comprehensive pages (pillar pages often 1,500+ words)
+    - Match search intent clearly
+    - Keep content fresh and updated
+    - Use clean headings and semantic HTML
+    - Add JSON-LD schema on key pages
+
+    ### **2. Images**
+
+    - Compress large files
+    - Use meaningful alt text
+    - Prefer WebP/AVIF or SVG
+
+    ### **3. Internal links**
+
+    - Use descriptive anchor text
+    - Link between related pages
+    - Ensure important URLs have multiple internal links
+
+    ### **4. Technical**
+
+    - Optimize performance (Core Web Vitals)
+    - Ensure mobile usability
+    - Verify metadata on every page
+    - Keep a correct sitemap and robots.txt
+
+    ### **5. Backlinks**
+
+    High-quality backlinks help compensate for CSR limitations.
   </Accordion>
   <Accordion title="What user best practices help SEO on Lovable?">
     You’ll get the best results if you:
@@ -585,13 +594,21 @@ This section bundles all the “how to check” steps into a single, ordered flo
     - Monitor performance using GSC and Lighthouse.
   </Accordion>
   <Accordion title="Does Lovable optimize for mobile SEO?">
-    The Agent generally builds responsive, mobile-friendly layouts with the correct viewport. You must still test on real devices and ensure the experience is good, but the structure is mobile-ready.
+    The Agent typically builds responsive layouts with a correct viewport tag. However, **you must test on real devices** to ensure:
+
+    - No horizontal scroll
+    - Proper tap targets
+    - Stable layout
+    - Working navigation/forms
+
+    Good mobile UX supports both SEO and conversions.
   </Accordion>
   <Accordion title="How long does it take Google to index my page?">
-    Typically a few hours to a few days. You can speed things up by:
+    Typically **a few hours to a few days**. You can speed it up by:
 
-    - Submitting your sitemap in GSC.
-    - Using URL Inspection to Test Live URL and Request indexing for critical pages.
+    - Submitting your sitemap in GSC
+    - Using URL Inspection → **Test Live URL**
+    - Clicking **Request Indexing** for important pages
   </Accordion>
   <Accordion title="What if I don’t see my page ranking?">
     - Confirm your page is indexed in GSC (Coverage / Page indexing, URL Inspection).
@@ -599,12 +616,20 @@ This section bundles all the “how to check” steps into a single, ordered flo
     - Review content quality, search intent alignment, and on-page SEO (title, description, headings, internal links).
     - Ensure your site passes basic technical checks: performance, mobile usability, no blocked resources.
   </Accordion>
-  <Accordion title="How do I monitor SEO if Lovable has no built-in dashboard?">
-    Use:
-
-    - Google Search Console for indexing and performance.
-    - Lighthouse (Speed tool) for performance and best practices.
-    - Manual console checks (titles, descriptions, H1, canonicals, alt text, schema) as described in the checklist.
+  <Accordion title="How do I monitor SEO?">
+    - **Google Search Console**
+      - Indexing
+      - Impressions/clicks/CTR
+      - Core Web Vitals
+      - Mobile usability
+      - Crawl errors
+    - **Lighthouse (Lovable Speed tool)**
+      - Performance
+      - Accessibility
+      - Best practices
+      - SEO metrics
+    - **Manual console checks**\
+      (titles, descriptions, H1, canonical, schema, alt text)
   </Accordion>
   <Accordion title="How often should I update SEO settings, content, and sitemap?">
     - Sitemap → whenever URLs change (at least monthly if active).
