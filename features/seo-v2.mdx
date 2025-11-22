@@ -62,14 +62,14 @@ _Titles, descriptions, headings, semantic HTML, images_
 
 These actions help search engines understand what each page is about.
 
-| SEO feature                   | Agent capabilities                                                                                                    | What you must manage                                                                                                                                                                                                                                               |
-| :---------------------------- | :-------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Title tags**                | Creates a `<title>` that reflects page intent, usually \< 60 characters. A strong title improves ranking and CTR.     | - Check each route has a **unique, descriptive** title.<br />- Include a primary keyword plus brand where relevant.<br />- Avoid generic titles like “Home” or repeating the same title everywhere.                                                                |
-| **Meta descriptions**         | Adds a summary to influence how your snippet appears in search. Improves CTR even though not a ranking factor.        | - Write a clear 140–160 character description per main page.<br />- Highlight benefits, differentiation, and a soft call to action.<br />- Avoid duplicating the same description across multiple pages.                                                           |
-| **Heading structure (H1–H3)** | Creates a single H1 and logical sequence (H1 → H2 → H3). Proper structure helps engines understand page hierarchy.    | - Ensure **exactly one** `<h1>` per page that matches the main topic.<br />- Use `<h2>`/`<h3>` to structure sections logically (no random styling headings).<br />- Avoid using headings purely for styling where a `<p>` or `<span>` would suffice.               |
-| **Semantic HTML layout**      | Uses `<main>`, `<nav>`, `<section>`, `<article>`, etc. to clarify meaning and improve crawlability and accessibility. | - Confirm there is a single `<main>` that wraps primary content.<br />- Ensure navigation is inside `<nav>` and repeated footers use `<footer>`.<br />- Group related content into `<section>` and `<article>` elements meaningfully.                              |
-| **Image alt text**            | Adds `alt` attributes to images to support accessibility and image search.                                            | - Replace placeholder alt text (“image”, “photo”) with meaningful descriptions.<br />- Add keyword-relevant alt text for important illustrative images (without keyword stuffing).<br />- Ensure decorative images use empty alt (`alt=""`) or are handled by CSS. |
-| **Image formats & sizes**     | Uses modern image patterns to improve loading speed. Performance supports rankings.                                   | - Prefer WebP (or AVIF) for photos and SVG for logos/icons.<br />- Keep key images under ~200 KB where possible.<br />- Run Lighthouse and fix “properly sized images” and “serve next-gen formats” warnings.                                                      |
+| SEO feature                   | Agent capabilities                                                                                                       | What you must manage                                                                                                                                                                                                                                               |
+| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Title tags**                | Creates a `<title>` that reflects page intent, usually less than 60 characters. A strong title improves ranking and CTR. | - Check each route has a **unique, descriptive** title.<br />- Include a primary keyword plus brand where relevant.<br />- Avoid generic titles like “Home” or repeating the same title everywhere.                                                                |
+| **Meta descriptions**         | Adds a summary to influence how your snippet appears in search. Improves CTR even though not a ranking factor.           | - Write a clear 140–160 character description per main page.<br />- Highlight benefits, differentiation, and a soft call to action.<br />- Avoid duplicating the same description across multiple pages.                                                           |
+| **Heading structure (H1–H3)** | Creates a single H1 and logical sequence (H1 → H2 → H3). Proper structure helps engines understand page hierarchy.       | - Ensure **exactly one** `<h1>` per page that matches the main topic.<br />- Use `<h2>`/`<h3>` to structure sections logically (no random styling headings).<br />- Avoid using headings purely for styling where a `<p>` or `<span>` would suffice.               |
+| **Semantic HTML layout**      | Uses `<main>`, `<nav>`, `<section>`, `<article>`, etc. to clarify meaning and improve crawlability and accessibility.    | - Confirm there is a single `<main>` that wraps primary content.<br />- Ensure navigation is inside `<nav>` and repeated footers use `<footer>`.<br />- Group related content into `<section>` and `<article>` elements meaningfully.                              |
+| **Image alt text**            | Adds `alt` attributes to images to support accessibility and image search.                                               | - Replace placeholder alt text (“image”, “photo”) with meaningful descriptions.<br />- Add keyword-relevant alt text for important illustrative images (without keyword stuffing).<br />- Ensure decorative images use empty alt (`alt=""`) or are handled by CSS. |
+| **Image formats & sizes**     | Uses modern image patterns to improve loading speed. Performance supports rankings.                                      | - Prefer WebP (or AVIF) for photos and SVG for logos/icons.<br />- Keep key images under ~200 KB where possible.<br />- Run Lighthouse and fix “properly sized images” and “serve next-gen formats” warnings.                                                      |
 
 ## Make your pages appealing
 
@@ -257,7 +257,7 @@ Run through this checklist for any Lovable project to ensure you follow best SEO
     For key pages, use:
 
     - [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
-    - [Twitter Card Validator](https://cards-dev.twitter.com/validator)
+    - [X (Twitter) Card Validator](https://cards-dev.twitter.com/validator)
     - [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
 
     Check that:
@@ -280,7 +280,9 @@ Run through this checklist for any Lovable project to ensure you follow best SEO
   <Accordion title="5. Test performance and mobile experience">
     **Core Web Vitals & Lighthouse**
 
-    - In Lovable, run the **Speed** tool (Lighthouse) on core pages.
+    Lovable includes **page speed auditing powered by**[** Google Lighthouse**](https://developers.google.com/web/tools/lighthouse) — the same engine Google uses for performance evaluation.
+
+    - In Lovable, run the **Speed** tool  on core pages.
     - Aim for:
       - Performance: 90+
       - Accessibility: 90+
