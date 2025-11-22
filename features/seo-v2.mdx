@@ -280,7 +280,7 @@ Run through this checklist for any Lovable project to ensure you follow best SEO
   <Accordion title="5. Test performance and mobile experience">
     **Core Web Vitals & Lighthouse**
 
-    Lovable includes **page speed auditing powered by**[** Google Lighthouse**](https://developers.google.com/web/tools/lighthouse) — the same engine Google uses for performance evaluation.
+    Lovable includes **page speed auditing powered by**[\*\* Google Lighthouse\*\*](https://developers.google.com/web/tools/lighthouse) — the same engine Google uses for performance evaluation.
 
     - In Lovable, run the **Speed** tool  on core pages.
     - Aim for:
@@ -434,49 +434,44 @@ Run through this checklist for any Lovable project to ensure you follow best SEO
     Follow the technical and content recommendations in this guide—especially metadata, performance, and sitemap configuration—for the best results.
   </Accordion>
   <Accordion title="When is Lovable a good fit for SEO, and when should I consider SSR or prerendering?">
-    ### **Lovable is a strong fit when SEO is helpful but not the sole growth engine**, or when the site is small enough for manual SEO:
+    Lovable handles SEO well for small to medium sites where metadata, internal links, and sitemaps can be maintained manually.
+
+    ### **Good scenarios**
 
     - Marketing sites & landing pages
-    - Startups needing a fast, professional web presence
-    - Simple blogs or docs sites (≈ ≤ 200 pages)
+    - Startup or business websites
+    - Simple blogs or documentation sites (≈ ≤ 200 pages)
     - Portfolios and personal sites
     - Internal tools/dashboards (SEO irrelevant)
     - Apps behind authentication (should not be indexed)
     - Small sites (≈ 5–20 pages) with manageable metadata
-    - Projects driven by referrals, social, paid, or product usage
+    - Projects driven primarily by referrals, social, paid channels, or product-led growth
+    - Content-heavy blogs (≈ 50+ articles) — workable with steady upkeep
+    - Medium e-commerce sites (hundreds of products) — possible with extra care
 
-    **Why:**\
-    You can easily review meta tags, sitemaps, internal links, and performance manually.
+    **Why SEO can work here**
 
-    ### **Lovable is still workable but more challenging** when ranking is important and pages are numerous or competitive:
+    - Pages are limited enough to keep metadata and sitemaps accurate
+    - Google can render CSR sites effectively
+    - Performance and mobile optimizations are manageable
+    - You can manually review what matters: titles, descriptions, schema, OG tags, and internal links
 
-    - Content-heavy blogs (50+ articles)
-    - Medium e-commerce sites (hundreds of products)
-    - Local directories
-    - News/media or time-sensitive hubs
-    - Sites dependent on organic search
-    - Competitive markets (health, finance, legal, SaaS)
-    - Projects needing reliable AI/LLM visibility
+    ### **Poor fit**
 
-    **Why:**
+    These projects grow large or complex enough that CSR becomes a structural disadvantage.
 
-    - More pages → more manual metadata & sitemap upkeep
-    - CSR can slow Google’s rendering pass
-    - Social & AI crawlers don’t execute JS
-    - Competing against SSR sites is harder
-
-    ### **Lovable is a poor fit without prerendering or SSR** for very large or SEO-critical projects:
-
-    - Large content catalogs (≈ 500+ pages)
-    - Massive e-commerce (thousands of products)
-    - Big news or magazine sites
-    - Businesses where ~70%+ traffic must come from SEO
-    - Highly competitive or time-sensitive markets
+    - Very large sites (hundreds–thousands of pages, massive e-commerce catalogs, or big content libraries)
+    - SEO-dependent businesses where organic search is the primary growth channel
+    - Highly competitive or time-sensitive verticals (news/media, finance, legal, etc.)
     - Multilingual/multilocale sites
-    - Projects where AI visibility is mission-critical
+    - Projects where AI/LLM visibility is mission-critical
 
-    **Why:**\
-    SSR/hybrid frameworks give real structural advantages for large-scale or SEO-dependent websites.
+    **Why these are challenging**
+
+    - Too many URLs for manual metadata/sitemap upkeep
+    - CSR’s second-pass rendering slows indexing
+    - Social and AI crawlers don’t execute JavaScript
+    - SSR/hybrid frameworks provide significant technical advantages at this scale
   </Accordion>
   <Accordion title="When do I need a custom domain?">
     Use a **custom domain** if you care about:
