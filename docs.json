@@ -52,15 +52,10 @@
               "features/private-projects",
               "features/publish",
               "features/analytics",
-              "features/custom-domain",
-              {
-                "group": "SEO",
-                "pages": [
-                  "features/seo",
-                  "features/seo-v2",
-                  "features/seo-v3"
-                ]
-              },              
+              "features/custom-domain",              
+              "features/seo",
+              "features/seo/seo-v2",
+              "features/seo/seo-v3",
               "features/security",
               "features/labs",
               "features/business/sso",
