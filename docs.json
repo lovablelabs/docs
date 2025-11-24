@@ -53,8 +53,7 @@
               "features/publish",
               "features/analytics",
               "features/custom-domain",              
-              "features/seo",         
-              "features/seo-v3",
+              "features/seo",                     
               "features/security",
               "features/labs",
               "features/business/sso",
@@ -94,6 +93,7 @@
         "pages": [
           "tips-tricks/best-practice",
           "tips-tricks/troubleshooting",
+          "tips-tricks/seo-v3",
           "tips-tricks/using-images",
           "tips-tricks/using-videos",
           "tips-tricks/custom-fonts",
