@@ -53,7 +53,14 @@
               "features/publish",
               "features/analytics",
               "features/custom-domain",
-              "features/seo",
+              {
+                "group": "SEO",
+                "pages": [
+                  "features/seo",
+                  "features/seo-v2",
+                  "features/seo-v3"
+                ]
+              },              
               "features/security",
               "features/labs",
               "features/business/sso",

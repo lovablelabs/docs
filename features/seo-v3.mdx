@@ -3,11 +3,14 @@ title: "Lovable SEO & GEO"
 description: "Make your published Lovable websites discoverable by Google, social platforms, and AI systems."
 ---
 
-Lovable platform has no built-in SEO controls or automation **— SEO is emergent from the code Lovable writes when you ask for it.**
+Lovable platform has no built-in SEO controls or automation **— SEO is emergent from the code Lovable writes when you ask for it. **
 
-The Agent can assist in generating site structure and content and generally follows modern best practices, but it doesn’t guarantee correct SEO implementation. You must **treat SEO as code**: review it, test it, and adjust it.
+The Agent:
 
-Lovable may generate certain elements as part of content creation—for example, titles, descriptions, or tags inferred from your prompts, but not systematically. These are not deterministic, consistent, or complete. Output varies by project and prompting.
+- may generate certain elements as part of content creation—for example, titles, descriptions, or tags inferred from your prompts, but not systematically. 
+- can assist in generating site structure and content and generally follows modern best practices, but it doesn’t guarantee correct SEO implementation. 
+
+You must **treat SEO as code**: review it, test it, and adjust it.
 
 This guide explains:
 
@@ -41,6 +44,14 @@ When someone visits your Lovable site:
 - AI crawlers (ChatGPT, Perplexity, Gemini, Claude, etc.) often can’t see JS-rendered content, so CSR pages may appear minimally or not at all in AI-generated answers unless you add workarounds
 
 Modern search engines handle CSR well. With proper optimization, Lovable sites can rank competitively. CSR does not prevent indexing or ranking—implementation and content quality matter most.
+
+## Optimize for SEO
+
+You can prompt the Lovable Agent to implement various SEO features which help:
+
+- Make your pages discoverable
+- Make your pages meaningful
+- Make your pages appealing
 
 ## Make your pages discoverable
 
@@ -89,13 +100,15 @@ These actions improve how your pages appear in Search Engine Results Pages (SERP
 
 _Visibility in ChatGPT, Perplexity, Gemini, Claude_
 
+“GEO” (Generative Engine Optimization) refers to optimizing your site so AI systems—like ChatGPT Browse, Perplexity, Gemini, and Claude—can understand and reference your content.
+
+Because most AI crawlers **do not execute JavaScript**, CSR sites (including Lovable apps) require a few specific best practices to ensure AI visibility.
+
 Most GEO best practices are extensions of good SEO. If you follow the earlier sections plus the extras here, you’ll be in good shape.
 
 Generative engines extract information differently than search engines. Most do not execute JavaScript, so they rely heavily on static HTML and schema.
 
-### **What AI Agents Look For**
-
-Real-world behavior observed across LLM search systems:
+### **What AI agents look for**
 
 - Clear hierarchy of information
 - Question–answer content
@@ -104,6 +117,33 @@ Real-world behavior observed across LLM search systems:
 - Reliable data points with dates
 - Clean HTML that is easy to parse
 - Pages accessible without heavy JS reliance
+
+## Good content still wins—especially for GEO
+
+Regardless of rendering, AI-driven engines prefer:
+
+- Long-form, comprehensive content
+- Clear explanations
+- Up-to-date information
+- Verified facts
+- Pages with strong internal linking
+- Authoritative external links
+
+GEO and classical SEO overlap heavily:\
+**Write great content → AI systems will use it.**
+
+## GEO Summary
+
+To optimize a Lovable site for AI discovery:
+
+1. Ensure key content is visible in HTML or prerendered
+2. Use semantic structure
+3. Add schema markup
+4. Include Q&A-style content
+5. Consider prerendering for AI-critical pages
+6. Maintain high-quality, factual content
+
+Follow these and your Lovable site won’t just be visible to Google—it will be visible to the next generation of AI search engines.
 
 | GEO feature                                | Agent capabilities                                                                                                                               | What you must manage                                                                                                                                                                                                                                                          |
 | :----------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
