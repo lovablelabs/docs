@@ -1,481 +1,653 @@
 ---
-title: "Lovable SEO & GEO"
+title: "Lovable SEO and GEO best practices"
 description: "Make your published Lovable websites discoverable by Google, social platforms, and AI systems."
 ---
 
-Lovable platform has no built-in SEO controls or automation **— SEO is emergent from the code Lovable writes when you ask for it. **
+Lovable platform has no built-in SEO controls or automation — **SEO is emergent from the code Lovable writes when you ask for it.**
 
 The Agent:
 
-- may generate certain elements as part of content creation—for example, titles, descriptions, or tags inferred from your prompts, but not systematically. 
-- can assist in generating site structure and content and generally follows modern best practices, but it doesn’t guarantee correct SEO implementation. 
+- May generate certain elements as part of content creation—for example, titles, descriptions, or tags inferred from your prompts, but not systematically.
+- Can assist in generating site structure and content and generally follows modern best practices, but it doesn’t guarantee correct SEO implementation.
 
 You must **treat SEO as code**: review it, test it, and adjust it.
-
-This guide explains:
-
-- How SEO & GEO work with Lovable’s architecture
-- What the Lovable Agent can do for SEO
-- What you must manage and maintain
-- How to rank well and use workarounds for any limitations
 
 ## Understanding Lovable’s architecture
 
 Lovable builds modern web applications using React and Vite, which means your app is a client-side rendered (CSR) single-page application (SPA). Each “page” is a route handled in the browser, not a separate HTML file on the server.
 
-When someone visits your Lovable site:
+**Traditional sites**, like WordPress or Webflow, send you a complete, ready-to-read page. Each page is a separate file sitting on a server.
 
-- The browser receives a minimal HTML shell
-- JavaScript downloads and executes
-- React renders the full page content in the browser
-- Navigation between pages happens via React Router without full reloads
+**Lovable sites** send your browser instructions that assemble the page on your device. All your "pages" are actually different views of a single application, which is why it's called a single-page application (SPA).
 
-### What this means for SEO and GEO
+For visitors, there's no difference—pages load instantly and navigation feels seamless. But for search engines, there are important implications.
 
-**Google & traditional search engines**
+### What This Means for SEO & GEO
 
-- Index CSR sites via a two-step process (crawl HTML → render JavaScript later)
-- Indexing may be slightly slower than SSR (often days vs hours), but still reliable if configured well
+**Google & traditional search engines:**
 
-**Social & AI crawlers**
+- Can index Lovable sites, but use a two-step process (crawl HTML → render JavaScript later): first they collect your page structure, then they come back later to see the rendered content
+- Indexing takes slightly longer—typically days instead of hours—but is still reliable when configured properly
+- This delay doesn't hurt your rankings; it just means new pages take longer to appear in search results
 
-- Many do **not** execute JavaScript, so they mostly see the initial HTML
-- If every route shares the same static `<title>` and OG tags, sub-pages may show generic or wrong previews
-- AI crawlers (ChatGPT, Perplexity, Gemini, Claude, etc.) often can’t see JS-rendered content, so CSR pages may appear minimally or not at all in AI-generated answers unless you add workarounds
+**Social media & AI systems:**
 
-Modern search engines handle CSR well. With proper optimization, Lovable sites can rank competitively. CSR does not prevent indexing or ranking—implementation and content quality matter most.
+- Facebook, Twitter, and LinkedIn don't wait for content to render—they see only your initial page structure
+- If all your pages share the same basic title and preview image, social links may show generic or incorrect information
+- AI systems (ChatGPT, Perplexity, Gemini, Claude) often can't see dynamically rendered content, so they may miss your pages entirely
 
-## Optimize for SEO
+**Modern search engines handle CSR well**. With proper optimization setup (following this guide), Lovable sites can rank competitively. CSR does not prevent indexing or ranking—implementation and content quality matter most.
 
-You can prompt the Lovable Agent to implement various SEO features which help:
+Follow these practices to ensure your Lovable site is fully optimized for search engines and AI systems.
 
-- Make your pages discoverable
-- Make your pages meaningful
-- Make your pages appealing
+## Foundation: Make your site crawlable
 
-## Make your pages discoverable
+These actions help search engines find and index your content.
 
-_Crawlability, indexing, performance, mobile, internal links_
+### XML sitemap
 
-These actions help search engines find, render, and index your content.
+Sitemaps help search engines discover all your pages—critical for CSR sites where crawlers can't easily find all routes. Lovable can generate sitemap.xml with all public routes when requested.
 
-| SEO feature                       | Agent capabilities                                                                                                                                    | What you must manage                                                                                                                                                                                                                                                           |
-| :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Routing & clean URLs**          | Generates clean, human-readable routes (`/about`, `/pricing`) that help search engines understand page intent and improve crawlability.               | - Keep important pages on **stable, descriptive URLs** (no random IDs or query strings for core content).<br />- Avoid multiple URL variants (with/without trailing slash, `www` vs non-`www`).<br />- Test each key route loads without JS errors.                            |
-| **Canonical tags**                | Often adds a canonical tag to signal the authoritative URL, preventing duplicate content issues.                                                      | - Confirm **exactly one** canonical tag exists per page.<br />- Ensure the canonical URL matches your preferred version (https, domain, trailing slash convention).<br />- Avoid pointing different pages to the same canonical unless it’s intentional (e.g. filtered views). |
-| **robots.txt**                    | Can generate `robots.txt` to allow crawling and reference your sitemap, improving crawl discovery.                                                    | - Host `robots.txt` at `/robots.txt` and confirm it’s publicly accessible.<br />- Ensure you **do not block** essential assets like CSS and JS.<br />- Confirm it links to your sitemap (e.g. `Sitemap: https://yourdomain.com/sitemap.xml`).                                  |
-| **XML sitemap**                   | Can create `sitemap.xml` when requested. Sitemaps are essential for CSR apps because some routes are JS-only.                                         | - Regenerate the sitemap whenever you add, remove, or rename important pages.<br />- Ensure all key public routes appear in `sitemap.xml` (home, pricing, docs, blog, etc.).<br />- Submit/refresh the sitemap in Google Search Console and Bing Webmaster Tools.              |
-| **Performance & Core Web Vitals** | Uses modern optimization patterns (lazy loading, minified bundles) to support fast rendering. Good performance improves rankings and user experience. | - Run Lighthouse (Lovable Speed tool) on critical pages.<br />- Fix pages with poor LCP, CLS, or interaction metrics.<br />- Compress large images and remove unused JS/CSS flagged by Lighthouse.                                                                             |
-| **Mobile optimization**           | Produces responsive layouts and includes the viewport meta tag. Supports Google’s mobile-first indexing.                                              | - Test key pages on several phone sizes (DevTools + real devices).<br />- Fix horizontal scroll, overlapping text, or tiny tap targets.<br />- Confirm all primary flows (signup, contact, purchase) work smoothly on mobile.                                                  |
-| **Internal linking**              | Creates nav bars and footers that expose key routes and help crawlers navigate your site hierarchy. Can suggest internal links when requested.        | - Add contextual links in body content using descriptive anchor text.<br />- Ensure important pages (e.g. pricing, signup) have **multiple** internal links.<br />- Use real `<a href="…">` links, not `onClick` handlers only.                                                |
+<Accordion title="How to implement and verify sitemap.xml">
+  **Prompt to add**
 
-## Make your pages meaningful
+  For example:
 
-_Titles, descriptions, headings, semantic HTML, images_
+  > Create XML sitemap at /sitemap.xml listing all public routes. Include lastmod dates and priorities: homepage 1.0, main pages 0.8, blog posts 0.6. Exclude admin and account pages.
 
-These actions help search engines understand what each page is about.
+  **Verify**
 
-| SEO feature                   | Agent capabilities                                                                                                       | What you must manage                                                                                                                                                                                                                                               |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Title tags**                | Creates a `<title>` that reflects page intent, usually less than 60 characters. A strong title improves ranking and CTR. | - Check each route has a **unique, descriptive** title.<br />- Include a primary keyword plus brand where relevant.<br />- Avoid generic titles like “Home” or repeating the same title everywhere.                                                                |
-| **Meta descriptions**         | Adds a summary to influence how your snippet appears in search. Improves CTR even though not a ranking factor.           | - Write a clear 140–160 character description per main page.<br />- Highlight benefits, differentiation, and a soft call to action.<br />- Avoid duplicating the same description across multiple pages.                                                           |
-| **Heading structure (H1–H3)** | Creates a single H1 and logical sequence (H1 → H2 → H3). Proper structure helps engines understand page hierarchy.       | - Ensure **exactly one** `<h1>` per page that matches the main topic.<br />- Use `<h2>`/`<h3>` to structure sections logically (no random styling headings).<br />- Avoid using headings purely for styling where a `<p>` or `<span>` would suffice.               |
-| **Semantic HTML layout**      | Uses `<main>`, `<nav>`, `<section>`, `<article>`, etc. to clarify meaning and improve crawlability and accessibility.    | - Confirm there is a single `<main>` that wraps primary content.<br />- Ensure navigation is inside `<nav>` and repeated footers use `<footer>`.<br />- Group related content into `<section>` and `<article>` elements meaningfully.                              |
-| **Image alt text**            | Adds `alt` attributes to images to support accessibility and image search.                                               | - Replace placeholder alt text (“image”, “photo”) with meaningful descriptions.<br />- Add keyword-relevant alt text for important illustrative images (without keyword stuffing).<br />- Ensure decorative images use empty alt (`alt=""`) or are handled by CSS. |
-| **Image formats & sizes**     | Uses modern image patterns to improve loading speed. Performance supports rankings.                                      | - Prefer WebP (or AVIF) for photos and SVG for logos/icons.<br />- Keep key images under ~200 KB where possible.<br />- Run Lighthouse and fix “properly sized images” and “serve next-gen formats” warnings.                                                      |
+  - Publish your project so the file is live
+  - Check that it is accessible at: `https://yourdomain.com/sitemap.xml` (should return XML)
+  - Check all key routes included (home, main pages, blog, products)
+  - Submit to Google Search Console and Bing Webmaster Tools
+  - Regenerate and resubmit when adding/removing pages (not automatic). Prompt:
 
-## Make your pages appealing
+    > Update sitemap.xml to include /new-page and remove /old-page then resubmit to Google Search Console.
+</Accordion>
 
-_Rich results, link previews, social sharing_
+### Robots.txt
+
+Controls which parts of your site search engines can access. Essential to prevent blocking critical resources that Google needs to render your content. Lovable can generate robots.txt when requested.
+
+<Accordion title="How to implement an verify robots.txt">
+  **Prompt to add**
+
+  For example:
+
+  > Create robots.txt at /public/robots.txt that allows all crawlers, references Sitemap: https://yourdomain.com/sitemap.xml, and allows GPTBot and PerplexityBot for AI visibility.
+
+  **Verify**
+
+  - Check that it is accessible at: `https://yourdomain.com/robots.txt`
+  - Confirm it does NOT block CSS, JavaScript, or `/assets/` folder
+  - Includes `Sitemap:` line pointing to your sitemap
+  - Controls AI bot access (GPTBot, PerplexityBot) based on your strategy
+
+  **Example**
+
+  ```
+  User-agent: *
+  Allow: /
+  Sitemap: https://yourdomain.com/sitemap.xml
+  
+  User-agent: GPTBot
+  Allow: /
+  ```
+</Accordion>
+
+### Canonical tags
+
+Tells search engines which URL is the "official" version when you have similar content, preventing duplicate content issues. Lovable can generate canonical tags when requested.
+
+<Accordion title="How to implement and verify canonical tags">
+  **Prompt to add**
+
+  For example:
+
+  > Add canonical tags to all pages pointing to their own URLs. Use https://yourdomain.com format with no trailing slash.
+
+  **Verify**
+
+  - Check each page. Paste this in browser console:
+
+    ```
+    console.log('Canonical:', document.querySelector('link[rel="canonical"]')?.href);
+    ```
+  - Confirm **exactly one** canonical tag exists per page.
+  - Make sure it matches your preferred domain and URL variant (HTTPS, trailing slash).
+  - Avoid pointing different pages to the same canonical unless it’s intentional (for example, filtered product views).
+</Accordion>
+
+### Clean URLs and routing
+
+Search engines use URLs to understand page topics. Clean, descriptive URLs improve crawlability and rankings. Lovable usually generates clean routes via React Router automatically.
+
+<Accordion title="How to implement and verify clean URLs and routing">
+  **Prompt to add**
+
+  For example:
+
+  > Review all routes. Ensure product pages use clean URLs like /products/organic-dog-food instead of /products?id=123. Use hyphens to separate words.
+
+  **Verify**
+
+  - Navigate to each route and check browser console for errors
+  - URLs should be: stable, descriptive, no random IDs
+  - Consistent format site-wide (trailing slash or not, www or not)
+  - All routes load without JavaScript errors
+</Accordion>
+
+### Internal linking
+
+Helps search engines discover pages and understand site structure. Distributes page authority and improves navigation. Lovable can create nav/footer links and can suggest contextual links when requested.
+
+<Accordion title="How to implement and verify internal linking">
+  **Prompt to add**
+
+  For example:
+
+  > Add 3-5 contextual internal links in /blog/dog-nutrition to related posts and products. Use descriptive anchor text like 'grain-free dog food options' instead of 'click here'.
+
+  **Verify**
+
+  - Check links are crawlable:
+
+    ```
+    console.log('Links:', document.querySelectorAll('a[href]').length);
+    ```
+  - Use real `<a href>` tags, not onClick handlers
+  - Important pages have multiple internal links pointing to them
+  - Anchor text is descriptive with keywords (not "click here")
+    - **Good anchor text:** "organic dog food benefits"
+    - **Bad anchor text:** "click here", "read more"
+  - Deep pages reachable within 3 clicks from homepage
+</Accordion>
+
+## On-page SEO: Help search engines understand content
+
+These actions make your pages meaningful and help search engines understand what each page is about.
+
+### Page titles
+
+Most important on-page ranking factor. Appears in search results and browser tabs, directly impacts click-through rates. Lovable can create title tags reflecting page intent.
+
+<Accordion title="How to implement and verify page titles">
+  **Prompt to add**
+
+  For example:
+
+  > Update page titles for all routes. Format: 'Page Name | PetFood Co'. Keep under 60 characters. Examples: 'Organic Dog Food Delivery | PetFood Co' for homepage, 'Flexible Pricing Plans | PetFood Co' for /pricing.
+
+  **Verify**
+
+  - Check title content and length for each page. Paste this in the browser console:
+
+    ```
+    console.log('Title:', document.title, '| Length:', document.title.length);
+    ```
+  - Each route has unique, descriptive title (not generic "Home" everywhere)
+  - Under 60 characters to avoid truncation
+  - Includes primary keyword plus brand name
+</Accordion>
+
+### Meta descriptions
+
+Appear in search results below title. Not a ranking factor but significantly impact click-through rates. Lovable adds meta descriptions when requested.
+
+<Accordion title="How to implement and verify meta descriptions">
+  **Prompt to add**
+
+  For example:
+
+  > Write unique meta descriptions for key pages (140-160 chars): Homepage: 'Premium organic dog food delivered fresh. Free shipping over \$50. Shop grain-free options.' Pricing: 'Flexible plans starting at \$45/month. Cancel anytime.' About: 'Family-owned organic dog food company. 10+ years serving 50,000+ dogs.'
+
+  **Verify**
+
+  - Check description and length for each page. Paste this in the browser console:
+
+    ```
+    console.log('Desc:', document.querySelector('meta[name="description"]')?.content, '| Length:', document.querySelector('meta[name="description"]')?.content.length);
+    ```
+  - Each page has unique description (140-160 characters)
+    - **Bad**: "Welcome to our website" (generic, repeated)
+    - **Good**: "Premium organic dog food delivered fresh to your door. Free shipping over \$50." (158 chars)
+  - Highlights benefits, differentiation, and a soft call to action
+  - Not duplicated across pages
+</Accordion>
+
+### Heading structure (H1 → H3)
+
+Helps search engines understand content organization and section importance. Lovable can create H1 tags and logical heading hierarchy.
+
+<Accordion title="How to implement and verify heading structure">
+  **Prompt to add**
+
+  For example:
+
+  > Review heading structure on /about. Ensure exactly one H1: 'About PetFood Co - Organic Dog Nutrition Experts'. Use H2 for main sections (Our Story, Mission, Team) and H3 for subsections. Don't skip heading levels.
+
+  **Verify**
+
+  - Check there is only one H1 tag:
+
+    ```
+    console.log('H1s:', document.querySelectorAll('h1').length);
+    ```
+  - View content:
+
+    ```
+    console.log('H1:', document.querySelector('h1')?.textContent);
+    ```
+  - H1 includes primary keyword and states page purpose
+  - Headings flow logically (H1 → H2 → H3, never skip levels)
+  - Not used purely for styling
+</Accordion>
+
+### Semantic HTML
+
+Uses tags that describe content meaning, helping search engines and screen readers understand page structure. Lovable uses semantic elements like `<main>`, `<nav>`, `<section>`.
+
+<Accordion title="How to implement and verify semantic HTML">
+  **Prompt  to add**
+
+  For example:
+
+  > Review HTML structure. Ensure hero and main content in \<main\>, navigation in \<nav\>, feature sections in \<section\>, blog posts in \<article\>, footer in \<footer\>. Replace generic \<div\> wrappers with semantic tags.
+
+  **Verify**
+
+  - Paste this in browser console - all should return `true`:
+
+  ```
+  console.log('Has <main>:', !!document.querySelector('main'));
+  console.log('Has <nav>:', !!document.querySelector('nav'));
+  console.log('Has <footer>:', !!document.querySelector('footer'));
+  console.log('Has <section>:', !!document.querySelector('section'));
+  ```
+
+  - In the code editor, check the following for each page:
+    - Single `<main>` wraps primary content
+    - Navigation inside `<nav>`
+    - Footer content in `<footer>`
+    - Related content in `<section>` and `<article>` tags
+</Accordion>
+
+### Image optimization
+
+High-quality alt text improves accessibility, supports image search visibility, and contributes to stronger topical relevance signals. Efficient image formats and sizing improve page speed—another important ranking factor. Lovable can add alt attributes and lazy loading.
+
+<Accordion title="How to implement and verify image optimization">
+  **Prompt to add**
+
+  For example:
+
+  > Review all images on /products. Update alt text to be descriptive and keyword-relevant. Example: Instead of 'product image', use 'organic grain-free dog food bag with chicken and vegetables'. Ensure all images have width/height attributes and are compressed to \<200KB.
+
+  **Verify**
+
+  - Confirm every image has alt text. Paste this in browser console - should be 0:
+
+    ```
+    console.log('Missing alt:', document.querySelectorAll('img:not([alt])').length);
+    ```
+  - Evaluate alt text quality - must be descriptive with relevant keywords (not "image" or empty)
+    - Bad: `alt="image"` or `alt="photo"`
+    - Good: `alt="Golden retriever eating organic grain-free dog food from a bowl"`
+  - Use proper file formats and keep file sizes small:
+    - WebP for photos and illustrations
+    - SVG for logos, icons, and simple graphics
+    - Images compressed under 200KB
+  - Width/height attributes present (prevents layout shift)
+</Accordion>
+
+## Rich results: Stand out in search
 
 These actions improve how your pages appear in Search Engine Results Pages (SERPs) and social platforms.
 
-| SEO feature                   | Agent capabilities                                                                                                                                                                            | What you must manage                                                                                                                                                                                                                          |
-| :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Structured data (schema)**  | Can add JSON-LD for `Product`, `Article`, `FAQPage`, `Organization`, etc. Schema helps search engines and AI systems extract structured facts and unlock rich results (stars, FAQ dropdowns). | - Add JSON-LD schema to key pages (home, products, blog posts, FAQ).<br />- Validate snippets using Google’s Rich Results Test.<br />- Fix missing required fields and keep structured data in sync with on-page content.                     |
-| **Open Graph & Twitter tags** | Can generate OG/Twitter tags for improved link previews and better content interpretation by social and AI crawlers.                                                                          | - Ensure each important route has unique OG title and description in the HTML.<br />- Verify OG/Twitter tags render correct previews using official debug tools.<br />- Avoid using generic, site-wide tags for all pages unless intentional. |
-| **OG images**                 | Can add default or custom OG images. High-quality images dramatically improve share performance and brand trust.                                                                              | - Create 1200×630px (approx.) preview images for main pages.<br />- Keep image files under ~1 MB and visually consistent with your brand.<br />- Avoid using a single OG image for every page unless you have no better option.               |
+### Structured data (JSON-LD schema)
 
-## Make your content LLM-friendly (GEO)
+Helps search engines understand content type and unlocks rich results (star ratings, FAQ dropdowns, product cards). Lovable can add JSON-LD schema when explicitly requested.
 
-_Visibility in ChatGPT, Perplexity, Gemini, Claude_
+**Common schema types**
 
-“GEO” (Generative Engine Optimization) refers to optimizing your site so AI systems—like ChatGPT Browse, Perplexity, Gemini, and Claude—can understand and reference your content.
+- **Product** — price, availability, reviews, ratings
+- **Article** — author, publish date, featured image
+- **FAQPage** — question/answer pairs
+- **LocalBusiness** — address, phone number, hours
 
-Because most AI crawlers **do not execute JavaScript**, CSR sites (including Lovable apps) require a few specific best practices to ensure AI visibility.
+<Accordion title="How to implement and verify structured data">
+  **Prompt to add**
 
-Most GEO best practices are extensions of good SEO. If you follow the earlier sections plus the extras here, you’ll be in good shape.
+  For example:
 
-Generative engines extract information differently than search engines. Most do not execute JavaScript, so they rely heavily on static HTML and schema.
+  > Add Product schema to /products/\* pages. Include: name, description, price, currency (USD), availability (InStock), image, brand (PetFood Co), aggregateRating with ratingValue and reviewCount.
 
-### **What AI agents look for**
+  **Verify**
 
-- Clear hierarchy of information
-- Question–answer content
-- Short, extractable facts
-- JSON-LD schemas
-- Reliable data points with dates
-- Clean HTML that is easy to parse
-- Pages accessible without heavy JS reliance
+  - Check presence on key pages (for example, home, products, blog posts, FAQ). Paste this in browser console - should be 1:
 
-## Good content still wins—especially for GEO
+  ```
+  console.log('Schema:', document.querySelectorAll('script[type="application/ld+json"]').length);
+  ```
 
-Regardless of rendering, AI-driven engines prefer:
+  - Validate with [Google Rich Results Test](https://search.google.com/test/rich-results)
+  - Fix any errors or missing required fields
+  - Keep schema data synchronized with visible page content
+</Accordion>
 
-- Long-form, comprehensive content
-- Clear explanations
-- Up-to-date information
-- Verified facts
-- Pages with strong internal linking
-- Authoritative external links
+### Social media optimization: Open Graph, Twitter Cards, and OG images
 
-GEO and classical SEO overlap heavily:\
-**Write great content → AI systems will use it.**
+Control how preview links appear when shared on social media. High-quality images dramatically improve share performance and brand trust.
 
-## GEO Summary
+Lovable includes baseline OG/Twitter tags in the template, but **you must customize image, title, and description per page**.
 
-To optimize a Lovable site for AI discovery:
+Most social platforms (Facebook, Twitter/X, LinkedIn) **do not execute JavaScript**, which means your site may show **generic or incomplete link previews** unless you explicitly configure Open Graph (OG) and Twitter Card metadata in the initial HTML
 
-1. Ensure key content is visible in HTML or prerendered
-2. Use semantic structure
-3. Add schema markup
-4. Include Q&A-style content
-5. Consider prerendering for AI-critical pages
-6. Maintain high-quality, factual content
+<Accordion title="How to implement and verify Open Graph and Twitter Cards">
+  You have **two options** for managing social metadata:
 
-Follow these and your Lovable site won’t just be visible to Google—it will be visible to the next generation of AI search engines.
+  - Prompt Lovable
+  - Update manually via GitHub or code editor
 
-| GEO feature                                | Agent capabilities                                                                                                                               | What you must manage                                                                                                                                                                                                                                                          |
-| :----------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Semantic HTML & schema for AI**          | Provides clean structure and can add schema when requested. LLM crawlers read HTML directly because they rarely execute JS.                      | - Put your key facts (what you do, who you serve, pricing basics) in static HTML, not only in JS-generated widgets.<br />- Add `Organization`, `Product`, `FAQPage`, and other relevant schema.<br />- Keep facts consistent across your site, schema, and external profiles. |
-| **Static LLM-friendly  HTML summary page** | Can build a dedicated static page (`/llm`, `/about-ai`) summarizing your company, products, FAQs, and key information in one crawlable location. | - Request a dedicated `/llm` or similar page and keep it up to date.<br />- Structure the page with clear headings and concise, factual sections.<br />- Include schema (`Organization`, `FAQPage`, etc.) so LLMs can extract structured facts.                               |
-| **Prerendering**                           | Works with external prerendering tools to serve bots full HTML snapshots of your SPA, bypassing JS limitations.                                  | - Choose and configure a prerendering service (e.g. via your host/proxy).<br />- Prerender key SEO and GEO routes: `/`, `/pricing`, `/about`, `/llm`, landing pages.<br />- Test with “View source” and URL inspection tools to confirm bots see full HTML content.           |
-| **LLM-quotable content patterns**          | Can generate FAQs, definitions, short answers, and structured content that LLMs reuse verbatim.                                                  | - Write clear, concise answers to common questions in FAQ/Q&A formats.<br />- Use definition blocks (“X is…”) that are easy to quote.<br />- Avoid overly fluffy or vague copy that’s hard to reuse.                                                                          |
-| **AI bot access (robots.txt)**             | Can configure access rules for GPTBot, PerplexityBot, etc.                                                                                       | - Decide which AI crawlers you want to allow or block.<br />- Explicitly allow or disallow AI bots in `robots.txt` based on your strategy.<br />- Re-check `robots.txt` after changes to ensure you haven’t accidentally blocked desired bots.                                |
+  **Prompt to add Open Graph and Twitter Cards**
 
-## SEO and GEO checklist
+  For example:
 
-Run through this checklist for any Lovable project to ensure you follow best SEO and GEO practices.
+  > Add unique Open Graph tags to /pricing: og:title 'Flexible Pricing Plans | PetFood Co', og:description 'Choose monthly or annual plans. Cancel anytime.', og:image '/og-pricing.jpg', og:url 'https://petfoodco.com/pricing'. Include twitter:card 'summary_large_image'.
 
-<AccordionGroup>
-  <Accordion title="1. Confirm crawlability foundations">
-    **robots.txt**
+  **Prompt to add OG image**
 
-    - Ask Lovable:
+  > Create custom OG images for homepage, pricing, about. Each should be 1200x630px JPG, include page title text overlaid on brand visuals, keep under 800KB. Upload to /public/og-images/ and update og:image tags.
 
-      > “Create a robots.txt that allows all bots and references my sitemap.”
-    - Make sure the file is located at:
-      - `/public/robots.txt` in your project
-      - Accessible at `https://yourdomain.com/robots.txt`
-    - Verify that it:
-      - Does **not** block `/assets/`, CSS, or JS.
-      - Includes a `Sitemap:` line pointing to your sitemap URL.
+  **Update manually**
 
-    **XML sitemap**
+  Replace or update your og:image file manually (via GitHub or the code editor) for complete creative control over the preview image.
 
-    - Ask Lovable:
+  **Verify**
 
-      > “Generate or update sitemap.xml with all public routes.”
-    - Publish your project so the file is live.
-    - Verify it is accessible at:
-      - `https://yourdomain.com/sitemap.xml`
-    - In Google Search Console → **Sitemaps**:
-      - Submit the sitemap URL.
-      - Re-submit after adding/removing key pages.
-
-    **AI bot access (optional but recommended for GEO)**
-
-    - Decide your AI visibility strategy (allow vs disallow GPTBot, PerplexityBot, etc.).
-    - Edit `robots.txt`, for example:
-
-      ```
-      User-agent: GPTBot
-      Allow: /
-      
-      User-agent: PerplexityBot
-      Allow: /
-      
-      ```
-    - Re-check that `robots.txt` still allows normal search engine bots (Googlebot, Bingbot).
-  </Accordion>
-  <Accordion title="2. Verify on-page SEO basics">
-    Do this per important route (for example, home, pricing, feature pages, docs, blog posts, /llm, and so on).
-
-    **Titles & descriptions**
-
-    In your browser DevTools console on each page:
-
-    ```
-    // Check page title
-    console.log('Title:', document.title);
-    
-    // Check meta description
-    console.log(
-      'Description:',
-      document.querySelector('meta[name="description"]')?.content
-    );
-    ```
-
-    - Ensure the title is unique, descriptive, and not too long.
-    - Ensure the description exists and is tailored to the page.
-
-    If titles or descriptions repeat across pages, ask Lovable:
-
-    > “Install react-helmet-async and set unique titles and descriptions for each route.”
-
-    **H1 and heading structure**
-
-    In the console:
-
-    ```
-    // Ensure exactly one H1 tag, should return 1
-    console.log('H1 count:', document.querySelectorAll('h1').length);
-    ```
-
-    - Confirm:
-      - Exactly one `<h1>` per page.
-      - Headings flow logically (`<h2>` for major sections, `<h3>` for subsections).
-    - If there are multiple H1s, ask Lovable:
-
-      > “Ensure this page uses exactly one H1 and convert the others to H2/H3.”
-
-    **Canonical URL**
-
-    In the console:
-
-    ```
-    // Validate canonical URL
-    console.log(
-      'Canonical:',
-      document.querySelector('link[rel="canonical"]')?.href
-    );
-    ```
-
-    - Ensure each page has a canonical URL.
-    - Make sure it matches your preferred domain and URL variant (HTTPS, trailing slash).
-
-    **Images and alt text**
-
-    In the console:
-
-    ```
-    // Confirm all images have alt text
-    console.log(
-      'Images without alt:',
-      document.querySelectorAll('img:not([alt])').length
-    );
-    ```
-
-    - Ensure important images have descriptive `alt` attributes.
-    - Decorative images can use `alt=""` or be implemented via CSS.
-    - Check file sizes in Network tab and compress large files (\> 200 KB) where possible.
-  </Accordion>
-  <Accordion title="3. Validate structured data and GEO/AI signals">
-    **JSON-LD schema**
-
-    In the console:
-
-    ```
-    // Check for structured data (JSON-LD)
-    console.log(
-      'Schema blocks:',
-      document.querySelectorAll('script[type="application/ld+json"]').length
-    );
-    ```
-
-    - Ensure important routes include appropriate schema, for example:
-      - `Organization` on home/about.
-      - `Product` on pricing/product pages.
-      - `FAQPage` wherever you have FAQs.
-    - Use:
-      - [Google Rich Results Test](https://search.google.com/test/rich-results) to validate.
-      - Fix any missing required fields or errors.
-
-    For example, if schema is missing, ask Lovable:
-
-    > “Add JSON-LD schema for this product/blog post/FAQ section.”
-
-    **LLM summary page**
-
-    - For example, ask Lovable:
-
-      > “Create a /llm page summarizing our company, offerings, differentiators, contact info, and 8–12 FAQs using semantic HTML and Organization + FAQPage schema.”
-    - Confirm the page:
-      - Uses clear headings and concise sections.
-      - Includes accurate and up-to-date information.
-      - Has appropriate schema blocks.
-  </Accordion>
-  <Accordion title="4. Check social and sharing previews">
-    **Open Graph and Twitter Cards**
-
-    For key pages, use:
-
+  - Before sharing any URL, verify how it appears:
     - [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
     - [X (Twitter) Card Validator](https://cards-dev.twitter.com/validator)
     - [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
+  - Each important page has unique og:title, og:description, og:image, og:url in the HTML
+  - Tags include twitter:card and twitter:image
+  - Preview shows correct title, description, image
+  - Images are 1200×630px, and under 1MB
+  - Visually consistent with brand
+  - Avoid using single generic image for every page
 
-    Check that:
+  **Example**
 
-    - The preview title and description match the page’s intent.
-    - The link preview uses the correct OG image (not your logo or a random asset unless you intend that).
+  ```
+  <meta property="og:title" content="Organic Dog Food Delivery | PetFood Co" />
+  <meta property="og:description" content="Premium grain-free dog food delivered fresh to your door." />
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/products" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
+  
+  ```
+</Accordion>
 
-    For example, if previews are wrong or generic, ask Lovable:
+## Performance and mobile
 
-    > “Add unique OG tags for /pricing with this title, description, and image…”
+These actions help search engines render your content.
 
-    **OG images**
+### Core Web Vitals and performance
 
-    Confirm images are:
+Page speed is a confirmed ranking factor. Faster sites rank higher and convert better. Lovable uses modern optimization patterns like lazy loading and code minification to support fast rendering.
 
-    - ~1200×630px (or platform-friendly ratio).
-    - Under ~1 MB file size.
-    - Branded and visually consistent.
-  </Accordion>
-  <Accordion title="5. Test performance and mobile experience">
-    **Core Web Vitals & Lighthouse**
+**Core Web Vitals targets:**
 
-    Lovable includes **page speed auditing powered by**[\*\* Google Lighthouse\*\*](https://developers.google.com/web/tools/lighthouse) — the same engine Google uses for performance evaluation.
+| Metric                             | Target  | What it measures                       | How to fix                                                                                                       |
+| ---------------------------------- | :------ | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| **LCP** (Largest Contentful Paint) | \<2.5s  | Time until main content appears        | Compress hero images, use WebP, preload critical resources, reduce server response time                          |
+| **FID** (First Input Delay)        | \<100ms | Time until page responds to user input | Reduce JavaScript execution time, defer non-critical scripts, break up long tasks                                |
+| **CLS** (Cumulative Layout Shift)  | \<0.1   | Visual stability while loading         | Add width/height to all images, reserve space for dynamic content, avoid inserting content above fold after load |
 
-    - In Lovable, run the **Speed** tool  on core pages.
-    - Aim for:
-      - Performance: 90+
-      - Accessibility: 90+
-      - Best Practices: 90+
-      - SEO: 100
+<Accordion title="How to implement and verify core web vitals and performance">
+  **Prompt to add**
 
-    Focus on Lighthouse recommendations, especially:
+  For example:
 
-    - Large LCP images or hero sections.
-    - Render-blocking scripts or styles.
-    - Cumulative Layout Shift (CLS) issues (missing image dimensions, layout jumps).
-    - Unused JS/CSS.
+  > "Fix Lighthouse performance issues on homepage: Compress hero image to \<200KB, add width/height to all images, defer non-critical JavaScript, preload hero image and fonts. Target 90+ Performance score."
 
-    Fix issues by:
+  **Verify**
 
-    - Compressing and properly sizing images.
-    - Removing or lazy-loading non-critical scripts.
-    - Setting explicit width/height on images.
+  - Run **Speed** tool in Lovable (Lighthouse audit)
+  - Target scores:
+    - Performance: 90+
+    - Accessibility: 90+
+    - Best Practices: 90+
+    - SEO: 100
+  - Core Web Vitals: LCP \<2.5s, FID \<100ms, CLS \<0.1
+  - Fix pages with poor performance scores
+    - Compress large images
+    - Remove unused JavaScript/CSS flagged by Lighthouse
+    - Add width/height attributes to images (prevents layout shift)
+</Accordion>
 
-    **Mobile usability**
+### Mobile optimization
 
-    - Use DevTools device mode and real devices where possible.
-    - Confirm:
-      - No sideways scrolling on small screens.
-      - Buttons and links are easily tappable.
-      - Forms and modals work correctly on touch devices.
-  </Accordion>
-  <Accordion title="6. Configure prerendering (when needed)">
-    Prerendering is a strong upgrade if you have:
+More than 60% of searches happen on mobile. Google uses mobile-first indexing—your mobile version determines rankings. Lovable produces responsive layouts with viewport tag.
 
-    - Content-heavy sites,
-    - SEO-driven businesses,
-    - Or care strongly about AI visibility
+<Accordion title="How to implement and verify mobile optimization">
+  **Prompt to add**
 
-    1. Choose a prerendering service:
+  For example:
 
-    - [Prerender.io](http://Prerender.io): Industry standard, most tested 
-    - [DataJelly](https://datajelly.app/): Alternative with similar features
-    - [Rendertron](https://github.com/GoogleChrome/rendertron): Open-source (free, requires hosting)
+  > Review mobile experience. Increase tap target sizes to minimum 48x48px, add spacing between interactive elements, ensure text is minimum 16px, fix any horizontal scroll on small screens.
 
-    2. Configure your hosting/proxy to:
+  \*\*Verify \*\*
 
-    - Detect bots.
-    - Serve prerendered HTML snapshots to them.
+  - Test key pages on several device sizes, test iPhone, Android, tablet sizes (Chrome DevTools + real devices).
+  - Confirm all primary flows work smoothly on mobile
+  - No horizontal scrolling on any page
+  - Text readable without zooming (minimum 16px font size)
+  - Buttons/links at least 48×48px, with spacing between, and easily tappable
+  - Forms work properly on touch devices (large inputs, clear labels)
+  - Navigation accessible (hamburger menu functional)
+  - Images and videos fit within screen width
+</Accordion>
 
-    3. Prerender at least:
+## GEO: Make your content AI/LLM-friendly
 
-    - `/`
-    - `/pricing`
-    - `/about`
-    - `/llm`
-    - Key landing and blog pages.
+Generative Engine Optimization (GEO) helps AI systems like ChatGPT, Perplexity, Gemini, and Claude discover and cite your content. Generative engines extract information differently than search engines. Most do not execute JavaScript, so they rely heavily on static HTML and schema.
 
-    4. Verify `View source` as Googlebot (e.g. via tools or GSC’s URL Inspection) shows full HTML with content and schema.
-  </Accordion>
-  <Accordion title="7. Set up ongoing monitoring and maintenance">
-    This is how you ensure continuous SEO and GEO health.
+Most GEO best practices are extensions of good SEO. If you follow the earlier sections plus the extras here, you’ll be in good shape.
 
-    #### Google Search Console (GSC)
+### Semantic HTML and schema for AI
 
-    GSC is your window into what Google sees:
+AI crawlers read HTML directly without executing JavaScript. Clear structure and schema help them extract facts for citations. Lovable provides semantic structure and can add schema when requested.
 
-    - Which pages are indexed
-    - Impressions, clicks, CTR, and average position
-    - Core Web Vitals from real users
-    - Crawl coverage and errors
-    - Mobile usability issues
+<Accordion title="How to implement and verify semantic HTML and schema for AI">
+  **Prompt to add**
 
-    Lovable has no built-in GSC integration, so setup is manual but straightforward.
+  For example:
 
-    1. **Verify site ownership**
+  > Review homepage for AI crawlers. Ensure company description, services, and differentiators are in clear HTML paragraphs with semantic headings, not hidden in JavaScript state. Add Organization schema with name, description, url, logo, sameAs (social profiles).
 
-    Choose one method:
+  **Verify**
 
-    - **DNS TXT record (recommended)** — add it via your domain provider.
-    - **Meta tag** — ask Lovable:
+  - Put key facts in static HTML (for example, what you do, who you serve, pricing)
+  - Use clear headings (`<h2>`, `<h3>`) to structure information
+  - Add comprehensive schema: Organization, Product, FAQPage, Article
+  - Write in clear, factual language that AI can parse and cite
+  - Keep facts consistent across your site, schema, and external profiles.
+</Accordion>
 
-      > “Add this Google Search Console verification meta tag to the `<head>` of my site…”
-    - **HTML file** — download Google’s verification file and ask Lovable to place it at the site root (usually `/public`).
+### AI bot access (robots.txt)
 
-    2. **Submit your sitemap**
+Controls which AI systems can access your content for training or answering queries. Configure in robots.txt to allow desired bots.
 
-    - In GSC → **Sitemaps**, add`https://yourdomain.com/sitemap.xml`
-    - It can take some time for Google to process and show coverage.
+<Accordion title="How to implement and verify AI bot access in robots.txt">
+  **Prompt to add**
 
-    3. **Use URL Inspection**
+  For example:
 
-    For any important URL:
+  > Update robots.txt to allow GPTBot, PerplexityBot, and Claude-Web for AI citations. Block Google-Extended and CCBot to prevent AI training. Keep search engine crawlers allowed.
 
-    - Paste it into **URL Inspection**.
-    - Click **Test Live URL**.
-    - Review:
-      - Screenshot of what Googlebot sees.
-      - Rendered HTML.
-      - Console errors.
-      - Blocked resources.
+  **Verify**
 
-    If it looks correct, you can click **Request indexing** for key pages (rate-limited but useful for launches/updates).
+  - Decide visibility strategy: allow AI citations or block AI training
+  - Explicitly allow or block bots based on strategy
+    - Common bots: GPTBot (ChatGPT), PerplexityBot, Claude-Web, Google-Extended (training), CCBot
+  - Re-check after changes to ensure desired bots aren't accidentally blocked
 
-    4. **Monitor reports weekly**
+  **Example**
 
-    - **Coverage / Page indexing**
-      - Indexed vs excluded pages.
-      - Reasons for exclusion (redirects, canonicalization, noindex, etc.).
-    - **Performance (Search results)**
-      - Queries, impressions, clicks, CTR, average position.
-      - Which pages gain or lose visibility.
-    - **Core Web Vitals**
-      - Real-world LCP, interaction latency, CLS.
-      - Compare mobile vs desktop.
-    - **Mobile usability**
-      - Issues with viewport, tap targets, content width.
+  ```
+  User-agent: *
+  Allow: /
+  
+  User-agent: GPTBot
+  Allow: /
+  
+  User-agent: Google-Extended
+  Disallow: /
+  ```
+</Accordion>
 
-    #### Suggested maintenance schedule
+#### LLM-quotable content patterns
 
-    **Weekly**
+AI systems prefer clear, structured content they can confidently quote. Help them cite your information accurately. Lovable can generate FAQ sections and structured content when requested.
 
-    - Check GSC Coverage for new errors and newly indexed pages.
-    - Glance at search performance trends.
-    - Run URL Inspection for newly important URLs and request indexing if needed.
+<Accordion title="How to implement and verify LLM-quotable content patterns">
+  **Prompt to add**
 
-    **Monthly**
+  For example:
 
-    - Update `sitemap.xml` if pages changed.
-    - Refresh underperforming titles/descriptions (low CTR pages).
-    - Run a Lighthouse audit on your main templates.
-    - Do a small round of content improvements or link building.
+  > Review FAQ section. Rewrite answers to be quotable by AI: start with direct answer in first sentence, 2-3 sentences total, include specific facts/numbers, avoid vague marketing language. Example: Instead of 'Our food helps dogs feel their best' write 'Organic dog food reduces digestive issues in 65% of dogs and provides 30% more nutrients than conventional options.'
 
-    **Quarterly**
+  **Verify**
 
-    - Do a deeper technical audit: c
+  - Write clear answers to common questions in FAQ/Q&A format
+  - Use definition patterns that are easy to quote: "X is [clear definition]"
+  - Avoid vague marketing copy
+  - Create lists and bullet points for easy parsing
+  - Include statistics with sources when possible
 
-      anonicals, `robots.txt`, schema, internal links, mobile usability.
-    - Review keyword performance and top landing pages.
-    - Refresh older content that is slipping in rankings or out of date.
-  </Accordion>
-</AccordionGroup>
+  **Examples**
 
-## SEO and GEO FAQ
+  - Bad: "Amazing transformative solutions"
+  - Good: "USDA-certified organic dog food delivered weekly. Plans start at \$45/month with free shipping over \$50."
+</Accordion>
+
+#### Static LLM-friendly summary page
+
+A dedicated page summarizing your company makes it easy for AI systems to understand and cite your information. Lovable can build dedicated summary pages (like `/llm`, `/about-ai`) with key information in crawlable format.
+
+<Accordion title="How to implement and verify LLM-friendly summary page">
+  **Prompt to add**
+
+  For example:
+
+  > Create /llm page with: company description (2 paragraphs), products/services list, key differentiators, pricing summary, 10 FAQs with factual answers, contact info. Add Organization and FAQPage schema. Use clear H2/H3 headings and factual language.
+
+  **Verify**
+
+  - Create page at `/llm` or `/about-ai`
+  - Structure with clear H2/H3 headings
+  - Include, for example: company summary, products/services, differentiators, pricing model, contact info, FAQs
+  - Add Organization and FAQPage schema so LLMs can extract structured facts
+  - Keep content factual and quotable (avoid marketing fluff)
+  - Update when offerings change
+</Accordion>
+
+## Set up ongoing monitoring and maintenance
+
+This is how you ensure continuous SEO and GEO health.
+
+#### Google Search Console (GSC) setup
+
+GSC is your window into what Google sees—indexation status, performance, technical issues. Essential for monitoring SEO health.
+
+Lovable has no built-in GSC integration—manual setup required.
+
+<Accordion title="How to set up and use GCS for monitoring and maintenance">
+  **Verify site ownership** (choose one method)
+
+  - DNS TXT record (recommended): add the TXT record in your domain provider’s DNS settings
+  - Meta tag verification: prompt Lovable
+
+  > Add GSC verification meta tag: \<meta name='google-site-verification' content='YOUR_CODE' /\> to the \<head\> of my site
+
+  - HTML file upload (if hosting supports): download Google’s verification file and ask Lovable to place it at the site root (usually /public)
+
+  **Submit sitemap**
+
+  1. In GSC, go to **Sitemaps**
+  2. Enter your sitemap URL:\
+     https://yourdomain.com/sitemap.xml
+  3. Click **Submit**
+
+   It can take **24–48 hours** for Google to process and report on it.
+
+  **Use URL Inspection tool** (most powerful feature)
+
+  Use this to:
+
+  - Confirm Google sees real content (not a blank page)
+  - Diagnose rendering issues on CSR pages
+  - Check if important resources (JS/CSS) are blocked
+
+  For any URL:
+
+  1. Enter the URL in the **URL Inspection** bar
+  2. Click **Test Live URL** and w
+
+     ait for Googlebot to fetch and render the page
+  6. Click **View Tested Page** to see:
+     - Screenshot of what Googleb sees
+     - Rendered HTML (content after JavaScript)
+     - Console errors
+     - Blocked resources
+  5. Click **Request Indexing** for new/updated priority pages (rate limited)
+
+  **Reports to monitor weekly**
+
+  - **Coverage/Page indexing:**
+    - Indexed vs. excluded pages
+    - Crawl errors and reasons for exclusion
+    - Indexation trend over time
+  - **Performance (search results):**
+    - Impressions, clicks, CTR, average position
+    - Top queries and pages
+    - Which pages are gaining/losing visibility
+  - **Core Web Vitals:**
+    - Real-world LCP, FID, CLS from actual users
+    - Identify slow/problematic pages
+    - Compare **mobile vs. desktop**
+  - **Mobile Usability:**
+    - Mobile-specific issues (tap targets, viewport, content width)
+    - Fix errors to maintain mobile rankings
+</Accordion>
+
+#### Suggested maintenance schedule
+
+**Weekly**
+
+- Check GSC Coverage for new errors and newly indexed pages.
+- Glance at search performance trends.
+- Run URL Inspection for newly important URLs and request indexing if needed.
+
+**Monthly**
+
+- Update `sitemap.xml` if pages changed.
+- Refresh underperforming titles/descriptions (low CTR pages).
+- Run a Lighthouse audit on your main templates.
+- Do a small round of content improvements or link building.
+
+**Quarterly**
+
+- Do a deeper technical audit: c
+
+  anonicals, `robots.txt`, schema, internal links, mobile usability.
+- Review keyword performance and top landing pages.
+- Refresh older content that is slipping in rankings or out of date.
+
+## FAQ
 
 <AccordionGroup>
   <Accordion title="Can my site rank well on search using Lovable?">
@@ -487,7 +659,63 @@ Run through this checklist for any Lovable project to ensure you follow best SEO
 
     Follow the technical and content recommendations in this guide—especially metadata, performance, and sitemap configuration—for the best results.
 
-    Lovable assists with generating site structure and content, but does not guarantee SEO implementation. Search performance is influenced by factors outside Lovable’s control, including content quality, hosting configuration, competitive environment, and search engine ranking algorithms.
+    Keep in mind that search performance is influenced by factors outside Lovable’s control, including content quality, hosting configuration, competitive environment, and search engine ranking algorithms.
+  </Accordion>
+  <Accordion title="How can I get the best SEO results with Lovable?">
+    Follow the best practices described in this guide. In short:
+
+    **Content and on-page**
+
+    - Keep content unique and high-quality
+    - Target long-tail keywords
+    - Write comprehensive pages (pillar pages often 1,500+ words)
+    - Match search intent clearly
+    - Keep content fresh and updated
+    - Use clean headings and semantic HTML
+    - Add JSON-LD schema on key pages
+
+    **Images** 
+
+    - Compress large files
+    - Use meaningful alt text
+    - Prefer WebP/AVIF or SVG
+
+    **Internal links**
+
+    - Use descriptive, keyword-rich anchor text
+    - Link between related pages
+    - Ensure important URLs have multiple internal links
+
+    **Technical**
+
+    - Optimize performance (Core Web Vitals)
+    - Ensure mobile usability
+    - Verify metadata on every page
+    - Keep a correct sitemap and robots.txt
+
+    **Backlinks**
+
+    High-quality backlinks help compensate for CSR limitations.
+
+    - Create linkable assets (tools, research, guides)
+    - Guest post on relevant blogs
+    - Partner with complementary businesses
+    - Get listed in industry directories
+    - Share newsworthy content
+    - Engage genuinely in communities
+  </Accordion>
+  <Accordion title="How long does it take Google to index my page?">
+    Typically **a few hours to a few days**. You can speed it up by:
+
+    - Submitting your sitemap in GSC
+    - Using URL Inspection → **Test Live URL**
+    - Clicking **Request Indexing** for important pages
+  </Accordion>
+  <Accordion title="What if I don’t see my page ranking?">
+    - Confirm your page is indexed in GSC (Coverage / Page indexing, URL Inspection).
+    - Check the sitemap is submitted and contains the URL.
+    - Review content quality, search intent alignment, and on-page SEO (title, description, headings, internal links).
+    - Ensure your site passes basic technical checks: performance, mobile usability, no blocked resources.
   </Accordion>
   <Accordion title="When is Lovable a good fit for SEO, and when should I consider SSR or prerendering?">
     Lovable handles SEO well for small to medium sites where metadata, internal links, and sitemaps can be maintained manually.
@@ -527,7 +755,6 @@ Run through this checklist for any Lovable project to ensure you follow best SEO
     - Too many URLs for manual metadata/sitemap upkeep
     - CSR’s second-pass rendering slows indexing
     - Social and AI crawlers don’t execute JavaScript
-    - SSR/hybrid frameworks provide significant technical advantages at this scale
   </Accordion>
   <Accordion title="When do I need a custom domain?">
     Use a **custom domain** if you care about:
@@ -540,22 +767,46 @@ Run through this checklist for any Lovable project to ensure you follow best SEO
 
     A lovable.app subdomain is fine for:
 
-    - MVPs
-    - Demos
+    - MVPs and d
+
+      emos
     - Temporary landing pages
     - Internal tools
     - Social/paid-driven projects
 
-    But for meaningful SEO, a custom domain is the #1 upgrade.
+    For meaningful SEO, a custom domain is the #1 upgrade. See [Custom domains](https://docs.lovable.dev/features/custom-domain) for more information.
+  </Accordion>
+  <Accordion title="Can AI search engines (Perplexity, ChatGPT, Gemini, Claude) index Lovable apps?">
+    Today, AI crawlers from these systems cannot fully execute JavaScript-rendered content, so they only reliably see the initial HTML.
 
-    Without one:
+    The following helps AI crawlers extract facts for their knowledge graphs even without JS execution:
 
-    - You don’t build domain authority.
-    - Long-term rankings suffer.
-    - Brand trust is lower.
-    - Technical SEO control is limited.
+    - Clean semantic HTML with facts in static content
+    - Comprehensive schema markup
+    - LLM summary page (`/llm`)
+    - Quotable content (clear definitions, FAQ format)
+  </Accordion>
+  <Accordion title="How often should I update SEO settings, content, and sitemap?">
+    - Sitemap → whenever URLs change (at least monthly if active).
+    - Metadata (titles/descriptions) → monthly for low-CTR pages.
+    - Performance checks (Lighthouse) → monthly.
+    - Technical audit → quarterly.
+    - Content refreshes → quarterly or when rankings/traffic drop.
+  </Accordion>
+  <Accordion title="What is prerendering, and when do I need it?">
+    Prerendering/dynamic rendering gives bots a static HTML snapshot while users get the JS app. It’s particularly helpful for:
 
-    Set it up via Domains → Connect a custom domain in your Lovable project. This is arguably the #1 SEO upgrade you can make.
+    - Content-heavy sites
+    - Frequent new content
+    - SEO-heavy/competitive niches
+    - Need for fast indexing
+    - Strong AI/LLM visibility
+
+    Lovable doesn’t bundle prerendering, you integrate an external service via your hosting/proxy. For example:
+
+    - [**Prerender.io**](http://Prerender.io): Industry standard, most tested 
+    - [**DataJelly**](https://datajelly.app/): Alternative with similar features
+    - [**Rendertron**](https://github.com/GoogleChrome/rendertron): Open-source (free, requires hosting)
   </Accordion>
   <Accordion title="What are the main CSR SEO limitations, and how do I work around them?">
     - Indexing can be slower than SSR\
@@ -568,127 +819,5 @@ Run through this checklist for any Lovable project to ensure you follow best SEO
       → Ask Lovable to install react-helmet-async and configure per-route titles/descriptions.
     - Bing’s JS rendering is weaker than Google’s\
       → Prerendering can improve results if Bing matters to you.
-  </Accordion>
-  <Accordion title="What is prerendering, and do I need it?">
-    Prerendering/dynamic rendering gives bots a static HTML snapshot while users get the JS app. It’s particularly helpful for:
-
-    - Content-heavy sites
-    - Frequent new content
-    - SEO-heavy/competitive niches
-    - Need for fast indexing
-    - Strong AI/LLM visibility
-
-    Lovable doesn’t bundle prerendering; you integrate an external service ([Prerender.io](http://Prerender.io), DataJelly, Rendertron, etc.) via your hosting/proxy.
-  </Accordion>
-  <Accordion title="Can AI search engines (Perplexity, ChatGPT, Gemini, Claude) index Lovable apps?">
-    Today, AI crawlers from these systems cannot fully execute JavaScript-rendered content, so they only reliably see the initial HTML.\
-    However:
-
-    - Clean semantic HTML
-    - Meaningful headings and structured content
-    - Schema markup
-
-    …all help AI crawlers extract facts for their knowledge graphs even without JS execution.\
-    If AI visibility is important, prerendering or SSR becomes more valuable.
-  </Accordion>
-  <Accordion title="Do I need an XML sitemap for my Lovable site?">
-    Yes. Sitemaps are especially important for CSR apps because crawlers might not see all JS-generated routes.
-
-    - Ask Lovable to create/update `sitemap.xml`.
-    - Publish the site so it’s accessible.
-    - Submit it to Google Search Console and Bing Webmaster Tools.
-
-    This ensures that all important pages are seen and indexed.
-  </Accordion>
-  <Accordion title="How can I get the best SEO results with Lovable?">
-    To get the strongest results:
-
-    ### **1. Content & on-page**
-
-    - Target long-tail keywords
-    - Write comprehensive pages (pillar pages often 1,500+ words)
-    - Match search intent clearly
-    - Keep content fresh and updated
-    - Use clean headings and semantic HTML
-    - Add JSON-LD schema on key pages
-
-    ### **2. Images**
-
-    - Compress large files
-    - Use meaningful alt text
-    - Prefer WebP/AVIF or SVG
-
-    ### **3. Internal links**
-
-    - Use descriptive anchor text
-    - Link between related pages
-    - Ensure important URLs have multiple internal links
-
-    ### **4. Technical**
-
-    - Optimize performance (Core Web Vitals)
-    - Ensure mobile usability
-    - Verify metadata on every page
-    - Keep a correct sitemap and robots.txt
-
-    ### **5. Backlinks**
-
-    High-quality backlinks help compensate for CSR limitations.
-  </Accordion>
-  <Accordion title="What user best practices help SEO on Lovable?">
-    You’ll get the best results if you:
-
-    - Keep content unique and high-quality.
-    - Optimize images (meaningful alt text + compression).
-    - Target long-tail keywords where you can realistically rank.
-    - Keep content fresh and updated.
-    - Use descriptive, keyword-rich internal links.
-    - Monitor performance using GSC and Lighthouse.
-    - 
-  </Accordion>
-  <Accordion title="Does Lovable optimize for mobile SEO?">
-    The Agent typically builds responsive layouts with a correct viewport tag. However, **you must test on real devices** to ensure:
-
-    - No horizontal scroll
-    - Proper tap targets
-    - Stable layout
-    - Working navigation/forms
-
-    Good mobile UX supports both SEO and conversions.
-  </Accordion>
-  <Accordion title="How long does it take Google to index my page?">
-    Typically **a few hours to a few days**. You can speed it up by:
-
-    - Submitting your sitemap in GSC
-    - Using URL Inspection → **Test Live URL**
-    - Clicking **Request Indexing** for important pages
-  </Accordion>
-  <Accordion title="What if I don’t see my page ranking?">
-    - Confirm your page is indexed in GSC (Coverage / Page indexing, URL Inspection).
-    - Check the sitemap is submitted and contains the URL.
-    - Review content quality, search intent alignment, and on-page SEO (title, description, headings, internal links).
-    - Ensure your site passes basic technical checks: performance, mobile usability, no blocked resources.
-  </Accordion>
-  <Accordion title="How do I monitor SEO?">
-    - **Google Search Console**
-      - Indexing
-      - Impressions/clicks/CTR
-      - Core Web Vitals
-      - Mobile usability
-      - Crawl errors
-    - **Lighthouse (Lovable Speed tool)**
-      - Performance
-      - Accessibility
-      - Best practices
-      - SEO metrics
-    - **Manual console checks**\
-      (titles, descriptions, H1, canonical, schema, alt text)
-  </Accordion>
-  <Accordion title="How often should I update SEO settings, content, and sitemap?">
-    - Sitemap → whenever URLs change (at least monthly if active).
-    - Metadata (titles/descriptions) → monthly for low-CTR pages.
-    - Performance checks (Lighthouse) → monthly.
-    - Technical audit → quarterly.
-    - Content refreshes → quarterly or when rankings/traffic drop.
   </Accordion>
 </AccordionGroup>
