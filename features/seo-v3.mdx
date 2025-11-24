@@ -1,11 +1,11 @@
 ---
-title: "Lovable SEO and GEO best practices"
+title: "SEO and GEO best practices"
 description: "Make your published Lovable websites discoverable by Google, social platforms, and AI systems."
 ---
 
 Lovable platform has no built-in SEO controls or automation — **SEO is emergent from the code Lovable writes when you ask for it.**
 
-The Agent:
+The Lovable Agent:
 
 - May generate certain elements as part of content creation—for example, titles, descriptions, or tags inferred from your prompts, but not systematically.
 - Can assist in generating site structure and content and generally follows modern best practices, but it doesn’t guarantee correct SEO implementation.
@@ -22,23 +22,23 @@ Lovable builds modern web applications using React and Vite, which means your ap
 
 For visitors, there's no difference—pages load instantly and navigation feels seamless. But for search engines, there are important implications.
 
-### What This Means for SEO & GEO
+### What this means for SEO and GEO
 
-**Google & traditional search engines:**
+**Google and traditional search engines:**
 
 - Can index Lovable sites, but use a two-step process (crawl HTML → render JavaScript later): first they collect your page structure, then they come back later to see the rendered content
 - Indexing takes slightly longer—typically days instead of hours—but is still reliable when configured properly
 - This delay doesn't hurt your rankings; it just means new pages take longer to appear in search results
 
-**Social media & AI systems:**
+**Social media and AI systems:**
 
-- Facebook, Twitter, and LinkedIn don't wait for content to render—they see only your initial page structure
+- Facebook, X (Twitter), and LinkedIn don't wait for content to render—they see only your initial page structure
 - If all your pages share the same basic title and preview image, social links may show generic or incorrect information
 - AI systems (ChatGPT, Perplexity, Gemini, Claude) often can't see dynamically rendered content, so they may miss your pages entirely
 
-**Modern search engines handle CSR well**. With proper optimization setup (following this guide), Lovable sites can rank competitively. CSR does not prevent indexing or ranking—implementation and content quality matter most.
+**Modern search engines handle CSR well**. CSR does not prevent indexing or ranking—implementation and content quality matter most.
 
-Follow these practices to ensure your Lovable site is fully optimized for search engines and AI systems.
+Follow these practices to ensure your Lovable site is fully optimized for search engines and AI systems and can rank competitively.
 
 ## Foundation: Make your site crawlable
 
@@ -70,7 +70,7 @@ Sitemaps help search engines discover all your pages—critical for CSR sites wh
 
 Controls which parts of your site search engines can access. Essential to prevent blocking critical resources that Google needs to render your content. Lovable can generate robots.txt when requested.
 
-<Accordion title="How to implement an verify robots.txt">
+<Accordion title="How to implement and verify robots.txt">
   **Prompt to add**
 
   For example:
@@ -257,7 +257,7 @@ Uses tags that describe content meaning, helping search engines and screen reade
 
   **Verify**
 
-  - Paste this in browser console - all should return `true`:
+  - For example, paste this in browser console - all should return `true`:
 
   ```
   console.log('Has <main>:', !!document.querySelector('main'));
@@ -344,7 +344,7 @@ Lovable includes baseline OG/Twitter tags in the template, but **you must custom
 
 Most social platforms (Facebook, Twitter/X, LinkedIn) **do not execute JavaScript**, which means your site may show **generic or incomplete link previews** unless you explicitly configure Open Graph (OG) and Twitter Card metadata in the initial HTML
 
-<Accordion title="How to implement and verify Open Graph and Twitter Cards">
+<Accordion title="How to implement and verify Open Graph, Twitter Cards, and OG images">
   You have **two options** for managing social metadata:
 
   - Prompt Lovable
@@ -398,7 +398,7 @@ These actions help search engines render your content.
 
 Page speed is a confirmed ranking factor. Faster sites rank higher and convert better. Lovable uses modern optimization patterns like lazy loading and code minification to support fast rendering.
 
-**Core Web Vitals targets:**
+**Core Web Vitals targets**
 
 | Metric                             | Target  | What it measures                       | How to fix                                                                                                       |
 | ---------------------------------- | :------ | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
@@ -415,7 +415,7 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
 
   **Verify**
 
-  - Run **Speed** tool in Lovable (Lighthouse audit)
+  - Run **Speed** tool in Lovable (Google Lighthouse audit)
   - Target scores:
     - Performance: 90+
     - Accessibility: 90+
@@ -439,7 +439,7 @@ More than 60% of searches happen on mobile. Google uses mobile-first indexing—
 
   > Review mobile experience. Increase tap target sizes to minimum 48x48px, add spacing between interactive elements, ensure text is minimum 16px, fix any horizontal scroll on small screens.
 
-  \*\*Verify \*\*
+  **Verify**
 
   - Test key pages on several device sizes, test iPhone, Android, tablet sizes (Chrome DevTools + real devices).
   - Confirm all primary flows work smoothly on mobile
@@ -810,14 +810,12 @@ Lovable has no built-in GSC integration—manual setup required.
   </Accordion>
   <Accordion title="What are the main CSR SEO limitations, and how do I work around them?">
     - Indexing can be slower than SSR\
-      → Submit a sitemap, use URL Inspection, or add prerendering.
+      → Submit a sitemap and use URL Inspection.
     - AI crawlers and some bots don’t run JS\
-      → Use semantic HTML + schema; add prerendering if AI visibility is important; consider an LLM summary page.
+      → Use semantic HTML + schema, consider an LLM summary page.
     - Social previews don’t run JS\
-      → Add Open Graph and Twitter Card tags in static HTML (and prerender if needed).
+      → Add Open Graph and Twitter Card tags in static HTML.
     - Metadata doesn’t update automatically across routes\
       → Ask Lovable to install react-helmet-async and configure per-route titles/descriptions.
-    - Bing’s JS rendering is weaker than Google’s\
-      → Prerendering can improve results if Bing matters to you.
   </Accordion>
 </AccordionGroup>
