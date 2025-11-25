@@ -676,12 +676,12 @@ Google Search Console (GSC) shows how Google crawls, indexes, and ranks your sit
 
   1. Enter the URL in the **URL Inspection** bar
   2. Click **Test Live URL**
-  6. Open **View Tested Page** to check:
+  3. Open **View Tested Page** to check:
      - Screenshot of what Googlebot sees
      - Rendered HTML
      - Console errors
      - Blocked resources
-  5. Click **Request Indexing** for new or updated pages (rate limited)
+  4. Click **Request Indexing** for new or updated pages (rate limited)
 
   **Reports to monitor weekly**
 
@@ -836,63 +836,70 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
     - Social and AI crawlers that don’t run JavaScript get complete previews immediately
   </Accordion>
   <Accordion title="When do I need a custom domain?">
-    Use a **custom domain** if you care about:
+    A **custom domain** is important if you want:
 
-    - Organic search traffic
-    - Long-term brand building
-    - Competitive SEO
-    - Backlink value
-    - Full control over technical SEO
+  - Organic search traffic  
+  - Strong, long-term branding  
+  - Competitive SEO  
+  - Backlink value that grows over time  
+  - Full control over technical SEO  
 
-    A lovable.app subdomain is fine for:
+  A `lovable.app` subdomain works well for:
 
-    - MVPs and demos
-    - Temporary landing pages
-    - Internal tools
-    - Social/paid-driven projects
+  - MVPs and demos  
+  - Temporary or experimental landing pages  
+  - Internal tools  
+  - Projects driven primarily by social or paid traffic  
 
-    For meaningful SEO, a custom domain is the #1 upgrade. See [Custom domains](https://docs.lovable.dev/features/custom-domain) for more information.
+  If SEO is part of your strategy, a custom domain is one of the most impactful upgrades you can make. See [Custom domains](https://docs.lovable.dev/features/custom-domain) for setup details.
   </Accordion>
   <Accordion title="Can AI search engines (Perplexity, ChatGPT, Gemini, Claude) index Lovable apps?">
-    Today, AI crawlers from these systems cannot fully execute JavaScript-rendered content, so they only reliably see the initial HTML.
+    AI crawlers from systems like Perplexity, ChatGPT, Gemini, and Claude don’t typically execute JavaScript, so they rely on the initial HTML they can fetch. This means they may not see content that is rendered client-side.
 
-    The following helps AI crawlers extract facts for their knowledge graphs even without JavaScript execution:
+  You can still make your content highly accessible to these crawlers by ensuring:
 
-    - Clean semantic HTML with facts in static content
-    - Comprehensive schema markup
-    - LLM summary page (`/llm`)
-    - Quotable content (clear definitions, FAQ format)
+  - Clean semantic HTML with key facts in static content  
+  - Comprehensive schema markup  
+  - A dedicated LLM summary page (such as `/llm`)  
+  - Clear, quotable content (definitions, FAQs, short factual answers)
   </Accordion>
   <Accordion title="How often should I update SEO settings, content, and sitemap?">
-    - Sitemap → whenever URLs change (at least monthly if active).
-    - Metadata (titles/descriptions) → monthly for low-CTR pages.
-    - Performance checks (Lighthouse) → monthly.
-    - Technical audit → quarterly.
-    - Content refreshes → quarterly or when rankings/traffic drop.
+    - **Sitemap:** Update whenever URLs change, or at least monthly for active sites. 
+    - **Metadata (titles/descriptions):** Review monthly and improve pages with low click-through rates.  
+    - **Performance:** Run monthly Lighthouse checks and review Core Web Vitals (LCP, INP, CLS) to catch speed or usability issues early.  
+    - **Technical audit:** Perform a quarterly review of canonicals, robots.txt, schema, internal links, redirects, and mobile usability.  
+    - **Content:** Refresh or expand important content quarterly, or sooner if rankings or traffic decline.  
   </Accordion>
   <Accordion title="What is prerendering, and when do I need it?">
-    Prerendering/dynamic rendering gives bots a static HTML snapshot while users get the JavaScript app. It’s particularly helpful for:
+    Prerendering (also called dynamic rendering) generates a static HTML snapshot specifically for bots, while human visitors continue to see the JavaScript-powered app. This can improve how quickly search engines and AI crawlers understand your content.
 
-    - Content-heavy sites
-    - Frequent new content
-    - SEO-heavy/competitive niches
-    - Need for fast indexing
-    - Strong AI/LLM visibility
+  Prerendering is especially helpful for:
 
-    Lovable doesn’t bundle prerendering, you integrate an external service via your hosting/proxy. For example:
+  - Content-heavy sites  
+  - Sites that publish new pages frequently  
+  - SEO-focused or highly competitive niches  
+  - Projects that need faster indexing  
+  - Strong AI/LLM visibility, since many crawlers don’t run JavaScript  
 
-    - [**Prerender.io**](http://Prerender.io): Industry standard, most tested 
-    - [**DataJelly**](https://datajelly.app/): Alternative with similar features
-    - [**Rendertron**](https://github.com/GoogleChrome/rendertron): Open-source (free, requires hosting)
+  Lovable doesn’t include prerendering out of the box, but you can add it through your hosting or proxy using external services such as:
+
+    - [Prerender.io](http://Prerender.io): widely used, reliable option  
+    - [DataJelly](https://datajelly.app/): similar features with simple setup  
+    - [Rendertron](https://github.com/GoogleChrome/rendertron): open-source alternative (self-hosted)
   </Accordion>
   <Accordion title="What are the main CSR SEO limitations, and how do I work around them?">
-    - Indexing can be slower than SSR\
-      → Submit a sitemap and use URL Inspection.
-    - AI crawlers and some bots don’t run JavaScript\
-      → Use semantic HTML + schema, consider an LLM summary page.
-    - Social previews don’t run JavaScript\
-      → Add Open Graph and Twitter Card tags in static HTML.
-    - Metadata doesn’t update automatically across routes\
-      → Ask Lovable to install react-helmet-async and configure per-route titles/descriptions.
+    Client-side rendering (CSR) works well for many sites, but there are a few things to be aware of to get the best SEO, GEO, and preview behavior. Here’s how to address them:
+
+  - **Indexing may be slightly slower than SSR**  
+    → Submit a sitemap and use the URL Inspection tool for priority pages.
+
+  - **AI crawlers and some bots don’t run JavaScript**  
+    → Use clear semantic HTML and schema, and consider adding an LLM summary page.
+
+  - **Social platforms don’t execute JavaScript for link previews**  
+    → Add Open Graph and Twitter/X Card tags directly in the static HTML.
+
+  - **Metadata doesn’t update automatically across routes**  
+    → Ask Lovable to install `react-helmet-async` and set unique titles/descriptions for each page.
   </Accordion>
 </AccordionGroup>
