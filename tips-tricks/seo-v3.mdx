@@ -783,55 +783,57 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
     - Share newsworthy updates and engage in your community
   </Accordion>
   <Accordion title="How long does it take Google to index my page?">
-    Typically **a few hours to a few days**. You can speed it up by:
+    Indexing usually takes **a few hours to a few days**. You can speed it up by:
 
     - Submitting your sitemap in GSC
-    - Using URL Inspection → **Test Live URL**
-    - Clicking **Request Indexing** for important pages
+    - Testing the page with URL Inspection
+    - Using **Request Indexing** for priority pages
   </Accordion>
   <Accordion title="What if I don’t see my page ranking?">
-    - Confirm your page is indexed in GSC (Coverage / Page indexing, URL Inspection).
-    - Check the sitemap is submitted and contains the URL.
-    - Review content quality, search intent alignment, and on-page SEO (title, description, headings, internal links).
-    - Ensure your site passes basic technical checks: performance, mobile usability, no blocked resources.
+    When a page doesn’t appear in search results, verify the essentials:
+
+    - Check indexing in GSC through Coverage or URL Inspection
+    - Ensure your sitemap is submitted and lists the URL
+    - Review content quality, intent alignment, and on-page SEO such as titles, descriptions, headings, and internal links
+    - Confirm technical health: good performance scores, full mobile usability, and no blocked JavaScript or CSS
   </Accordion>
-  <Accordion title="When is Lovable a good fit for SEO, and when should I consider SSR or prerendering?">
-    Lovable handles SEO well for small to medium sites where metadata, internal links, and sitemaps can be maintained manually.
+  <Accordion title="When is Lovable a good fit for SEO and GEO, and when should I consider SSR or prerendering?">
+    Lovable works well for many SEO and GEO scenarios, especially small to medium sites where you can manage metadata, internal links, and sitemaps with intention.
 
     ### **Good scenarios**
 
-    - Marketing sites & landing pages
+    - Marketing sites and landing pages
     - Startup or business websites
-    - Simple blogs or documentation sites (≈ ≤ 200 pages)
+    - Simple blogs or documentation sites (up to ~200 pages)
     - Portfolios and personal sites
-    - Internal tools/dashboards (SEO irrelevant)
+    - Internal tools and dashboards (SEO not required)
     - Apps behind authentication (should not be indexed)
-    - Small sites (≈ 5–20 pages) with manageable metadata
-    - Projects driven primarily by referrals, social, paid channels, or product-led growth
-    - Content-heavy blogs (≈ 50+ articles) — workable with steady upkeep
-    - Medium e-commerce sites (hundreds of products) — possible with extra care
+    - Small sites (5–20 pages) where metadata is easy to manage
+    - Projects driven by referrals, social traffic, paid channels, or product-led growth
+    - Content-driven blogs (~50+ articles) with consistent upkeep
+    - Medium e-commerce sites (hundreds of products) with thoughtful metadata management
 
-    **Why SEO can work here**
+    **Why SEO and GEO can work well in these cases**
 
-    - Pages are limited enough to keep metadata and sitemaps accurate
-    - Google can render CSR sites effectively
-    - Performance and mobile optimizations are manageable
-    - You can manually review what matters: titles, descriptions, schema, OG tags, and internal links
+    - The number of pages is manageable enough to keep metadata and sitemaps accurate
+    - Google reliably renders CSR sites, so content can still be indexed and ranked
+    - Performance and mobile optimization are straightforward on Lovable
+    - You can manually maintain the elements that matter most: titles, descriptions, schema, OG tags, and internal links
 
-    ### **Poor fit**
+    ### **When SSR or prerendering may help**
 
-    These projects grow large or complex enough that CSR becomes a structural disadvantage.
+    For some large or highly competitive projects, server-rendered or prerendered pages can complement Lovable by improving crawl efficiency and preview reliability.
 
-    - Very large sites (hundreds–thousands of pages, massive e-commerce catalogs, or big content libraries)
-    - SEO-dependent businesses where organic search is the primary growth channel
-    - Highly competitive or time-sensitive verticals (news/media, finance, legal)
-    - Projects where AI/LLM visibility is mission-critical
+    - Very large sites (hundreds to thousands of pages, large catalogs, or extensive blog libraries)
+    - Projects where organic search is the primary growth channel
+    - Highly competitive or time-sensitive verticals (news, finance, legal)
+    - Projects where maximum AI/LLM visibility is a priority
 
-    **Why these are challenging**
+    **Why these benefit from SSR or prerendering**
 
-    - Too many URLs for manual metadata/sitemap upkeep
-    - CSR’s second-pass rendering slows indexing
-    - Social and AI crawlers don’t execute JavaScript
+    - Large sites require automation for metadata and sitemaps
+    - SSR/prerendering can speed up initial content discovery for search engines
+    - Social and AI crawlers that don’t run JavaScript get complete previews immediately
   </Accordion>
   <Accordion title="When do I need a custom domain?">
     Use a **custom domain** if you care about:
