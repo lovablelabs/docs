@@ -60,7 +60,7 @@ Sitemaps help search engines discover all your pages—critical for CSR sites wh
 
   For example:
 
-  > Create XML sitemap at /sitemap.xml listing all public routes. Include lastmod dates and priorities: homepage 1.0, main pages 0.8, blog posts 0.6. 
+  > Create XML sitemap at /sitemap.xml listing all public routes. Include lastmod dates and priorities: homepage 1.0, main pages 0.8, blog posts 0.6.
 
   **Verify**
 
@@ -136,7 +136,7 @@ Canonical tags tell search engines which URL is the “official” version of a 
 
   **Verify**
 
-  - Check each page. Paste this in browser console - should return 
+  - Check each page. Paste this in the browser console:
 
     ```
     console.log('Canonical:', document.querySelector('link[rel="canonical"]')?.href);
@@ -148,7 +148,7 @@ Canonical tags tell search engines which URL is the “official” version of a 
 
 ### Clean URLs and routing
 
-Search engines use URLs to understand page topics. Clean, descriptive URLs improve crawlability and rankings. Lovable usually generates clean routes via React Router automatically.
+Search engines rely on URLs to understand what a page is about, so clean and descriptive URLs help improve both crawlability and rankings. Lovable Agent typically generates clean routes automatically through React Router.
 
 <Accordion title="How to implement and verify clean URLs and routing">
   **Prompt to add**
@@ -161,22 +161,22 @@ Search engines use URLs to understand page topics. Clean, descriptive URLs impro
 
   - Navigate to each route and check browser console for errors
   - URLs should be: stable, descriptive, no random IDs
-  - Consistent format site-wide (trailing slash or not, www or not)
+  - Consistent format site-wide (trailing slash or not, `www` or not)
   - All routes load without JavaScript errors
 </Accordion>
 
 ### Internal linking
 
-Internal links connect your pages so both users and search engines can navigate your site easily. Search engines rely on these links to **discover content**, understand **topic relationships**, and **distribute page authority** across your site.
+Internal links connect your pages so both users and search engines can navigate your site easily. Search engines rely on these links to discover content, understand topic relationships, and distribute page authority across your site.
 
-Lovable can create nav/footer links and suggest or create contextual links when requested.
+Lovable Agent can create nav/footer links and suggest or create contextual links when requested.
 
 <Accordion title="How to implement and verify internal linking">
   **Prompt to add**
 
   For example:
 
-  > Add 3-5 contextual internal links in /blog/dog-nutrition to related posts and products. Use descriptive anchor text like 'grain-free dog food options' instead of 'click here'.
+  > Add 3-5 contextual internal links to related pages. Use descriptive anchor text instead of 'click here'.
 
   **Verify**
 
@@ -189,8 +189,8 @@ Lovable can create nav/footer links and suggest or create contextual links when 
   - Important pages have multiple internal links pointing to them
   - Include links to your most important pages in the footer so they appear site-wide
   - Anchor text is descriptive with keywords (not "click here")
-    - **Good anchor text:** "organic dog food benefits"
-    - **Bad anchor text:** "click here", "read more"
+    - Good anchor text: `organic dog food benefits`
+    - Bad anchor text: `click here`, `read more`
   - Deep pages reachable within 3 clicks from homepage
 </Accordion>
 
@@ -207,7 +207,7 @@ Page titles are a critical on-page ranking factor. They show up in search result
 
   For example:
 
-  > Update page titles for all routes. Format: 'Page Name | PetFood Co'. Keep under 60 characters. Examples: 'Organic Dog Food Delivery | PetFood Co' for homepage, 'Flexible Pricing Plans | PetFood Co' for /pricing.
+  > Update the page titles for all routes. Use clear, descriptive titles that match each page’s purpose, and keep them under 60 characters.
 
   **Verify**
 
@@ -223,14 +223,14 @@ Page titles are a critical on-page ranking factor. They show up in search result
 
 ### Meta descriptions
 
-Meta descriptions appear in search results just below the page title. They aren’t a direct ranking factor, but they have a strong influence on click-through rates. Lovable Agent can add meta descriptions when you request them. 
+Meta descriptions appear in search results just below the page title. They aren’t a direct ranking factor, but they have a strong influence on click-through rates. Lovable Agent can add meta descriptions when you request them.
 
 <Accordion title="How to implement and verify meta descriptions">
   **Prompt to add**
 
   For example:
 
-  > Write unique meta descriptions for key pages (140-160 chars): Homepage: 'Premium organic dog food delivered fresh. Free shipping over \$50. Shop grain-free options.' Pricing: 'Flexible plans starting at \$45/month. Cancel anytime.' About: 'Family-owned organic dog food company. 10+ years serving 50,000+ dogs.'
+  > Write unique meta descriptions for all key pages. Keep each one clear, helpful, and between 140–160 characters.
 
   **Verify**
 
@@ -333,7 +333,7 @@ Optimizing your images improves accessibility, strengthens topical relevance, an
 
 ## Off-page SEO: Build authority with backlinks
 
-Search engines rely heavily on links from other reputable sites to determine how trustworthy and authoritative your content is. For competitive keywords, strong backlinks can matter more than any on-page optimization. 
+Search engines rely heavily on links from other reputable sites to determine how trustworthy and authoritative your content is. For competitive keywords, strong backlinks can matter more than any on-page optimization.
 
 Backlinks help your Lovable site:
 
@@ -492,7 +492,7 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
     - Best Practices: 90+
     - SEO: 100
   - Fix pages with poor performance scores
-  - In GSC, check and fix**Core Web Vitals targets** 
+  - In GSC, check and fix**Core Web Vitals targets**
 
   | Metric                              | Target          | What it measures                                     | How to fix                                                                                                       |
   | ----------------------------------- | :-------------- | :--------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
