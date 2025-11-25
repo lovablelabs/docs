@@ -68,7 +68,7 @@ Sitemaps help search engines discover all your pages—critical for CSR sites wh
   - Check that it is accessible at: `https://yourdomain.com/sitemap.xml` (should return XML)
   - Check all key routes included (home, main pages, blog, products)
   - Update `lastmod` whenever content changes
-  - Use `priority `to indicate importance (0.0–1.0)
+  - Use `priority` to indicate importance (0.0–1.0)
   - Submit to Google Search Console and Bing Webmaster Tools
   - Regenerate and resubmit when adding/removing pages (not automatic). For example, prompt:
 
@@ -223,7 +223,7 @@ Page titles are a critical on-page ranking factor. They show up in search result
 
 ### Meta descriptions
 
-Meta descriptions appear in search results just below the page title. They aren’t a direct ranking factor, but they have a strong influence on click-through rates. Lovable Agent can add meta descriptions when you request them.
+Meta descriptions appear in search results just below the page title. They aren’t a direct ranking factor, but they have a strong influence on click-through rates. Lovable Agent can add meta descriptions when requested.
 
 <Accordion title="How to implement and verify meta descriptions">
   **Prompt to add**
@@ -248,7 +248,7 @@ Meta descriptions appear in search results just below the page title. They aren�
 
 ### Heading structure (H1 → H3)
 
-A clear heading structure (H1 to H3) helps search engines understand how your content is organized and which sections are most important. Lovable Agent can generate proper H1 tags and a logical hierarchy when you request it.
+A clear heading structure (H1 to H3) helps search engines understand how your content is organized and which sections are most important. Lovable Agent can generate proper H1 tags and a logical hierarchy when requested.
 
 <Accordion title="How to implement and verify heading structure">
   **Prompt to add**
@@ -276,7 +276,7 @@ A clear heading structure (H1 to H3) helps search engines understand how your co
 
 ### Semantic HTML
 
-Semantic HTML uses meaningful tags to describe your content, helping both search engines and screen readers understand the structure of your page. Lovable supports semantic elements such as `<main>`, `<nav>`, and `<section>`.
+Semantic HTML uses meaningful tags to describe your content, helping both search engines and screen readers understand the structure of your page. Lovable Agent  typically adds semantic elements such as `<main>`, `<nav>`, and `<section>`.
 
 <Accordion title="How to implement and verify semantic HTML">
   **Prompt  to add**
@@ -392,7 +392,7 @@ These actions improve how your pages appear in Search Engine Results Pages (SERP
 
 ### Structured data (JSON-LD schema)
 
-Structured data, implemented through JSON-LD schema, gives search engines additional context about your content and can enable rich results like star ratings, product details, and FAQ dropdowns. Lovable can generate schema markup when asked.
+Structured data, implemented through JSON-LD schema, gives search engines additional context about your content and can enable rich results like star ratings, product details, and FAQ dropdowns. Lovable Agent can generate schema markup when requested.
 
 Frequently used schema types include:
 
@@ -425,7 +425,7 @@ Frequently used schema types include:
 
 Open Graph (OG) tags, Twitter Cards, and OG images control how your pages appear when shared on social media. High-quality preview images can dramatically improve share performance and build trust in your brand.
 
-Lovable includes basic OG and Twitter metadata by default, but **you need to customize the image, title, and description for each page.**
+Lovable Agent includes basic OG and Twitter metadata by default, but **you need to customize the image, title, and description for each page.**
 
 Most social platforms (Facebook, Twitter/X, LinkedIn) do not execute JavaScript, which means your site may show generic or incomplete link previews unless you explicitly configure Open Graph and Twitter Card metadata in the initial HTML.
 
@@ -467,7 +467,7 @@ These actions help search engines render your content.
 
 ### Core Web Vitals and performance
 
-Page speed is a confirmed ranking factor. Faster sites rank higher and convert better. Lovable uses modern optimization patterns like lazy loading and code minification to support fast rendering.
+Page speed is a confirmed ranking factor. Faster sites rank higher and convert better. Lovable Agent uses modern optimization patterns like lazy loading and code minification to support fast rendering.
 
 - Lovable includes **built-in page speed optimization powered by Google Lighthouse**, an open-source tool that analyzes your page’s performance, accessibility, SEO, and best practices.
 - Use **Google Search Console to verify Core Web Vitals**, a set of metrics that measure real-world user experience for loading performance, interactivity, and visual stability of the page.
@@ -499,7 +499,7 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
 
 ### Mobile optimization
 
-More than 60% of searches happen on mobile. Google uses mobile-first indexing — your mobile version determines rankings. Lovable produces responsive layouts with viewport tag. The viewport tag is required for mobile-friendly scaling.
+More than 60% of searches happen on mobile. Google uses mobile-first indexing — your mobile version determines rankings. Lovable Agent produces responsive layouts with viewport tag. The viewport tag is required for mobile-friendly scaling.
 
 <Accordion title="How to optimize and verify mobile performance">
   **Prompt to add**
@@ -643,7 +643,7 @@ Effective SEO and GEO require ongoing monitoring. Use Google Search Console (GSC
 
 Google Search Console (GSC) shows how Google crawls, indexes, and ranks your site. It’s a key tool for tracking SEO performance and spotting technical problems. Lovable doesn’t integrate with GSC automatically, so you need to set it up manually.
 
-<Accordion title="How to set up and use GCS for monitoring and maintenance">
+<Accordion title="How to set up and use GSC for monitoring and maintenance">
   **Verify site ownership** (choose one method)
 
   Verify your domain so Google can be sure you own the website before it provides you services.
@@ -838,68 +838,65 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
   <Accordion title="When do I need a custom domain?">
     A **custom domain** is important if you want:
 
-  - Organic search traffic  
-  - Strong, long-term branding  
-  - Competitive SEO  
-  - Backlink value that grows over time  
-  - Full control over technical SEO  
+    - Organic search traffic
+    - Strong, long-term branding
+    - Competitive SEO
+    - Backlink value that grows over time
+    - Full control over technical SEO
 
-  A `lovable.app` subdomain works well for:
+    A `lovable.app` subdomain works well for:
 
-  - MVPs and demos  
-  - Temporary or experimental landing pages  
-  - Internal tools  
-  - Projects driven primarily by social or paid traffic  
+    - MVPs and demos
+    - Temporary or experimental landing pages
+    - Internal tools
+    - Projects driven primarily by social or paid traffic
 
-  If SEO is part of your strategy, a custom domain is one of the most impactful upgrades you can make. See [Custom domains](https://docs.lovable.dev/features/custom-domain) for setup details.
+    If SEO is part of your strategy, a custom domain is one of the most impactful upgrades you can make. See [Custom domains](https://docs.lovable.dev/features/custom-domain) for setup details.
   </Accordion>
   <Accordion title="Can AI search engines (Perplexity, ChatGPT, Gemini, Claude) index Lovable apps?">
     AI crawlers from systems like Perplexity, ChatGPT, Gemini, and Claude don’t typically execute JavaScript, so they rely on the initial HTML they can fetch. This means they may not see content that is rendered client-side.
 
-  You can still make your content highly accessible to these crawlers by ensuring:
+    You can still make your content highly accessible to these crawlers by ensuring:
 
-  - Clean semantic HTML with key facts in static content  
-  - Comprehensive schema markup  
-  - A dedicated LLM summary page (such as `/llm`)  
-  - Clear, quotable content (definitions, FAQs, short factual answers)
+    - Clean semantic HTML with key facts in static content
+    - Comprehensive schema markup
+    - A dedicated LLM summary page (such as `/llm`)
+    - Clear, quotable content (definitions, FAQs, short factual answers)
   </Accordion>
   <Accordion title="How often should I update SEO settings, content, and sitemap?">
-    - **Sitemap:** Update whenever URLs change, or at least monthly for active sites. 
-    - **Metadata (titles/descriptions):** Review monthly and improve pages with low click-through rates.  
-    - **Performance:** Run monthly Lighthouse checks and review Core Web Vitals (LCP, INP, CLS) to catch speed or usability issues early.  
-    - **Technical audit:** Perform a quarterly review of canonicals, robots.txt, schema, internal links, redirects, and mobile usability.  
-    - **Content:** Refresh or expand important content quarterly, or sooner if rankings or traffic decline.  
+    - **Sitemap:** Update whenever URLs change, or at least monthly for active sites.
+    - **Metadata (titles/descriptions):** Review monthly and improve pages with low click-through rates.
+    - **Performance:** Run monthly Lighthouse checks and review Core Web Vitals (LCP, INP, CLS) to catch speed or usability issues early.
+    - **Technical audit:** Perform a quarterly review of canonicals, robots.txt, schema, internal links, redirects, and mobile usability.
+    - **Content:** Refresh or expand important content quarterly, or sooner if rankings or traffic decline.
   </Accordion>
   <Accordion title="What is prerendering, and when do I need it?">
     Prerendering (also called dynamic rendering) generates a static HTML snapshot specifically for bots, while human visitors continue to see the JavaScript-powered app. This can improve how quickly search engines and AI crawlers understand your content.
 
-  Prerendering is especially helpful for:
+    Prerendering is especially helpful for:
 
-  - Content-heavy sites  
-  - Sites that publish new pages frequently  
-  - SEO-focused or highly competitive niches  
-  - Projects that need faster indexing  
-  - Strong AI/LLM visibility, since many crawlers don’t run JavaScript  
+    - Content-heavy sites
+    - Sites that publish new pages frequently
+    - SEO-focused or highly competitive niches
+    - Projects that need faster indexing
+    - Strong AI/LLM visibility, since many crawlers don’t run JavaScript
 
-  Lovable doesn’t include prerendering out of the box, but you can add it through your hosting or proxy using external services such as:
+    Lovable doesn’t include prerendering out of the box, but you can add it through your hosting or proxy using external services such as:
 
-    - [Prerender.io](http://Prerender.io): widely used, reliable option  
-    - [DataJelly](https://datajelly.app/): similar features with simple setup  
+    - [Prerender.io](http://Prerender.io): widely used, reliable option
+    - [DataJelly](https://datajelly.app/): similar features with simple setup
     - [Rendertron](https://github.com/GoogleChrome/rendertron): open-source alternative (self-hosted)
   </Accordion>
   <Accordion title="What are the main CSR SEO limitations, and how do I work around them?">
     Client-side rendering (CSR) works well for many sites, but there are a few things to be aware of to get the best SEO, GEO, and preview behavior. Here’s how to address them:
 
-  - **Indexing may be slightly slower than SSR**  
-    → Submit a sitemap and use the URL Inspection tool for priority pages.
-
-  - **AI crawlers and some bots don’t run JavaScript**  
-    → Use clear semantic HTML and schema, and consider adding an LLM summary page.
-
-  - **Social platforms don’t execute JavaScript for link previews**  
-    → Add Open Graph and Twitter/X Card tags directly in the static HTML.
-
-  - **Metadata doesn’t update automatically across routes**  
-    → Ask Lovable to install `react-helmet-async` and set unique titles/descriptions for each page.
+    - **Indexing may be slightly slower than SSR**\
+      → Submit a sitemap and use the URL Inspection tool for priority pages.
+    - **AI crawlers and some bots don’t run JavaScript**\
+      → Use clear semantic HTML and schema, and consider adding an LLM summary page.
+    - **Social platforms don’t execute JavaScript for link previews**\
+      → Add Open Graph and Twitter/X Card tags directly in the static HTML.
+    - **Metadata doesn’t update automatically across routes**\
+      → Ask Lovable to install `react-helmet-async` and set unique titles/descriptions for each page.
   </Accordion>
 </AccordionGroup>
