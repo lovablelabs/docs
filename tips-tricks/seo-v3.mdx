@@ -155,7 +155,7 @@ Search engines rely on URLs to understand what a page is about, so clean and des
 
   For example:
 
-  > Review all routes. Ensure product pages use clean URLs like /products/organic-dog-food instead of /products?id=123. Use hyphens to separate words.
+  > Review all routes and make sure URLs are clean and descriptive. Use hyphens for word separation and avoid query parameters.
 
   **Verify**
 
@@ -255,7 +255,7 @@ A clear heading structure (H1 to H3) helps search engines understand how your co
 
   For example:
 
-  > Review heading structure on /about. Ensure exactly one H1: 'About PetFood Co - Organic Dog Nutrition Experts'. Use H2 for main sections (Our Story, Mission, Team) and H3 for subsections. Don't skip heading levels.
+  > Review the heading structure on each page. There should be one H1 at the top, with H2 for major sections and H3 for nested content. Don’t skip heading levels.
 
   **Verify**
 
@@ -283,11 +283,11 @@ Semantic HTML uses meaningful tags to describe your content, helping both search
 
   For example:
 
-  > Review HTML structure. Ensure hero and main content in \<main\>, navigation in \<nav\>, feature sections in \<section\>, blog posts in \<article\>, footer in \<footer\>. Replace generic \<div\> wrappers with semantic tags.
+  > Review the HTML structure and use semantic tags where appropriate. Place main content in `<main>`, navigation in `<nav>`, sections in `<section>`, and footer content in `<footer>`.
 
   **Verify**
 
-  - For example, paste this in browser console - all should return `true`:
+  - For example, paste this in browser console - should return `true` as applicable:
 
   ```
   console.log('Has <main>:', !!document.querySelector('main'));
@@ -312,7 +312,7 @@ Optimizing your images improves accessibility, strengthens topical relevance, an
 
   For example:
 
-  > Review all images on /products. Update alt text to be descriptive and keyword-relevant. Example: Instead of 'product image', use 'organic grain-free dog food bag with chicken and vegetables'. Ensure all images have width/height attributes and are compressed to \<200KB.
+  > Review all images and add clear, descriptive alt text. Make sure each image has width and height attributes and is properly compressed for fast loading.
 
   **Verify**
 
@@ -321,8 +321,8 @@ Optimizing your images improves accessibility, strengthens topical relevance, an
     ```
     console.log('Missing alt:', document.querySelectorAll('img:not([alt])').length);
     ```
-  - Evaluate alt text quality - must be descriptive with relevant keywords (not "image" or empty)
-    - Bad: `alt="image"` or `alt="photo"`
+  - Evaluate `alt` text quality - must be descriptive with relevant keywords 
+    - Bad: `alt="image"` , `alt="photo", alt=""`
     - Good: `alt="Golden retriever eating organic grain-free dog food from a bowl"`
   - Use proper file formats and keep file sizes small:
     - WebP for photos and illustrations
