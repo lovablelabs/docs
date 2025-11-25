@@ -410,7 +410,7 @@ Frequently used schema types include:
 
   **Verify**
 
-  - Check presence on key pages (for example, home, products, blog posts, FAQ). Paste this in browser console - should return 1:
+  - Check presence on key pages (for example, home, products, blog posts, FAQ). Paste this in browser console - should return 1 unless you intentionally added multiple schema types:
 
   ```
   console.log('Schema:', document.querySelectorAll('script[type="application/ld+json"]').length);
@@ -427,18 +427,14 @@ Open Graph (OG) tags, Twitter Cards, and OG images control how your pages appear
 
 Lovable includes basic OG and Twitter metadata by default, but **you need to customize the image, title, and description for each page.**
 
-Most social platforms (Facebook, Twitter/X, LinkedIn) **do not execute JavaScript**, which means your site may show **generic or incomplete link previews** unless you explicitly configure Open Graph and Twitter Card metadata in the initial HTML.
+Most social platforms (Facebook, Twitter/X, LinkedIn) do not execute JavaScript, which means your site may show generic or incomplete link previews unless you explicitly configure Open Graph and Twitter Card metadata in the initial HTML.
 
 <Accordion title="How to implement and verify Open Graph, Twitter Cards, and OG images">
   **Prompt to add**
 
   For example:
 
-  > Update social metadata for all key pages. Replace the default Lovable Open Graph and Twitter tags with unique values per route. For each page, set a custom `og:title`, `og:description`, `og:url`, and `twitter:card` (`summary_large_image`).
-  >
-  > Create a custom OG image for each page (1200×630 JPG, under 800KB) that includes the page title over branded visuals.
-  >
-  > Then update each page’s `og:image` and `twitter:image` to point to its specific file.
+  > Add unique Open Graph and Twitter metadata to every important page. Set a custom title, description, URL, and social image for each route. Use one 1200×630 JPG image per page and update `og:image` and `twitter:image` accordingly.
 
   **Verify**
 
