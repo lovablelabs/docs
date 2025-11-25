@@ -489,20 +489,15 @@ These actions help search engines render your content.
 
 Page speed is a confirmed ranking factor. Faster sites rank higher and convert better. Lovable uses modern optimization patterns like lazy loading and code minification to support fast rendering.
 
-**Core Web Vitals targets**
+- Lovable includes **built-in page speed optimization powered by Google Lighthouse**, an open-source tool that analyzes your page’s performance, accessibility, SEO, and best practices.
+- Use **Google Search Console to verify Core Web Vitals**, a set of metrics that measure real-world user experience for loading performance, interactivity, and visual stability of the page.
 
-| Metric                              | Target          | What it measures                                     | How to fix                                                                                                       |
-| ----------------------------------- | :-------------- | :--------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
-| **LCP** (Largest Contentful Paint)  | Less than 2.5s  | Loading performance, time until main content appears | Compress hero images, use WebP, preload critical resources, reduce server response time                          |
-| **INP** (Interaction to Next Paint) | Less than 200ms | How quickly a webpage responds to user interactions  | Reduce JavaScript execution time, defer non-critical scripts, break up long tasks                                |
-| **CLS** (Cumulative Layout Shift)   | Less than 0.1   | Visual stability while loading                       | Add width/height to all images, reserve space for dynamic content, avoid inserting content above fold after load |
-
-<Accordion title="How to implement and verify core web vitals and performance">
+<Accordion title="How to optimize and verify core web vitals and performance">
   **Prompt to add**
 
   For example:
 
-  > "Fix Lighthouse performance issues on homepage: Compress hero image to \<200KB, add width/height to all images, defer non-critical JavaScript, preload hero image and fonts. Target 90+ Performance score."
+  > Fix Lighthouse performance issues on homepage: Compress hero image to \<200KB, add width/height to all images, defer non-critical JavaScript, preload hero image and fonts. Target 90+ Performance score.
 
   **Verify**
 
@@ -512,18 +507,21 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
     - Accessibility: 90+
     - Best Practices: 90+
     - SEO: 100
-  - Core Web Vitals: LCP \<2.5s, FID \<100ms, CLS \<0.1
   - Fix pages with poor performance scores
-    - Compress large images
-    - Remove unused JavaScript/CSS flagged by Lighthouse
-    - Add width/height attributes to images (prevents layout shift)
+  - In GSC, check and fix**Core Web Vitals targets** 
+
+  | Metric                              | Target          | What it measures                                     | How to fix                                                                                                       |
+  | ----------------------------------- | :-------------- | :--------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
+  | **LCP** (Largest Contentful Paint)  | Less than 2.5s  | Loading performance, time until main content appears | Compress hero images, use WebP, preload critical resources, reduce server response time                          |
+  | **INP** (Interaction to Next Paint) | Less than 200ms | How quickly a webpage responds to user interactions  | Reduce JavaScript execution time, defer non-critical scripts, break up long tasks                                |
+  | **CLS** (Cumulative Layout Shift)   | Less than 0.1   | Visual stability while loading                       | Add width/height to all images, reserve space for dynamic content, avoid inserting content above fold after load |
 </Accordion>
 
 ### Mobile optimization
 
-More than 60% of searches happen on mobile. Google uses mobile-first indexing—your mobile version determines rankings. Lovable produces responsive layouts with viewport tag.
+More than 60% of searches happen on mobile. Google uses mobile-first indexing — your mobile version determines rankings. Lovable produces responsive layouts with viewport tag. The viewport tag is required for mobile-friendly scaling.
 
-<Accordion title="How to implement and verify mobile optimization">
+<Accordion title="How to optimize and verify mobile performance">
   **Prompt to add**
 
   For example:
@@ -532,7 +530,7 @@ More than 60% of searches happen on mobile. Google uses mobile-first indexing—
 
   **Verify**
 
-  - Test key pages on several device sizes, test iPhone, Android, tablet sizes (Chrome DevTools + real devices).
+  - Using **Chrome DevTools** and **real devices**, test key pages on several device sizes — test iPhone, Android, and tablet sizes.
   - Confirm all primary flows work smoothly on mobile
   - No horizontal scrolling on any page
   - Text readable without zooming (minimum 16px font size)
@@ -540,8 +538,17 @@ More than 60% of searches happen on mobile. Google uses mobile-first indexing—
   - Forms work properly on touch devices (large inputs, clear labels)
   - Navigation accessible (hamburger menu functional)
   - Images and videos fit within screen width
-  - Confirm the viewport tag exists: \
-    `<meta name="viewport" content="width=device-width, initial-scale=1">`
+  - **Confirm the viewport tag exists**. Paste this in the browser console:
+
+    ```
+    document.querySelector('meta[name="viewport"]')?.outerHTML
+    ```
+
+    and you should see: 
+
+    ```
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ```
 </Accordion>
 
 ## GEO: Make your content AI/LLM-friendly
