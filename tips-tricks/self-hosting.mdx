@@ -37,6 +37,10 @@ This guide explains how you can self-host and move your Lovable Cloud project to
 
 You can connect to any backend solution with some technical knowledge. The below steps guide you how to migrate your Lovable Cloud project to Supabase. For more information on Supabase specific steps, see [Supabase Documentation](https://supabase.com/docs).
 
+<Warning>
+  After migrating your project to your own Supabase instance, you must continue development in your local environment or a preferred IDE. Your project in Lovable remains connected to the original Lovable Cloud database, so any changes made in Lovable after migration will **not** sync with your new Supabase setup.
+</Warning>
+
 ### 1. Create a new Supabase project
 
 Follow the steps below to create a new Supabase project.
