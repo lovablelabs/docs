@@ -29,7 +29,7 @@ For **search engines, social platforms, and AI crawlers**, the architecture chan
 Google can index CSR sites, but it happens in two stages:
 
 1. **Crawl the initial HTML** and collect your page structure
-2. **Return later to render JavaScript** and capture the full content
+2. **Return later to render JavaScript (JS)** and capture the full content
 
 This two-step process works reliably, but:
 
@@ -53,24 +53,24 @@ These actions help search engines find and index your content.
 
 ### XML sitemap
 
-Sitemaps help search engines discover all your pages—critical for CSR sites where crawlers can't easily find all routes. Lovable can generate sitemap.xml with all public routes when requested.
+Sitemaps help search engines discover all your pages—critical for CSR sites where crawlers can't easily find all routes. Lovable Agent can generate `sitemap.xml` with all public routes when requested.
 
 <Accordion title="How to implement and verify sitemap.xml">
   **Prompt to add**
 
   For example:
 
-  > Create XML sitemap at /sitemap.xml listing all public routes. Include lastmod dates and priorities: homepage 1.0, main pages 0.8, blog posts 0.6. Exclude admin and account pages.
+  > Create XML sitemap at /sitemap.xml listing all public routes. Include lastmod dates and priorities: homepage 1.0, main pages 0.8, blog posts 0.6. 
 
   **Verify**
 
-  - Publish your project so the file is live
+  - Publish your project so the sitemap file is live
   - Check that it is accessible at: `https://yourdomain.com/sitemap.xml` (should return XML)
   - Check all key routes included (home, main pages, blog, products)
-  - Update **lastmod** whenever content changes
-  - Use **priority** to indicate importance (0.0–1.0)
+  - Update `lastmod` whenever content changes
+  - Use `priority `to indicate importance (0.0–1.0)
   - Submit to Google Search Console and Bing Webmaster Tools
-  - Regenerate and resubmit when adding/removing pages (not automatic). Prompt:
+  - Regenerate and resubmit when adding/removing pages (not automatic). For example, prompt:
 
     > Update sitemap.xml to include /new-page and remove /old-page then resubmit to Google Search Console.
 
@@ -95,7 +95,7 @@ Sitemaps help search engines discover all your pages—critical for CSR sites wh
 
 ### Robots.txt
 
-Controls which parts of your site search engines can access. Essential to prevent blocking critical resources that Google needs to render your content. Lovable can generate robots.txt when requested.
+`robots.txt` tells search engines which areas of your site they’re allowed to crawl. It’s important to avoid blocking key resources that Google needs to render your pages correctly. Lovable Agent can create a `robots.txt` file when requested.
 
 <Accordion title="How to implement and verify robots.txt">
   **Prompt to add**
@@ -125,7 +125,7 @@ Controls which parts of your site search engines can access. Essential to preven
 
 ### Canonical tags
 
-Tells search engines which URL is the "official" version when you have similar content, preventing duplicate content issues. Lovable can generate canonical tags when requested.
+Canonical tags tell search engines which URL is the “official” version of a page, helping prevent duplicate content issues. Lovable Agent can generate canonical tags when requested.
 
 <Accordion title="How to implement and verify canonical tags">
   **Prompt to add**
@@ -136,7 +136,7 @@ Tells search engines which URL is the "official" version when you have similar c
 
   **Verify**
 
-  - Check each page. Paste this in browser console:
+  - Check each page. Paste this in browser console - should return 
 
     ```
     console.log('Canonical:', document.querySelector('link[rel="canonical"]')?.href);
@@ -200,7 +200,7 @@ These actions make your pages meaningful and help search engines understand what
 
 ### Page titles
 
-Most important on-page ranking factor. Appears in search results and browser tabs, directly impacts click-through rates. Lovable can create title tags reflecting page intent.
+Page titles are a critical on-page ranking factor. They show up in search results and browser tabs, and they have a strong impact on click-through rates. Lovable Agent can generate title tags based on your page’s purpose.
 
 <Accordion title="How to implement and verify page titles">
   **Prompt to add**
@@ -223,7 +223,7 @@ Most important on-page ranking factor. Appears in search results and browser tab
 
 ### Meta descriptions
 
-Appear in search results below title. Not a ranking factor but significantly impact click-through rates. Lovable adds meta descriptions when requested.
+Meta descriptions appear in search results just below the page title. They aren’t a direct ranking factor, but they have a strong influence on click-through rates. Lovable Agent can add meta descriptions when you request them. 
 
 <Accordion title="How to implement and verify meta descriptions">
   **Prompt to add**
@@ -240,15 +240,15 @@ Appear in search results below title. Not a ranking factor but significantly imp
     console.log('Desc:', document.querySelector('meta[name="description"]')?.content, '| Length:', document.querySelector('meta[name="description"]')?.content.length);
     ```
   - Each page has unique description (140-160 characters)
-    - **Bad**: "Welcome to our website" (generic, repeated)
-    - **Good**: "Premium organic dog food delivered fresh to your door. Free shipping over \$50." (158 chars)
+    - Bad: `Welcome to our website `(generic, repeated)
+    - Good: `Premium organic dog food delivered fresh to your door. Free shipping over $50.` (158 chars)
   - Highlights benefits, differentiation, and a soft call to action
   - Not duplicated across pages
 </Accordion>
 
 ### Heading structure (H1 → H3)
 
-Helps search engines understand content organization and section importance. Lovable can create H1 tags and logical heading hierarchy.
+A clear heading structure (H1 to H3) helps search engines understand how your content is organized and which sections are most important. Lovable Agent can generate proper H1 tags and a logical hierarchy when you request it.
 
 <Accordion title="How to implement and verify heading structure">
   **Prompt to add**
@@ -259,24 +259,24 @@ Helps search engines understand content organization and section importance. Lov
 
   **Verify**
 
-  - Check there is only one H1 tag:
+  - Check there is only one H1 tag. Paste this in the browser console - should return 1:
 
     ```
     console.log('H1s:', document.querySelectorAll('h1').length);
     ```
-  - View content:
+  - View heading content. Paste this in the browser console:
 
     ```
     console.log('H1:', document.querySelector('h1')?.textContent);
     ```
   - H1 includes primary keyword and states page purpose
   - Headings flow logically (H1 → H2 → H3, never skip levels)
-  - Not used purely for styling
+  - Headings are not used purely for styling
 </Accordion>
 
 ### Semantic HTML
 
-Uses tags that describe content meaning, helping search engines and screen readers understand page structure. Lovable uses semantic elements like `<main>`, `<nav>`, `<section>`.
+Semantic HTML uses meaningful tags to describe your content, helping both search engines and screen readers understand the structure of your page. Lovable supports semantic elements such as `<main>`, `<nav>`, and `<section>`.
 
 <Accordion title="How to implement and verify semantic HTML">
   **Prompt  to add**
@@ -305,7 +305,7 @@ Uses tags that describe content meaning, helping search engines and screen reade
 
 ### Image optimization
 
-High-quality alt text improves accessibility, supports image search visibility, and contributes to stronger topical relevance signals. Efficient image formats and sizing improve page speed—another important ranking factor. Lovable can add alt attributes and lazy loading.
+Optimizing your images improves accessibility, strengthens topical relevance, and helps your content appear in image search results. Using efficient formats and correctly sized images also boosts page speed, which is an important ranking factor. Lovable Agent can add `alt` text and enable lazy loading as needed.
 
 <Accordion title="How to implement and verify image optimization">
   **Prompt to add**
@@ -316,7 +316,7 @@ High-quality alt text improves accessibility, supports image search visibility, 
 
   **Verify**
 
-  - Confirm every image has alt text. Paste this in browser console - should be 0:
+  - Confirm every image has alt text. Paste this in browser console - should return 0:
 
     ```
     console.log('Missing alt:', document.querySelectorAll('img:not([alt])').length);
@@ -333,7 +333,7 @@ High-quality alt text improves accessibility, supports image search visibility, 
 
 ## Off-page SEO: Build authority with backlinks
 
-Search engines rely heavily on **backlinks**—links from other reputable sites—to determine how trustworthy and authoritative your content is. For competitive keywords, strong backlinks can matter more than any on-page optimization.
+Search engines rely heavily on links from other reputable sites to determine how trustworthy and authoritative your content is. For competitive keywords, strong backlinks can matter more than any on-page optimization. 
 
 Backlinks help your Lovable site:
 
@@ -392,25 +392,25 @@ These actions improve how your pages appear in Search Engine Results Pages (SERP
 
 ### Structured data (JSON-LD schema)
 
-Helps search engines understand content type and unlocks rich results (star ratings, FAQ dropdowns, product cards). Lovable can add JSON-LD schema when explicitly requested.
+Structured data, implemented through JSON-LD schema, gives search engines additional context about your content and can enable rich results like star ratings, product details, and FAQ dropdowns. Lovable can generate schema markup when asked.
 
-**Common schema types**
+Frequently used schema types include:
 
-- **Product** — price, availability, reviews, ratings
+- **Product** — pricing, availability, reviews, ratings
 - **Article** — author, publish date, featured image
-- **FAQPage** — question/answer pairs
-- **LocalBusiness** — address, phone number, hours
+- **FAQPage** — questions and answers
+- **LocalBusiness** — business details such as address, phone, and hours
 
 <Accordion title="How to implement and verify structured data">
   **Prompt to add**
 
   For example:
 
-  > Add Product schema to /products/\* pages. Include: name, description, price, currency (USD), availability (InStock), image, brand (PetFood Co), aggregateRating with ratingValue and reviewCount.
+  > Add Product schema to the product pages with name, description, price, availability, image, brand, and rating details.
 
   **Verify**
 
-  - Check presence on key pages (for example, home, products, blog posts, FAQ). Paste this in browser console - should be 1:
+  - Check presence on key pages (for example, home, products, blog posts, FAQ). Paste this in browser console - should return 1:
 
   ```
   console.log('Schema:', document.querySelectorAll('script[type="application/ld+json"]').length);
@@ -421,33 +421,24 @@ Helps search engines understand content type and unlocks rich results (star rati
   - Keep schema data synchronized with visible page content
 </Accordion>
 
-### Social media optimization: Open Graph, Twitter Cards, and OG images
+### Social media optimization: Open Graph and Twitter Cards
 
-Control how preview links appear when shared on social media. High-quality images dramatically improve share performance and brand trust.
+Open Graph (OG) tags, Twitter Cards, and OG images control how your pages appear when shared on social media. High-quality preview images can dramatically improve share performance and build trust in your brand.
 
-Lovable includes baseline OG/Twitter tags in the template, but **you must customize image, title, and description per page**.
+Lovable includes basic OG and Twitter metadata by default, but **you need to customize the image, title, and description for each page.**
 
-Most social platforms (Facebook, Twitter/X, LinkedIn) **do not execute JavaScript**, which means your site may show **generic or incomplete link previews** unless you explicitly configure Open Graph (OG) and Twitter Card metadata in the initial HTML
+Most social platforms (Facebook, Twitter/X, LinkedIn) **do not execute JavaScript**, which means your site may show **generic or incomplete link previews** unless you explicitly configure Open Graph and Twitter Card metadata in the initial HTML.
 
 <Accordion title="How to implement and verify Open Graph, Twitter Cards, and OG images">
-  You have **two options** for managing social metadata:
-
-  - Prompt Lovable
-  - Update manually via GitHub or code editor
-
-  **Prompt to add Open Graph and Twitter Cards**
+  **Prompt to add**
 
   For example:
 
-  > Add unique Open Graph tags to /pricing: og:title 'Flexible Pricing Plans | PetFood Co', og:description 'Choose monthly or annual plans. Cancel anytime.', og:image '/og-pricing.jpg', og:url 'https://petfoodco.com/pricing'. Include twitter:card 'summary_large_image'.
-
-  **Prompt to add OG image**
-
-  > Create custom OG images for homepage, pricing, about. Each should be 1200x630px JPG, include page title text overlaid on brand visuals, keep under 800KB. Upload to /public/og-images/ and update og:image tags.
-
-  **Update manually**
-
-  Replace or update your og:image file manually (via GitHub or the code editor) for complete creative control over the preview image.
+  > Update social metadata for all key pages. Replace the default Lovable Open Graph and Twitter tags with unique values per route. For each page, set a custom `og:title`, `og:description`, `og:url`, and `twitter:card` (`summary_large_image`).
+  >
+  > Create a custom OG image for each page (1200×630 JPG, under 800KB) that includes the page title over branded visuals.
+  >
+  > Then update each page’s `og:image` and `twitter:image` to point to its specific file.
 
   **Verify**
 
@@ -455,8 +446,8 @@ Most social platforms (Facebook, Twitter/X, LinkedIn) **do not execute JavaScrip
     - [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
     - [X (Twitter) Card Validator](https://cards-dev.twitter.com/validator)
     - [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
-  - Each important page has unique og:title, og:description, og:image, og:url in the HTML
-  - Tags include twitter:card and twitter:image
+  - Each important page has unique `og:title`, `og:description`, `og:image`, `og:url` in the HTML
+  - Tags include `twitter:card` and `twitter:image`
   - Preview shows correct title, description, image
   - Images are 1200×630px, and under 1MB
   - Visually consistent with brand
@@ -471,11 +462,10 @@ Most social platforms (Facebook, Twitter/X, LinkedIn) **do not execute JavaScrip
   <meta property="og:url" content="https://yourdomain.com/products" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
-  
   ```
 </Accordion>
 
-## Performance and mobile
+## Performance and mobile: Improve load speed and user experience
 
 These actions help search engines render your content.
 
@@ -649,7 +639,7 @@ A dedicated page summarizing your company makes it easy for AI systems to unders
   - Update when offerings change
 </Accordion>
 
-## Set up ongoing monitoring and maintenance
+## Monitoring and maintenance: Keep SEO and GEO healthy
 
 This is how you ensure continuous SEO and GEO health.
 
@@ -686,7 +676,7 @@ Lovable has no built-in GSC integration—manual setup is required.
 
   - Confirm Google sees real content (not a blank page)
   - Diagnose rendering issues on CSR pages
-  - Check if important resources (JS/CSS) are blocked
+  - Check if important resources (JavaScript/CSS) are blocked
 
   For any URL:
 
@@ -870,7 +860,7 @@ Lovable has no built-in GSC integration—manual setup is required.
   <Accordion title="Can AI search engines (Perplexity, ChatGPT, Gemini, Claude) index Lovable apps?">
     Today, AI crawlers from these systems cannot fully execute JavaScript-rendered content, so they only reliably see the initial HTML.
 
-    The following helps AI crawlers extract facts for their knowledge graphs even without JS execution:
+    The following helps AI crawlers extract facts for their knowledge graphs even without JavaScript execution:
 
     - Clean semantic HTML with facts in static content
     - Comprehensive schema markup
@@ -885,7 +875,7 @@ Lovable has no built-in GSC integration—manual setup is required.
     - Content refreshes → quarterly or when rankings/traffic drop.
   </Accordion>
   <Accordion title="What is prerendering, and when do I need it?">
-    Prerendering/dynamic rendering gives bots a static HTML snapshot while users get the JS app. It’s particularly helpful for:
+    Prerendering/dynamic rendering gives bots a static HTML snapshot while users get the JavaScript app. It’s particularly helpful for:
 
     - Content-heavy sites
     - Frequent new content
@@ -902,9 +892,9 @@ Lovable has no built-in GSC integration—manual setup is required.
   <Accordion title="What are the main CSR SEO limitations, and how do I work around them?">
     - Indexing can be slower than SSR\
       → Submit a sitemap and use URL Inspection.
-    - AI crawlers and some bots don’t run JS\
+    - AI crawlers and some bots don’t run JavaScript\
       → Use semantic HTML + schema, consider an LLM summary page.
-    - Social previews don’t run JS\
+    - Social previews don’t run JavaScript\
       → Add Open Graph and Twitter Card tags in static HTML.
     - Metadata doesn’t update automatically across routes\
       → Ask Lovable to install react-helmet-async and configure per-route titles/descriptions.
