@@ -321,7 +321,7 @@ Optimizing your images improves accessibility, strengthens topical relevance, an
     ```
     console.log('Missing alt:', document.querySelectorAll('img:not([alt])').length);
     ```
-  - Evaluate `alt` text quality - must be descriptive with relevant keywords 
+  - Evaluate `alt` text quality - must be descriptive with relevant keywords
     - Bad: `alt="image"` , `alt="photo", alt=""`
     - Good: `alt="Golden retriever eating organic grain-free dog food from a bowl"`
   - Use proper file formats and keep file sizes small:
@@ -616,46 +616,44 @@ AI systems prefer content that is clear, structured, and easy to quote. Providin
 
 ### Static LLM-friendly summary page
 
-A dedicated page summarizing your company makes it easy for AI systems to understand and cite your information. Lovable can build dedicated summary pages (like `/llm`, `/about-ai`) with key information in crawlable format.
+A dedicated summary page makes it much easier for AI systems to understand and cite your company’s key information. Lovable Agent can build dedicated summary pages with key information in crawlable format when requested.
 
 <Accordion title="How to implement and verify LLM-friendly summary page">
   **Prompt to add**
 
   For example:
 
-  > Create /llm page with: company description (2 paragraphs), products/services list, key differentiators, pricing summary, 10 FAQs with factual answers, contact info. Add Organization and FAQPage schema. Use clear H2/H3 headings and factual language.
+  > Create an `/llm` page that clearly explains what the company does, what it offers, how it’s different, pricing basics, FAQs, and how to contact us. Add Organization and FAQPage schema and organize the page with simple H2/H3 headings.
 
   **Verify**
 
-  - Create page at `/llm` or `/about-ai`
-  - Structure with clear H2/H3 headings
-  - Include, for example: company summary, products/services, differentiators, pricing model, contact info, FAQs
-  - Add Organization and FAQPage schema so LLMs can extract structured facts
-  - Keep content factual and quotable (avoid marketing fluff)
-  - Update when offerings change
+  - The page is created at a clear URL such as `/llm` or `/about-ai`.
+  - Content is structured with clear H2/H3 headings.
+  - The page includes key information: company summary, products/services, differentiators, pricing model, contact details, and FAQs.
+  - Organization and FAQPage schema are present so AI systems can extract structured facts.
+  - Content is factual, concise, and quotable (avoid marketing fluff).
+  - Information is kept up to date as offerings change.
 </Accordion>
 
 ## Monitoring and maintenance: Keep SEO and GEO healthy
 
-This is how you ensure continuous SEO and GEO health.
+Effective SEO and GEO require ongoing monitoring. Use Google Search Console (GSC) and regular check-ins to keep your site healthy, indexed, and performing well over time.
 
-#### Google Search Console (GSC) setup
+### Google Search Console (GSC) setup
 
-GSC is your window into what Google sees—indexation status, performance, technical issues. Essential for monitoring SEO health.
-
-Lovable has no built-in GSC integration—manual setup is required.
+Google Search Console (GSC) shows how Google crawls, indexes, and ranks your site. It’s a key tool for tracking SEO performance and spotting technical problems. Lovable doesn’t integrate with GSC automatically, so you need to set it up manually.
 
 <Accordion title="How to set up and use GCS for monitoring and maintenance">
   **Verify site ownership** (choose one method)
 
   Verify your domain so Google can be sure you own the website before it provides you services.
 
-  - DNS TXT record (recommended): add the TXT record in your domain provider’s DNS settings
-  - Meta tag verification: prompt Lovable
+  - **DNS TXT record** (recommended): add the TXT record in your domain provider’s DNS settings
+  - **Meta tag verification**: prompt Lovable to add the meta tag
 
-  > Add GSC verification meta tag: \<meta name='google-site-verification' content='YOUR_CODE' /\> to the \<head\> of my site
+  > Add GSC verification meta tag: \<meta name='google-site-verification' content='YOUR_CODE' /\> to the \<head\>
 
-  - HTML file upload (if hosting supports): download Google’s verification file and ask Lovable to place it at the site root (usually /public)
+  - **HTML file upload**: upload Google’s verification file and ask Lovable to place it at the site root (usually `/public`)
 
   **Submit sitemap**
 
@@ -666,24 +664,24 @@ Lovable has no built-in GSC integration—manual setup is required.
 
    It can take **24–48 hours** for Google to process and report on it.
 
-  **Use URL Inspection tool** (most powerful feature)
+  **Use the URL Inspection tool** 
 
   Use this to:
 
   - Confirm Google sees real content (not a blank page)
-  - Diagnose rendering issues on CSR pages
-  - Check if important resources (JavaScript/CSS) are blocked
+  - Diagnose CSR rendering issues
+  - Check if key resources (JavaScript/CSS) are blocked
 
   For any URL:
 
   1. Enter the URL in the **URL Inspection** bar
-  2. Click **Test Live URL** and wait for Googlebot to fetch and render the page
-  6. Click **View Tested Page** to see:
+  2. Click **Test Live URL** 
+  6. Open **View Tested Page** to check:
      - Screenshot of what Googlebot sees
-     - Rendered HTML (content after JavaScript)
+     - Rendered HTML 
      - Console errors
      - Blocked resources
-  5. Click **Request Indexing** for new/updated priority pages (rate limited)
+  5. Click **Request Indexing** for new or updated pages (rate limited)
 
   **Reports to monitor weekly**
 
@@ -694,36 +692,40 @@ Lovable has no built-in GSC integration—manual setup is required.
   - **Performance (search results):**
     - Impressions, clicks, CTR, average position
     - Top queries and pages
-    - Which pages are gaining/losing visibility
+    - Pages gaining or losing visibility
   - **Core Web Vitals:**
-    - Real-world LCP, FID, CLS from actual users
-    - Identify slow/problematic pages
-    - Compare **mobile vs. desktop**
-  - **Mobile Usability:**
-    - Mobile-specific issues (tap targets, viewport, content width)
+    - Real-world LCP, INP, CLS 
+    - Identify slow and problematic pages
+    - Compare mobile vs. desktop performance
+  - **Mobile usability:**
+    - Issues with tap targets, viewport, content width
     - Fix errors to maintain mobile rankings
 </Accordion>
 
-#### Suggested maintenance schedule
+### Suggested maintenance schedule
 
-**Weekly**
+Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing schedule to stay ahead of indexing issues, performance changes, and content updates.
 
-- Check GSC Coverage for new errors and newly indexed pages.
-- Glance at search performance trends.
-- Run URL Inspection for newly important URLs and request indexing if needed.
+<Accordion title="Maintenance schedule: What to check weekly, monthly, and quarterly">
+  **Weekly**
 
-**Monthly**
+  - Check GSC Coverage for new errors and newly indexed pages
+  - Glance at search performance trends
+  - Run URL Inspection for newly important URLs and request indexing if needed
 
-- Update `sitemap.xml` if pages changed.
-- Refresh underperforming titles/descriptions (low CTR pages).
-- Run a Lighthouse audit on your main templates.
-- Do a small round of content improvements or link building.
+  **Monthly**
 
-**Quarterly**
+  - Update `sitemap.xml` if pages changed
+  - Refresh underperforming titles and descriptions (low CTR pages)
+  - Run a Lighthouse audit on your main templates
+  - Do a small round of content improvements or link building
 
-- Do a deeper technical audit: canonicals, `robots.txt`, schema, internal links, mobile usability.
-- Review keyword performance and top landing pages.
-- Refresh older content that is slipping in rankings or out of date.
+  **Quarterly**
+
+  - Do a deeper technical audit: canonicals, `robots.txt`, schema, internal links, mobile usability
+  - Review keyword performance and top landing pages
+  - Refresh older or declining content 
+</Accordion>
 
 ## FAQ
 
