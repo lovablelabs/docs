@@ -181,7 +181,7 @@ Lovable Agent can create nav/footer links and suggest or create contextual links
 
   **Verify**
 
-  - Check links are crawlable. This should match the number of links you expect based on your navigation and content.
+  - Check that links are crawlable. The number should roughly match what you expect based on your navigation and content.
 
     ```
     console.log('Links:', document.querySelectorAll('a[href]').length);
@@ -277,10 +277,10 @@ A clear heading structure (H1 to H3) helps search engines understand how your co
 
 ### Semantic HTML
 
-Semantic HTML uses meaningful tags to describe your content, helping both search engines and screen readers understand the structure of your page. Lovable Agent  typically adds semantic elements such as `<main>`, `<nav>`, and `<section>`.
+Semantic HTML uses meaningful tags to describe your content, helping both search engines and screen readers understand the structure of your page. Lovable Agent typically adds semantic elements such as `<main>`, `<nav>`, and `<section>`.
 
 <Accordion title="How to implement and verify semantic HTML">
-  **Prompt  to add**
+  **Prompt to add**
 
   For example:
 
@@ -288,7 +288,7 @@ Semantic HTML uses meaningful tags to describe your content, helping both search
 
   **Verify**
 
-  - For example, paste this in browser console - should return `true` as applicable:
+  - Paste this in the browser console - should return `true` as applicable:
 
   ```
   console.log('Has <main>:', !!document.querySelector('main'));
@@ -385,6 +385,7 @@ Backlinks help your Lovable site:
   - **Editorial** (earned, not paid)
   - **Anchor-text descriptive** (naturally including relevant keywords)
   - **Placed in context** (inside real content, not random footers/sidebar links)
+  - **Avoid spammy tactics** (link farms, low-quality directories, or paid link schemes), which can hurt rankings.
 </Accordion>
 
 ## Rich results: Stand out in search
@@ -411,7 +412,7 @@ Frequently used schema types include:
 
   **Verify**
 
-  - Check presence on key pages (for example, home, products, blog posts, FAQ). Paste this in browser console - should return 1 unless you intentionally added multiple schema types:
+  - Check presence on key pages (for example, home, products, blog posts, FAQ). Paste this in the browser console - should return 1 unless you intentionally added multiple schema types:
 
   ```
   console.log('Schema:', document.querySelectorAll('script[type="application/ld+json"]').length);
