@@ -477,7 +477,7 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
 
   For example:
 
-  > Fix Lighthouse performance issues on homepage: Compress hero image to \<200KB, add width/height to all images, defer non-critical JavaScript, preload hero image and fonts. Target 90+ Performance score.
+  > Improve homepage performance by compressing images, adding width/height attributes, deferring non-essential scripts, and preloading key assets. Target a Performance score of 90+ in Lighthouse.
 
   **Verify**
 
@@ -488,7 +488,7 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
     - Best Practices: 90+
     - SEO: 100
   - Fix pages with poor performance scores
-  - In GSC, check and fix**Core Web Vitals targets**
+  - In GSC, check and fix **Core Web Vitals targets:**
 
   | Metric                              | Target          | What it measures                                     | How to fix                                                                                                       |
   | ----------------------------------- | :-------------- | :--------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
@@ -535,23 +535,23 @@ More than 60% of searches happen on mobile. Google uses mobile-first indexing �
 
 Generative Engine Optimization (GEO) helps AI systems like ChatGPT, Perplexity, Gemini, and Claude discover and cite your content. Generative engines extract information differently than search engines. Most do not execute JavaScript, so they rely heavily on static HTML and schema.
 
-Most GEO best practices are extensions of good SEO. If you follow the earlier sections plus the extras here, you’ll be in good shape.
+Most GEO best practices are extensions of good SEO. If you follow the earlier sections plus the extras here, you’ll be well positioned for AI visibility.
 
 ### Semantic HTML and schema for AI
 
-AI crawlers read HTML directly without executing JavaScript. Clear structure and schema help them extract facts for citations. Lovable provides semantic structure and can add schema when requested.
+AI crawlers read HTML directly without executing JavaScript. Clear structure and schema help them extract facts for citations. Lovable Agent provides semantic structure and can add schema when requested.
 
 <Accordion title="How to implement and verify semantic HTML and schema for AI">
   **Prompt to add**
 
   For example:
 
-  > Review homepage for AI crawlers. Ensure company description, services, and differentiators are in clear HTML paragraphs with semantic headings, not hidden in JavaScript state. Add Organization schema with name, description, url, logo, sameAs (social profiles).
+  > Check the homepage to ensure important information is in plain HTML with clear headings. Add Organization schema including name, description, URL, logo, and social links.
 
   **Verify**
 
   - Put key facts in static HTML (for example, what you do, who you serve, pricing)
-  - Use clear headings (`<h2>`, `<h3>`) to structure information
+  - Use clear headings (H2, H3) to structure information
   - Add comprehensive schema: Organization, Product, FAQPage, Article
   - Write in clear, factual language that AI can parse and cite
   - Keep facts consistent across your site, schema, and external profiles.
@@ -559,14 +559,14 @@ AI crawlers read HTML directly without executing JavaScript. Clear structure and
 
 ### AI bot access (robots.txt)
 
-Controls which AI systems can access your content for training or answering queries. Configure in robots.txt to allow desired bots.
+Controls which AI systems can access your content for training or answering queries. Lovable Agent can configure the `robots.txt` to allow desired bots when requested.
 
 <Accordion title="How to implement and verify AI bot access in robots.txt">
   **Prompt to add**
 
   For example:
 
-  > Update robots.txt to allow GPTBot, PerplexityBot, and Claude-Web for AI citations. Block Google-Extended and CCBot to prevent AI training. Keep search engine crawlers allowed.
+  > Update `robots.txt` to allow GPTBot, PerplexityBot, and Claude-Web, and block Google-Extended and CCBot. Keep all standard search engine crawlers allowed.
 
   **Verify**
 
@@ -591,14 +591,14 @@ Controls which AI systems can access your content for training or answering quer
 
 ### LLM-quotable content patterns
 
-AI systems prefer clear, structured content they can confidently quote. Help them cite your information accurately. Lovable can generate FAQ sections and structured content when requested.
+AI systems prefer content that is clear, structured, and easy to quote. Providing information in this format makes it more likely to be cited accurately. Lovable Agent can generate FAQ sections and structured content when requested.
 
 <Accordion title="How to implement and verify LLM-quotable content patterns">
   **Prompt to add**
 
   For example:
 
-  > Review FAQ section. Rewrite answers to be quotable by AI: start with direct answer in first sentence, 2-3 sentences total, include specific facts/numbers, avoid vague marketing language. Example: Instead of 'Our food helps dogs feel their best' write 'Organic dog food reduces digestive issues in 65% of dogs and provides 30% more nutrients than conventional options.'
+  > Update the FAQ answers to be short, direct, and easy for AI to quote. Begin with the main answer, include concrete facts, and remove vague marketing wording.
 
   **Verify**
 
@@ -610,8 +610,8 @@ AI systems prefer clear, structured content they can confidently quote. Help the
 
   **Examples**
 
-  - Bad: "Amazing transformative solutions"
-  - Good: "USDA-certified organic dog food delivered weekly. Plans start at \$45/month with free shipping over \$50."
+  - Bad: `Amazing transformative solutions`
+  - Good: `USDA-certified organic dog food delivered weekly. Plans start at $45/month with free shipping over $50.`
 </Accordion>
 
 ### Static LLM-friendly summary page
