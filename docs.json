@@ -52,8 +52,7 @@
               "features/private-projects",
               "features/publish",
               "features/analytics",
-              "features/custom-domain",
-              "features/seo",
+              "features/custom-domain",                                         
               "features/security",
               "features/labs",
               "features/business/sso",
@@ -93,6 +92,7 @@
         "pages": [
           "tips-tricks/best-practice",
           "tips-tricks/troubleshooting",
+          "tips-tricks/seo-geo",
           "tips-tricks/using-images",
           "tips-tricks/using-videos",
           "tips-tricks/custom-fonts",
@@ -181,6 +181,10 @@
     {
       "source": "features/visual-edit",
       "destination": "/features/design"
+    },
+    {
+      "source": "features/seo",
+      "destination": "/tips-tricks/seo-geo"
     }
   ]
 }
