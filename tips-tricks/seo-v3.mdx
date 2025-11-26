@@ -5,11 +5,21 @@ icon: "magnifying-glass"
 keywords: ["lovable seo","lovable geo","client-side rendering seo","seo best practices","geo best practices","ai search optimization","structured data","sitemap","robots.txt","open graph","page titles","meta descriptions","core web vitals","schema markup","llm optimization","ai crawlability","prerendering"]
 ---
 
+## **How SEO and GEO work in Lovable**
+
 Lovable gives you a lot of flexibility: **Search Engine Optimization (SEO)** and **Generative Engine Optimization (GEO)** emerge from the code the Lovable Agent generates when you create pages, content, and features.
 
-The Lovable Agent may create some optimization elements—such as titles, descriptions, or tags inferred from your prompts—but this is not systematic, and it **doesn’t guarantee accurate or complete implementation.**
+The Agent may may add elements like titles, descriptions, or tags based on your prompts, but this isn't systematic and **doesn’t guarantee full or correct implementation.**
 
 Because of this, you should **treat SEO and GEO like code**: something you intentionally review, test, and refine. This guide shows you exactly what to ask for and how to verify it.
+
+### Built-in Speed tool
+
+Lovable also includes a built-in **Speed tool** powered by Google Lighthouse. It provides a quick snapshot of your site’s performance, accessibility, best practices, and SEO checks. 
+
+![Speed Tool Pn](/images/speed-tool.png)
+
+It’s a great first look at your site’s health, but Lighthouse doesn’t verify critical factors like crawlability, structured data, metadata accuracy, or social previews, so this guide fills in those gaps.
 
 ## Understanding Lovable’s architecture
 
@@ -42,7 +52,7 @@ This two-step process works reliably, but:
 
 - Platforms like **Facebook, X/Twitter, and LinkedIn** do not wait for content to render, so they only see the initial HTML page structure.
 - If all your pages share the same basic title and preview image, social links may show generic or incorrect information
-- **AI systems (ChatGPT, Perplexity, Gemini, Claude)** often can't see dynamically rendered content, so they may miss your pages entirely
+- Many**AI systems**  can't see dynamically rendered content, so they may miss your pages entirely
 
 **Modern search engines handle CSR well.** CSR does not block indexing or ranking — implementation and content quality matter most.
 
@@ -535,7 +545,7 @@ More than 60% of searches happen on mobile. Google uses mobile-first indexing �
 
 ## GEO: Make your content AI/LLM-friendly
 
-Generative Engine Optimization (GEO) helps AI systems like ChatGPT, Perplexity, Gemini, and Claude discover and cite your content. Generative engines extract information differently than search engines. Most do not execute JavaScript, so they rely heavily on static HTML and schema.
+Generative Engine Optimization (GEO) helps AI systems like ChatGPT, Perplexity, Gemini, and Claude discover and cite your content. Generative engines extract information differently than search engines. Many do not execute JavaScript, so they rely heavily on static HTML and schema.
 
 Most GEO best practices are extensions of good SEO. If you follow the earlier sections plus the extras here, you’ll be well positioned for AI visibility.
 
@@ -856,7 +866,7 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
     If SEO is part of your strategy, a custom domain is one of the most impactful upgrades you can make. See [Custom domains](https://docs.lovable.dev/features/custom-domain) for setup details.
   </Accordion>
   <Accordion title="Can AI search engines (Perplexity, ChatGPT, Gemini, Claude) index Lovable apps?">
-    AI crawlers from systems like Perplexity, ChatGPT, Gemini, and Claude don’t typically execute JavaScript, so they rely on the initial HTML they can fetch. This means they may not see content that is rendered client-side.
+    Many AI crawlers  don’t typically execute JavaScript, so they rely on the initial HTML they can fetch. This means they may not see content that is rendered client-side.
 
     You can still make your content highly accessible to these crawlers by ensuring:
 
