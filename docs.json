@@ -52,7 +52,7 @@
               "features/private-projects",
               "features/publish",
               "features/analytics",
-              "features/custom-domain",                                           
+              "features/custom-domain",                                         
               "features/security",
               "features/labs",
               "features/business/sso",
