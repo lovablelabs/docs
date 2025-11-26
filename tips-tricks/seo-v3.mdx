@@ -64,7 +64,7 @@ These steps ensure search engines can access, discover, and index all the import
 
 ### XML sitemap
 
-Sitemaps help search engines discover all your pages—critical for CSR sites where crawlers can't easily find all routes. Lovable Agent can generate `sitemap.xml` with all public routes when requested.
+Sitemaps help search engines discover all your pages. This is especially important for CSR sites where crawlers can't easily find all routes. Lovable Agent can generate `sitemap.xml` with all public routes when requested.
 
 <Accordion title="How to implement and verify sitemap.xml">
   **Prompt to add**
@@ -227,14 +227,14 @@ Page titles are a critical on-page ranking factor. They show up in search result
     ```
     console.log('Title:', document.title, '| Length:', document.title.length);
     ```
-  - Each route has unique, descriptive title (not generic "Home" everywhere)
+  - Each route has unique, descriptive title (not generic `Home` everywhere)
   - Under 60 characters to avoid truncation
   - Includes primary keyword plus brand name
 </Accordion>
 
 ### Meta descriptions
 
-Meta descriptions appear in search results just below the page title. They aren’t a direct ranking factor, but they have a strong influence on click-through rates. Lovable Agent can add meta descriptions when requested.
+Meta descriptions appear in search results just below the page title. They are not a direct ranking factor, but they have a strong influence on click-through rates. Lovable Agent can add meta descriptions when requested.
 
 <Accordion title="How to implement and verify meta descriptions">
   **Prompt to add**
@@ -376,7 +376,7 @@ Backlinks help your Lovable site:
 
   - Industry directories
   - Local business listings
-  - Startup listings (Product Hunt, BetaList, etc.)
+  - Startup listings 
   - Curated resources relevant to your product
 
   5. **Promote content**
@@ -394,7 +394,7 @@ Backlinks help your Lovable site:
   - **Authoritative** (trusted domains)
   - **Editorial** (earned, not paid)
   - **Anchor-text descriptive** (naturally including relevant keywords)
-  - **Placed in context** (inside real content, not random footers/sidebar links)
+  - **Placed in context** (inside real content, not random footers or sidebar links)
   - **Avoid spammy tactics** (link farms, low-quality directories, or paid link schemes), which can hurt rankings.
 </Accordion>
 
@@ -408,10 +408,10 @@ Structured data, implemented through JSON-LD schema, gives search engines additi
 
 Frequently used schema types include:
 
-- **Product** — pricing, availability, reviews, ratings
-- **Article** — author, publish date, featured image
-- **FAQPage** — questions and answers
-- **LocalBusiness** — business details such as address, phone, and hours
+- **Product**: pricing, availability, reviews, ratings
+- **Article**: author, publish date, featured image
+- **FAQPage**: questions and answers
+- **LocalBusiness**: business details such as address, phone, and hours
 
 <Accordion title="How to implement and verify structured data">
   **Prompt to add**
@@ -511,7 +511,7 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
 
 ### Mobile optimization
 
-More than 60% of searches happen on mobile. Google uses mobile-first indexing — your mobile version determines rankings. Lovable Agent produces responsive layouts with viewport tag. The viewport tag is required for mobile-friendly scaling.
+More than 60% of searches happen on mobile. Google uses mobile-first indexing, which means your mobile version determines rankings. Lovable Agent produces responsive layouts with `viewport` tag. The `viewport` tag is required for mobile-friendly scaling.
 
 <Accordion title="How to optimize and verify mobile performance">
   **Prompt to add**
@@ -530,7 +530,7 @@ More than 60% of searches happen on mobile. Google uses mobile-first indexing �
   - Forms work properly on touch devices (large inputs, clear labels)
   - Navigation accessible (hamburger menu functional)
   - Images and videos fit within screen width
-  - **Confirm the viewport tag exists**. Paste this in the browser console:
+  - **Confirm the **`viewport`**tag exists** . Paste this in the browser console:
 
     ```
     document.querySelector('meta[name="viewport"]')?.outerHTML
@@ -749,7 +749,7 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
     - [workveg.com](http://workveg.com)
     - [renamify.co](http://renamify.co)
 
-    Follow the technical and content recommendations in this guide—especially metadata, performance, and sitemap configuration—for the best results.
+    For the best results, follow the technical and content recommendations in this guide, especially around metadata, performance, and sitemap configuration.
 
     <Note>
       Search performance also depends on factors outside Lovable’s control, including content quality, backlinks, competition, and search ranking algorithms.
@@ -878,7 +878,7 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
   </Accordion>
   <Accordion title="How often should I update SEO settings, content, and sitemap?">
     - **Sitemap:** Update whenever URLs change, or at least monthly for active sites.
-    - **Metadata (titles/descriptions):** Review monthly and improve pages with low click-through rates.
+    - **Metadata (titles and descriptions):** Review monthly and improve pages with low click-through rates.
     - **Performance:** Run monthly Lighthouse checks and review Core Web Vitals (LCP, INP, CLS) to catch speed or usability issues early.
     - **Technical audit:** Perform a quarterly review of canonicals, robots.txt, schema, internal links, redirects, and mobile usability.
     - **Content:** Refresh or expand important content quarterly, or sooner if rankings or traffic decline.
