@@ -607,14 +607,15 @@ AI systems prefer content that is clear, structured, and easy to quote. Providin
 
 A dedicated summary page makes it much easier for AI systems to understand and cite your company’s key information. Lovable Agent can build dedicated summary pages with key information in crawlable format when requested.
 
-<Accordion title="How to implement and verify LLM-friendly summary page">
+<Accordion title="How to implement and verify static LLM-friendly summary page">
   **Example prompt**
 
-  > Create an `/llm` page that clearly explains what the company does, what it offers, how it’s different, pricing basics, FAQs, and how to contact us. Add `Organization` and `FAQPage` schema and organize the page with simple H2/H3 headings.
+  > Create a static `llm.html` page under the public folder that clearly explains what the company does, what it offers, how it's different, pricing basics, FAQs, and how to contact us. Add `Organization` and `FAQPage` schema and organize the page with simple H2/H3 headings. Include this new URL in sitemap.xml
 
   **Verify**
 
-  - The page is created at a clear URL such as `/llm` or `/about-ai`.
+  - The page is created at a clear URL such as `/llm.html` or `/about-ai.html`.
+  - The page is included in the `sitemap.xml`.
   - Content is structured with clear H2/H3 headings.
   - The page includes key information: company summary, products/services, differentiators, pricing model, contact details, and FAQs.
   - `Organization` and `FAQPage` schema are present so AI systems can extract structured facts.
@@ -858,7 +859,7 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
 
     - Clean semantic HTML with key facts in static content
     - Comprehensive schema markup
-    - A dedicated LLM summary page (such as `/llm`)
+    - A dedicated LLM summary page, such as `/llm.html` or `/about-ai.html`), also included in sitemap 
     - Clear, quotable content (definitions, FAQs, short factual answers)
   </Accordion>
   <Accordion title="How often should I update SEO settings, content, and sitemap?">
