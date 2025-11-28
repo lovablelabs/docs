@@ -5,7 +5,7 @@ icon: "magnifying-glass"
 keywords: ["lovable seo","lovable geo","client-side rendering seo","seo best practices","geo best practices","ai search optimization","structured data","sitemap","robots.txt","open graph","page titles","meta descriptions","core web vitals","schema markup","llm optimization","ai crawlability","prerendering"]
 ---
 
-## **How SEO and GEO work in Lovable**
+## How SEO and GEO work in Lovable
 
 Lovable gives you a lot of flexibility: **Search Engine Optimization (SEO)** and **Generative Engine Optimization (GEO)** emerge from the code the Lovable Agent generates when you create pages, content, and features.
 
@@ -20,6 +20,17 @@ Lovable also includes a **built-in Speed tool powered by Google Lighthouse**. It
 ![Lovable Speed Tool](/images/speed-tool.png)
 
 It’s a great first look at your site’s health, but Lighthouse doesn’t verify critical factors like crawlability, structured data, metadata accuracy, or social previews, so this guide fills in those gaps.
+
+### Custom domains
+
+Using a **custom domain** is one of the most important steps for SEO and GEO. A branded domain helps search engines understand your site, preserves backlink value over time, and ensures all traffic consolidates under a single canonical URL.
+
+Lovable lets you:
+
+- Connect your own domain or subdomain
+- Choose one **primary domain** (all other domains redirect to it)
+
+After setting up your custom domain, [**verify it in Google Search Console**](#google-search-console-gsc-setup) so Google can crawl and index the correct domain. For detailed setup instructions, see [**Custom domains**](/features/custom-domain).
 
 ## Understanding Lovable’s architecture
 
@@ -52,7 +63,7 @@ This two-step process works reliably, but:
 
 - Platforms like **Facebook, X/Twitter, and LinkedIn** do not wait for content to render, so they only see the initial HTML page structure.
 - If all your pages share the same basic title and preview image, social links may show generic or incorrect information
-- Many **AI systems** can’t reliably see dynamically rendered content, so they may miss your pages or only see partial content
+- Many **AI systems** don't reliably see dynamically rendered content, so they may miss your pages or only see partial content
 
 **Modern search engines handle CSR well.** CSR does not block indexing or ranking, implementation and content quality matter most.
 
@@ -67,9 +78,7 @@ These steps ensure search engines can access, discover, and index all the import
 Sitemaps help search engines discover all your pages. This is especially important for CSR sites where crawlers can't easily find all routes. Lovable Agent can generate `sitemap.xml` with all public routes when requested.
 
 <Accordion title="How to implement and verify sitemap.xml">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Create XML sitemap at /sitemap.xml listing all public routes. Include lastmod dates and priorities: homepage 1.0, main pages 0.8, blog posts 0.6.
 
@@ -85,7 +94,7 @@ Sitemaps help search engines discover all your pages. This is especially importa
 
     > Update sitemap.xml to include /new-page and remove /old-page then resubmit to Google Search Console.
 
-  **Example**
+  **Example sitemap.xml**
 
   ```
   <?xml version="1.0" encoding="UTF-8"?>
@@ -109,9 +118,7 @@ Sitemaps help search engines discover all your pages. This is especially importa
 `robots.txt` tells search engines which areas of your site they’re allowed to crawl. It’s important to avoid blocking key resources that Google needs to render your pages correctly. Lovable Agent can create a `robots.txt` file when requested.
 
 <Accordion title="How to implement and verify robots.txt">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Create robots.txt at /public/robots.txt that allows all crawlers, references Sitemap: https://yourdomain.com/sitemap.xml, and allows GPTBot and PerplexityBot for AI visibility.
 
@@ -122,7 +129,7 @@ Sitemaps help search engines discover all your pages. This is especially importa
   - Includes `Sitemap:` line pointing to your sitemap
   - Controls AI bot access (GPTBot, PerplexityBot) based on your strategy
 
-  **Example**
+  **Example robots.txt**
 
   ```
   User-agent: *
@@ -139,9 +146,7 @@ Sitemaps help search engines discover all your pages. This is especially importa
 Canonical tags tell search engines which URL is the “official” version of a page, helping prevent duplicate content issues. Lovable Agent can generate canonical tags when requested.
 
 <Accordion title="How to implement and verify canonical tags">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Add canonical tags to all pages pointing to their own URLs. Use https://yourdomain.com format with no trailing slash.
 
@@ -162,9 +167,7 @@ Canonical tags tell search engines which URL is the “official” version of a 
 Search engines rely on URLs to understand what a page is about, so clean and descriptive URLs help improve both crawlability and rankings. Lovable Agent typically generates clean routes automatically through React Router.
 
 <Accordion title="How to implement and verify clean URLs">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Review all routes and make sure URLs are clean and descriptive. Use hyphens for word separation and avoid query parameters.
 
@@ -183,11 +186,9 @@ Internal links connect your pages so both users and search engines can navigate 
 Lovable Agent can create nav/footer links and suggest or create contextual links when requested.
 
 <Accordion title="How to implement and verify internal linking">
-  **Prompt to add**
+  **Example prompt**
 
-  For example:
-
-  > Add 3-5 contextual internal links to related pages. Use descriptive anchor text instead of 'click here'.
+  > Add 3-5 contextual internal links to related pages. Use descriptive anchor text instead of "click here".
 
   **Verify**
 
@@ -196,7 +197,7 @@ Lovable Agent can create nav/footer links and suggest or create contextual links
     ```
     console.log('Links:', document.querySelectorAll('a[href]').length);
     ```
-  - Use real `<a href>` tags, not onClick handlers
+  - Use real `<a href>` tags, not `onClick` handlers
   - Important pages have multiple internal links pointing to them
   - Include links to your most important pages in the footer so they appear site-wide
   - Anchor text is descriptive with keywords (not "click here")
@@ -214,9 +215,7 @@ These practices clarify what each page is about, making your content easier for 
 Page titles are a critical on-page ranking factor. They show up in search results and browser tabs, and they have a strong impact on click-through rates. Lovable Agent can generate title tags based on your page’s purpose.
 
 <Accordion title="How to implement and verify page titles">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Update the page titles for all routes. Use clear, descriptive titles that match each page’s purpose, and keep them under 60 characters.
 
@@ -237,9 +236,7 @@ Page titles are a critical on-page ranking factor. They show up in search result
 Meta descriptions appear in search results just below the page title. They are not a direct ranking factor, but they have a strong influence on click-through rates. Lovable Agent can add meta descriptions when requested.
 
 <Accordion title="How to implement and verify meta descriptions">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Write unique meta descriptions for all key pages. Keep each one clear, helpful, and between 140–160 characters.
 
@@ -250,7 +247,7 @@ Meta descriptions appear in search results just below the page title. They are n
     ```
     console.log('Desc:', document.querySelector('meta[name="description"]')?.content, '| Length:', document.querySelector('meta[name="description"]')?.content.length);
     ```
-  - Each page has unique description (140-160 characters)
+  - Each page has unique description (**140-160 characters**)
     - Bad: `Welcome to our website `(generic, repeated)
     - Good: `Premium organic dog food delivered fresh to your door. Free shipping over $50.` (158 chars)
   - Highlights benefits, differentiation, and a soft call to action
@@ -262,9 +259,7 @@ Meta descriptions appear in search results just below the page title. They are n
 A clear heading structure (H1 to H3) helps search engines understand how your content is organized and which sections are most important. Lovable Agent can generate proper H1 tags and a logical hierarchy when requested.
 
 <Accordion title="How to implement and verify heading structure">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Review the heading structure on each page. There should be one H1 at the top, with H2 for major sections and H3 for nested content. Don’t skip heading levels.
 
@@ -290,9 +285,7 @@ A clear heading structure (H1 to H3) helps search engines understand how your co
 Semantic HTML uses meaningful tags to describe your content, helping both search engines and screen readers understand the structure of your page. Lovable Agent typically adds semantic elements such as `<main>`, `<nav>`, and `<section>`.
 
 <Accordion title="How to implement and verify semantic HTML">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Review the HTML structure and use semantic tags where appropriate. Place main content in `<main>`, navigation in `<nav>`, sections in `<section>`, and footer content in `<footer>`.
 
@@ -319,9 +312,7 @@ Semantic HTML uses meaningful tags to describe your content, helping both search
 Optimizing your images improves accessibility, strengthens topical relevance, and helps your content appear in image search results. Using efficient formats and correctly sized images also boosts page speed, which is an important ranking factor. Lovable Agent can add `alt` text and enable lazy loading as needed.
 
 <Accordion title="How to implement and verify image optimization">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Review all images and add clear, descriptive alt text. Make sure each image has width and height attributes and is properly compressed for fast loading.
 
@@ -339,7 +330,7 @@ Optimizing your images improves accessibility, strengthens topical relevance, an
     - WebP for photos and illustrations
     - SVG for logos, icons, and simple graphics
     - Images compressed under 200KB
-  - Width/height attributes present (prevents layout shift)
+  - Width and height attributes present (prevents layout shift)
 </Accordion>
 
 ## Off-page SEO: Build authority with backlinks
@@ -408,17 +399,15 @@ Structured data, implemented through JSON-LD schema, gives search engines additi
 
 Frequently used schema types include:
 
-- **Product**: pricing, availability, reviews, ratings
-- **Article**: author, publish date, featured image
-- **FAQPage**: questions and answers
-- **LocalBusiness**: business details such as address, phone, and hours
+- `Product`: pricing, availability, reviews, ratings
+- `Article`: author, publish date, featured image
+- `FAQPage`: questions and answers
+- `LocalBusiness`: business details such as address, phone, and hours
 
 <Accordion title="How to implement and verify structured data">
-  **Prompt to add**
+  **Example prompt**
 
-  For example:
-
-  > Add Product schema to the product pages with name, description, price, availability, image, brand, and rating details.
+  > Add `Product` schema to the product pages with name, description, price, availability, image, brand, and rating details.
 
   **Verify**
 
@@ -442,9 +431,7 @@ Lovable Agent includes basic OG and Twitter metadata by default, but **you need 
 Most social platforms (Facebook, Twitter/X, LinkedIn) do not execute JavaScript, which means your site may show generic or incomplete link previews unless you explicitly configure Open Graph and Twitter Card metadata in the initial HTML.
 
 <Accordion title="How to implement and verify Open Graph, Twitter Cards, and OG images">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Add unique Open Graph and Twitter metadata to every important page. Set a custom title, description, URL, and social image for each route. Use one 1200×630 JPG image per page and update `og:image` and `twitter:image` accordingly.
 
@@ -461,7 +448,7 @@ Most social platforms (Facebook, Twitter/X, LinkedIn) do not execute JavaScript,
   - Visually consistent with brand
   - Avoid using single generic image for every page
 
-  **Example**
+  **Example Open Graph and Twitter Card metadata**
 
   ```
   <meta property="og:title" content="Organic Dog Food Delivery | PetFood Co" />
@@ -485,9 +472,7 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
 - Use **Google Search Console to verify Core Web Vitals**, a set of metrics that measure real-world user experience for loading performance, interactivity, and visual stability of the page.
 
 <Accordion title="How to optimize and verify core web vitals and performance">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Improve homepage performance by compressing images, adding width/height attributes, deferring non-essential scripts, and preloading key assets. Target a Performance score of 90+ in Lighthouse.
 
@@ -514,9 +499,7 @@ Page speed is a confirmed ranking factor. Faster sites rank higher and convert b
 More than 60% of searches happen on mobile. Google uses mobile-first indexing, which means your mobile version determines rankings. Lovable Agent produces responsive layouts with `viewport` tag. The `viewport` tag is required for mobile-friendly scaling.
 
 <Accordion title="How to optimize and verify mobile performance">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Review mobile experience. Increase tap target sizes to minimum 48x48px, add spacing between interactive elements, ensure text is minimum 16px, fix any horizontal scroll on small screens.
 
@@ -526,11 +509,11 @@ More than 60% of searches happen on mobile. Google uses mobile-first indexing, w
   - Confirm all primary flows work smoothly on mobile
   - No horizontal scrolling on any page
   - Text readable without zooming (minimum 16px font size)
-  - Buttons/links at least 48×48px, with spacing between, and easily tappable
+  - Buttons and links at least 48×48px, with spacing between, and easily tappable
   - Forms work properly on touch devices (large inputs, clear labels)
   - Navigation accessible (hamburger menu functional)
   - Images and videos fit within screen width
-  - **Confirm the**`viewport`**tag exists.** Paste this in the browser console:
+  - **Confirm the** `viewport` **tag exists.** Paste this in the browser console:
 
     ```
     document.querySelector('meta[name="viewport"]')?.outerHTML
@@ -554,17 +537,15 @@ Most GEO best practices are extensions of good SEO. If you follow the earlier se
 AI crawlers read HTML directly without executing JavaScript. Clear structure and schema help them extract facts for citations. Lovable Agent provides semantic structure and can add schema when requested.
 
 <Accordion title="How to implement and verify semantic HTML and schema for AI">
-  **Prompt to add**
+  **Example prompt**
 
-  For example:
-
-  > Check the homepage to ensure important information is in plain HTML with clear headings. Add Organization schema including name, description, URL, logo, and social links.
+  > Check the homepage to ensure important information is in plain HTML with clear headings. Add `Organization` schema including name, description, URL, logo, and social links.
 
   **Verify**
 
   - Put key facts in static HTML (for example, what you do, who you serve, pricing)
   - Use clear headings (H2, H3) to structure information
-  - Add comprehensive schema: Organization, Product, FAQPage, Article
+  - Add comprehensive schema: `Organization`, `Product`, `FAQPage`, `Article`
   - Write in clear, factual language that AI can parse and cite
   - Keep facts consistent across your site, schema, and external profiles.
 </Accordion>
@@ -574,9 +555,7 @@ AI crawlers read HTML directly without executing JavaScript. Clear structure and
 Controls which AI systems can access your content for training or answering queries. Lovable Agent can configure the `robots.txt` to allow desired bots when requested.
 
 <Accordion title="How to implement and verify AI bot access in robots.txt">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Update `robots.txt` to allow GPTBot, PerplexityBot, and Claude-Web, and block Google-Extended and CCBot. Keep all standard search engine crawlers allowed.
 
@@ -587,7 +566,7 @@ Controls which AI systems can access your content for training or answering quer
     - Common bots: GPTBot (ChatGPT), PerplexityBot, Claude-Web, Google-Extended (training), CCBot
   - Re-check after changes to ensure desired bots aren't accidentally blocked
 
-  **Example**
+  **Example robots.txt**
 
   ```
   User-agent: *
@@ -606,9 +585,7 @@ Controls which AI systems can access your content for training or answering quer
 AI systems prefer content that is clear, structured, and easy to quote. Providing information in this format makes it more likely to be cited accurately. Lovable Agent can generate FAQ sections and structured content when requested.
 
 <Accordion title="How to implement and verify LLM-quotable content patterns">
-  **Prompt to add**
-
-  For example:
+  **Example prompt**
 
   > Update the FAQ answers to be short, direct, and easy for AI to quote. Begin with the main answer, include concrete facts, and remove vague marketing wording.
 
@@ -630,19 +607,18 @@ AI systems prefer content that is clear, structured, and easy to quote. Providin
 
 A dedicated summary page makes it much easier for AI systems to understand and cite your company’s key information. Lovable Agent can build dedicated summary pages with key information in crawlable format when requested.
 
-<Accordion title="How to implement and verify LLM-friendly summary page">
-  **Prompt to add**
+<Accordion title="How to implement and verify static LLM-friendly summary page">
+  **Example prompt**
 
-  For example:
-
-  > Create an `/llm` page that clearly explains what the company does, what it offers, how it’s different, pricing basics, FAQs, and how to contact us. Add Organization and FAQPage schema and organize the page with simple H2/H3 headings.
+  > Create a static `llm.html` page under the public folder that clearly explains what the company does, what it offers, how it's different, pricing basics, FAQs, and how to contact us. Add `Organization` and `FAQPage` schema and organize the page with simple H2/H3 headings. Include this new URL in sitemap.xml
 
   **Verify**
 
-  - The page is created at a clear URL such as `/llm` or `/about-ai`.
+  - The page is created at a clear URL such as `/llm.html` or `/about-ai.html`.
+  - The page is included in the `sitemap.xml`.
   - Content is structured with clear H2/H3 headings.
   - The page includes key information: company summary, products/services, differentiators, pricing model, contact details, and FAQs.
-  - Organization and FAQPage schema are present so AI systems can extract structured facts.
+  - `Organization` and `FAQPage` schema are present so AI systems can extract structured facts.
   - Content is factual, concise, and quotable (avoid marketing fluff).
   - Information is kept up to date as offerings change.
 </Accordion>
@@ -656,9 +632,11 @@ Effective SEO and GEO require ongoing monitoring. Use Google Search Console and 
 Google Search Console shows how Google crawls, indexes, and ranks your site. It’s a key tool for tracking SEO performance and spotting technical problems.
 
 <Accordion title="How to set up and use GSC for monitoring and maintenance">
+  If you’re using a **custom domain**, make sure you **claim and verify it** in Google Search Console.
+
   **Verify site ownership** (choose one method)
 
-  Verify your domain so Google can be sure you own the website before it provides you services.
+  Verify your domain so Google can be sure you own the website before it provides you services. Google uses this verification to track indexing, sitemap status, and search performance for your live domain.
 
   - **DNS TXT record** (recommended): add the TXT record in your domain provider’s DNS settings
   - **Meta tag verification**: prompt Lovable to add the meta tag
@@ -670,8 +648,7 @@ Google Search Console shows how Google crawls, indexes, and ranks your site. It�
   **Submit sitemap**
 
   1. In GSC, go to **Sitemaps**
-  2. Enter your sitemap URL:\
-     https://yourdomain.com/sitemap.xml
+  2. Enter your sitemap URL: `https://yourdomain.com/sitemap.xml`
   3. Click **Submit**
 
    It can take **24–48 hours** for Google to process and report on it.
@@ -682,7 +659,7 @@ Google Search Console shows how Google crawls, indexes, and ranks your site. It�
 
   - Confirm Google sees real content (not a blank page)
   - Diagnose CSR rendering issues
-  - Check if key resources (JavaScript/CSS) are blocked
+  - Check if key resources (JavaScript and CSS) are blocked
 
   For any URL:
 
@@ -786,6 +763,8 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
     - Ensure full mobile usability
     - Set correct metadata on every page
     - Maintain an accurate sitemap and robots.txt
+    - Use a **custom domain** and set it as the **primary domain**
+    - Verify your domain in Google Search Console
 
     **Backlinks**
 
@@ -849,7 +828,7 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
     - Social and AI crawlers that don’t run JavaScript get complete previews immediately
   </Accordion>
   <Accordion title="Will a custom domain help my site rank better?">
-    A **custom domain** is important if you want:
+    Yes. Switching to a **custom domain** is one of the most impactful upgrades you can make if you want:
 
     - Organic search traffic
     - Strong, long-term branding
@@ -857,23 +836,28 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
     - Backlinks that grow in value over time
     - Full control over technical SEO
 
+    Lovable lets you:
+
+    - Connect your own domain or subdomain
+    - Choose one **primary domain** (all other domains redirect to it)
+
+    After setting up your custom domain, [**verify it in Google Search Console**](#google-search-console-gsc-setup) so Google can crawl and index the correct domain. For detailed setup instructions, see [**Custom domains**](/features/custom-domain).
+
     A `lovable.app` subdomain works well for:
 
     - MVPs and demos
     - Temporary or experimental landing pages
     - Internal tools
     - Projects driven primarily by social or paid traffic
-
-    If SEO is part of your strategy, switching to a custom domain is one of the most impactful upgrades you can make. See [Custom domains](https://docs.lovable.dev/features/custom-domain) for setup details.
   </Accordion>
   <Accordion title="Can AI search engines (Perplexity, ChatGPT, Gemini, Claude) index Lovable apps?">
-    Many AI crawlers  don’t typically execute JavaScript, so they rely on the initial HTML they can fetch. This means they may not see content that is rendered client-side.
+    Many AI crawlers don’t typically execute JavaScript, so they rely on the initial HTML they can fetch. This means they may not see content that is rendered client-side.
 
     You can still make your content highly accessible to these crawlers by ensuring:
 
     - Clean semantic HTML with key facts in static content
     - Comprehensive schema markup
-    - A dedicated LLM summary page (such as `/llm`)
+    - A dedicated LLM summary page, such as `/llm.html` or `/about-ai.html`), also included in sitemap
     - Clear, quotable content (definitions, FAQs, short factual answers)
   </Accordion>
   <Accordion title="How often should I update SEO settings, content, and sitemap?">
@@ -910,6 +894,6 @@ Keeping your SEO and GEO healthy requires regular check-ins. Use this ongoing sc
     - **Social platforms don’t execute JavaScript for link previews**\
       → Add Open Graph and Twitter/X Card tags directly in the static HTML.
     - **Metadata doesn’t update automatically across routes**\
-      → Ask Lovable to install `react-helmet-async` and set unique titles/descriptions for each page.
+      → Ask Lovable to install `react-helmet-async` and set unique titles and descriptions for each page.
   </Accordion>
 </AccordionGroup>
