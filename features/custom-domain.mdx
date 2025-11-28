@@ -1,17 +1,17 @@
 ---
 title: "Custom domains"
-description: "Learn how to connect, verify, and manage custom domains in Lovable"
+description: "Learn how to connect, verify, troubleshoot, and manage custom domains in Lovable"
 icon: "earth-europe"
 keywords: ["custom domains","connect custom domain","how to add custom domain","primary domain","domain status","SSL certificate","DNS verification","DNS setup"]
 ---
 
-Lovable lets you connect your own custom domain or subdomain to your published project. This allows visitors to access your app from a branded URL instead of the default `xxx.lovable.app` project URL.
+A **custom domain** lets you use your own domain or subdomain for your published Lovable project. When you connect a custom domain, visitors can access your app using a branded URL instead of the default `xxx.lovable.app` project URL.
 
 Connecting a custom domain improves your site's:
 
-- **Brand identity** - looks more professional
-- **Search engine visibility** - better SEO
-- **Memorability** - easier to share and remember
+- **Brand identity** - looks more trustworthy and professional
+- **Search engine visibility** - better SEO and discoverability
+- **Memorability** - easier for users to share and remember
 
 ## Prerequisites
 
@@ -19,12 +19,12 @@ To connect a custom domain, ensure that:
 
 - You are on a paid Lovable plan.
 - Your project is published. See [Publish your app](/features/publish) for more information.
-- You own a domain name. See [full list of supported providers](https://developers.entri.com/provider-list) where you can purchase a domain.
-- You have **access to the DNS settings** for the domain or subdomain you want to connect. **Ownership verification** happens by adding DNS records (A and TXT records) provided by Lovable during setup.
+- You own a domain name. You can purchase one from any [supported provider](https://developers.entri.com/provider-list).
+- You have **access to the DNS settings** for the domain or subdomain you want to connect. **Ownership verification** requires adding DNS **A** and **TXT** records provided by Lovable during setup.
 
 ## Connect a custom domain
 
-You can connect a domain to your published Lovable project using automatic setup (using a tool called Entri) or manual DNS configuration. Both methods require verifying ownership of your domain.
+You can connect a domain to your published Lovable project using **automatic** setup (using a tool called Entri) or **manual** DNS configuration. Both methods require verifying ownership of your domain.
 
 You can connect a domain from two locations:
 
@@ -50,20 +50,20 @@ Follow the steps below to connect a custom domain:
 
 ## Domain statuses
 
-Domains have clear statuses that indicate the current state and required user action.
+Domains have clear statuses that reflect verification progress, DNS propagation, SSL certificate readiness, and required user action.
 
-| Status               | Description                                                                                                                                                                                                                                                                                                                                  | User action                                                                                                      |
-| :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
-| **Unpublished**      | Shown only for your `xxx.lovable.app` project URL when the project is not yet published.                                                                                                                                                                                                                                                     | Publish the project.                                                                                             |
-| **Ready**            | The domain is ready but the project was unpublished. When published again, the status automatically becomes **Live**.                                                                                                                                                                                                                        | Publish the project.                                                                                             |
-| **Action required**  | The custom domain setup was not completed.                                                                                                                                                                                                                                                                                                   | Click **Complete setup** to finish connecting.                                                                   |
-| **Verifying**        | Waiting for DNS records to propagate.                                                                                                                                                                                                                                                                                                        | Click **Check status** to check the latest status and verify the DNS records.                                    |
-| **Unable to verify** | If DNS changes are not detected within one hour, the domain status automatically changes from **Verifying** to **Unable to verify**. This means the required DNS records are still missing or have not yet propagated.<br /><br />**Note**: _DNS propagation can take up to 72 hours, although most updates are applied within a few hours._ | Click **Check again** at any time to refresh the status and re-verify your DNS records.                          |
-| **Setting up**       | Verification complete; SSL certificates being issued.                                                                                                                                                                                                                                                                                        | No action required; domain will automatically move to **Live** or **Failed.**                                    |
-| **Failed**           | Ownership verified, but SSL certificate could not be provisioned.                                                                                                                                                                                                                                                                            | Click **Retry** to attempt again.                                                                                |
-| **Live**             | Domain is live and serving your project.                                                                                                                                                                                                                                                                                                     | No action required.                                                                                              |
-| **Offline**          | Domain was **Live** but DNS records are no longer valid. Your domain is no longer pointing to your project.                                                                                                                                                                                                                                  | Click **Recover**. Review displayed DNS records and update them with your DNS provider to reconnect your domain. |
-| **Removed**          | Domain was removed because it was added to another project.                                                                                                                                                                                                                                                                                  | Reconnect if needed.                                                                                             |
+| Status               | Description                                                                                                                                                                                                                                      | User action                                                                                                      |
+| :------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| **Unpublished**      | Shown only for your `xxx.lovable.app` project URL when the project is not yet published.                                                                                                                                                         | Publish the project.                                                                                             |
+| **Ready**            | The domain is ready but the project was unpublished. When published again, the status automatically becomes **Live**.                                                                                                                            | Publish the project.                                                                                             |
+| **Action required**  | The custom domain setup was not completed.                                                                                                                                                                                                       | Click **Complete setup** to finish connecting.                                                                   |
+| **Verifying**        | DNS records were added and Lovable is waiting for DNS propagation.                                                                                                                                                                               | Click **Check status** to check the latest status and verify the DNS records.                                    |
+| **Unable to verify** | DNS changes were not detected within one hour. This means your A and TXT records are still missing or have not propagated.<br /><br />**Note**: _DNS propagation can take up to 72 hours, although most updates are applied within a few hours._ | Click **Check again** to refresh the status and re-verify your DNS records.                                      |
+| **Setting up**       | Verification complete; SSL certificates are being issued.                                                                                                                                                                                        | No action required; domain will automatically move to **Live** or **Failed.**                                    |
+| **Failed**           | Ownership verified, but SSL certificate could not be provisioned.                                                                                                                                                                                | Click **Retry** to attempt again.                                                                                |
+| **Live**             | Domain is live and serving your project.                                                                                                                                                                                                         | No action required.                                                                                              |
+| **Offline**          | Domain was **Live** but DNS records are no longer valid. Your domain is no longer pointing to your project.                                                                                                                                      | Click **Recover**. Review displayed DNS records and update them with your DNS provider to reconnect your domain. |
+| **Removed**          | Domain was removed because it was added to another project.                                                                                                                                                                                      | Reconnect if needed.                                                                                             |
 
 You can remove a domain at any point regardless of its status.
 
