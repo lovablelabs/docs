@@ -1,5 +1,6 @@
 ---
-title: "Custom domains"
+title: "Connect a custom domain"
+sidebarTitle: "Custom domains"
 description: "Learn how to connect, verify, troubleshoot, and manage custom domains in Lovable"
 icon: "earth-europe"
 keywords: ["custom domains","connect custom domain","how to add custom domain","primary domain","domain status","SSL certificate","DNS verification","DNS setup"]
@@ -9,7 +10,7 @@ A **custom domain** lets you use your own domain or subdomain for your published
 
 Connecting a custom domain improves your site's:
 
-- **Brand identity** - looks more trustworthy and professional
+- **Brand identity** - look more trustworthy and professional
 - **Search engine visibility** - better SEO and discoverability
 - **Memorability** - easier for users to share and remember
 
@@ -19,12 +20,12 @@ To connect a custom domain, ensure that:
 
 - You are on a paid Lovable plan.
 - Your project is published. See [Publish your app](/features/publish) for more information.
-- You own a domain name. You can **purchase one directly within Lovable** (through Ionos).
+- You own a domain name. You can **purchase one directly within Lovable** (through IONOS).
 - You have **access to the DNS settings** for the domain or subdomain you want to connect. **Ownership verification** requires adding DNS `A` and `TXT` records provided by Lovable during setup.
 
 ## Connect a custom domain
 
-You can connect a domain to your published Lovable project using **automatic** setup (using a tool called Entri) or **manual** DNS configuration. Both methods require verifying ownership of your domain.
+You can connect a domain to your published Lovable project using **automatic** setup (powered by Entri) or **manual** DNS configuration. Both methods require verifying ownership of your domain.
 
 You can connect a domain from two locations:
 
@@ -39,7 +40,7 @@ Follow the steps below to connect a custom domain:
    <Info>
      When adding a domain, Lovable does not automatically add the `www` subdomain. You can add it separately if you want both.
    </Info>
-4. Now, you can connect your domain in two ways:
+3. Now, you can connect your domain in two ways:
    - **Automatic setup with Entri**: Select your domain provider from the list, log in, and authorize Entri to update your DNS records.
    - **Manual setup**: If your DNS provider is not listed, scroll to the bottom of the **Select your domain provider** modal and choose **Go to our manual setup**. Copy the `A` record and `TXT` record and input them directly into your domain registrar.
 4. Click **Done**. Wait for verification and SSL certificate to be issued. When complete, the domain will become **Live** and your Lovable app will be live at your custom domain.
@@ -81,12 +82,12 @@ Lovable allows you to set **one domain as the primary domain**.
 
 <AccordionGroup>
   <Accordion title="My custom domain is connected, but my site isn't live. What should I do?">
-    - Double-check your DNS settings by using for example [dnschecker.org](https://dnschecker.org/all-dns-records-of-domain.php). Sometimes DNS changes can take up to 72 hours to propagate. Go to **Project → Settings → Domains** to find the correct DNS settings.
+    - Double-check your DNS settings by using a tool like [dnschecker.org](https://dnschecker.org/all-dns-records-of-domain.php). Sometimes DNS changes can take up to 72 hours to propagate. Go to **Project → Settings → Domains** to find the correct DNS settings.
     - Clear your browser cache or test in an incognito window.
     - Try removing and re-adding the domain in **Project → Settings → Domains**.
   </Accordion>
   <Accordion title="Can I buy a domain through Lovable?">
-    Buying a custom domain is possible through our partner IONOS. Go to **Project → Settings → Domains** and click **Buy new domain**  to buy a domain through IONOS. This is available on paid plans only.
+    Yes. You can buy a custom domain within Lovable through our partner IONOS. Go to **Project → Settings → Domains** and click **Buy new domain**  to buy a domain through IONOS. This is available on paid plans only.
   </Accordion>
   <Accordion title="Will connecting a custom domain affect my SEO?">
     Yes, connecting a custom domain affects your SEO positively. A custom domain improves your site's discoverability in search engines and makes it look more trustworthy to users.
