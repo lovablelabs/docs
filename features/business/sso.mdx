@@ -43,8 +43,8 @@ If you use Okta, Auth0, or Microsoft Entra, we have provider-specific documentat
 
 ## SAML quick reference
 
-- ACS URL: https://auth.lovable.dev/\\\\\\\_\\\\\\\_/auth/handler
-- Audience / Entity ID: https://auth.lovable.dev/\\\\\\\_\\\\\\\_/auth/handler
+- ACS URL: https://auth.lovable.dev/\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\_/auth/handler
+- Audience / Entity ID: https://auth.lovable.dev/\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\_/auth/handler
 - Required attribute: `email`
 
 ## Okta
@@ -115,25 +115,27 @@ If you use Okta, Auth0, or Microsoft Entra, we have provider-specific documentat
   </Tab>
 </Tabs>
 
-## Microsoft Entra ID SSO (SAML)
+## Microsoft Entra ID
 
-To connect Microsoft Entra ID to Lovable, follow the steps below:
+<Tabs>
+  <Tab title="SAML">
+    1. **Enterprise application**: Microsoft Entra ID → Enterprise applications → New application → Create your own application → Integrate any other application you don't find in the gallery.
+    2. **SSO settings:**
+       1. Reply URL (ACS): `https://auth.lovable.dev/__/auth/handler`
+       2. Identifier (Entity ID): : a unique value (can be the same ACS URL)
+    1. **Users and groups**: Assign users/groups who should have access.
+    2. **Configure it in Lovable**. From the SAML single sign-on page:
+       1. `Login URL`  → use as SAML SSO URL in Lovable
+       2. `Identifier (Entity ID)`  → use as Issuer in Lovable
+       3. `Certificate (Base64)` → paste into Lovable
 
-1. **Enterprise application**: Microsoft Entra ID → Enterprise applications → New application → Create your own application → Integrate any other application you don't find in the gallery.
-2. **SSO settings:**
-   1. Reply URL (ACS): `https://auth.lovable.dev/__/auth/handler`
-   2. Identifier (Entity ID): : a unique value (can be the same ACS URL)
-1. **Users and groups**: Assign users/groups who should have access.
-2. **Configure it in Lovable**. From the SAML single sign-on page:
-   1. `Login URL`  → use as SAML SSO URL in Lovable
-   2. `Identifier (Entity ID)`  → use as Issuer in Lovable
-   3. `Certificate (Base64)` → paste into Lovable
+    <Note>
+      Make sure to Map `email` to `user.mail`. If `user.mail` is empty, use `user.userprincipalname` .
+    </Note>
+  </Tab>
+</Tabs>
 
-<Note>
-  Make sure to Map `email` to `user.mail`. If `user.mail` is empty, use `user.userprincipalname` .
-</Note>
-
-### Other providers
+## Other providers
 
 <Tabs>
   <Tab title="OIDC">
@@ -170,11 +172,11 @@ To connect Microsoft Entra ID to Lovable, follow the steps below:
   </Tab>
 </Tabs>
 
-### OIDC Troubleshooting
+## OIDC Troubleshooting
 
 <AccordionGroup>
   <Accordion title="Invalid or mismatched Redirect URI">
-    Ensure the redirect/callback URL exactly matches https://auth.lovable.dev/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_/auth/handler in your IdP.
+    Ensure the redirect/callback URL exactly matches https://auth.lovable.dev/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_/auth/handler in your IdP.
   </Accordion>
   <Accordion title="Issuer URL / discovery fails">
     Use the provider's OIDC Issuer URL (not just the domain). For Okta, copy from the Sign-on tab; for Auth0, use your tenant Domain.
@@ -187,11 +189,11 @@ To connect Microsoft Entra ID to Lovable, follow the steps below:
   </Accordion>
 </AccordionGroup>
 
-### SAML Troubleshooting
+## SAML Troubleshooting
 
 <AccordionGroup>
   <Accordion title="Invalid ACS or Audience">
-    Ensure both ACS and Audience/Entity ID exactly match https://auth.lovable.dev/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_/auth/handler in your IdP.
+    Ensure both ACS and Audience/Entity ID exactly match https://auth.lovable.dev/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_/auth/handler in your IdP.
   </Accordion>
   <Accordion title="Email claim missing">
     Map an email claim. For Microsoft Entra, use user.mail, falling back to user.userprincipalname if mail is empty.
