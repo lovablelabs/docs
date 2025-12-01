@@ -32,7 +32,7 @@ To connect your identity provider to Lovable using OIDC or SAML, you require:
 
 Go to **Settings → Workspace → Identity  → Add SSO provider**, and select the SSO protocol that your identity provider supports.
 
-Lovable instructs you to set up your identity provider before proceeding and provides relevant setup information and settings to use in your identity provider. See the respective OIDC and SAML tabs below for a quick reference.
+Lovable instructs you to configure your identity provider before proceeding and displays the information you need to enter into your IdP.  See the respective OIDC and SAML tabs below for a quick reference.
 
 <Tabs>
   <Tab title="OIDC">
@@ -54,7 +54,6 @@ Lovable instructs you to set up your identity provider before proceeding and pro
   </Tab>
 </Tabs>
 
-
 ## Provider-specific setup guides
 
 ### Configure Okta as your SSO provider
@@ -67,7 +66,7 @@ Lovable instructs you to set up your identity provider before proceeding and pro
         - Give the app a name, for example `Lovable OIDC SSO`.
       </Step>
       <Step title="Configure OIDC integration">
-        - Set **Grant type** to `Authorization code`
+        - Set **Grant type** to `Authorization Code`
         - Remove the default redirect URIs.
         - Add the Lovable redirect URL to Okta **Sign-in redirect URIs**: `https://auth.lovable.dev/__/auth/handler`
         - Select **Assignments**: assign the application to your users/groups who should access Lovable.
@@ -103,7 +102,7 @@ Lovable instructs you to set up your identity provider before proceeding and pro
         - Give the app a name, for example `Lovable SAML SSO`.
       </Step>
       <Step title="Configure SAML settings">
-        - Single sign on URL: `https://auth.lovable.dev/__/auth/handler`
+        - Single sign-on URL: `https://auth.lovable.dev/__/auth/handler`
         - Audience URI (SP Entity ID): `https://auth.lovable.dev/__/auth/handler`
         - Name ID format: `EmailAddress`
       </Step>
