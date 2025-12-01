@@ -149,7 +149,8 @@
   },
   "seo": {
     "metatags": {
-      "og:image": "/assets/logo/opengraph-image.png"
+      "og:image": "/assets/logo/opengraph-image.png",
+      "canonical": "https://docs.lovable.dev"
     },
     "indexing": "all"
   },
