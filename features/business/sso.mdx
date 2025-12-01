@@ -87,8 +87,8 @@ Lovable instructs you to set up your identity provider before proceeding and pro
         - Okta `Client ID`  → Lovable `OAuth Client ID/Application ID`
         - Okta `Client Secret`  → Lovable `OAuth Client Secret`
       </Step>
-      <Step title="Optional (Test configuration)">
-        If you configured everything accurately, the validation should be successful.
+      <Step title="(Optional) Test configuration">
+        Click **Test configuration**. If you configured everything accurately, the validation should be successful.
       </Step>
       <Step title="Finish OIDC provider configuration">
         Click **Configure provider** to finish the configuration of Okta as your OIDC SSO provider in Lovable.
@@ -109,10 +109,9 @@ Lovable instructs you to set up your identity provider before proceeding and pro
       <Step title="Save application">
         Click **Finish** and the application should now be successfully created.
       </Step>
-      <Step title="Extract metadata URL values">
-        In Okta, go to **Sign On → SAML 2.0 → Metadata details**, copy the **Metadata URL** and open it in a new tab.
-      </Step>
       <Step title="Provide Lovable with your IdP information">
+        In Okta, go to **Sign On → SAML 2.0 → Metadata details**, copy the **Metadata URL** and open it in a new tab.
+
         Copy the following **Metadata URL** values and enter them in Lovable:
 
         - Okta `SingleSignOnService Location`  → Lovable `SAML SSO Sing-on URL from your Idp`
@@ -150,8 +149,8 @@ Lovable instructs you to set up your identity provider before proceeding and pro
         - Auth0 `Client ID`  → Lovable `OAuth Client ID/Application ID`
         - Auth0 `Client Secret`  → Lovable `OAuth Client Secret`
       </Step>
-      <Step title="Optional (Test configuration)">
-        If you configured everything accurately, the validation should be successful.
+      <Step title="(Optional) Test configuration">
+        Click **Test configuration**. If you configured everything accurately, the validation should be successful.
       </Step>
       <Step title="Finish OIDC provider configuration">
         Click **Configure provider** to finish the configuration of Auth0 as your OIDC SSO provider in Lovable.
@@ -197,7 +196,7 @@ Lovable instructs you to set up your identity provider before proceeding and pro
           </Note>
       </Step>
       <Step title="Finish SAML provider configuration">
-        Click **Configure SAML Provider → Confirm & Enable SSO** to finish the configuration of Okta as your SAML SSO provider in Lovable.
+        Click **Configure SAML Provider → Confirm & Enable SSO** to finish the configuration of Auth0 as your SAML SSO provider in Lovable.
       </Step>
     </Steps>
   </Tab>
@@ -234,7 +233,7 @@ Lovable instructs you to set up your identity provider before proceeding and pro
           </Note>
       </Step>
       <Step title="Finish SAML provider configuration">
-        Click \*\*Configure SAML Provider → Confirm & Enable SSO \*\*to finish the configuration of Microsoft Entra ID as your SAML SSO provider in Lovable.
+        Click **Configure SAML Provider → Confirm & Enable SSO** to finish the configuration of Microsoft Entra ID as your SAML SSO provider in Lovable.
       </Step>
     </Steps>
   </Tab>
@@ -246,59 +245,63 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
 
 <Tabs>
   <Tab title="OIDC">
-    **Required values**
-
-    - Redirect URI: `https://auth.lovable.dev/__/auth/handler`
-    - Scopes: `openid`, `email`
-    - Grant type: Authorization Code
-
-    <Note>
-      Use your provider's Issuer URL that supports OIDC discovery. If unsure, copy the Issuer/Domain shown in your app settings.
-    </Note>
     **Provider mapping**
 
     Common field names across providers:
 
-    - **Redirect URI**: `Callback URL`, `Sign-in redirect URI`
-    - **Issuer/Domain**: `Issuer URL`, `Authority`, `Okta domain`, `Auth0 domain`, `Tenant domain`
-    - **Client credentials**: `Client ID` and `Client Secret`
+    - Redirect URI: `Callback URL`, `Sign-in redirect URI`
+    - Issuer/Domain:  `Issuer URL`, `Authority`, `Okta domain`, `Auth0 domain`, `Tenant domain`
+    - Client credentials: `Client ID` and `Client Secret`
 
     **Steps**
 
-    1. **Create an OIDC confidential app:** Create a new OIDC/Web application in your provider.
-    2. **Configure redirect URI**: In Redirect/Callback URLs, add `https://auth.lovable.dev/__/auth/handler`
-    3. **Enable required scopes:** Ensure `openid` and `email` scopes are enabled and consented if needed.
-    4. Configure it in Lovable. Copy the following values and add them in Lovable → Settings → Workspace → Identity:
-       - `Domain` or `Issuer URL`
-       - `Client ID`
-       - `Client Secret`
+    <Steps>
+      <Step title="Create an OIDC confidential app">
+        Create a new OIDC Web application in your identity provider.
+      </Step>
+      <Step title="Configure redirect URI">
+        In Redirect/Callback URLs, add `https://auth.lovable.dev/__/auth/handler`
+      </Step>
+      <Step title="Enable required scopes">
+        Ensure `openid` and `email` scopes are enabled and consented if needed.
+      </Step>
+      <Step title="Provide Lovable with your IdP information">
+        In your IdP, copy the following values and enter them in Lovable:
+
+        - `Domain` or `Issuer URL`  → Lovable `OIDC Issuer URL/Discovery Endpoint`
+        - `Client ID`  → Lovable `OAuth Client ID/Application ID`
+        - `Client Secret`  → Lovable `OAuth Client Secret`
+      </Step>
+    </Steps>
   </Tab>
   <Tab title="SAML">
-    **Required values**
-
-    - **ACS URL**: `https://auth.lovable.dev/__/auth/handler`
-    - **Audience / Entity ID**: `https://auth.lovable.dev/__/auth/handler`
-    - **Required attribute**: `email`
-
-    <Note>
-      `display_name` is optional. If present, it will populate the user's name.
-    </Note>
     **Provider mapping**
 
     Common field names across providers:
 
-    - **ACS URL**:  `Assertion Consumer Service URL`, `Single Sign-On URL`, `SSO URL`, `Reply URL`, `Recipient URL`
-    - **Audience URI** : `SP Entity ID`, `Audience`, `Identifier`
-    - **Attribute mapping**: `Attribute Statements`, `User Attributes & Claims`
+    - ACS URL: `Single Sign-On URL`, `SSO URL`, `Reply URL`, `Assertion Consumer Service URL`
+    - Audience: `SP Entity ID`, `Audience URI`, `Identifier`
+    - Attribute mapping: `Attribute Statements`, `User Attributes & Claims`
 
     **Steps**
 
-    1. Create a **new SAML 2.0 application** in your provider.
-    2. **Configure endpoints**. Set:
-       - ACS URL: `https://auth.lovable.dev/__/auth/handler`
-       - Audience / Entity ID: `https://auth.lovable.dev/__/auth/handler`
-    3. **Map attributes**. Ensure `email` is included in the SAML assertion. `display_name` is optional.
-    4. **Assign the application to users/groups** who should access Lovable.
+    <Steps>
+      <Step title="Create a SAML 2.0 application">
+        Create a new SAML 2.0 application in your provider.
+      </Step>
+      <Step title="Configure endpoints">
+        Set:
+
+        - ACS URL: `https://auth.lovable.dev/__/auth/handler`
+        - Audience / Entity ID: `https://auth.lovable.dev/__/auth/handler`
+      </Step>
+      <Step title="Map attributes">
+        Ensure `email` is included in the SAML assertion. `display_name` is optional.
+      </Step>
+      <Step title="Assign users">
+        Assign the application to users/groups who should access Lovable.
+      </Step>
+    </Steps>
   </Tab>
 </Tabs>
 
