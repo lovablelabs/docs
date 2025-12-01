@@ -120,11 +120,11 @@ Lovable instructs you to set up your identity provider before proceeding and pro
         - Okta `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
 
           <Note>
-            Paste the certificate value between the `Begin certificate` and `End certificate` lines.
+            Paste the certificate value between the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines.
           </Note>
       </Step>
       <Step title="Finish SAML provider configuration">
-        Click **Configure SAML provider** to finish the configuration of Okta as your SAML SSO provider in Lovable.
+        Click **Configure SAML Provider → Confirm & Enable SSO** to finish the configuration of Okta as your SAML SSO provider in Lovable.
       </Step>
     </Steps>
   </Tab>
@@ -134,37 +134,72 @@ Lovable instructs you to set up your identity provider before proceeding and pro
 
 <Tabs>
   <Tab title="OIDC">
-    1. In Auth0, create an application: Dashboard → Applications → Applications → Create Application → Regular Web Application.
-    2. In Allowed Callback URLs, add `https://auth.lovable.dev/__/auth/handler`
-    4. Copy the following values in Auth0 and add them in Lovable → Settings → Workspace → Identity:
-       - `Domain` (Issuer URL)
-       - `Client ID`
-       - `Client Secret`
+    <Steps>
+      <Step title="Create an application in Auth0 Admin Dashboard">
+        - Under **Applications**, click **Create application**. Select the **Regular Web Applications** application type.
+        - Give the app a name, for example `Lovable OIDC SSO`.
+        - Click **Create**.
+      </Step>
+      <Step title="Configure Allowed Callback URLs">
+        Navigate to your application settings, add the **Allowed Callback URLs**: `https://auth.lovable.dev/__/auth/handler` , and click **Save**.
+      </Step>
+      <Step title="Provide Lovable with your IdP information">
+        In Auth0, copy the following values from the **Settings** tab and enter them in Lovable.
 
-    <Note>
-      No additional configuration is required beyond the callback URL. Use your Auth0 Domain as the Issuer URL in Lovable.
-    </Note>
+        - Auth0 `Domain`  → Lovable `OIDC Issuer URL/Discovery Endpoint` (make sure to include `https://`)
+        - Auth0 `Client ID`  → Lovable `OAuth Client ID/Application ID`
+        - Auth0 `Client Secret`  → Lovable `OAuth Client Secret`
+      </Step>
+      <Step title="Optional (Test configuration)">
+        If you configured everything accurately, the validation should be successful.
+      </Step>
+      <Step title="Finish OIDC provider configuration">
+        Click **Configure provider** to finish the configuration of Auth0 as your OIDC SSO provider in Lovable.
+      </Step>
+    </Steps>
   </Tab>
   <Tab title="SAML">
-    1. In Auth0, **create app and enable SAML2 Add-on**: Auth0 Dashboard → Applications → Create Application → Regular Web Application → Create → Add-ons → enable SAML2 Web App.
-    2. **Configure SAML2 Add-on**:
-       - In Settings, set `Application Callback URL (ACS)`  to `https://auth.lovable.dev/__/auth/handler`
-       - Paste the **Settings Map** JSON shown below into **SAML2 Add-on** settings:
+    <Steps>
+      <Step title="Create an application in Auth0 Admin Dashboard">
+        - Under **Applications**, click **Create application**. Select the **Regular Web Applications** application type.
+        - Give the app a name, for example `Lovable SAML SSO`.
+        - Click **Create**.
+      </Step>
+      <Step title="Configure Allowed Callback URLs">
+        Navigate to your application settings, add the **Allowed Callback URLs**: `https://auth.lovable.dev/__/auth/handler` , and click **Save**.
+      </Step>
+      <Step title="Configure SAML2 Web App Add-on">
+        - Navigate to **Addons**, and enable **SAML2 Web app**.
+        - In **Addon: SAML2 Web app → Settings**, set:
+          - Application Callback URL: `https://auth.lovable.dev/__/auth/handler`
+          - Settings: paste the following `mappings`  JSON
 
-    ```json
-        {
-          "mappings": {
-            "email": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
-          },
-          "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
-        }
-    ```
+        ```json
+            {
+              "mappings": {
+                "email": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
+              },
+              "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
+            }
+        ```
 
-    3. **Save**
-    3. **Copy values from Add-on panel and add them in Lovable** → Settings → Workspace → Identity (SAML 2.0):
-       - `Issuer`  → Auth0 Issuer
-       - `SAML Protocol URL`  → SAML Protocol URL
-       - `Certificate` (X.509) → X.509 certificate
+        - Click **Enable.**
+      </Step>
+      <Step title="Provide Lovable with your IdP information">
+        In **Auth0 → Addon: SAML2 Web app → Usage**, copy the following **SAML Protocol Configuration Parameter** values and enter them in Lovable.
+
+        - Auth0 `Identity Provider Login URL`  → Lovable `SAML SSO Sing-on URL from your Idp`
+        - Auth0 `Issuer`  → Lovable `Identity Provider Entity ID / Issuer`
+        - Auth0 `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
+
+          <Note>
+            Download Auth0 certificate and copy the `X509Certificate` value. Paste the certificate value between the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines.
+          </Note>
+      </Step>
+      <Step title="Finish SAML provider configuration">
+        Click **Configure SAML Provider → Confirm & Enable SSO** to finish the configuration of Okta as your SAML SSO provider in Lovable.
+      </Step>
+    </Steps>
   </Tab>
 </Tabs>
 
@@ -195,11 +230,11 @@ Lovable instructs you to set up your identity provider before proceeding and pro
         - Microsoft Entra `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
 
           <Note>
-            You can download the certificate (Base 64) or open the `App Federation Metadata URL` in a new tab and copy the `X509Certificate` value. Paste the certificate value between the `Begin certificate` and `End certificate` lines.
+            You can download the certificate (Base 64) or open the `App Federation Metadata URL` in a new tab and copy the `X509Certificate` value. Paste the certificate value between the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines.
           </Note>
       </Step>
       <Step title="Finish SAML provider configuration">
-        Click **Configure SAML Provider → Confirm & Enable SSO**
+        Click \*\*Configure SAML Provider → Confirm & Enable SSO \*\*to finish the configuration of Microsoft Entra ID as your SAML SSO provider in Lovable.
       </Step>
     </Steps>
   </Tab>
