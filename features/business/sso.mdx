@@ -314,7 +314,10 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
         Ensure the redirect/callback URL exactly matches `https://auth.lovable.dev/__/auth/handler` in your IdP.
       </Accordion>
       <Accordion title="Issuer URL / discovery fails">
-        Use the provider's OIDC Issuer URL (not just the domain). For Okta, copy from the Sign-on tab; for Auth0, use your tenant Domain.
+        Use the provider's OIDC Issuer URL (not just the domain).
+
+        - For Okta, copy from the Sign-on tab
+        - For Auth0, use your tenant Domain.
       </Accordion>
       <Accordion title="Email not returned">
         Grant the `email` scope and ensure the user account has a primary email.
@@ -335,34 +338,34 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
         For Microsoft Entra ID, map `email` to `user.mail` . If `user.mail ` is empty, use `user.userprincipalname`.
       </Accordion>
       <Accordion title="IdP-initiated SSO not supported">
-        Launch SSO from Lovable. Starting from your IdP dashboard tile will not work.
+        Launch SSO from Lovable. Starting from your IdP dashboard tile does not work.
       </Accordion>
       <Accordion title="Provider credentials invalid">
         Paste the correct `X.509` certificate. If the certificate rotates, update it in Lovable.
       </Accordion>
     </AccordionGroup>
   </Tab>
-  <Tab title="Common">
-    <AccordionGroup>
-      <Accordion title="I already have an account, but I'm joining a business workspace that uses SSO. How do I log in?">
-        If you created your account using another login method (like email/password, Google, or GitHub), you'll need to log in that way **first**. Once you're logged in, navigate to Settings → Identity → Link with SSO. This will link your existing account to your SSO identity.
-
-        <Note>
-          **Important:** If you attempt to log in with SSO before linking your existing account, you'll see an error. This is a security measure to prevent unauthorized access. Log in using your original method first to complete the linking process.
-        </Note>
-      </Accordion>
-      <Accordion title="Which SSO providers does Lovable support (Okta, Entra ID, Google SSO, etc.)?">
-        Lovable support the industry-standard OIDC and SAML protocols. You can integrate with any SSO provider that supports these protocols.
-
-        This includes, but is not limited to:
-
-        - Okta
-        - Microsoft Entra ID (formerly Azure AD)
-        - Google Workspace
-        - Auth0
-        - OneLogin
-        - Any other OIDC or SAML-compliant identity provider
-      </Accordion>
-    </AccordionGroup>
-  </Tab>
 </Tabs>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="I already have an account, but I'm joining a business workspace that uses SSO. How do I log in?">
+    If you created your account using another login method (like email/password, Google, or GitHub), you'll need to log in that way **first**. Once you're logged in, navigate to Settings → Identity → Link with SSO. This will link your existing account to your SSO identity.
+
+    <Note>
+      **Important:** If you attempt to log in with SSO before linking your existing account, you'll see an error. This is a security measure to prevent unauthorized access. Log in using your original method first to complete the linking process.
+    </Note>
+  </Accordion>
+  <Accordion title="Which SSO providers does Lovable support?">
+    Lovable support the industry-standard OIDC and SAML protocols. You can integrate with any SSO provider that supports these protocols.
+
+    This includes, but is not limited to:
+
+    - Okta
+    - Microsoft Entra ID (formerly Azure AD)
+    - Auth0
+    - Google Workspace
+    - OneLogin
+  </Accordion>
+</AccordionGroup>
