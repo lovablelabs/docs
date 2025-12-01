@@ -11,7 +11,7 @@ The workspace **owner**  or **admin** can set up SSO in **Settings → Workspace
 If you use Okta, Auth0, or Microsoft Entra, you can find provider-specific documentation for setting up SSO. If you use another provider, you can find some generic instructions.
 
 <Note>
-  **Service provider (SP)-initiated sign-in**. Sing in starts from Lovable. IdP-initiated SSO (launching from your provider's dashboard tile) is not supported.
+  **Service provider (SP)-initiated sign-in**. Sign in starts from Lovable. IdP-initiated SSO (launching from your provider's dashboard tile) is not supported.
 </Note>
 
 ## Supported SSO protocols
@@ -39,7 +39,7 @@ Lovable instructs you to set up your identity provider before proceeding and pro
     - Application type: `Web Application`
     - Grant type: `Authorization Code`
     - Token method: `POST` (if configurable)
-    - Redirect URI to copy and add to your Idp: `https://auth.lovable.dev/__/auth/handler`
+    - Redirect URI to copy and add to your IdP: `https://auth.lovable.dev/__/auth/handler`
     - OAuth scopes:
       - Required: `openid`, `email`
       - Recommended: `profile`
@@ -67,7 +67,7 @@ Lovable instructs you to set up your identity provider before proceeding and pro
         - Give the app a name, for example `Lovable OIDC SSO`.
       </Step>
       <Step title="Configure OIDC integration">
-        - Set **Grant type** to`Authorization code`
+        - Set **Grant type** to `Authorization code`
         - Remove the default redirect URIs.
         - Add the Lovable redirect URL to Okta **Sign-in redirect URIs**: `https://auth.lovable.dev/__/auth/handler`
         - Select **Assignments**: assign the application to your users/groups who should access Lovable.
