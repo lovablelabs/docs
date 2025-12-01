@@ -1,6 +1,6 @@
 ---
 title: "Single sign-on (SSO)"
-description: "Set up SAML or OIDC with identity providers for secure, centralized authentication across your organization."
+description: "Set up OIDC or SAML with identity providers for secure, centralized authentication across your organization."
 icon: "shield-keyhole"
 ---
 
@@ -8,33 +8,31 @@ Single sign-on (SSO) is available for **Business and Enterprise plans**, enablin
 
 The workspace **owner**  or **admin** can set up SSO in **Settings → Workspace → Identity**.
 
-Lovable supports both **OIDC (OpenID Connect)** and **SAML 2.0** protocols, enabling integration with all major identity providers (IdP) including Okta, Microsoft Entra ID (Azure AD), Google Workspace, and more.
-
-<CardGroup cols="2">
-  <Card title="OpenID Connect (OIDC)" icon="key" href="/features/business/sso/oidc">
-    **Recommended**. Modern OAuth 2.0-based protocol with built-in identity layer.
-  </Card>
-  <Card title="SAML 2.0" icon="shield">
-    XML-based protocol for single sign-on.
-  </Card>
-</CardGroup>
-
-<Note>
-  Start sign-in from Lovable. IdP-initiated SSO (launching from your provider's dashboard tile) is not supported.
-</Note>
-
 If you use Okta, Auth0, or Microsoft Entra, you can find provider-specific documentation for setting up SSO. If you use another provider, you can find some generic instructions.
 
-## Prerequisites
+## Supported SSO protocols
+
+Lovable supports both **OIDC** and **SAML 2.0** protocols, enabling integration with all major **identity providers (IdP)** including Okta, Microsoft Entra ID (Azure AD), Google Workspace, and more.
+
+- **OpenID Connect (OIDC)**: Recommended; a modern identity layer built on top of OAuth 2.0 that provides identity verification.
+- **SAML (Security Assertion Markup Language) 2.0**: XML-based protocol for exchanging authentication and authorization data, widely used in enterprise environments for its robust security and ability to handle complex scenarios.
+
+<CardGroup cols="2">
+  ## Prerequisites
+</CardGroup>
 
 To connect your SSO provider to Lovable using OIDC or SAML, you require:
 
 - **SSO provider admin access** (Okta, Auth0, Microsoft Entra ID, or any other provider you're using)
 - **Lovable workspace owner or admin role**
 
+<Note>
+  Start sign-in from Lovable. IdP-initiated SSO (launching from your provider's dashboard tile) is not supported.
+</Note>
+
 ## Quick reference
 
-Go to **Settings → Workspace → Identity  → Add SSO provider**, and select the SSO protocol that your identity provider supports. 
+Go to **Settings → Workspace → Identity  → Add SSO provider**, and select the SSO protocol that your identity provider supports.
 
 Lovable instructs you to set up your identity provider before proceeding and provides relevant setup information and settings to use in you identity provider. See the respective OIDC and SAML tabs below for a quick reference.
 
@@ -52,20 +50,20 @@ Lovable instructs you to set up your identity provider before proceeding and pro
     - ACS URL (Assertion Consumer Service): `https://auth.lovable.dev/__/auth/handler`
     - SP Entity ID / Audience URI: `https://auth.lovable.dev/__/auth/handler`
     - Attribute mappings:
-      -  `email`  (required): ensure the format is set to `EmailAddress`
+      - `email`  (required): ensure the format is set to `EmailAddress`
       - `displayName` (recommended): map to user's full name
       - `photoURL` (recommended): map to user's profile picture URL
   </Tab>
 </Tabs>
 
-## Okta
+## Configure Okta as your SSO provider
 
 <Tabs>
   <Tab title="OIDC">
     <Steps>
       <Step title="Create an application in Okta Admin Console">
-        - Under `Applications`, click to **create a new app integration using OIDC**. You should choose the `Web Application` application type.
-        - Give the app a name, for example Lovable OIDC SSO.
+        - Under **Applications**, select to **create a new app integration using OIDC**. You should choose the **Web Application** application type.
+        - Give the app a name, for example `Lovable OIDC SSO`.
       </Step>
       <Step title="Configure OIDC integration">
         - Select **Grant type**: `Authorization code`
@@ -100,13 +98,13 @@ Lovable instructs you to set up your identity provider before proceeding and pro
   <Tab title="SAML">
     <Steps>
       <Step title="Create an application in Okta Admin Console">
-        - Under `Applications`, click to **create a new app integration using SAML 2.0**.
-        - Give the app a name, for example Lovable SAML SSO.
+        - Under **Applications**, click to **create a new app integration using SAML 2.0**.
+        - Give the app a name, for example `Lovable SAML SSO`.
       </Step>
       <Step title="Configure SAML settings">
-        - **Single sign on URL**: `https://auth.lovable.dev/__/auth/handler`
-        - **Audience URI (SP Entity ID)**: `https://auth.lovable.dev/__/auth/handler`
-        - **Name ID format**: `EmailAddress`
+        - Single sign on URL: `https://auth.lovable.dev/__/auth/handler`
+        - Audience URI (SP Entity ID): `https://auth.lovable.dev/__/auth/handler`
+        - Name ID format: `EmailAddress`
       </Step>
       <Step title="Save application">
         Click **Finish** and the application should now be successfully created.
@@ -117,13 +115,13 @@ Lovable instructs you to set up your identity provider before proceeding and pro
       <Step title="Provide Lovable with your IdP information">
         Copy the following **Metadata URL** values and enter them in Lovable:
 
-        2. Okta `SingleSignOnService Location`  → Lovable `SAML SSO Sing-on URL from your Idp`
-        1. Okta `EntityID` → Lovable `Identity Provider Entity ID / Issuer`
-        3. Okta `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
+        - Okta `SingleSignOnService Location`  → Lovable `SAML SSO Sing-on URL from your Idp`
+        - Okta `EntityID` → Lovable `Identity Provider Entity ID / Issuer`
+        - Okta `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
 
-           <Note>
-             Paste the certificate value between the `Begin certificate` and `End certificate` lines.
-           </Note>
+          <Note>
+            Paste the certificate value between the `Begin certificate` and `End certificate` lines.
+          </Note>
       </Step>
       <Step title="Finish SAML provider configuration">
         Click **Configure SAML provider** to finish the configuration of Okta as your SAML SSO provider in Lovable.
@@ -132,7 +130,7 @@ Lovable instructs you to set up your identity provider before proceeding and pro
   </Tab>
 </Tabs>
 
-## Auth0
+## Configure Auth0 as your SSO provider
 
 <Tabs>
   <Tab title="OIDC">
@@ -170,27 +168,44 @@ Lovable instructs you to set up your identity provider before proceeding and pro
   </Tab>
 </Tabs>
 
-## Microsoft Entra ID
+## Configure Microsoft Entra ID as your SSO provider
 
 <Tabs>
   <Tab title="SAML">
-    1. **Enterprise application**: Microsoft Entra ID → Enterprise applications → New application → Create your own application → Integrate any other application you don't find in the gallery.
-    2. **SSO settings:**
-       1. Reply URL (ACS): `https://auth.lovable.dev/__/auth/handler`
-       2. Identifier (Entity ID): : a unique value (can be the same ACS URL)
-    1. Assign users/groups who should have access.
-    2. **Configure it in Lovable**. From the SAML single sign-on page:
-       1. `Login URL`  → use as SAML SSO URL in Lovable
-       2. `Identifier (Entity ID)`  → use as Issuer in Lovable
-       3. `Certificate (Base64)` → paste into Lovable
+    <Steps>
+      <Step title="Create an enterprise app in Microsoft Entra admin center">
+        1. Under **Enterprise applications**, select **New application**.
+        2. Select **Create your own application** and choose **Integrate any other application you don’t find in the gallery (Non-gallery)**.
+        3. Give the app a name, for example `Lovable SAML SSO`.
+        4. Click **Create**. After a few seconds, the application should be added successfully.
+      </Step>
+      <Step title="Configure SAML SSO">
+        Navigate to the **Single sign-on** setup page and select **SAML**. Under **Basic SAML Configuration**, enter the following:
 
-    <Note>
-      Make sure to Map `email` to `user.mail`. If `user.mail` is empty, use `user.userprincipalname` .
-    </Note>
+        - Identifier (Entity ID): `https://auth.lovable.dev/__/auth/handler`
+        - Reply URL (Assertion Consumer Service URL): `https://auth.lovable.dev/__/auth/handler`
+
+        Leave the other values blank and select **Save**.
+      </Step>
+      <Step title="Provide Lovable with your IdP information">
+        When the application is set up, copy the following values and enter them in Lovable.
+
+        - Microsoft Entra `Login URL`  → Lovable `SAML SSO Sing-on URL from your Idp`
+        - Microsoft Entra `Microsoft Entra Identifier` → Lovable `Identity Provider Entity ID / Issuer`
+        - Microsoft Entra `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
+
+          <Note>
+            You can download the certificate (Base 64) or open the `App Federation Metadata URL` in a new tab and copy the `X509Certificate` value. Paste the certificate value between the `Begin certificate` and `End certificate` lines.
+          </Note>
+      </Step>
+      <Step title="Finish SAML provider configuration">
+        Click **Configure SAML Provider → Confirm & Enable SSO**
+      </Step>
+    </Steps>
   </Tab>
 </Tabs>
 
-## Other providers
+## Configure other providers
 
 You can configure any OIDC or SAML-compliant provider with Lovable SSO.
 
@@ -277,7 +292,9 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
         Ensure both ACS and Audience/Entity ID exactly match `https://auth.lovable.dev/__/auth/handler` in your IdP.
       </Accordion>
       <Accordion title="Email claim missing">
-        Map an email claim. For Microsoft Entra, use `user.mail`, falling back to `user.userprincipalname` if mail is empty.
+        Make sure to map an email claim.
+
+        For Microsoft Entra ID, map `email` to `user.mail` . If `user.mail ` is empty, use `user.userprincipalname`.
       </Accordion>
       <Accordion title="IdP-initiated SSO not supported">
         Launch SSO from Lovable. Starting from your IdP dashboard tile will not work.
