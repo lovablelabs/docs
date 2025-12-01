@@ -34,15 +34,27 @@ To connect your SSO provider to Lovable using OIDC or SAML, you require:
 
 ## Quick reference
 
+Go to **Settings → Workspace → Identity  → Add SSO provider**, and select the SSO protocol that your identity provider supports. 
+
+Lovable instructs you to set up your identity provider before proceeding, and provides relevant setup information and settings to use in you identity provider. See the respective OIDC and SAML tabs below for a quick reference.
+
 <Tabs>
   <Tab title="OIDC">
-    - Redirect URI: `https://auth.lovable.dev/__/auth/handler`
-    - Scopes: `openid`, `email`
+    - Application type: `Web Application`
+    - Grant type: `Authorization Code`
+    - Token method: `POST` (if configurable)
+    - Redirect URI to copy and add to your Idp: `https://auth.lovable.dev/__/auth/handler`
+    - OAuth scopes:
+      - Required: `openid`, `email`
+      - Recommended: `profile`
   </Tab>
   <Tab title="SAML">
-    - ACS URL: `https://auth.lovable.dev/__/auth/handler`
-    - Audience / Entity ID: `https://auth.lovable.dev/__/auth/handler`
-    - Required attribute: `email`
+    - ACS URL (Assertion Consumer Service): `https://auth.lovable.dev/__/auth/handler`
+    - SP Entity ID / Audience URI: `https://auth.lovable.dev/__/auth/handler`
+    - Attribute mappings:
+      -  `email`  (required): ensure the format is set to `EmailAddress`
+      - `displayName` (recommended): map to user's full name
+      - `photoURL` (recommended): map to user's profile picture URL
   </Tab>
 </Tabs>
 
@@ -68,14 +80,14 @@ To connect your SSO provider to Lovable using OIDC or SAML, you require:
         In Okta, go to **Sign On → OpenID Connect ID Token**, select **Okta URL** from the Issuer dropdown, and **Save**.
       </Step>
       <Step title="Provide Lovable with your IdP information">
+        In Okta, copy the following value from the **Sign On** tab and enter it in Lovable.
+
+        - Okta `Issuer URL`  → Lovable `OIDC Issuer URL/Discovery Endpoint`
+
         In Okta, copy the following values from the **General** tab and enter them in Lovable.
 
         - Okta `Client ID`  → Lovable `OAuth Client ID/Application ID`
         - Okta `Client Secret`  → Lovable `OAuth Client Secret`
-
-        In Okta, copy the following value from the **Sign On** tab and enter it in Lovable.
-
-        - Okta `Issuer URL`  → Lovable `OIDC Issuer URL/Discovery Endpoint`
       </Step>
       <Step title="Optional (Test configuration)">
         If you configured everything accurately, the validation should be successful.
@@ -107,7 +119,7 @@ To connect your SSO provider to Lovable using OIDC or SAML, you require:
 
         2. Okta `SingleSignOnService Location`  → Lovable `SAML SSO Sing-on URL from your Idp`
         1. Okta `EntityID` → Lovable `Identity Provider Entity ID / Issuer`
-        3. Okta `X509Certificate` → Lovable `X.509 Signing Certificate (public key)` 
+        3. Okta `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
 
            <Note>
              Paste the certificate value between the `Begin certificate` and `End certificate` lines.
@@ -225,8 +237,8 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
 
     Common field names across providers:
 
-    - **ACS URL**: `Single Sign-On URL`, `Reply URL`, `Assertion Consumer Service URL`
-    - **Audience** : `SP Entity ID`, `Audience URI`, `Identifier`
+    - **ACS URL**:  `Assertion Consumer Service URL`, `Single Sign-On URL`, `SSO URL`, `Reply URL`, `Recipient URL`
+    - **Audience URI** : `SP Entity ID`, `Audience`, `Identifier`
     - **Attribute mapping**: `Attribute Statements`, `User Attributes & Claims`
 
     **Steps**
