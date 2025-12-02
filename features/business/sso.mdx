@@ -7,9 +7,7 @@ icon: "shield-keyhole"
 Single sign-on (SSO) is available on **Business** and **Enterprise** plans and enables secure, centralized authentication across your organization. With SSO, users can access Lovable with one set of credentials, simplifying access management and improving security.
 
 <Note>
-  **Service provider (SP)-initiated sign-in only:** users must start sign-in from Lovable (SP).
-
-  **Identity provider (IdP)-initiated SSO** (starting from an IdP dashboard tile) is not supported.
+  **Service provider (SP)-initiated sign-in only:** users must start sign-in from Lovable (SP). **Identity provider (IdP)-initiated SSO** (starting from an IdP dashboard tile) is **not supported**.
 </Note>
 
 ## Supported SSO protocols
@@ -383,12 +381,12 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
     This requires all workspace members to use SSO for authentication. External collaborators and invite links will be disabled.
   </Accordion>
   <Accordion title="Does Lovable support IdP-initiated SSO?">
-    No. **Identity provider (IdP)-initiated SSO** (starting from an IdP dashboard tile) is not supported.
+    No. **IdP-initiated SSO** (starting from an IdP dashboard tile) is not supported.
 
-    Lovable supports**service provider (SP)-initiated sign-in only.**  Users must start sign-in from Lovable.
+    Lovable supports **SP-initiated sign-in only.** Users must start sign-in from Lovable.
   </Accordion>
   <Accordion title="Does Lovable support multiple SSO providers per workspace?">
-    No. Only one SSO provider can be configured per workspace.
+    No. A workspace can have **one active SSO provider** configured at a time.
   </Accordion>
   <Accordion title="Does Lovable support SCIM or automatic user provisioning?">
     Lovable supports **JIT (just-in-time) provisioning**: user accounts are created automatically the first time someone signs in via SSO, and they’re added to your company workspace.
