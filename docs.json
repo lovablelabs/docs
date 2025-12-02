@@ -17,12 +17,12 @@
   "navbar": {
     "links": [
       {
-        "label": "Lovable Support",
+        "label": "Support",
         "href": "https://lovable.dev/support",
         "icon": "message"
       },
       {
-        "label": "Lovable Blog",
+        "label": "Blog",
         "href": "https://lovable.dev/blog",
         "icon": "blog"
       }
