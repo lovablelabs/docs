@@ -328,14 +328,14 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
       <Accordion title="Issuer URL / discovery fails">
         Use the provider's OIDC Issuer URL (not just the domain).
 
-        - For Okta, copy from the Sign-on tab
-        - For Auth0, use your tenant Domain.
+        - For Okta, copy from the **Sign-on** tab
+        - For Auth0, use your tenant domain.
       </Accordion>
       <Accordion title="Email not returned">
         Grant the `email` scope and ensure the user account has a primary email.
       </Accordion>
       <Accordion title="Authorization flow issues">
-        Use Authorization Code with a confidential client and client secret. Avoid implicit or PKCE-only app types.
+        Use `Authorization Code` with a confidential client and client secret. Avoid implicit or PKCE-only app types.
       </Accordion>
     </AccordionGroup>
   </Tab>
