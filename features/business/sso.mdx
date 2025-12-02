@@ -349,9 +349,6 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
 
         For Microsoft Entra ID, map `email` to `user.mail` . If `user.mail ` is empty, use `user.userprincipalname`.
       </Accordion>
-      <Accordion title="IdP-initiated SSO not supported">
-        Launch SSO from Lovable. Starting from your IdP dashboard tile does not work.
-      </Accordion>
       <Accordion title="Provider credentials invalid">
         Paste the correct `X.509` certificate. If the certificate rotates, update it in Lovable.
       </Accordion>
@@ -384,5 +381,18 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
     Yes. The workspace **owner** or **admin** can enable **Enforce SSO** in **Settings → Workspace → Identity** and choose the **session duration** to configure how long users stay signed in before requiring re-authentication (24 hours, 48 hours, or 7 days).
 
     This requires all workspace members to use SSO for authentication. External collaborators and invite links will be disabled.
+  </Accordion>
+  <Accordion title="Does Lovable support IdP-initiated SSO?">
+    No. **Identity provider (IdP)-initiated SSO** (starting from an IdP dashboard tile) is not supported.
+
+    Lovable supports**service provider (SP)-initiated sign-in only.**  Users must start sign-in from Lovable.
+  </Accordion>
+  <Accordion title="Does Lovable support multiple SSO providers per workspace?">
+    No. Only one SSO provider can be configured per workspace.
+  </Accordion>
+  <Accordion title="Does Lovable support SCIM or automatic user provisioning?">
+    Lovable supports **JIT (just-in-time) provisioning**: user accounts are created automatically the first time someone signs in via SSO, and they’re added to your company workspace.
+
+    You can also set a **default role for JIT-created users** (admin, editor, or viewer) that will be applied when they join via SSO for the first time.
   </Accordion>
 </AccordionGroup>
