@@ -364,7 +364,7 @@ Before you begin, complete [Start SSO setup in Lovable](#start-sso-setup-in-lova
 
 <AccordionGroup>
   <Accordion title="I already have an account, but I'm joining a business workspace that uses SSO. How do I log in?">
-    If you created your account using another login method (like email/password, Google, or GitHub), you need to log in that way **first**. Once you're logged in, navigate to Settings → Your account → Link SSO. This will link your existing account to your company SSO.
+    If you created your account using another login method (like email/password, Google, or GitHub), you need to log in that way **first**. Once you're logged in, navigate to **Settings → Your account → Link SSO**. This will link your existing account to your company SSO.
 
     <Note>
       **Important:** If you attempt to log in with SSO before linking your existing account, you'll see an error. This is a security measure to prevent unauthorized access. Log in using your original method first to complete the linking process.
@@ -372,14 +372,9 @@ Before you begin, complete [Start SSO setup in Lovable](#start-sso-setup-in-lova
   </Accordion>
   <Accordion title="Which SSO providers does Lovable support?">
     Lovable supports the industry-standard OIDC and SAML protocols, so you can integrate with any SSO provider that supports them.
-
-    This includes, but is not limited to:
-
-    - Okta
-    - Microsoft Entra ID (formerly Azure AD)
-    - Auth0
-    - Google Workspace
-    - OneLogin
+  </Accordion>
+  <Accordion title="Does Lovable support multiple SSO providers per workspace?">
+    No. A workspace can have **one active SSO provider** configured at a time.
   </Accordion>
   <Accordion title="Can I enforce SSO for my workspace?">
     Yes. The workspace **owner** or **admin** can enable **Enforce SSO** in **Settings → Workspace → Identity** and choose the **session duration** to configure how long users stay signed in before requiring re-authentication (24 hours, 48 hours, or 7 days).
@@ -391,12 +386,13 @@ Before you begin, complete [Start SSO setup in Lovable](#start-sso-setup-in-lova
 
     Lovable supports **SP-initiated sign-in only**. Users must start sign-in from Lovable.
   </Accordion>
-  <Accordion title="Does Lovable support multiple SSO providers per workspace?">
-    No. A workspace can have **one active SSO provider** configured at a time.
-  </Accordion>
   <Accordion title="Does Lovable support SCIM or automatic user provisioning?">
     Lovable supports **JIT (just-in-time) provisioning**: user accounts are created automatically the first time someone signs in via SSO, and they’re added to your company workspace.
 
     You can also set a **default role for JIT-created users** (admin, editor, or viewer) that will be applied when they join via SSO for the first time.
+  </Accordion>
+  <Accordion title="How can I find my tenant ID?">
+    Your tenant ID is the value used in your login URL:\
+    `https://lovable.dev/sso-login/{tenantId}`
   </Accordion>
 </AccordionGroup>
