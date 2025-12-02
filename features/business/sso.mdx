@@ -9,7 +9,7 @@ Single sign-on (SSO) is available on **Business** and **Enterprise** plans and e
 <Note>
   **Service provider (SP)-initiated sign-in only:** users must start sign-in from Lovable (SP).
 
-  **Identity provider (IdP)-initiated SSO** (starting from your IdP dashboard tile) is not supported.
+  **Identity provider (IdP)-initiated SSO** (starting from an IdP dashboard tile) is not supported.
 </Note>
 
 ## Supported SSO protocols
@@ -76,7 +76,7 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
   <Tab title="OIDC">
     <Steps>
       <Step title="Create an application in Okta Admin Console">
-        - Under **Applications**, click **Create App Integration** and select**OIDC** . Then select the **Web Application** application type.
+        - Under **Applications**, click **Create App Integration** and select **OIDC**. Then select the **Web Application** application type.
         - Give the app a name, for example `Lovable OIDC SSO`.
       </Step>
       <Step title="Configure OIDC integration">
@@ -112,7 +112,7 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
   <Tab title="SAML">
     <Steps>
       <Step title="Create an application in Okta Admin Console">
-        - Under **Applications**, click **Create App Integration** and select**SAML 2.0** .
+        - Under **Applications**, click **Create App Integration** and select **SAML 2.0**.
         - Give the app a name, for example `Lovable SAML SSO`.
       </Step>
       <Step title="Configure SAML settings">
@@ -381,7 +381,7 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
     - OneLogin
   </Accordion>
   <Accordion title="Can I enforce SSO for my workspace?">
-    Yes. The workspace **owner**  or **admin** can enable **Enforce SSO** in **Settings → Workspace → Identity** and choose the **session duration** to configure how long users stay signed in before requiring re-authentication (24 hours, 48 hours, or 7 days).
+    Yes. The workspace **owner** or **admin** can enable **Enforce SSO** in **Settings → Workspace → Identity** and choose the **session duration** to configure how long users stay signed in before requiring re-authentication (24 hours, 48 hours, or 7 days).
 
     This requires all workspace members to use SSO for authentication. External collaborators and invite links will be disabled.
   </Accordion>
