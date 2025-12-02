@@ -58,7 +58,7 @@ Use the reference below while configuring OIDC or SAML in your IdP.
     - ACS URL (Assertion Consumer Service): `https://auth.lovable.dev/__/auth/handler`
     - SP Entity ID / Audience URI: `https://auth.lovable.dev/__/auth/handler`
     - Attribute mappings:
-      - `email`  (required): ensure the format is set to `EmailAddress`
+      - `email` (required): ensure the format is set to `EmailAddress`
       - `displayName` (recommended): map to user's full name
       - `photoURL` (recommended): map to user's profile picture URL
   </Tab>
@@ -159,9 +159,9 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
       <Step title="Provide Lovable with your IdP information">
         In Auth0, copy the following values from the **Settings** tab and enter them in Lovable.
 
-        - Auth0 `Domain`  → Lovable `OIDC Issuer URL/Discovery Endpoint` (include `https://`)
-        - Auth0 `Client ID`  → Lovable `OAuth Client ID/Application ID`
-        - Auth0 `Client Secret`  → Lovable `OAuth Client Secret`
+        - Auth0 `Domain` → Lovable `OIDC Issuer URL/Discovery Endpoint` (include `https://`)
+        - Auth0 `Client ID` → Lovable `OAuth Client ID/Application ID`
+        - Auth0 `Client Secret` → Lovable `OAuth Client Secret`
       </Step>
       <Step title="(Optional) Test configuration in Lovable">
         In Lovable, click **Test configuration**. If you configured everything accurately, the validation should be successful.
@@ -201,8 +201,8 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
       <Step title="Provide Lovable with your IdP information">
         In **Auth0 → Addon: SAML2 Web app → Usage**, copy the following **SAML Protocol Configuration Parameter** values and enter them in Lovable.
 
-        - Auth0 `Identity Provider Login URL`  → Lovable `SAML SSO Sign-on URL from your IdP`
-        - Auth0 `Issuer`  → Lovable `Identity Provider Entity ID / Issuer`
+        - Auth0 `Identity Provider Login URL` → Lovable `SAML SSO Sign-on URL from your IdP`
+        - Auth0 `Issuer` → Lovable `Identity Provider Entity ID / Issuer`
         - Auth0 `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
 
           <Note>
@@ -238,7 +238,7 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
       <Step title="Provide Lovable with your IdP information">
         When the application is set up, copy the following values and enter them in Lovable.
 
-        - Microsoft Entra `Login URL`  → Lovable `SAML SSO Sign-on URL from your IdP`
+        - Microsoft Entra `Login URL` → Lovable `SAML SSO Sign-on URL from your IdP`
         - Microsoft Entra `Microsoft Entra Identifier` → Lovable `Identity Provider Entity ID / Issuer`
         - Microsoft Entra `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
 
@@ -282,9 +282,9 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
       <Step title="Provide Lovable with your IdP information">
         In your IdP, copy the following values and enter them in Lovable:
 
-        - `Domain` or `Issuer URL`  → Lovable `OIDC Issuer URL/Discovery Endpoint`
-        - `Client ID`  → Lovable `OAuth Client ID/Application ID`
-        - `Client Secret`  → Lovable `OAuth Client Secret`
+        - `Domain` or `Issuer URL` → Lovable `OIDC Issuer URL/Discovery Endpoint`
+        - `Client ID` → Lovable `OAuth Client ID/Application ID`
+        - `Client Secret` → Lovable `OAuth Client Secret`
       </Step>
     </Steps>
   </Tab>
@@ -385,7 +385,7 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
   <Accordion title="Does Lovable support IdP-initiated SSO?">
     No. **IdP-initiated SSO** (starting from an IdP dashboard tile) is not supported.
 
-    Lovable supports **SP-initiated sign-in only.** Users must start sign-in from Lovable.
+    Lovable supports **SP-initiated sign-in only**. Users must start sign-in from Lovable.
   </Accordion>
   <Accordion title="Does Lovable support multiple SSO providers per workspace?">
     No. A workspace can have **one active SSO provider** configured at a time.
