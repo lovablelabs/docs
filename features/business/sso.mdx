@@ -7,7 +7,7 @@ icon: "shield-keyhole"
 Single sign-on (SSO) is available on **Business** and **Enterprise** plans and enables secure, centralized authentication across your organization. With SSO, users can access Lovable with one set of credentials, simplifying access management and improving security.
 
 <Note>
-  **Service provider (SP)-initiated sign-in only:** users must start sign-in from Lovable (SP)**.**
+  **Service provider (SP)-initiated sign-in only:** users must start sign-in from Lovable (SP).
 
   **Identity provider (IdP)-initiated SSO** (starting from your IdP dashboard tile) is not supported.
 </Note>
@@ -16,7 +16,7 @@ Single sign-on (SSO) is available on **Business** and **Enterprise** plans and e
 
 Lovable supports both **OIDC** and **SAML 2.0** protocols, enabling integration with all major **identity providers (IdP)** including Okta, Microsoft Entra ID (Azure AD), Google Workspace, and more.
 
-- **OpenID Connect (OIDC)**: recommended, a modern identity layer built on top of OAuth 2.0 that provides identity verification.
+- **OpenID Connect (OIDC)**: recommended; a modern identity layer built on top of OAuth 2.0 that provides identity verification.
 - **SAML (Security Assertion Markup Language) 2.0**: XML-based protocol for exchanging authentication and authorization data, widely used in enterprise environments.
 
 ## Prerequisites
@@ -33,14 +33,14 @@ SSO configuration is a **two-way setup** between Lovable and your identity provi
 - **Lovable → IdP:** copy Lovable URLs and settings into your IdP app.
 - **IdP → Lovable:** copy your IdP’s issuer, metadata, and certificates back into Lovable.
 
-**Start in Lovable**: The workspace **owner**  or **admin** can set up SSO in **Settings → Workspace → Identity → Add SSO provider**, then choose **OIDC** or **SAML**.
+The workspace **owner** or **admin** can set up SSO. To start, go to **Settings → Workspace → Identity → Add SSO provider**, then choose **OIDC** or **SAML**.
 
-###  IdP configuration reference
+### IdP configuration reference
 
 When you start the SSO provider setup in Lovable, you see:
 
 - **What to configure in your IdP** (for example, app type, scopes, and attribute mappings)
-- **Lovable URLs and identifiers** you may need to enter in the IdP. 
+- **Lovable URLs and identifiers** you may need to enter in the IdP.
 
 Use the reference below while configuring OIDC or SAML in your IdP.
 
@@ -67,6 +67,8 @@ Use the reference below while configuring OIDC or SAML in your IdP.
 ## Provider-specific setup guides
 
 If you use Okta, Auth0, or Microsoft Entra, you can find provider-specific documentation for setting up SSO. If you use another provider, see [Configure other providers](#configure-other-providers).
+
+Before you begin, complete **Start SSO setup in Lovable** to get the settings and values you need to use in your IdP.
 
 ### Configure Okta as your SSO provider
 
