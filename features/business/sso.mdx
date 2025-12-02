@@ -7,7 +7,9 @@ icon: "shield-keyhole"
 Single sign-on (SSO) is available on **Business** and **Enterprise** plans and enables secure, centralized authentication across your organization. With SSO, users can access Lovable with one set of credentials, simplifying access management and improving security.
 
 <Note>
-  **Service provider (SP)-initiated sign-in only:** users must start sign-in from Lovable (SP). **Identity provider (IdP)-initiated SSO** (starting from an IdP dashboard tile) is **not supported**.
+  **Service provider (SP)-initiated sign-in only:** users must start sign-in from Lovable (SP).
+
+  **Identity provider (IdP)-initiated SSO** (starting from an IdP dashboard tile) is **not supported**.
 </Note>
 
 ## Supported SSO protocols
@@ -126,7 +128,7 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
 
         Copy the following **Metadata URL** values and enter them in Lovable:
 
-        - Okta `SingleSignOnService Location`  → Lovable `SAML SSO Sign-on URL from your IdP`
+        - Okta `SingleSignOnService Location` → Lovable `SAML SSO Sign-on URL from your IdP`
         - Okta `EntityID` → Lovable `Identity Provider Entity ID / Issuer`
         - Okta `X509Certificate` → Lovable `X.509 Signing Certificate (public key)`
 
@@ -183,7 +185,7 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
         - In Auth0, navigate to **Addons**, and enable **SAML2 Web app**.
         - In **Addon: SAML2 Web app → Settings**, set:
           - Application Callback URL: `https://auth.lovable.dev/__/auth/handler`
-          - Settings: paste the following `mappings`  JSON
+          - Settings: paste the following `mappings` JSON
 
         ```json
             {
