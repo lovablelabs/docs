@@ -57,12 +57,14 @@ Explore [remote MCP servers](https://mcpservers.org/remote-mcp-servers), a curat
 
 To connect a custom or internal MCP server:
 
-1. Go to **Settings → Integrations**.
-2. Click **Add** next to **New MCP server**.
+1. Go to **Settings → Integrations → Your MCP servers.**
+2. Click **Set up** next to **New MCP server**.
 3. **Enter server details:**
    - **Server name**: A clear name for your server (for example, _Internal CRM_ or _Analytics API_).
    - **Server URL**: The address where Lovable can reach your MCP server.
-   - **Authentication**: Add any Bearer token or API key if required.
+4. **Authentication:**
+   - **OAuth (default):** Lovable uses OAuth by default. After you click **Add server**, you’ll be prompted to authorize.
+   - **Bearer token / API key (optional):** If your server requires a token or API key, expand **Advanced settings** and enter it in **Bearer token / API key**. When provided, Lovable will use this to authenticate requests instead of OAuth.
 4. Click **Add server**.\
    The custom MCP server now appears in your list and can provide contextual data for builds.
 
