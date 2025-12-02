@@ -92,12 +92,12 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
       <Step title="Provide Lovable with your IdP information">
         In Okta, copy the following value from the **Sign On** tab and enter it in Lovable.
 
-        - Okta `Issuer URL`  → Lovable `OIDC Issuer URL/Discovery Endpoint`
+        - Okta `Issuer URL` → Lovable `OIDC Issuer URL/Discovery Endpoint`
 
         In Okta, copy the following values from the **General** tab and enter them in Lovable.
 
-        - Okta `Client ID`  → Lovable `OAuth Client ID/Application ID`
-        - Okta `Client Secret`  → Lovable `OAuth Client Secret`
+        - Okta `Client ID` → Lovable `OAuth Client ID/Application ID`
+        - Okta `Client Secret` → Lovable `OAuth Client Secret`
       </Step>
       <Step title="(Optional) Test the configuration in Lovable">
         In Lovable, click **Test configuration**. If everything is configured correctly, the validation should be successful.
@@ -345,7 +345,7 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
       <Accordion title="Email claim missing">
         Make sure to map an email claim.
 
-        For Microsoft Entra ID, map `email` to `user.mail`. If `user.mail` is empty, use `user.userprincipalname`.
+        For Microsoft Entra ID, map `email` to `user.mail`. If `user.mail` is empty, use `user.userprincipalname`.
       </Accordion>
       <Accordion title="Provider credentials invalid">
         Paste the correct `X.509` certificate. If the certificate rotates, update it in Lovable.
