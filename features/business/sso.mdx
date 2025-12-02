@@ -152,7 +152,7 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
         - Click **Create**.
       </Step>
       <Step title="Configure Allowed Callback URLs">
-        In Auth0, navigate to your application settings, add the **Allowed Callback URLs**: `https://auth.lovable.dev/__/auth/handler` , and click **Save**.
+        In Auth0, navigate to your application settings, add the **Allowed Callback URLs**: `https://auth.lovable.dev/__/auth/handler`, and click **Save**.
       </Step>
       <Step title="Provide Lovable with your IdP information">
         In Auth0, copy the following values from the **Settings** tab and enter them in Lovable.
@@ -177,7 +177,7 @@ Before you begin, complete **Start SSO setup in Lovable** to get the settings an
         - Click **Create**.
       </Step>
       <Step title="Configure Allowed Callback URLs">
-        In Auth0, navigate to your application settings, add the **Allowed Callback URLs**: `https://auth.lovable.dev/__/auth/handler` , and click **Save**.
+        In Auth0, navigate to your application settings, add the **Allowed Callback URLs**: `https://auth.lovable.dev/__/auth/handler`, and click **Save**.
       </Step>
       <Step title="Configure SAML2 Web App Add-on">
         - In Auth0, navigate to **Addons**, and enable **SAML2 Web app**.
@@ -345,7 +345,7 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
       <Accordion title="Email claim missing">
         Make sure to map an email claim.
 
-        For Microsoft Entra ID, map `email` to `user.mail` . If `user.mail ` is empty, use `user.userprincipalname`.
+        For Microsoft Entra ID, map `email` to `user.mail`. If `user.mail` is empty, use `user.userprincipalname`.
       </Accordion>
       <Accordion title="Provider credentials invalid">
         Paste the correct `X.509` certificate. If the certificate rotates, update it in Lovable.
@@ -376,14 +376,14 @@ You can configure any OIDC or SAML-compliant provider with Lovable SSO.
     - OneLogin
   </Accordion>
   <Accordion title="Can I enforce SSO for my workspace?">
-    Yes. The workspace **owner** or **admin** can enable **Enforce SSO** in **Settings → Workspace → Identity** and choose the **session duration** to configure how long users stay signed in before requiring re-authentication (24 hours, 48 hours, or 7 days).
+    Yes. The workspace **owner** or **admin** can enable **Enforce SSO** in **Settings → Workspace → Identity** and choose the **session duration** to configure how long users stay signed in before requiring re-authentication (24 hours, 48 hours, or 7 days).
 
     This requires all workspace members to use SSO for authentication. External collaborators and invite links will be disabled.
   </Accordion>
   <Accordion title="Does Lovable support IdP-initiated SSO?">
-    No. **IdP-initiated SSO** (starting from an IdP dashboard tile) is not supported.
+    No. **IdP-initiated SSO** (starting from an IdP dashboard tile) is not supported.
 
-    Lovable supports **SP-initiated sign-in only.** Users must start sign-in from Lovable.
+    Lovable supports **SP-initiated sign-in only.** Users must start sign-in from Lovable.
   </Accordion>
   <Accordion title="Does Lovable support multiple SSO providers per workspace?">
     No. A workspace can have **one active SSO provider** configured at a time.
