@@ -1,7 +1,7 @@
 ---
 title: "Integrate Lovable with your tools using MCP servers"
 sidebarTitle: "MCP servers"
-description: "Connect Lovable to your team’s tools and enable context-driven creation — moving from idea to validation to live app faster than ever."
+description: "Connect Lovable to your team’s tools and enable context-driven creation, moving from idea to validation to live app faster than ever."
 icon: "plug"
 keywords: ["Lovable integrations","Lovable connections","MCP server","Model Context Protocol","MCP connector","AI workspace automation","Notion","Linear","Jira","Confluence","Atlassian","Miro","n8n","Canva","custom MCP server","AI tools for productivity"]
 ---
@@ -21,9 +21,9 @@ In Lovable, MCP servers unlock two key capabilities:
 - **Bring your existing context into Lovable.**\
   The Lovable Agent can read your team’s documentation, tickets, and design files to build prototypes and flows aligned with your standards.
 - **Connect your Lovable apps to your workflows.**\
-  The Lovable Agent can take follow-up actions in your connected tools — such as updating ticket statuses, adding prototype links as comments, or creating new items when supported.
+  The Lovable Agent can take follow-up actions in your connected tools, such as updating ticket statuses, adding prototype links as comments, or creating new items when supported.
 
-Lovable becomes more powerful when it understands your team’s world — eliminating guesswork, speeding up iteration, and helping you go from **idea to live app faster than ever.**
+Lovable becomes more powerful when it understands your team’s world, eliminating guesswork, speeding up iteration, and helping you go from **idea to live app faster than ever.**
 
 ## Prebuilt MCP servers
 
@@ -38,7 +38,7 @@ Lovable becomes more powerful when it understands your team’s world — elimin
 
 To use prebuilt integrations with popular third-party apps and services:
 
-1. Go to **Settings → Integrations → MCP servers**.
+1. Go to **Settings → Integrations → Your MCP servers**.
 2. **Select an MCP server** (for example, Notion, Linear, or Atlassian).
 3. Click **Connect**. Sign in and grant Lovable access to your account.
 
@@ -49,7 +49,7 @@ In addition to these steps, you need to do the following in [n8n](https://docs.n
 
 ## Custom MCP servers (Business & Enterprise)
 
-For full flexibility, you can connect **custom MCP servers** to bring internal or third-party systems into Lovable — perfect for private APIs, internal CRMs, or custom data sources.
+For full flexibility, you can connect **custom MCP servers** to bring internal or third-party systems into Lovable. This is perfect for private APIs, internal CRMs, or custom data sources.
 
 Explore [remote MCP servers](https://mcpservers.org/remote-mcp-servers), a curated list of high-quality remote MCP servers compatible with Lovable.
 
@@ -59,14 +59,13 @@ To connect a custom or internal MCP server:
 
 1. Go to **Settings → Integrations → Your MCP servers.**
 2. Click **Set up** next to **New MCP server**.
-3. **Enter server details:**
-   - **Server name**: A clear name for your server (for example, _Internal CRM_ or _Analytics API_).
-   - **Server URL**: The address where Lovable can reach your MCP server.
+3. **Server name**: enter a clear name for your server (for example, _Internal CRM_ or _Analytics API_).
+4. **Server URL**: enter the address where Lovable can reach your MCP server.
 4. **Authentication:**
-   - **OAuth (default):** Lovable uses OAuth by default. After you click **Add server**, you’ll be prompted to authorize.
-   - **Bearer token or API key:** If the MCP server doesn't support OAuth, expand **Advanced settings** and enter a **bearer token or API key**. When provided, Lovable will use this to authenticate requests instead of OAuth.
-4. Click **Add server**.\
-   The custom MCP server now appears in your list and can provide contextual data for builds.
+   - **OAuth (default):** Lovable uses OAuth by default. After you click **Add & authorize**, you’ll be prompted to authorize.
+   - **Bearer token or API key:** use if the MCP server doesn't support OAuth.
+   - **No authentication**: connect without credentials if the server doesn't require authentication.
+4. **Add server**. The custom MCP server now appears in your list and can provide contextual data for builds.
 
 ## Practical examples
 
@@ -93,5 +92,5 @@ For quick access on project level, click `+` in the prompt box and go to **Integ
 
 On **Business** and **Enterprise** plans, workspace **admins and owners** can manage which servers are available for all users:
 
-- Go to **Settings → Privacy & Security** to enable or disable all MCP server access for the entire workspace.
+- Go to **Settings → Privacy & security** to enable or disable all MCP server access for the entire workspace.
 - Go to **Settings → Integrations → Manage servers** to enable or disable individual MCP servers.
