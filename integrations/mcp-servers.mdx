@@ -33,6 +33,7 @@ Lovable becomes more powerful when it understands your team’s world, eliminati
 | [**Linear**](https://linear.app/docs/mcp)                                                                                           | Access your Linear issues and project data.         | **Prototype from real issues and tickets.**<br />Lovable can read Linear issues, including descriptions and acceptance criteria, to generate functional prototypes. Attach resulting apps back to Linear for review.                                                              |
 | [**Notion**](https://developers.notion.com/docs/mcp)                                                                                | Access your Notion pages and databases.             | **Build directly from your team’s Notion workspace.**<br />Lovable can read PRDs, design specs, or marketing briefs and turn them into working apps, landing pages, or prototypes. Embed generated Lovable apps back into Notion for seamless collaboration.                      |
 | [**n8n**](https://docs.n8n.io/advanced-ai/accessing-n8n-mcp-server/)                                                                | Access and power your apps with your n8n workflows. | **Build workflow-rich apps with live data.**<br />Connect your n8n automations to Lovable to pull data from tools like HubSpot, Google Sheets, or Slack, and build user-facing apps powered by existing automations.                                                              |
+| [**Miro**](https://miro.com/ai/mcp/)                                                                                                | Access your Miro boards and diagrams.               | **Bring your boards to life.**<br />Lovable can convert user flows, wireframes, or information architecture from your boards into interactive prototypes you can test and export back for feedback.                                                                               |
 
 ### How to connect a prebuilt MCP server
 
@@ -42,10 +43,16 @@ To use prebuilt integrations with popular third-party apps and services:
 2. **Select an MCP server** (for example, Notion, Linear, or Atlassian).
 3. Click **Connect**. Sign in and grant Lovable access to your account.
 
-In addition to these steps, you need to do the following in [n8n](https://docs.n8n.io/advanced-ai/accessing-n8n-mcp-server):
+In addition to these steps, you need to do the following in **n8n** and **Miro**:
+
+[n8n](https://docs.n8n.io/advanced-ai/accessing-n8n-mcp-server) 
 
 - Go to **Settings → MCP access** and toggle **Enable MCP access** (requires instance owner or admin permissions)
 - For each workflow you want to expose, go to **Settings** in the workflow editor and toggle **Available in MCP.**
+
+**Miro Enterprise**
+
+- Register your interest for Miro's MCP beta program, see [Miro MCP](https://miro.com/ai/mcp/).
 
 ## Custom MCP servers (Business and Enterprise)
 
@@ -71,11 +78,12 @@ To connect a custom or internal MCP server:
 
 Each connected app instantly becomes available as context for the Lovable Agent. You can interact with connected tools using natural prompts.
 
-| **Scenario**                                          | **Example prompt**                                               | **Example outcome**                                                                     |
-| :---------------------------------------------------- | :--------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
-| A **product manager** connects **Linear** or **Jira** | _Generate a prototype based on tickets in the current sprint._   | Lovable reads issue descriptions and acceptance criteria to build aligned, testable UI. |
-| A **marketer** links **Notion** or **Confluence**     | _Turn our Q4 campaign brief into a landing page._                | Lovable uses the document as context to generate an on-brand, editable page.            |
-| An **engineer** links **n8n** or **internal MCP**     | _Build a workflow UI that lists users and allows deleting them._ | Lovable builds an app that uses live data and workflows.                                |
+| **Scenario**                                          | **Example prompt**                                               | **Example outcome**                                                                                                    |
+| :---------------------------------------------------- | :--------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| A **product manager** connects **Linear** or **Jira** | _Generate a prototype based on tickets in the current sprint._   | Lovable reads issue descriptions and acceptance criteria to build aligned, testable UI.                                |
+| A **marketer** links **Notion** or **Confluence**     | _Turn our Q4 campaign brief into a landing page._                | Lovable uses the document as context to generate an on-brand, editable page.                                           |
+| A **designer** connects **Miro**                      | _Prototype the signup flow from our whiteboard._                 | Lovable reads flow diagrams to scaffold UI navigation and turns them into an interactive prototype your team can test. |
+| An **engineer** links **n8n** or **internal MCP**     | _Build a workflow UI that lists users and allows deleting them._ | Lovable builds an app that uses live data and workflows.                                                               |
 
 ## Security and permissions
 
