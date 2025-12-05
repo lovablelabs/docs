@@ -62,24 +62,26 @@
       },
       {
         "tab": "Integrations",
+        "pages": [
+          "integrations/introduction",         
+          "integrations/mcp-servers"                          
+        ],
         "groups": [
           {
-            "group": "About integrations",
+            "group": "Connectors",
             "pages": [
-              "integrations/introduction",
-              "integrations/build-with-url"
+              "integrations/supabase",
+              "integrations/stripe",
+              "integrations/shopify"
             ]
           },
           {
-            "group": "Integrations",
+            "group": "Other platform tools",
             "pages": [
               "integrations/github",
-              "integrations/mcp-servers",
-              "integrations/supabase",
-              "integrations/stripe",
-              "integrations/shopify"              
+              "integrations/build-with-url"
             ]
-          }
+          }         
         ]
       },
       {
