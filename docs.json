@@ -41,50 +41,50 @@
       },
       {
         "tab": "Features",
-            "pages": [
-              "features/modes",             
-              "features/code-mode",
-              "features/design",
-              "features/cloud",
-              "features/ai",
-              "features/knowledge",
-              "features/collaboration",
-              "features/private-projects",
-              "features/publish",
-              "features/analytics",
-              "features/custom-domain",                                         
-              "features/security",
-              "features/labs",
-              "features/business/sso",
-              "features/business/data-opt-out",
-              "features/business/design-templates"
-            ]
-          },
+        "pages": [
+          "features/modes",
+          "features/code-mode",
+          "features/design",
+          "features/cloud",
+          "features/ai",
+          "features/knowledge",
+          "features/collaboration",
+          "features/private-projects",
+          "features/publish",
+          "features/analytics",
+          "features/custom-domain",
+          "features/security",
+          "features/labs",
+          "features/business/sso",
+          "features/business/data-opt-out",
+          "features/business/design-templates"
+        ]
+      },
       {
         "tab": "Integrations",
-        "groups": [
-          {
+          "groups": [
+            {
             "group": "About integrations",
-            "pages": [
-              "integrations/introduction",
-              "integrations/build-with-url"
+            "pages": [           
+              "integrations/introduction"                                       
             ]
-          },
-          {
-            "group": "Integrations",
+            },
+            {
+            "group": "MCP servers and connectors",
             "pages": [
-              "integrations/github",
-              "integrations/mcp-servers",
+              "integrations/mcp-servers",       
               "integrations/supabase",
               "integrations/stripe",
-              "integrations/shopify",
-              "integrations/resend",
-              "integrations/clerk",
-              "integrations/make",
-              "integrations/replicate",
-              "integrations/21stdev"
+              "integrations/shopify"
+              ]
+            },        
+            {
+            "group": "Other platform tools",
+            "pages": [
+              "integrations/github",
+              "integrations/build-with-url"
             ]
-          }
+          }         
         ]
       },
       {
@@ -97,6 +97,8 @@
           "tips-tricks/using-videos",
           "tips-tricks/custom-fonts",
           "tips-tricks/npm-packages",
+          "tips-tricks/resend",
+          "tips-tricks/21stdev",
           "tips-tricks/from-idea-to-app",
           "tips-tricks/support-policy",
           "tips-tricks/avoiding-security-pitfalls",
@@ -132,11 +134,11 @@
       }
     ]
   },
- "contextual": {
-   "options": [
-     "copy"
-   ]
-},
+  "contextual": {
+    "options": [
+      "copy"
+    ]
+  },
   "footer": {
     "socials": {
       "x": "https://x.com/Lovable",
@@ -186,6 +188,14 @@
     {
       "source": "features/seo",
       "destination": "/tips-tricks/seo-geo"
+    },
+    {
+      "source": "integrations/resend",
+      "destination": "/tips-tricks/resend"
+    },
+    {
+      "source": "integrations/21stdev",
+      "destination": "/tips-tricks/21stdev"
     }
   ]
 }
