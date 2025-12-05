@@ -63,13 +63,13 @@
       {
         "tab": "Integrations",
         "pages": [
-          "integrations/introduction",         
-          "integrations/mcp-servers"                          
+          "integrations/introduction"                                  
         ],
         "groups": [
           {
-            "group": "Connectors",
+            "group": "MCP servers and connectors",
             "pages": [
+              "integrations/mcp-servers",
               "integrations/supabase",
               "integrations/stripe",
               "integrations/shopify"
