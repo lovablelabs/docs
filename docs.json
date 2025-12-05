@@ -62,20 +62,23 @@
       },
       {
         "tab": "Integrations",
-        "pages": [
-          "integrations/introduction"                               
-        ],
-        "groups": [
-          {
+          "groups": [
+            {
+            "group": "About integrations",
+            "pages": [           
+              "integrations/introduction"                                       
+            ]
+            },
+            {
             "group": "MCP servers and connectors",
             "pages": [
-              "integrations/mcp-servers",
+              "integrations/mcp-servers",       
               "integrations/supabase",
               "integrations/stripe",
               "integrations/shopify"
-            ]
-          },
-          {
+              ]
+            },        
+            {
             "group": "Other platform tools",
             "pages": [
               "integrations/github",
