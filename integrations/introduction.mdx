@@ -1,7 +1,8 @@
 ---
 title: "Introduction"
-description: "Extend your website's functionality by using integrations and external APIs."
+description: "Learn how Lovable integrates connectors, MCP servers, and any API to add capabilities to deployed apps, provide context during app creation, and securely call custom or third-party APIs."
 icon: "link"
+keywords: "Lovable integrations,Lovable connectors,MCP servers,Lovable API integrations,Integrate external APIs,Connect external services"
 ---
 
 Lovable integrates with a wide range of tools and platforms. There are three types of integrations, each serving a different purpose in how you build and run apps with Lovable.
@@ -10,7 +11,7 @@ Lovable integrates with a wide range of tools and platforms. There are three typ
 
 | **Category**          | **Purpose**                                                                                                   | **Example providers**                                        |
 | :-------------------- | :------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------- |
-| **Connector**         | Add capabilities and external services which serve users when your app is deployed                            | Perplexity, Firecrawl, ElevenLabs, Stripe, Shopify, Supabase |
+| **Connector**         | Add capabilities and external services that your deployed app can call                                        | Perplexity, Firecrawl, ElevenLabs, Stripe, Shopify, Supabase |
 | **MCP Server**        | Provide context, documents, and artifacts to the Lovable Agent during app creation and refinement             | Miro, Linear, Notion, Atlassian, n8n                         |
 | **Any API (Secrets)** | Integrate custom or third-party APIs not built into Lovable when your deployed app needs custom functionality | Any API                                                      |
 
@@ -51,7 +52,7 @@ Use MCP Servers when your app should be created using the real content your orga
 - **Miro:** using boards and diagrams to shape flows and UI
 - **Linear:** importing issues and specs to generate features
 - **Notion:** referencing docs and pages to guide app behavior
-- **Atlassian (Jira + Confluence):** aligning with tickets, roadmaps, and docs
+- **Atlassian (Jira and Confluence):** aligning with tickets, roadmaps, and documentation
 - **n8n:** mirroring or plugging into existing automation workflows
 
 ### **Key characteristics**
@@ -84,10 +85,10 @@ For APIs that use keys, tokens, or credentials, Lovable protects these secrets b
 
 **Setup**
 
-1. Ask Lovable to integrate the API . Include key details:
+1. Ask Lovable to integrate the API  and include key details:
    - Endpoint URLs and HTTP methods
-   - Authentication method (API key in header, query param, Bearer token, OAuth, etc.)
-   - Required headers (Content-Type, custom headers, etc.)
+   - Authentication method (API key header, query param, Bearer token, OAuth)
+   - Required headers (Content-Type, custom headers)
    - Request and response format examples (JSON, params, bodies)
    - OpenAPI spec or documentation link
 2. Enable [Lovable Cloud](/features/cloud).
@@ -101,4 +102,4 @@ For APIs that use keys, tokens, or credentials, Lovable protects these secrets b
 > I need an endpoint to fetch the current weather: `GET /weather?q={city}&units=metric&appid={API_KEY}`. \
 > Docs: https://openweathermap.org/current
 
-Lovable generates the integration with an Edge Function and a simple weather widget where users can enter a city and fetch weather data.
+Lovable generates the integration with an Edge Function and a weather widget where users can enter a city and fetch weather data.
