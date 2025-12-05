@@ -41,25 +41,25 @@
       },
       {
         "tab": "Features",
-            "pages": [
-              "features/modes",             
-              "features/code-mode",
-              "features/design",
-              "features/cloud",
-              "features/ai",
-              "features/knowledge",
-              "features/collaboration",
-              "features/private-projects",
-              "features/publish",
-              "features/analytics",
-              "features/custom-domain",                                         
-              "features/security",
-              "features/labs",
-              "features/business/sso",
-              "features/business/data-opt-out",
-              "features/business/design-templates"
-            ]
-          },
+        "pages": [
+          "features/modes",
+          "features/code-mode",
+          "features/design",
+          "features/cloud",
+          "features/ai",
+          "features/knowledge",
+          "features/collaboration",
+          "features/private-projects",
+          "features/publish",
+          "features/analytics",
+          "features/custom-domain",
+          "features/security",
+          "features/labs",
+          "features/business/sso",
+          "features/business/data-opt-out",
+          "features/business/design-templates"
+        ]
+      },
       {
         "tab": "Integrations",
         "groups": [
@@ -79,9 +79,6 @@
               "integrations/stripe",
               "integrations/shopify",
               "integrations/resend",
-              "integrations/clerk",
-              "integrations/make",
-              "integrations/replicate",
               "integrations/21stdev"
             ]
           }
@@ -132,11 +129,11 @@
       }
     ]
   },
- "contextual": {
-   "options": [
-     "copy"
-   ]
-},
+  "contextual": {
+    "options": [
+      "copy"
+    ]
+  },
   "footer": {
     "socials": {
       "x": "https://x.com/Lovable",
