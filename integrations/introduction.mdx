@@ -8,27 +8,30 @@ Lovable integrates with a wide range of tools and platforms. There are three typ
 
 ## Lovable integrations overview
 
-| **Category**   | **Purpose**                                                                                                         | **Example providers**                                        | **Used by**   |
-| :------------- | :------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------- | :------------ |
-| **Connector**  | Add capabilities to your published app                                                                              | Perplexity, Firecrawl, ElevenLabs, Stripe, Shopify, Supabase | Deployed app  |
-| **MCP Server** | Provide context and content while building the app                                                                  | Miro, Linear, Notion, Atlassian, n8n                         | Lovable Agent |
-| **Any API**    | Integrate any external API to add capabilities, which are not built-in or managed by Lovable, to your published app | Any custom or third-party API                                | Deployed app  |
+| **Category**          | **Purpose**                                                                                                   | **Example providers**                                        |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------- |
+| **Connector**         | Add capabilities and external services which serve users when your app is deployed                            | Perplexity, Firecrawl, ElevenLabs, Stripe, Shopify, Supabase |
+| **MCP Server**        | Provide context, documents, and artifacts to the Lovable Agent during app creation and refinement             | Miro, Linear, Notion, Atlassian, n8n                         |
+| **Any API (Secrets)** | Integrate custom or third-party APIs not built into Lovable when your deployed app needs custom functionality | Any API                                                      |
 
 ## Connectors:  Add capabilities to your published app
 
-Connectors let your Lovable apps call external services **after the app is deployed**.\
-They function like plug-ins that give your app new abilities when the users interact with it.
+Connectors are the easiest way to extend the power of your Lovable app. They act like plug-ins that your app can call whenever it needs to perform an action or fetch data.
 
-Use Connectors when your deployed app needs to talk to another service or gain an operational capability.
+Connectors are ideal when your **deployed app** needs to interact with external services to gain operational capabilities.
 
-### Examples
+### Examples and use cases
 
-- **Perplexity** → research and answering questions
-- **Firecrawl** → website scraping and crawling
-- **ElevenLabs** → text-to-speech and audio generation
-- **Stripe** → payments
-- **Shopify** → ecommerce
-- **Supabase** → authentication, database, storage
+- **Perplexity**: asking questions or running research
+- **Firecrawl**: scraping or crawling websites
+- **ElevenLabs**: generating audio or speech
+- **Stripe**: handling payments or subscriptions
+- **Shopify**: managing ecommerce operations
+- **Supabase**: authenticating users and storing data
+
+  <Tip>
+    When you need backend functionality, such as authentication, database, and storage, use [Lovable Cloud](/features/cloud), our built-in full-stack hosting platform.
+  </Tip>
 
 ### Key characteristics
 
@@ -37,47 +40,47 @@ Use Connectors when your deployed app needs to talk to another service or gain a
 - Provide functional capabilities your app can call while in use
 - Managed in **Settings → Integrations → Connectors**
 
-## **MCP servers:  Provide context while building**
+## **MCP servers:  Provide context during app creation**
 
 MCP servers give the Lovable Agent access to content and artifacts inside the tools you already use, **during app creation**. They provide context so the agent can build apps that reflect your real workflows.
 
-Use MCP Servers when your app should understand the documents, plans, or artifacts your team already has.
+Use MCP Servers when your app should be created using the real content your organization already relies on.
 
 ### **Examples**
 
-- **Miro** → boards, diagrams, user journeys
-- **Linear** → issues, specifications, roadmaps
-- **Notion** → documentation and structured content
-- **Atlassian** → Jira and Confluence pages
-- **n8n** → automation workflows
+- **Miro:** using boards and diagrams to shape flows and UI
+- **Linear:** importing issues and specs to generate features
+- **Notion:** referencing docs and pages to guide app behavior
+- **Atlassian (Jira + Confluence):** aligning with tickets, roadmaps, and docs
+- **n8n:** mirroring or plugging into existing automation workflows
 
 ### **Key characteristics**
 
-- Used only during app generation and iteration
-- Provide context, not operational application features
-- Do not run inside the deployed app
+- Used only while building the app
+- Provide context, not app functionality
+- Not included in your deployed app
 - Managed in **Settings → Integrations → Your MCP Servers**
 
 ## Secrets: Integrate any API
 
-Lovable can integrate with **any external API**, public or private, authenticated or not.
+Lovable can integrate with **any external API**, public or private, authenticated or not. This is the most flexible integration type, allowing you to bring in functionality Lovable does not natively support.
 
 When you ask Lovable to integrate an API, it automatically chooses the correct approach:
 
-- **If the API requires no authentication**, Lovable calls it directly from your app’s code.
+- **If the API requires no authentication**, your app calls the API directly.
 - **If the API requires authentication**, Lovable prompts you to enable Cloud, add a secret, and automatically creates an Edge Function to protect sensitive credentials.
 
 ### APIs without authentication
 
-Just ask Lovable to integrate the API. No setup needed. For example:
+If an API requires no credentials, there is no setup required. Just ask Lovable to integrate the API. For example:
 
-> Integrate Chuck Norris Jokes – [**<u>https://api.chucknorris.io/jokes/random</u>**](https://api.chucknorris.io/jokes/random)
+> Integrate Chuck Norris Jokes: [**<u>https://api.chucknorris.io/jokes/random</u>**](https://api.chucknorris.io/jokes/random)
 
-Lovable detects that no credentials are required and adds the feature directly to your app.
+Lovable detects that no key is required and adds the feature directly to your app.
 
 ### Authenticated APIs (requires secrets)
 
-APIs requiring keys or tokens must call external services through Edge Functions so your credentials stay secure.
+For APIs that use keys, tokens, or credentials, Lovable protects these secrets by generating an Edge Function.
 
 **Setup**
 
