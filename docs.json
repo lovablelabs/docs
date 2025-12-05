@@ -77,9 +77,7 @@
               "integrations/mcp-servers",
               "integrations/supabase",
               "integrations/stripe",
-              "integrations/shopify",
-              "integrations/resend",
-              "integrations/21stdev"
+              "integrations/shopify"              
             ]
           }
         ]
@@ -94,6 +92,8 @@
           "tips-tricks/using-videos",
           "tips-tricks/custom-fonts",
           "tips-tricks/npm-packages",
+          "tips-tricks/resend",
+          "tips-tricks/21stdev",
           "tips-tricks/from-idea-to-app",
           "tips-tricks/support-policy",
           "tips-tricks/avoiding-security-pitfalls",
@@ -183,6 +183,14 @@
     {
       "source": "features/seo",
       "destination": "/tips-tricks/seo-geo"
+    },
+    {
+      "source": "integrations/resend",
+      "destination": "/tips-tricks/resend"
+    },
+    {
+      "source": "integrations/21stdev",
+      "destination": "/tips-tricks/21stdev"
     }
   ]
 }
