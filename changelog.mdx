@@ -2,8 +2,79 @@
 title: "Changelog"
 description: "Stay up to date with new features, improvements, and bug fixes shipped in Lovable."
 icon: "clock-rotate-left"
-rss: true
+rss: "true"
 ---
+
+<Update label="Dec 10, 2025">
+  **A more Lovable dashboard**
+
+  ![New Dashborad Dec 10 2025 Pn](/images/changelog-images/new-dashborad-dec-10-2025.png)
+
+  We launched a completely redesigned dashboard with major improvements to navigation and project organization.
+
+  - Star your go-to projects for quick access
+  - Stay organized with folders
+  - Find projects faster with new filters and global search
+  - Discover apps from the community
+  - Switch between grid and list views
+  - Enjoy new themes and theme selector (User settings → Appearance)
+  - Use bulk actions: delete, move, remove from folders, transfer between workspaces
+
+  **Opus 4.5 as the main Agent**
+
+  We upgraded Lovable’s agent to Claude Opus 4.5, bringing major improvements to planning, design quality, and accuracy.
+
+  This results in smoother development loops, higher publish rates, and better overall project success. Available to all users at no additional cost.
+
+  **New custom domain actions**
+
+  New actions are now available to help troubleshoot and recover domain configuration issues.
+
+  - **Check status**: use to check the latest status and verify the DNS records. Appears when the domain status is **Verifying** or **Unable to verify**. Check that your `A` and `TXT` records are added correctly at your DNS provider, especially the full TXT value.
+  - **Recover**: use to review displayed DNS records and update them at your DNS provider to reconnect your domain. Appears when domain status is **Offline**.
+  - **Reconnect**: use to connect the domain again. Appears when domain status is **Removed**.
+
+  **Cloud instance upgrade alerts**
+
+  You now receive upgrade alerts when approaching your Lovable Cloud resource limits to ensure fast, reliable performance. We also added a detailed breakdown of usage (disk space, disk I/O, CPU) under Cloud → Advanced settings.
+
+  **Connectors hub (formerly Integrations)**
+
+  The Integrations page is now called Connectors, and the UI has been reorganized to clearly distinguish between:
+
+  - **Shared connectors**: Add functionality to your apps. Configured once by admins, available to everyone in your workspace. For example, Lovable Cloud, Stripe, Shopify.
+  - **Personal connectors**: Connect your personal tool accounts to provide context while building. Only you can access your connections. For example, Notion, Linear, Miro.
+
+  **Support for Miro MCP**
+
+  You can now connect Lovable to your Miro account to access boards and diagrams directly from your workspace.
+
+  **Support for unauthenticated MCP servers**
+
+  Business and Enterprise plans can now add custom MCP servers that don’t require authentication. 
+
+  **Manage permissions for personal connectors**
+
+  You can now configure how Lovable Agent accesses your personal tool connections. This gives a clearer overview of available tools and lets you choose default behavior.
+
+  **Control who can publish externally**
+
+  On Enterprise plans, admins can now restrict external publishing to:
+
+  - Admins & owners
+  - Owners only
+
+  This improves security and supports governance for organizations handling sensitive data.
+
+  **Chat suggestions on mobile**
+
+  Context-aware prompts now appear in chat on mobile, helping you build faster with fewer taps.
+
+  **Bug fixes and improvements:**
+
+  - Lovable’s generated designs are now more creative and polished.
+  - Saving visual and code edits is now ~20% faster.
+</Update>
 
 <Update label="Nov 26, 2025">
   **MCP servers**
