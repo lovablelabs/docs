@@ -1,206 +1,46 @@
 ---
 title: "21st.dev integration"
-description: "Build High-Converting AI Landing Pages Using Lovable"
+description: "Add Pre-Built UI Components to Your Lovable Projects"
 icon: "ruler-combined"
 ---
 
-Most AI-generated landing pages look the same—vague sections, off-brand colors, and no personality. But it doesn’t have to be that way.
-
-We are going to share a structured workflow using Lovable and 21stdev that creates landing pages clients _actually_ love (like [this one](https://lovable.dev/projects/35d72d2e-6e25-40e5-9b0c-c0d1a7c1b727)).
-
-![Hero Section Landing Page](/images/hero-section.png)
+21st.dev provides a library of pre-built UI components that you can instantly add to your Lovable projects with a simple copy-paste workflow. Do this to improve the design of your project and make your Lovable projects look less generic. 
 
 ## Step-by-step guide
 
-From design inspiration to final polish, here’s the step-by-step guide he uses to build fast without sacrificing quality:
+<Frame>
+  <video autoPlay loop muted playsInline className="w-full">
+    <source src="/assets/tips-tricks/videos/21st-dev.mp4" type="video/mp4" />
+  </video>
+</Frame>
 
 <Steps>
-  <Step title="Start with Design Inspiration, Not a Prompt">
-    Before writing a single word of prompt, browse [Dribbble](https://dribbble.com/) or [Behance](https://www.behance.net/). Look for designs with:
-
-    - Clean typography and spacing
-    - Clear CTAs and minimal layout
-    - Subtle interactions (not overdesigned)
-
-    <Tip>
-      Pick something you can realistically replicate. Avoid overly complex 3D designs if you don’t plan to recreate them.
-    </Tip>
-    <Info>
-      A real client asked for a "modern and minimal" design. That informed the visual starting point. Avoid picking something you can’t deliver.
-    </Info>
+  <Step title="Go to 21st.dev">
+    Navigate to [21st.dev](https://21st.dev/) to browse the component library.
   </Step>
-  <Step title="Start with a blank project">
-    Start your Lovable project by prompting:
-
-    <Note>
-      Start with a blank empty project. We will be adding details afterwords.
-    </Note>
-  </Step>
-  <Step title="Convert WebP to PNG and Prep Your Design Screenshot ">
-    Once you find your reference design, download it. If it saves in WebP format, use an online converter to change it to PNG so it can be easily used in Lovable or GPT workflows.
-
-    <Note>
-      Tools we recommend: https://cloudconvert.com/webp-to-png
-    </Note>
-  </Step>
-  <Step title="Turn Inspiration into a Detailed Prompt Using Chat Mode">
-    Use Lovable [Chat Mode](https://docs.lovable.dev/features/labs#chat-mode) to extract:
-
-    - Page sections (hero, features, FAQ, etc.)
-    - Layout structure, spacing, and content order
-    - Font families, color palettes, and gradients
-    - Animation types, hover effects, and transitions
-
-    <Info>
-      Lovable [Chat mode](https://docs.lovable.dev/features/labs#chat-mode) (or customGPT) is also trained to recommend Unsplash images for blog thumbnails and illustrations.
-    </Info>
-    <Warning>
-      Lovable occasionally mislabels things (e.g., "Space Grotesque" font was misspelled). Always review and correct prompt outputs before pasting into Lovable.
-    </Warning>
-    You can even ask Lovable chat mode to elaborate on sections or rewrite the prompt with better UX suggestions.
-  </Step>
-  <Step title=" Generate the First Draft with Lovable">
-    Paste the detailed prompt into Lovable Edit Mode. Then:
-
-    - Upload your PNG screenshot as a reference
-    - Add notes like "_Use Space Grotesque font_" or "Use Unsplash for blog thumbnails"
-
-    This combo leads to far more accurate designs than vague, single-sentence prompts.
-
-    <Info>
-      Please note how much Lovable faster this feels compared to setting up Tailwind or Bootstrap manually just a year ago.
-    </Info>
-  </Step>
-  <Step title="Edit in Real Time: Visual + Text Prompts">
-    Use Lovable’s [visual editing tool](https://docs.lovable.dev/features/visual-edit) to:
-
-    - Resize images (e.g., "make this image 800px wide")
-    - Position hero images (e.g., "place this image on the right side")
-    - Align design sections with the reference image
-
-    Combine this with natural language edits for precision.
-  </Step>
-  <Step title="Polish the Design with 21stdev Components">
-    Use [21stdev](https://21st.dev/)’s prebuilt UI components to upgrade:
-
-    ![21stdev custom component ](/images/21stdev.png)
+  <Step title="Find a Component You Like">
+    Browse through the available components to find one that fits your needs:
 
     - Hero sections
-    - Navigation bars with hover effects
+    - Navigation bars
     - Testimonial layouts
     - CTAs and feature grids
-
-    Find a component you like, copy the prompt, and paste it into Lovable. Be sure to match the visual tone with the rest of the site.
+    - Form components
   </Step>
-  <Step title="Fix AI Misinterpretations">
-    AI saves time, but expect cleanup:
-
-    ![Add spec component in landing page](/images/component.png)
-
-    - Adjust branding (Lovable defaults to blue)
-    - Improve spacing and padding manually
-    - Use consistent typography throughout
-    - Add gradients or depth for a non-flat look
-
-    Make the design feel _intentional_, not "default."
+  <Step title="Open the Component and Copy the Prompt">
+    Click on your chosen component to open its detail page. Select **Lovable** as the prompt type, then copy the prompt.
   </Step>
-  <Step title="Optimize for Mobile (Non-Negotiable)">
-    Don’t skip this. Ensure:
-
-    ![Mobile Responsive website](/images/mobile-responsive.png)
-
-    - Inputs go full-width
-    - Font sizes adapt to smaller screens
-    - Buttons are tap-friendly
-    - Sections stack well and scroll smoothly
-
-    Mobile UX is critical for conversions.
+  <Step title="Paste into Lovable">
+    Open your Lovable project and paste the copied prompt. 
   </Step>
-  <Step title="Add Light Animations and Microinteractions">
-    To modernize the feel:
-
-    - Use fade-ins for hero sections
-    - Add button hover effects
-    - Animate sections on scroll
-    - Use subtle background movement
-
-    Lovable can integrate [Framer Motion](https://motion.dev/) out-of-the-box if prompted right.
-
-    ![Add animation landing page](/images/animation.png)
+  <Step title="Specify Component Placement">
+    Add a line specifying where you want the component to appear in your project (e.g., "Add this to the homepage hero section" or "Use this as the background").
   </Step>
-  <Step title="Generate Custom Visuals with AI (Optional)">
-    Craft prompts for ChatGPT, Midjourney or Ideogram based on your favorite elements from the reference design.
+  <Step title="Let Lovable Integrate the Component">
+    Send your message. Lovable will automatically copy the component code into your codebase and place it where you specified.
 
-    **Steps:**
-
-    <Steps>
-      <Step title="Screenshot the desired visual section">
-        
-      </Step>
-      <Step title="Ask ChatGPT to write a matching prompt">
-        
-      </Step>
-      <Step title="Generate the image in your AI tool">
-        
-      </Step>
-      <Step title="Remove the background, then reinsert into Lovable">
-        
-      </Step>
-    </Steps>
     <Note>
-      The latest ChatGPT 4o seems worth the test.
+      The component will inherit your project's existing styles and can be further customized using Visual Edits or prompting.
     </Note>
-    This is especially useful for 3D visuals or thematic illustrations.
-  </Step>
-  <Step title="Deploy with a Single Click">
-    Once you’re happy with the result:
-
-    - Click "Deploy" in Lovable
-    - Connect a custom domain via Netlify
-
-    Your site goes live in minutes. No manual setup needed.
-  </Step>
-  <Step title="Share with Clients & Iterate">
-    Copy the public link and share with your client. They can:
-
-    - Review it live
-    - Suggest tweaks
-    - Approve quickly
-
-    You can continue refining sections using Lovable’s visual or prompt-based editor. It’s a fast iteration loop.
   </Step>
 </Steps>
-
-## Why this approach works?
-
-AI isn't magic. But with structure, it becomes a superpower. Compared to unstructured prompting:
-
-- The first draft is 10x closer to done
-- You spend less time fixing errors
-- Every section has a purpose
-- The final product feels custom, not cookie-cutter
-
-It’s a blend of automation **\+** craftsmanship.
-
-## Key takeaways
-
-- Start with strong visual inspiration
-- Use structured prompts with Lovable Chat Mode
-- Add screenshots and clarify expectations
-- Upgrade sections using 21stdev components
-- Fix design quirks and optimize for mobile
-- Animate where it matters
-- Deploy fast, iterate faster
-
-This is the workflow [Prajwal](https://x.com/PrajwalTomar_/status/1902371273147064772) uses everyday for his clients - that we tried in-house - to build fast, beautiful, high-converting landing pages—powered by Lovable AI but guided by intention.
-
-Happy Building\!
-
-## More resources
-
-- [Brock Mesarich's tutorial](https://www.youtube.com/watch?v=v48gJFQvE1Y&pp=ygUPbG92YWJsZSAyMXN0ZGV2)
-- Lukas Margerie's tutorial ([1](https://www.youtube.com/watch?v=-GiBI0leMHU&t=30s&pp=ygUPbG92YWJsZSAyMXN0ZGV2) - [2](https://www.youtube.com/watch?v=uqdFobvoRQQ&pp=ygUPbG92YWJsZSAyMXN0ZGV20gcJCb0Ag7Wk3p_U))
-- [AI Jason's tutorial](https://www.youtube.com/watch?v=8MPElOdNjtk&pp=ygUPbG92YWJsZSAyMXN0ZGV2)
-- [Mark Kashef's tutorial](https://www.youtube.com/watch?v=Zv7N0SxfpRM&t=269s&pp=ygUPbG92YWJsZSAyMXN0ZGV2)
-- [Alejavi Rivera's tutorial](https://www.youtube.com/watch?v=mMBp0uGZOWw&pp=ygUPbG92YWJsZSAyMXN0ZGV2) (spanish)
-- [Fazt Code's tutorial](https://www.youtube.com/watch?v=RGZeP1_oMoY&pp=ygUPbG92YWJsZSAyMXN0ZGV2)
