@@ -1,9 +1,9 @@
 ---
-title: "Integrate Lovable with your tools using MCP connectors"
-sidebarTitle: "MCP connectors"
+title: "Integrate Lovable with your tools using MCP servers"
+sidebarTitle: "MCP servers"
 description: "Connect Lovable to your team’s tools and enable context-driven creation, moving from idea to validation to live app faster than ever."
 icon: "plug"
-keywords: ["Lovable integrations","Lovable connections","MCP server","Model Context Protocol","MCP connector","AI workspace automation","Notion","Linear","Jira","Confluence","Atlassian","Miro","n8n","Canva","custom MCP server","AI tools for productivity"]
+keywords: ["Lovable integrations","Lovable connections","MCP server","Model Context Protocol","MCP server","AI workspace automation","Notion","Linear","Jira","Confluence","Atlassian","Miro","n8n","Canva","custom MCP server","AI tools for productivity"]
 ---
 
 **MCP (Model Context Protocol)** is an open standard that connects AI systems, like Lovable, to external tools, services, and data sources.
@@ -12,11 +12,11 @@ By connecting Lovable to tools such as Notion, Atlassian, or Linear, the Lovable
 
 When you connect an MCP server, Lovable can read structured data (like text from docs, issues, or diagrams) and, where supported, perform limited actions such as creating or updating items.
 
-Lovable includes several prebuilt MCP connectors on all plans, with the option to add custom ones on Business and Enterprise plans.
+Lovable includes several prebuilt MCP servers on all plans, with the option to add custom ones on Business and Enterprise plans.
 
-## Why connect MCP connectors
+## Why connect MCP servers
 
-In Lovable, MCP connectors unlock two key capabilities:
+In Lovable, MCP servers unlock two key capabilities:
 
 - **Bring your existing context into Lovable.**\
   The Lovable Agent can read your team’s documentation, tickets, and design files to build prototypes and flows aligned with your standards.
@@ -25,7 +25,7 @@ In Lovable, MCP connectors unlock two key capabilities:
 
 Lovable becomes more powerful when it understands your team’s world, eliminating guesswork, speeding up iteration, and helping you go from **idea to live app faster than ever.**
 
-## Prebuilt MCP connectors
+## Prebuilt MCP servers
 
 | Tool                                                                                                                                | Description                                         | Example capabilities                                                                                                                                                                                                                                                              |
 | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -47,18 +47,18 @@ In addition to these steps, you need to do the following in [n8n](https://docs.n
 - Go to **Settings → MCP access** and toggle **Enable MCP access** (requires instance owner or admin permissions)
 - For each workflow you want to expose, go to **Settings** in the workflow editor and toggle **Available in MCP.**
 
-## Custom MCP connectors (Business and Enterprise)
+## Custom MCP servers (Business and Enterprise)
 
-For full flexibility, you can connect **custom MCP connectors** to bring internal or third-party systems into Lovable. This is perfect for private APIs, internal CRMs, or custom data sources.
+For full flexibility, you can connect **custom MCP servers** to bring internal or third-party systems into Lovable. This is perfect for private APIs, internal CRMs, or custom data sources.
 
-Explore [remote MCP connectors](https://mcpservers.org/remote-mcp-servers), a curated list of high-quality remote MCP connectors compatible with Lovable.
+Explore [remote MCP servers](https://mcpservers.org/remote-mcp-servers), a curated list of high-quality remote MCP servers compatible with Lovable.
 
 ### How to connect a custom MCP server
 
 To connect a custom or internal MCP server:
 
 1. Go to **Settings → Connectors → Personal connectors.**
-2. Click **Set up** next to **New MCP connectors**.
+2. Click **Set up** next to **New MCP servers**.
 3. **Server name**: Enter a clear name for your server (for example, _Internal CRM_ or _Analytics API_).
 4. **Server URL**: Enter the address where Lovable can reach your MCP server.
 5. **Authentication:**
@@ -93,4 +93,4 @@ For quick access on project level, click `+` in the prompt box and go to **Conne
 On **Business** and **Enterprise** plans, workspace **admins and owners** can manage which connectors are available for all users:
 
 - Go to **Settings → Privacy & security** to enable or disable all **MCP server access** for the entire workspace.
-- Go to **Settings → Connectors → Admin settings** to enable or disable individual MCP connectors.
+- Go to **Settings → Connectors → Admin settings** to enable or disable individual MCP servers.
