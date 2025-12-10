@@ -5,6 +5,99 @@ icon: "clock-rotate-left"
 rss: true
 ---
 
+<Update label="Dec 10, 2025">
+  **A more Lovable dashboard**
+
+  ![New Lovable Dashboard](/images/changelog-images/new-dashborad-dec-10-2025.png)
+
+  We launched a completely redesigned dashboard with major improvements to navigation and project organization.
+
+  - Star your go-to projects for quick access
+  - Stay organized with folders
+  - Find projects faster with new filters and global search
+  - Discover apps from the community
+  - Switch between grid and list views
+  - Select new dashboard themes (User settings → Appearance)
+  - Use bulk actions: delete, move, remove from folders, transfer between workspaces
+
+  **Opus 4.5 as a core model**
+
+  We upgraded Lovable’s Agent to incorporate **Claude Opus 4.5** for core parts, bringing major improvements to planning, design quality, and accuracy. This results in smoother development loops, 20% fewer errors, and better overall project success. Available automatically to all users at no additional cost.
+
+  [Learn more](https://lovable.dev/blog/claude-opus-4-5-in-chat)
+
+  **Chat before you build**
+
+  ![Start From Chat Mode](/images/changelog-images/start-from-chat-mode-dec-10-2025.png)
+
+  You can now start any new project in **Chat mode**. Instead of immediately generating an app from your first prompt, you have the option to have a conversation with Lovable to refine your ideas before any code is written.
+
+  [Learn more](https://lovable.dev/blog/chat-mode-and-questions)
+
+  **New custom domain actions**
+
+  New actions are now available to help troubleshoot domain configuration issues.
+
+  - **Check status**: Use to check the latest status and verify the DNS records. Appears when the domain status is **Verifying** or **Unable to verify**. Check that your `A` and `TXT` records are added correctly at your DNS provider, especially the full TXT value.
+  - **Recover**: Use to review displayed DNS records and update them at your DNS provider to reconnect your domain. Appears when domain status is **Offline**.
+  - **Reconnect**: Use to connect the domain again. Appears when domain status is **Removed**.
+
+  [Learn more](https://docs.lovable.dev/features/custom-domain)
+
+  **Cloud instance upgrade alerts**
+
+  You now receive alerts when approaching your Lovable Cloud resource limits. This lets you upgrade your instance in a timely manner to ensure fast and reliable performance. The upgrade alert in Cloud → Advanced settings also includes a detailed breakdown of usage (disk space, disk IO, CPU).
+
+  [Learn more](https://docs.lovable.dev/integrations/cloud#advanced-settings-upgrade-instance)
+
+  **Connectors hub (formerly Integrations)**
+
+  The Integrations page is now called **Connectors**, and the information has been reorganized to clearly distinguish between:
+
+  - **Shared connectors**: Add functionality to your apps. Configured once by admins, available to everyone in your workspace. For example, Lovable Cloud, Stripe, Shopify.
+  - **Personal connectors**: Connect your personal tool accounts to provide context while building. Only you can access your connections. For example, Notion, Linear, Miro.
+
+  [Learn more](https://docs.lovable.dev/integrations/introduction)
+
+  **Miro MCP available as a personal connector**
+
+  You can now connect Lovable to your Miro account to give the Agent context from your boards and diagrams and generate apps that reflect what you mapped.
+
+  [Learn more](https://docs.lovable.dev/integrations/mcp-servers)
+
+  **Support for unauthenticated MCP servers**
+
+  Business and Enterprise plans can now add custom MCP servers that don’t require authentication.
+
+  [Learn more](https://docs.lovable.dev/integrations/mcp-servers)
+
+  **Manage tool permissions for personal connectors**
+
+  You now get a clearer overview of tools for each personal connector and can set how the Agent is allowed to use them by default: always allow, ask each time, or never allow.
+
+  **Control who can publish externally**
+
+  On Enterprise plans, admins can now restrict external publishing to:
+
+  - Admins & owners
+  - Owners only
+
+  This improves security and supports governance for organizations handling sensitive data.
+
+  [Learn more](https://docs.lovable.dev/features/publish)
+
+  **Chat suggestions on mobile**
+
+  Context-aware prompts now appear in chat on mobile, helping you build faster with fewer taps.
+
+  **Bug fixes and improvements**
+
+  - Lovable’s generated designs are now more creative and polished.
+  - Lovable is now better at understanding and using your imported packages, leading to fewer errors and smoother builds.
+  - Default project visibility has been updated to private for all Lovable workspaces that previously had default project visibility set to public.
+  - Saving visual and code edits is now ~20% faster.
+</Update>
+
 <Update label="Nov 26, 2025">
   **MCP servers**
 
