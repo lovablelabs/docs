@@ -70,15 +70,15 @@
             {
             "group": "Shared connectors",
             "pages": [                     
-              "features/cloud",
-              "features/ai",
+              "integrations/cloud",
+              "integrations/ai",
               "integrations/supabase",
               "integrations/stripe",
               "integrations/shopify"            
               ]
             },
             {
-            "group": "Personal connectors",
+            "group": "Personal connectors (MCP servers)",
             "pages": [
               "integrations/mcp-servers"
             ]
