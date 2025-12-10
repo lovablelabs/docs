@@ -2,30 +2,13 @@
 title: "Publish your app"
 description: "Publish your Lovable app and share it with the right audience"
 icon: "rocket"
-keywords:
-  [
-    "publish Lovable app",
-    "publish app",
-    "publish website",
-    "publish project",
-    "internal apps",
-    "website access settings",
-    "private app publishing",
-    "restrict external publishing",
-    "secure app deployment",
-    "publish internal tools",
-    "unpublish app",
-    "Lovable Business plan",
-    "Lovable Enterprise plan",
-    "publish to custom domain",
-    "update published app",
-  ]
+keywords: ["publish Lovable app","publish app","publish website","publish project","internal apps","website access settings","private app publishing","restrict external publishing","secure app deployment","publish internal tools","unpublish app","Lovable Business plan","Lovable Enterprise plan","publish to custom domain","update published app","publish to workspace","favicon"]
 ---
 
-Publishing turns your Lovable project into a live web app that you can share with others. Lovable makes it simple to publish your app to the web — whether you’re sharing publicly or keeping your app private within your workspace.
+Publishing turns your Lovable project into a live web app that you can share with others. Lovable makes it simple to publish your app to the web, whether you’re sharing publicly or keeping your app private within your workspace.
 
 - **Free and Pro plans:** Your published website is **public** and accessible to anyone with the link. You cannot restrict access on these plans, so make sure you're ready to share before publishing.
-- **Business and Enterprise plans:** You can **control who can view your app** — either anyone with the link or only authenticated workspace members.
+- **Business and Enterprise plans:** You can **control who can view your app**, either anyone with the link or only authenticated workspace members.
 
 Once published, you can update your live app at any time and connect a custom domain for a polished, on-brand experience.
 
@@ -45,10 +28,10 @@ Access can be managed at both the **workspace level** and **project level**.
 
 Workspace **admins** and **owners** can set a default access policy for all published apps.
 
-Go to **Workspace settings → Privacy & Security → Default website access**, and choose one of:
+Go to **Workspace settings → Privacy & security → Default website access**, and choose one of:
 
-- **Anyone with link:** All published apps are public by default and accessible to anyone.
-- **Workspace members**: All published apps are private by default and restricted to authenticated workspace members only. This ensures new apps stay private unless explicitly made public.
+- **Anyone:** All published apps are public by default and accessible to anyone.
+- **Workspace**: All published apps are private by default and restricted to authenticated workspace members only. This ensures new apps stay private unless explicitly made public. When selected, the publish button label changes to **Publish to workspace.**
 
 ### Project-level setting
 
@@ -56,37 +39,42 @@ You can override the workspace default for individual projects.
 
 Go to **Publish** and set **Who can access?** to:
 
-- **Anyone with link:** Accessible to anyone with the URL.
-- **Workspace members:** Restricted to signed-in workspace members.
+- **Anyone:** Accessible to anyone with the URL.
+- **Workspace:** Restricted to signed-in workspace members. When selected, the publish button label changes to **Publish to workspace.**
 
 If you don’t change this, the project inherits the workspace default.
 
 ## Publishing your project
 
-<Note>
-  On Business and Enterprise plans, only workspace owners and admins can publish
-  projects.
-</Note>
+By default, editors and above can publish projects on all plans. 
+
+- On Business and Enterprise plans, this includes both publishing internally to the workspace and publishing externally to the web.
+- On **Enterprise** plans, workspace admins and owners can go to **Workspace settings → Privacy & security → Who can publish externally** to restrict **external publishing** to:
+  - Admins & owners
+  - Owners only
+
+Follow the steps below:
 
 1. In your project, click the **Publish** icon in the top-right corner.
 2. In the **Publish** modal, review and configure:
-   - **Website address**: By default, your app is published to `[project-url-slug].lovable.app`. You can edit the `[project-url-slug]`or add a [custom domain](/features/custom-domain) (available on paid plans).
-   - **Website info**: Customize your app's metadata - icon, title, description, and share image.
+   - **Subdomain**: Add a subdomain or leave the input field empty for Lovable to auto-generate a subdomain. By default, your app is published to `[your-subdomain].lovable.app`. Once published, you can add a [custom domain](/features/custom-domain) (available on paid plans).
+   - **Website info**: Lovable provides **site metadata**, but you can customize how your site appears in browser tabs, search results, and link previews.
+     - **Icon & title**: the site icon (favicon) and site title shown in browser tabs, search results, and link previews. Click on the icon to upload a new one. Click on the title text to update it.
+     - **Description**: the meta description used in search results and link previews. Click on the text to update it.
+     - **Share image**: the social sharing image (OG image) shown when your website link is shared, for example, on social media and messaging apps. Click to upload an image. By default, a screenshot of the app is used.
    - Choose **who can access** your published app, configurable only on Business and Enterprise plans:
-     - **Anyone with link**
-     - **Workspace members**
+     - **Anyone**
+     - **Workspace**
 3. Click **Review security** to surface potential security vulnerabilities before going live.
 
 <Danger>
-  Always perform a security review before publishing. This helps identify
-  vulnerabilities that could expose sensitive data or allow unauthorized access.
-  Learn more in [Security](/features/security).
+  Always perform a security review before publishing. This helps identify vulnerabilities that could expose sensitive data or allow unauthorized access. Learn more in [Security](/features/security).
 </Danger>
 
 4. When ready, click **Publish**.\
    Once deployment is complete, you'll receive a pop-up with the published link.
 
-You can continue to iterate on your app — when ready to push updates, click **Update** in the **Publish** modal.
+You can continue to iterate on your app, and when ready to push updates, click **Update** in the **Publish** modal.
 
 ## FAQ
 
@@ -97,22 +85,30 @@ You can continue to iterate on your app — when ready to push updates, click **
   <Accordion title="Why can't I see my changes on the published version of my site?">
     Changes aren’t automatically pushed to your live app. To publish updates, click **Publish** and then **Update**.
   </Accordion>
-  <Accordion title="Can I change my published link (website URL)?">
-    Yes. You can change your project URL slug, which forms your [lovable.app](http://lovable.app) website address in two ways:
+  <Accordion title="Can I change my site metadata (favicon, site title, meta description, OG image)?">
+    Yes, at any time, you can customize how your site appears in browser tabs, search results, and link previews.
 
-    1. Click **Publish**, edit your website address, and click **Update**.
-    2. Go to **Project settings → Edit URL Slug**, change the URL slug, and click **Update URL Slug**. 
+    By default, Lovable generates site metadata, adds a Lovable logo as the favicon, and a screenshot of your app as the Open Graph (OG) image.
+
+    To change this, click **Publish** and review and configure the **website info**:
+
+    - **Icon & title**: the site icon (favicon) and page title shown in browser tabs, search results, and link previews. Click on the icon to upload a new one. Click on the page title text to update it.
+    - **Description**: the meta description used in search results and link previews. Click on the text to update it.
+    - **Share image**: the social sharing image (OG image) shown when your website link is shared, for example, on social media and messaging apps. Click to upload an image.
+
+    See [Implement SEO and GEO best practices](/tips-tricks/seo-geo) for more information on optimizing your Lovable apps for search engines, social media previews, and AI systems.
+  </Accordion>
+  <Accordion title="Can I change my published link (website URL)?">
+    Yes. You can change your project **URL subdomain**, which forms your [lovable.app](http://lovable.app) website address in two ways:
+
+    1. Click **Publish**, edit your subdomain, and click **Update**.
+    2. Go to **Project settings → Edit URL Subdomain**, change the subdomain, and click **Update URL Subdomain**. 
 
     Note that renaming the project  does not change the project URL, it only changes the project display name.
-
   </Accordion>
   <Accordion title="Can I unpublish my project?">
-    Yes. You can unpublish your project in two ways:
-
-    1. Go to **Project settings** and click **Unpublish project**.
-    2. Click **Publish**, expand the **Advanced** section, and click **Unpublish**.
+    Yes. You can unpublish your project. Go to **Project settings → Unpublish project** and click **Unpublish**.
 
     Once unpublished, your app will no longer be accessible to anyone.
-
   </Accordion>
 </AccordionGroup>
