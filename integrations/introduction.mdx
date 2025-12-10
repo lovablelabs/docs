@@ -2,29 +2,29 @@
 title: "Introduction"
 description: "Learn how Lovable integrates connectors, MCP servers, and any API to add capabilities to deployed apps, provide context during app creation, and securely call custom or third-party APIs."
 icon: "link"
-keywords: ["Lovable integrations","Lovable connectors","MCP servers","custom MCP servers","Lovable API integrations","integrate external APIs","connect external services"]
+keywords: ["Lovable integrations","Lovable connectors","MCP servers","shared connectors","personal connectors","custom MCP servers","Lovable API integrations","integrate external APIs","connect external services"]
 ---
 
 Lovable integrates with a wide range of tools and platforms. There are three types of integrations, each serving a different purpose in how you build and run apps with Lovable.
 
 ## Lovable integrations overview
 
-| **Category**   | **Purpose**                                                                                                   | **Example providers**                                 |
-| :------------- | :------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------- |
-| **Connector**  | Add capabilities and external services that your deployed app can call                                        | Stripe, Shopify, Supabase                             |
-| **MCP Server** | Provide context, documents, and artifacts to the Lovable Agent during app creation and refinement             | Linear, Notion, Atlassian, n8n, any custom MCP server |
-| **Any API**    | Integrate custom or third-party APIs not built into Lovable when your deployed app needs custom functionality | Any API                                               |
+| **Category**                        | **Purpose**                                                                                                                                 | **Example providers**                                 |
+| :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------- |
+| **Shared connector**                | Add capabilities and external services that your deployed app can call. Configured once by admins, available to everyone in your workspace. | Stripe, Shopify, Supabase                             |
+| **Personal connector (MCP server)** | Connect your personal tool accounts to provide context while building. Only you can access your connections.                                | Linear, Notion, Atlassian, n8n, any custom MCP server |
+| **Any API**                         | Integrate custom or third-party APIs not built into Lovable when your deployed app needs custom functionality                               | Any API                                               |
 
 <Info>
   **What is an API?**\
   API (Application Programming Interface) is a structured way for services or applications to communicate and share data with each other. It defines what you can ask for, what you’ll get back, and how to make the request.
 </Info>
 
-## Connectors:  Add capabilities to your published app
+## Shared connectors:  Add capabilities to your published app
 
-Connectors are the easiest way to extend the power of your Lovable app. They act like plug-ins that your app can call whenever it needs to perform an action or fetch data.
+Shared connectors are the easiest way to extend the power of your Lovable app. They act like plug-ins that your app can call whenever it needs to perform an action or fetch data.
 
-Connectors are ideal when your **deployed app** needs to interact with external services to gain operational capabilities.
+Shared connectors are ideal when your **deployed app** needs to interact with external services to gain operational capabilities.
 
 ### Examples and use cases
 
@@ -38,31 +38,32 @@ Connectors are ideal when your **deployed app** needs to interact with external 
 
 ### Key characteristics
 
-- Configured at the workspace level
-- Reusable across all projects
+- Configured once by admins at the workspace level
+- Available to everyone in your workspace and reusable across all projects
 - Provide functional capabilities your app can call while in use
-- Managed in **Settings → Integrations → Connectors**
+- Managed in **Settings → Connectors → Shared connectors**
 
-## **MCP servers:  Provide context during app creation**
+## **Personal connectors:  Provide context during app creation**
 
-[MCP servers](/integrations/mcp-servers) give the Lovable Agent access to content and artifacts inside the tools you already use, **during app creation**. They provide context so the agent can build apps that reflect your real workflows.
+[Personal connectors (MCP servers)](/integrations/mcp-servers) give the Lovable Agent access to content and artifacts inside the tools you already use, **during app creation**. They provide context so the agent can build apps that reflect your real workflows.
 
-Use MCP Servers when your app should be created using the real content your organization already relies on.
+Use personal connectors when your app should be created using the real content your organization already relies on.
 
 ### **Examples and use cases**
 
 - **Linear:** importing issues and specs to generate features
 - **Notion:** referencing docs and pages to guide app behavior
 - **Atlassian (Jira and Confluence):** aligning with tickets, roadmaps, and documentation
+- **Miro:** cccess your Miro boards and diagrams to generate interactive prototypes
 - **n8n:** mirroring or plugging into existing automation workflows
 - **Custom MCP servers:** connecting internal or third-party systems
 
 ### **Key characteristics**
 
-- Used only while building the app
-- Provide context, not app functionality
+- Connect personal tool accounts to provide context while building (not app functionality)
+- Only you can access your connections
 - Not included in your deployed app
-- Managed in **Settings → Integrations → Your MCP Servers**
+- Managed in **Settings → Connectors → Personal connectors**
 
 ## Integrate any API
 
