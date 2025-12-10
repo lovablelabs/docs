@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-description: "Learn how Lovable integrates connectors, MCP servers, and any API to add capabilities to deployed apps, provide context during app creation, and securely call custom or third-party APIs."
+description: "Learn how Lovable integrates shared connectors, personal connectors (MCP servers), and any API to add capabilities to deployed apps, provide context during app creation, and securely call custom or third-party APIs."
 icon: "link"
 keywords: ["Lovable integrations","Lovable connectors","MCP servers","shared connectors","personal connectors","custom MCP servers","Lovable API integrations","integrate external APIs","connect external services"]
 ---
@@ -9,11 +9,11 @@ Lovable integrates with a wide range of tools and platforms. There are three typ
 
 ## Lovable integrations overview
 
-| **Category**                        | **Purpose**                                                                                                                                 | **Example providers**                                 |
-| :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------- |
-| **Shared connector**                | Add capabilities and external services that your deployed app can call. Configured once by admins, available to everyone in your workspace. | Stripe, Shopify, Supabase                             |
-| **Personal connector (MCP server)** | Connect your personal tool accounts to provide context while building. Only you can access your connections.                                | Linear, Notion, Atlassian, n8n, any custom MCP server |
-| **Any API**                         | Integrate custom or third-party APIs not built into Lovable when your deployed app needs custom functionality                               | Any API                                               |
+| **Category**                        | **Purpose**                                                                                                                                 | **Examples**                                                |
+| :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------- |
+| **Shared connector**                | Add capabilities and external services that your deployed app can call. Configured once by admins, available to everyone in your workspace. | Lovable Cloud, Lovable AI, Stripe, Shopify, Supabase        |
+| **Personal connector (MCP server)** | Connect your personal tool accounts to provide context while building. Only you can access your connections.                                | Linear, Notion, Atlassian, Miro, n8n, any custom MCP server |
+| **Any API**                         | Integrate custom or third-party APIs not built into Lovable when your deployed app needs custom functionality                               | Any API                                                     |
 
 <Info>
   **What is an API?**\
@@ -28,6 +28,8 @@ Shared connectors are ideal when your **deployed app** needs to interact with ex
 
 ### Examples and use cases
 
+- [Lovable Cloud](/integrations/cloud): providing built-in backend services, authentication, database, and full-stack hosting
+- [Lovable AI](/integrations/ai): powering your app with advanced AI capabilities
 - [**Stripe**](/integrations/stripe): handling payments or subscriptions
 - [**Shopify**](/integrations/shopify): managing ecommerce operations
 - [**Supabase**](/integrations/supabase): authenticating users and storing data
@@ -54,7 +56,7 @@ Use personal connectors when your app should be created using the real content y
 - **Linear:** importing issues and specs to generate features
 - **Notion:** referencing docs and pages to guide app behavior
 - **Atlassian (Jira and Confluence):** aligning with tickets, roadmaps, and documentation
-- **Miro:** cccess your Miro boards and diagrams to generate interactive prototypes
+- **Miro:** acccessing your Miro boards and diagrams to generate interactive prototypes
 - **n8n:** mirroring or plugging into existing automation workflows
 - **Custom MCP servers:** connecting internal or third-party systems
 
