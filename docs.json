@@ -183,32 +183,32 @@
       "destination": "/features/publish"
     },
     {
-      "source": "features/business/personal-projects",
+      "source": "/features/business/personal-projects",
       "destination": "/features/private-projects"
     },
     {
-      "source": "features/visual-edit",
+      "source": "/features/visual-edit",
       "destination": "/features/design"
     },
     {
-      "source": "features/seo",
+      "source": "/features/seo",
       "destination": "/tips-tricks/seo-geo"
     },
     {
-      "source": "integrations/resend",
+      "source": "/integrations/resend",
       "destination": "/tips-tricks/resend"
     },
     {
-      "source": "integrations/21stdev",
+      "source": "/integrations/21stdev",
       "destination": "/tips-tricks/21stdev"
     },
     {
-      "source": "features/cloud",
-      "destination": "integrations/cloud"
+      "source": "/features/cloud",
+      "destination": "/integrations/cloud"
     },
     {
-      "source": "features/ai",
-      "destination": "integrations/ai"
+      "source": "/features/ai",
+      "destination": "/integrations/ai"
     }
   ]
 }
