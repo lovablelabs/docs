@@ -71,10 +71,10 @@
             "group": "Shared connectors",
             "pages": [                     
               "features/cloud",
-              "features/ai",              
+              "features/ai",
+              "integrations/supabase",
               "integrations/stripe",
-              "integrations/shopify",
-              "integrations/supabase"
+              "integrations/shopify"            
               ]
             },
             {
