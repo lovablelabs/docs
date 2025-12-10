@@ -16,11 +16,11 @@ Lovable Cloud utilizes Supabase’s open-source foundation, which means you get 
 
 ## Enabling Lovable Cloud
 
-By default, Lovable Cloud is enabled for your workspace. You can manage Lovable Cloud behavior for your projects in your user preferences: **Settings → Integrations → Lovable Cloud → User preferences.**
+By default, Lovable Cloud is enabled for your workspace. You can manage Lovable Cloud behavior for your projects in **Settings → Connectors → Shared connectors → Lovable Cloud → Manage permissions.**
 
-### User preferences
+### Permission preferences
 
-The default setting for Cloud integration is **Ask each time**, meaning you decide whether to enable or disable Cloud for each project. You can change your preference anytime from **Settings → Integrations → Lovable Cloud → User preferences.**
+The default setting for Cloud integration is **Ask each time**, meaning you decide whether to enable or disable Cloud for each project. You can change your preference anytime from **Settings → Connectors → Shared connectors → Lovable Cloud → Manage permissions.**
 
 Lovable prompts you when a feature requires backend functionality (for example, authentication or file storage). You have three options:
 
@@ -30,19 +30,19 @@ Lovable prompts you when a feature requires backend functionality (for example, 
 
 ### Configuring Lovable Cloud tools
 
-Each Cloud tool in your user preferences has three options:
+Each Cloud tool has three permission options:
 
 - **Always allow**: Lovable automatically performs the action, without asking for review or approval.
 - **Ask each time**: Lovable asks for your approval whenever the action is needed.
 - **Never allow**: Lovable blocks the action, informs you that Cloud access is required, and instructs you to enable Cloud.
 
-You can change your Cloud tools preferences anytime from **Settings → Integrations → Lovable Cloud → User preferences.**
+You can change your Cloud tool preferences anytime from **Settings → Connectors → Shared connectors → Lovable Cloud → Manage permissions.**
 
 #### Tool settings and defaults
 
 | Setting             | Description                                                                                                        | Default behavior |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------- |
-| Cloud               | Create and connect a Cloud project to add backend features (database, auth, storage). Required to use Cloud tools. | Ask each time    |
+| Enable Cloud        | Create and connect a Cloud project to add backend features (database, auth, storage). Required to use Cloud tools. | Ask each time    |
 | Read database       | Allow Lovable to read your database.                                                                               | Always allow     |
 | Read analytics      | Query logs to investigate issues and behavior.                                                                     | Always allow     |
 | Run security checks | Run automated security checks on your database. Not a full audit.                                                  | Always allow     |
