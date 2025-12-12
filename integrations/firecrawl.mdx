@@ -1,49 +1,78 @@
 ---
 title: "Power your apps with Firecrawl"
-description: "Scrape any website and get structured data — without building a scraper."
+description: "Connect your app to Firecrawl, an AI-powered scraper, crawler, and retrieval engine, to scrape any website and get structured data."
 ---
 
-## **What Firecrawl enables**
+<Info>
+  Firecrawl is free to use through Lovable until Jan 31, 2026.
+</Info>
 
-Firecrawl makes your app capable of:
+[Firecrawl](https://www.firecrawl.dev/) is a powerful web scraping and crawling platform that makes your app capable of:
 
 - Scraping URLs into structured JSON
 - Crawling entire sites (site maps, subpages, navigation)
 - Extracting clean text, metadata, product info, tables, and more
 - Handling JS-heavy sites, lazy loading, and cookie modals
-- Pulling live data repeatedly (“sync and update”)
+- Pulling live data repeatedly (sync and update)
 
-> **Firecrawl is free to use through Lovable until Jan 31, 2025.**
+Firecrawl is ideal when your app needs real-time website data.
 
-This removes scraping as a technical bottleneck entirely.
+Official docs: https://docs.firecrawl.dev/introduction
 
-## **Common use cases**
+## Common use cases and example apps
 
-- **Competitor trackers**\
-  Monitor pricing, product pages, or feature announcements.
-- **Jobs aggregators**\
-  Pull listings from Greenhouse, Lever, Workday, etc.
-- **Lead enrichment tools**\
-  Crawl a company’s full domain → extract team, tech stack, contact info.
-- **E-commerce price trackers**\
-  Scrape products and detect price changes over time.
-- **Brand asset extractors**\
-  Get fonts, colors, logos, and style tokens from any website.
+| Example app                   | Description                                                                                                                                                                                                                                                                                                                              |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Competitor trackers**       | A competitor tracker app to monitor and analyze competitors in your space. User adds competitor URLs to track, and the app re-scrapes those URLs over time and highlights what changed (pricing pages, product updates, documentation revisions, or feature announcements).                                                              |
+| **Jobs aggregators**          | Pull listings from various sources (for example, Greenhouse, Lever, Workday) and present them in one unified interface that users can search through. User chooses companies or job board URLs, and the app scrapes listings into structured results and keeps the feed updated.                                                         |
+| **Lead enrichment tools**     | Crawl a company site and extract publicly available people and company information, tech stack signals, locations, careers, and contact details. User pastes a company domain (or uploads a list), and the app scans key pages and saves extracted fields for each company.                                                              |
+| **E-commerce price monitors** | A tool that lets users paste product URLs from any e-commerce site, tracks product availability and price changes over time using Firecrawl's scraping capabilities, and alerts them when prices drop or the product is available. User saves product URLs, and the app checks them on a schedule, records snapshots, and flags changes. |
+| **Brand asset extractors**    | Extract fonts, colors, logos, and style tokens from any website. User enters a company URL, and the app scrapes brand-related pages and compiles a lightweight brand kit.                                                                                                                                                                |
+| **Knowledge extractors**      | Turn any URL into clean markdown, structured metadata, readable text, and useful structured elements (like tables). User pastes a URL, and the app converts the page into clean, reusable content the app can search, summarize, or reuse.                                                                                               |
 
-## **Example app workflows**
+## How to connect Firecrawl
 
-- Submit a URL → Firecrawl returns structured JSON
-- Crawl entire domains for mapping or discovery
-- Extract product lists, documentation, or blog posts
-- Track updates over time with “sync and get an update”
-- Trigger downstream automation (e.g., send price-drop alerts)
-- 
+Connecting Firecrawl is a **two-way setup** between Firecrawl and Lovable.
 
-## **Configuration**
+### Prerequisites
 
-1. Open **Workspace Settings → Integrations**
-2. Connect **Firecrawl**
-3. Add API key (or use Lovable-provided tier while available)
-4. Firecrawl becomes available across all projects
+- A Firecrawl account and API key
+- Lovable workspace owner or admin role
 
-Agent can also prompt configuration when attempting a scrape.
+### 1. Create a Firecrawl account and API key
+
+You can create multiple API keys. This is useful for different rate limits or environments (for example, development or production).
+
+To create a Firecrawl API key:
+
+1. Go to https://www.firecrawl.dev/ and set up your account.
+2. Go to your Firecrawl dashboard and navigate to the [**API Keys page**](https://www.firecrawl.dev/app/api-keys)**.**
+3. Click **Create.**
+4. Give your key a descriptive name (for example, `Lovable integration`).
+5. Copy the generated API key and save it somewhere secure.
+
+   <Info>
+     Your API key is like a password. Keep it secure and never share it publicly. You’ll need this key in the next section.
+   </Info>
+
+Firecrawl provides free credits when you sign up, which is enough to test your connection and complete this tutorial.
+
+### 2. Connect Firecrawl to Lovable
+
+Workspace **admins** and **owners** can connect Firecrawl. When the connection is created, Firecrawl becomes available across all projects in the workspace.
+
+You can create multiple connections using different API keys. This is useful for different rate limits or environments (for example, development or production).
+
+To connect Firecrawl, follow the steps below:
+
+1. Go to **Settings → Connectors → Shared connectors** and select **Firecrawl**.
+2. Click **Add connection**.
+3. **Display name**: name the connection, for example `Firecrawl Prod` .
+5. **Authentication**: choose between
+   - **Managed by Lovable**: Lovable provides and manages the credentials for you.
+   - **Your own credentials**: Use your own Firecrawl API key (`fc-xxxxxxxx…`).
+5. Click **Create**.
+
+---
+
+---
